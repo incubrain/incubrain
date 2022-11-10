@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
 interface Tab {
   id: number
@@ -9,6 +9,18 @@ interface Tab {
 interface Tabs {
   components: Array<Tab> 
 }
+
+interface Page {
+  id: number
+  title: string
+  current: boolean
+}
+
+const pages = ref([
+  { id: 0, title: 'Components', current: true },
+  { id: 1, title: 'test', current: false },
+] as Array<Page>)
+
 
 const tabs = ref({
   components: [
@@ -34,6 +46,10 @@ export default function useTabs() {
 
   return {
     tabs,
+    activeTab: computed(() => pages.value.find((p: Page) => {
+     if (p.current === true) return p
+     return p
+    })),
     changeTab,
   }
 }

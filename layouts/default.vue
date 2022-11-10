@@ -2,12 +2,18 @@
   <div>
     <AppNav />
     <AppTitle />
-    <AppContent>
-      <slot />
-    </AppContent>
+    <AppTabs />
   </div>
 </template>
 
 <script>
 
 </script>
+
+<style>
+
+#__nuxt {
+  width: 100%;
+}
+
+</style>

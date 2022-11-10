@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full pb-10 bg-gray-200">
+  <div class="w-full pb-10 bg-gray-200" id="trezzz">
       <div class="container px-6 mx-auto">
           <div class="relative w-full">
               <div class="absolute w-full -mt-20 h-auto md:h-20 bg-gray-800">
@@ -23,22 +23,32 @@
                     > {{ tab.title }}</option>
                     </select>
                   </div>
-                  <ul class="hidden md:flex flex-row h-full cursor-pointer">
+                  <ul class="hidden md:flex flex-row h-full cursor-pointer mt-6">
                   <li
-                    v-for="tab in tabs.components"
-                    :key="tab.title"
-                    :class="tabStyle(tab.selected)"
-                    @click="changeTab({ page: 'components', id: tab.id })"
+                  v-for="tab in tabs.components"
+                  :key="tab.title"
+                  :class="tab.selected === false ?
+                   'pt-4 pb-0 px-12 text-sm font-semibold text-gray-300 transition-all'
+                   : 'pt-4 pb-0 px-12 text-sm font-bold text-black rounded-t transition-all bg-white'"
+                  @click="changeTab({ page: 'components', id: tab.id })"
                     >
+                    <!-- <div :class="tab.selected === true ? 'bg-[#ffffff1d] absolute w-full h-full left-0 top-0 z-0 transition rounded-t' : ''" /> -->
                     {{ tab.title }}
                    </li>
                       <!-- <li class="border-l mt-6 rounded-t text-sm text-gray-800 px-10 py-4 bg-white">Quarterly</li> -->
                   </ul>
               </div>
               <!-- Remove class [ h-64 ] when adding a card block -->
-              <div class="container mx-auto mb-10 bg-white h-64 shadow rounded-b">
-                  <div class="w-full h-full">
+              <div class="container mx-auto mb-10 bg-white shadow rounded-b h-full relative z-100">
+                  <div class="w-full p-12">
                       <!-- Place your content here -->
+                      <AppTab
+                      v-for="tab in tabs.components"
+                      :key="tab.id"
+                      :visible="tab.selected"
+                      >
+                        {{ tab.title }}
+                    </AppTab>
                   </div>
               </div>
           </div>
@@ -54,13 +64,6 @@ function selectStyle(tf: boolean) {
     let st
     if (tf) st = "text-sm text-gray-600"
     else st = "text-sm text-gray-600"
-    return st
-}
-
-function tabStyle(tf: boolean) {
-    let st
-    if (tf) st = "border-l mt-6 rounded-t text-sm text-gray-800 px-10 py-4 bg-white"
-    else st = "pt-10 pl-12 pb-0 pr-12 text-sm text-gray-300"
     return st
 }
 
