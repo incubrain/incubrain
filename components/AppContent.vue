@@ -11,20 +11,28 @@
                               <polyline points="16 15 12 19 8 15" />
                           </svg>
                       </div>
-                      <select aria-label="Selected tab" class="focus:outline-none form-select block w-full p-3 border-t border-l border-r border-gray-300 rounded-b text-gray-600 appearance-none bg-transparent relative z-10">
-                          <option selected="true" class="text-sm text-gray-600">Quarterly</option>
-                          <option class="text-sm text-gray-600">Yearly</option>
-                          <option class="text-sm text-gray-600">Historic Data</option>
-                          <option class="text-sm text-gray-600">Forecasting</option>
-                          <option class="text-sm text-gray-600">Comparison</option>
-                      </select>
+                    <select
+                      aria-label="Selected tab"
+                      class="focus:outline-none form-select block w-full p-3 border-t border-l border-r border-gray-300 rounded-b text-gray-600 appearance-none bg-transparent relative z-10 cursor-pointer"
+                    >
+                    <option
+                        v-for="tab in tabs.components"
+                        :key="tab.title"
+                        :selected="tab.selected"
+                        :class="selectStyle(tab.selected)"
+                    > {{ tab.title }}</option>
+                    </select>
                   </div>
-                  <ul class="hidden md:flex flex-row h-full">
-                      <li class="border-l mt-6 rounded-t text-sm text-gray-800 px-10 py-4 bg-white">Quarterly</li>
-                      <li class="pt-10 pl-12 text-sm text-gray-300">Yearly</li>
-                      <li class="pt-10 pl-12 text-sm text-gray-300">Historic Data</li>
-                      <li class="pt-10 pl-12 text-sm text-gray-300">Forecasting</li>
-                      <li class="pt-10 pl-12 pb-0 text-sm text-gray-300">Comparison</li>
+                  <ul class="hidden md:flex flex-row h-full cursor-pointer">
+                  <li
+                    v-for="tab in tabs.components"
+                    :key="tab.title"
+                    :class="tabStyle(tab.selected)"
+                    @click="changeTab({ page: 'components', id: tab.id })"
+                    >
+                    {{ tab.title }}
+                   </li>
+                      <!-- <li class="border-l mt-6 rounded-t text-sm text-gray-800 px-10 py-4 bg-white">Quarterly</li> -->
                   </ul>
               </div>
               <!-- Remove class [ h-64 ] when adding a card block -->
@@ -39,5 +47,21 @@
 </template>
 
 <script lang="ts" setup>
+
+const { tabs, changeTab } = useTabs()
+
+function selectStyle(tf: boolean) {
+    let st
+    if (tf) st = "text-sm text-gray-600"
+    else st = "text-sm text-gray-600"
+    return st
+}
+
+function tabStyle(tf: boolean) {
+    let st
+    if (tf) st = "border-l mt-6 rounded-t text-sm text-gray-800 px-10 py-4 bg-white"
+    else st = "pt-10 pl-12 pb-0 pr-12 text-sm text-gray-300"
+    return st
+}
 
 </script>
