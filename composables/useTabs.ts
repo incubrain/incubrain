@@ -3,6 +3,7 @@ import { ref, computed } from 'vue'
 interface Tab {
   id: number
   title: string
+  name: string
   selected: boolean
 }
 
@@ -24,11 +25,11 @@ const pages = ref([
 
 const tabs = ref({
   components: [
-    { id: 0, title: 'Testing', selected: true },
-    { id: 1, title: 'Calendars', selected: false },
-    { id: 2, title: 'UX', selected: false },
-    { id: 3, title: 'Profile', selected: false },
-    { id: 4, title: 'Soclie', selected: false },
+    { id: 0, title: 'Profile', name: 'TabProfile', selected: true },
+    { id: 1, title: 'Calendars', name: 'TabCalendars', selected: false },
+    { id: 2, title: 'UX', name: 'TabUX', selected: false },
+    { id: 3, title: 'Test', name: 'TabTest', selected: false },
+    { id: 4, title: 'Soclie', name: 'TabSocial', selected: false },
   ] as Array<Tab>
 } as Tabs)
 

@@ -14,15 +14,29 @@
                 </div>
             </div>
             <ul class="flex items-center justify-center h-full">
-                <li class="cursor-pointer h-full xl:flex items-center text-sm text-indigo-500 tracking-normal hidden">Dashboard</li>
-                <li class="hover:text-indigo-500 cursor-pointer h-full xl:flex hidden items-center text-sm text-white xl:ml-10 tracking-normal relative" @click="dropdownHandler($event)">
-                    <ul class="bg-white shadow rounded py-1 w-32 left-0 mt-16 -ml-4 absolute hidden top-0">
-                        <li class="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-3 hover:bg-indigo-700 hover:text-white px-3 font-normal">Landing Pages</li>
-                        <li class="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-3 hover:bg-indigo-700 hover:text-white px-3 font-normal">Templates</li>
-                        <li class="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-3 hover:bg-indigo-700 hover:text-white px-3 font-normal">Components</li>
+                <li
+                    v-for="page in pages"
+                    :key="page.id"
+                    @click="page.children !== null ? dropdownHandler($event) : null"
+                    :class=" page.children === null && page.current === true ?
+                        'cursor-pointer h-full xl:flex items-center text-sm text-indigo-500 tracking-normal hidden' :
+                        'hover:text-indigo-500 cursor-pointer h-full xl:flex hidden items-center text-sm text-white xl:ml-10 tracking-normal relative'
+                    "
+                >
+                    {{ page.name }}
+                    <ul
+                        v-if="page.children"
+                        class="bg-white shadow rounded py-1 w-32 left-0 mt-16 -ml-4 absolute hidden top-0"
+                    >
+                        <li 
+                            v-for="child in page.children"
+                            :key="child.id"
+                            class="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-3 hover:bg-indigo-700 hover:text-white px-3 font-normal"
+                        >
+                            {{ child.name }}
+                        </li>
                     </ul>
-                    Products
-                </li>
+                 </li>
                 <li class="mx-0 xl:mx-12 cursor-pointer">
                     <svg aria-label="Home" id="logo" enable-background="new 0 0 300 300" height="44" viewBox="0 0 300 300" width="43" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <g>
@@ -33,19 +47,56 @@
                         </g>
                     </svg>
                 </li>
-                <li class="hover:text-indigo-500 cursor-pointer h-full xl:flex items-center text-sm text-white mr-10 tracking-normal hidden">Performance</li>
-                <li class="hover:text-indigo-500 cursor-pointer h-full xl:flex items-center text-sm text-white tracking-normal hidden">Deliverables</li>
+                <li
+                    v-for="page in pages2"
+                    :key="page.id"
+                    @click="page.children !== null ? dropdownHandler($event) : null"
+                    :class=" page.children === null && page.current === true ?
+                        'cursor-pointer h-full xl:flex items-center text-sm text-indigo-500 tracking-normal mr-10 hidden' :
+                        'hover:text-indigo-500 cursor-pointer h-full xl:flex hidden items-center text-sm text-white xl:mr-10 tracking-normal relative'"
+                >
+                    {{ page.name }}
+                    <!-- <ul
+                        v-if="page.children"
+                        class="bg-white shadow rounded py-1 w-32 left-0 mt-16 -ml-4 absolute hidden top-0"
+                    >
+                        <li 
+                            v-for="child in page.children"
+                            :key="child.id"
+                            class="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-3 hover:bg-indigo-700 hover:text-white px-3 font-normal"
+                        >
+                            {{ child.name }}
+                        </li>
+                    </ul> -->
+                 </li>
             </ul>
             <div aria-haspopup="true" class="cursor-pointer h-full xl:flex items-center justify-end hidden relative" @click="dropdownHandler($event)">
-                <ul class="p-2 w-40 border-r bg-white absolute rounded z-40 shadow mt-64 hidden">
-                    <li class="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                <!-- <ul class="p-2 w-40 border-r bg-white absolute rounded z-40 shadow mt-64 hidden">
+                    <li
+                        v-for="page in pages.concat(...pages2)"
+                        :key="page.id"
+                        :class="page.current === true ?
+                        'cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none' : ''"
+                    >
                         <div class="flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" />
                                 <circle cx="12" cy="7" r="4" />
                                 <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
                             </svg>
-                            <span class="ml-2"> My Profile </span>
+                            <span class="ml-2"> {{ page.name }} </span>
+                            <ul
+                                v-if="page.children"
+                                class="ml-2 mt-3 hidden"
+                            >
+                                <li
+                                    v-for="child in page.children"
+                                    :key="child.id"
+                                    class="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-3 hover:bg-indigo-700 hover:text-white px-3 font-normal"
+                                >
+                                    {{ child.name }}
+                                </li>
+                            </ul>
                         </div>
                     </li>
                     <li class="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex items-center">
@@ -55,7 +106,7 @@
                             <line x1="12" y1="17" x2="12" y2="17.01" />
                             <path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4" />
                         </svg>
-                        <span class="ml-2"> Help Center </span>
+                        <span class="ml-2"> Contact </span>
                     </li>
                     <li class="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 flex items-center focus:text-indigo-700 focus:outline-none">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -63,51 +114,56 @@
                             <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                             <circle cx="12" cy="12" r="3" />
                         </svg>
-                        <span class="ml-2"> Account Settings </span>
+                        <span class="ml-2"> Work </span>
                     </li>
-                </ul>
+                </ul> -->
                 <div class="rounded">
                     <img class="rounded h-10 w-10 object-cover" src="https://tuk-cdn.s3.amazonaws.com/assets/components/boxed_layout/bl_1.png" alt="logo" />
                 </div>
-                <div class="text-gray-600 ml-2">
+                <!-- <div class="text-gray-600 ml-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" />
                         <polyline points="6 9 12 15 18 9" />
                     </svg>
-                </div>
+                </div> -->
             </div>
             <div class="visible xl:hidden flex items-center">
                 <ul class="p-2 border-r bg-white absolute rounded top-0 left-0 right-0 shadow mt-16 md:mt-16 hidden">
-                    <li class="flex xl:hidden cursor-pointer text-gray-600 text-base leading-3 tracking-normal mt-2 py-3 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                    <li
+                        v-for="page in pages.concat(...pages2)"
+                        :key="page.id"
+                        @click="page.children !== null ? dropdownHandler($event) : ''"
+                        :class=" page.children === null
+                            ? 'flex xl:hidden cursor-pointer text-gray-600 text-base leading-3 tracking-normal mt-2 py-3 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none'
+                            : 'xl:hidden flex-col cursor-pointer text-gray-600 text-base leading-3 mt-2 tracking-normal py-3 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex justify-center'
+                        "
+                    >
                         <div class="flex items-center">
-                            <span class="leading-6 ml-2 font-bold"> Dashboard </span>
+                            <span class="leading-6 ml-2 font-bold"> {{ page.name }} </span>
                         </div>
-                    </li>
-                    <li class="xl:hidden flex-col cursor-pointer text-gray-600 text-base leading-3 tracking-normal py-3 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex justify-center" @click="dropdownHandler($event)">
-                        <div class="flex items-center">
-                            <span class="leading-6 ml-2 font-bold"> Products </span>
-                        </div>
-                        <ul class="ml-2 mt-3 hidden">
-                            <li class="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-3 hover:bg-indigo-700 hover:text-white px-3 font-normal">Landing Pages</li>
-                            <li class="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-3 hover:bg-indigo-700 hover:text-white px-3 font-normal">Templates</li>
-                            <li class="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-3 hover:bg-indigo-700 hover:text-white px-3 font-normal">Components</li>
+                        <ul
+                            v-if="page.children"
+                            class="ml-2 mt-3 hidden"
+                        >
+                            <li
+                                v-for="child in page.children"
+                                :key="child.id"
+                                class="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-3 hover:bg-indigo-700 hover:text-white px-3 font-normal"
+                            >
+                                {{ child.name }}
+                            </li>
                         </ul>
                     </li>
-                    <li class="xl:hidden cursor-pointer text-gray-600 text-base leading-3 tracking-normal py-3 hover:text-indigo-700 flex items-center focus:text-indigo-700 focus:outline-none">
-                        <span class="leading-6 ml-2 font-bold"> Performance </span>
-                    </li>
-                    <li class="xl:hidden cursor-pointer text-gray-600 text-base leading-3 tracking-normal mb-2 py-3 hover:text-indigo-700 flex items-center focus:text-indigo-700 focus:outline-none">
-                        <span class="leading-6 ml-2 font-bold"> Deliverables </span>
-                    </li>
+                   
                     <li>
-                        <hr class="border-b border-gray-300 w-full" />
+                    <hr class="border-b border-gray-300 w-full my-2" />
                     </li>
                     <li class="ml-2 cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 flex items-center focus:text-indigo-700 focus:outline-none">
                         <div class="flex items-center">
                             <div class="w-12 cursor-pointer flex text-sm border-2 border-transparent rounded focus:outline-none focus:border-white transition duration-150 ease-in-out">
-                                <img class="rounded h-10 w-10 object-cover" :src="profilePhoto" alt="logo" />
+                                <img class="rounded h-10 w-10 object-cover" :src="avatar" alt="logo" />
                             </div>
-                            <p class="leading-6 text-base ml-1 cursor-pointer">Jane Doe</p>
+                            <p class="leading-6 text-base ml-1 cursor-pointer">{{ name }}</p>
                             <div class="sm:ml-2 text-white relative">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down cursor-pointer" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z"></path>
@@ -116,16 +172,20 @@
                             </div>
                         </div>
                     </li>
-                    <li class="ml-2 cursor-pointer text-gray-600 text-base leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                    <!-- <li
+                        v-for="p in profile"
+                        :key="p.id"
+                        class="ml-2 cursor-pointer text-gray-600 text-base leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none"
+                    >
                         <div class="flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" />
                                 <circle cx="12" cy="7" r="4" />
                                 <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
                             </svg>
-                            <span class="leading-6 ml-2"> Profile </span>
+                            <span class="leading-6 ml-2"> {{ p.name }} </span>
                         </div>
-                    </li>
+                    </li> -->
                 </ul>
                 <svg @click="MenuHandler($event, true)" aria-haspopup="true" aria-label="Main Menu" xmlns="http://www.w3.org/2000/svg" class="show-m-menu icon icon-tabler icon-tabler-menu" width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z"></path>
@@ -145,6 +205,8 @@
 </template>
 
 <script setup lang="ts">
+
+const { avatar, name } = useOwner()
 
 function MenuHandler(el: Event, val: boolean):void {
   if (el.currentTarget instanceof Element &&  el.currentTarget.parentElement!) {
@@ -178,6 +240,24 @@ function searchHandler(event: Event): void {
   }
 }
 
-const profilePhoto = "https://tuk-cdn.s3.amazonaws.com/assets/components/boxed_layout/bl_1.png"
+const pages = [
+    { id: 0, name: 'Projects', current: true, children: null },
+    { id: 1, name: 'Portfolio', current: false, children: [
+        { id: 0, name: 'Web Dev/Design', current: false, children: null },
+        { id: 1, name: 'Mobile Dev/Design', current: false, children: null },
+        { id: 2, name: 'Backend', current: false, children: null },
+    ] },
+]
+
+const pages2 = [
+    { id: 2, name: 'Code', current: false, children: null },
+    { id: 3, name: 'Contact', current: false, children: null },
+]
+
+const profile = [
+    { id: 0, name: 'About', current: false, children: null },
+    { id: 1, name: 'Skills', current: false, children: null },
+    { id: 2, name: 'Education', current: false, children: null },
+]
 
 </script>

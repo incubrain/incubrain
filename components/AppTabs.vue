@@ -47,9 +47,10 @@
                       :key="tab.id"
                       :visible="tab.selected"
                       >
-                        {{ tab.title }}
+                      <ProfileTab />
+                        <!-- {{ tab.title }} is updated -->
                     </AppTab>
-                  </div>
+                </div>
               </div>
           </div>
       </div>

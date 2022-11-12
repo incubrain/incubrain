@@ -2,7 +2,7 @@
   <div>
     <AppNav />
     <AppTitle />
-    <AppTabs />
+    <slot />
   </div>
 </template>
 
