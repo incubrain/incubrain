@@ -25,8 +25,8 @@ const pages = ref([
 
 const tabs = ref({
   components: [
-    { id: 0, title: 'Profile', name: 'TabProfile', selected: true },
-    { id: 1, title: 'Calendars', name: 'TabCalendars', selected: false },
+    { id: 0, title: 'Profile', name: 'ProfileTab', selected: true },
+    { id: 1, title: 'Stats', name: 'StatTab', selected: false },
     { id: 2, title: 'UX', name: 'TabUX', selected: false },
     { id: 3, title: 'Test', name: 'TabTest', selected: false },
     { id: 4, title: 'Soclie', name: 'TabSocial', selected: false },

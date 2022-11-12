@@ -46,8 +46,10 @@
                       v-for="tab in tabs.components"
                       :key="tab.id"
                       :visible="tab.selected"
+                      :tab-id="tab.name"
                       >
-                      <ProfileTab />
+                      <!-- <ProfileTab /> -->
+                      <!-- <component :is="tab.name"/> -->
                         <!-- {{ tab.title }} is updated -->
                     </AppTab>
                 </div>

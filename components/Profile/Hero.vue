@@ -1,5 +1,5 @@
 <template>
-    <div class="flex items-center justify-center w-full py-8">
+    <div class="flex items-center justify-center w-full">
         <!-- Card code block start -->
         <div class="bg-white dark:bg-gray-800 shadow rounded">
             <div class="relative">
