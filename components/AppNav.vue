@@ -19,8 +19,8 @@
                     :key="page.id"
                     @click="page.children !== null ? dropdownHandler($event) : null"
                     :class=" page.children === null && page.current === true ?
-                        'cursor-pointer h-full xl:flex items-center text-sm text-indigo-500 tracking-normal hidden' :
-                        'hover:text-indigo-500 cursor-pointer h-full xl:flex hidden items-center text-sm text-white xl:ml-10 tracking-normal relative'
+                        'cursor-pointer h-full xl:flex items-center text-sm text-yellow-300 tracking-normal hidden' :
+                        'hover:text-yellow-300 cursor-pointer h-full xl:flex hidden items-center text-sm text-white xl:ml-10 tracking-normal relative'
                     "
                 >
                     {{ page.name }}
@@ -31,22 +31,22 @@
                         <li 
                             v-for="child in page.children"
                             :key="child.id"
-                            class="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-3 hover:bg-indigo-700 hover:text-white px-3 font-normal"
+                            class="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-3 hover:bg-yellow-300 hover:text-white px-3 font-normal"
                         >
                             {{ child.name }}
                         </li>
                     </ul>
                  </li>
                 <li class="mx-0 xl:mx-12 cursor-pointer h-12">
-                    <img src="~/public/logo.png" alt="Drew MacGibbon Development (DM Development)" class="h-full">
+                    <img src="/logo.png" alt="Drew MacGibbon Development (DM Development)" class="h-full">
                 </li>
                 <li
                     v-for="page in pages2"
                     :key="page.id"
                     @click="page.children !== null ? dropdownHandler($event) : null"
                     :class=" page.children === null && page.current === true ?
-                        'cursor-pointer h-full xl:flex items-center text-sm text-indigo-500 tracking-normal mr-10 hidden' :
-                        'hover:text-indigo-500 cursor-pointer h-full xl:flex hidden items-center text-sm text-white xl:mr-10 tracking-normal relative'"
+                        'cursor-pointer h-full xl:flex items-center text-sm text-yellow-300 tracking-normal mr-10 hidden' :
+                        'hover:text-yellow-300 cursor-pointer h-full xl:flex hidden items-center text-sm text-white xl:mr-10 tracking-normal relative'"
                 >
                     {{ page.name }}
                     <!-- <ul
@@ -111,7 +111,7 @@
                     </li>
                 </ul> -->
                 <div class="rounded">
-                    <img class="rounded h-10 w-10 object-cover" src="https://tuk-cdn.s3.amazonaws.com/assets/components/boxed_layout/bl_1.png" alt="logo" />
+                    <img class="rounded h-10 w-10 object-cover" src="/avatar.png" alt="logo" />
                 </div>
                 <!-- <div class="text-gray-600 ml-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -154,7 +154,7 @@
                     <li class="ml-2 cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 flex items-center focus:text-indigo-700 focus:outline-none">
                         <div class="flex items-center">
                             <div class="w-12 cursor-pointer flex text-sm border-2 border-transparent rounded focus:outline-none focus:border-white transition duration-150 ease-in-out">
-                                <img class="rounded h-10 w-10 object-cover" :src="avatar" alt="logo" />
+                                <img class="rounded h-10 w-10 object-cover" src="./avatar.png" alt="logo" />
                             </div>
                             <p class="leading-6 text-base ml-1 cursor-pointer">{{ name }}</p>
                             <div class="sm:ml-2 text-white relative">
