@@ -1,9 +1,6 @@
 <template>
-  <body
-    class="flex py-10 min-h-screen justify-center py-8 bg-gray-300 px-4"
-  >
     <div
-      class="xl:w-3/4 2xl:w-4/5 w-full bg-white md:p-10 p-4 rounded-lg shadow"
+      class="w-full bg-white md:p-10 p-4 rounded-lg shadow"
     >
       <div class="lg:flex justify-between w-full items-center">
         <div class="py-3 md:px-4 flex items-center bg-gray-50 rounded-xl">
@@ -114,29 +111,14 @@
         ></canvas>
       </div>
     </div>
-  </body>
 </template>
 
-<script setup lang="ts">
+<script setup>
 
-import { Chart } from 'chart.js'
-import type { ChartItem, LegendOptions } from 'chart.js'
-
-interface Y {
-  0: string
-}
-
-const yLabels = {
-  0: "$0",
-  6: "$6K",
-  10: "$10K",
-  14: "$15K",
-  20: "$20K",
-  40: "$40K",
-} as Y
+import Chart from 'chart.js'
 
 onMounted(() => {
-  new Chart(document.getElementById('line_chart') as ChartItem, {
+  new Chart(document.getElementById('line_chart'), {
     type: "line",
     data: {
       labels: [
@@ -171,15 +153,15 @@ onMounted(() => {
         display: false,
       },
       scales: {
-        y: [
+        yAxis: [
           {
             gridLines: {
               display: false,
             },
             ticks: {
               beginAtZero: true,
-              callback: function (value: number) {
-                return yLabels[value as keyof Y];
+              callback: function (value) {
+                return yLabels[value];
               },
             },
           },

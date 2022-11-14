@@ -1,14 +1,14 @@
 <template>
   <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pt-6 gap-8">
-    <div class="rounded border-gray-300 dark:border-gray-700 border-dashed border-2">
-      <slot name="1" />
+    <div class="rounded">
+      <slot name="1" class="flex flex-col gap-4" />
       <!-- Remove class [ border-gray-300  dark:border-gray-700 border-dashed border-2 ] to remove dotted border -->
     </div>
-    <div class="rounded border-gray-300 dark:border-gray-700 border-dashed border-2">
+    <div class="rounded ">
       <slot name="2" />
       <!-- Remove class [ border-gray-300  dark:border-gray-700 border-dashed border-2 ] to remove dotted border -->
     </div>
-    <div class="rounded border-gray-300 dark:border-gray-700 border-dashed border-2">
+    <div class="rounded ">
       <slot name="3" />
       <!-- Remove class [ border-gray-300  dark:border-gray-700 border-dashed border-2 ] to remove dotted border -->
     </div>

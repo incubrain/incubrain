@@ -2,8 +2,10 @@
 export default defineAppConfig({
   title: 'Mac\'s Nuxt 3 Starter',
   theme: {
-    dark: false,
+    dark: true,
     colors: {
+      // not working
+      'white': '#E5E7EB',
       'blue': '#1fb6ff',
       'purple': '#7e5bef',
       'pink': '#ff49db',

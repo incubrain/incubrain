@@ -27,9 +27,13 @@ const tabs = ref({
   components: [
     { id: 0, title: 'Profile', name: 'ProfileTab', selected: true },
     { id: 1, title: 'Stats', name: 'StatTab', selected: false },
-    { id: 2, title: 'UX', name: 'TabUX', selected: false },
-    { id: 3, title: 'Test', name: 'TabTest', selected: false },
-    { id: 4, title: 'Soclie', name: 'TabSocial', selected: false },
+    { id: 2, title: 'Events', name: 'EventTab', selected: false },
+    { id: 3, title: 'Projects', name: 'ProjectTab', selected: false },
+    { id: 4, title: 'Blog', name: 'BlogTab', selected: false },
+    { id: 5, title: 'Charts', name: 'ChartTab', selected: false },
+    { id: 6, title: 'Lists', name: 'ListTab', selected: false },
+    { id: 7, title: 'Modals', name: 'ModalTab', selected: false },
+    { id: 8, title: 'Mobile', name: 'MobileTab', selected: false },
   ] as Array<Tab>
 } as Tabs)
 

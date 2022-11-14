@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-center py-8 dark:bg-gray-900">
+  <div class="flex items-center justify-center dark:bg-gray-900">
       <div class="cursor-pointer rounded-md shadow-lg bg-white dark:bg-gray-800 relative">
           <div class="py-5">
               <div class="px-6">

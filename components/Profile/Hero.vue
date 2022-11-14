@@ -71,7 +71,6 @@
 
 <script>
 export default {
-    name: "FullWidthUserProfileCard",
     data() {
         return {
             header: "https://tuk-cdn.s3.amazonaws.com/assets/components/grid_cards/gc_29.png",

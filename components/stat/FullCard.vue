@@ -1,6 +1,5 @@
 <template>
-  <body class="bg-gray-300 min-h-screen py-8 px-4">
-        <div class="w-full flex items-center justify-center">
+        <div class="w-full flex justify-center">
             <div class="py-4 sm:py-6 md:py-8 bg-white shadow rounded-lg">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-6 xl:px-10 gap-y-8 gap-x-12 2xl:gap-x-28">
                     <div class="w-full">
@@ -63,7 +62,6 @@
                 </div>
             </div>
         </div>
-    </body>
 </template>
 
 <script setup lang="ts">
