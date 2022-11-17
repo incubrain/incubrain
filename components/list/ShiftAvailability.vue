@@ -1,5 +1,5 @@
 <template>
-  <body>
+  <div>
         <div class="w-full flex items-center justify-center">
             <div class="lg:w-4/12 md:w-7/12 w-full bg-white shadow rounded">
                 <div class="border-b border-gray-200 p-6 md:flex items-center justify-between">
@@ -80,7 +80,7 @@
                 </div>
             </div>
         </div>
-    </body>
+    </div>
 </template>
 
 <script>

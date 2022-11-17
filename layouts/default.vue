@@ -1,7 +1,6 @@
 <template>
   <div>
-    <AppNav />
-    <AppTitle />
+    <NavMain />
     <slot />
   </div>
 </template>
@@ -12,8 +11,15 @@
 
 <style>
 
+html {
+  margin: 0;
+  padding: 0;
+}
+
 #__nuxt {
   width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 </style>

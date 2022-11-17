@@ -1,5 +1,5 @@
 <template>
-  <body class="flex items-cneter justify-center">
+  <div class="flex items-cneter justify-center">
         <div class="sm:px-6 w-full">
             <div class="px-4 md:px-10 py-4 md:py-7">
                 <div class="lg:flex items-center justify-between">
@@ -522,7 +522,7 @@
                 </table>
             </div>
         </div>        
-    </body>
+    </div>
 </template>
 
 <script>
