@@ -64,6 +64,6 @@ export default function useTabs() {
   return {
     currentPage: computed(() => currentPage.value),
     pages: computed(() => pages.value),
-    tabs: (currentPage: String) => pages.value.find(p => p.name === currentPage),
+    tabs: (currentPage: String) => pages.value.find(p => p.name.toLocaleLowerCase() === currentPage),
   }
 }

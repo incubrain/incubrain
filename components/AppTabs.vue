@@ -15,9 +15,9 @@
                     </div>
                     <ul class="hidden md:flex flex-row h-full cursor-pointer mt-6">
                         <li
-                            v-for="tab in tabs('Design')?.children"
+                            v-for="tab in currentTabs"
                             :key="tab.id"
-                            @click="navigateTo(`/design${tab.slug}`)"
+                            @click="navigateTo(`/${parentRoute[1] + tab.slug}`)"
                             :class="route.fullPath.includes(tab.slug)
                                 ? 'pt-4 px-12 text-sm font-bold text-black rounded-t transition-all bg-gray-200 -mb-10'
                                 : 'pt-4 pb-0 px-12 text-sm font-semibold text-gray-300 transition-all'
@@ -42,7 +42,12 @@
 <script lang="ts" setup>
 
 const route = useRoute()
-
 const { tabs } = usePages()
+
+const parentRoute = computed(() => route.path.split('/'))
+const currentTabs = computed(() => tabs(parentRoute.value[1])?.children)
+
+console.log('route', parentRoute.value)
+
 
 </script>

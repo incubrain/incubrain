@@ -14,6 +14,7 @@
 		"Vue.volar",
 		"Vue.vscode-typescript-vue-plugin",
 		"sdras.vue-vscode-snippets",
-		"hollowtree.vue-snippets"
+		"hollowtree.vue-snippets",
+		"Nuxt.mdc"
   ]
 }
