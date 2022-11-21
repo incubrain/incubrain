@@ -1,0 +1,40 @@
+---
+title: test
+---
+
+  ```javascript
+  function validBraces(braces){
+  //TODO input string
+  
+  const stack = []
+  
+  // If string length is odd return false
+  if (braces.length % 2 !== 0) return false
+  
+  const map = new Map([
+    ['(', ')'],
+    ['[', ']'],
+    ['{', '}'],
+  ])
+  
+  // Check each brace in string
+  for (let i = 0; i < braces.length; i += 1)
+  {
+    // Check that string contains pair of braces
+    if (map.has(braces[i]))
+    {
+      // Add to stack if true
+      stack.push(map.get(braces[i]))
+    }
+    // Return false if no pair found
+    else if (braces[i] !== stack.pop())
+    {
+      return false
+    }
+  }
+    
+  return stack.length === 0
+}
+  ```
+
+  ## Hello world
