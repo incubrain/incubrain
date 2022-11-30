@@ -20,7 +20,7 @@
   </body>
 </template>
 
-<script>
+<script setup>
 
 </script>
 
