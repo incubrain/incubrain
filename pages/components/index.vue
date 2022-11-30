@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h1 class="text-color:white">Welcome to the Components page</h1>
+    <h1 class="text-color:white">
+      Welcome to the Components page
+    </h1>
   </div>
 </template>
 

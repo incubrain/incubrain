@@ -54,10 +54,9 @@
       <template #1>
         <DataLocationData />
       </template>
-      <template #2>
-      </template>
+      <template #2 />
     </GridCol2Even>
-      <GridCol1>
+    <GridCol1>
       <template #default>
         <DataGraphWithControls />
       </template>
@@ -104,7 +103,7 @@
 <script setup lang="ts">
 
 definePageMeta({
-  layout: 'tabbed',
+  layout: 'tabbed'
 })
 
 </script>

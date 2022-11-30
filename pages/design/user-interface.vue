@@ -1,6 +1,6 @@
 <template>
-    <div>
-      <GridCol1>
+  <div>
+    <GridCol1>
       <template #default>
         <UserInterfaceHero />
       </template>
@@ -15,7 +15,7 @@
       <template #3>
         <UserInterfaceCardFollow />
       </template>
-    </GridCol3> 
+    </GridCol3>
     <GridCol1>
       <template #default>
         <UserInterfaceFullSection />
@@ -64,13 +64,13 @@
         <UserInterfacePolicyConsent />
       </template>
     </GridCol4>
-    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
 
 definePageMeta({
-  layout: 'tabbed',
+  layout: 'tabbed'
 })
 
 </script>

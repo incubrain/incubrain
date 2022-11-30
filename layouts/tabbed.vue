@@ -2,7 +2,7 @@
   <div>
     <NavMain />
     <AppTabs>
-      <AppLoader :duration="3000" :throttle="1000"  v-if="route.name !== 'home'" />
+      <AppLoader v-if="route.name !== 'home'" :duration="3000" :throttle="1000" />
       <slot />
     </AppTabs>
   </div>

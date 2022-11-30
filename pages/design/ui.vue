@@ -1,6 +1,6 @@
 <template>
-    <div>
-      <GridCol1>
+  <div>
+    <GridCol1>
       <template #default>
         <UiCard />
       </template>
@@ -28,10 +28,9 @@
       <template #2>
         <UiCardAlt3 />
       </template>
-      <template #3>
-      </template>
+      <template #3 />
     </GridCol3>
-      <GridCol3>
+    <GridCol3>
       <template #1>
         <UiCardBasic />
       </template>
@@ -81,13 +80,13 @@
         <UiCreateTask />
       </template>
     </GridCol2SevenFive>
-    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
 
 definePageMeta({
-  layout: 'tabbed',
+  layout: 'tabbed'
 })
 
 </script>

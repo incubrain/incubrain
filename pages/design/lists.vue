@@ -1,6 +1,6 @@
 <template>
-    <div> 
-      <GridCol1>
+  <div>
+    <GridCol1>
       <template #default>
         <ListJobs />
       </template>
@@ -28,18 +28,16 @@
       <template #1>
         <ListCard />
       </template>
-      <template #2>
-      </template>
-      <template #3>
-      </template>
+      <template #2 />
+      <template #3 />
     </GridCol3>
-    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
 
 definePageMeta({
-  layout: 'tabbed',
+  layout: 'tabbed'
 })
 
 </script>

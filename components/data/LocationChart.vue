@@ -22,7 +22,7 @@
               src="https://i.ibb.co/99rQkSt/mapbase-3-1.png"
               alt="map"
               class="w-full h-full"
-            />
+            >
             <div
               class="
                 absolute
@@ -50,7 +50,7 @@
                   justify-center
                 "
               >
-                <div class="w-2 h-2 bg-indigo-700 rounded-full"></div>
+                <div class="w-2 h-2 bg-indigo-700 rounded-full" />
               </div>
             </div>
             <div
@@ -68,7 +68,7 @@
                 justify-center
               "
             >
-              <div class="w-2 h-2 bg-indigo-700 rounded-full"></div>
+              <div class="w-2 h-2 bg-indigo-700 rounded-full" />
             </div>
             <div
               class="
@@ -86,7 +86,7 @@
                 justify-center
               "
             >
-              <div class="w-2 h-2 bg-indigo-700 rounded-full"></div>
+              <div class="w-2 h-2 bg-indigo-700 rounded-full" />
             </div>
           </div>
         </div>
@@ -103,19 +103,25 @@
           "
         >
           <div class="border-l-2 border-indigo-700 pl-4">
-            <h2 class="text-sm leading-none text-gray-600">USA</h2>
+            <h2 class="text-sm leading-none text-gray-600">
+              USA
+            </h2>
             <p class="text-sm font-semibold mt-1 leading-none text-green-700">
               +15%
             </p>
           </div>
           <div class="border-l-2 sm:mt-8 border-indigo-700 pl-4">
-            <h2 class="text-sm leading-none text-gray-600">Canada</h2>
+            <h2 class="text-sm leading-none text-gray-600">
+              Canada
+            </h2>
             <p class="text-sm mt-1 font-semibold leading-none text-red-600">
               -09%
             </p>
           </div>
           <div class="border-l-2 sm:mt-8 border-indigo-700 pl-4">
-            <h2 class="text-sm leading-none text-gray-600">Russia</h2>
+            <h2 class="text-sm leading-none text-gray-600">
+              Russia
+            </h2>
             <p class="text-sm font-semibold mt-1 leading-none text-green-700">
               +70%
             </p>

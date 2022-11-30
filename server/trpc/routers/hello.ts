@@ -14,12 +14,9 @@ export const helloRouter = router({
       console.log('isser', input)
       return `This is my input: ${input}`
     })
-  })
+})
 
-// export type definition of API  
-
-
-
+// export type definition of API
 
 //  async function getUser() {
 //   const user = 'Drew-Macgibbon'

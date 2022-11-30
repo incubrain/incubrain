@@ -11,10 +11,10 @@
           <svg viewBox="0 0 52 24" fill="currentColor" class="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block">
             <defs>
               <pattern id="2feffae2-9edf-414e-ab8c-f0e6396a0fc1" x="0" y="0" width=".135" height=".30">
-                <circle cx="1" cy="1" r=".7"></circle>
+                <circle cx="1" cy="1" r=".7" />
               </pattern>
             </defs>
-            <rect fill="url(#2feffae2-9edf-414e-ab8c-f0e6396a0fc1)" width="52" height="24"></rect>
+            <rect fill="url(#2feffae2-9edf-414e-ab8c-f0e6396a0fc1)" width="52" height="24" />
           </svg>
           <span class="relative">The</span>
         </span>
@@ -26,9 +26,9 @@
     </div>
     <div class="grid max-w-screen-lg gap-8 lg:grid-cols-2 sm:mx-auto">
       <div class="grid grid-cols-2 gap-5">
-        <img class="object-cover w-full h-56 col-span-2 rounded shadow-lg" src="https://images.pexels.com/photos/3182746/pexels-photo-3182746.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="" />
-        <img class="object-cover w-full h-48 rounded shadow-lg" src="https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="" />
-        <img class="object-cover w-full h-48 rounded shadow-lg" src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="" />
+        <img class="object-cover w-full h-56 col-span-2 rounded shadow-lg" src="https://images.pexels.com/photos/3182746/pexels-photo-3182746.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="">
+        <img class="object-cover w-full h-48 rounded shadow-lg" src="https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="">
+        <img class="object-cover w-full h-48 rounded shadow-lg" src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="">
       </div>
       <div class="flex flex-col justify-center">
         <div class="pb-4 mb-4 border-b">

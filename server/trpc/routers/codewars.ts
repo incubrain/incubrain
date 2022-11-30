@@ -14,20 +14,20 @@ const userReqShape = z.object({
     overall: z.object({
       rank: z.number().optional(),
       name: z.string().optional(),
-        color: z.string().optional(),
-        score: z.number().optional(),
-        }).optional(),
+      color: z.string().optional(),
+      score: z.number().optional()
+    }).optional(),
     languages: z.array(
       z.object({
         rank: z.number().optional(),
         name: z.string().optional(),
         color: z.string().optional(),
-        score: z.number().optional(),
-    }).optional()).optional()
+        score: z.number().optional()
+      }).optional()).optional()
   }).optional(),
   codeChallenges: z.object({
     totalAuthored: z.number().optional(),
-    totalCompleted: z.number().optional(),
+    totalCompleted: z.number().optional()
   }).optional()
 })
 
@@ -39,32 +39,32 @@ const challengeReqShape = z.object({
     name: z.string().optional(),
     slug: z.string().optional(),
     completedAt: z.string().optional(),
-    completedLanguage: z.array(z.string().optional()).optional(),
-  }).optional()).optional(),
+    completedLanguage: z.array(z.string().optional()).optional()
+  }).optional()).optional()
 })
 
 export type User = z.infer<typeof userReqShape>
 export type Challenge = z.infer<typeof challengeReqShape>
 
 export const codewarsRouter = router({
-user: publicProcedure
-  .input(userReqShape)
-  .query(async ({ input }) => {
-    console.log('isser', input)
-    const user = await $fetch<User>(`https://www.codewars.com/api/v1/users/${input.user}
+  user: publicProcedure
+    .input(userReqShape)
+    .query(async ({ input }) => {
+      console.log('isser', input)
+      const user = await $fetch<User>(`https://www.codewars.com/api/v1/users/${input.user}
 
     `)
-    return {
-      user,
-    }
-  }),
-challenges: publicProcedure
-  .input(z.object({ name: z.string(), page: z.number() }))
-  .query(async ({ input }) => {
-    console.log('isser', input)
-    const challenges = await $fetch<Challenge>(`https://www.codewars.com/api/v1/users/${input.name}/code-challenges/completed?page=${input.page}`)
-    return {
-      challenges,
-    }
-  }),
+      return {
+        user
+      }
+    }),
+  challenges: publicProcedure
+    .input(z.object({ name: z.string(), page: z.number() }))
+    .query(async ({ input }) => {
+      console.log('isser', input)
+      const challenges = await $fetch<Challenge>(`https://www.codewars.com/api/v1/users/${input.name}/code-challenges/completed?page=${input.page}`)
+      return {
+        challenges
+      }
+    })
 })

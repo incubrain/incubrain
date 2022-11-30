@@ -1,10 +1,10 @@
 <template>
   <div>
     <GridCol2EightFour>
-      <template #1 >
+      <template #1>
         <TechList />
       </template>
-      <template #2 >
+      <template #2>
         <TechStack />
       </template>
     </GridCol2EightFour>
@@ -15,7 +15,7 @@
 
 definePageMeta({
   layout: 'tabbed',
-  name: 'I Use',
+  name: 'I Use'
 })
 
 </script>

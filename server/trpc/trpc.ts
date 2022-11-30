@@ -16,7 +16,7 @@ const t = initTRPC.context<Context>().create({
         zodError:
           error.code === 'BAD_REQUEST' &&
           error.cause instanceof ZodError
-            ? error.cause!.flatten()
+            ? error.cause.flatten()
             : null
       }
     }
@@ -27,20 +27,20 @@ const t = initTRPC.context<Context>().create({
  * Create a router
  * @see https://trpc.io/docs/v10/router
  */
- export const router = t.router
+export const router = t.router
 
- /**
+/**
    * Create an unprotected procedure
    * @see https://trpc.io/docs/v10/procedures
    **/
- export const publicProcedure = t.procedure
- 
- /**
+export const publicProcedure = t.procedure
+
+/**
    * @see https://trpc.io/docs/v10/middlewares
    */
- export const middleware = t.middleware
- 
- /**
+export const middleware = t.middleware
+
+/**
    * @see https://trpc.io/docs/v10/merging-routers
    */
- export const mergeRouters = t.mergeRouters
+export const mergeRouters = t.mergeRouters

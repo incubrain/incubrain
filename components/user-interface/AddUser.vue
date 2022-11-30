@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center justify-center">
-    <div class="w-full flex justify-center py-12" id="button">
+    <div id="button" class="w-full flex justify-center py-12">
       <button
         class="
           focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600
@@ -27,9 +27,9 @@
 
     <div v-if="show" id="popup" class="z-50 fixed w-full flex justify-center inset-0">
       <div
-        @click="popuphandler(false)"
         class="w-full h-full bg-gray-900 z-0 absolute inset-0"
-      ></div>
+        @click="popuphandler(false)"
+      />
       <div class="mx-auto container">
         <div class="flex items-center justify-center h-full w-full">
           <div
@@ -59,15 +59,17 @@
                 justify-between
               "
             >
-              <p class="text-base font-semibold">Create New User</p>
+              <p class="text-base font-semibold">
+                Create New User
+              </p>
               <button
                 role="button"
                 aria-label="close label"
-                @click="popuphandler(false)"
                 class="
                   focus:ring-2 focus:ring-offset-2 focus:ring-gray-600
                   focus:outline-none
                 "
+                @click="popuphandler(false)"
               >
                 <svg
                   width="28"
@@ -82,14 +84,14 @@
                     stroke-width="1.75"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                  ></path>
+                  />
                   <path
                     d="M7 7L21 21"
                     stroke="#A1A1AA"
                     stroke-width="1.75"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                  ></path>
+                  />
                 </svg>
               </button>
             </div>
@@ -124,28 +126,28 @@
                       stroke-width="2.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                     <path
                       d="M25.5 6H10.5C8.01472 6 6 8.01472 6 10.5V25.5C6 27.9853 8.01472 30 10.5 30H25.5C27.9853 30 30 27.9853 30 25.5V10.5C30 8.01472 27.9853 6 25.5 6Z"
                       stroke="#94A3B8"
                       stroke-width="2.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                     <path
                       d="M6 22.4999L12 16.4999C12.6841 15.8417 13.4601 15.4951 14.25 15.4951C15.0399 15.4951 15.8159 15.8417 16.5 16.4999L24 23.9999"
                       stroke="#94A3B8"
                       stroke-width="2.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                     <path
                       d="M21 20.9999L22.5 19.4999C23.1841 18.8417 23.9601 18.4951 24.75 18.4951C25.5399 18.4951 26.3159 18.8417 27 19.4999L30 22.4999"
                       stroke="#94A3B8"
                       stroke-width="2.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                   </svg>
                 </div>
               </div>
@@ -168,7 +170,7 @@
                       rounded
                       border-gray-200
                     "
-                  />
+                  >
                   <input
                     placeholder="Age"
                     type="number"
@@ -188,7 +190,7 @@
                       rounded
                       border-gray-200
                     "
-                  />
+                  >
                 </div>
                 <div class="flex items-center space-x-9 mt-8">
                   <input
@@ -209,7 +211,7 @@
                       rounded
                       border-gray-200
                     "
-                  />
+                  >
                   <div
                     tabindex="0"
                     class="
@@ -228,7 +230,9 @@
                       aria-label="select an option"
                       class="text-sm text-gray-500 w-full focus:outline-none"
                     >
-                      <option selected="" disabled="" value="">Category</option>
+                      <option selected="" disabled="" value="">
+                        Category
+                      </option>
                       <option>Designer</option>
                       <option>Developer</option>
                     </select>
@@ -252,14 +256,13 @@
                       resize-none
                       focus:outline-none
                     "
-                  ></textarea>
+                  />
                 </div>
               </form>
               <div class="flex items-center justify-between mt-9">
                 <button
                   role="button"
                   aria-label="close button"
-                  @click="popuphandler(false)"
                   class="
                     focus:ring-2 focus:ring-offset-2
                     focus:bg-gray-600
@@ -273,6 +276,7 @@
                     rounded
                     text-sm text-white
                   "
+                  @click="popuphandler(false)"
                 >
                   Cancel
                 </button>
@@ -304,21 +308,21 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       show: false
-    };
+    }
   },
   methods: {
-    popuphandler(flag) {
+    popuphandler (flag) {
       if (flag) {
         this.show = true
       } else {
         this.show = false
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <style scoped>

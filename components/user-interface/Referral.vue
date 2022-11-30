@@ -1,6 +1,8 @@
 <template>
   <div>
     <div
+      id="modal1"
+      ref="modal1Referral"
       class="
         py-12
         dark:bg-black
@@ -16,8 +18,6 @@
         left-0
         hidden
       "
-      id="modal1"
-      ref="modal1Referral"
     >
       <div
         role="alert"
@@ -37,7 +37,7 @@
           "
         >
           <div class="flex flex-col justify-center items-center w-full">
-            <img src="https://i.ibb.co/d40yzK2/White-in-Jacket10.png" />
+            <img src="https://i.ibb.co/d40yzK2/White-in-Jacket10.png">
             <div class="mt-6 flex flex-col items-center justify-center">
               <p
                 class="
@@ -295,7 +295,7 @@
         </div>
       </div>
     </div>
-    <div class="w-full flex justify-center py-12" id="button">
+    <div id="button" class="w-full flex justify-center py-12">
       <button
         class="
           focus:outline-none
@@ -317,7 +317,7 @@
       >
         Referral
       </button>
-    </div>    
+    </div>
   </div>
 </template>
 
@@ -325,41 +325,41 @@
 export default {
   data: function () {
     return {
-      mobileMenu: true,
-    };
+      mobileMenu: true
+    }
   },
   methods: {
-    modalHandler(val) {
-      let modal = this.$refs.modal1Referral;
+    modalHandler (val) {
+      const modal = this.$refs.modal1Referral
       if (val) {
-        fadeIn(modal);
+        fadeIn(modal)
       } else {
-        fadeOut(modal);
+        fadeOut(modal)
       }
-      function fadeOut(el) {
+      function fadeOut (el) {
         el.style.opacity = 1;
-        (function fade() {
+        (function fade () {
           if ((el.style.opacity -= 0.1) < 0) {
-            el.style.display = "none";
+            el.style.display = 'none'
           } else {
-            requestAnimationFrame(fade);
+            requestAnimationFrame(fade)
           }
-        })();
+        })()
       }
-      function fadeIn(el, display) {
-        el.style.opacity = 0;
-        el.style.display = display || "block";
-        (function fade() {
-          let val = parseFloat(el.style.opacity);
+      function fadeIn (el, display) {
+        el.style.opacity = 0
+        el.style.display = display || 'block';
+        (function fade () {
+          let val = parseFloat(el.style.opacity)
           if (!((val += 0.2) > 1)) {
-            el.style.opacity = val;
-            requestAnimationFrame(fade);
+            el.style.opacity = val
+            requestAnimationFrame(fade)
           }
-        })();
+        })()
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -368,5 +368,3 @@ export default {
 @import url("https://cdn.tuk.dev/dist/css/tailwind-v2.2.11.min.css");
 
 </style>
-
-

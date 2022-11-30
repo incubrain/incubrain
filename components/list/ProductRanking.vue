@@ -38,7 +38,7 @@
               src="https://i.ibb.co/Thrk1bQ/hexa-1.png"
               alt="hexa-logo"
               class="w-full h-full"
-            />
+            >
           </div>
           <div class="md:ml-6 md:mt-0 mt-4 w-full">
             <div class="flex items-center justify-between">
@@ -55,9 +55,15 @@
               Digital marketing made easy. Track, analyse and execute!
             </p>
             <div class="mt-4 flex items-center">
-              <p class="text-xs leading-3 text-gray-600">#webapp</p>
-              <p class="text-xs leading-3 text-gray-600 ml-4">#marketing</p>
-              <p class="text-xs leading-3 text-gray-600 ml-4">#analytics</p>
+              <p class="text-xs leading-3 text-gray-600">
+                #webapp
+              </p>
+              <p class="text-xs leading-3 text-gray-600 ml-4">
+                #marketing
+              </p>
+              <p class="text-xs leading-3 text-gray-600 ml-4">
+                #analytics
+              </p>
             </div>
           </div>
         </div>
@@ -139,7 +145,7 @@
               src="https://i.ibb.co/X7JzMKf/ideaa-1.png"
               alt="ideaa-logo"
               class="w-full h-full"
-            />
+            >
           </div>
           <div class="md:ml-6 md:mt-0 mt-4 w-full">
             <div class="flex items-center justify-between">
@@ -151,9 +157,15 @@
               Digital marketing made easy. Track, analyse and execute!
             </p>
             <div class="mt-4 flex items-center">
-              <p class="text-xs leading-3 text-gray-600">#webapp</p>
-              <p class="text-xs leading-3 text-gray-600 ml-4">#marketing</p>
-              <p class="text-xs leading-3 text-gray-600 ml-4">#analytics</p>
+              <p class="text-xs leading-3 text-gray-600">
+                #webapp
+              </p>
+              <p class="text-xs leading-3 text-gray-600 ml-4">
+                #marketing
+              </p>
+              <p class="text-xs leading-3 text-gray-600 ml-4">
+                #analytics
+              </p>
             </div>
           </div>
         </div>
@@ -235,7 +247,7 @@
               src="https://i.ibb.co/W0fFSZp/treva-1.png"
               alt="treva-logo"
               class="w-full h-full"
-            />
+            >
           </div>
           <div class="md:ml-6 md:mt-0 mt-4 w-full">
             <div class="flex items-center justify-between">
@@ -247,9 +259,15 @@
               Digital marketing made easy. Track, analyse and execute!
             </p>
             <div class="mt-4 flex items-center">
-              <p class="text-xs leading-3 text-gray-600">#webapp</p>
-              <p class="text-xs leading-3 text-gray-600 ml-4">#marketing</p>
-              <p class="text-xs leading-3 text-gray-600 ml-4">#analytics</p>
+              <p class="text-xs leading-3 text-gray-600">
+                #webapp
+              </p>
+              <p class="text-xs leading-3 text-gray-600 ml-4">
+                #marketing
+              </p>
+              <p class="text-xs leading-3 text-gray-600 ml-4">
+                #analytics
+              </p>
             </div>
           </div>
         </div>
@@ -331,7 +349,7 @@
               src="https://i.ibb.co/wgQGG0z/nirastate-1.png"
               alt="nirastate-logo"
               class="w-full h-full"
-            />
+            >
           </div>
           <div class="md:ml-6 md:mt-0 mt-4 w-full">
             <div class="flex items-center justify-between">
@@ -343,9 +361,15 @@
               Digital marketing made easy. Track, analyse and execute!
             </p>
             <div class="mt-4 flex items-center">
-              <p class="text-xs leading-3 text-gray-600">#webapp</p>
-              <p class="text-xs leading-3 text-gray-600 ml-4">#marketing</p>
-              <p class="text-xs leading-3 text-gray-600 ml-4">#analytics</p>
+              <p class="text-xs leading-3 text-gray-600">
+                #webapp
+              </p>
+              <p class="text-xs leading-3 text-gray-600 ml-4">
+                #marketing
+              </p>
+              <p class="text-xs leading-3 text-gray-600 ml-4">
+                #analytics
+              </p>
             </div>
           </div>
         </div>

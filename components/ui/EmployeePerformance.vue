@@ -49,9 +49,15 @@
             aria-label="sort by"
             class="focus:outline-none bg-transparent ml-1"
           >
-            <option class="text-sm text-indigo-800">Latest</option>
-            <option class="text-sm text-indigo-800">Oldest</option>
-            <option class="text-sm text-indigo-800">Latest</option>
+            <option class="text-sm text-indigo-800">
+              Latest
+            </option>
+            <option class="text-sm text-indigo-800">
+              Oldest
+            </option>
+            <option class="text-sm text-indigo-800">
+              Latest
+            </option>
           </select>
         </div>
       </div>
@@ -60,7 +66,7 @@
           8 task completed out of 10
         </p>
         <div class="w-full bg-gray-200 rounded-full h-1 mt-4">
-          <div class="bg-green w-3/4 rounded-full h-1"></div>
+          <div class="bg-green w-3/4 rounded-full h-1" />
         </div>
       </div>
       <div
@@ -342,45 +348,47 @@
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                     <path
                       d="M4.5 6H13.6667"
                       stroke="#52525B"
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                     <path
                       d="M4.5 11H13.6667"
                       stroke="#52525B"
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                     <path
                       d="M1.16663 1V1.00667"
                       stroke="#52525B"
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                     <path
                       d="M1.16663 6V6.00667"
                       stroke="#52525B"
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                     <path
                       d="M1.16663 11C1.16663 11 1.16663 11.0041 1.16663 11.0067"
                       stroke="#52525B"
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                   </svg>
                 </div>
-                <p class="text-sm leading-none text-gray-600 ml-2">04/07</p>
+                <p class="text-sm leading-none text-gray-600 ml-2">
+                  04/07
+                </p>
               </div>
               <div class="flex items-center">
                 <div class="focus:outline-none">
@@ -399,31 +407,33 @@
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                     <path
                       d="M10 9.1665V9.17484"
                       stroke="#52525B"
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                     <path
                       d="M6.66669 9.1665V9.17484"
                       stroke="#52525B"
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                     <path
                       d="M13.3333 9.1665V9.17484"
                       stroke="#52525B"
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                   </svg>
                 </div>
-                <p class="text-sm leading-none text-gray-600 ml-2">23</p>
+                <p class="text-sm leading-none text-gray-600 ml-2">
+                  23
+                </p>
               </div>
               <div class="flex items-center">
                 <div class="focus:outline-none">
@@ -442,10 +452,12 @@
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                   </svg>
                 </div>
-                <p class="text-sm leading-none text-gray-600 ml-2">04/07</p>
+                <p class="text-sm leading-none text-gray-600 ml-2">
+                  04/07
+                </p>
               </div>
             </div>
           </div>
@@ -489,45 +501,47 @@
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                     <path
                       d="M4.5 6H13.6667"
                       stroke="#52525B"
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                     <path
                       d="M4.5 11H13.6667"
                       stroke="#52525B"
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                     <path
                       d="M1.16663 1V1.00667"
                       stroke="#52525B"
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                     <path
                       d="M1.16663 6V6.00667"
                       stroke="#52525B"
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                     <path
                       d="M1.16663 11C1.16663 11 1.16663 11.0041 1.16663 11.0067"
                       stroke="#52525B"
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                   </svg>
                 </div>
-                <p class="text-sm leading-none text-gray-600 ml-2">04/07</p>
+                <p class="text-sm leading-none text-gray-600 ml-2">
+                  04/07
+                </p>
               </div>
               <div class="flex items-center">
                 <div class="focus:outline-none">
@@ -546,31 +560,33 @@
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                     <path
                       d="M10 9.1665V9.17484"
                       stroke="#52525B"
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                     <path
                       d="M6.66669 9.1665V9.17484"
                       stroke="#52525B"
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                     <path
                       d="M13.3333 9.1665V9.17484"
                       stroke="#52525B"
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                   </svg>
                 </div>
-                <p class="text-sm leading-none text-gray-600 ml-2">23</p>
+                <p class="text-sm leading-none text-gray-600 ml-2">
+                  23
+                </p>
               </div>
               <div class="flex items-center">
                 <div class="focus:outline-none">
@@ -589,10 +605,12 @@
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                   </svg>
                 </div>
-                <p class="text-sm leading-none text-gray-600 ml-2">04/07</p>
+                <p class="text-sm leading-none text-gray-600 ml-2">
+                  04/07
+                </p>
               </div>
             </div>
           </div>
@@ -636,45 +654,47 @@
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                     <path
                       d="M4.5 6H13.6667"
                       stroke="#52525B"
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                     <path
                       d="M4.5 11H13.6667"
                       stroke="#52525B"
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                     <path
                       d="M1.16663 1V1.00667"
                       stroke="#52525B"
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                     <path
                       d="M1.16663 6V6.00667"
                       stroke="#52525B"
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                     <path
                       d="M1.16663 11C1.16663 11 1.16663 11.0041 1.16663 11.0067"
                       stroke="#52525B"
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                   </svg>
                 </div>
-                <p class="text-sm leading-none text-gray-600 ml-2">04/07</p>
+                <p class="text-sm leading-none text-gray-600 ml-2">
+                  04/07
+                </p>
               </div>
               <div class="flex items-center">
                 <div class="focus:outline-none">
@@ -693,31 +713,33 @@
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                     <path
                       d="M10 9.1665V9.17484"
                       stroke="#52525B"
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                     <path
                       d="M6.66669 9.1665V9.17484"
                       stroke="#52525B"
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                     <path
                       d="M13.3333 9.1665V9.17484"
                       stroke="#52525B"
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                   </svg>
                 </div>
-                <p class="text-sm leading-none text-gray-600 ml-2">23</p>
+                <p class="text-sm leading-none text-gray-600 ml-2">
+                  23
+                </p>
               </div>
               <div class="flex items-center">
                 <div class="focus:outline-none">
@@ -736,10 +758,12 @@
                       stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    ></path>
+                    />
                   </svg>
                 </div>
-                <p class="text-sm leading-none text-gray-600 ml-2">04/07</p>
+                <p class="text-sm leading-none text-gray-600 ml-2">
+                  04/07
+                </p>
               </div>
             </div>
           </div>

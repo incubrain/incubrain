@@ -1,16 +1,18 @@
 <template>
   <div class="bg-gray-800 pb-24">
-    <div class="mx-auto flex justify-center w-full pt-4" ref="signPage">
-        <div class="relative flex items-center flex-col" ref="signWrap" id="sign">
-          <div class=" bg-black rounded-full z-40 border-white border-2 w-[26px] h-[26px]"  ref="signBall" />
-          <div class="z-10 border-white h-[65px] w-[65px] bottom-[20px] absolute rotate-45 border-2" ref="signHanger"/>
-          <div class="z-50 border-[#F9CC0B] border-[6px] bg-[#f7f5e5] rounded-sm relative min-w-[120px] mt-[26px]" ref="signSign">
-            <div class="sign w-full h-full flex justify-center items-center px-4">
-              <h3 class="text-4xl leading-tight handwritten m-0">{{ capitalizeFirstLetter(parentRoute[1] || 'home') }}</h3>
-            </div>
+    <div ref="signPage" class="mx-auto flex justify-center w-full pt-4">
+      <div id="sign" ref="signWrap" class="relative flex items-center flex-col">
+        <div ref="signBall" class=" bg-black rounded-full z-40 border-white border-2 w-[26px] h-[26px]" />
+        <div ref="signHanger" class="z-10 border-white h-[65px] w-[65px] bottom-[20px] absolute rotate-45 border-2" />
+        <div ref="signSign" class="z-50 border-[#F9CC0B] border-[6px] bg-[#f7f5e5] rounded-sm relative min-w-[120px] mt-[26px]">
+          <div class="sign w-full h-full flex justify-center items-center px-4">
+            <h3 class="text-4xl leading-tight handwritten m-0">
+              {{ capitalizeFirstLetter(parentRoute[1] || 'home') }}
+            </h3>
           </div>
         </div>
-        <!-- <div>
+      </div>
+      <!-- <div>
         </div> -->
     </div>
   </div>
@@ -21,8 +23,8 @@
 const route = useRoute()
 const parentRoute = computed(() => route.path.split('/'))
 
-function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
+function capitalizeFirstLetter (string) {
+  return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
 const signSign = ref(null)
@@ -42,7 +44,7 @@ const signPage = ref(null)
 //   signHanger.value.style.height = `${signW / 2}px`
 //   signHanger.value.style.width = `${signW / 2}px`
 //   signHanger.value.style.bottom = `${signH / 1.5}px`
-  
+
 //   // set distance from ball to sign
 //   signSign.value.style['margin-top'] = `${(signW / 3) - (ball / 2)}px`
 
@@ -50,7 +52,7 @@ const signPage = ref(null)
 //   // signWrap.value.style.dispatch = 'flex'
 
 //   console.log('ssss', signSign.value, signSign.value.clientWidth)
-  
+
 // }
 // onMounted(() => {
 //   watchEffect(() => {
@@ -59,7 +61,6 @@ const signPage = ref(null)
 //     else null
 //   })
 // })
-
 
 </script>
 

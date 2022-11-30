@@ -1,6 +1,8 @@
 <template>
   <div>
     <div
+      id="modal"
+      ref="modalSignup"
       class="
         py-12
         dark:bg-black
@@ -16,8 +18,6 @@
         left-0
         hidden
       "
-      id="modal"
-      ref="modalSignup"
     >
       <div role="alert" class="container mx-auto flex justify-center px-4">
         <div
@@ -46,7 +46,7 @@
                 sm:rounded-tr-none sm:rounded-bl
               "
               src="https://i.ibb.co/fNG54kh/Rectangle-138.png"
-            />
+            >
             <div class="pt-8 pb-4 w-full">
               <div class="px-2.5 flex flex-col items-center w-full">
                 <p class="text-2xl font-bold leading-6 text-gray-100">
@@ -84,7 +84,7 @@
                       text-gray-100
                       placeholder-gray-100
                     "
-                  />
+                  >
                 </div>
                 <div
                   class="
@@ -113,7 +113,7 @@
                       text-gray-100
                       placeholder-gray-100
                     "
-                  />
+                  >
                 </div>
                 <button
                   class="
@@ -183,7 +183,7 @@
         </div>
       </div>
     </div>
-    <div class="w-full flex justify-center py-12" id="button">
+    <div id="button" class="w-full flex justify-center py-12">
       <button
         class="
           focus:outline-none
@@ -211,43 +211,43 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
-      show: false,
-    };
+      show: false
+    }
   },
   methods: {
-    modalHandler(val) {
-      let modal = this.$refs.modalSignup;
+    modalHandler (val) {
+      const modal = this.$refs.modalSignup
       if (val) {
-        this.fadeIn(modal);
+        this.fadeIn(modal)
       } else {
-        this.fadeOut(modal);
+        this.fadeOut(modal)
       }
     },
-    fadeOut(el) {
+    fadeOut (el) {
       el.style.opacity = 1;
-      (function fade() {
+      (function fade () {
         if ((el.style.opacity -= 0.1) < 0) {
-          el.style.display = "none";
+          el.style.display = 'none'
         } else {
-          requestAnimationFrame(fade);
+          requestAnimationFrame(fade)
         }
-      })();
+      })()
     },
-    fadeIn(el, display) {
-      el.style.opacity = 0;
-      el.style.display = display || "block";
-      (function fade() {
-        let val = parseFloat(el.style.opacity);
+    fadeIn (el, display) {
+      el.style.opacity = 0
+      el.style.display = display || 'block';
+      (function fade () {
+        let val = parseFloat(el.style.opacity)
         if (!((val += 0.2) > 1)) {
-          el.style.opacity = val;
-          requestAnimationFrame(fade);
+          el.style.opacity = val
+          requestAnimationFrame(fade)
         }
-      })();
-    },
-  },
-};
+      })()
+    }
+  }
+}
 </script>
 
 <style>

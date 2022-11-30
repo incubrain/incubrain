@@ -1,6 +1,8 @@
 <template>
   <div>
     <div
+      id="modal"
+      ref="modalQuestion"
       class="
         py-12
         dark:bg-black
@@ -16,8 +18,6 @@
         left-0
         hidden
       "
-      id="modal"
-      ref="modalQuestion"
     >
       <div
         role="alert"
@@ -74,7 +74,9 @@
                     w-full
                   "
                 >
-                  <option disabled selected>Select a subject</option>
+                  <option disabled selected>
+                    Select a subject
+                  </option>
                   <option>withdraw</option>
                   <option>Payment</option>
                 </select>
@@ -113,7 +115,7 @@
                   py-3
                   mt-2
                 "
-              ></textarea>
+              />
             </div>
             <div class="mt-4 flex flex-col">
               <label
@@ -147,7 +149,7 @@
                   py-3
                   mt-2
                 "
-              />
+              >
             </div>
             <button
               id="submit"
@@ -205,7 +207,7 @@
         </div>
       </div>
     </div>
-    <div class="w-full flex justify-center py-12" id="button">
+    <div id="button" class="w-full flex justify-center py-12">
       <button
         class="
           focus:outline-none
@@ -236,43 +238,42 @@
 export default {
   data: function () {
     return {
-      mobileMenu: false,
-    };
+      mobileMenu: false
+    }
   },
   methods: {
-    modalHandler(val) {      
-      let modal = this.$refs.modalQuestion;
+    modalHandler (val) {
+      const modal = this.$refs.modalQuestion
       if (val) {
-        fadeIn(modal);
+        fadeIn(modal)
       } else {
-        fadeOut(modal);
+        fadeOut(modal)
       }
-      function fadeOut(el) {
+      function fadeOut (el) {
         el.style.opacity = 1;
-        (function fade() {
+        (function fade () {
           if ((el.style.opacity -= 0.1) < 0) {
-            el.style.display = "none";
+            el.style.display = 'none'
           } else {
-            requestAnimationFrame(fade);
+            requestAnimationFrame(fade)
           }
-        })();
+        })()
       }
-      function fadeIn(el, display) {
-        el.style.opacity = 0;
-        el.style.display = display || "block";
-        (function fade() {
-          let val = parseFloat(el.style.opacity);
+      function fadeIn (el, display) {
+        el.style.opacity = 0
+        el.style.display = display || 'block';
+        (function fade () {
+          let val = parseFloat(el.style.opacity)
           if (!((val += 0.2) > 1)) {
-            el.style.opacity = val;
-            requestAnimationFrame(fade);
+            el.style.opacity = val
+            requestAnimationFrame(fade)
           }
-        })();
+        })()
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped></style>
-
