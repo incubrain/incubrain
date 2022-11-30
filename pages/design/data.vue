@@ -1,7 +1,6 @@
 <template>
-  <AppTabs>
-    <div>
-      <GridCol2NineThree>
+  <div>
+    <GridCol2NineThree>
       <template v-slot:1>
         <DataFullCard />
       </template>
@@ -99,10 +98,13 @@
         <DataSingleEarnings />
       </template>
     </GridCol2SevenFive>
-    </div>
-  </AppTabs>
+  </div>>
 </template>
 
 <script setup lang="ts">
+
+definePageMeta({
+  layout: 'tabbed',
+})
 
 </script>

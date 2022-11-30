@@ -1,0 +1,24 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:vue/vue3-essential",
+        "standard-with-typescript",
+        "eslint:recommended"
+    ],
+    "overrides": [
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "plugins": [
+        "vue"
+    ],
+    "rules": {
+        "vue/multi-word-component-names": 0,
+        "no-global-assign": ["error", {"exceptions": ["Object"]}]
+    }
+}

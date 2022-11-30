@@ -1,9 +1,91 @@
 <template>
-  <div class="bg-gray-800 pt-8 pb-24">
-    <div class="container px-6 mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between">
-        <div>
-            <h4 class="text-2xl font-bold leading-tight text-white">Design</h4>
+  <div class="bg-gray-800 pb-24">
+    <div class="mx-auto flex justify-center w-full pt-4" ref="signPage">
+        <div class="relative flex items-center flex-col" ref="signWrap" id="sign">
+          <div class=" bg-black rounded-full z-40 border-white border-2 w-[26px] h-[26px]"  ref="signBall" />
+          <div class="z-10 border-white h-[65px] w-[65px] bottom-[20px] absolute rotate-45 border-2" ref="signHanger"/>
+          <div class="z-50 border-[#F9CC0B] border-[6px] bg-[#f7f5e5] rounded-sm relative min-w-[120px] mt-[26px]" ref="signSign">
+            <div class="sign w-full h-full flex justify-center items-center px-4">
+              <h3 class="text-4xl leading-tight handwritten m-0">{{ capitalizeFirstLetter(parentRoute[1] || 'home') }}</h3>
+            </div>
+          </div>
         </div>
+        <!-- <div>
+        </div> -->
     </div>
   </div>
 </template>
+
+<script setup>
+
+const route = useRoute()
+const parentRoute = computed(() => route.path.split('/'))
+
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+const signSign = ref(null)
+const signBall = ref(null)
+const signHanger = ref(null)
+const signWrap = ref(null)
+const signPage = ref(null)
+
+// function signSize() {
+//   // ball size
+//   const ball = signBall.value.clientWidth
+//   // sign size, based on the text size
+//   const signW = signSign.value.clientWidth
+//   const signH = signSign.value.clientHeight
+
+//   // hanger size, based on the sign size
+//   signHanger.value.style.height = `${signW / 2}px`
+//   signHanger.value.style.width = `${signW / 2}px`
+//   signHanger.value.style.bottom = `${signH / 1.5}px`
+  
+//   // set distance from ball to sign
+//   signSign.value.style['margin-top'] = `${(signW / 3) - (ball / 2)}px`
+
+//   // make sign visible
+//   // signWrap.value.style.dispatch = 'flex'
+
+//   console.log('ssss', signSign.value, signSign.value.clientWidth)
+  
+// }
+// onMounted(() => {
+//   watchEffect(() => {
+//     if (signPage.value) signSize()
+//     if (parentRoute.value[1]) signSize()
+//     else null
+//   })
+// })
+
+
+</script>
+
+<style scoped>
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
+
+.sign {
+  font-family: 'Nanum Brush Script', cursive;
+  background-color: #e5e5f7;
+  opacity: 0.8;
+  background-image:  linear-gradient(135deg, #F9CC0B 25%, transparent 25%), linear-gradient(225deg, #F9CC0B 25%, transparent 25%), linear-gradient(45deg, #F9CC0B 25%, transparent 25%), linear-gradient(315deg, #F9CC0B 25%, #f7f5e5 25%);
+  background-position:  10px 0, 10px 0, 0 0, 0 0;
+  background-size: 10px 10px;
+  background-repeat: repeat;
+}
+
+#sign {
+  transform: rotate(-45deg);
+  z-index: 1000;
+  transform-origin: center 12px;
+  animation: spin 6s cubic-bezier(.8, 0, .2, 1)  infinite;
+}
+
+@keyframes spin {
+  50% { transform: rotate(45deg); }
+  100% { transform: rotate(-45deg); }
+}
+</style>

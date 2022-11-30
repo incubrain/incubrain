@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <GridCol1>
-        <div class="bg-indigo-50 relative w-full h- rounded-md shadow-sm">
+         <div class="bg-indigo-50 relative w-full h- rounded-md shadow-sm">
           <div role="article" class="focus:outline-none container mx-auto py-4 px-4">
             <h1 class="blog-heading text-4xl md:text-3xl text-center f-m-w text-gray-800 font-bold pt-0 mb-4">Work in progress</h1>
             <div class="xl:px-0 px-4 last:px-0">
@@ -22,7 +20,7 @@
                           <h4 class="f-f-r text-xs text-gray-600">Full-stack Developer</h4>
                         </div>
                       </div>
-                  <p class="focus:outline-none text-sm f-m-m text-gray-700 my-5">I will be listing what I consider important insights into certain technologies and why I've chosen to use them</p>
+                  <p class="focus:outline-none text-sm f-m-m text-gray-700 my-5">I will be listing what I consider important insights into certain topics</p>
                   <div class="absolute bottom-6 right-9 flex justify-end items-center gap-8 text-gray-500">
                       <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -35,24 +33,4 @@
             </div>
           </div>
         </div>
-    </GridCol1>
-  </div>
 </template>
-
-<script setup lang="ts">
-
-definePageMeta({
-  layout: 'tabbed',
-  name: 'Tech Thoughts'
-})
-
-</script>
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap');
-
-.blog-heading {
-  font-family: 'Rubik Distressed', cursive;
-}
-
-</style>

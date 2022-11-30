@@ -1,5 +1,4 @@
 <template>
-  <AppTabs>
     <div> 
       <GridCol3>
         <template v-slot:1>
@@ -17,9 +16,12 @@
         </template>
       </GridCol3>
     </div>
-  </AppTabs>
 </template>
 
 <script setup lang="ts">
+
+definePageMeta({
+  layout: 'tabbed',
+})
 
 </script>
