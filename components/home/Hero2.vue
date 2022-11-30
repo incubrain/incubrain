@@ -28,7 +28,7 @@
       <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_yeyxce62.json" mode="bounce" background="transparent"  speed="1"  loop  autoplay class="rotate-90 w-[220px] absolute right-[36px]"></lottie-player>
       <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_yeyxce62.json" mode="bounce" background="transparent"  speed="1" loop  autoplay class="-rotate-90 w-[220px] absolute left-[36px]"></lottie-player>
       <div class="img-bg px-10 pt-10 flex justify-center items-center rounded-2xl relative z-20 overflow-hidden">
-        <img src="drew-img.png" alt="Drew MacGibbon" class=" h-[340px] -mb-[35px]">
+        <img src="/drew-img.png" alt="Drew MacGibbon" class=" h-[340px] -mb-[35px]">
       </div>
         <!-- <img class="w-full" src="https://i.ibb.co/80XYkkr/image.png" alt="hero image" /> -->
     </div>
