@@ -30,7 +30,7 @@
 
 <script setup lang="ts">
 
-const projects = await $fetch('https://utcibapwakryadpqrgjl.supabase.co/rest/v1')
+const projects = await fetch('https://utcibapwakryadpqrgjl.supabase.co/rest/v1')
 
 definePageMeta({
   layout: 'tabbed'

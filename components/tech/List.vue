@@ -30,7 +30,7 @@
     </div>
 
     <div
-      v-for="tech in data"
+      v-for="tech in list"
       :key="tech.title"
       class="bg-white w-full shadow rounded-lg mb-8 p-6"
     >
@@ -108,8 +108,9 @@
 
 <script setup lang="ts">
 
-const { data } = await useAsyncData('my-tech', () => queryContent('tech').skip(0).limit(5).find())
+const list = ref()
 
+list.value = await queryContent('tech').skip(0).limit(5).find()
 
 </script>
 

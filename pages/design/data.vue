@@ -97,7 +97,7 @@
         <DataSingleEarnings />
       </template>
     </GridCol2SevenFive>
-  </div>>
+  </div>
 </template>
 
 <script setup lang="ts">
