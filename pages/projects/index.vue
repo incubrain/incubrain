@@ -30,9 +30,7 @@
 
 <script setup lang="ts">
 
-const { $client } = useNuxtApp()
-
-const { data } = await useAsyncData('page-data', () => queryContent('challenges', 'javascript').skip(0).limit(5).find())
+const projects = await $fetch('https://utcibapwakryadpqrgjl.supabase.co/rest/v1')
 
 definePageMeta({
   layout: 'tabbed'

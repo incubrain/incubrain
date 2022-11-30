@@ -1,12 +1,31 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
+// import dotenv from 'dotenv'
+// require('dotenv').config()
+
 export default defineNuxtConfig({
   css: ['/assets/main.css'],
   modules: [
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/supabase',
     '@nuxt/content'
   ],
   typescript: {
     shim: false
+  },
+  runtimeConfig: {
+    // The private keys which are only available within server-side
+    apiSecret: '123',
+    // Keys within public, will be also exposed to the client-side
+    public: {
+      apiBase: 'default_api_url',
+      otherUrl: 'default_other_url'
+    }
+  },
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: ['/']
+    }
   },
   build: {
     transpile: ['@headlessui/vue']
