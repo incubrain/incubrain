@@ -1,6 +1,6 @@
 <template>
   <GridCol2Even>
-    <template v-slot:1>
+    <template #1>
       <div class="xl:mt-8">
         <div class="text-2xl main-heading lg:text-4xl xl:text-6xl text-gray-800 tracking-1px">
           <h2 class="mt-2 lg:mt-2">HI, I'm</h2>
@@ -22,7 +22,7 @@
         </div>
     </div>
   </template>
-  <template v-slot:2>
+  <template #2>
     <div class="w-full mt-8 lg:mt-0 relative flex justify-center items-center">
       <!-- <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_wdhfjhyc.json"  background="transparent"  speed="0.5" class=" -mb-[60px]"  style="width: 360px;"  loop autoplay></lottie-player> -->
       <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_yeyxce62.json" mode="bounce" background="transparent"  speed="1"  loop  autoplay class="rotate-90 w-[220px] absolute right-[36px]"></lottie-player>

@@ -1,16 +1,16 @@
 <template>
     <div> 
       <GridCol3>
-        <template v-slot:1>
+        <template #1>
           <MobilePostStatusImage />
           <MobileImage />
           <MobileSupportChat />
         </template>
-        <template v-slot:2>
+        <template #2>
           <MobileOrders />
           <MobilePostImage />
         </template>
-        <template v-slot:3>
+        <template #3>
           <MobilePostWithComments />
           <MobileFullScreenVideo />
         </template>

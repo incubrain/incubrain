@@ -18,3 +18,5 @@
 		"Nuxt.mdc"
   ]
 }
+
+// Make sure to enable Volar as the default defaultFormatter in vsCode settings

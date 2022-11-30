@@ -1,99 +1,99 @@
 <template>
   <div>
     <GridCol2NineThree>
-      <template v-slot:1>
+      <template #1>
         <DataFullCard />
       </template>
-      <template v-slot:2>
+      <template #2>
         <DataSingleCongrats />
       </template>
     </GridCol2NineThree>
     <GridCol1>
-      <template v-slot:default>
+      <template #default>
         <DataFourCardAlt2 />
       </template>
     </GridCol1>
     <GridCol1>
-      <template v-slot:default>
+      <template #default>
         <DataFourCardAlt3 />
       </template>
     </GridCol1>
     <GridCol1>
-      <template v-slot:default>
+      <template #default>
         <DataFourCardBasic />
       </template>
     </GridCol1>
     <GridCol1>
-      <template v-slot:default>
+      <template #default>
         <DataFourCardAlt />
       </template>
     </GridCol1>
     <GridCol3>
-      <template v-slot:1>
+      <template #1>
         <DataTall />
       </template>
-      <template v-slot:2>
+      <template #2>
         <DataTallSolid />
       </template>
-      <template v-slot:3>
+      <template #3>
         <DataTall />
       </template>
     </GridCol3>
     <GridCol3>
-      <template v-slot:1>
+      <template #1>
         <DataCardData />
       </template>
-      <template v-slot:2>
+      <template #2>
         <DataCardPieData />
       </template>
-      <template v-slot:3>
+      <template #3>
         <DataLocationList />
       </template>
     </GridCol3>
     <GridCol2Even>
-      <template v-slot:1>
+      <template #1>
         <DataLocationData />
       </template>
-      <template v-slot:2>
+      <template #2>
       </template>
     </GridCol2Even>
       <GridCol1>
-      <template v-slot:default>
+      <template #default>
         <DataGraphWithControls />
       </template>
     </GridCol1>
     <GridCol2EightFour>
-      <template v-slot:1>
+      <template #1>
         <DataBarRevenue />
       </template>
-      <template v-slot:2>
+      <template #2>
         <DataBarCard />
       </template>
     </GridCol2EightFour>
     <GridCol3>
-      <template v-slot:1>
+      <template #1>
         <DataLineMany />
       </template>
-      <template v-slot:2>
+      <template #2>
         <DataBarComparrison />
       </template>
-      <template v-slot:3>
+      <template #3>
         <DataPie />
       </template>
     </GridCol3>
     <GridCol2EightFour>
-      <template v-slot:1>
+      <template #1>
         <DataLineUsers />
       </template>
-      <template v-slot:2>
+      <template #2>
         <DataLineWave />
       </template>
     </GridCol2EightFour>
     <GridCol2SevenFive>
-      <template v-slot:1>
+      <template #1>
         <DataLineSimple />
       </template>
-      <template v-slot:2>
+      <template #2>
         <DataTacho />
         <DataSingleEarnings />
       </template>

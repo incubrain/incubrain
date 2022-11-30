@@ -1,10 +1,10 @@
 <template>
   <div>
     <GridCol2EightFour>
-      <template v-slot:1 >
+      <template #1 >
         <TechList />
       </template>
-      <template v-slot:2 >
+      <template #2 >
         <TechStack />
       </template>
     </GridCol2EightFour>

@@ -5,14 +5,14 @@
       :key="challenge.title">
         <ContentRenderer :value="challenge!">
           <CodeChallenge>
-            <template v-slot:spec>
+            <template #spec>
               <div class="prose prose-md">
                 <h2 class="mt-0 mb-4"> {{ challenge.title}} </h2>
                 <p class="challenge-description" />
                 <img :src="challenge.image" class="w-[150px]"/>
               </div>
             </template>
-            <template v-slot:solution>
+            <template #solution>
               <ContentRendererMarkdown :value="challenge" class="code-challenge">
                 <p class="m-0">{{ challenge }}</p>
               </ContentRendererMarkdown>

@@ -5,20 +5,26 @@
         "es2021": true
     },
     "extends": [
-        "plugin:vue/vue3-essential",
+        "plugin:vue/vue3-recommended",
         "standard-with-typescript",
+        "@nuxtjs/eslint-config-typescript",
         "eslint:recommended"
     ],
     "overrides": [
     ],
+    "parser": "vue-eslint-parser",
     "parserOptions": {
-        "ecmaVersion": "latest"
+        "parser": "@typescript-eslint/parser",
+        "ecmaVersion": "latest",
+        "extraFileExtensions": [".vue"],
+        "project": ["./tsconfig.json"]
     },
     "plugins": [
         "vue"
     ],
     "rules": {
         "vue/multi-word-component-names": 0,
-        "no-global-assign": ["error", {"exceptions": ["Object"]}]
+        "no-global-assign": ["off", {"exceptions": ["Object"]}],
+        "no-undefined": ["off"]
     }
 }

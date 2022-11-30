@@ -6,7 +6,8 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "storybook": "storybook"
+    "storybook": "storybook",
+    "lint": "eslint . --ext .ts,.js,.vue"
   },
   "devDependencies": {
     "@nuxt/content": "^2.2.2",
@@ -26,6 +27,7 @@
     "@formkit/auto-animate": "^1.0.0-beta.3",
     "@headlessui/vue": "^1.7.4",
     "@heroicons/vue": "^2.0.13",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@trpc/client": "^10.0.0-rc.8",
     "@trpc/server": "^10.0.0-rc.8",
     "axios": "^1.1.3",
