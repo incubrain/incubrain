@@ -1,11 +1,11 @@
 <template>
   <div>
     <HomeHero2 />
-    <HomeHero />
+    <!-- <HomeHero />
     <HomeProjectSteps />
     <HomeProjectMain />
     <HomeProjects />
-    <HomeCTA />
+    <HomeCTA /> -->
     <!-- <HomeFeatures />
     <HomeComponents />
     <HomeCode />
