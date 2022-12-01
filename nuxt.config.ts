@@ -21,13 +21,13 @@ export default defineNuxtConfig({
       // Options
         url: process.env.SUPABASE_URL,
         key: process.env.SUPABASE_KEY
-      },
-      otherUrl: 'default_other_url'
+      }
     }
   },
   nitro: {
     prerender: {
-      crawlLinks: true
+      crawlLinks: true,
+      routes: ['/']
     }
   },
   build: {
