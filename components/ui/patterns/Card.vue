@@ -1,13 +1,8 @@
 <template>
-  <div :class="`bg-[${props.bgColor}] rounded-full shadow-md overflow-hidden min-w-full border-[10px] border-opacity-20 border-white ${props.bgPattern}`" />
+  <div class="w-[220px] h-[220px] rounded-full shadow-md overflow-hidden border-[10px] border-opacity-20 border-white"/>
 </template>
 
 <script setup>
-
-const props = defineProps({
-  bgColor: String,
-  bgPattern: String
-})
 
 </script>
 

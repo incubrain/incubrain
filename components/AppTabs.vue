@@ -23,7 +23,9 @@
             </svg>
           </div>
         </div>
-        <ul class="hidden md:flex flex-row h-full cursor-pointer mt-6 justify-center">
+        <ul
+
+          class="hidden md:flex flex-row h-full cursor-pointer mt-6 justify-center">
           <li
             v-for="tab in currentTabs"
             :key="tab.id"
@@ -38,7 +40,7 @@
         </ul>
       </div>
       <!-- Remove class [ h-64 ] when adding a card block -->
-      <div class="mx-auto mb-10 bg-gray-200 shadow rounded-b h-full relative z-100">
+      <div class="mx-auto mb-10 bg-gray-200 shadow rounded-b h-full relative z-100" id="tabBG">
         <div class="w-full h-full p-8">
           <!-- Place your content here -->
           <slot />

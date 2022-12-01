@@ -1,0 +1,25 @@
+## Showcasing CSS Patterns
+
+I took inspiration from the [magic pattern design](https://www.magicpattern.design/tools/css-backgrounds) website and used their patterns for this page.
+
+// add image
+
+For this page to function correctly I needed the use of [Font Awesome Icons](https://fontawesome.com/docs/web/use-with/vue/) and the [Vanilla Picker](https://www.npmjs.com/package/vanilla-picker)
+
+For the first few tasks I complete I'll rate my speed and **how I wasted time!!**
+
+#### So... how did I waste time?
+
+- I used a CSS grid with specified columns for 2 breakpoints after wasting too much time trying to figure out how to get and auto-flow/wrap grid working with tailwind.
+- Getting the color picker working
+- Not batching time with specific tasks, eg. design, functionality.
+
+### Changes
+
+I decided to complete this task without the ability to copy the HEX code to clipboard
+
+### What did I learn
+
+- How to make reactive variables from Vue trasition over to CSS variables
+
+### Time taken | est | actual 4.25 hours

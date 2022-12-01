@@ -22,7 +22,8 @@ const pages = ref([
       { id: 22, name: 'Lists', current: false, slug: '/lists' },
       { id: 23, name: 'Mobile', current: false, slug: '/mobile' },
       { id: 24, name: 'User Interface', current: false, slug: '/user-interface' },
-      { id: 25, name: 'UI', current: false, slug: '/ui' }
+      { id: 25, name: 'UI', current: false, slug: '/ui' },
+      { id: 26, name: 'Patterns', current: false, slug: '/patterns' }
     ]
   },
   {
