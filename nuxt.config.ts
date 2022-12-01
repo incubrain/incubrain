@@ -33,7 +33,7 @@ export default defineNuxtConfig({
   build: {
     transpile: ['@headlessui/vue']
   },
-  ssr: false,
+  ssr: true,
   content: {
     highlight: {
       // Theme used in all color schemes.
