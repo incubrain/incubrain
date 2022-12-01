@@ -2,7 +2,7 @@
   <GridCol2Even>
     <template #1>
       <div class="xl:mt-8">
-        <div class="text-4xl main-heading lg:text-5xl xl:text-7xl text-gray-800 tracking-1px">
+        <div class="flex flex-col justify-center lg:justify-left text-4xl main-heading lg:text-5xl xl:text-7xl text-gray-800 tracking-1px">
           <h2 class="mt-2 lg:mt-2">
             Presenting...
           </h2>
@@ -13,25 +13,27 @@
             Portfolio-ception
           </h2>
         </div>
-        <div class="p-6 my-8 bg-white shadow-lg rounded-lg flex flex-row items-stretch justify-items-stretch gap-6 relative overflow-hidden">
-          <h3 class="text-lg lg:text-1xl tracking-wide text-gray-700 w-3/4">
-            For the next 48 hours (clock hours) I will complete as much work as possible documenting the process on this
-            website and my Github.
-          </h3>
-          <a href="https://github.com/Drew-Macgibbon" class="w-1/4 absolute right-0 top-0 p-4 flex justify-center items-center h-full bg-[#d3d5d9]">
+        <div class="lg:p-6 my-8 flex flex-row items-center lg:items-stretch justify-center lg:justify-items-stretch gap-6 relative">
+          <div class="w-[90%] lg:w-3/4 items-stretch justify-items-stretch flex flex-col">
+            <h3 class="text-lg lg:text-2xl tracking-wide text-gray-700">
+              For the next 48 hours (clock hours) I will complete as much work as possible documenting the process on this
+              website and my Github.
+            </h3>
+            <p class="lg:max-w-[80%] text-sm mt-4">
+              Thanks Nicole for the name idea (meta-portfolio) and for putting up with my delays 😊
+            </p>
+          </div>
+          <a href="https://github.com/Drew-Macgibbon" class="w-[60px] h-[60px] lg:w-2/4 lg:h-auto aspect-auto right-0 top-0 p-4 flex justify-center items-center relative bg-[#ffffff] rounded-full shadow-lg">
             <lottie-player
               src="https://lottie.host/7ed66755-ef23-4d41-8f01-6ccf8e7e4572/CHYE6gVPVA.json"
               background="transparent"
               speed="1"
-              style="width: 46px; height: 46px;"
+              style="height: 80%;"
               loop
               autoplay
             />
           </a>
         </div>
-        <p class="max-w-[50%] mt-8 ml-6">
-          Thanks Nicole for the name idea (meta-portfolio) and for putting up with my delays 😊
-        </p>
       </div>
     </template>
     <template #2>
