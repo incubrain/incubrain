@@ -2,82 +2,82 @@
   <div>
     <GridCol1>
       <template #default>
-        <UiCard />
+        <UiBasicCard />
       </template>
     </GridCol1>
     <GridCol3>
       <template #1>
-        <UiTaskCharts />
+        <UiBasicTaskCharts />
       </template>
       <template #2>
-        <UiTicket />
+        <UiBasicTicket />
       </template>
       <template #3>
-        <UiCardAlt2 />
+        <UiBasicCardAlt2 />
       </template>
     </GridCol3>
     <GridCol1>
       <template #default>
-        <UiCalendar />
+        <UiBasicCalendar />
       </template>
     </GridCol1>
     <GridCol3>
       <template #1>
-        <UiCardFancy />
+        <UiBasicCardFancy />
       </template>
       <template #2>
-        <UiCardAlt3 />
+        <UiBasicCardAlt3 />
       </template>
       <template #3 />
     </GridCol3>
     <GridCol3>
       <template #1>
-        <UiCardBasic />
+        <UiBasicCardBasic />
       </template>
       <template #2>
-        <UiCard />
+        <UiBasicCard />
       </template>
       <template #3>
-        <UiCardAlt />
+        <UiBasicCardAlt />
       </template>
     </GridCol3>
     <GridCol3>
       <template #1>
-        <UiCardTall />
+        <UiBasicCardTall />
       </template>
       <template #2>
-        <UiCardSolid />
+        <UiBasicCardSolid />
       </template>
       <template #3>
-        <UiCardSimple />
+        <UiBasicCardSimple />
       </template>
     </GridCol3>
     <GridCol2FiveSeven>
       <template #1>
-        <UiCardAlt2 />
+        <UiBasicCardAlt2 />
       </template>
       <template #2>
-        <UiAuthor />
+        <UiBasicAuthor />
       </template>
     </GridCol2FiveSeven>
     <GridCol1>
       <template #default>
-        <UiFullSummary />
+        <UiBasicFullSummary />
       </template>
     </GridCol1>
     <GridCol1>
       <template #default>
-        <UiEmployeePerformance />
+        <UiBasicEmployeePerformance />
       </template>
     </GridCol1>
     <GridCol1>
       <template #default>
-        <UiFullCard />
+        <UiBasicFullCard />
       </template>
     </GridCol1>
     <GridCol2SevenFive>
       <template #1>
-        <UiCreateTask />
+        <UiBasicCreateTask />
       </template>
     </GridCol2SevenFive>
   </div>
