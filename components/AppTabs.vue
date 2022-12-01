@@ -38,7 +38,7 @@
         </ul>
       </div>
       <!-- Remove class [ h-64 ] when adding a card block -->
-      <div class="container mx-auto mb-10 bg-gray-200 shadow rounded-b h-full relative z-100">
+      <div class="mx-auto mb-10 bg-gray-200 shadow rounded-b h-full relative z-100">
         <div class="w-full h-full p-8">
           <!-- Place your content here -->
           <slot />
