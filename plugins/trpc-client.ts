@@ -2,7 +2,9 @@ import { createTRPCProxyClient, httpBatchLink, loggerLink } from '@trpc/client'
 import superjson from 'superjson'
 import type { AppRouter } from '~~/server/trpc/routers'
 
+
 export default defineNuxtPlugin(() => {
+  const config = useRuntimeConfig()
   const client = createTRPCProxyClient<AppRouter>({
     transformer: superjson,
     links: [
@@ -13,7 +15,7 @@ export default defineNuxtPlugin(() => {
           (opts.direction === 'down' && opts.result instanceof Error)
       }),
       httpBatchLink({
-        url: 'http://localhost:3000/api/trpc'
+        url: `${config.public.api_url as string}/api/trpc`
       })
     ]
   })
