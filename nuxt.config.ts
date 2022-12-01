@@ -28,6 +28,9 @@ export default defineNuxtConfig({
   build: {
     transpile: ['@headlessui/vue']
   },
+  nitro: {
+    preset: 'digital-ocean'
+  },
   ssr: true,
   content: {
     highlight: {
