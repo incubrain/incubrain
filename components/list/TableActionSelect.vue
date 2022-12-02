@@ -1,6 +1,6 @@
 <template>
   <div class="w-full">
-    <div class="mx-auto container bg-white dark:bg-gray-800 dark:bg-gray-800 shadow rounded">
+    <div class=" bg-white dark:bg-gray-800 dark:bg-gray-800 shadow rounded">
       <div class="flex flex-col lg:flex-row p-4 lg:p-8 justify-between items-start lg:items-stretch w-full">
         <div class="w-full lg:w-1/3 flex flex-col lg:flex-row items-start lg:items-center">
           <div class="flex items-center">

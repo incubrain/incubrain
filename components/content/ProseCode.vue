@@ -33,6 +33,7 @@ export default defineComponent({
 
 pre code .line {
   display: block;
+  flex-wrap: wrap;
   min-height: 1rem;
 }
 

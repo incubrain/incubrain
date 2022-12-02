@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full flex flex-col items-center">
-    <div class="w-full bg-white p-6 mb-8 shadow rounded-md">
+  <div class="w-full flex flex-col items-center gap-2 lg:gap-8">
+    <div class="w-full bg-white p-6 shadow rounded-md">
       <div class="md:flex items-center justify-between">
         <h1
           tabindex="0"

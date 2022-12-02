@@ -9,7 +9,7 @@ Although I'd like to think this is a showcase of my best work, this fellow has b
  Not to mention working from my laptop on my brother's couch instead of at my workstation.
 
 
-Excuses aside :sweat_smile: this is a meta-portfolio of sorts. You're able to track my work efforts from start to finish as I attempt to complete as much of the to-do list as in 48 hours.
+Excuses aside :sweat_smile: this is a meta-portfolio of sorts. You're able to track my work efforts from start to finish as I attempt to complete the to-do list in 48 hours.
 
 I'll document the process of completing each task and estimate/show the time taken, this should give you an idea of my abilities.
 
@@ -33,6 +33,8 @@ Below is a list of what I think I should be able to complete. Obviously, web-dev
 
 #### The pessimist in me
 - [x] Update readme with most planned action
+- [x] Mobile Responsive - make sure the website looks good on mobile | est. 2 hour(s) | taken 5.5hr
+- [x] CSS Patterns - showcase some CSS patterns, allow the user to change colour and copy code | est. 2 hour(s) | taken 4.5hr
 - [ ] Clean up current work | est. 1.5 hour(s | taken
 - [ ] Finish Homepage
   - [ ] Tidy up hero | est. .5 hour(s) | taken
@@ -40,11 +42,9 @@ Below is a list of what I think I should be able to complete. Obviously, web-dev
   - [ ] Portfolio Section | est. 1 hour(s) | taken
   - [ ] Contact Section | est. 1 hour(s) | taken
   - [ ] Socials Section | est. 1 hour(s) | taken
-- [ ] Mobile Responsive - make sure the website looks good on mobile | est. 2 hour(s) | taken
 - [ ] Showcase Code Examples - Showcase my Codewars work | est. 2 hour(s) | taken
 - [ ] Portfolio Showcase - create portfolio showcase card/page & add 3 showcases | est. 2.5 hour(s) | taken
 - [ ] CSS Animations - showcase some animations, allow user to change animation speed | est. 2 hour(s) | taken
-- [ ] CSS Patterns - showcase some CSS patterns, allow the user to change colour and copy code | est. 2 hour(s) | taken
 - [ ] Lottie Animations - Example of Lottie use | est. 2 hour(s) | taken
 - [ ] Dynamic Routes - Example of dynamic routes | est. 1 hour(s) | taken
 - [ ] [Storybook](https://storybook.js.org/docs/vue/writing-stories/introduction) - Allows teams to design/develop components in isolation  | est. 1 hour(s) | taken
@@ -72,6 +72,10 @@ Below is a list of what I think I should be able to complete. Obviously, web-dev
 - [ ] refactor all the code
 
 75 Hours of estimated work
+
+Extra work
+- flowbite | used while working on mobile responsive ***FIRST TIME USING***
+- fontawesome icons | added while working on the patterns page ***FIRST TIME USING***
 
 Completed work estimation... 
 

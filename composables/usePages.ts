@@ -22,7 +22,7 @@ const pages = ref([
       { id: 22, name: 'Lists', current: false, slug: '/lists' },
       { id: 23, name: 'Mobile', current: false, slug: '/mobile' },
       { id: 24, name: 'User Interface', current: false, slug: '/user-interface' },
-      { id: 25, name: 'UI', current: false, slug: '/ui' },
+      { id: 25, name: 'Basic', current: false, slug: '/basic' },
       { id: 26, name: 'Patterns', current: false, slug: '/patterns' }
     ]
   },
@@ -43,7 +43,7 @@ const pages = ref([
     slug: '/tech',
     children: [
       { id: 40, name: 'Tech Thoughts', current: false, slug: '/' },
-      { id: 41, name: 'I Use', current: false, slug: '/i-use' }
+      { id: 41, name: 'My Stack', current: false, slug: '/my-stack' }
     // { id: 40, name: 'projects', current: false, slug: '/4projects' },
     ]
   }
@@ -77,7 +77,8 @@ export default function usePages () {
 
   return {
     currentPage: computed(() => currentPage.value),
+    setPage: (newPage: string) => { currentPage.value = newPage },
     pages: computed(() => pages.value),
-    tabs: (currentPage: String) => pages.value.find(p => p.name.toLocaleLowerCase() === currentPage)
+    tabs: (currentPage: string) => pages.value.find(p => p.name.toLocaleLowerCase() === currentPage)
   }
 }

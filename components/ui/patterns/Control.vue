@@ -1,20 +1,20 @@
 <template>
   <div class="w-full h-full relative">
-    <div class=" sticky w-full rounded-md shadow-lg p-8 flex flex-row flex-wrap top-20 z-50 justify-between bg-white">
-      <div class="flex flex-row gap-1 w-1/2 lg:w-1/4">
+    <div class=" sticky w-full rounded-md shadow-lg p-8 flex flex-row flex-wrap top-6 lg:top-12 z-10 justify-between bg-white gap-8 lg:gap-0">
+      <div class="flex flex-row gap-2 lg:w-1/4">
+        <p> Background </p>
         <span><font-awesome-icon icon="fa-solid fa-palette"
           class=" w-6 h-6 cursor-pointer" /> </span>
-        <p> Background </p>
-        <div
+          <div
           class="min-w-6 w-6 h-6 rounded-full border-solid border-black border-2"
           :style="{ 'background-color': color.bg }"
           @click="openPicker('bg', picker.bg)"
-        />
-        <AppButton
+          />
+          <AppButton
           v-if="picker.bg"
           class="h-6 flex items-center p-0 mx-4"
           @click="openPicker('bg', picker.bg)"
-        >
+          >
           close
         </AppButton>
         <hex-color-picker
@@ -23,7 +23,7 @@
           @color-changed="handleColorChanged('bg', $event)"
         />
       </div>
-      <div class="flex flex-row gap-2 w-1/2 lg:w-1/4 justify-center">
+      <div class="flex flex-row gap-2 w-1/2 lg:w-1/4 justify-end lg:justify-center">
         <span>
           <font-awesome-icon icon="fa-solid fa-brush"
             class="cursor-pointer w-6 h-6" />
@@ -32,41 +32,45 @@
           class="w-6 h-6 rounded-full border-1-black"
           :style="{ 'background-color': color.pat }"
           @click="openPicker('pat', picker.pat)"
-        />
+          />
         <AppButton
-          v-if="picker.pat"
-          class="h-6 flex items-center p-0 mx-4"
-          @click="openPicker('pat', picker.pat)"
+        v-if="picker.pat"
+        class="h-6 flex items-center p-0 mx-4"
+        @click="openPicker('pat', picker.pat)"
         >
-          close
-        </AppButton>
-        <hex-color-picker
-          v-if="picker.pat"
-          :color="color.pat"
-          @color-changed="handleColorChanged('pat', $event)"
-        />
-        <p> Pattern Color </p>
+        close
+      </AppButton>
+      <hex-color-picker
+      v-if="picker.pat"
+      :color="color.pat"
+      @color-changed="handleColorChanged('pat', $event)"
+      />
+      <p> Pattern </p>
       </div>
-      <div class="flex flex-row gap-2 w-1/2 lg:w-1/4 justify-center">
+      <div class="flex flex-row gap-2 lg:w-1/4 justify-start lg:justify-center">
+        <p> Opacity </p>
         <span>
           <font-awesome-icon icon="fa-solid fa-droplet"  class="cursor-pointer w-6 h-6"/>
         </span>
-        <p> Opacity </p>
         <AppSlider
           :min="0"
           :value="0.5"
           :max="1"
         />
       </div>
-      <span class="w-1/2 lg:w-1/4 justify-end flex">
+      <span class="w-1/2 lg:w-1/4 gap-2 justify-end flex">
         <font-awesome-icon icon="fa-solid fa-eye" class="cursor-pointer w-6 h-6 left-0 flex" />
+        <p>Off/On</p>
       </span>
     </div>
     <div class="grid gap-12 my-20 grid-cols-2 lg:grid-cols-4 grid-rows-6 lg:grid-rows-3">
-      <div class="test-color-change w-[220px] h-[220px] rounded-full shadow-md overflow-hidden border-[10px] border-opacity-20 border-white" />
+      <div class="flex justify-center items-center">
+        <div class="test-color-change w-[220px] h-[220px] rounded-full shadow-md overflow-hidden border-[10px] border-opacity-20 border-white" />
+      </div>
       <div
         v-for="pattern in patterns"
         :key="pattern.id"
+        class="flex justify-center items-center"
       >
         <UiPatternsCard
           :style="pattern.code"

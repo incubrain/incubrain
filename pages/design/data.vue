@@ -103,7 +103,8 @@
 <script setup lang="ts">
 
 definePageMeta({
-  layout: 'tabbed'
+  layout: 'tabbed',
+  name: 'data'
 })
 
 </script>

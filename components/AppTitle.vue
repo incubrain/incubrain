@@ -2,9 +2,9 @@
   <div class="bg-gray-800 pb-24">
     <div ref="signPage" class="mx-auto flex justify-center w-full pt-4">
       <div id="sign" ref="signWrap" class="relative flex items-center flex-col">
-        <div ref="signBall" class=" bg-black rounded-full z-40 border-white border-2 w-[26px] h-[26px]" />
-        <div ref="signHanger" class="z-10 border-white h-[65px] w-[65px] bottom-[20px] absolute rotate-45 border-2" />
-        <div ref="signSign" class="z-50 border-[#F9CC0B] border-[6px] bg-[#f7f5e5] rounded-sm relative min-w-[120px] mt-[26px]">
+        <div ref="signBall" class=" bg-black rounded-full relative border-white border-2 w-[26px] h-[26px] z-10" />
+        <div ref="signHanger" class=" border-white h-[65px] w-[65px] bottom-[20px] absolute rotate-45 border-2" />
+        <div ref="signSign" class="border-[#F9CC0B] border-[6px] bg-[#f7f5e5] rounded-sm relative min-w-[120px] mt-[26px] z-10">
           <div class="sign w-full h-full flex justify-center items-center px-4">
             <h3 class="text-4xl leading-tight handwritten m-0">
               {{ capitalizeFirstLetter(parentRoute[1] || 'home') }}
@@ -12,8 +12,6 @@
           </div>
         </div>
       </div>
-      <!-- <div>
-        </div> -->
     </div>
   </div>
 </template>
@@ -80,7 +78,7 @@ const signPage = ref(null)
 
 #sign {
   transform: rotate(-45deg);
-  z-index: 1000;
+  z-index: 10;
   transform-origin: center 12px;
   animation: spin 6s cubic-bezier(.8, 0, .2, 1)  infinite;
 }

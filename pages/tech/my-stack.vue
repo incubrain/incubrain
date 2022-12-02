@@ -15,7 +15,7 @@
 
 definePageMeta({
   layout: 'tabbed',
-  name: 'I Use'
+  name: 'My Stack'
 })
 
 </script>

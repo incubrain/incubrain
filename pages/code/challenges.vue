@@ -4,19 +4,18 @@
       v-for="challenge in data"
       :key="challenge.title"
     >
-      <ContentRenderer :value="challenge!">
-        <CodeChallenge>
-          <template #spec>
+    <ContentRenderer :value="challenge!">
+      <CodeChallenge>
+        <template #spec>
             <div class="prose prose-md">
               <h2 class="mt-0 mb-4">
                 {{ challenge.title }}
               </h2>
-              <p class="challenge-description" />
               <img :src="challenge.image" class="w-[150px]">
             </div>
           </template>
           <template #solution>
-            <ContentRendererMarkdown :value="challenge" class="code-challenge">
+            <ContentRendererMarkdown :value="challenge">
               <p class="m-0">
                 {{ challenge }}
               </p>
@@ -30,18 +29,7 @@
 
 <script setup lang="ts">
 
-const { $client } = useNuxtApp()
-
-const test: any = ref({})
-
-async function getData () {
-  const { data: wars, pending, error } = useAsyncData(() => $client.codewars.challenges.query({ name: 'Drew-Macgibbon', page: 0 }))
-  // const { data: wars, pending, error } = useAsyncData(() => $client.codewars.user.query({ name: 'Drew-Macgibbon', page: 0 }))
-  test.value = wars
-  console.log('hesh', test)
-}
-
-const { data } = await useAsyncData('page-data', () => queryContent('challenges', 'javascript').skip(0).limit(5).find())
+const { data } = await useAsyncData('test-data', () => queryContent('challenges', 'javascript').skip(0).limit(5).find())
 
 definePageMeta({
   layout: 'tabbed',

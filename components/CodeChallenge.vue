@@ -4,7 +4,7 @@
       <div class="w-full border-b border-gray-400 dark:border-gray-600 p-8 rounded-t">
         <slot name="spec" />
       </div>
-      <div class="w-full">
+      <div class="w-full p-8">
         <slot name="solution" />
       </div>
     </div>

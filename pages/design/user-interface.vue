@@ -70,7 +70,8 @@
 <script setup lang="ts">
 
 definePageMeta({
-  layout: 'tabbed'
+  layout: 'tabbed',
+  name: 'User Interface'
 })
 
 </script>

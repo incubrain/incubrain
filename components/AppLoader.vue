@@ -1,6 +1,6 @@
 <template>
   <div
-    class="rounded-md mb-8 px-4 py-8 bg-white nuxt-loading-indicator h-100 w-full z-50 flex flex-col justify-center items-center"
+    class="rounded-md mb-2 lg:mb-8 px-4 py-8 bg-white nuxt-loading-indicator h-100 w-full z-50 flex flex-col justify-center items-center"
   >
     <!-- <div
       :style="{
