@@ -3,6 +3,16 @@
 // require('dotenv').config()
 
 export default defineNuxtConfig({
+  app: {
+    head: {
+      link: [
+        { rel: 'stylesheet', href: 'https://unpkg.com/flowbite@latest/dist/flowbite.min.css' }
+      ],
+      script: [
+        { src: 'https://unpkg.com/flowbite@latest/dist/flowbite.js' }
+      ]
+    }
+  },
   css: ['/assets/main.css'],
   modules: [
     '@nuxtjs/tailwindcss',
