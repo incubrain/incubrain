@@ -4,7 +4,7 @@
 
 Although I'd like to think this is a showcase of my best work, this fellow has been pestering me during the day and I'm still shaking off some pretty bad jetlag.
 
-![Georgie](https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/georgie-the-menace.jpg?raw=true)
+![Georgie](https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/georgie-the-menace.jpg?raw=true  | width=200)
 
  Not to mention working from my laptop on my brother's couch instead of at my workstation.
 
@@ -18,6 +18,13 @@ I'll document the process of completing each task and estimate/show the time tak
 **START TIME: 1:28 AM, 12/02/2022**
 
 ***Full disclosure, the basic setup of this portfolio was completed before the 48 hours began***
+
+After starting strong things have grinded to slow pace as I experienced some laptop issues.
+
+![Laptop Problems](https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/laptop-problems.jpg?raw=true  | width=200)
+
+Thankfully, afther some surgery we're moving foraward again. Unfortunately I lost almost a day of working time!
+Because of this I've decided to slightly alter the premise of this portfolio. ***Instead of 48 clock hours, it will be 48 work hours.***
 
 ## Stack
 
