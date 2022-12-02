@@ -3,7 +3,7 @@
   <!-- Navigation starts -->
   <nav class="w-full mx-auto bg-gray-800 shadow relative z-[1000] m-0">
     <div class="container px-6 h-16 flex items-center justify-between mx-auto">
-      <div class="flex items-center lg:w-[40px] w-[28px] h-full bg-red">
+      <div class="flex items-center w-[68.72px] h-full bg-red">
       <!-- <div class="rounded-full relative p-3 flex justify-end text-white">
         <input type="text" class="bg-transparent focus:outline-none text-xs w-0 transition duration-150 ease-in-out absolute left-0 ml-10" placeholder="Type something..." />
         <svg @click="searchHandler($event)" xmlns="http://www.w3.org/2000/svg" class="cursor-pointer icon icon-tabler icon-tabler-search" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -12,7 +12,6 @@
             <line x1="21" y1="21" x2="15" y2="15"></line>
         </svg>
         </div> -->
-        <p>visible: {{ mobi.visible }}</p>
       </div>
       <ul class="flex items-center justify-center h-full">
         <li
@@ -46,7 +45,7 @@
         </div>
       </div>
       <div
-        class="lg:hidden flex items-center"
+        class="lg:hidden flex items-center flex-end"
       >
         <NavMobi />
       </div>
@@ -58,24 +57,6 @@
 
 const { pages, setPage } = usePages()
 const route = useRoute()
-
-const mobi = ref({
-  visible: false,
-  loading: false
-})
-
-const toggleMenu = (isOpen: boolean) => {
-  if (!mobi.value.loading) {
-    mobi.value.loading = true
-    console.log('mobiRuns', isOpen, mobi.value.visible)
-    if (isOpen) {
-      mobi.value.visible = false
-    } else {
-      mobi.value.visible = true
-    }
-    mobi.value.loading = false
-  }
-}
 
 // function searchHandler (event: Event): void {
 //   if (event.currentTarget instanceof Element) {
