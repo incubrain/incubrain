@@ -7,7 +7,6 @@
      dark:focus:ring-blue-800"
       type="button"
       data-drawer-target="drawer-navigation"
-      data-drawer-show="drawer-navigation"
       data-drawer-hide="drawer-navigation"
       aria-controls="drawer-navigation">
       Menu
