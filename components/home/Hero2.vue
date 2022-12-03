@@ -16,7 +16,7 @@
         <div class="lg:p-6 my-8 flex flex-row items-center lg:items-stretch justify-center lg:justify-items-stretch gap-6 relative">
           <div class="w-[90%] lg:w-3/4 items-stretch justify-items-stretch flex flex-col">
             <h3 class="text-lg lg:text-2xl tracking-wide text-gray-700">
-              For the next 48 hours (clock hours) I will complete as much work as possible documenting the process on this
+              For the next 48 hours (working hours) I will complete as much work as possible documenting the process on this
               website and my Github.
             </h3>
             <p class="lg:max-w-[80%] text-sm mt-4">
