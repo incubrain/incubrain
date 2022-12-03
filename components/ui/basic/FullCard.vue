@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full bg-gray-200 dark:bg-gray-900 py-10">
-    <div class="container mx-auto px-6 flex items-start justify-center">
+  <div class="w-full bg-gray-200 dark:bg-gray-900 p-4 lg:p-8">
+    <div class="container mx-auto flex items-start justify-center">
       <div class="w-full">
         <!-- Card is full width. Use in 12 col grid for best view. -->
         <!-- Card code block start -->

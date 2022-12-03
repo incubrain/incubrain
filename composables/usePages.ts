@@ -30,10 +30,10 @@ const pages = ref([
     children: [
       { id: 20, name: 'Design  Thoughts', current: false, slug: '/' },
       { id: 21, name: 'Data', current: false, slug: '/data' },
-      { id: 22, name: 'Lists', current: false, slug: '/lists' },
+      // { id: 22, name: 'Lists', current: false, slug: '/lists' },
       { id: 23, name: 'Mobile', current: false, slug: '/mobile' },
       { id: 24, name: 'User Interface', current: false, slug: '/user-interface' },
-      { id: 25, name: 'Basic', current: false, slug: '/basic' },
+      // { id: 25, name: 'Basic', current: false, slug: '/basic' },
       { id: 26, name: 'Patterns', current: false, slug: '/patterns' }
     ]
   },

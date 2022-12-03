@@ -1,6 +1,5 @@
 <template>
-  <div class="flex justify-center">
-    <div class="max-w-sm shadow">
+    <div class="w-full shadow">
       <div class="bg-indigo-500 bg-opacity-10 rounded-tl rounded-tr px-4 sm:px-20 pt-2">
         <img src="https://i.ibb.co/7yDQCDt/Illustration.png">
       </div>
@@ -107,7 +106,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <style scoped>

@@ -1,15 +1,11 @@
 <template>
   <div class="flex flex-col lg:flex-row gap-2 lg:gap-8">
-    <div class="w-full lg:w-2/3">
+    <div class="w-full h-full flex flex-col lg:w-2/3 gap-2 lg:gap-8">
       <!-- Remove class [ border-gray-300  dark:border-gray-700 border-dashed border-2 ] to remove dotted border -->
-      <div class="rounded">
-        <slot name="1" />
-      </div>
+      <slot name="1" />
     </div>
-    <div class="w-full lg:w-1/3">
-      <div class="rounded h-full">
-        <slot name="2" />
-      </div>
+    <div class="w-full h-full flex flex-col gap-2 lg:w-1/3 lg:gap-8">
+      <slot name="2" />
     </div>
   </div>
 </template>

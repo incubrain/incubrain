@@ -1,6 +1,6 @@
 <template>
-  <div class="flex items-center justify-center w-full h-full">
-    <div class="max-w-sm bg-white dark:bg-gray-800 rounded py-6">
+  <div class="flex items-center justify-center w-full">
+    <div class="bg-white dark:bg-gray-800 rounded py-6">
       <p class="text-xl px-8 text-gray-800 dark:text-gray-100 font-semibold leading-5">
         Support Chat
       </p>

@@ -1,7 +1,6 @@
 <template>
-  <div class="w-full flex justify-center">
-    <div class="py-4 sm:py-6 md:py-8 bg-white shadow rounded-lg">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-6 xl:px-10 gap-y-8 gap-x-12 2xl:gap-x-28">
+    <div class="w-full flex justify-center py-4 sm:py-6 md:py-8 bg-white shadow rounded-lg">
+      <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-6 xl:px-10 gap-y-8 gap-x-8 2xl:gap-x-28">
         <div class="w-full">
           <p tabindex="0" class="focus:outline-none text-xs md:text-sm font-medium leading-none text-gray-500 uppercase">
             Sales
@@ -9,7 +8,7 @@
           <p tabindex="0" class="focus:outline-none text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold leading-3 text-gray-800 mt-3 md:mt-5">
             89.5%
           </p>
-          <div class="flex flex-col md:w-64">
+          <div class="flex flex-col w-[160px] lg:w-[220px]">
             <div class="w-full flex justify-end">
               <div class="flex items-center">
                 <svg
@@ -51,9 +50,9 @@
           </p>
           <div class="flex flex-col">
             <div class="h-4" />
-            <div class="md:w-64 mt-2.5">
+            <div class="w-[160px] lg:w-[220px] mt-2.5">
               <div class="w-full h-1 bg-gray-200 rounded-full">
-                <div class="w-40 h-1 bg-lime-500 rounded-full" />
+                <div class="w-[120px] h-1 bg-lime-500 rounded-full" />
               </div>
             </div>
           </div>
@@ -68,7 +67,7 @@
           <p tabindex="0" class="focus:outline-none text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold leading-3 text-gray-800 mt-3 md:mt-5">
             3922
           </p>
-          <div class="flex flex-col md:w-64">
+          <div class="flex flex-col w-[160px]">
             <div class="w-full flex justify-end">
               <div class="flex items-center">
                 <svg
@@ -93,7 +92,7 @@
             </div>
             <div class="mt-2.5">
               <div class="w-full h-1 bg-gray-200 rounded-full">
-                <div class="w-44 h-1 bg-yellow-500 rounded-full" />
+                <div class="w-[160px] h-1 bg-yellow-500 rounded-full" />
               </div>
             </div>
           </div>
@@ -103,7 +102,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script setup lang="ts">

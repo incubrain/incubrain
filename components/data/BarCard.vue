@@ -2,7 +2,7 @@
   <div class="flex items-center justify-center w-full h-full">
     <!-- Please include this script in the head section of your webpage to make the chart work.
        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>  -->
-    <div class="md:w-96 w-80 bg-white dark:bg-gray-800 rounded py-4 px-8">
+    <div class="bg-white dark:bg-gray-800 rounded py-4 px-8">
       <div class="flex items-center justify-between">
         <div class="flex items-center">
           <p class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-100 pr-3">
