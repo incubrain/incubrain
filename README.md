@@ -4,7 +4,8 @@
 
 Although I'd like to think this is a showcase of my best work, this fellow has been pestering me during the day and I'm still shaking off some pretty bad jetlag.
 
-![Georgie](https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/georgie-the-menace.jpg?raw=true  | width=200)
+<a href="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/georgie-the-menace.jpg"><img src="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/georgie-the-menace.jpg" align="left" height="180" width="180" ></a>
+
 
  Not to mention working from my laptop on my brother's couch instead of at my workstation.
 
@@ -19,12 +20,13 @@ I'll document the process of completing each task and estimate/show the time tak
 
 ***Full disclosure, the basic setup of this portfolio was completed before the 48 hours began***
 
-After starting strong things have grinded to slow pace as I experienced some laptop issues.
+After starting strong things have ground to a slow pace as I experienced some laptop issues.
 
-![Laptop Problems](https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/laptop-problems.jpg?raw=true  | width=200)
+<a href="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/laptop-problems.jpeg"><img src="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/georgie-the-menace.jpg" align="left" height="180" width="180" ></a>
 
-Thankfully, afther some surgery we're moving foraward again. Unfortunately I lost almost a day of working time!
-Because of this I've decided to slightly alter the premise of this portfolio. ***Instead of 48 clock hours, it will be 48 work hours.***
+Thankfully, after some surgery, we're moving forward again. Unfortunately, I lost almost a day of working time!
+
+Because of this, I've decided to slightly alter the premise of this portfolio. ***Instead of 48 clock hours, it will be 48 work hours.***
 
 ## Stack
 
