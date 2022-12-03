@@ -2,9 +2,7 @@
   <div>
     <GridCol1>
       <template #default>
-        <UiPatternsControl>
-
-        </UiPatternsControl>
+        <UiPatternsControl />
       </template>
     </GridCol1>
   </div>
