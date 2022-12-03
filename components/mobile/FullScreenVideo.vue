@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-sm rounded overflow-hidden relative">
+  <div class="rounded overflow-hidden relative">
     <img class="w-full" src="https://i.ibb.co/2q4Q5PL/girl-water-masked.png" alt="" srcset="">
     <div class="absolute bottom-0 left-0 right-0 p-6">
       <div class="sm:flex items-start justify-between">

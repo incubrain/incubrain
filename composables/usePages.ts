@@ -10,7 +10,18 @@ interface Page {
 
 const pages = ref([
   { id: 0, name: 'Home', current: true, slug: '/' },
-  { id: 1, name: 'Projects', current: false, slug: '/projects' },
+  {
+    id: 1,
+    name: 'Projects',
+    current: false,
+    slug: '/projects',
+    children: [
+      { id: 10, name: 'Project Thoughts', current: false, slug: '/' },
+      { id: 11, name: 'Frontend', current: false, slug: '/frontend' },
+      { id: 12, name: 'Backend', current: false, slug: '/backend' },
+      { id: 13, name: 'Business', current: false, slug: '/business' }
+    ]
+  },
   {
     id: 2,
     name: 'Design',

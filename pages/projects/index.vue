@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8">
+  <div class="w-full grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8">
     <div
       v-for="challenge in data"
       :key="challenge.title"
@@ -30,7 +30,7 @@
 
 <script setup lang="ts">
 
-const projects = await fetch('https://utcibapwakryadpqrgjl.supabase.co/rest/v1')
+// const projects = await fetch('https://utcibapwakryadpqrgjl.supabase.co/rest/v1')
 
 definePageMeta({
   layout: 'tabbed',

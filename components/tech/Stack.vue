@@ -11,9 +11,6 @@
             :key="stack.title"
           >
             <ContentRenderer :value="stack">
-              <template #empty>
-                <p>No content found.</p>
-              </template>
               <div class="relative bg-gray-100 dark:bg-gray-700 flex rounded">
                 <div class="border-r border-gray-200 flex items-center justify-center">
                   <div class="w-20 px-4 py-5">
@@ -66,13 +63,11 @@
 <script setup lang="ts">
 
 const myStack = ref()
-
 myStack.value = await queryContent('tech').where({ current: true }).skip(0).limit(5).find()
 // const test2 = computed(async () => await queryContent('tech').where({ current: true }).skip(0).limit(5).find())
 // const test3 = await queryContent('/content/tech').where({ current: true }).skip(0).limit(5).find()
 
 // console.log('stack1', test2)
 // console.log('stack2', test3)
-console.log('stack3', myStack)
 
 </script>

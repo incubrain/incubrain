@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center py-16 md:py-12 bg-gradient-to-r  from-indigo-700 to-red-500 rounded-lg h-full m-0">
+  <div class="flex flex-col w-full items-center py-16 md:py-12 bg-gradient-to-r  from-indigo-700 to-red-500 rounded-lg h-full m-0">
     <div class="w-full flex items-center justify-center">
       <div class="flex flex-col items-center">
         <img tabindex="0" class="focus:outline-none" src="https://cdn.tuk.dev/assets/templates/olympus/profile.png" alt="man avatar">

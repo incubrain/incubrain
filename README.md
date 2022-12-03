@@ -51,6 +51,8 @@ Below is a list of what I think I should be able to complete. Obviously, web-dev
 - [x] Update readme with most planned action
 - [x] Mobile Responsive - make sure the website looks good on mobile | est. 2 hour(s) | taken 5.5hr
 - [x] CSS Patterns - showcase some CSS patterns, allow the user to change colour and copy code | est. 2 hour(s) | taken 4.5hr
+- [x] Dynamic Routes - Example of dynamic routes | est. 1 hour(s) | taken 1 hour (part of SHOWCASE commits)
+- [ ] Portfolio Showcase - create portfolio showcase card/page & add 3 showcases | est. 2.5 hour(s) | taken 4 hrs
 - [ ] Clean up current work | est. 1.5 hour(s | taken
 - [ ] Finish Homepage
   - [ ] Tidy up hero | est. .5 hour(s) | taken
@@ -59,10 +61,8 @@ Below is a list of what I think I should be able to complete. Obviously, web-dev
   - [ ] Contact Section | est. 1 hour(s) | taken
   - [ ] Socials Section | est. 1 hour(s) | taken
 - [ ] Showcase Code Examples - Showcase my Codewars work | est. 2 hour(s) | taken
-- [ ] Portfolio Showcase - create portfolio showcase card/page & add 3 showcases | est. 2.5 hour(s) | taken
 - [ ] CSS Animations - showcase some animations, allow user to change animation speed | est. 2 hour(s) | taken
 - [ ] Lottie Animations - Example of Lottie use | est. 2 hour(s) | taken
-- [ ] Dynamic Routes - Example of dynamic routes | est. 1 hour(s) | taken
 - [ ] [Storybook](https://storybook.js.org/docs/vue/writing-stories/introduction) - Allows teams to design/develop components in isolation  | est. 1 hour(s) | taken
 
 

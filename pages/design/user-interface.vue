@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex flex-col gap-2 lg:gap-8">
     <GridCol1>
       <template #default>
         <UserInterfaceHero />
@@ -21,15 +21,15 @@
         <UserInterfaceFullSection />
       </template>
     </GridCol1>
-    <GridCol2EightFour>
+    <GridCol2FiveSeven>
       <template #1>
         <UserInterfaceCard />
       </template>
       <template #2>
         <UserInterfaceSummary />
       </template>
-    </GridCol2EightFour>
-    <GridCol1>
+    </GridCol2FiveSeven>
+    <!-- <GridCol1>
       <template #default>
         <UserInterfaceSummaryMed />
       </template>
@@ -38,8 +38,8 @@
       <template #default>
         <UserInterfaceTransactions />
       </template>
-    </GridCol1>
-    <GridCol4>
+    </GridCol1> -->
+    <!-- <GridCol4>
       <template #1>
         <UserInterfaceAddUser />
         <UserInterfaceSubmitQuestion />
@@ -63,7 +63,7 @@
         <UserInterfacePaymentSuccess />
         <UserInterfacePolicyConsent />
       </template>
-    </GridCol4>
+    </GridCol4> -->
   </div>
 </template>
 

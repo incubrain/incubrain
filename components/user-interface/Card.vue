@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto flex items-start justify-center">
+  <div class="flex items-start justify-center">
     <div class="w-full">
       <!-- Card is full width. Use in 8 col grid for best view. -->
       <!-- Card code block start -->

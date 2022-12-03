@@ -32,7 +32,7 @@
     <div
       v-for="tech in list"
       :key="tech.title"
-      class="bg-white w-full shadow rounded-lg mb-8 p-6"
+      class="bg-white w-full shadow rounded-lg p-6"
     >
       <ContentRenderer :value="tech!">
         <div class="md:flex items-center">

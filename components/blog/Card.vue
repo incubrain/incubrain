@@ -1,7 +1,7 @@
 <template>
-  <div class="bg-indigo-50 relative w-full rounded-md shadow-sm">
+  <div class="bg-indigo-50 relative w-full rounded-md shadow-sm lg:p-8">
     <div role="article" class="focus:outline-none">
-      <h1 class="blog-heading text-4xl md:text-3xl text-center f-m-w text-gray-800 font-bold py-4">
+      <h1 class="blog-heading text-4xl md:text-3xl text-center f-m-w text-gray-800 font-bold py-4 lg:p-8">
         Work in progress
       </h1>
       <div class="xl:px-0 px-4 last:px-0">
