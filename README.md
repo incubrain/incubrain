@@ -1,11 +1,11 @@
 # Mac's Portfolio
 
+
+<a href="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/georgie-the-menace.jpg"><img src="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/georgie-the-menace.jpg" align="left" height="240" width="240" ></a>
+
 ***Preface***
 
 Although I'd like to think this is a showcase of my best work, this fellow has been pestering me during the day and I'm still shaking off some pretty bad jetlag.
-
-<a href="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/georgie-the-menace.jpg"><img src="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/georgie-the-menace.jpg" align="left" height="180" width="180" ></a>
-
 
  Not to mention working from my laptop on my brother's couch instead of at my workstation.
 
@@ -14,7 +14,13 @@ Excuses aside :sweat_smile: this is a meta-portfolio of sorts. You're able to tr
 
 I'll document the process of completing each task and estimate/show the time taken, this should give you an idea of my abilities.
 
+
 [Portfolio website](https://mltech.ltd)
+
+
+
+
+<a href="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/laptop-problems.jpeg"><img src="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/laptop-issues.jpeg" align="right" height="240" width="240" ></a>
 
 **START TIME: 1:28 AM, 12/02/2022**
 
@@ -22,11 +28,12 @@ I'll document the process of completing each task and estimate/show the time tak
 
 After starting strong things have ground to a slow pace as I experienced some laptop issues.
 
-<a href="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/laptop-problems.jpeg"><img src="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/georgie-the-menace.jpg" align="left" height="180" width="180" ></a>
-
 Thankfully, after some surgery, we're moving forward again. Unfortunately, I lost almost a day of working time!
 
 Because of this, I've decided to slightly alter the premise of this portfolio. ***Instead of 48 clock hours, it will be 48 work hours.***
+
+
+
 
 ## Stack
 
