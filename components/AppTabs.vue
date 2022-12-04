@@ -21,7 +21,7 @@
         </ul>
       </div>
       <!-- Remove class [ h-64 ] when adding a card block -->
-      <div class="mx-auto mb-10 bg-gray-200 shadow rounded-b h-full relative z-100" id="tabBG">
+      <div class="w-full mb-10 bg-gray-200 shadow rounded-b h-full relative z-100" id="tabBG">
         <div class="w-full h-full p-2 lg:p-8">
           <!-- Place your content here -->
           <slot />

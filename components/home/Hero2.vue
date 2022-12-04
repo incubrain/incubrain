@@ -1,7 +1,7 @@
 <template>
   <GridCol2Even>
     <template #1>
-      <div class="xl:mt-8">
+      <div class="mt-8">
         <div class="flex flex-col justify-center lg:justify-left text-4xl main-heading lg:text-5xl xl:text-7xl text-gray-800 tracking-1px">
           <h2 class="mt-2 lg:mt-2">
             Presenting...
@@ -13,8 +13,8 @@
             Portfolio-ception
           </h2>
         </div>
-        <div class="lg:p-6 my-8 flex flex-row items-center lg:items-stretch justify-center lg:justify-items-stretch gap-6 relative">
-          <div class="w-[90%] lg:w-3/4 items-stretch justify-items-stretch flex flex-col">
+        <div class="lg:p-6 my-8 flex flex-col lg:flex-row items-center justify-center lg:justify-items-stretch gap-6 relative">
+          <div class="w-full lg:w-3/4 items-stretch justify-items-stretch flex flex-col">
             <h3 class="text-lg lg:text-2xl tracking-wide text-gray-700">
               For the next 48 hours (working hours) I will complete as much work as possible documenting the process on this
               website and my Github.
@@ -23,47 +23,34 @@
               Thanks Nicole for the name idea (meta-portfolio) and for putting up with my delays 😊
             </p>
           </div>
-          <a href="https://github.com/Drew-Macgibbon" class="w-[60px] h-[60px] lg:w-2/4 lg:h-auto aspect-auto right-0 top-0 p-4 flex justify-center items-center relative bg-[#ffffff] rounded-full shadow-lg">
-            <lottie-player
-              src="https://lottie.host/7ed66755-ef23-4d41-8f01-6ccf8e7e4572/CHYE6gVPVA.json"
-              background="transparent"
-              speed="1"
-              style="height: 80%;"
-              loop
-              autoplay
+          <a href="https://github.com/Drew-Macgibbon" class="w-auto h-auto lg:w-2/5 lg:h-auto aspect-auto right-0 y-6 p-4 flex justify-center items-center relative bg-[#ffffff] rounded-full shadow-lg">
+            <AppLottie
+              :src="'https://lottie.host/7ed66755-ef23-4d41-8f01-6ccf8e7e4572/CHYE6gVPVA.json'"
+              height="80%"
             />
           </a>
         </div>
       </div>
     </template>
     <template #2>
-      <div class="text-3xl hello xl:text-5xl text-gray-800 tracking-1px mx-auto">
+      <div class="text-3xl hello xl:text-5xl mt-8 text-gray-800 tracking-1px mx-auto">
         <h2 class="mb-8 lg:mb-8 text-center">
           The creator (non-biblical)
         </h2>
       </div>
       <div class="w-full mt-8 lg:mt-0 relative flex flex-row justify-center items-center">
-        <!-- <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_wdhfjhyc.json"  background="transparent"  speed="0.5" class=" -mb-[60px]"  style="width: 360px;"  loop autoplay></lottie-player> -->
-        <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_yeyxce62.json"
-          mode="bounce"
-          background="transparent"
-          speed="1"
-          loop
-          autoplay
+        <AppLottie
+          :src="'https://assets2.lottiefiles.com/packages/lf20_yeyxce62.json'"
           class="z-[500] -rotate-90 w-[30%] mr-[-30px] h-full hidden lg:block" />
         <div class="img-bg flex justify-center items-center rounded-2xl relative z-20 overflow-hidden">
           <img src="/drew-img.png"
             alt="Drew MacGibbon"
             class="min-h-[439px] aspect-auto -mb-[35px] px-8 pt-8">
         </div>
-        <!-- <img class="w-full" src="https://i.ibb.co/80XYkkr/image.png" alt="hero image" /> -->
-        <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_yeyxce62.json"
-          mode="bounce"
-          background="transparent"
-          speed="1"
-          loop
-          autoplay
-          class="rotate-90 w-[30%] h-full ml-[-30px] hidden lg:block" />
+        <AppLottie
+          :src="'https://assets2.lottiefiles.com/packages/lf20_yeyxce62.json'"
+          class="rotate-90 w-[30%] h-full ml-[-30px] hidden lg:block"
+        />
       </div>
       <div class="text-3xl hello xl:text-5xl text-gray-800 tracking-1px mx-auto">
         <h2 class="mt-8 lg:mt-8 text-center">
@@ -97,17 +84,7 @@
 
 <script setup>
 
-onMounted(() => {
-  watch(() => window.document.body.clientWidth, () => setLottie())
-})
-
-const quote = await $fetch('https://api.quotable.io/random')
-
-useHead({
-  script: [
-    { type: 'text/javascript', src: 'https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js', async: false }
-  ]
-})
+const quote = await fetch('https://api.quotable.io/random')
 
 </script>
 
