@@ -100,7 +100,9 @@ Completed work estimation...
 I thought of doing this a bit late...
 
 START: 4:12PM - END: 11:36PM - start UI Cleanup
-SLEEP: 1:33AM - END: 12:12PM - start DYNAMIC SHOWCASE
+SLEEP: 1:33AM - END: 12:12PM THEN
+START DYNAMIC SHOWCASE - PARTIAL 1:30PM THEN
+START NEXT 13 - 
 
 
 
