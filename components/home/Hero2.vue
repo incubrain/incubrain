@@ -41,7 +41,7 @@
       <div class="w-full mt-8 lg:mt-0 relative flex flex-row justify-center items-center">
         <AppLottie
           :src="'https://assets2.lottiefiles.com/packages/lf20_yeyxce62.json'"
-          class="z-[500] -rotate-90 w-[30%] mr-[-30px] h-full hidden lg:block" />
+          class="-rotate-90 w-[30%] mr-[-30px] h-full hidden lg:block" />
         <div class="img-bg flex justify-center items-center rounded-2xl relative z-20 overflow-hidden">
           <img src="/drew-img.png"
             alt="Drew MacGibbon"

@@ -2,7 +2,7 @@
 <template>
   <!-- Navigation starts -->
   <nav class="w-full mx-auto bg-gray-800 shadow relative z-[1000] m-0">
-    <div class="container px-6 h-16 flex items-center justify-between mx-auto">
+    <div class="container px-6 flex items-center justify-between mx-auto">
       <div class="flex items-center w-[68.72px] lg:w-[40px] h-full bg-red">
       <!-- <div class="rounded-full relative p-3 flex justify-end text-white">
         <input type="text" class="bg-transparent focus:outline-none text-xs w-0 transition duration-150 ease-in-out absolute left-0 ml-10" placeholder="Type something..." />
@@ -13,13 +13,13 @@
         </svg>
         </div> -->
       </div>
-      <ul class="flex items-center justify-center h-full">
+      <ul class="flex h-full items-center">
         <li
           v-for="page in pages.slice(1,3)"
           :key="page.id"
           :class="route.fullPath.includes(page.slug)
-            ? 'cursor-pointer h-full lg:flex items-center text-sm text-yellow-300 tracking-normal hidden mr-10 min-w-[50px]'
-            : 'hover:text-yellow-300 cursor-pointer h-full lg:flex hidden items-center text-sm text-white mr-10 tracking-normal relative  min-w-[50px]'
+            ? 'cursor-pointer h-full lg:flex  text-sm text-yellow-300 tracking-normal hidden mr-10 min-w-[50px]'
+            : 'hover:text-yellow-300 cursor-pointer h-full lg:flex hidden items-center text-sm text-white mr-10 tracking-normal relative min-w-[50px]'
           "
           @click="navigateTo(page.slug); setPage(page.name)"
         >

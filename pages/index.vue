@@ -1,6 +1,8 @@
 <template>
   <div class="container mx-auto">
     <HomeHero2 />
+    <HomeLargeHeading />
+    <HomeTimeline />
     <!-- <HomeHero />
     <HomeProjectSteps />
     <HomeProjectMain />

@@ -34,6 +34,7 @@ const pages = ref([
       { id: 23, name: 'Mobile', current: false, slug: '/mobile' },
       { id: 24, name: 'User Interface', current: false, slug: '/user-interface' },
       // { id: 25, name: 'Basic', current: false, slug: '/basic' },
+      // { id: 25, name: 'Clothing', current: false, slug: '/clothing' },
       { id: 26, name: 'Patterns', current: false, slug: '/patterns' },
       { id: 27, name: 'Lotties', current: false, slug: '/lottie' },
       { id: 28, name: 'Icons', current: false, slug: '/icons' }

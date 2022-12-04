@@ -13,7 +13,8 @@
       data-drawer-target="drawer-navigation"
       data-drawer-hide="drawer-navigation"
       data-drawer-show="drawer-navigation"
-      aria-controls="drawer-navigation">
+      aria-controls="drawer-navigation"
+    >
       Menu
       <div>
         <!-- <svg
@@ -70,7 +71,7 @@
 
   <!-- drawer component -->
   <div id="drawer-navigation"
-    class="fixed left-0 z-[4000] p-4 overflow-y-auto bg-white w-80 dark:bg-gray-800"
+    class="fixed left-0 z-[4000] w-60 p-4 overflow-y-auto h-full bg-white dark:bg-gray-800"
     tabindex="-1"
     aria-labelledby="drawer-navigation-label">
     <h5 id="drawer-navigation-label"
@@ -78,7 +79,7 @@
     <button type="button"
       data-drawer-dismiss="drawer-navigation"
       aria-controls="drawer-navigation"
-      class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
+      class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-2 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
       <!-- <svg aria-hidden="true"
         class="w-5 h-5"
         fill="currentColor"
@@ -91,12 +92,12 @@
       <span class="sr-only">Close menu</span>
     </button>
     <div class="py-4 overflow-y-auto">
-      <ul class="space-y-2">
+      <ul class="space-y-2 h-full flex flex-col justify-start items-start">
         <li v-for="page in pages"
             :key="page.id"
             @click="navigateTo(page.slug); setPage(page.name)">
             <div href="#"
-            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+            class="flex items-center cursor-pointer p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
             <!-- <svg aria-hidden="true"
               class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
               fill="currentColor"
@@ -105,7 +106,7 @@
               <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
               <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
             </svg> -->
-            <span class="ml-3"> {{ page.name }}</span>
+            <span class="ml-2"> {{ page.name }}</span>
           </div>
         </li>
         <!-- <li>
