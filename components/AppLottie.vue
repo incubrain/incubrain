@@ -15,12 +15,6 @@
 </template>
 
 <script setup lang="ts">
-// :player-controls="true"
-// :mode="props.mode"
-// :speed="props.speed"
-// :loop="true"
-// :autoplay="true"
-// :directio="props.mode"
 
 interface Props {
   src?: string
@@ -38,26 +32,6 @@ const props = withDefaults(defineProps<Props>(), {
   mode: 'bounce'
 })
 
-// const options = {
-//   minimizable: false,
-//   playerSize: 'standard',
-//   backgroundColor: 'transparent',
-//   backgroundStyle: 'transparent',
-//   theme: {
-//     controlsView: 'standard',
-//     active: 'light',
-//     light: {
-//       color: '#3D4852',
-//       backgroundColor: '#fff',
-//       opacity: '0.7',
-//     },
-//     dark: {
-//       color: '#fff',
-//       backgroundColor: '#202020',
-//       opacity: '0.7'
-//     }
-//   }
-// }
 </script>
 
 <style scoped>

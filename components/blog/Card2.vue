@@ -7,7 +7,6 @@
       :to="('/projects/frontend/' + show.id)"
     >
       <div class="relative w-full rounded-md hover:bg-[#F9FAFB] hover:shadow-md cursor-pointer h-[118px] lg:h-[184px] lg:p-4 lg:gap-2 lg:flex-row-reverse flex flex-row overflow-hidden">
-        <!-- <img :src="show.card_image" alt="" class="rounded-sm  max-w-[118px] lg:max-w-[150px] mr--[72px]"> -->
         <div
           class="w-[118px] h-full lg:w-[540px]"
           :style="{ 'background': `url(${show.card_image})`, 'background-size': 'cover' }"

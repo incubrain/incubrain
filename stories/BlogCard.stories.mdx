@@ -1,0 +1,26 @@
+<!-- BlogCard.stories.mdx-->
+
+import { Meta, Story } from "@storybook/addon-docs";
+
+import BlogCard from '../components/blog/Card2.vue';
+
+<Meta title="BlogCard" component={BlogCard}/>
+
+<!-- 👇 We create a “template” of how args map to rendering -->
+
+export const Template = (args) => ({
+  components: { BlogCard },
+  setup() {
+    return { args };
+  },
+  template: '<BlogCard v-bind="args" />',
+});
+
+<Story
+  name="Primary"
+  args={{
+    primary: true,
+    label: 'BlogCard',
+  }}>
+  {Template.bind({})}
+</Story>

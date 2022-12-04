@@ -23,10 +23,10 @@
               Thanks Nicole for the name idea (meta-portfolio) and for putting up with my delays 😊
             </p>
           </div>
-          <a href="https://github.com/Drew-Macgibbon" class="w-auto h-auto lg:w-2/5 lg:h-auto aspect-auto right-0 y-6 p-4 flex justify-center items-center relative bg-[#ffffff] rounded-full shadow-lg">
+          <a href="https://github.com/Drew-Macgibbon" class="w-auto h-auto mt-10 lg:w-2/5 max-w-[280px] lg:max-w-[400px] lg:h-auto aspect-auto right-0 y-6 p-4 flex justify-center items-center relative bg-[#ffffff] rounded-full shadow-lg">
             <AppLottie
               :src="'https://lottie.host/7ed66755-ef23-4d41-8f01-6ccf8e7e4572/CHYE6gVPVA.json'"
-              height="80%"
+              height="70%"
             />
           </a>
         </div>
@@ -84,7 +84,7 @@
 
 <script setup>
 
-const quote = await fetch('https://api.quotable.io/random')
+const quote = await $fetch('https://api.quotable.io/random')
 
 </script>
 
