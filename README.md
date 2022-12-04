@@ -54,9 +54,10 @@ Below is a list of what I think I should be able to complete. Obviously, web-dev
 - [x] Dynamic Routes - Example of dynamic routes | est. 1 hour(s) | taken 1 hour (part of SHOWCASE commits)
 - [x] Clean up current work | est. 1.5 hour(s | taken
 - [x] Lottie Animations - Example of Lottie use | est. 2 hour(s) | taken 3hrs
+- [X] Fontawesome Icons - Example of Fontawesome Icons | est. 1 hour(s) | taken ***FIRST TIME USING WITH NUXT 3***
 - [ ] Use Github Pages to showcase Next app | est. .5 hour(s) | taken ***FIRST TIME USING***
 - [ ] Portfolio Showcase - create portfolio showcase card/page & add 3 showcases | est. 2.5 hour(s) | taken 4 hrs
-- [ ] Fontawesome Icons - Example of Fontawesome Icons | est. 1 hour(s) | taken ***FIRST TIME USING WITH NUXT 3***
+- [ ] PDF Viewer - custom full view PDF viewer for business plan | est. 1 hour(s) | 
 - [ ] Finish Homepage
   - [ ] Tidy up hero | est. .5 hour(s) | taken
   - [ ] Video section - need to record video as well, phone is my only option atm. | est. 1.5 hour(s | taken
@@ -108,6 +109,8 @@ START NEXT 13 - BREAK 4:36PM - END 7:47PM
 CONTINUE NEXT 13 - Stopped 11:00PM
 START: LOTTIE_ANIMATIONS 11:10pm - FINISH 2:30AM
 5th December
+START: FONTAWESOME_ICONS 2:35AM - FINISH 4:11AM
+START: PDF_VIEWER 4:20AM - 6:30AM
 
 
 
