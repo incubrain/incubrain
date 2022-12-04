@@ -1,9 +1,5 @@
 <template>
-  <div>
-    <GridCol1>
-      <BlogCard />
-    </GridCol1>
-  </div>
+  <div />
 </template>
 
 <script setup lang="ts">
@@ -14,11 +10,3 @@ definePageMeta({
 })
 
 </script>
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap');
-
-.blog-heading {
-  font-family: 'Rubik Distressed', cursive;
-}
-</style>

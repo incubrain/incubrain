@@ -2,23 +2,6 @@
   <div
     class="rounded-md mb-2 lg:mb-8 px-4 py-8 bg-white nuxt-loading-indicator h-100 w-full z-50 flex flex-col justify-center items-center"
   >
-    <!-- <div
-      :style="{
-      pointerEvents: 'none',
-      top: 0,
-      left: 0,
-      position: 'absolute',
-      width: `${indicator.progress.value}%`,
-      height: `40px`,
-      'margin-bottom': '40px',
-      opacity: indicator.isLoading.value ? 1 : 0,
-      background: props.color,
-      backgroundSize: `${(100 / indicator.progress.value) * 100}% auto`,
-      transition: 'width 0.5s, height 0.4s, opacity 0.4s',
-      zIndex: 999999
-    }"
-    /> -->
-
     <div
       :class="indicator.isLoading.value === true
         ? 'block mt-8'
@@ -57,16 +40,13 @@
         Your Request Is Being Loaded, Please Wait
       </p>
     </div>
-    <p v-if="indicator.isLoading.value === false">
-      Visible as a loader example
-    </p>
+    <div v-if="indicator.isLoading.value === false">
+      <BlogPost />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-
-import { computed, defineComponent, h, onBeforeUnmount, ref } from 'vue'
-import { useNuxtApp } from '#app'
 
 const props = defineProps({
   throttle: {
@@ -98,24 +78,6 @@ const nuxtApp = useNuxtApp()
 nuxtApp.hook('page:start', indicator.start)
 nuxtApp.hook('page:finish', indicator.finish)
 onBeforeUnmount(() => indicator?.clear)
-
-// return () => h('div', {
-//   class: 'nuxt-loading-indicator',
-//   style: {
-//     position: 'fixed',
-//     top: 0,
-//     right: 0,
-//     left: 0,
-//     pointerEvents: 'none',
-//     width: `${indicator.progress.value}%`,
-//     height: `${props.height}px`,
-//     opacity: indicator.isLoading.value ? 1 : 0,
-//     background: props.color,
-//     backgroundSize: `${(100 / indicator.progress.value) * 100}% auto`,
-//     transition: 'width 0.1s, height 0.4s, opacity 0.4s',
-//     zIndex: 999999
-//   }
-// }, slots)
 
 function useLoadingIndicator (opts: { duration: number, throttle: number }) {
   const progress = ref(0)

@@ -28,7 +28,7 @@ const pages = ref([
     current: false,
     slug: '/design',
     children: [
-      { id: 20, name: 'Design  Thoughts', current: false, slug: '/' },
+      { id: 20, name: 'Design Thoughts', current: false, slug: '/' },
       { id: 21, name: 'Data', current: false, slug: '/data' },
       // { id: 22, name: 'Lists', current: false, slug: '/lists' },
       { id: 23, name: 'Mobile', current: false, slug: '/mobile' },

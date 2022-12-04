@@ -6,12 +6,12 @@
         <ul
           class="flex flex-row h-full cursor-pointer mt-6 justify-center overflow-x-scroll scrollbar-hide"
           :style="{ 'padding-bottom': '40px', 'margin-bottom': '-40px' }"
-          >
+        >
           <li
             v-for="tab in currentTabs"
             :key="tab.id"
             :class="route.name === tab.name
-              ? 'pt-4 px-12 text-sm font-bold text-black rounded-t transition-all bg-gray-200 -mb-5 lg:-mb-10 whitespace-nowrap relative z-[100]'
+              ? 'pt-4 px-12 text-sm font-bold text-black rounded-t transition-all bg-gray-200 -mb-5 lg:-mb-10 whitespace-nowrap relative'
               : 'pt-4 pb-0 px-12 text-sm font-semibold text-gray-300 transition-all whitespace-nowrap'
             "
             @click="navigateTo(`/${parentRoute[1] + tab.slug}`)"

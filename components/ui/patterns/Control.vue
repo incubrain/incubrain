@@ -1,14 +1,14 @@
 <template>
   <div class="w-full h-full relative">
     <div class=" sticky w-full rounded-md shadow-lg p-4 lg:p-8 flex flex-row flex-wrap top-6 lg:top-12 z-10 justify-between bg-white gap-4 lg:gap-8 text-sm">
-      <div class="flex flex-row gap-2 w-full md:w-[45%] lg:w-1/5">
+      <div class="flex flex-row gap-2 w-full md:w-[40%] lg:w-1/5">
         <div
         class="min-w-6 w-6 h-6 rounded-full border-solid border-black border-2"
         :style="{ 'background-color': color.bg }"
         @click="openPicker('bg', picker.bg)"
         />
         <span><font-awesome-icon icon="fa-solid fa-palette"
-          class=" w-6 h-6 cursor-pointer" /> </span>
+          class=" w-6 h-6 cursor-pointer"/> </span>
         <p> Background </p>
           <AppButton
           v-if="picker.bg"
@@ -23,7 +23,7 @@
           @color-changed="handleColorChanged('bg', $event)"
         />
       </div>
-      <div class="flex flex-row gap-2 w-full md:w-[45%] md:flex-row-reverse md:justify-start lg:w-1/5 lg:justify-center lg:flex-row">
+      <div class="flex flex-row gap-2 w-full md:w-[40%] md:flex-row-reverse md:justify-start lg:w-1/5 lg:justify-center lg:flex-row">
         <span>
           <font-awesome-icon
             icon="fa-solid fa-brush"
@@ -49,7 +49,7 @@
       />
       <p> Pattern </p>
       </div>
-      <div class="flex flex-row-reverse justify-end md:flex-row gap-2 w-full md:w-[45%] lg:w-1/5 md:justify-start lg:justify-center">
+      <div class="flex flex-row-reverse justify-end md:flex-row gap-2 w-full md:w-[40%] lg:w-1/5 md:justify-start lg:justify-center">
         <p> Opacity </p>
         <AppSlider
           :min="0"
@@ -60,7 +60,7 @@
           <font-awesome-icon icon="fa-solid fa-droplet"  class="cursor-pointer w-6 h-6"/>
         </span>
       </div>
-      <span class="w-full md:w-[45%] lg:w-1/5 gap-2 md:justify-start flex md:flex-row-reverse">
+      <span class="w-full md:w-[40%] lg:w-1/5 gap-2 md:justify-start flex md:flex-row-reverse">
         <span>
           <font-awesome-icon icon="fa-solid fa-eye" class="cursor-pointer w-6 h-6 left-0 flex" />
         </span>

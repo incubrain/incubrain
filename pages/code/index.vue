@@ -1,9 +1,5 @@
 <template>
-  <div>
-    <GridCol1>
-      <BlogCard />
-    </GridCol1>
-  </div>
+  <div />
 </template>
 
 <script setup lang="ts">

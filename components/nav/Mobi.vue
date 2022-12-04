@@ -2,12 +2,17 @@
   <!-- drawer init and show -->
   <div class="text-center">
     <button
-      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4
-      focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none
-     dark:focus:ring-blue-800"
+      class="
+      text-black bg-white hover:bg-[#fffde5]
+      focus:ring-2 focus:ring-black
+      rounded-lg px-3 py-1.5
+      text-xs md:text-md
+      focus:outline-none dark:focus:ring-blue-800
+      dark:bg-blue-600 dark:hover:bg-blue-700"
       type="button"
       data-drawer-target="drawer-navigation"
       data-drawer-hide="drawer-navigation"
+      data-drawer-show="drawer-navigation"
       aria-controls="drawer-navigation">
       Menu
       <div>

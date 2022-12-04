@@ -39,9 +39,6 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const showcases = ref()
-// const rest = ref()
-// console.log('zzzz', showcases.value, rest.value)
 showcases.value = await queryContent(props.type).where({ type: props.filter }).skip(0).limit(5).find()
-// showcases.value = await queryContent('projects').where({ type: 'frontend' }).skip(0).limit(5).find()
 
 </script>
