@@ -40,8 +40,11 @@
         Your Request Is Being Loaded, Please Wait
       </p>
     </div>
-    <div v-if="indicator.isLoading.value === false">
-      <BlogPost />
+    <div
+      v-if="indicator.isLoading.value === false"
+      class="w-full"
+    >
+      <BlogShowcasePage />
     </div>
   </div>
 </template>
