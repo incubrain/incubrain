@@ -30,7 +30,7 @@
           </p>
         </div>
         <a href="https://github.com/Drew-Macgibbon"
-          class="w-[50%] lg:w-auto h-full mt-10 lg:mt-0 lg:w-2/5 max-w-[280px] lg:max-w-[400px] lg:h-auto aspect-auto right-0 y-6 p-4 flex justify-center items-center relative bg-[#ffffff] rounded-full shadow-lg">
+          class="w-[50%] h-full mt-10 lg:mt-0 lg:w-[30%] max-w-[280px] lg:max-w-[400px] lg:h-auto aspect-auto right-0 y-6 p-4 flex justify-center items-center relative bg-[#ffffff] rounded-full shadow-lg">
           <AppLottie :src="'https://lottie.host/7ed66755-ef23-4d41-8f01-6ccf8e7e4572/CHYE6gVPVA.json'"
             height="70%" />
         </a>
@@ -45,14 +45,14 @@
       </div>
       <div class="w-full mt-8 lg:mt-0 relative flex flex-row justify-center items-center">
         <AppLottie :src="'https://assets2.lottiefiles.com/packages/lf20_yeyxce62.json'"
-          class="-rotate-90 w-[40%] mr-[-30px] h-full hidden lg:block" />
+          class="-rotate-90 w-[40%] mr-[-50px] h-full hidden lg:block" />
         <div class="img-bg flex justify-center items-center rounded-2xl relative z-20 overflow-hidden">
           <img src="/drew-img.png"
             alt="Drew MacGibbon"
-            class="min-h-[439px] aspect-auto -mb-[35px] px-8 pt-8">
+            class="min-h-[439px] min-w-full object-cover -mb-[35px] px-8 pt-8">
         </div>
         <AppLottie :src="'https://assets2.lottiefiles.com/packages/lf20_yeyxce62.json'"
-          class="rotate-90 w-[40%] h-full ml-[-30px] hidden lg:block" />
+          class="rotate-90 w-[40%] h-full ml-[-50px] hidden lg:block" />
       </div>
       <div class="text-3xl hello xl:text-5xl text-gray-800 tracking-1px mx-auto">
         <h2 class="mt-8 lg:mt-6 xl:mt-8 text-center">

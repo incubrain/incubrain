@@ -24,7 +24,7 @@
         >
           <li v-for="tab in currentTabs"
               :key="tab.id"
-              class="py-5 px-12 text-sm rounded-t whitespace-nowrap transition-all duration-700 ease-in-out relative bg-transparent"
+              class="py-5 px-12 text-sm rounded-t whitespace-nowrap transition-all duration-1000 ease-in-out relative bg-transparent"
               :style="route.name === tab.name ? {
                 color: 'black',
                 background: '#E5E7EB',

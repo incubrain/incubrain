@@ -54,14 +54,13 @@
       </div>
       <div class="pt-6">
         <div class="w-full h-full">
-          <canvas id="lineWave" width="250" />
+          <canvas id="lineWave" width="250" height="250" />
         </div>
       </div>
     </div>
 </template>
 
 <script setup>
-// npm install chart.js@2.8.0
 import Chart from 'chart.js/auto'
  
 

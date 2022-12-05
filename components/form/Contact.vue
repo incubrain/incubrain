@@ -12,9 +12,14 @@
         <input type="text"
           id="email">
     
-        <label for="password">Password</label>
-        <input type="password"
-          id="password">
+        <label for="about">Let's discuss</label>
+        <textarea
+          class="w-full"
+          type="about"
+          id="about"
+          cols="40"
+          rows="5"
+          />
     
         <button class="w-full p-4">Let's make something together</button>
       </form>
@@ -191,15 +196,27 @@ form {
 
 label {
   display: block;
+  font-size: small;
   margin-bottom: 0.5rem;
-  color: #444;
+  color: rgb(163, 163, 163);
 }
 
 input {
   display: block;
   width: 100%;
   margin: 0 0 1rem 0;
-  padding: 0.5rem;
+  padding: .8rem 0rem;
+  font-size: 1rem;
+  border: 0;
+  border-radius: 0.125rem 0.25rem;
+  background-color: hsl(222, 20%, 95%);
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  margin: 0 0 1rem 0;
+  padding: .8rem 0rem;
   font-size: 1rem;
   border: 0;
   border-radius: 0.125rem 0.25rem;
@@ -208,7 +225,7 @@ input {
 
 button {
   display: block;
-  padding: 0.5rem;
+  padding: 0.8rem;
   border: 0;
   border-radius: 0.125rem 0.25rem;
   background-color: #40cb90;
