@@ -195,182 +195,174 @@
   </div>
 </template>
 
-<script>
-import Chart from 'chart.js'
+<script setup>
+import Chart from 'chart.js/auto'
 
-export default {
-  mounted() {
-    this.loadCharts()
-  },
-  methods: {
-    loadCharts() {
-      const ctx = document.getElementById('lineUser1').getContext('2d')
-      const gradient = ctx.createLinearGradient(2, 0, 0, 70)
-      gradient.addColorStop(0, '#BFDBFE')
-      gradient.addColorStop(1, '#EFF6FF')
-      new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'april, may', 'june', 'july', 'august'],
-          datasets: [
-            {
-              label: '',
-              borderColor: '#1D4ED8',
-              data: [0, 9, 2, 7, 1, 9, 4, 0, 10, 4, 9],
-              backgroundColor: gradient,
-              pointBackgroundColor: '#1D4ED8',
-              borderWidth: '2'
-            }
-          ]
-        },
-        options: {
-          legend: {
-            position: false
-          },
-          ticks: {
-            beginAtZero: true,
-            steps: 2,
-            stepValue: 2,
-            max: 10
-          },
-          elements: {
-            point: {
-              radius: 0
-            }
-          },
-          scales: {
-            yAxes: [
-              {
-                gridLines: {
-                  display: false
-                },
-                display: false
-              }
-            ],
-            xAxes: [
-              {
-                gridLines: {
-                  display: false
-                },
-                display: false
-              }
-            ]
-          }
+function loadCharts() {
+  const ctx = document.getElementById('lineUser1').getContext('2d')
+  const gradient = ctx.createLinearGradient(2, 0, 0, 70)
+  gradient.addColorStop(0, '#BFDBFE')
+  gradient.addColorStop(1, '#EFF6FF')
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'april, may', 'june', 'july', 'august'],
+      datasets: [
+        {
+          label: '',
+          borderColor: '#1D4ED8',
+          data: [0, 9, 2, 7, 1, 9, 4, 0, 10, 4, 9],
+          backgroundColor: gradient,
+          pointBackgroundColor: '#1D4ED8',
+          borderWidth: '2'
         }
-      })
-      // chart 2
-      const ctx1 = document.getElementById('lineUser2').getContext('2d')
-      const gradient2 = ctx.createLinearGradient(2, 0, 0, 70)
-      gradient2.addColorStop(0, '#C7D2FE')
-      gradient2.addColorStop(1, '#EFF6FF')
-      new Chart(ctx1, {
-        type: 'line',
-        data: {
-          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'april, may', 'june', 'july', 'august'],
-          datasets: [
-            {
-              label: '',
-              borderColor: '#4338CA',
-              data: [0, 9, 2, 7, 1, 9, 4, 0, 10, 4, 9],
-              backgroundColor: gradient2,
-              pointBackgroundColor: '#1D4ED8',
-              borderWidth: '2'
-            }
-          ]
-        },
-        options: {
-          legend: {
-            position: false
-          },
-          ticks: {
-            beginAtZero: true,
-            steps: 2,
-            stepValue: 2,
-            max: 10
-          },
-          elements: {
-            point: {
-              radius: 0
-            }
-          },
-          scales: {
-            yAxes: [
-              {
-                gridLines: {
-                  display: false
-                },
-                display: false
-              }
-            ],
-            xAxes: [
-              {
-                gridLines: {
-                  display: false
-                },
-                display: false
-              }
-            ]
-          }
+      ]
+    },
+    options: {
+      legend: {
+        position: false
+      },
+      ticks: {
+        beginAtZero: true,
+        steps: 2,
+        stepValue: 2,
+        max: 10
+      },
+      elements: {
+        point: {
+          radius: 0
         }
-      })
-      // chart 3
-      const ctx2 = document.getElementById('lineUser3').getContext('2d')
-      const gradient3 = ctx.createLinearGradient(2, 0, 0, 70)
-      gradient3.addColorStop(0, '#DDD6FE')
-      gradient3.addColorStop(1, '#EFF6FF')
-      new Chart(ctx2, {
-        type: 'line',
-        data: {
-          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'april, may', 'june', 'july', 'august'],
-          datasets: [
-            {
-              label: '',
-              borderColor: '#6D28D9',
-              data: [0, 9, 2, 7, 1, 9, 4, 0, 10, 4, 9],
-              backgroundColor: gradient3,
-              pointBackgroundColor: '#1D4ED8',
-              borderWidth: '2'
-            }
-          ]
-        },
-        options: {
-          legend: {
-            position: false
+      },
+      scales: {
+        y:
+          {
+            gridLines: {
+              display: false
+            },
+            display: false
           },
-          ticks: {
-            beginAtZero: true,
-            steps: 2,
-            stepValue: 2,
-            max: 10
-          },
-          elements: {
-            point: {
-              radius: 0
-            }
-          },
-          scales: {
-            yAxes: [
-              {
-                gridLines: {
-                  display: false
-                },
-                display: false
-              }
-            ],
-            xAxes: [
-              {
-                gridLines: {
-                  display: false
-                },
-                display: false
-              }
-            ]
+        x:
+          {
+            gridLines: {
+              display: false
+            },
+            display: false
           }
-        }
-      })
+      }
     }
-  }
+  })
+  //{ Chart }2
+  const ctx1 = document.getElementById('lineUser2').getContext('2d')
+  const gradient2 = ctx1.createLinearGradient(2, 0, 0, 70)
+  gradient2.addColorStop(0, '#C7D2FE')
+  gradient2.addColorStop(1, '#EFF6FF')
+  new Chart(ctx1, {
+    type: 'line',
+    data: {
+      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'april, may', 'june', 'july', 'august'],
+      datasets: [
+        {
+          label: '',
+          borderColor: '#4338CA',
+          data: [0, 9, 2, 7, 1, 9, 4, 0, 10, 4, 9],
+          backgroundColor: gradient2,
+          pointBackgroundColor: '#1D4ED8',
+          borderWidth: '2'
+        }
+      ]
+    },
+    options: {
+      legend: {
+        position: false
+      },
+      ticks: {
+        beginAtZero: true,
+        steps: 2,
+        stepValue: 2,
+        max: 10
+      },
+      elements: {
+        point: {
+          radius: 0
+        }
+      },
+      scales: {
+        y:
+          {
+            gridLines: {
+              display: false
+            },
+            display: false
+          },
+        x:
+          {
+            gridLines: {
+              display: false
+            },
+            display: false
+          }
+      }
+    }
+  })
+  //{ Chart }3
+  const ctx2 = document.getElementById('lineUser3').getContext('2d')
+  const gradient3 = ctx2.createLinearGradient(2, 0, 0, 70)
+  gradient3.addColorStop(0, '#DDD6FE')
+  gradient3.addColorStop(1, '#EFF6FF')
+  new Chart(ctx2, {
+    type: 'line',
+    data: {
+      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'april, may', 'june', 'july', 'august'],
+      datasets: [
+        {
+          label: '',
+          borderColor: '#6D28D9',
+          data: [0, 9, 2, 7, 1, 9, 4, 0, 10, 4, 9],
+          backgroundColor: gradient3,
+          pointBackgroundColor: '#1D4ED8',
+          borderWidth: '2'
+        }
+      ]
+    },
+    options: {
+      legend: {
+        position: false
+      },
+      ticks: {
+        beginAtZero: true,
+        steps: 2,
+        stepValue: 2,
+        max: 10
+      },
+      elements: {
+        point: {
+          radius: 0
+        }
+      },
+      scales: {
+        y:
+          {
+            gridLines: {
+              display: false
+            },
+            display: false
+          },
+        x:
+          {
+            gridLines: {
+              display: false
+            },
+            display: false
+          }
+      }
+    }
+  })
 }
+
+onMounted(() => {
+  loadCharts()
+})
+
 </script>
 
 <style scoped>

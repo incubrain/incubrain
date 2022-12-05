@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full bg-gray-200 dark:bg-gray-900 p-4 lg:p-8">
+  <div class="w-full bg-gray-200 dark:bg-gray-900 p-4 lg:p-6 xl:p-8">
     <div class="container mx-auto flex items-start justify-center">
       <div class="w-full">
         <!-- Card is full width. Use in 12 col grid for best view. -->
@@ -8,7 +8,9 @@
           <div class="w-full lg:w-1/3 p-6">
             <div class="flex items-center">
               <div class="w-12 h-12 rounded shadow">
-                <img class="w-full h-full overflow-hidden object-cover rounded" src="https://tuk-cdn.s3.amazonaws.com/assets/components/grid_cards/gc_24.png" alt="logo">
+                <img class="w-full h-full overflow-hidden object-cover rounded"
+                  src="https://tuk-cdn.s3.amazonaws.com/assets/components/grid_cards/gc_24.png"
+                  alt="logo">
               </div>
               <div class="ml-3">
                 <h5 class="text-gray-800 dark:text-gray-100 font-medium text-base">
@@ -23,32 +25,46 @@
               User Experience Revamp
             </h3>
             <p class="text-gray-600 dark:text-gray-400 text-sm font-normal">
-              To many naive users of the platform, a redesign may look just like a facelift. No more, no less. However, for a User Experience designer, the entire redesign process means much more than a lot of research, meticulous planning, iterating, and gallons of coffee!
+              To many naive users of the platform, a redesign may look just like a facelift. No more, no less. However,
+              for a User Experience designer, the entire redesign process means much more than a lot of research,
+              meticulous planning, iterating, and gallons of coffee!
             </p>
             <div class="flex items-center mt-6 w-full">
               <div class="shadow border-2 border-white rounded-full w-8 h-8">
-                <img class="w-full h-full overflow-hidden object-cover rounded-full" src="https://dh-ui.s3.amazonaws.com/assets/photo-1564061170517-d3907caa96ea.jfif" alt="avatar">
+                <img class="w-full h-full overflow-hidden object-cover rounded-full"
+                  src="https://dh-ui.s3.amazonaws.com/assets/photo-1564061170517-d3907caa96ea.jfif"
+                  alt="avatar">
               </div>
               <div class="-ml-2 shadow border-2 border-white rounded-full w-8 h-8">
-                <img class="w-full h-full overflow-hidden object-cover rounded-full" src="https://dh-ui.s3.amazonaws.com/assets/photo-1548958921-c5c0fe1b307d.jfif" alt="avatar">
+                <img class="w-full h-full overflow-hidden object-cover rounded-full"
+                  src="https://dh-ui.s3.amazonaws.com/assets/photo-1548958921-c5c0fe1b307d.jfif"
+                  alt="avatar">
               </div>
               <div class="-ml-2 shadow border-2 border-white rounded-full w-8 h-8">
-                <img class="w-full h-full overflow-hidden object-cover rounded-full" src="https://dh-ui.s3.amazonaws.com/assets/photo-1566753323558-f4e0952af115.jfif" alt="avatar">
+                <img class="w-full h-full overflow-hidden object-cover rounded-full"
+                  src="https://dh-ui.s3.amazonaws.com/assets/photo-1566753323558-f4e0952af115.jfif"
+                  alt="avatar">
               </div>
               <div class="-ml-2 shadow border-2 border-white rounded-full w-8 h-8">
-                <img class="w-full h-full overflow-hidden object-cover rounded-full" src="https://dh-ui.s3.amazonaws.com/assets/beautiful-woman-medium-shot-with-pink-background_23-2148316670.jpg" alt="avatar">
+                <img class="w-full h-full overflow-hidden object-cover rounded-full"
+                  src="https://dh-ui.s3.amazonaws.com/assets/beautiful-woman-medium-shot-with-pink-background_23-2148316670.jpg"
+                  alt="avatar">
               </div>
               <div class="-ml-2 shadow border-2 border-white rounded-full w-8 h-8">
-                <img class="w-full h-full overflow-hidden object-cover rounded-full" src="https://dh-ui.s3.amazonaws.com/assets/excited-happy-young-pretty-woman_171337-2006.jpg" alt="avatar">
+                <img class="w-full h-full overflow-hidden object-cover rounded-full"
+                  src="https://dh-ui.s3.amazonaws.com/assets/excited-happy-young-pretty-woman_171337-2006.jpg"
+                  alt="avatar">
               </div>
               <p class="text-gray-600 dark:text-gray-400 text-sm font-normal ml-2">
                 +2 more participants
               </p>
             </div>
           </div>
-          <div class="w-full lg:w-1/3 p-6 border-t border-b lg:border-t-0 lg:border-b-0 sm:border-l sm:border-r border-gray-300">
+          <div
+            class="w-full lg:w-1/3 p-6 border-t border-b lg:border-t-0 lg:border-b-0 sm:border-l sm:border-r border-gray-300">
             <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between">
-              <div class="text-xs text-center w-full bg-indigo-100 text-indigo-700 dark:text-indigo-600 rounded font-medium p-3 lg:mr-3">
+              <div
+                class="text-xs text-center w-full bg-indigo-100 text-indigo-700 dark:text-indigo-600 rounded font-medium p-3 lg:mr-3">
                 Start Date: 22 Jun, 2020
               </div>
               <div class="mt-4 text-center w-full lg:mt-0 text-xs bg-red-200 text-red-500 rounded font-medium p-3">
@@ -166,6 +182,6 @@
   </div>
 </template>
 
-<script>
+<script setup>
 
 </script>

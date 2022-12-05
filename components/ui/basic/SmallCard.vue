@@ -50,9 +50,9 @@
   </div>
 </template>
 
-<script>
+<script setup>
 export default {
-  data () {
+  data() {
     return {
       title: 'UX optimization and UI design',
       client: 'Client: Imaginary Company LLC',

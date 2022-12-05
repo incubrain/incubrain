@@ -139,17 +139,12 @@
         </div>
       </div>
     </div>
-    <!-- Card code block end -->
   </div>
 </template>
 
-<script>
-export default {
-  data () {
-    return {
-      header: 'https://tuk-cdn.s3.amazonaws.com/assets/components/grid_cards/gc_29.png',
-      profilePhoto: 'https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg'
-    }
-  }
-}
+<script setup>
+
+const header = 'https://tuk-cdn.s3.amazonaws.com/assets/components/grid_cards/gc_29.png'
+const profilePhoto = 'https://image.freepik.com/free-photo/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-wearing-casual-clothes_176532-10257.jpg'
+
 </script>

@@ -131,9 +131,9 @@
   </div>
   <!-- Card code block end -->
 </template>
-<script>
+<script setup>
 export default {
-  data () {
+  data() {
     return {
       eventImage: 'https://tuk-cdn.s3.amazonaws.com/assets/components/grid_cards/gc_27.png'
     }
@@ -144,7 +144,8 @@ export default {
 .checkbox:checked {
   border: none;
 }
-.checkbox:checked + .check-icon {
+
+.checkbox:checked+.check-icon {
   display: flex;
 }
 </style>

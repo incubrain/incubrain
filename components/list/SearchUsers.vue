@@ -224,6 +224,6 @@
   </div>
 </template>
 
-<script>
+<script setup>
 
 </script>

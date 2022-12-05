@@ -527,9 +527,9 @@
   </div>
 </template>
 
-<script>
+<script setup>
 export default {
-  data () {
+  data() {
     return {
       todos: [
         {

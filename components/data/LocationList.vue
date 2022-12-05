@@ -39,43 +39,38 @@
   </div>
 </template>
 
-<script>
-export default {
-  data () {
-    return {
-      countries: [
-        {
-          name: 'China',
-          visits: '2500',
-          bounce: '35',
-          img: 'https://i.ibb.co/MMQtT0G/china.png',
-          alt: 'chine'
-        },
-        {
-          name: 'Germany',
-          visits: '2500',
-          bounce: '35',
-          img: 'https://i.ibb.co/27c98hX/germa.png',
-          alt: 'german'
-        },
-        {
-          name: 'Lebnon',
-          visits: '2500',
-          bounce: '35',
-          img: 'https://i.ibb.co/hBj1rT9/lebnon.png',
-          alt: 'lebnon'
-        },
-        {
-          name: 'USA',
-          visits: '2500',
-          bounce: '35',
-          img: 'https://i.ibb.co/YycnHbn/usa.png',
-          alt: 'usa'
-        }
-      ]
-    }
+<script setup>
+
+const countries = [
+  {
+    name: 'China',
+    visits: '2500',
+    bounce: '35',
+    img: 'https://i.ibb.co/MMQtT0G/china.png',
+    alt: 'chine'
+  },
+  {
+    name: 'Germany',
+    visits: '2500',
+    bounce: '35',
+    img: 'https://i.ibb.co/27c98hX/germa.png',
+    alt: 'german'
+  },
+  {
+    name: 'Lebnon',
+    visits: '2500',
+    bounce: '35',
+    img: 'https://i.ibb.co/hBj1rT9/lebnon.png',
+    alt: 'lebnon'
+  },
+  {
+    name: 'USA',
+    visits: '2500',
+    bounce: '35',
+    img: 'https://i.ibb.co/YycnHbn/usa.png',
+    alt: 'usa'
   }
-}
+]
 </script>
 
 <style scoped>

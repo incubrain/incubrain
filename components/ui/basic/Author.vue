@@ -35,9 +35,9 @@
   </div>
 </template>
 
-<script>
+<script setup>
 export default {
-  data () {
+  data() {
     return {
       employee: {
         photo: 'https://cdn.tuk.dev/assets/templates/virtual-event-management/events-inner-12.png',

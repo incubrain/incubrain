@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-800 pb-24">
+  <div class="bg-gray-800">
     <div ref="signPage" class="mx-auto flex justify-center w-full pt-4">
       <div id="sign" ref="signWrap" class="relative flex items-center flex-col">
         <div ref="signBall" class=" bg-black rounded-full relative border-white border-2 w-[26px] h-[26px] z-10" />
@@ -7,19 +7,49 @@
         <div ref="signSign" class="border-[#F9CC0B] border-[6px] bg-[#f7f5e5] rounded-sm relative min-w-[120px] mt-[26px] z-10">
           <div class="sign w-full h-full flex justify-center items-center px-4">
             <h3 class="text-4xl leading-tight handwritten m-0">
-              {{ capitalizeFirstLetter(parentRoute[1] || 'home') }}
+              {{ capitalizeFirstLetter(parentRoute[1] || 'Welcome!!') }}
             </h3>
           </div>
         </div>
       </div>
     </div>
+    <div class="w-full h-auto bg-gray-800">
+        <ul
+          class="flex flex-row cursor-pointer mt-8 justify-center items-center overflow-x-scroll scrollbar-hide transition-all duration-1000 ease-in-out"
+          :style="parentRoute[1] ? {
+            height: '60px'
+          } : {
+            height: '0px'
+          }"
+        >
+          <li v-for="tab in currentTabs"
+              :key="tab.id"
+              class="py-5 px-12 text-sm rounded-t whitespace-nowrap transition-all duration-700 ease-in-out relative bg-transparent"
+              :style="route.name === tab.name ? {
+                color: 'black',
+                background: '#E5E7EB',
+                fontWeight: 700,
+              } : {
+                color: 'white',
+                fontWeight: 500,
+
+              }"
+            @click="navigateTo(`/${parentRoute[1] + tab.slug}`)">
+            {{ tab.name }}
+          </li>
+        </ul>
+      </div>
   </div>
 </template>
 
 <script setup>
 
+
 const route = useRoute()
+const { tabs } = usePages()
+
 const parentRoute = computed(() => route.path.split('/'))
+const currentTabs = computed(() => tabs(parentRoute.value[1])?.children)
 
 function capitalizeFirstLetter (string) {
   return string.charAt(0).toUpperCase() + string.slice(1)

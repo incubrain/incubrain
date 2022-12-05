@@ -25,6 +25,10 @@
     "rules": {
         "vue/multi-word-component-names": 0,
         "no-global-assign": ["off", {"exceptions": ["Object"]}],
-        "no-undefined": ["off"]
+        "no-undefined": ["off"],
+        "rules": {
+            "no-new": "off",
+            // ...
+          }
     }
 }

@@ -30,7 +30,7 @@
   </header>
 </template>
 
-<script>
+<script setup>
 import './header.css';
 import MyButton from './Button.vue';
 

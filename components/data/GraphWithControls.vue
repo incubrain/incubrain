@@ -104,7 +104,7 @@
         </div>
       </div>
       <canvas
-        id="line_chart"
+        id="withControls"
         height="528"
         width="1760"
         style="display: block; height: 264px; width: 880px"
@@ -119,10 +119,10 @@
 
 <script setup>
 
-import Chart from 'chart.js'
+import Chart from 'chart.js/auto'
 
 onMounted(() => {
-  new Chart(document.getElementById('line_chart'), {
+  const chart = new Chart(document.getElementById('withControls'), {
     type: 'line',
     data: {
       labels: [
@@ -157,27 +157,23 @@ onMounted(() => {
         display: false
       },
       scales: {
-        yAxis: [
+        y:
           {
             gridLines: {
               display: false
             },
             ticks: {
               beginAtZero: true,
-              callback: function (value) {
-                return yLabels[value]
-              }
             }
           }
-        ]
       }
     }
   })
+  console.log('chart', chart)
 })
-
-// Need to update the chart to use V3
 
 </script>
 
 <style scoped>
+
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="w-full rounded shadow bg-white dark:bg-gray-800">
-    <!-- Please include this script in the head section of your webpage to make the chart work.-->
+    <!-- Please include this script in the head section of your webpage to make the{ Chart }work.-->
     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> -->
     <div class="px-5">
       <div class="md:flex">
@@ -25,7 +25,7 @@
             </div>
           </div>
           <div class="w-full h-full pt-8">
-            <canvas id="canvas" />
+            <canvas id="barRevenueCanvas" />
           </div>
         </div>
         <div class="md:border-l md:py-6 py-4 border-gray-200 md:w-1/4 h-full flex items-center flex-col">
@@ -67,7 +67,9 @@
           </p>
           <div class="px-11 pt-8">
             <canvas id="barRevenue"
-              width="130" />
+              width="140"
+              height="140"
+               />
           </div>
           <button
             class="text-sm mt-12 mb-6 font-medium leading-none text-center text-white py-2.5 px-5 rounded bg-indigo-700 hover:bg-indigo-600">
@@ -80,12 +82,9 @@
 </template>
 
 <script setup>
-// npm install chart.js@2.8.0
-import Chart from 'chart.js'
+import Chart from 'chart.js/auto'
 
 function createChart() {
-  const ctx = document.getElementById('canvas').getContext('2d')
-
   const data = {
     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
     datasets: [
@@ -108,7 +107,7 @@ function createChart() {
     ]
   }
 
-  new Chart(ctx, {
+  new Chart(document.getElementById('barRevenueCanvas'), {
     type: 'bar',
     data,
     options: {
@@ -118,7 +117,7 @@ function createChart() {
       barValueSpacing: 0,
       barRoundness: 1,
       scales: {
-        yAxes: [
+        y:
           {
             ticks: {
               min: -300,
@@ -128,9 +127,8 @@ function createChart() {
               display: false,
               drawBorder: false
             }
-          }
-        ],
-        xAxes: [
+          },
+        x:
           {
             stacked: true,
             barPercentage: 0.2,
@@ -139,13 +137,11 @@ function createChart() {
               drawBorder: false
             }
           }
-        ]
       }
     }
   })
   // chart2
-  const ctx2 = document.getElementById('barRevenue').getContext('2d')
-  new Chart(ctx2, {
+  new Chart(document.getElementById('barRevenue'), {
     type: 'line',
     data: {
       labels: ['', '', '', ' ', '', ''],
@@ -183,7 +179,7 @@ function createChart() {
         display: false
       },
       scales: {
-        yAxes: [
+        y:
           {
             gridLines: {
               display: false,
@@ -194,9 +190,8 @@ function createChart() {
               min: 0,
               max: 30
             }
-          }
-        ],
-        xAxes: [
+          },
+        x:
           {
             gridLines: {
               display: false,
@@ -204,7 +199,6 @@ function createChart() {
             },
             display: false
           }
-        ]
       }
     }
   })

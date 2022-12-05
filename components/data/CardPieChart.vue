@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center justify-center w-full h-full">
-    <!-- Please include the chartJs script in the head section of your webpage to make the chart work.
+    <!-- Please include the chartJs script in the head section of your webpage to make the{ Chart }work.
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>-->
     <div class="max-w-sm bg-white p-8 dark:bg-gray-800 rounded">
       <p class="text-2xl font-medium leading-6 sm:pr-56 pr-10 text-gray-800 dark:text-gray-100">
@@ -26,18 +26,18 @@
   </div>
 </template>
 
-<script>
-import Chart from 'chart.js'
+<script setup>
+import Chart from 'chart.js/auto'
 
 export default {
-  data () {
+  data() {
     return {}
   },
-  mounted () {
+  mounted() {
     this.createChart()
   },
   methods: {
-    createChart () {
+    createChart() {
       Chart.pluginService.register({
         afterUpdate: function (chart) {
           if (chart.config.options.elements.arc.roundedCornersFor !== undefined) {
@@ -109,7 +109,5 @@ export default {
 </script>
 
 <style scoped>
-
 @import url("https://cdn.tuk.dev/dist/css/tailwind-v2.2.11.min.css");
-
 </style>

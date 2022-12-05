@@ -1,8 +1,5 @@
 <template>
-  <div class="flex items-center justify-center w-full h-full">
-    <!-- Please include this script in the head section of your webpage to make the chart work.
-       <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>  -->
-    <div class="bg-white dark:bg-gray-800 rounded py-4 px-8">
+    <div class="bg-white dark:bg-gray-800 rounded p-4 px-8 w-full">
       <div class="flex items-center justify-between">
         <div class="flex items-center">
           <p class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-100 pr-3">
@@ -38,81 +35,74 @@
           </div>
         </div>
       </div>
-      <div class="h-full w-full mt-14 relative flex items-center justify-center">
+      <div class="h-full w-full mt-4 relative flex items-center justify-center">
         <canvas id="barCard" height="300" />
       </div>
     </div>
-  </div>
 </template>
 
-<script>
-// npm install chart.js@2.8.0
-import Chart from 'chart.js'
-export default {
-  data () {
-    return {}
-  },
-  mounted () {
-    this.createChart()
-  },
-  methods: {
-    createChart () {
-      const ctx = document.getElementById('barCard').getContext('2d')
-      const purple_orange_gradient = ctx.createLinearGradient(0, 0, 0, 300)
-      purple_orange_gradient.addColorStop(0, '#FDA4AF')
-      purple_orange_gradient.addColorStop(1, '#8B5CF6')
-      const red_orange_gradient = ctx.createLinearGradient(0, 0, 0, 300)
-      red_orange_gradient.addColorStop(0, '#F87171')
-      red_orange_gradient.addColorStop(1, '#FDBA74')
-      const data = {
-        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        datasets: [
-          {
-            label: 'New',
-            backgroundColor: purple_orange_gradient,
-            data: [200, 400, 200, 400, 300, 500, 500]
-          },
-          {
-            label: 'Returning',
-            backgroundColor: red_orange_gradient,
-            data: [300, 300, 600, 300, 100, 600, 600]
-          }
-        ]
+<script setup>
+import Chart from 'chart.js/auto'
+
+function createChart() {
+  const ctx = document.getElementById('barCard').getContext('2d')
+  const purpleorangegradient = ctx.createLinearGradient(0, 0, 0, 300)
+  purpleorangegradient.addColorStop(0, '#FDA4AF')
+  purpleorangegradient.addColorStop(1, '#8B5CF6')
+  const redorangegradient = ctx.createLinearGradient(0, 0, 0, 300)
+  redorangegradient.addColorStop(0, '#F87171')
+  redorangegradient.addColorStop(1, '#FDBA74')
+  const data = {
+    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+    datasets: [
+      {
+        label: 'New',
+        backgroundColor: purpleorangegradient,
+        data: [200, 400, 200, 400, 300, 500, 500]
+      },
+      {
+        label: 'Returning',
+        backgroundColor: redorangegradient,
+        data: [300, 300, 600, 300, 100, 600, 600]
       }
-      new Chart(ctx, {
-        type: 'bar',
-        data,
-        options: {
-          legend: {
-            display: false
-          },
-          barValueSpacing: 0,
-          scales: {
-            yAxes: [
-              {
-                ticks: {
-                  min: 0
-                },
-                gridLines: {
-                  display: false
-                }
-              }
-            ],
-            xAxes: [
-              {
-                barPercentage: 1.0,
-                gridLines: {
-                  display: false
-                }
-              }
-            ]
-          }
-        }
-      })
-    }
+    ]
   }
+  new Chart(ctx, {
+    type: 'bar',
+    data,
+    options: {
+      legend: {
+        display: false
+      },
+      barValueSpacing: 0,
+      scales: {
+        y:
+          {
+            ticks: {
+              min: 0
+            },
+            gridLines: {
+              display: false
+            }
+          },
+        x:
+          {
+            barPercentage: 1.0,
+            gridLines: {
+              display: false
+            }
+          }
+      }
+    }
+  })
 }
+
+onMounted(() => {
+  createChart()
+})
+
 </script>
+
 <style scoped>
 @import url("https://cdn.tuk.dev/dist/css/tailwind-v2.2.11.min.css");
 </style>

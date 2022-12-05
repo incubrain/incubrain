@@ -1,6 +1,5 @@
 <template>
-  <div class="flex items-center justify-center w-full h-full">
-    <div class="max-w-sm w-full bg-white pt-6 dark:bg-gray-800 rounded">
+    <div class="w-full bg-white pt-6 dark:bg-gray-800 rounded">
       <div class="pl-8 pr-6">
         <div class="flex items-center justify-between">
           <p class="sm:pr-48 pr-10 text-xs font-medium leading-3 text-gray-500 dark:text-gray-400">
@@ -59,90 +58,74 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
-<script>
+<script setup>
 // npm install chart.js@2.8.0
-import Chart from 'chart.js'
-export default {
-  data () {
-    return {
-      chartId: 'lineWave',
-      chartData: {
-        type: 'line',
-        data: {
-          labels: ['', '', '', ' ', '', ''],
-          datasets: [
-            {
-              data: [1, 10, 6, 11, 6, 12],
-              backgroundColor: ['#4338CA'],
-              borderWidth: 0,
-              strokeColor: '#6366F1'
-            },
-            {
-              data: [10, 6, 8, 14, 9, 15],
-              backgroundColor: ['#E0E7FF'],
-              borderWidth: 0
-            }
-          ]
+import Chart from 'chart.js/auto'
+ 
+
+function createChart() {
+  new Chart(document.getElementById('lineWave'), {
+    type: 'line',
+    data: {
+      labels: ['', '', '', ' ', '', ''],
+      datasets: [
+        {
+          data: [1, 10, 6, 11, 6, 12],
+          backgroundColor: ['#4338CA'],
+          borderWidth: 0,
+          strokeColor: '#6366F1'
         },
-        options: {
-          elements: {
-            point: {
-              radius: 0
-            }
-          },
-          generateLabels: {
-            hidden: true
-          },
-          legend: {
+        {
+          data: [10, 6, 8, 14, 9, 15],
+          backgroundColor: ['#E0E7FF'],
+          borderWidth: 0
+        }
+      ]
+    },
+    options: {
+      elements: {
+        point: {
+          radius: 0
+        }
+      },
+      generateLabels: {
+        hidden: true
+      },
+      legend: {
+        display: false
+      },
+      scales: {
+        y:
+        {
+          gridLines: {
             display: false
           },
-          scales: {
-            yAxes: [
-              {
-                gridLines: {
-                  display: false
-                },
-                display: false,
-                ticks: {
-                  min: 0,
-                  max: 20
-                }
-              }
-            ],
-            xAxes: [
-              {
-                gridLines: {
-                  display: false
-                },
-                display: false
-              }
-            ]
+          display: false,
+          ticks: {
+            min: 0,
+            max: 20
           }
+        },
+        x:
+        {
+          gridLines: {
+            display: false
+          },
+          display: false
         }
       }
-    }
-  },
-  mounted () {
-    this.createChart(this.chartId, this.chartData)
-  },
-  methods: {
-    createChart (chartId, chartData) {
-      const ctx = document.getElementById(chartId).getContext('2d')
-      new Chart(ctx, {
-        type: chartData.type,
-        data: chartData.data,
-        options: chartData.options
-      })
-    }
-  }
+    }      
+  })
 }
+
+onMounted(() => {
+  createChart()
+})
+
 </script>
 
 <style scoped>
-
 @import url("https://cdn.tuk.dev/dist/css/tailwind-v2.2.11.min.css");
-
 </style>

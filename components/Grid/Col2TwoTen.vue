@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-wrap">
-    <div class="md:w-1/5 w-full pb-2 lg:p-8">
+    <div class="md:w-1/5 w-full pb-2 lg:p-6 xl:p-8">
       <!-- Remove class [ border-gray-300  dark:border-gray-700 border-dashed border-2 ] to remove dotted border -->
       <div class="rounded ">
         <slot name="1" />

@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-sm rounded shadow bg-white dark:bg-gray-800">
+  <div class="w-full rounded shadow bg-white dark:bg-gray-800">
     <div class="flex">
       <div class="px-6 py-5">
         <p class="text-base font-medium leading-none text-gray-800 dark:text-gray-100">
@@ -18,7 +18,7 @@
           </button>
         </div>
       </div>
-      <div class="px-3">
+    <div class="px-3">
         <img src="https://i.ibb.co/34gPtCT/bg.png"
           alt="medal">
       </div>

@@ -644,9 +644,9 @@
   </div>
 </template>
 
-<script>
+<script setup>
 export default {
-  data () {
+  data() {
     return {
       company: false,
       category: false,
@@ -655,21 +655,21 @@ export default {
       sales: false
     }
   },
-  mounted () {},
+  mounted() { },
   methods: {
-    toggleCompany () {
+    toggleCompany() {
       this.company = !this.company
     },
-    toggleCategory () {
+    toggleCategory() {
       this.category = !this.category
     },
-    toggleViews () {
+    toggleViews() {
       this.view = !this.view
     },
-    toggleRevenues () {
+    toggleRevenues() {
       this.revenue = !this.revenue
     },
-    toggleSales () {
+    toggleSales() {
       this.sales = !this.sales
     }
   }

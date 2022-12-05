@@ -45,15 +45,15 @@
   </div>
 </template>
 
-<script>
+<script setup>
 export default {
-  data () {
+  data() {
     return {
       show: false
     }
   },
   methods: {
-    modalHandler (val) {
+    modalHandler(val) {
       const modal = this.$refs.modalCta
       if (val) {
         this.fadeIn(modal)
@@ -61,9 +61,9 @@ export default {
         this.fadeOut(modal)
       }
     },
-    fadeOut (el) {
+    fadeOut(el) {
       el.style.opacity = 1;
-      (function fade () {
+      (function fade() {
         if ((el.style.opacity -= 0.1) < 0) {
           el.style.display = 'none'
         } else {
@@ -71,10 +71,10 @@ export default {
         }
       })()
     },
-    fadeIn (el, display) {
+    fadeIn(el, display) {
       el.style.opacity = 0
       el.style.display = display || 'block';
-      (function fade () {
+      (function fade() {
         let val = parseFloat(el.style.opacity)
         if (!((val += 0.2) > 1)) {
           el.style.opacity = val
@@ -87,4 +87,5 @@ export default {
 </script>
 
 <style>
+
 </style>

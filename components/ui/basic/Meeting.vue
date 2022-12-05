@@ -127,10 +127,10 @@
   </div>
 </template>
 
-<script>
+<script setup>
 export default {
   methods: {
-    dropdownHandler (event) {
+    dropdownHandler(event) {
       const single = event.currentTarget.getElementsByTagName('ul')[0]
       single.classList.toggle('hidden')
     }

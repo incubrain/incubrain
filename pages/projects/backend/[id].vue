@@ -36,6 +36,6 @@
 <script setup lang="ts">
 
 const post = ref()
-post.value = await queryContent('projects').where({ id: 1 }).findOne()
+post.value = useAsyncData('backend-data', async () => await queryContent('projects').where({ id: 1 }).findOne())
 
 </script>

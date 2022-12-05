@@ -1,16 +1,17 @@
 <template>
   <div>
     <NavMain />
-    <slot />
+    <AppTabs>
+      <slot />
+    </AppTabs>
   </div>
 </template>
 
-<script>
+<script setup>
 
 </script>
 
 <style>
-
 html {
   margin: 0;
   padding: 0;
@@ -22,4 +23,14 @@ html {
   margin: 0;
 }
 
+.layout-enter-active,
+.layout-leave-active {
+  transition: all 0.4s;
+}
+
+.layout-enter-from,
+.layout-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
+}
 </style>

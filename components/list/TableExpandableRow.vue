@@ -2404,13 +2404,13 @@
   </div>
 </template>
 
-<script>
+<script setup>
 export default {
   mounted: function () {
     this.hideTableDetails()
   },
   methods: {
-    main (event) {
+    main(event) {
       const element = event.currentTarget.parentElement.parentElement
       const andicators = element.querySelectorAll('svg')
       const child = element.querySelector('ul')
@@ -2430,28 +2430,28 @@ export default {
         andicators[1].style.display = 'block'
       }
     },
-    hideTableDetails () {
+    hideTableDetails() {
       const tableDetails = document.getElementsByClassName('detail-row')
       for (let i = 0; i < tableDetails.length; i++) {
         tableDetails[i].getElementsByTagName('td')[0].classList.add('hidden')
       }
     },
-    dropdownFunction (event) {
+    dropdownFunction(event) {
       const single = event.currentTarget.getElementsByClassName('dropdown-content')[0]
       single.classList.toggle('hidden')
 
       this.andicator(single, event.currentTarget)
     },
-    accordionHandler (event) {
+    accordionHandler(event) {
       const single = event.currentTarget.parentElement.parentElement.parentElement.nextElementSibling.children[0]
       single.classList.toggle('hidden')
       this.andicator(single, event.currentTarget)
     },
-    tableInteract (event) {
+    tableInteract(event) {
       const single = event.currentTarget.parentElement.parentElement.parentElement
       single.classList.toggle('bg-gray-100')
     },
-    checkAll (event) {
+    checkAll(event) {
       const rows = event.currentTarget.parentElement.parentElement.parentElement.parentElement.nextElementSibling.children
       for (let i = 0; i < rows.length; i++) {
         if (event.currentTarget.checked) {
@@ -2469,7 +2469,7 @@ export default {
         }
       }
     },
-    andicator (single, target) {
+    andicator(single, target) {
       const andicator = target.querySelectorAll('svg')
       if (!single.classList.contains('hidden')) {
         andicator[0].style.display = 'block'

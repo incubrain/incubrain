@@ -1,6 +1,9 @@
 {
   // https://v3.nuxtjs.org/concepts/typescript
   "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "target": "es6" //above es6 like ES2015,ES2018 ...
+  },
   "theme": {
     "extend": {
         "colors": {

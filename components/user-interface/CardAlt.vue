@@ -122,12 +122,8 @@
   </div>
 </template>
 
-<script>
-export default {
-  data () {
-    return {
-      profilePhoto: 'https://tuk-cdn.s3.amazonaws.com/assets/components/grid_cards/gc_2.png'
-    }
-  }
-}
+<script setup>
+
+const profilePhoto = 'https://tuk-cdn.s3.amazonaws.com/assets/components/grid_cards/gc_2.png'
+
 </script>

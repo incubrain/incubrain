@@ -58,7 +58,7 @@
   </article>
 </template>
 
-<script>
+<script setup>
 import './page.css';
 import MyHeader from './Header.vue';
 

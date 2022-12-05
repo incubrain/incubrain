@@ -43,6 +43,6 @@
   </div>
   <!-- Card code block end -->
 </template>
-<script>
+<script setup>
 
 </script>

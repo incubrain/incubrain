@@ -14,81 +14,68 @@
   </div>
 </template>
 
-<script>
-// npm install chart.js@2.8.0
-import Chart from 'chart.js'
-export default {
-  data () {
-    return {
-      chartId: 'barComparison',
-      chartData: {
-        type: 'horizontalBar',
-        data: {
-          labels: ['PCI', 'JBOD', 'IB', 'SMS ', 'XML', 'AGP', 'SDD', 'SMTP'],
+<script setup>
+import Chart from 'chart.js/auto'
 
-          datasets: [
-            {
-              data: [290, 289, 288, 280, 276, 274, 270, 269],
-              borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-              backgroundColor: ['#312E81', '#3730a8', '#4338ca', '#4f46ef', '#6366F1', '#818cf8', '#A5B4FC', '#C7D2FE'],
-              borderWidth: 1,
-              pointBackgroundColor: '#6366F1',
-              strokeColor: '#6366F1',
-              barThickness: ['16px']
-            }
-          ]
-        },
-        options: {
-          elements: {
-            rectangle: {
-              borderWidth: 2
-            }
-          },
-          responsive: true,
-          generateLabels: {
-            hidden: true
-          },
-          legend: {
+function createChart() {
+  new Chart(document.getElementById('barComparison'), {
+    type: 'bar',
+    indexAxis: 'y',
+    data: {
+      labels: ['PCI', 'JBOD', 'IB', 'SMS ', 'XML', 'AGP', 'SDD', 'SMTP'],
+
+      datasets: [
+        {
+          data: [290, 289, 288, 280, 276, 274, 270, 269],
+          borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
+          backgroundColor: ['#312E81', '#3730a8', '#4338ca', '#4f46ef', '#6366F1', '#818cf8', '#A5B4FC', '#C7D2FE'],
+          borderWidth: 1,
+          pointBackgroundColor: '#6366F1',
+          strokeColor: '#6366F1',
+          barThickness: ['16px']
+        }
+      ]
+    },
+    options: {
+      elements: {
+        rectangle: {
+          borderWidth: 2
+        }
+      },
+      responsive: true,
+      generateLabels: {
+        hidden: true
+      },
+      legend: {
+        display: false
+      },
+      scales: {
+        y:
+        {
+          gridLines: {
             display: false
           },
-          scales: {
-            yAxes: [
-              {
-                gridLines: {
-                  display: false
-                },
-                categoryPercentage: 1.0,
-                barPercentage: 1.0,
-                display: false
-              }
-            ],
-            xAxes: [
-              {
-                gridLines: {
-                  display: false
-                },
-                display: false
-              }
-            ]
-          }
+          categoryPercentage: 1.0,
+          barPercentage: 1.0,
+          display: false
+        },
+        x:
+        {
+          gridLines: {
+            display: false
+          },
+          display: false
         }
       }
     }
-  },
-  mounted () {
-    this.createChart(this.chartId, this.chartData)
-  },
-  methods: {
-    createChart (chartId, chartData) {
-      const ctx = document.getElementById(chartId).getContext('2d')
-      new Chart(ctx, {
-        type: chartData.type,
-        data: chartData.data,
-        options: chartData.options
-      })
-    }
-  }
+  })
 }
+
+onMounted(() => {
+  createChart()
+})
+
+
 </script>
 
 <style scoped>

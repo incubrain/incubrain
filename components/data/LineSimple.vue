@@ -26,57 +26,44 @@
   </div>
 </template>
 
-<script>
-import Chart from 'chart.js'
+<script setup>
+import Chart from 'chart.js/auto'
 
-export default {
-  data () {
-    return {
-      chartId: 'lineSimple',
-      chartData: {
-        type: 'line',
-        data: {
-          labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-          datasets: [
-            {
-              label: '',
-              borderColor: '#3182CE',
-              data: [0, 200, 300, 200, 500, 500, 600],
-              backgroundColor: 'rgb(49,130,206,0.1)',
-              pointBackgroundColor: '#3182CE',
-              borderWidth: '3',
-              pointBorderWidth: '4',
-              pointHoverRadius: '6',
-              pointHoverBorderWidth: '8',
-              pointHoverBorderColor: 'rgb(74,85,104,0.2)'
-            }
-          ]
-        },
-        options: {
-          legend: {
-            position: false
-          },
-          elements: {
-            point: {
-              radius: 0
-            }
-          }
+function createChart() {
+  new Chart(document.getElementById('lineSimple'), {
+    type: 'line',
+    data: {
+      labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+      datasets: [
+        {
+          label: '',
+          borderColor: '#3182CE',
+          data: [0, 200, 300, 200, 500, 500, 600],
+          backgroundColor: 'rgb(49,130,206,0.1)',
+          pointBackgroundColor: '#3182CE',
+          borderWidth: '3',
+          pointBorderWidth: '4',
+          pointHoverRadius: '6',
+          pointHoverBorderWidth: '8',
+          pointHoverBorderColor: 'rgb(74,85,104,0.2)'
+        }
+      ]
+    },
+    options: {
+      legend: {
+        position: false
+      },
+      elements: {
+        point: {
+          radius: 0
         }
       }
     }
-  },
-  mounted () {
-    this.createChart(this.chartId, this.chartData)
-  },
-  methods: {
-    createChart (chartId, chartData) {
-      const ctx = document.getElementById(chartId)
-      new Chart(ctx, {
-        type: chartData.type,
-        data: chartData.data,
-        options: chartData.options
-      })
-    }
-  }
+  })
 }
+
+onMounted(() => {
+  createChart()
+})
+
 </script>

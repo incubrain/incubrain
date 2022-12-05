@@ -1,4 +1,4 @@
-# Mac's Portfolio
+# Mac\'s Portfolio
 
 
 <a href="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/georgie-the-menace.jpg"><img src="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/georgie-the-menace.jpg" align="left" height="240" width="240" ></a>
@@ -114,7 +114,7 @@ START: PDF_VIEWER 4:20AM - 6:30AM
 BREAK: 6:30AM - 7:30AM
 DYNAMIC_SHOWCASE: 7:30AM -  11:50AM
 SLEEP: 12:40PM
-APP_CLEANUP 10:30PM - 
+APP_CLEANUP 10:30PM - 1:00AM | Updated all chart.js to v4 & nuxt components, transition animations, mobile responsive checks, refactored some code.
 
 
 

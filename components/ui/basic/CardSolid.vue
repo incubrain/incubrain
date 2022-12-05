@@ -38,9 +38,9 @@
   </div>
 </template>
 
-<script>
+<script setup>
 export default {
-  data () {
+  data() {
     return {
       title: 'Learn, share and get help from our community',
       description: 'Join Tailwind UI Kit’s discord community and kickstart your next project with beautiful, accessible user interfaces.'

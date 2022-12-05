@@ -149,21 +149,21 @@
   </div>
 </template>
 
-<script>
+<script setup>
 export default {
-  data () {
+  data() {
     return {
       show: null
     }
   },
-  mounted () {},
+  mounted() { },
   methods: {
   }
 }
 </script>
 
 <style>
-.checkbox:checked + .check-icon {
-    display: flex;
+.checkbox:checked+.check-icon {
+  display: flex;
 }
 </style>

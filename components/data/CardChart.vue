@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-center w-full h-full">
-    <!-- Please include the chartJs script in the head section of your webpage to make the chart work.
+    <!-- Please include the chartJs script in the head section of your webpage to make the{ Chart }work.
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>-->
     <div class="max-w-sm bg-white pt-6 dark:bg-gray-800 rounded">
       <p class="text-xl font-semibold leading-5 pl-8 sm:pr-40 pr-10 text-gray-800 dark:text-gray-100">
@@ -30,19 +30,19 @@
   </div>
 </template>
 
-<script>
+<script setup>
 // npm install chart.js@2.8.0
-import Chart from 'chart.js'
+import Chart from 'chart.js/auto'
 
 export default {
-  data () {
+  data() {
     return {}
   },
-  mounted () {
+  mounted() {
     this.createChart()
   },
   methods: {
-    createChart () {
+    createChart() {
       const ctx = document.getElementById('myChart').getContext('2d')
       const purple_white_gradient = ctx.createLinearGradient(0, 0, 0, 300)
       purple_white_gradient.addColorStop(0, '#F9B4BD')
@@ -63,7 +63,7 @@ export default {
           animation: {
             onComplete: function () {
               const controller = this.chart.controller
-              const chart = controller.chart
+              const Chart = controller.chart
               const xAxis = controller.scales['x-axis-0']
               const numTicks = xAxis.ticks.length
               const xOffsetStart = xAxis.width / numTicks
@@ -90,25 +90,23 @@ export default {
           },
           responsive: true,
           scales: {
-            xAxes: [
-              {
-                ticks: {
-                  fontSize: 20,
-                  display: false,
-                  fontColor: 'black',
-                  min: 0,
-                  max: 20
-                },
-                gridLines: {
-                  display: false
-                }
-              }
-            ],
-            yAxes: [
-              {
+            x:
+            {
+              ticks: {
+                fontSize: 20,
+                display: false,
+                fontColor: 'black',
+                min: 0,
+                max: 20
+              },
+              gridLines: {
                 display: false
               }
-            ]
+            },
+            y:
+            {
+              display: false
+            }
           }
         }
       })
@@ -118,7 +116,5 @@ export default {
 </script>
 
 <style scoped>
-
 @import url("https://cdn.tuk.dev/dist/css/tailwind-v2.2.11.min.css");
-
 </style>

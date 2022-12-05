@@ -306,15 +306,15 @@
   </div>
 </template>
 
-<script>
+<script setup>
 export default {
-  data () {
+  data() {
     return {
       show: false
     }
   },
   methods: {
-    popuphandler (flag) {
+    popuphandler(flag) {
       if (flag) {
         this.show = true
       } else {
@@ -326,4 +326,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

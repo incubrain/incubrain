@@ -299,10 +299,10 @@
   <!-- Card code block end -->
 </template>
 
-<script>
+<script setup>
 export default {
   methods: {
-    activeTab (event) {
+    activeTab(event) {
       const siblings = event.currentTarget.parentNode.querySelectorAll('li')
       for (const item of siblings) {
         item.classList.add('text-gray-600 dark:text-gray-400')
@@ -315,7 +315,7 @@ export default {
       event.currentTarget.classList.add('bg-gray-200')
       event.currentTarget.innerHTML = 'Active'
     },
-    checkAll () {
+    checkAll() {
       const checkAll = document.getElementById('checkAll')
       const table = checkAll.closest('table')
       const checkboxes = table.querySelectorAll('input[type=checkbox]')
@@ -329,7 +329,7 @@ export default {
 </script>
 
 <style>
-.checkbox:checked + .check-icon {
+.checkbox:checked+.check-icon {
   display: flex;
 }
 </style>

@@ -21,11 +21,11 @@
   </div>
 </template>
 
-<script>
+<script setup>
 // npm install chart.js@2.8.0
-import Chart from 'chart.js'
+import Chart from 'chart.js/auto'
 export default {
-  data () {
+  data() {
     return {
       chartId: 'tacho',
       chartData: {
@@ -57,11 +57,11 @@ export default {
       }
     }
   },
-  mounted () {
+  mounted() {
     this.createChart(this.chartId, this.chartData)
   },
   methods: {
-    createChart (chartId, chartData) {
+    createChart(chartId, chartData) {
       const ctx = document.getElementById(chartId).getContext('2d')
       new Chart(ctx, {
         type: chartData.type,
@@ -74,7 +74,5 @@ export default {
 </script>
 
 <style scoped>
-
 @import url("https://cdn.tuk.dev/dist/css/tailwind-v2.2.11.min.css");
-
 </style>

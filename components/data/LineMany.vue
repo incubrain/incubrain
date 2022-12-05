@@ -44,106 +44,89 @@
   </div>
 </template>
 
-<script>
-// npm install chart.js@2.8.0
-import Chart from 'chart.js'
-export default {
-  name: 'Index',
-  data() {
-    return {
-      chartId: 'lineMany',
-      chartData: {
-        type: 'line',
-        data: {
-          labels: ['PCI', 'JBOD', '', ''],
+<script setup>
+import Chart from 'chart.js/auto'
 
-          datasets: [
-            {
-              label: 'Series 2',
-              data: [20, 22, 16, 15],
-              fill: true,
-              borderColor: ' rgba(253, 230, 138, 0.5)',
-              backgroundColor: ' rgba(253, 230, 138, 0.8)',
-              borderWidth: 1
-            },
-            {
-              label: 'Series 2',
-              data: [50, 35, 40, 0],
-              fill: true,
-              borderColor: ' rgba(252, 231, 243, 0.5) ',
-              backgroundColor: ' rgba(252, 231, 243, 0.8) ',
-              borderWidth: 1
-            },
-            {
-              label: 'Series 1',
-              data: [11, 16, 48, 25],
-              fill: true,
-              borderColor: 'rgba(124,58,237,1) ',
-              backgroundColor: ' rgba(124,58,237,1)',
-              borderWidth: 1
-            }
-          ]
+function createChart() {
+  new Chart(document.getElementById('lineMany'), {
+    type: 'line',
+    data: {
+      labels: ['PCI', 'JBOD', '', ''],
+
+      datasets: [
+        {
+          label: 'Series 2',
+          data: [20, 22, 16, 15],
+          fill: true,
+          borderColor: ' rgba(253, 230, 138, 0.5)',
+          backgroundColor: ' rgba(253, 230, 138, 0.8)',
+          borderWidth: 1
         },
-        options: {
-          elements: {
-            point: {
-              radius: 0
+        {
+          label: 'Series 2',
+          data: [50, 35, 40, 0],
+          fill: true,
+          borderColor: ' rgba(252, 231, 243, 0.5) ',
+          backgroundColor: ' rgba(252, 231, 243, 0.8) ',
+          borderWidth: 1
+        },
+        {
+          label: 'Series 1',
+          data: [11, 16, 48, 25],
+          fill: true,
+          borderColor: 'rgba(124,58,237,1) ',
+          backgroundColor: ' rgba(124,58,237,1)',
+          borderWidth: 1
+        }
+      ]
+    },
+    options: {
+      elements: {
+        point: {
+          radius: 0
+        }
+      },
+      responsive: true,
+
+      legend: {
+        display: false
+      },
+      scales: {
+        y:
+          {
+            display: false,
+            gridLines: {
+              display: true,
+              color: 'rgba(219,219,219,0.3)',
+              borderDash: [8, 4],
+
+              drawBorder: false,
+              zeroLineWidth: 2
+            },
+            ticks: {
+              beginAtZero: true,
+              display: false,
+              border: false,
+              max: 50,
+              min: 0,
+              stepSize: 25
             }
           },
-          responsive: true,
-
-          legend: {
+        x:
+          {
+            gridLines: {
+              display: false
+            },
             display: false
-          },
-          scales: {
-            yAxes: [
-              {
-                display: false,
-                gridLines: {
-                  display: true,
-                  color: 'rgba(219,219,219,0.3)',
-                  borderDash: [8, 4],
-
-                  drawBorder: false,
-                  zeroLineWidth: 2
-                },
-                ticks: {
-                  beginAtZero: true,
-                  display: false,
-                  border: false,
-                  max: 50,
-                  min: 0,
-                  stepSize: 25
-                }
-              }
-            ],
-            xAxes: [
-              {
-                gridLines: {
-                  display: false
-                },
-                display: false
-              }
-            ]
           }
-        }
       }
     }
-  },
-  mounted() {
-    this.createChart(this.chartId, this.chartData)
-  },
-  methods: {
-    createChart(chartId, chartData) {
-      const ctx = document.getElementById(chartId).getContext('2d')
-      new Chart(ctx, {
-        type: chartData.type,
-        data: chartData.data,
-        options: chartData.options
-      })
-    }
+  })
   }
-}
+
+onMounted(() => {
+  createChart()
+})
 </script>
 
 <style scoped>

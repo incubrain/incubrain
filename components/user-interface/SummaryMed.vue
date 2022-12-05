@@ -36,7 +36,7 @@
               </div>
             </div>
             <div class="absolute xl:relative xl:ml-4 right-0 top-0 mr-3 mt-3">
-              <button aria-label="options" class="focus:ring-2 focus:outline-none mt-1" @click="show=!show">
+              <button aria-label="options" class="focus:ring-2 focus:outline-none mt-1" @click="show = !show">
                 <svg
                   class="dropbtn"
                   width="20"
@@ -66,9 +66,9 @@
   </div>
 </template>
 
-<script>
+<script setup>
 export default {
-  data () {
+  data() {
     return {
       show: false
     }
@@ -78,4 +78,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

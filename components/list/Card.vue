@@ -66,9 +66,9 @@
   </div>
 </template>
 
-<script>
+<script setup>
 export default {
-  data () {
+  data() {
     return {
       name: 'Steve Doe',
       title: 'Sales Representative',
@@ -90,7 +90,7 @@ export default {
     }
   },
   methods: {
-    dropdownHandler (event) {
+    dropdownHandler(event) {
       const single = event.currentTarget.getElementsByTagName('ul')[0]
       single.classList.toggle('hidden')
     }

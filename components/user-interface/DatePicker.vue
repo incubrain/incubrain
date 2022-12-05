@@ -366,15 +366,15 @@
   </div>
 </template>
 
-<script>
+<script setup>
 export default {
-  data () {
+  data() {
     return {
       show: false
     }
   },
   methods: {
-    popuphandler (flag) {
+    popuphandler(flag) {
       if (flag) {
         this.show = true
       } else {
@@ -386,7 +386,7 @@ export default {
 </script>
 
 <style>
-.checkbox:checked + .check-icon {
+.checkbox:checked+.check-icon {
   display: flex;
 }
 </style>

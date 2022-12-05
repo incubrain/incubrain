@@ -237,31 +237,29 @@
   </div>
 </template>
 
-<script>
-export default {
-  methods: {
-    modalHandler (val) {
-      const modal = document.getElementById('modalUploadImage')
-      if (val) {
-        this.fadeIn(modal)
-      } else {
-        this.fadeOut(modal)
-      }
-    },
-    fadeOut (el) {
+<script setup>
+ function modalHandler(val) {
+  const modal = document.getElementById('modalUploadImage')
+  if (val) {
+    this.fadeIn(modal)
+  } else {
+    this.fadeOut(modal)
+  }
+}
+function fadeOut(el) {
       el.style.opacity = 1;
-      (function fade () {
+      (function fade() {
         if ((el.style.opacity -= 0.1) < 0) {
           el.style.display = 'none'
         } else {
           requestAnimationFrame(fade)
         }
       })()
-    },
-    fadeIn (el, display) {
+    }
+ function   fadeIn(el, display) {
       el.style.opacity = 0
       el.style.display = display || 'flex';
-      (function fade () {
+      (function fade() {
         let val = parseFloat(el.style.opacity)
         if (!((val += 0.2) > 1)) {
           el.style.opacity = val
@@ -269,6 +267,4 @@ export default {
         }
       })()
     }
-  }
-}
 </script>

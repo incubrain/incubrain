@@ -123,7 +123,7 @@
                     Call
                   </button>
                   <div class="relative px-5 pt-2">
-                    <button class="focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 focus:outline-none" role="button" aria-label="option" @click="show===null?show=0:show=null">
+                    <button class="focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 focus:outline-none" role="button" aria-label="option" @click="show === null ? show = 0 : show = null">
                       <svg
                         class="dropbtn"
                         xmlns="http://www.w3.org/2000/svg"
@@ -137,7 +137,7 @@
                         <path d="M15.8333 10.8332C16.2936 10.8332 16.6667 10.4601 16.6667 9.99984C16.6667 9.5396 16.2936 9.1665 15.8333 9.1665C15.3731 9.1665 15 9.5396 15 9.99984C15 10.4601 15.3731 10.8332 15.8333 10.8332Z" stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
                     </button>
-                    <div v-if="show===0" class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6">
+                    <div v-if="show === 0" class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6">
                       <div tabindex="0" class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white">
                         <p>Edit</p>
                       </div>
@@ -190,7 +190,7 @@
                     Call
                   </button>
                   <div class="relative px-5 pt-2">
-                    <button class="focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 focus:outline-none" role="button" aria-label="option" @click="show===null?show=1:show=null">
+                    <button class="focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 focus:outline-none" role="button" aria-label="option" @click="show === null ? show = 1 : show = null">
                       <svg
                         class="dropbtn"
                         xmlns="http://www.w3.org/2000/svg"
@@ -204,7 +204,7 @@
                         <path d="M15.8333 10.8332C16.2936 10.8332 16.6667 10.4601 16.6667 9.99984C16.6667 9.5396 16.2936 9.1665 15.8333 9.1665C15.3731 9.1665 15 9.5396 15 9.99984C15 10.4601 15.3731 10.8332 15.8333 10.8332Z" stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
                     </button>
-                    <div v-if="show===1" class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6">
+                    <div v-if="show === 1" class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6">
                       <div tabindex="0" class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white">
                         <p>Edit</p>
                       </div>
@@ -257,7 +257,7 @@
                     Call
                   </button>
                   <div class="relative px-5 pt-2">
-                    <button class="focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 focus:outline-none" role="button" aria-label="option" @click="show===null?show=2:show=null">
+                    <button class="focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 focus:outline-none" role="button" aria-label="option" @click="show === null ? show = 2 : show = null">
                       <svg
                         class="dropbtn"
                         xmlns="http://www.w3.org/2000/svg"
@@ -271,7 +271,7 @@
                         <path d="M15.8333 10.8332C16.2936 10.8332 16.6667 10.4601 16.6667 9.99984C16.6667 9.5396 16.2936 9.1665 15.8333 9.1665C15.3731 9.1665 15 9.5396 15 9.99984C15 10.4601 15.3731 10.8332 15.8333 10.8332Z" stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
                     </button>
-                    <div v-if="show===2" class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6">
+                    <div v-if="show === 2" class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6">
                       <div tabindex="0" class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white">
                         <p>Edit</p>
                       </div>
@@ -324,7 +324,7 @@
                     Call
                   </button>
                   <div class="relative px-5 pt-2">
-                    <button class="focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 focus:outline-none" role="button" aria-label="option" @click="show===null?show=3:show=null">
+                    <button class="focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 focus:outline-none" role="button" aria-label="option" @click="show === null ? show = 3 : show = null">
                       <svg
                         class="dropbtn"
                         xmlns="http://www.w3.org/2000/svg"
@@ -338,7 +338,7 @@
                         <path d="M15.8333 10.8332C16.2936 10.8332 16.6667 10.4601 16.6667 9.99984C16.6667 9.5396 16.2936 9.1665 15.8333 9.1665C15.3731 9.1665 15 9.5396 15 9.99984C15 10.4601 15.3731 10.8332 15.8333 10.8332Z" stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
                     </button>
-                    <div v-if="show===3" class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6">
+                    <div v-if="show === 3" class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6">
                       <div tabindex="0" class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white">
                         <p>Edit</p>
                       </div>
@@ -391,7 +391,7 @@
                     Call
                   </button>
                   <div class="relative px-5 pt-2">
-                    <button class="focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 focus:outline-none" role="button" aria-label="option" @click="show===null?show=4:show=null">
+                    <button class="focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 focus:outline-none" role="button" aria-label="option" @click="show === null ? show = 4 : show = null">
                       <svg
                         class="dropbtn"
                         xmlns="http://www.w3.org/2000/svg"
@@ -405,7 +405,7 @@
                         <path d="M15.8333 10.8332C16.2936 10.8332 16.6667 10.4601 16.6667 9.99984C16.6667 9.5396 16.2936 9.1665 15.8333 9.1665C15.3731 9.1665 15 9.5396 15 9.99984C15 10.4601 15.3731 10.8332 15.8333 10.8332Z" stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
                     </button>
-                    <div v-if="show===4" class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6">
+                    <div v-if="show === 4" class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6">
                       <div tabindex="0" class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white">
                         <p>Edit</p>
                       </div>
@@ -458,7 +458,7 @@
                     Call
                   </button>
                   <div class="relative px-5 pt-2">
-                    <button class="focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 focus:outline-none" role="button" aria-label="option" @click="show===null?show=5:show=null">
+                    <button class="focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 focus:outline-none" role="button" aria-label="option" @click="show === null ? show = 5 : show = null">
                       <svg
                         class="dropbtn"
                         xmlns="http://www.w3.org/2000/svg"
@@ -472,7 +472,7 @@
                         <path d="M15.8333 10.8332C16.2936 10.8332 16.6667 10.4601 16.6667 9.99984C16.6667 9.5396 16.2936 9.1665 15.8333 9.1665C15.3731 9.1665 15 9.5396 15 9.99984C15 10.4601 15.3731 10.8332 15.8333 10.8332Z" stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
                     </button>
-                    <div v-if="show===5" class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6">
+                    <div v-if="show === 5" class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6">
                       <div tabindex="0" class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white">
                         <p>Edit</p>
                       </div>
@@ -525,7 +525,7 @@
                     Call
                   </button>
                   <div class="relative px-5 pt-2">
-                    <button class="focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 focus:outline-none" role="button" aria-label="option" @click="show===null?show=6:show=null">
+                    <button class="focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 focus:outline-none" role="button" aria-label="option" @click="show === null ? show = 6 : show = null">
                       <svg
                         class="dropbtn"
                         xmlns="http://www.w3.org/2000/svg"
@@ -539,7 +539,7 @@
                         <path d="M15.8333 10.8332C16.2936 10.8332 16.6667 10.4601 16.6667 9.99984C16.6667 9.5396 16.2936 9.1665 15.8333 9.1665C15.3731 9.1665 15 9.5396 15 9.99984C15 10.4601 15.3731 10.8332 15.8333 10.8332Z" stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
                     </button>
-                    <div v-if="show===6" class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6">
+                    <div v-if="show === 6" class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6">
                       <div tabindex="0" class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white">
                         <p>Edit</p>
                       </div>
@@ -592,7 +592,7 @@
                     Call
                   </button>
                   <div class="relative px-5 pt-2">
-                    <button class="focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 focus:outline-none" role="button" aria-label="option" @click="show===null?show=7:show=null">
+                    <button class="focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 focus:outline-none" role="button" aria-label="option" @click="show === null ? show = 7 : show = null">
                       <svg
                         class="dropbtn"
                         xmlns="http://www.w3.org/2000/svg"
@@ -606,7 +606,7 @@
                         <path d="M15.8333 10.8332C16.2936 10.8332 16.6667 10.4601 16.6667 9.99984C16.6667 9.5396 16.2936 9.1665 15.8333 9.1665C15.3731 9.1665 15 9.5396 15 9.99984C15 10.4601 15.3731 10.8332 15.8333 10.8332Z" stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
                     </button>
-                    <div v-if="show===7" class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6">
+                    <div v-if="show === 7" class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6">
                       <div tabindex="0" class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white">
                         <p>Edit</p>
                       </div>
@@ -660,7 +660,7 @@
                     Call
                   </button>
                   <div class="relative px-5 pt-2">
-                    <button class="focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 focus:outline-none" role="button" aria-label="option" @click="show===null?show=8:show=null">
+                    <button class="focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 focus:outline-none" role="button" aria-label="option" @click="show === null ? show = 8 : show = null">
                       <svg
                         class="dropbtn"
                         xmlns="http://www.w3.org/2000/svg"
@@ -674,7 +674,7 @@
                         <path d="M15.8333 10.8332C16.2936 10.8332 16.6667 10.4601 16.6667 9.99984C16.6667 9.5396 16.2936 9.1665 15.8333 9.1665C15.3731 9.1665 15 9.5396 15 9.99984C15 10.4601 15.3731 10.8332 15.8333 10.8332Z" stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
                     </button>
-                    <div v-if="show===8" class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6">
+                    <div v-if="show === 8" class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6">
                       <div tabindex="0" class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white">
                         <p>Edit</p>
                       </div>
@@ -727,7 +727,7 @@
                     Call
                   </button>
                   <div class="relative px-5 pt-2">
-                    <button class="focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 focus:outline-none" role="button" aria-label="option" @click="show===null?show=9:show=null">
+                    <button class="focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 focus:outline-none" role="button" aria-label="option" @click="show === null ? show = 9 : show = null">
                       <svg
                         class="dropbtn"
                         xmlns="http://www.w3.org/2000/svg"
@@ -741,7 +741,7 @@
                         <path d="M15.8333 10.8332C16.2936 10.8332 16.6667 10.4601 16.6667 9.99984C16.6667 9.5396 16.2936 9.1665 15.8333 9.1665C15.3731 9.1665 15 9.5396 15 9.99984C15 10.4601 15.3731 10.8332 15.8333 10.8332Z" stroke="#9CA3AF" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
                       </svg>
                     </button>
-                    <div v-if="show===9" class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6">
+                    <div v-if="show === 9" class="dropdown-content bg-white shadow w-24 absolute z-30 right-0 mr-6">
                       <div tabindex="0" class="focus:outline-none focus:text-indigo-600 text-xs w-full hover:bg-indigo-700 py-4 px-4 cursor-pointer hover:text-white">
                         <p>Edit</p>
                       </div>
@@ -760,18 +760,19 @@
   </div>
 </template>
 
-<script>
+<script setup>
 export default {
-  data () {
+  data() {
     return {
       show: null
     }
   },
-  mounted () {},
+  mounted() { },
   methods: {
   }
 }
 </script>
 
 <style>
+
 </style>

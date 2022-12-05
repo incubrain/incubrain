@@ -30,7 +30,7 @@
               </div>
             </div>
             <div class="relative">
-              <button aria-label="show options" class="focus:outline-none" @click="show0=!show0">
+              <button aria-label="show options" class="focus:outline-none" @click="show0 = !show0">
                 <svg
                   class="focus:outline-none focus:ring-2 dropbtn"
                   xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +73,7 @@
               </div>
             </div>
             <div class="relative">
-              <button aria-label="show options" class="focus:outline-none" @click="show1=!show1">
+              <button aria-label="show options" class="focus:outline-none" @click="show1 = !show1">
                 <svg
                   class="focus:outline-none focus:ring-2 dropbtn"
                   xmlns="http://www.w3.org/2000/svg"
@@ -116,7 +116,7 @@
               </div>
             </div>
             <div class="relative">
-              <button aria-label="show options" class="focus:outline-none" @click="show2=!show2">
+              <button aria-label="show options" class="focus:outline-none" @click="show2 = !show2">
                 <svg
                   class="focus:outline-none focus:ring-2 dropbtn"
                   xmlns="http://www.w3.org/2000/svg"
@@ -159,7 +159,7 @@
               </div>
             </div>
             <div class="relative">
-              <button aria-label="show options" class="focus:outline-none" @click="show3=!show3">
+              <button aria-label="show options" class="focus:outline-none" @click="show3 = !show3">
                 <svg
                   class="focus:outline-none focus:ring-2 dropbtn"
                   xmlns="http://www.w3.org/2000/svg"
@@ -189,9 +189,9 @@
   </div>
 </template>
 
-<script>
+<script setup>
 export default {
-  data () {
+  data() {
     return {
       show0: false,
       show1: false,
@@ -204,4 +204,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

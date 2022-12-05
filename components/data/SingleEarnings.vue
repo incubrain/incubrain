@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center">
     <div class="max-w-sm rounded shadow bg-white dark:bg-gray-800 px-6 py-5">
-      <!-- Please include this script in the head section of your webpage to make the chart work.-->
+      <!-- Please include this script in the head section of your webpage to make the{ Chart }work.-->
       <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> -->
       <div class="sm:flex items-center">
         <div>
@@ -35,11 +35,11 @@
   </div>
 </template>
 
-<script>
+<script setup>
 // npm install chart.js@2.8.0
-import Chart from 'chart.js'
+import Chart from 'chart.js/auto'
 export default {
-  data () {
+  data() {
     return {
       chartId: 'singleEarnings',
       chartData: {
@@ -68,11 +68,11 @@ export default {
       }
     }
   },
-  mounted () {
+  mounted() {
     this.createChart(this.chartId, this.chartData)
   },
   methods: {
-    createChart (chartId, chartData) {
+    createChart(chartId, chartData) {
       const ctx = document.getElementById(chartId).getContext('2d')
       new Chart(ctx, {
         type: chartData.type,

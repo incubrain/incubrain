@@ -183,9 +183,9 @@
   </div>
 </template>
 
-<script>
+<script setup>
 export default {
-  data () {
+  data() {
     return {
       event: {
         name: "New Year's Costume Party",

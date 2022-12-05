@@ -48,9 +48,9 @@
   </div>
 </template>
 
-<script>
+<script setup>
 export default {
-  data () {
+  data() {
     return {
       day: 'Wednesday',
       date: '12 January 2021',
@@ -93,7 +93,8 @@ export default {
 
 <style scoped>
 @import url("https://cdn.tuk.dev/dist/css/tailwind-v2.2.11.min.css");
-.checkbox:checked + .check-icon {
+
+.checkbox:checked+.check-icon {
   display: flex;
 }
 </style>

@@ -68,10 +68,10 @@
   </div>
 </template>
 
-<script>
+<script setup>
 export default {
   methods: {
-    modalHandler (val) {
+    modalHandler(val) {
       const el = document.getElementById('modalPaymentSuccess')
       if (val) {
         this.fadeIn(el)
@@ -79,9 +79,9 @@ export default {
         this.fadeOut(el)
       }
     },
-    fadeOut (el) {
+    fadeOut(el) {
       el.style.opacity = 1;
-      (function fade () {
+      (function fade() {
         if ((el.style.opacity -= 0.1) < 0) {
           el.style.display = 'none'
         } else {
@@ -89,10 +89,10 @@ export default {
         }
       })()
     },
-    fadeIn (el, display) {
+    fadeIn(el, display) {
       el.style.opacity = 0
       el.style.display = display || 'flex';
-      (function fade () {
+      (function fade() {
         let val = parseFloat(el.style.opacity)
         if (!((val += 0.2) > 1)) {
           el.style.opacity = val

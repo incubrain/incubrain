@@ -1017,9 +1017,9 @@
   </div>
 </template>
 
-<script>
+<script setup>
 export default {
-  mounted () {
+  mounted() {
     const allArrivalBtns_calendar_8 = document.querySelectorAll(
       '.arrival-btn_calendar_8'
     )
@@ -1051,25 +1051,23 @@ export default {
 </script>
 
 <style scoped>
-
 /* width */
 ::-webkit-scrollbar {
-width: 5px;
+  width: 5px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-background: #f1f1f1;
+  background: #f1f1f1;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-background: #888;
+  background: #888;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-background: #555;
+  background: #555;
 }
-
 </style>

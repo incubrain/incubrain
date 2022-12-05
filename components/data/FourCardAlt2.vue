@@ -1,7 +1,7 @@
 <template>
   <!-- Card is full width. Use in 12 col grid for best view. -->
   <!-- Card code block start -->
-  <div class="grid grid-cols-1 gap-2 lg:gap-8">
+  <div class="grid grid-cols-1 gap-2 lg:gap-6 xl:gap-8">
     <div class="bg-white dark:bg-gray-800 rounded flex items-center justify-between px-5 relative shadow">
       <div class="absolute w-2 h-4 bg-indigo-700 left-0" />
       <h3 class="py-6 leading-4 text-gray-800 dark:text-gray-100 font-normal text-base">
@@ -41,6 +41,6 @@
   </div>
   <!-- Card code block end -->
 </template>
-<script>
+<script setup>
 
 </script>

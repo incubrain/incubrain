@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-2 lg:gap-8">
+  <div class="flex flex-col gap-2 lg:gap-6 xl:gap-8">
     <GridCol1>
       <template #default>
         <UserInterfaceHero />

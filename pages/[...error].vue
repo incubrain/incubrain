@@ -1,33 +1,14 @@
 <template>
-
-  <body class="bg-purple">
+  <div class="bg-purple">
     <div class="stars">
-      <div class="custom-navbar">
-        <div class="brand-logo">
-          <img src="http://salehriaz.com/404Page/img/logo.svg"
-            width="80px">
-        </div>
-        <div class="navbar-links">
-          <ul>
-            <li><a href="http://salehriaz.com/404Page/404.html"
-                target="_blank">Home</a></li>
-            <li><a href="http://salehriaz.com/404Page/404.html"
-                target="_blank">About</a></li>
-            <li><a href="http://salehriaz.com/404Page/404.html"
-                target="_blank">Features</a></li>
-            <li><a href="http://salehriaz.com/404Page/404.html"
-                class="btn-request"
-                target="_blank">Request A Demo</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="central-body">
-        <img class="image-404"
+      <div class="w-full h-full flex flex-col items-center justify-center">
+        <img class="image-404 mb-6"
           src="http://salehriaz.com/404Page/img/404.svg"
           width="300px">
-        <a href="http://salehriaz.com/404Page/404.html"
-          class="btn-go-home"
-          target="_blank">GO BACK HOME</a>
+        <NuxtLink :to="{ name: 'Home' }"
+          class="btn-go-home whitespace-nowrap px-8 pt-4"
+          >GO BACK HOME
+        </NuxtLink>
       </div>
       <div class="objects">
         <img class="object_rocket"
@@ -53,22 +34,12 @@
         <div class="star"></div>
         <div class="star"></div>
         <div class="star"></div>
-
       </div>
-
     </div>
-
-  </body>
+  </div>
 </template>
 
-<style>
-/*
-VIEW IN FULL SCREEN MODE
-FULL SCREEN MODE: http://salehriaz.com/404Page/404.html
-
-DRIBBBLE: https://dribbble.com/shots/4330167-404-Page-Lost-In-Space
-*/
-
+<style scoped>
 @import url('https://fonts.googleapis.com/css?family=Dosis:300,400,500');
 
 @-moz-keyframes rocket-movement {
@@ -190,7 +161,6 @@ DRIBBBLE: https://dribbble.com/shots/4330167-404-Page-Lost-In-Space
 }
 
 .spin-earth-on-hover {
-
   transition: ease 200s !important;
   transform: rotate(-3600deg) !important;
 }
@@ -214,6 +184,7 @@ body {
 
 .bg-purple {
   background: url(http://salehriaz.com/404Page/img/bg_purple.png);
+  /* filter: hue-rotate(-10deg); */
   background-repeat: repeat-x;
   background-size: cover;
   background-position: left top;
@@ -290,7 +261,6 @@ li a:hover {
   position: relative;
   z-index: 200;
   margin: 15px auto;
-  width: 100px;
   padding: 10px 15px;
   border: 1px solid #FFCB39;
   border-radius: 100px;
@@ -316,12 +286,6 @@ li a:hover {
   box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);
 }
 
-.central-body {
-  /*    width: 100%;*/
-  padding: 17% 5% 10% 5%;
-  text-align: center;
-}
-
 .objects img {
   z-index: 90;
   pointer-events: none;
@@ -341,7 +305,7 @@ li a:hover {
   top: 20%;
   left: 15%;
   z-index: 90;
-  /*    animation: spin-earth 100s infinite linear both;*/
+  animation: spin-earth 100s infinite linear both;
 }
 
 .object_moon {
@@ -380,6 +344,7 @@ li a:hover {
   background-repeat: repeat;
   background-size: contain;
   background-position: left top;
+  height: calc(100vh - 60px);
 }
 
 .glowing_stars .star {

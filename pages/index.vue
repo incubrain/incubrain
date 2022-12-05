@@ -1,8 +1,11 @@
 <template>
-  <div class="container mx-auto">
-    <HomeHero2 />
-    <HomeLargeHeading />
-    <HomeTimeline />
+  <div
+    class="container mx-auto"
+  >
+    <MulticolorHeading />
+    <FormContact />
+    <!-- <HomeTimeline /> -->
+    <!-- <HomeAppStack /> -->
     <!-- <HomeHero />
     <HomeProjectSteps />
     <HomeProjectMain />
@@ -20,7 +23,7 @@
 
 definePageMeta({
   layout: 'tabbed',
-  name: 'home'
+  name: 'Home'
 })
 
 </script>

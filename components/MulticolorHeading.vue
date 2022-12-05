@@ -1,8 +1,6 @@
 <template>
-  <div class="wrapper">
-    <div class="container">
-      <h1 class="multicolor text-[8vw] leading-[10vw] text-center">Tracking My Github Movements</h1>
-    </div>
+  <div class="w-full py-40 flex justify-center">
+    <h1 class="multicolor text-[7vw] leading-[10vw] text-center">Imagine what can happen beyond 48 hours</h1>
   </div>
 </template>
 
@@ -36,20 +34,9 @@
   --color-5: #f95f00;
 }
 
-.wrapper {
-  line-height: 1;
-  min-height: 100%;
-  display: grid;
-  place-items: center;
-  min-height: calc(100vh - 16px);
-}
-
 .multicolor {
   font-family: "Exo", sans-serif;
   font-weight: 900;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
   margin: auto;
   text-transform: uppercase;
   background: linear-gradient(219deg,

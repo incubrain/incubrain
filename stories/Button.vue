@@ -2,7 +2,7 @@
   <button type="button" :class="classes" @click="onClick" :style="style">{{ label }}</button>
 </template>
 
-<script>
+<script setup>
 import './button.css';
 import { reactive, computed } from 'vue';
 
