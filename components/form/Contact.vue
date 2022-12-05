@@ -2,6 +2,7 @@
   <div>
     <canvas></canvas>
     <div class="form-wrapper">
+      <h3 class="text-3xl mb-6">Why not find out?</h3>
       <form onsubmit="return false;">
         <label for="name">Name</label>
         <input type="text"

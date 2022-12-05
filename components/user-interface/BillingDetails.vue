@@ -135,37 +135,7 @@
 </template>
 
 <script setup>
-export default {
-  methods: {
-    modalHandler(val) {
-      const modal = document.getElementById('modalBilling')
-      if (val) {
-        this.fadeIn(modal)
-      } else {
-        this.fadeOut(modal)
-      }
-    },
-    fadeOut(el) {
-      el.style.opacity = 1;
-      (function fade() {
-        if ((el.style.opacity -= 0.1) < 0) {
-          el.style.display = 'none'
-        } else {
-          requestAnimationFrame(fade)
-        }
-      })()
-    },
-    fadeIn(el, display) {
-      el.style.opacity = 0
-      el.style.display = display || 'flex';
-      (function fade() {
-        let val = parseFloat(el.style.opacity)
-        if (!((val += 0.2) > 1)) {
-          el.style.opacity = val
-          requestAnimationFrame(fade)
-        }
-      })()
-    }
-  }
-}
+const { modalHandler } = useModal()
+
+const show = ref(false)
 </script>

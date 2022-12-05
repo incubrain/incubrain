@@ -307,20 +307,13 @@
 </template>
 
 <script setup>
-export default {
-  data() {
-    return {
-      show: false
-    }
-  },
-  methods: {
-    popuphandler(flag) {
-      if (flag) {
-        this.show = true
-      } else {
-        this.show = false
-      }
-    }
+const show = ref(boolean)
+
+function popuphandler(flag) {
+  if (flag) {
+    show.value = true
+  } else {
+    show.value = false
   }
 }
 </script>

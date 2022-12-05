@@ -39,14 +39,10 @@
 </template>
 
 <script setup>
-export default {
-  data() {
-    return {
-      title: 'Learn, share and get help from our community',
-      description: 'Join Tailwind UI Kit’s discord community and kickstart your next project with beautiful, accessible user interfaces.'
-    }
-  }
-}
+
+const title = 'Learn, share and get help from our community'
+const description = 'Join Tailwind UI Kit’s discord community and kickstart your next project with beautiful, accessible user interfaces.'
+
 </script>
 
 <style scoped>

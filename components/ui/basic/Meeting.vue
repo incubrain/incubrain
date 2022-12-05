@@ -128,14 +128,12 @@
 </template>
 
 <script setup>
-export default {
-  methods: {
-    dropdownHandler(event) {
-      const single = event.currentTarget.getElementsByTagName('ul')[0]
-      single.classList.toggle('hidden')
-    }
-  }
+
+function dropdownHandler(event) {
+  const single = event.currentTarget.getElementsByTagName('ul')[0]
+  single.classList.toggle('hidden')
 }
+
 </script>
 
 <style scoped>

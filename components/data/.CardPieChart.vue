@@ -106,6 +106,10 @@ export default {
     }
   }
 }
+
+onMounted(() => {
+  createChart()
+})
 </script>
 
 <style scoped>

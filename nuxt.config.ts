@@ -4,6 +4,7 @@
 
 export default defineNuxtConfig({
   app: {
+    layoutTransition: { name: 'layout', mode: 'out-in' },
     head: {
       link: [
         { rel: 'stylesheet', href: 'https://unpkg.com/flowbite@latest/dist/flowbite.min.css' }
@@ -17,6 +18,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/supabase',
+    '@pinia/nuxt',
     '@nuxt/content'
   ],
   typescript: {
@@ -38,6 +40,7 @@ export default defineNuxtConfig({
   build: {
     transpile: [
       '@headlessui/vue',
+      'chart.js',
       '@fortawesome/fontawesome-svg-core',
       '@fortawesome/pro-solid-svg-icons',
       '@fortawesome/pro-regular-svg-icons',

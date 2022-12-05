@@ -36,16 +36,10 @@
 </template>
 
 <script setup>
-export default {
-  data() {
-    return {
-      employee: {
-        photo: 'https://cdn.tuk.dev/assets/templates/virtual-event-management/events-inner-12.png',
-        name: 'James Iverson',
-        job: 'Freelance Artist',
-        description: "“Widely acknowledged as one of Australia's busiest &amp; best MC's and a global authority on Industry, James Iverson shares his expertise and insights into this fascinating Professional Speaking niche, lessons that he has learned and experienced.”"
-      }
-    }
-  }
+const employee = {
+  photo: 'https://cdn.tuk.dev/assets/templates/virtual-event-management/events-inner-12.png',
+  name: 'James Iverson',
+  job: 'Freelance Artist',
+  description: "“Widely acknowledged as one of Australia's busiest &amp; best MC's and a global authority on Industry, James Iverson shares his expertise and insights into this fascinating Professional Speaking niche, lessons that he has learned and experienced.”"
 }
 </script>

@@ -367,22 +367,9 @@
 </template>
 
 <script setup>
-export default {
-  data() {
-    return {
-      show: false
-    }
-  },
-  methods: {
-    popuphandler(flag) {
-      if (flag) {
-        this.show = true
-      } else {
-        this.show = false
-      }
-    }
-  }
-}
+const { modalHandler } = useModal()
+
+const show = ref(false)
 </script>
 
 <style>

@@ -132,13 +132,7 @@
   <!-- Card code block end -->
 </template>
 <script setup>
-export default {
-  data() {
-    return {
-      eventImage: 'https://tuk-cdn.s3.amazonaws.com/assets/components/grid_cards/gc_27.png'
-    }
-  }
-}
+const eventImage = 'https://tuk-cdn.s3.amazonaws.com/assets/components/grid_cards/gc_27.png'
 </script>
 <style>
 .checkbox:checked {

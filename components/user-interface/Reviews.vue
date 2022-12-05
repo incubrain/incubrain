@@ -43,38 +43,32 @@
 </template>
 
 <script setup>
-export default {
-  data() {
-    return {
-      reviews: [
-        {
-          name: 'Mike Scarn',
-          img: 'https://i.ibb.co/6rj5KQ1/card-1.png',
-          position: 'Marketing Manager, IMC',
-          comment: 'Incredible job and outstanding work',
-          day: '6',
-          stars: '5'
-        },
-        {
-          name: 'Jim Halpert',
-          img: 'https://i.ibb.co/3pLWb3j/card-2.png',
-          position: 'Head of Talent, Creative Co',
-          comment: 'Amazing as always. Very challenging work, with revisions and she made it all to perfection. Third time working together and there will be a lot more!',
-          day: '10',
-          stars: '4.5'
-        },
-        {
-          name: 'Dwight Schrute',
-          img: 'https://i.ibb.co/6rj5KQ1/card-1.png',
-          position: 'Project Manager, J&Ds',
-          comment: 'It was a breeze coordinating with the team, definitely recommended.',
-          day: '6',
-          stars: '5'
-        }
-      ]
-    }
+const reviews = [
+  {
+    name: 'Mike Scarn',
+    img: 'https://i.ibb.co/6rj5KQ1/card-1.png',
+    position: 'Marketing Manager, IMC',
+    comment: 'Incredible job and outstanding work',
+    day: '6',
+    stars: '5'
+  },
+  {
+    name: 'Jim Halpert',
+    img: 'https://i.ibb.co/3pLWb3j/card-2.png',
+    position: 'Head of Talent, Creative Co',
+    comment: 'Amazing as always. Very challenging work, with revisions and she made it all to perfection. Third time working together and there will be a lot more!',
+    day: '10',
+    stars: '4.5'
+  },
+  {
+    name: 'Dwight Schrute',
+    img: 'https://i.ibb.co/6rj5KQ1/card-1.png',
+    position: 'Project Manager, J&Ds',
+    comment: 'It was a breeze coordinating with the team, definitely recommended.',
+    day: '6',
+    stars: '5'
   }
-}
+]
 </script>
 
 <style scoped>

@@ -36,52 +36,39 @@
 </template>
 
 <script setup>
-// npm install chart.js@2.8.0
 import Chart from 'chart.js/auto'
-export default {
-  data() {
-    return {
-      chartId: 'singleEarnings',
-      chartData: {
-        type: 'doughnut',
-        data: {
-          labels: ['Employees', 'Customers', 'Vendors'],
-          datasets: [
-            {
-              borderColor: ['#A7F3D0 ', '#059669', '#34D399'],
-              backgroundColor: ['#A7F3D0 ', '#059669', '#34D399'],
-              data: [13, 24, 23]
-            }
-          ]
-        },
-        options: {
-          responsive: true,
-          legend: {
-            display: false
-          },
-          animation: {
-            animateScale: true,
-            animateRotate: true
-          },
-          cutoutPercentage: 70
+
+function createChart() {
+  new Chart(document.getElementById('singleEarnings'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Employees', 'Customers', 'Vendors'],
+      datasets: [
+        {
+          borderColor: ['#A7F3D0 ', '#059669', '#34D399'],
+          backgroundColor: ['#A7F3D0 ', '#059669', '#34D399'],
+          data: [13, 24, 23]
         }
-      }
+      ]
+    },
+    options: {
+      responsive: true,
+      legend: {
+        display: false
+      },
+      animation: {
+        animateScale: true,
+        animateRotate: true
+      },
+      cutoutPercentage: 70
     }
-  },
-  mounted() {
-    this.createChart(this.chartId, this.chartData)
-  },
-  methods: {
-    createChart(chartId, chartData) {
-      const ctx = document.getElementById(chartId).getContext('2d')
-      new Chart(ctx, {
-        type: chartData.type,
-        data: chartData.data,
-        options: chartData.options
-      })
-    }
-  }
+  })
 }
+
+onMounted(() => {
+  createChart()
+})
+
 </script>
 
 <style scoped>

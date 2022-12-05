@@ -190,17 +190,10 @@
 </template>
 
 <script setup>
-export default {
-  data() {
-    return {
-      show0: false,
-      show1: false,
-      show2: false,
-      show3: false
-    }
-  },
-  methods: {}
-}
+let show0 = false
+let show1 = false
+let show2 = false
+let show3 = false
 </script>
 
 <style scoped>

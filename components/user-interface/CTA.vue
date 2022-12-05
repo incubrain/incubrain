@@ -15,7 +15,7 @@
               Subscribe
             </button>
           </div>
-          <div class="cursor-pointer absolute top-0 right-0 m-3 text-gray-100 transition duration-150 ease-in-out" @click="modalHandler()">
+          <div class="cursor-pointer absolute top-0 right-0 m-3 text-gray-100 transition duration-150 ease-in-out" @click="modalHandler('cta', false)">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               aria-label="Close"
@@ -38,52 +38,19 @@
       </div>
     </div>
     <div id="button" class="w-full flex justify-center py-12">
-      <button class="focus:outline-none mx-auto transition duration-150 ease-in-out hover:bg-indigo-600 bg-indigo-700 rounded text-white px-4 sm:px-8 py-2 text-xs sm:text-sm" @click="modalHandler(true)">
+      <button class="focus:outline-none mx-auto transition duration-150 ease-in-out hover:bg-indigo-600 bg-indigo-700 rounded text-white px-4 sm:px-8 py-2 text-xs sm:text-sm" @click="modalHandler('cta', true)">
         Email List
       </button>
-    </div>
+    </div>4
   </div>
 </template>
 
 <script setup>
-export default {
-  data() {
-    return {
-      show: false
-    }
-  },
-  methods: {
-    modalHandler(val) {
-      const modal = this.$refs.modalCta
-      if (val) {
-        this.fadeIn(modal)
-      } else {
-        this.fadeOut(modal)
-      }
-    },
-    fadeOut(el) {
-      el.style.opacity = 1;
-      (function fade() {
-        if ((el.style.opacity -= 0.1) < 0) {
-          el.style.display = 'none'
-        } else {
-          requestAnimationFrame(fade)
-        }
-      })()
-    },
-    fadeIn(el, display) {
-      el.style.opacity = 0
-      el.style.display = display || 'block';
-      (function fade() {
-        let val = parseFloat(el.style.opacity)
-        if (!((val += 0.2) > 1)) {
-          el.style.opacity = val
-          requestAnimationFrame(fade)
-        }
-      })()
-    }
-  }
-}
+
+const { modalHandler } = useModal()
+
+const show = ref(false)
+
 </script>
 
 <style>

@@ -49,46 +49,40 @@
 </template>
 
 <script setup>
-export default {
-  data() {
-    return {
-      day: 'Wednesday',
-      date: '12 January 2021',
-      todos: [
-        {
-          title: 'Make payment for spotify',
-          time: '9:30 AM',
-          checked: 'true',
-          bg: 'bg-purple-500'
-        },
-        {
-          title: 'Pick up the kids',
-          time: '12:30 PM',
-          checked: 'false',
-          bg: 'bg-pink-500'
-        },
-        {
-          title: 'Grocery shopping',
-          time: '1:30 PM',
-          checked: 'false',
-          bg: 'bg-blue-500'
-        },
-        {
-          title: 'Call Michael',
-          time: '4:30 PM',
-          checked: 'false',
-          bg: 'bg-yellow-500'
-        },
-        {
-          title: 'Pick up dinner',
-          time: '8:30 PM',
-          checked: 'false',
-          bg: 'bg-red-500'
-        }
-      ]
-    }
+const day = 'Wednesday'
+const date = '12 January 2021'
+const todos = [
+  {
+    title: 'Make payment for spotify',
+    time: '9:30 AM',
+    checked: 'true',
+    bg: 'bg-purple-500'
+  },
+  {
+    title: 'Pick up the kids',
+    time: '12:30 PM',
+    checked: 'false',
+    bg: 'bg-pink-500'
+  },
+  {
+    title: 'Grocery shopping',
+    time: '1:30 PM',
+    checked: 'false',
+    bg: 'bg-blue-500'
+  },
+  {
+    title: 'Call Michael',
+    time: '4:30 PM',
+    checked: 'false',
+    bg: 'bg-yellow-500'
+  },
+  {
+    title: 'Pick up dinner',
+    time: '8:30 PM',
+    checked: 'false',
+    bg: 'bg-red-500'
   }
-}
+]
 </script>
 
 <style scoped>

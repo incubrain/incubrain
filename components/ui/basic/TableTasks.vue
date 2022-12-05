@@ -1205,16 +1205,7 @@
 </template>
 
 <script setup>
-export default {
-  data() {
-    return {
-      show: null
-    }
-  },
-  mounted() { },
-  methods: {
-  }
-}
+
 </script>
 
 <style>

@@ -1,6 +1,6 @@
 <template>
   <div class="w-full py-40 flex justify-center">
-    <h1 class="multicolor text-[7vw] leading-[10vw] text-center">Imagine what can happen beyond 48 hours</h1>
+    <h1 class="multicolor text-[7vw] leading-[10vw] text-center">Imagine what can happen beyond 48 hours...</h1>
   </div>
 </template>
 

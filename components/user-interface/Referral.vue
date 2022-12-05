@@ -322,44 +322,9 @@
 </template>
 
 <script setup>
-export default {
-  data: function () {
-    return {
-      mobileMenu: true
-    }
-  },
-  methods: {
-    modalHandler(val) {
-      const modal = this.$refs.modal1Referral
-      if (val) {
-        fadeIn(modal)
-      } else {
-        fadeOut(modal)
-      }
-      function fadeOut(el) {
-        el.style.opacity = 1;
-        (function fade() {
-          if ((el.style.opacity -= 0.1) < 0) {
-            el.style.display = 'none'
-          } else {
-            requestAnimationFrame(fade)
-          }
-        })()
-      }
-      function fadeIn(el, display) {
-        el.style.opacity = 0
-        el.style.display = display || 'block';
-        (function fade() {
-          let val = parseFloat(el.style.opacity)
-          if (!((val += 0.2) > 1)) {
-            el.style.opacity = val
-            requestAnimationFrame(fade)
-          }
-        })()
-      }
-    }
-  }
-}
+const { modalHandler } = useModal()
+
+const show = ref(false)
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

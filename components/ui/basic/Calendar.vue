@@ -1018,35 +1018,33 @@
 </template>
 
 <script setup>
-export default {
-  mounted() {
-    const allArrivalBtns_calendar_8 = document.querySelectorAll(
-      '.arrival-btn_calendar_8'
-    )
+onMounted(() => {
+  const allArrivalBtns_calendar_8 = document.querySelectorAll(
+    '.arrival-btn_calendar_8'
+  )
 
-    allArrivalBtns_calendar_8.forEach((e) => {
-      e.addEventListener('click', () => {
-        allArrivalBtns_calendar_8.forEach((y) => {
-          if (y.classList.contains('active') && y != e) {
-            y.classList.toggle('text-white')
-            y.classList.toggle('bg-indigo-700')
-            y.classList.toggle('active')
-            y.classList.toggle('bg-indigo-50')
-            y.classList.toggle('text-indigo-700')
-          }
-        })
-        if (!e.classList.contains('active')) {
-          e.classList.add('text-white')
-          e.classList.add('bg-indigo-700')
-          e.classList.add('bg-indigo-50')
-          e.classList.remove('text-indigo-700')
-          e.classList.remove('bg-indigo-50')
-          e.classList.add('active')
+  allArrivalBtns_calendar_8.forEach((e) => {
+    e.addEventListener('click', () => {
+      allArrivalBtns_calendar_8.forEach((y) => {
+        if (y.classList.contains('active') && y != e) {
+          y.classList.toggle('text-white')
+          y.classList.toggle('bg-indigo-700')
+          y.classList.toggle('active')
+          y.classList.toggle('bg-indigo-50')
+          y.classList.toggle('text-indigo-700')
         }
       })
+      if (!e.classList.contains('active')) {
+        e.classList.add('text-white')
+        e.classList.add('bg-indigo-700')
+        e.classList.add('bg-indigo-50')
+        e.classList.remove('text-indigo-700')
+        e.classList.remove('bg-indigo-50')
+        e.classList.add('active')
+      }
     })
-  }
-}
+  })
+})
 
 </script>
 

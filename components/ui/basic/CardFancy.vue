@@ -184,21 +184,15 @@
 </template>
 
 <script setup>
-export default {
-  data() {
-    return {
-      event: {
-        name: "New Year's Costume Party",
-        image: 'https://cdn.tuk.dev/assets/templates/virtual-event-management/events-1.png',
-        alt: 'costume party',
-        date: '14th September 2020',
-        time: 'Tuesday, 9:00 pm - 11:00 pm',
-        price: '45',
-        status: 'Available',
-        seats: '86/90',
-        link: 'Veevents.com/cosutmeparty'
-      }
-    }
-  }
+const event = {
+  name: "New Year's Costume Party",
+  image: 'https://cdn.tuk.dev/assets/templates/virtual-event-management/events-1.png',
+  alt: 'costume party',
+  date: '14th September 2020',
+  time: 'Tuesday, 9:00 pm - 11:00 pm',
+  price: '45',
+  status: 'Available',
+  seats: '86/90',
+  link: 'Veevents.com/cosutmeparty'
 }
 </script>

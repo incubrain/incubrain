@@ -24,53 +24,41 @@
 <script setup>
 // npm install chart.js@2.8.0
 import Chart from 'chart.js/auto'
-export default {
-  data() {
-    return {
-      chartId: 'tacho',
-      chartData: {
-        type: 'doughnut',
-        data: {
-          labels: ['Completed'],
-          datasets: [
-            {
-              label: '# of Votes',
-              data: [86, 60],
-              backgroundColor: ['#6366F1'],
-              borderColor: ['rgba(255, 255, 255 ,1)'],
-              borderWidth: 0,
-              borderRadius: 10
-            }
-          ]
-        },
-        options: {
-          rotation: 1 * Math.PI /** This is where you need to work out where 89% is */,
-          circumference: 1 * Math.PI /** put in a much smaller amount  so it does not take up an entire semi circle */,
-          legend: {
-            display: false
-          },
-          tooltip: {
-            enabled: false
-          },
-          cutoutPercentage: 90
+        
+
+function createChart() {
+  new Chart(document.getElementById('tacho'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Completed'],
+      datasets: [
+        {
+          label: '# of Votes',
+          data: [86, 60],
+          backgroundColor: ['#6366F1'],
+          borderColor: ['rgba(255, 255, 255 ,1)'],
+          borderWidth: 0,
+          borderRadius: 10
         }
-      }
+      ]
+    },
+    options: {
+      rotation: 1 * Math.PI /** This is where you need to work out where 89% is */,
+      circumference: 1 * Math.PI /** put in a much smaller amount  so it does not take up an entire semi circle */,
+      legend: {
+        display: false
+      },
+      tooltip: {
+        enabled: false
+      },
+      cutoutPercentage: 90
     }
-  },
-  mounted() {
-    this.createChart(this.chartId, this.chartData)
-  },
-  methods: {
-    createChart(chartId, chartData) {
-      const ctx = document.getElementById(chartId).getContext('2d')
-      new Chart(ctx, {
-        type: chartData.type,
-        data: chartData.data,
-        options: chartData.options
-      })
-    }
-  }
+  })
 }
+
+onMounted(() => {
+  createChart()
+})
 </script>
 
 <style scoped>

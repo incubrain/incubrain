@@ -528,25 +528,21 @@
 </template>
 
 <script setup>
-export default {
-  data() {
-    return {
-      todos: [
-        {
-          title: 'Add tasks to list'
-        },
-        {
-          title: 'Get grocery'
-        },
-        {
-          title: 'Take the kids to the park'
-        },
-        {
-          title: 'Get my car washed'
-        }
-      ],
-      taskDate: '9th September 2020 at 18:00'
-    }
+
+const todos = [
+  {
+    title: 'Add tasks to list'
+  },
+  {
+    title: 'Get grocery'
+  },
+  {
+    title: 'Take the kids to the park'
+  },
+  {
+    title: 'Get my car washed'
   }
-}
+]
+const taskDate = '9th September 2020 at 18:00'
+
 </script>

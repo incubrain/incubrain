@@ -67,14 +67,7 @@
 </template>
 
 <script setup>
-export default {
-  data() {
-    return {
-      show: false
-    }
-  },
-  methods: {}
-}
+
 </script>
 
 <style scoped>
