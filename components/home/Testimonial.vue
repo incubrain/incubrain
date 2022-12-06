@@ -1,5 +1,4 @@
-<templage>
-
+<template>
 <div class="testimonials" style="background-image: url('https://images.unsplash.com/photo-1580912458702-6fa698fc553e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');">
         <div class="container">
             <div class="title">
@@ -72,31 +71,31 @@
             </div>
         </div>
     </div>
-</templage>
+</template>
 
 <script setup>
 
 // Used bootstrap v4.5,jquery v3.5.1, owl carousel v2, font awesome v4.7.0
 
-$('.testi.owl-carousel').owlCarousel({
-  items: 2,
-  margin:10,
-  lazyLoad: true,
-  dots:true,
-  autoPlay: true,
-  autoPlayTimeout: 3000,
-responsive:{
-    0:{
-      items:1,
-    },
-    600:{
-      items:2,
-    },
-    1000:{
-      items:2,
-    }
-  }
-});
+// $('.testi.owl-carousel').owlCarousel({
+//   items: 2,
+//   margin:10,
+//   lazyLoad: true,
+//   dots:true,
+//   autoPlay: true,
+//   autoPlayTimeout: 3000,
+// responsive:{
+//     0:{
+//       items:1,
+//     },
+//     600:{
+//       items:2,
+//     },
+//     1000:{
+//       items:2,
+//     }
+//   }
+// });
 
 </script>
 
