@@ -183,11 +183,13 @@ body {
 
 .bg-purple {
   background: url(http://salehriaz.com/404Page/img/bg_purple.png);
+  position: relative;
   /* filter: hue-rotate(-10deg); */
   background-repeat: repeat-x;
   background-size: cover;
   background-position: left top;
   height: 100%;
+  width: 100%;
   overflow: hidden;
 
 }
@@ -296,7 +298,7 @@ li a:hover {
   transform: translateX(-50px);
   top: 75%;
   pointer-events: none;
-  animation: rocket-movement 200s linear infinite both running;
+  animation: rocket-movement 400s linear infinite both running;
 }
 
 .object_earth {
@@ -343,7 +345,7 @@ li a:hover {
   background-repeat: repeat;
   background-size: contain;
   background-position: left top;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 260px);
 }
 
 .glowing_stars .star {

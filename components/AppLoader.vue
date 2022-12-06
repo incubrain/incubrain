@@ -2,7 +2,7 @@
   <div
     class="rounded-md mb-2 lg:mb-6 xl:mb-8 bg-white nuxt-loading-indicator min-h-[800px] lg:min-h-[640px] w-full z-50 flex flex-col justify-center items-center overflow-hidden">
     <div
-      :class="parentRoute[1]
+      :class="noTabs.includes(String(parentRoute[1]) || '/')
       ? 'h-full transition-width ease-in-out duration-1000 lg:p-12 p-4'
       : 'h-full transition-width ease-in-out delay-1000 duration-1000 lg:p-12 p-4'
       "
@@ -22,8 +22,11 @@
 
 <script setup lang="ts">
 
+const noTabs = ['/', 'get-lost']
+
 const route = useRoute()
 const parentRoute = computed(() => route.path.split('/'))
+console.log('sss', parentRoute.value[1])
 
 const props = defineProps({
   throttle: {

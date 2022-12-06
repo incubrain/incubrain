@@ -55,7 +55,7 @@
           class="rotate-90 w-[40%] h-full ml-[-50px] hidden lg:block" />
       </div>
       <div class="text-3xl hello xl:text-5xl text-gray-800 tracking-1px mx-auto">
-        <h2 class="mt-8 lg:mt-6 xl:mt-8 text-center">
+        <h2 class="my-12 lg:mt-6 xl:mt-8 text-center">
           👋, I'm Mac
         </h2>
       </div>

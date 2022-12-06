@@ -1,6 +1,9 @@
 
 <template>
-  <div class="w-full">
+  <div
+    v-if="post"
+    class="w-full"
+  >
     <BlogToTop />
     <div class="w-full flex flex-col px-4 lg:px-12">
       <ContentRenderer :value="post">
@@ -9,8 +12,11 @@
             <h1 class="text-4xl lg:text-6xl leading-10 prose prose-xl whitespace-nowrap">
               {{ post?.title || 'Something on the way' }}
             </h1>
-            <p class="text-xl min-w-[360px]"> {{ post?.excerpt || 'I will leave most of the written content to the last 6 hours, because it is easy to predict how long each article will take'}}</p>
-            <p> Completed: {{ post?.completed || 'sometime in the future'}}</p>
+            <p class="text-xl lg: min-w-[360px]"> {{ post?.excerpt || 'I will leave most of the written content to the last 6 hours, because it is easy to predict how long each article will take'}}</p>
+            <div class="flex flex-row gap-4 items-center">
+              <p> Completed: {{ post?.completed || 'sometime in the future'}}</p>
+              <a :href="post.link" class="text-[#5a4ec9] no-underline cursor-pointer" target="_blank">Reference</a>
+            </div>
           </div>
           <AppLottie
             :src="'/projects/pages/happy-hacker.json'"

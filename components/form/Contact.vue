@@ -2,7 +2,7 @@
   <div>
     <canvas></canvas>
     <div class="form-wrapper">
-      <h3 class="text-3xl mb-6">Why not find out?</h3>
+      <h3 class="text-xl lg:text-3xl mb-6">Why not find out?</h3>
       <form onsubmit="return false;">
         <label for="name">Name</label>
         <input type="text"
@@ -228,7 +228,7 @@ button {
   padding: 0.8rem;
   border: 0;
   border-radius: 0.125rem 0.25rem;
-  background-color: #40cb90;
+  background-color: #0000FF;
   color: #fff;
   margin: 2rem 0 0 auto;
 }

@@ -5,8 +5,7 @@
                 <h5>Testimonials</h5>
                 <h2>What our clients say</h2>
             </div>
-            <div class="owl-carousel owl-theme testi">
-              <!-- Single Starts -->
+             <div class="owl-carousel owl-theme testi bg-white">
                                 <div class="item">
                   <div class="profile">
                       <img src="https://images.unsplash.com/photo-1521225099409-8e1efc95321d?ixlib=rb-1.2.1&auto=format&fit=crop&h=153&q=80" alt="">
@@ -27,7 +26,7 @@
                           <i class="fa fa-quote-right" aria-hidden="true"></i>
                       </div>
                 </div>
-              <!-- Single Ends -->
+  
                 <div class="item">
                   <div class="profile">
                       <img src="https://images.unsplash.com/photo-1521225099409-8e1efc95321d?ixlib=rb-1.2.1&auto=format&fit=crop&h=153&q=80" alt="">
