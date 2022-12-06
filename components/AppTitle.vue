@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-800">
+  <div class="bg-gray-800 overflow-hidden">
     <div ref="signPage" class="mx-auto flex justify-center w-full pt-4">
       <div id="sign" ref="signWrap" class="relative flex items-center flex-col">
         <div ref="signBall" class=" bg-black rounded-full relative border-white border-2 w-[26px] h-[26px] z-10" />
@@ -13,9 +13,9 @@
         </div>
       </div>
     </div>
-    <div class="w-full h-auto bg-gray-800">
+    <div class="w-full h-auto bg-gray-800 overflow-hidden">
         <ul
-          class="flex flex-row cursor-pointer mt-8 justify-center items-center overflow-x-scroll scrollbar-hide transition-all duration-1000 ease-in-out"
+          class="mx-4 flex flex-row cursor-pointer mt-8 items-center overflow-x-scroll scrollbar-hide transition-all duration-1000 ease-in-out"
           :style="parentRoute[1] ? {
             height: '60px'
           } : {
