@@ -20,7 +20,7 @@ I'll document the process of completing each task and estimate/show the time tak
 
 
 
-<a href="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/laptop-problems.jpeg"><img src="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/laptop-issues.jpeg" align="right" height="240" width="240" ></a>
+<a href="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/laptop-problems.jpeg"><img src="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/laptop-problems.jpeg" align="right" height="auto" width="240" ></a>
 
 **START TIME: 1:28 AM, 12/02/2022**
 
