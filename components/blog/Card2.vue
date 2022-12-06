@@ -4,7 +4,7 @@
     :key="show.id"
   >
     <NuxtLink
-      :to="('/projects/frontend/' + show.id)"
+      :to="(`/${props.type}/${props.filter}/${show.id}`)"
     >
       <div class="relative w-full rounded-md hover:bg-[#F9FAFB] hover:shadow-md cursor-pointer h-[118px] lg:h-[184px] lg:p-4 lg:gap-2 lg:flex-row-reverse flex flex-row overflow-hidden">
         <div
@@ -16,7 +16,6 @@
           <div class="flex flex-row gap-2 lg:gap-3 justify-center items-center font-semibold text-[#333c7d]">
             <p>{{ show.completed }}</p>
             <div class="w-1 h-1 rounded-full bg-black" />
-            <p>{{ show.length }}</p>
           </div>
           <p class="hidden lg:flex text-sm">{{ show.excerpt }}</p>
         </div>
@@ -39,5 +38,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const showcases = ref()
 showcases.value = await queryContent(props.type).where({ type: props.filter }).skip(0).limit(5).find()
+
+console.log('updated', showcases.value, props)
 
 </script>

@@ -14,7 +14,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  src: 'https://assets10.lottiefiles.com/packages/lf20_soCRuE.json',
+  src: '',
   width: '100%',
   height: '100%'
 })
