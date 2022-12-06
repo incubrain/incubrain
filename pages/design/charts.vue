@@ -18,7 +18,7 @@
         <DataLineMany />
         <DataSingleCongrats />
         <!-- <DataSingleEarnings /> -->
-        <DataLineWave />
+        <!-- <DataLineWave /> -->
         <!-- <DataFourCardAlt2 />
         <DataFourCardAlt3 /> -->
         <!-- <DataTall /> -->

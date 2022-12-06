@@ -1,6 +1,5 @@
 <template>
-  <div class="flex justify-center">
-    <div class="max-w-sm rounded overflow-hidden relative">
+    <div class="rounded overflow-hidden relative">
       <img class="w-full" src="https://i.ibb.co/VpxTFxq/fluffy-dog.png">
       <div class="absolute bottom-0 left-0 right-0 px-6 pb-7">
         <p class="text-lg leading-6 text-white sm:w-11/12">
@@ -53,7 +52,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <style scoped>

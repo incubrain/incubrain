@@ -12,6 +12,9 @@
             <line x1="21" y1="21" x2="15" y2="15"></line>
         </svg>
         </div> -->
+        <NuxtLink to="/get-lost" class="text-white font-semibold">
+          404
+        </NuxtLink>
       </div>
       <ul class="flex h-full items-center">
         <li

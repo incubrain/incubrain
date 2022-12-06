@@ -2,9 +2,8 @@
   <div class="bg-purple">
     <div class="stars">
       <div class="w-full h-full flex flex-col items-center justify-center">
-        <img class="image-404 mb-6"
-          src="http://salehriaz.com/404Page/img/404.svg"
-          width="300px">
+        <h1 class="text-[10vw] text-white mb-2 leading-[9vw]">404</h1>
+        <h3 class="text-[4vh] text-white mt-0">WE'RE LOST</h3>
         <NuxtLink :to="{ name: 'Home' }"
           class="btn-go-home whitespace-nowrap px-8 pt-4"
           >GO BACK HOME

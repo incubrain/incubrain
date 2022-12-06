@@ -56,10 +56,10 @@
         <p>Off/On</p>
       </span>
     </div>
-    <div class="grid gap-12 my-20 grid-cols-2 lg:grid-cols-4 grid-rows-6 lg:grid-rows-3">
+    <div class="grid gap-12 my-20 grid-cols-2 lg:grid-cols-4 grid-rows-6 lg:grid-rows-4">
       <div class="flex justify-center items-center">
         <div
-          class="test-color-change w-[120px] h-[120px] md:w-[220px] md:h-[220px] rounded-full shadow-md overflow-hidden border-[10px] border-opacity-20 border-white" />
+          class="test-color-change w-[120px] h-[120px] md:w-[220px] md:h-[220px] xl:w-[260px] xl:h-[260px] rounded-full shadow-md overflow-hidden border-[10px] border-opacity-20 border-white" />
       </div>
       <div v-for="pattern in patterns"
         :key="pattern.id"
