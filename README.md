@@ -1,5 +1,5 @@
-<h1> Mac\'s portfolio of <a><img src="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/readme/doom-logo.png" align="right" height="60" width="auto"></a></h1>
-#### If you know; you know...
+#### 
+<span display="flex"><h1> Mac's portfolio of <a><img src="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/readme/doom-logo.png" height="60" width="auto"></a></h1><h3>If you know; you know...</h3></span>
 
 
 <a href="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/georgie-the-menace.jpg"><img src="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/georgie-the-menace.jpg" align="left" height="240" width="240" ></a>
