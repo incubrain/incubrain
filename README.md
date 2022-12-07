@@ -4,6 +4,7 @@
 </p>
 <p align="center" >If you know; you know...</p>
 
+<p align="center" ><a href="https://mltech.ltd">The Website</a></p>
 
 &nbsp;  
 &nbsp;   
@@ -18,10 +19,10 @@
   - [Ultra Violence](#ultraviolemnce)
   - [Nightmare](#nightmare)
 
-<a href="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/georgie-the-menace.jpg"><img src="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/georgie-the-menace.jpg" align="left" height="240" width="240" ></a>
 
 
 &nbsp;  
+&nbsp;    
 ***Preface***
 
 This portfolio is a **work in progress**, but that's the whole point!
@@ -33,13 +34,12 @@ Each spring (difficulty level) contains a slightly more challenging workload, wi
 <span align=center>
 If I don't fail, then I've secerety been playing on easy this whole time! However, I don't think that will happen.
 <img
-  src="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/georgie-the-menace.jpg"align="center"
+  src="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/readme/doom-headjpg"
+  align="center"
   style="margin-bottom: 0px !important; margin-left: 10px !important;"
   height="60"
   width="60">
 </span>
-
-[Portfolio website](https://mltech.ltd)
 
 
 **Full disclosure**, the basic setup of this portfolio was completed before I began working on the **I’m Too Young to Die** sprint.
@@ -54,9 +54,6 @@ The first sprint was riddled with challenges, I experienced some laptop issues a
 - [x] Tailwind 3
 - [x] [Tailwind UI Kit](https://app.tailwinduikit.com/listing/webapp/master_layout/boxed_layout) - I have a pro license, this is my first time using and it greatly sped up my UI work
 
-### The to-do list!!
-
-Below is a list of what I think I should be able to complete. Development can be extremely difficult to predict... I will do my best.
 
 &nbsp;  
 &nbsp;  
