@@ -1,11 +1,8 @@
 <template>
   <div
-    class="rounded-md mb-2 lg:mb-6 xl:mb-8 bg-white nuxt-loading-indicator min-h-[800px] lg:min-h-[640px] w-full z-50 flex flex-col justify-center items-center overflow-hidden">
+    class="rounded-md mb-2 lg:mb-6 xl:mb-8 bg-white nuxt-loading-indicator min-h-[800px] lg:min-h-[640px] w-full z-50 flex flex-col justify-center items-center">
     <div
-      :class="noTabs.includes(String(parentRoute[1]) || '/')
-      ? 'h-full transition-width ease-in-out duration-1000 lg:p-12 p-4'
-      : 'h-full transition-width ease-in-out delay-1000 duration-1000 lg:p-12 p-4'
-      "
+      class="noTab'h-full transition-width ease-in-out duration-700 lg:p-12 p-4"
       :style="indicator.isLoading.value === false ? {
         width: '100%',
         opacity: 1

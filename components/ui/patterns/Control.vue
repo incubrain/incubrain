@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full relative">
+  <div class="w-full relative">
     <div
       class=" sticky w-full rounded-md shadow-lg p-4 lg:p-6 xl:p-8 flex flex-row flex-wrap top-6 lg:top-12 z-10 justify-between bg-white gap-4 lg:gap-6 xl:gap-8 text-sm">
       <div class="flex flex-row gap-2 w-full md:w-[40%] lg:w-1/5">
@@ -56,15 +56,19 @@
         <p>Off/On</p>
       </span>
     </div>
-    <div class="grid gap-12 my-20 grid-cols-2 lg:grid-cols-4 grid-rows-6 lg:grid-rows-4">
-      <div class="flex justify-center items-center">
+    <div class="h-full w-full grid gap-12 my-20 auto-rows-[minmax(200px,20vw)] grid-cols-[repeat(auto-fill,minmax(200px,_20vw))] justify-center md:justify-between items-center">
+      <div class="h-full w-full"> 
         <div
-          class="test-color-change w-[120px] h-[120px] md:w-[220px] md:h-[220px] xl:w-[260px] xl:h-[260px] rounded-full shadow-md overflow-hidden border-[10px] border-opacity-20 border-white" />
+          class="test-color-change  h-full w-full rounded-full shadow-md overflow-hidden border-[10px] border-opacity-20 border-white" />
       </div>
       <div v-for="pattern in patterns"
         :key="pattern.id"
-        class="flex justify-center items-center">
-        <UiPatternsCard :style="pattern.code" />
+        class="h-full w-full"
+        >
+        <div
+          class="h-full w-full rounded-full shadow-md overflow-hidden border-[10px] border-opacity-20 border-white"
+          :style="pattern.code"
+          />
       </div>
     </div>
   </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-purple">
+  <div class="bg-purple h-[100vh]">
     <div class="stars">
       <div class="w-full h-full flex flex-col items-center justify-center">
         <h1 class="text-[10vw] text-white mb-2 leading-[9vw]">404</h1>
@@ -188,8 +188,6 @@ body {
   background-repeat: repeat-x;
   background-size: cover;
   background-position: left top;
-  height: 100%;
-  width: 100%;
   overflow: hidden;
 
 }
@@ -345,7 +343,7 @@ li a:hover {
   background-repeat: repeat;
   background-size: contain;
   background-position: left top;
-  height: calc(100vh - 260px);
+  height: 100%;
 }
 
 .glowing_stars .star {

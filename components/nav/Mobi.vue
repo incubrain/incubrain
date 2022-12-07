@@ -32,7 +32,7 @@
         v-for="page in pages"
         :key="page.id"
         @click="navigateTo(page.slug); setPage(page.name)"
-        class="w-full flex items-center justify-center"
+        class="w-full flex items-center justify-center cursor-pointer"
         >
           <a to="/" class="w-full flex items-center justify-center">
             <span class="w-full text-center text-black bg-white rounded-lg dark:bg-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 py-2 px-6">{{ page.name }}</span>
