@@ -1,4 +1,4 @@
-# Mac\'s portfolio of <a><img src="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/readme/doom-logo.png" align="right" height="60" width="auto"></a>
+<h1> Mac\'s portfolio of <a><img src="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/readme/doom-logo.png" align="right" height="60" width="auto"></a></h1>
 #### If you know; you know...
 
 
@@ -48,6 +48,8 @@ Because of this, I've decided to slightly alter the premise of this portfolio. *
 
 Below is a list of what I think I should be able to complete. Obviously, web-development can be extremely difficult to predict... I will do my best.
 
+&nbsp;  
+&nbsp;  
 ## I’m Too Young to Die
 - [x] Update readme with most planned action
 - [x] Mobile Responsive: make sure the website looks good on mobile | est. 2 hour(s)
@@ -121,7 +123,8 @@ I ended up overestimating how much I could get done, external factors played a p
 - HARD: 6 Hours
 - A CHALLENGE: 12 Hours
 
-
+&nbsp;  
+&nbsp;  
 ## Hurt Me Plenty (started 00/00/00)
 - [ ] About Page:
   - [ ] Education | est. 3 hour(s)
@@ -151,7 +154,8 @@ I ended up overestimating how much I could get done, external factors played a p
 ####
 - START: 12:12PM | xxx (1:28H)
 
-
+&nbsp;  
+&nbsp;  
 ## Ultra Violence (started 00/00/00)
 - [ ] Global search - override the ctr k search | est. 4 hour(s)
 - [ ] Connect to [Supabase]() - simple database (Postgresql), auth and other functionality | est. 4 hour(s) | taken
@@ -172,7 +176,8 @@ I ended up overestimating how much I could get done, external factors played a p
 #### xx
 - START: 12:12PM | xxx (1:28H)
 
-
+&nbsp;  
+&nbsp;  
 ## Nightmare (started 00/00/00)
 - [ ] [Website Status Page]() - Check the status of the website and send Slack notification if it is down | est. 4 hour(s) | taken ***FIRST TIME USING***
 - [ ] refactor all the code
@@ -185,8 +190,3 @@ I ended up overestimating how much I could get done, external factors played a p
 
 #### xx
 - START: 12:12PM | xxx (1:28H)
-
-
-
-
-
