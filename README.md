@@ -1,56 +1,66 @@
-#### 
-<span display="flex"><h1> Mac's portfolio of <a><img src="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/readme/doom-logo.png" height="60" width="auto"></a></h1><h3>If you know; you know...</h3></span>
+<h1 align="center" style="margin-top: 0px;">Mac's Portfolio Of</h1>
+<p align="center" style="margin-bottom: 0px !important;">
+  <img width="200" src="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/readme/doom-logo.png" align="center">
+</p>
+<p align="center" >If you know; you know...</p>
 
+
+&nbsp;  
+&nbsp;   
+
+## Table of Contents
+
+<!-- - [Who am I?](#me)
+- [Why this portfolio?](#documentation) -->
+- Sprints
+  - [I’m Too Young to Die](#im-too-young-to-die)
+  - [Hurt Me Plenty](#hurt-me-plenty)
+  - [Ultra Violence](#ultraviolemnce)
+  - [Nightmare](#nightmare)
 
 <a href="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/georgie-the-menace.jpg"><img src="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/georgie-the-menace.jpg" align="left" height="240" width="240" ></a>
 
+
+&nbsp;  
 ***Preface***
 
-Although I'd like to think this is a showcase of my best work, this fellow has been pestering me during the day and I'm still shaking off some pretty bad jetlag.
+This portfolio is a **work in progress**, but that's the whole point!
 
- Not to mention working from my laptop on my brother's couch instead of at my workstation.
+I'll do my best to document the of process creating the website and estimate how long each task will take to complete. This should give you an idea of my development abilities and how quickly I can get things done. 
 
+Each spring (difficulty level) contains a slightly more challenging workload, with the intent of forcing me to fail!
 
-Excuses aside :sweat_smile: this is a meta-portfolio of sorts. You're able to track my work efforts from start to finish as I attempt to complete the to-do list in 48 hours.
-
-I'll document the process of completing each task and estimate/show the time taken, this should give you an idea of my abilities.
-
+<span align=center>
+If I don't fail, then I've secerety been playing on easy this whole time! However, I don't think that will happen.
+<img
+  src="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/georgie-the-menace.jpg"align="center"
+  style="margin-bottom: 0px !important; margin-left: 10px !important;"
+  height="60"
+  width="60">
+</span>
 
 [Portfolio website](https://mltech.ltd)
 
 
+**Full disclosure**, the basic setup of this portfolio was completed before I began working on the **I’m Too Young to Die** sprint.
 
-
-<a href="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/laptop-problems.jpeg"><img src="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/laptop-problems.jpeg" align="right" height="auto" width="240" ></a>
-
-**START TIME: 1:28 AM, 12/02/2022**
-
-***Full disclosure, the basic setup of this portfolio was completed before the 48 hours began***
-
-After starting strong things have ground to a slow pace as I experienced some laptop issues.
-
-Thankfully, after some surgery, we're moving forward again. Unfortunately, I lost almost a day of working time!
-
-Because of this, I've decided to slightly alter the premise of this portfolio. ***Instead of 48 clock hours, it will be 48 work hours.***
-
-
+The first sprint was riddled with challenges, I experienced some laptop issues and was working from my laptop mostly on my brother's couch. I was about 30% less productive without an extra screen, my powerful machine and a comfy chair in a distraction free room.
 
 
 ## Stack
 
 - [x] Nuxt 3 (stable) - using nitro v.1 for the server (first time using Nuxt 3 since the stable version was released)
 - [x] Hosting - Render.com
-  - I tried to use Digital Ocean app platform for the first time, as it's supposted to be really easy. However, I struggled with it for many hours before deciding it was likely the hosting platform and not my code that was at fault. 5 minutes later my site was live...
 - [x] Tailwind 3
 - [x] [Tailwind UI Kit](https://app.tailwinduikit.com/listing/webapp/master_layout/boxed_layout) - I have a pro license, this is my first time using and it greatly sped up my UI work
 
 ### The to-do list!!
 
-Below is a list of what I think I should be able to complete. Obviously, web-development can be extremely difficult to predict... I will do my best.
+Below is a list of what I think I should be able to complete. Development can be extremely difficult to predict... I will do my best.
 
 &nbsp;  
 &nbsp;  
-## I’m Too Young to Die
+## I’m Too Young to Die (12/02/2022 @ 1:28 AM)
 - [x] Update readme with most planned action
 - [x] Mobile Responsive: make sure the website looks good on mobile | est. 2 hour(s)
 - [x] CSS Patterns: showcase some CSS patterns, allow the user to change colour and copy code | est. 2 hour(s)
@@ -74,10 +84,10 @@ Below is a list of what I think I should be able to complete. Obviously, web-dev
 
 ### Technologies I learned along the way
 
-- [Flowbite]() | A library of Tailwing elements, I learned how to integrate the library with Nuxt only to switch out my mobile menu for my own design.
-- [Fontawesome icons]() | added while working on the patterns page, was my first time using with Nuxt 3
+- [Flowbite]() | A library of Tailwind elements, I learned how to integrate the library with Nuxt only to switch out my mobile menu for my own design.
+- [Fontawesome icons]() | added while working on the patterns page, was my first time using it with Nuxt 3
 - [Digitalocean App Platform]() | Although I wound up using Render in the end, due to DO having issues with Nuxt 3... I still learned a decent amount about the platform and will likely use it again in the future.
-- [Storybook]() | I had minimal exposure to Storybook and no experience with Nuxt 3, so this was a good addition to my skillset.
+- [Storybook]() | I had minimal exposure to Storybook and no experience with Nuxt 3, so this was a good addition to my skill set.
 - [Lotties]() | This was my first time using this [lottie package]() and definitely the most I'd worked with Lotties.
 
 
