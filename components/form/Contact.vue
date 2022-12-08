@@ -21,7 +21,7 @@
           rows="5"
           />
     
-        <button class="w-full p-4">Let's make something together</button>
+        <button class="w-full p-4 bg-[#f3b148] text-white font-semibold">Let's make something together</button>
       </form>
     </div>
   </div>
@@ -228,8 +228,6 @@ button {
   padding: 0.8rem;
   border: 0;
   border-radius: 0.125rem 0.25rem;
-  background-color: #0000FF;
-  color: #fff;
   margin: 2rem 0 0 auto;
 }
 

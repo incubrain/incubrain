@@ -134,18 +134,21 @@ I ended up overestimating how much I could get done, external factors played a p
 &nbsp;  
 ## Hurt Me Plenty (started 00/00/00)
 - [ ] About Page:
-  - [ ] Education | est. 3 hour(s)
-  - [ ] Skills | est. 3 hour(s)
+  - [ ] Education | est.2 hour(s)
+  - [ ] Skills | est. 4 hour(s)
 - [ ] Home Page:
-  - [ ] [Github kanban tracker]() for showing website dev progress | est. 12 hour(s) ***FIRST TIME USING GH API***
+  - [ ] [Github kanban tracker](https://docs.github.com/en/graphql/reference/objects#about-objects) for showing website dev progress, [auth](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) | est. 12 hour(s)
   - [ ] Social Section | est. 2 hour(s)
-  - [ ] Video section: need to record video as well, phone is my only option atm. | est. 1.5 hour(s
+  - [ ] Video section: need to record video as well, phone is my only option atm. | est. 2 hour(s
   - [ ] Testimonial Section | est. 2 hour(s)
 - [ ] Use Github Pages to showcase Next app | est. 2 hour(s)
 - [ ] [Cypress Setup](https://www.cypress.io/) Testing *First time with Nuxt 3* | est. 4 hour(s)
-- [ ] [Next 13 To-do]() Learning from scratch, in beta still, could be a challenge | est. 18 hour(s)  ***FIRST TIME USING NEXT***
-- [ ] [vod]() for api/json validation, specifically important for 3rd party apis | est. 4 hour(s)  ***FIRST TIME USING***
-- [ ] [trpc]() for typesafe api queries | est. 4 hour(s) | taken ***FIRST TIME USING***
+- [ ] [Next 13 To-do]() Learning from scratch, in beta still, could be a challenge | est. 12 hour(s)
+- [ ] [vod]() for api/json validation, specifically important for 3rd party apis | est. 4 hour(s)
+- [ ] [trpc]() for typesafe api queries | est. 4 hour(s)
+- [ ] Use [tailwind-config-viewer](https://github.com/rogden/tailwind-config-viewer) and setup theming | est. 2 hour(s)
+- [ ] copy best practaces from [here](https://github.com/antfu/vitesse-nuxt3) | est. 2 hour(s) |
+- [ ] Replace Storybook with [Historie](https://histoire.dev/), this is specifically built for Vue | est. 4 hour(s)
 
 ### Technologies I learned along the way
 
@@ -154,6 +157,7 @@ I ended up overestimating how much I could get done, external factors played a p
 - [Next 13]()
 - [Cypress]()
 - [Github pages]() | this was my first time using GH pages
+- [Historie](https://histoire.dev/) | 
 
 
 ### Work Tracker 2 | 0/48 HRS
@@ -187,11 +191,12 @@ I ended up overestimating how much I could get done, external factors played a p
 &nbsp;  
 ## Nightmare (started 00/00/00)
 - [ ] [Website Status Page]() - Check the status of the website and send Slack notification if it is down | est. 4 hour(s) | taken ***FIRST TIME USING***
+- [ ] [Three js](https://github.com/troisjs/trois), complex animations
 - [ ] refactor all the code
 
 ### Technologies I learned along the way
 
-- [xxx]()
+- [Website Status Page]()
 
 ### Work Tracker 2 | 0/48 HRS
 

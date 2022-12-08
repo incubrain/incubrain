@@ -22,3 +22,11 @@
   opacity: 0;
   filter: blur(1rem);
 }
+
+/* Default Post Layout */
+
+.post-default h1 {
+  margin-bottom: 2rem;
+  margin-top: 4rem;
+  text-decoration: none !important;
+}

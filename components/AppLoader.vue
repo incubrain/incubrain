@@ -1,8 +1,8 @@
 <template>
   <div
-    class="rounded-md mb-2 lg:mb-6 xl:mb-8 bg-white nuxt-loading-indicator min-h-[800px] lg:min-h-[640px] w-full z-50 flex flex-col justify-center items-center">
+    class="rounded-md bg-white nuxt-loading-indicator min-h-[800px] lg:min-h-[640px] w-full z-50 flex flex-col justify-center items-center">
     <div
-      class="noTab'h-full transition-width ease-in-out duration-700 lg:p-12 p-4"
+      class="h-full transition-width ease-in-out duration-700 lg:p-12 p-4"
       :style="indicator.isLoading.value === false ? {
         width: '100%',
         opacity: 1
@@ -19,11 +19,8 @@
 
 <script setup lang="ts">
 
-const noTabs = ['/', 'get-lost']
-
 const route = useRoute()
 const parentRoute = computed(() => route.path.split('/'))
-console.log('sss', parentRoute.value[1])
 
 const props = defineProps({
   throttle: {

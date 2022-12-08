@@ -59,7 +59,7 @@
           👋, I'm Mac
         </h2>
       </div>
-      <div class="w-full max-w-[420px] relative bg-[#E5E7EB] rounded-md p-6 shadow-lg mt-6 mx-auto">
+      <div class="w-full max-w-[420px] relative bg-[#ebe9e5] rounded-md p-6 shadow-lg mt-6 mx-auto">
         <div class="absolute right-0 top-0 -mt-6">
           <svg xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -67,7 +67,7 @@
             height="50">
             <path fill="none"
               d="M0 0h24v24H0z" />
-            <path fill="blue"
+            <path fill="#fdc76f"
               d="M19.417 6.679C20.447 7.773 21 9 21 10.989c0 3.5-2.457 6.637-6.03 8.188l-.893-1.378c3.335-1.804 3.987-4.145 4.247-5.621-.537.278-1.24.375-1.929.311-1.804-.167-3.226-1.648-3.226-3.489a3.5 3.5 0 0 1 3.5-3.5c1.073 0 2.099.49 2.748 1.179zm-10 0C10.447 7.773 11 9 11 10.989c0 3.5-2.457 6.637-6.03 8.188l-.893-1.378c3.335-1.804 3.987-4.145 4.247-5.621-.537.278-1.24.375-1.929.311C4.591 12.322 3.17 10.841 3.17 9a3.5 3.5 0 0 1 3.5-3.5c1.073 0 2.099.49 2.748 1.179z" />
           </svg>
         </div>
@@ -96,8 +96,8 @@ const quote = await $fetch('https://api.quotable.io/random')
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
 
 :root {
-  --col1: rgb(253, 199, 111);
-  --col2: rgb(172, 123, 9);
+  --col1: #fdc76f;
+  --col2: #ac7b09;
   --col3: rgba(254, 2, 2, 0);
   --col4: rgb(135, 15, 15);
 

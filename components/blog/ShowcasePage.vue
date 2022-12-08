@@ -5,8 +5,8 @@
     class="w-full"
   >
     <BlogToTop />
-    <div class="w-full flex flex-col px-4 lg:px-12">
-      <ContentRenderer :value="post">
+    <ContentRenderer :value="post">
+      <div class="w-full flex flex-col px-4 lg:p-12">
         <div class="flex flex-col-reverse lg:flex-row w-full justify-around items-center lg:justify-around">
           <div class="flex flex-col justify-center items-center lg:justify-start lg:items-start prose prose-4xl">
             <h1 class="text-4xl lg:text-6xl leading-10 prose prose-xl lg:whitespace-nowrap">
@@ -23,8 +23,15 @@
             class="h-[420px] lg:h-[600px] lg:ml-[-30px]"
           />
         </div>
-      </ContentRenderer>
-    </div>
+      </div>
+      <div class="my-20 border-t-2 border-grey-200 flex justify-center items-center" v-if="post.type === 'thoughts'">
+        <ContentRendererMarkdown :value="post" class="post-default prose prose-sm mt-20">
+          <p class="m-0">
+            {{ post }}
+          </p>
+        </ContentRendererMarkdown>
+      </div>
+    </ContentRenderer>
   </div>
 </template>
 
