@@ -13,7 +13,7 @@
               {{ post?.title || 'Something on the way' }}
             </h1>
             <p class="text-xl lg:min-w-[360px]"> {{ post?.excerpt || 'I will leave most of the written content to the last 6 hours, because it is easy to predict how long each article will take'}}</p>
-            <div class="flex flex-row gap-4 items-center">
+            <div class="flex flex-col md:flex-row gap-4 items-center">
               <p> Completed: {{ post?.completed || 'sometime in the future'}}</p>
               <a :href="post.link" class="text-[#5a4ec9] no-underline cursor-pointer" target="_blank">Reference</a>
             </div>
@@ -24,8 +24,8 @@
           />
         </div>
       </div>
-      <div class="my-20 border-t-2 border-grey-200 flex justify-center items-center" v-if="post.type === 'thoughts'">
-        <ContentRendererMarkdown :value="post" class="post-default prose prose-sm mt-20">
+      <div class="my-16 border-t-2 border-grey-200 flex justify-center items-center" v-if="post.type === 'thoughts'">
+        <ContentRendererMarkdown :value="post" class="post-default prose prose-sm mt-16">
           <p class="m-0">
             {{ post }}
           </p>

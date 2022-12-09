@@ -1,6 +1,6 @@
 <template>
   <div
-    class="rounded-md bg-white nuxt-loading-indicator min-h-[800px] lg:min-h-[640px] w-full z-50 flex flex-col justify-center items-center">
+    class="rounded-md bg-white nuxt-loading-indicator min-h-[800px] lg:min-h-[640px] w-full z-50 flex flex-col justify-center items-center mb-2 lg:mb-8">
     <div
       class="h-full transition-width ease-in-out duration-700 lg:p-12 p-4"
       :style="indicator.isLoading.value === false ? {

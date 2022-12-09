@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8">
+  <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-2 lg:gap-8 w-full">
     <div
       v-for="challenge in data"
       :key="challenge.title"
@@ -16,7 +16,7 @@
           </template>
           <template #solution>
             <ContentRendererMarkdown :value="challenge">
-              <p class="m-0">
+              <p class="m-0 flex-wrap flex break-normal">
                 {{ challenge }}
               </p>
             </ContentRendererMarkdown>
@@ -39,6 +39,10 @@ definePageMeta({
 </script>
 
 <style>
+
+pre code .line {
+  white-space: normal;
+}
 
 .code-challenge {
   margin: 0;
