@@ -2,7 +2,7 @@
   <div>
     <GridCol1>
       <template #default>
-        <div class="grid gap-12 my-20 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 grid-rows-6 lg:grid-rows-3">
+        <div class="grid gap-12 mx-auto my-20 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 grid-rows-6 lg:grid-rows-3">
           <div
             v-for="lot in lotties"
             :key="lot.id"

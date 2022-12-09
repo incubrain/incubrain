@@ -38,6 +38,16 @@
   </div>
 </template>
 
+<script setup>
+
+definePageMeta({
+  layout: 'tabbed',
+})
+
+
+
+</script>
+
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Dosis:300,400,500');
 
@@ -182,6 +192,7 @@ body {
 }
 
 .bg-purple {
+  height: 100%;
   background: url(http://salehriaz.com/404Page/img/bg_purple.png);
   position: relative;
   /* filter: hue-rotate(-10deg); */

@@ -12,23 +12,5 @@ definePageMeta({
   name: 'Frontend'
 })
 
-//   < template #spec >
-//     <div class="prose prose-md" >
-//       <h2 class="mt-0 mb-4" >
-//         {{ challenge.title }}
-// </h2>
-//   < p class="challenge-description" />
-//     <img : src = "challenge.image"
-// class="w-[150px]" >
-//   </div>
-//   < /template>
-//   < template #solution >
-//     <ContentRendererMarkdown : value = "challenge"
-// class="code-challenge" >
-//   <p class="m-0" >
-//     {{ challenge }}
-// </p>
-//   < /ContentRendererMarkdown>
-//   < /template>
 
 </script>

@@ -2,7 +2,7 @@
   <div>
     <NavMain />
     <AppTabs>
-      <AppLoader :duration="3000" :throttle="1000" />
+      <AppLoader :duration="3000" :throttle="1000" v-if="parentRoute[1] !== 'get-lost'"/>
       <slot />
     </AppTabs>
   </div>
@@ -11,6 +11,8 @@
 <script setup>
 
 const route = useRoute()
+const parentRoute = computed(() => route.path.split('/'))
+
 
 </script>
 
