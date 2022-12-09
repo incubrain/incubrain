@@ -12,7 +12,7 @@
       }"
     >
       <BlogShowcasePage v-if="parentRoute[1]" />
-      <HomeHero2 />
+      <HomeHero2 v-else/>
     </div>
   </div>
 </template>

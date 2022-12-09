@@ -13,9 +13,9 @@
         </div>
       </div>
     </div>
-    <div class="container mx-auto w-full h-auto bg-gray-800 overflow-hidden">
+    <div class="w-full h-auto bg-gray-800 overflow-hidden">
         <ul
-          class="flex flex-row cursor-pointer mt-8 items-center overflow-x-scroll scrollbar-hide transition-all duration-300 ease-in-out"
+          class="container mx-auto xl:mx-4 px-4 sm:px-0 flex flex-row cursor-pointer mt-8 items-center overflow-x-scroll scrollbar-hide transition-all duration-300 ease-in-out"
           :style="!noTabs.includes(String(parentRoute[1]) || '/') ? {
             height: '60px'
           } : {
