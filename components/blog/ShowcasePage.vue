@@ -25,8 +25,8 @@
         </div>
       </div>
       <div class="my-16 border-t-2 border-grey-200 flex justify-center items-center" v-if="post.type === 'thoughts'">
-        <ContentRendererMarkdown :value="post" class="post-default prose prose-sm mt-16">
-          <p class="m-0">
+        <ContentRendererMarkdown :value="post" class="post-default prose prose-md mt-16">
+          <p class="m-0 showcase">
             {{ post }}
           </p>
         </ContentRendererMarkdown>
@@ -63,12 +63,6 @@ watch(() => route.name, () => getShowcase(), { deep: true })
 
 </script>
 
-<style scoped>
-
-.showcase img {
-  margin: 40px 0px !important;
-  padding: 50rem;
-  border-radius: 1rem;
-}
+<style>
 
 </style>

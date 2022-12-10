@@ -29,12 +29,12 @@ This portfolio is a **work in progress**, but that's the whole point!
 
 I'll do my best to document the of process creating the website and estimate how long each task will take to complete. This should give you an idea of my development abilities and how quickly I can get things done. 
 
-Each spring (difficulty level) contains a slightly more challenging workload, with the intent of forcing me to fail!
+Each sprint (Doom difficulty level) contains a slightly more challenging workload, with the intent of forcing me to fail!
 
 <span align=center>
-If I don't fail, then I've secerety been playing on easy this whole time! However, I don't think that will happen.
+If I don't fail, I coasted... that won't happen!
 <img
-  src="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/readme/doom-headjpg"
+  src="https://github.com/Drew-Macgibbon/design-portfolio/blob/main/public/readme/doom-head.png"
   align="center"
   style="margin-bottom: 0px !important; margin-left: 10px !important;"
   height="60"
@@ -67,14 +67,14 @@ The first sprint was riddled with challenges, I experienced some laptop issues a
 - [X] Fontawesome Icons: Example of Fontawesome Icons | est. 1 hour(s)
 - [x] Portfolio Showcase:
   - [x] Portfolio showcase card | est. 2 hour(s)
-  - [ ] Portfolio showcase post | est. 2 hour(s)
-  - [ ] Write 3 showcases | est. 3 hour(s)
+  - [x] Portfolio showcase post | est. 2 hour(s)
+  - [ ] Write 2 showcases | est. 3 hour(s)
 - [x] PDF Viewer: custom full view PDF viewer for business plan | est. 1 hour(s)
 - [x] Homepage
  - [x] Tidy up hero | est. .5 hour(s)
  - [x] Contact Section | est. 1 hour(s) | 30 min taken
 - [x] Showcase Code Examples: Showcase my Codewars work | est. 2 hour(s)
-- [ ] Add Dynamic content | est. 6 hour(s)
+- [x] Add Dynamic content | est. 6 hour(s)
 - [X] CSS Animations: instead of showing an animation page, I decided to use some animations across the website | est. 2 hour(s) 
 - [x] [Storybook](https://storybook.js.org/docs/vue/writing-stories/introduction): Allows teams to design/develop components in isolation  | est. 1 hour(s)
 
