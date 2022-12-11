@@ -25,8 +25,8 @@
         </div>
       </div>
       <div class="my-16 border-t-2 border-grey-200 flex justify-center items-center" v-if="post.type === 'thoughts'">
-        <ContentRendererMarkdown :value="post" class="post-default prose prose-md mt-16">
-          <p class="m-0 showcase">
+        <ContentRendererMarkdown :value="post" class="w-full max-w-[680px] post-default prose prose-md mt-16">
+          <p class="m-0">
             {{ post }}
           </p>
         </ContentRendererMarkdown>
@@ -64,5 +64,19 @@ watch(() => route.name, () => getShowcase(), { deep: true })
 </script>
 
 <style>
+
+/* Default Post Layout */
+
+.post-default h1 {
+  margin-bottom: 2rem;
+  margin-top: 4rem;
+  text-decoration: none !important;
+}
+
+/* .post-default {
+  margin-bottom: 2rem;
+  margin-top: 4rem;
+  text-decoration: none !important;
+} */
 
 </style>

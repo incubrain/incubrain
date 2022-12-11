@@ -43,7 +43,6 @@
     "vue-loader": "^16.8.3"
   },
   "dependencies": {
-    "@formkit/auto-animate": "^1.0.0-beta.3",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-brands-svg-icons": "^6.2.1",
     "@fortawesome/free-regular-svg-icons": "^6.2.1",

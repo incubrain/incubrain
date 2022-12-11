@@ -1,6 +1,4 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
-// import dotenv from 'dotenv'
-// require('dotenv').config()
 
 export default defineNuxtConfig({
   app: {
@@ -30,7 +28,7 @@ export default defineNuxtConfig({
     // Keys within public, will be also exposed to the client-side
     public: {
       supabase: {
-      // Options
+        // Options
         url: process.env.SUPABASE_URL,
         key: process.env.SUPABASE_KEY
       },
