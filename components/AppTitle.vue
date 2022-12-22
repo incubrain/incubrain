@@ -58,41 +58,6 @@ function capitalizeFirstLetter (string) {
   return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
-const signSign = ref(null)
-const signBall = ref(null)
-const signHanger = ref(null)
-const signWrap = ref(null)
-const signPage = ref(null)
-
-// function signSize() {
-//   // ball size
-//   const ball = signBall.value.clientWidth
-//   // sign size, based on the text size
-//   const signW = signSign.value.clientWidth
-//   const signH = signSign.value.clientHeight
-
-//   // hanger size, based on the sign size
-//   signHanger.value.style.height = `${signW / 2}px`
-//   signHanger.value.style.width = `${signW / 2}px`
-//   signHanger.value.style.bottom = `${signH / 1.5}px`
-
-//   // set distance from ball to sign
-//   signSign.value.style['margin-top'] = `${(signW / 3) - (ball / 2)}px`
-
-//   // make sign visible
-//   // signWrap.value.style.dispatch = 'flex'
-
-//   console.log('ssss', signSign.value, signSign.value.clientWidth)
-
-// }
-// onMounted(() => {
-//   watchEffect(() => {
-//     if (signPage.value) signSize()
-//     if (parentRoute.value[1]) signSize()
-//     else null
-//   })
-// })
-
 </script>
 
 <style scoped>

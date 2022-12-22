@@ -190,10 +190,10 @@
 </template>
 
 <script setup>
-const show0 = false
-const show1 = false
-const show2 = false
-const show3 = false
+let show0 = false
+let show1 = false
+let show2 = false
+let show3 = false
 </script>
 
 <style scoped>
