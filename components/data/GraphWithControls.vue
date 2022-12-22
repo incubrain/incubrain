@@ -163,7 +163,7 @@ onMounted(() => {
               display: false
             },
             ticks: {
-              beginAtZero: true,
+              beginAtZero: true
             }
           }
       }

@@ -31,7 +31,8 @@
         <div class="md:border-l md:py-6 py-4 border-gray-200 md:w-1/4 h-full flex items-center flex-col">
           <div class="flex items-center relative w-20 rounded border border-indigo-700">
             <select
-              class="py-1.5 px-3.5 uppercase tracking-normal focus:outline-none text-xs font-semibold leading-none text-center text-indigo-700 appearance-none pr-3.5 z-20 relative bg-transparent w-full">
+              class="py-1.5 px-3.5 uppercase tracking-normal focus:outline-none text-xs font-semibold leading-none text-center text-indigo-700 appearance-none pr-3.5 z-20 relative bg-transparent w-full"
+            >
               <option value="2020">
                 2020
               </option>
@@ -43,7 +44,8 @@
               </option>
             </select>
             <div class="mx-1 absolute right-0 z-10 pointer-event-none">
-              <svg xmlns="http://www.w3.org/2000/svg"
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
                 class="icon icon-tabler icon-tabler-chevron-down"
                 width="16"
                 height="16"
@@ -52,9 +54,12 @@
                 stroke="#4338CA"
                 fill="none"
                 stroke-linecap="round"
-                stroke-linejoin="round">
-                <path stroke="none"
-                  d="M0 0h24v24H0z" />
+                stroke-linejoin="round"
+              >
+                <path
+                  stroke="none"
+                  d="M0 0h24v24H0z"
+                />
                 <polyline points="6 9 12 15 18 9" />
               </svg>
             </div>
@@ -66,13 +71,15 @@
             Budget: 56,800
           </p>
           <div class="px-11 pt-8">
-            <canvas id="barRevenue"
+            <canvas
+              id="barRevenue"
               width="140"
               height="140"
-               />
+            />
           </div>
           <button
-            class="text-sm mt-12 mb-6 font-medium leading-none text-center text-white py-2.5 px-5 rounded bg-indigo-700 hover:bg-indigo-600">
+            class="text-sm mt-12 mb-6 font-medium leading-none text-center text-white py-2.5 px-5 rounded bg-indigo-700 hover:bg-indigo-600"
+          >
             Increase Budget
           </button>
         </div>
@@ -84,7 +91,7 @@
 <script setup>
 import Chart from 'chart.js/auto'
 
-function createChart() {
+function createChart () {
   const data = {
     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
     datasets: [

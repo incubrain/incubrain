@@ -2,350 +2,442 @@
   <ul
     ref="productList"
     @pointermove="updateValues($event)"
-    >
+  >
     <li class="bigger1">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w18.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w18.png"
+      >
       <h2>¾-sleeved cotton top</h2>
       <span class="price">€19</span>
     </li>
     <li class="bigger2">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w14.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w14.png"
+      >
       <h2>Printed long-sleeved t-shirt</h2>
       <span class="price">€45</span>
     </li>
     <li class="bigger1">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w03.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w03.png"
+      >
       <h2>Kimono-shape sleeve V-neck top</h2>
       <span class="price">€49</span>
     </li>
     <li>
-      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w32.png" />
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w32.png">
       <h2>Thick-soled leather sneakers</h2>
       <span class="price">€89</span>
     </li>
     <li class="bigger2">
-      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w29.png" />
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w29.png">
       <h2>Contrast-panelled jersey dress</h2>
       <span class="price">€59</span>
     </li>
     <li class="bigger1">
-      <img class="shrink"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w01.png" />
+      <img
+        class="shrink"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w01.png"
+      >
       <h2>Merino sleeveless top</h2>
       <span class="price">€69</span>
     </li>
     <li>
-      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w12.png" />
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w12.png">
       <h2>Slim-fit mercerised cotton t-shirt</h2>
       <span class="price">€29</span>
     </li>
     <li class="bigger4">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w30.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w30.png"
+      >
       <h2>Woven-jersey belted shirt dress</h2>
       <span class="price">€69</span>
     </li>
     <li class="bigger1">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w13.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w13.png"
+      >
       <h2>¾-sleeved cotton top</h2>
       <span class="price">€19</span>
     </li>
     <li>
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w02.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w02.png"
+      >
       <h2>Folded-collar draped blouse</h2>
       <span class="price">€59</span>
     </li>
     <li class="bigger1">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w04.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w04.png"
+      >
       <h2>Short-sleeved wool t-shirt</h2>
       <span class="price">€49</span>
     </li>
     <li>
-      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w36.png" />
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w36.png">
       <h2>Small soft-leather shoulder bag</h2>
       <span class="price">€89</span>
     </li>
     <li class="bigger2">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w25.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w25.png"
+      >
       <h2>Lapel neck dress</h2>
       <span class="price">€79</span>
     </li>
     <li class="bigger1">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w05.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w05.png"
+      >
       <h2>Cupro open-back top</h2>
       <span class="price">€69</span>
     </li>
     <li class="bigger2">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w27.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w27.png"
+      >
       <h2>A-line dress with front pleat</h2>
       <span class="price">€79</span>
     </li>
     <li class="bigger1">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w06.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w06.png"
+      >
       <h2>Smooth tunic top</h2>
       <span class="price">€79</span>
     </li>
     <li>
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w16.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w16.png"
+      >
       <h2>Pleated-back cotton top</h2>
       <span class="price">€49</span>
     </li>
     <li class="bigger1">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w07.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w07.png"
+      >
       <h2>Asymmetric wrap top</h2>
       <span class="price">€69</span>
     </li>
     <li>
-      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w34.png" />
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w34.png">
       <h2>Zipped ankle boots</h2>
       <span class="price">€175</span>
     </li>
     <li class="bigger1">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w08.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w08.png"
+      >
       <h2>Short-sleeved merino top</h2>
       <span class="price">€69</span>
     </li>
     <li class="bigger2">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w09.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w09.png"
+      >
       <h2>Kimono wrap top</h2>
       <span class="price">€59</span>
     </li>
     <li class="bigger1">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w10.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w10.png"
+      >
       <h2>Wide boxy fit top</h2>
       <span class="price">€49</span>
     </li>
     <li>
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w11.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w11.png"
+      >
       <h2>Sweatshirt with shirt hem</h2>
       <span class="price">€49</span>
     </li>
     <li class="bigger2">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w21.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w21.png"
+      >
       <h2>Lapel neck dress</h2>
       <span class="price">€79</span>
     </li>
     <li class="bigger2">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w28.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w28.png"
+      >
       <h2>Belted a-line dress</h2>
       <span class="price">€89</span>
     </li>
     <li>
-      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w37.png" />
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w37.png">
       <h2>Small leather crossbody bag</h2>
       <span class="price">€79</span>
     </li>
     <li class="bigger1">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w22.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w22.png"
+      >
       <h2>Printed long-sleeved a-line dress</h2>
       <span class="price">€79</span>
     </li>
     <li>
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w17.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w17.png"
+      >
       <h2>Statement-collar cotton shirt</h2>
       <span class="price">€69</span>
     </li>
     <li class="bigger1">
-      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w20.png" />
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w20.png">
       <h2>Long-sleeved wool t-shirt</h2>
       <span class="price">€49</span>
     </li>
     <li class="bigger2">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w24.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w24.png"
+      >
       <h2>Long-sleeved folded collar dress</h2>
       <span class="price">€79</span>
     </li>
     <li class="bigger1">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w18.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w18.png"
+      >
       <h2>¾-sleeved cotton top</h2>
       <span class="price">€19</span>
     </li>
     <li class="bigger2">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w14.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w14.png"
+      >
       <h2>Printed long-sleeved t-shirt</h2>
       <span class="price">€45</span>
     </li>
     <li class="bigger1">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w03.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w03.png"
+      >
       <h2>Kimono-shape sleeve V-neck top</h2>
       <span class="price">€49</span>
     </li>
     <li>
-      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w32.png" />
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w32.png">
       <h2>Thick-soled leather sneakers</h2>
       <span class="price">€89</span>
     </li>
     <li class="bigger2">
-      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w29.png" />
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w29.png">
       <h2>Contrast-panelled jersey dress</h2>
       <span class="price">€59</span>
     </li>
     <li class="bigger1">
-      <img class="shrink"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w01.png" />
+      <img
+        class="shrink"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w01.png"
+      >
       <h2>Merino sleeveless top</h2>
       <span class="price">€69</span>
     </li>
     <li>
-      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w12.png" />
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w12.png">
       <h2>Slim-fit mercerised cotton t-shirt</h2>
       <span class="price">€29</span>
     </li>
     <li class="bigger4">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w30.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w30.png"
+      >
       <h2>Woven-jersey belted shirt dress</h2>
       <span class="price">€69</span>
     </li>
     <li class="bigger1">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w13.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w13.png"
+      >
       <h2>¾-sleeved cotton top</h2>
       <span class="price">€19</span>
     </li>
     <li>
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w02.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w02.png"
+      >
       <h2>Folded-collar draped blouse</h2>
       <span class="price">€59</span>
     </li>
     <li class="bigger1">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w04.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w04.png"
+      >
       <h2>Short-sleeved wool t-shirt</h2>
       <span class="price">€49</span>
     </li>
     <li>
-      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w36.png" />
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w36.png">
       <h2>Small soft-leather shoulder bag</h2>
       <span class="price">€89</span>
     </li>
     <li class="bigger2">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w25.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w25.png"
+      >
       <h2>Lapel neck dress</h2>
       <span class="price">€79</span>
     </li>
     <li class="bigger1">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w05.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w05.png"
+      >
       <h2>Cupro open-back top</h2>
       <span class="price">€69</span>
     </li>
     <li class="bigger2">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w27.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w27.png"
+      >
       <h2>A-line dress with front pleat</h2>
       <span class="price">€79</span>
     </li>
     <li class="bigger1">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w06.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w06.png"
+      >
       <h2>Smooth tunic top</h2>
       <span class="price">€79</span>
     </li>
     <li>
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w16.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w16.png"
+      >
       <h2>Pleated-back cotton top</h2>
       <span class="price">€49</span>
     </li>
     <li class="bigger1">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w07.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w07.png"
+      >
       <h2>Asymmetric wrap top</h2>
       <span class="price">€69</span>
     </li>
     <li>
-      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w34.png" />
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w34.png">
       <h2>Zipped ankle boots</h2>
       <span class="price">€175</span>
     </li>
     <li class="bigger1">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w08.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w08.png"
+      >
       <h2>Short-sleeved merino top</h2>
       <span class="price">€69</span>
     </li>
     <li class="bigger2">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w09.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w09.png"
+      >
       <h2>Kimono wrap top</h2>
       <span class="price">€59</span>
     </li>
     <li class="bigger1">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w10.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w10.png"
+      >
       <h2>Wide boxy fit top</h2>
       <span class="price">€49</span>
     </li>
     <li>
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w11.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w11.png"
+      >
       <h2>Sweatshirt with shirt hem</h2>
       <span class="price">€49</span>
     </li>
     <li class="bigger2">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w21.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w21.png"
+      >
       <h2>Lapel neck dress</h2>
       <span class="price">€79</span>
     </li>
     <li class="bigger2">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w28.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w28.png"
+      >
       <h2>Belted a-line dress</h2>
       <span class="price">€89</span>
     </li>
     <li>
-      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w37.png" />
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w37.png">
       <h2>Small leather crossbody bag</h2>
       <span class="price">€79</span>
     </li>
     <li class="bigger1">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w22.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w22.png"
+      >
       <h2>Printed long-sleeved a-line dress</h2>
       <span class="price">€79</span>
     </li>
     <li>
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w17.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w17.png"
+      >
       <h2>Statement-collar cotton shirt</h2>
       <span class="price">€69</span>
     </li>
     <li class="bigger1">
-      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w20.png" />
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w20.png">
       <h2>Long-sleeved wool t-shirt</h2>
       <span class="price">€49</span>
     </li>
     <li class="bigger2">
-      <img class="boost"
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w24.png" />
+      <img
+        class="boost"
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/w24.png"
+      >
       <h2>Long-sleeved folded collar dress</h2>
       <span class="price">€79</span>
     </li>
@@ -372,7 +464,7 @@ const updateValues = (e) => {
   sizeY = clientY
   docSizeY = pageY
   changePerspective()
-  
+
   if (movementY) {
     scrollTop = clientY
     scrollBottom = pageY - clientY

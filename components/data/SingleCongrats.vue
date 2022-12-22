@@ -13,14 +13,17 @@
         </p>
         <div class="pt-4">
           <button
-            class="py-2 px-4 text-xs font-semibold leading-3 bg-indigo-700 rounded hover:bg-indigo-600 focus:outline-none text-white">
+            class="py-2 px-4 text-xs font-semibold leading-3 bg-indigo-700 rounded hover:bg-indigo-600 focus:outline-none text-white"
+          >
             View Sales
           </button>
         </div>
       </div>
-    <div class="px-3">
-        <img src="https://i.ibb.co/34gPtCT/bg.png"
-          alt="medal">
+      <div class="px-3">
+        <img
+          src="https://i.ibb.co/34gPtCT/bg.png"
+          alt="medal"
+        >
       </div>
     </div>
   </div>

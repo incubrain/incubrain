@@ -35,7 +35,7 @@
 <script setup>
 import Chart from 'chart.js/auto'
 
-function createChart() {
+function createChart () {
   new Chart.pluginService.register({
     afterUpdate: function (chart) {
       if (chart.config.options.elements.arc.roundedCornersFor !== undefined) {

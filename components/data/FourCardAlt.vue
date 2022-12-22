@@ -4,7 +4,8 @@
   <div class="w-full grid d-cols-1 gap-2 lg:gap-6 xl:gap-8">
     <div class="bg-white dark:bg-gray-800 rounded py-5 pl-6 flex items-start shadow">
       <div class="text-gray-700 dark:text-gray-400">
-        <svg xmlns="http://www.w3.org/2000/svg"
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
           class="icon icon-tabler icon-tabler-dashboard"
           width="32"
           height="32"
@@ -13,16 +14,23 @@
           stroke="currentColor"
           fill="none"
           stroke-linecap="round"
-          stroke-linejoin="round">
-          <path stroke="none"
-            d="M0 0h24v24H0z" />
-          <circle cx="12"
+          stroke-linejoin="round"
+        >
+          <path
+            stroke="none"
+            d="M0 0h24v24H0z"
+          />
+          <circle
+            cx="12"
             cy="13"
-            r="2" />
-          <line x1="13.45"
+            r="2"
+          />
+          <line
+            x1="13.45"
             y1="11.55"
             x2="15.5"
-            y2="9.5" />
+            y2="9.5"
+          />
           <path d="M6.4 20a9 9 0 1 1 11.2 0Z" />
         </svg>
       </div>
@@ -40,7 +48,8 @@
         </div>
         <div class="flex items-center mt-5">
           <div class="text-green-400">
-            <svg xmlns="http://www.w3.org/2000/svg"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
               class="icon icon-tabler icon-tabler-trending-up"
               width="24"
               height="24"
@@ -49,9 +58,12 @@
               stroke="currentColor"
               fill="none"
               stroke-linecap="round"
-              stroke-linejoin="round">
-              <path stroke="none"
-                d="M0 0h24v24H0z" />
+              stroke-linejoin="round"
+            >
+              <path
+                stroke="none"
+                d="M0 0h24v24H0z"
+              />
               <polyline points="3 17 9 11 13 15 21 7" />
               <polyline points="14 7 21 7 21 14" />
             </svg>
@@ -64,7 +76,8 @@
     </div>
     <div class="bg-white dark:bg-gray-800 rounded py-5 pl-6 flex items-start shadow">
       <div class="text-gray-700 dark:text-gray-400">
-        <svg xmlns="http://www.w3.org/2000/svg"
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
           class="icon icon-tabler icon-tabler-dashboard"
           width="32"
           height="32"
@@ -73,16 +86,23 @@
           stroke="currentColor"
           fill="none"
           stroke-linecap="round"
-          stroke-linejoin="round">
-          <path stroke="none"
-            d="M0 0h24v24H0z" />
-          <circle cx="12"
+          stroke-linejoin="round"
+        >
+          <path
+            stroke="none"
+            d="M0 0h24v24H0z"
+          />
+          <circle
+            cx="12"
             cy="13"
-            r="2" />
-          <line x1="13.45"
+            r="2"
+          />
+          <line
+            x1="13.45"
             y1="11.55"
             x2="15.5"
-            y2="9.5" />
+            y2="9.5"
+          />
           <path d="M6.4 20a9 9 0 1 1 11.2 0Z" />
         </svg>
       </div>
@@ -100,7 +120,8 @@
         </div>
         <div class="flex items-center mt-5">
           <div class="text-green-400">
-            <svg xmlns="http://www.w3.org/2000/svg"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
               class="icon icon-tabler icon-tabler-trending-up"
               width="24"
               height="24"
@@ -109,9 +130,12 @@
               stroke="currentColor"
               fill="none"
               stroke-linecap="round"
-              stroke-linejoin="round">
-              <path stroke="none"
-                d="M0 0h24v24H0z" />
+              stroke-linejoin="round"
+            >
+              <path
+                stroke="none"
+                d="M0 0h24v24H0z"
+              />
               <polyline points="3 17 9 11 13 15 21 7" />
               <polyline points="14 7 21 7 21 14" />
             </svg>
@@ -124,7 +148,8 @@
     </div>
     <div class="bg-white dark:bg-gray-800 rounded py-5 pl-6 flex items-start shadow">
       <div class="text-gray-700 dark:text-gray-400">
-        <svg xmlns="http://www.w3.org/2000/svg"
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
           class="icon icon-tabler icon-tabler-dashboard"
           width="32"
           height="32"
@@ -133,16 +158,23 @@
           stroke="currentColor"
           fill="none"
           stroke-linecap="round"
-          stroke-linejoin="round">
-          <path stroke="none"
-            d="M0 0h24v24H0z" />
-          <circle cx="12"
+          stroke-linejoin="round"
+        >
+          <path
+            stroke="none"
+            d="M0 0h24v24H0z"
+          />
+          <circle
+            cx="12"
             cy="13"
-            r="2" />
-          <line x1="13.45"
+            r="2"
+          />
+          <line
+            x1="13.45"
             y1="11.55"
             x2="15.5"
-            y2="9.5" />
+            y2="9.5"
+          />
           <path d="M6.4 20a9 9 0 1 1 11.2 0Z" />
         </svg>
       </div>
@@ -160,7 +192,8 @@
         </div>
         <div class="flex items-center mt-5">
           <div class="text-red-400">
-            <svg xmlns="http://www.w3.org/2000/svg"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
               class="icon icon-tabler icon-tabler-trending-down"
               width="24"
               height="24"
@@ -169,9 +202,12 @@
               stroke="currentColor"
               fill="none"
               stroke-linecap="round"
-              stroke-linejoin="round">
-              <path stroke="none"
-                d="M0 0h24v24H0z" />
+              stroke-linejoin="round"
+            >
+              <path
+                stroke="none"
+                d="M0 0h24v24H0z"
+              />
               <polyline points="3 7 9 13 13 9 21 17" />
               <polyline points="21 10 21 17 14 17" />
             </svg>
@@ -183,7 +219,8 @@
       </div>
     </div>
     <div class="bg-white dark:bg-gray-800 rounded py-5 pl-6 flex items-start shadow">
-      <svg xmlns="http://www.w3.org/2000/svg"
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
         class="icon icon-tabler icon-tabler-dashboard text-gray-700 dark:text-gray-400"
         width="32"
         height="32"
@@ -192,16 +229,23 @@
         stroke="currentColor"
         fill="none"
         stroke-linecap="round"
-        stroke-linejoin="round">
-        <path stroke="none"
-          d="M0 0h24v24H0z" />
-        <circle cx="12"
+        stroke-linejoin="round"
+      >
+        <path
+          stroke="none"
+          d="M0 0h24v24H0z"
+        />
+        <circle
+          cx="12"
           cy="13"
-          r="2" />
-        <line x1="13.45"
+          r="2"
+        />
+        <line
+          x1="13.45"
           y1="11.55"
           x2="15.5"
-          y2="9.5" />
+          y2="9.5"
+        />
         <path d="M6.4 20a9 9 0 1 1 11.2 0Z" />
       </svg>
       <div class="pl-3 pr-10 mt-1">
@@ -218,7 +262,8 @@
         </div>
         <div class="flex items-center mt-5">
           <div class="text-green-400">
-            <svg xmlns="http://www.w3.org/2000/svg"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
               class="icon icon-tabler icon-tabler-trending-up"
               width="24"
               height="24"
@@ -227,9 +272,12 @@
               stroke="currentColor"
               fill="none"
               stroke-linecap="round"
-              stroke-linejoin="round">
-              <path stroke="none"
-                d="M0 0h24v24H0z" />
+              stroke-linejoin="round"
+            >
+              <path
+                stroke="none"
+                d="M0 0h24v24H0z"
+              />
               <polyline points="3 17 9 11 13 15 21 7" />
               <polyline points="14 7 21 7 21 14" />
             </svg>

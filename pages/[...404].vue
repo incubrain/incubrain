@@ -2,37 +2,51 @@
   <div class="bg-purple h-[100vh]">
     <div class="stars">
       <div class="w-full h-full flex flex-col items-center justify-center">
-        <h1 class="text-[10vw] text-white mb-2 leading-[9vw]">404</h1>
-        <h3 class="text-[4vh] text-white mt-0">WE'RE LOST</h3>
-        <NuxtLink :to="{ name: 'Home' }"
+        <h1 class="text-[10vw] text-white mb-2 leading-[9vw]">
+          404
+        </h1>
+        <h3 class="text-[4vh] text-white mt-0">
+          WE'RE LOST
+        </h3>
+        <NuxtLink
+          :to="{ name: 'Home' }"
           class="whitespace-nowrap px-8 pt-4"
-          >GO BACK HOME
+        >
+          GO BACK HOME
         </NuxtLink>
       </div>
       <div class="objects">
-        <img class="object_rocket"
+        <img
+          class="object_rocket"
           src="http://salehriaz.com/404Page/img/rocket.svg"
-          width="40px">
+          width="40px"
+        >
         <div class="earth-moon">
-          <img class="object_earth"
+          <img
+            class="object_earth"
             src="http://salehriaz.com/404Page/img/earth.svg"
-            width="100px">
-          <img class="object_moon"
+            width="100px"
+          >
+          <img
+            class="object_moon"
             src="http://salehriaz.com/404Page/img/moon.svg"
-            width="80px">
+            width="80px"
+          >
         </div>
         <div class="box_astronaut">
-          <img class="object_astronaut"
+          <img
+            class="object_astronaut"
             src="http://salehriaz.com/404Page/img/astronaut.svg"
-            width="140px">
+            width="140px"
+          >
         </div>
       </div>
       <div class="glowing_stars">
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
+        <div class="star" />
+        <div class="star" />
+        <div class="star" />
+        <div class="star" />
+        <div class="star" />
       </div>
     </div>
   </div>
@@ -41,10 +55,8 @@
 <script setup>
 
 definePageMeta({
-  layout: 'tabbed',
+  layout: 'tabbed'
 })
-
-
 
 </script>
 

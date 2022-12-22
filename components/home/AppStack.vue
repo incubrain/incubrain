@@ -1,26 +1,40 @@
 <template>
-  <div ref="dragContainer"
-    class="drag-container"></div>
+  <div
+    ref="dragContainer"
+    class="drag-container"
+  />
   <div class="board">
     <div class="board-column working">
       <div class="board-column-container">
-        <div class="board-column-header">Working</div>
+        <div class="board-column-header">
+          Working
+        </div>
         <div class="board-column-content-wrapper">
           <div class="board-column-content">
             <div class="board-item">
-              <div class="board-item-content"><span>Item #</span>6</div>
+              <div class="board-item-content">
+                <span>Item #</span>6
+              </div>
             </div>
             <div class="board-item">
-              <div class="board-item-content"><span>Item #</span>7</div>
+              <div class="board-item-content">
+                <span>Item #</span>7
+              </div>
             </div>
             <div class="board-item">
-              <div class="board-item-content"><span>Item #</span>8</div>
+              <div class="board-item-content">
+                <span>Item #</span>8
+              </div>
             </div>
             <div class="board-item">
-              <div class="board-item-content"><span>Item #</span>9</div>
+              <div class="board-item-content">
+                <span>Item #</span>9
+              </div>
             </div>
             <div class="board-item">
-              <div class="board-item-content"><span>Item #</span>10</div>
+              <div class="board-item-content">
+                <span>Item #</span>10
+              </div>
             </div>
           </div>
         </div>
@@ -28,23 +42,35 @@
     </div>
     <div class="board-column done">
       <div class="board-column-container">
-        <div class="board-column-header">Done</div>
+        <div class="board-column-header">
+          Done
+        </div>
         <div class="board-column-content-wrapper">
           <div class="board-column-content">
             <div class="board-item">
-              <div class="board-item-content"><span>Item #</span>11</div>
+              <div class="board-item-content">
+                <span>Item #</span>11
+              </div>
             </div>
             <div class="board-item">
-              <div class="board-item-content"><span>Item #</span>12</div>
+              <div class="board-item-content">
+                <span>Item #</span>12
+              </div>
             </div>
             <div class="board-item">
-              <div class="board-item-content"><span>Item #</span>13</div>
+              <div class="board-item-content">
+                <span>Item #</span>13
+              </div>
             </div>
             <div class="board-item">
-              <div class="board-item-content"><span>Item #</span>14</div>
+              <div class="board-item-content">
+                <span>Item #</span>14
+              </div>
             </div>
             <div class="board-item">
-              <div class="board-item-content"><span>Item #</span>15</div>
+              <div class="board-item-content">
+                <span>Item #</span>15
+              </div>
             </div>
           </div>
         </div>

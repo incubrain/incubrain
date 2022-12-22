@@ -238,7 +238,7 @@
 </template>
 
 <script setup>
- const { modalHandler } = useModal()
+const { modalHandler } = useModal()
 
 const show = ref(false)
 </script>

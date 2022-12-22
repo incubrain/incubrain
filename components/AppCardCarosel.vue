@@ -1,37 +1,37 @@
 <template>
-<div class="ticker-container">
-  <div class="container">
-      <div class="box"></div>
-      <div class="box red"></div>
-      <div class="box green"></div>
-      <div class="box purple"></div>
-      <div class="box white"></div>
-      <div class="box brown"></div>
-  </div> 
-</div>
+  <div class="ticker-container">
+    <div class="container">
+      <div class="box" />
+      <div class="box red" />
+      <div class="box green" />
+      <div class="box purple" />
+      <div class="box white" />
+      <div class="box brown" />
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
 
 onMounted(() => {
-  document.querySelector('.box:nth-child(1)').animate({'left':'-400px'}, 6000)
-  document.querySelector('.box:nth-child(2)').animate({'left':'-800px'}, 12000)
-  document.querySelector('.box:nth-child(3)').animate({'left':'-1000px'}, 16000)
-  document.querySelector('.box:nth-child(4)').animate({'left':'-1200px'}, 20000)
-  document.querySelector('.box:nth-child(5)').animate({'left':'-1400px'}, 24000)
-  document.querySelector('.box:nth-child(6)').animate({'left':'-1600px'}, 28000)
+  document.querySelector('.box:nth-child(1)').animate({ left: '-400px' }, 6000)
+  document.querySelector('.box:nth-child(2)').animate({ left: '-800px' }, 12000)
+  document.querySelector('.box:nth-child(3)').animate({ left: '-1000px' }, 16000)
+  document.querySelector('.box:nth-child(4)').animate({ left: '-1200px' }, 20000)
+  document.querySelector('.box:nth-child(5)').animate({ left: '-1400px' }, 24000)
+  document.querySelector('.box:nth-child(6)').animate({ left: '-1600px' }, 28000)
   // $('.box:nth-child(2)')
   // $('.box:nth-child(3)')
   // $('.box:nth-child(4)')
   // $('.box:nth-child(5)')
   // $('.box:nth-child(6)')
-  
-  setInterval(function(){
-    const box =  document.querySelector('.box:nth-child(1)')!
+
+  setInterval(function () {
+    const box = document.querySelector('.box:nth-child(1)')!
     console.log('sss', box)
     box.stop(true, true)
-    box.style.left ='1000px'
-    box.animate({'left':'-200px'}, 12000)
+    box.style.left = '1000px'
+    box.animate({ left: '-200px' }, 12000)
      document.querySelector('.container')!.append(box)
   }, 2000)
 })

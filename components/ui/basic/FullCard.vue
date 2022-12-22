@@ -8,9 +8,11 @@
           <div class="w-full lg:w-1/3 p-6">
             <div class="flex items-center">
               <div class="w-12 h-12 rounded shadow">
-                <img class="w-full h-full overflow-hidden object-cover rounded"
+                <img
+                  class="w-full h-full overflow-hidden object-cover rounded"
                   src="https://tuk-cdn.s3.amazonaws.com/assets/components/grid_cards/gc_24.png"
-                  alt="logo">
+                  alt="logo"
+                >
               </div>
               <div class="ml-3">
                 <h5 class="text-gray-800 dark:text-gray-100 font-medium text-base">
@@ -31,29 +33,39 @@
             </p>
             <div class="flex items-center mt-6 w-full">
               <div class="shadow border-2 border-white rounded-full w-8 h-8">
-                <img class="w-full h-full overflow-hidden object-cover rounded-full"
+                <img
+                  class="w-full h-full overflow-hidden object-cover rounded-full"
                   src="https://dh-ui.s3.amazonaws.com/assets/photo-1564061170517-d3907caa96ea.jfif"
-                  alt="avatar">
+                  alt="avatar"
+                >
               </div>
               <div class="-ml-2 shadow border-2 border-white rounded-full w-8 h-8">
-                <img class="w-full h-full overflow-hidden object-cover rounded-full"
+                <img
+                  class="w-full h-full overflow-hidden object-cover rounded-full"
                   src="https://dh-ui.s3.amazonaws.com/assets/photo-1548958921-c5c0fe1b307d.jfif"
-                  alt="avatar">
+                  alt="avatar"
+                >
               </div>
               <div class="-ml-2 shadow border-2 border-white rounded-full w-8 h-8">
-                <img class="w-full h-full overflow-hidden object-cover rounded-full"
+                <img
+                  class="w-full h-full overflow-hidden object-cover rounded-full"
                   src="https://dh-ui.s3.amazonaws.com/assets/photo-1566753323558-f4e0952af115.jfif"
-                  alt="avatar">
+                  alt="avatar"
+                >
               </div>
               <div class="-ml-2 shadow border-2 border-white rounded-full w-8 h-8">
-                <img class="w-full h-full overflow-hidden object-cover rounded-full"
+                <img
+                  class="w-full h-full overflow-hidden object-cover rounded-full"
                   src="https://dh-ui.s3.amazonaws.com/assets/beautiful-woman-medium-shot-with-pink-background_23-2148316670.jpg"
-                  alt="avatar">
+                  alt="avatar"
+                >
               </div>
               <div class="-ml-2 shadow border-2 border-white rounded-full w-8 h-8">
-                <img class="w-full h-full overflow-hidden object-cover rounded-full"
+                <img
+                  class="w-full h-full overflow-hidden object-cover rounded-full"
                   src="https://dh-ui.s3.amazonaws.com/assets/excited-happy-young-pretty-woman_171337-2006.jpg"
-                  alt="avatar">
+                  alt="avatar"
+                >
               </div>
               <p class="text-gray-600 dark:text-gray-400 text-sm font-normal ml-2">
                 +2 more participants
@@ -61,10 +73,12 @@
             </div>
           </div>
           <div
-            class="w-full lg:w-1/3 p-6 border-t border-b lg:border-t-0 lg:border-b-0 sm:border-l sm:border-r border-gray-300">
+            class="w-full lg:w-1/3 p-6 border-t border-b lg:border-t-0 lg:border-b-0 sm:border-l sm:border-r border-gray-300"
+          >
             <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between">
               <div
-                class="text-xs text-center w-full bg-indigo-100 text-indigo-700 dark:text-indigo-600 rounded font-medium p-3 lg:mr-3">
+                class="text-xs text-center w-full bg-indigo-100 text-indigo-700 dark:text-indigo-600 rounded font-medium p-3 lg:mr-3"
+              >
                 Start Date: 22 Jun, 2020
               </div>
               <div class="mt-4 text-center w-full lg:mt-0 text-xs bg-red-200 text-red-500 rounded font-medium p-3">

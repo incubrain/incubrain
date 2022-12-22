@@ -14,31 +14,33 @@
       </div>
     </div>
     <div class="w-full h-auto bg-gray-800 overflow-hidden">
-        <ul
-          class="container mx-auto xl:mx-4 px-4 sm:px-0 flex flex-row cursor-pointer mt-8 items-center overflow-x-scroll scrollbar-hide transition-all duration-300 ease-in-out"
-          :style="!noTabs.includes(String(parentRoute[1]) || '/') ? {
-            height: '60px'
+      <ul
+        class="container mx-auto xl:mx-4 px-4 sm:px-0 flex flex-row cursor-pointer mt-8 items-center overflow-x-scroll scrollbar-hide transition-all duration-300 ease-in-out"
+        :style="!noTabs.includes(String(parentRoute[1]) || '/') ? {
+          height: '60px'
+        } : {
+          height: '0px'
+        }"
+      >
+        <li
+          v-for="tab in currentTabs"
+          :key="tab.id"
+          class="py-5 px-12 text-sm rounded-t whitespace-nowrap transition-all duration-1000 ease-in-out relative bg-transparent"
+          :style="route.name === tab.name ? {
+            color: 'black',
+            background: '#E5E7EB',
+            fontWeight: 700,
           } : {
-            height: '0px'
-          }"
-        >
-          <li v-for="tab in currentTabs"
-              :key="tab.id"
-              class="py-5 px-12 text-sm rounded-t whitespace-nowrap transition-all duration-1000 ease-in-out relative bg-transparent"
-              :style="route.name === tab.name ? {
-                color: 'black',
-                background: '#E5E7EB',
-                fontWeight: 700,
-              } : {
-                color: 'white',
-                fontWeight: 500,
+            color: 'white',
+            fontWeight: 500,
 
-              }"
-            @click="navigateTo(`/${parentRoute[1] + tab.slug}`)">
-            {{ tab.name }}
-          </li>
-        </ul>
-      </div>
+          }"
+          @click="navigateTo(`/${parentRoute[1] + tab.slug}`)"
+        >
+          {{ tab.name }}
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -55,41 +57,6 @@ const currentTabs = computed(() => tabs(parentRoute.value[1])?.children)
 function capitalizeFirstLetter (string) {
   return string.charAt(0).toUpperCase() + string.slice(1)
 }
-
-const signSign = ref(null)
-const signBall = ref(null)
-const signHanger = ref(null)
-const signWrap = ref(null)
-const signPage = ref(null)
-
-// function signSize() {
-//   // ball size
-//   const ball = signBall.value.clientWidth
-//   // sign size, based on the text size
-//   const signW = signSign.value.clientWidth
-//   const signH = signSign.value.clientHeight
-
-//   // hanger size, based on the sign size
-//   signHanger.value.style.height = `${signW / 2}px`
-//   signHanger.value.style.width = `${signW / 2}px`
-//   signHanger.value.style.bottom = `${signH / 1.5}px`
-
-//   // set distance from ball to sign
-//   signSign.value.style['margin-top'] = `${(signW / 3) - (ball / 2)}px`
-
-//   // make sign visible
-//   // signWrap.value.style.dispatch = 'flex'
-
-//   console.log('ssss', signSign.value, signSign.value.clientWidth)
-
-// }
-// onMounted(() => {
-//   watchEffect(() => {
-//     if (signPage.value) signSize()
-//     if (parentRoute.value[1]) signSize()
-//     else null
-//   })
-// })
 
 </script>
 

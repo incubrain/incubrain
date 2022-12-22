@@ -24,9 +24,8 @@
 <script setup>
 // npm install chart.js@2.8.0
 import Chart from 'chart.js/auto'
-        
 
-function createChart() {
+function createChart () {
   new Chart(document.getElementById('tacho'), {
     type: 'doughnut',
     data: {

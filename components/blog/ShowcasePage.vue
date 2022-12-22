@@ -12,9 +12,11 @@
             <h1 class="text-4xl lg:text-6xl leading-10 prose prose-xl lg:whitespace-nowrap">
               {{ post?.title || 'Something on the way' }}
             </h1>
-            <p class="text-xl lg:min-w-[360px]"> {{ post?.excerpt || 'I will leave most of the written content to the last 6 hours, because it is easy to predict how long each article will take'}}</p>
+            <p class="text-xl lg:min-w-[360px]">
+              {{ post?.excerpt || 'I will leave most of the written content to the last 6 hours, because it is easy to predict how long each article will take' }}
+            </p>
             <div class="flex flex-col md:flex-row gap-4 items-center">
-              <p> Completed: {{ post?.updated || 'sometime in the future'}}</p>
+              <p> Completed: {{ post?.updated || 'sometime in the future' }}</p>
               <a v-if="post.link" :href="post.link" class="text-[#5a4ec9] no-underline cursor-pointer" target="_blank">Reference</a>
             </div>
           </div>
@@ -24,7 +26,7 @@
           />
         </div>
       </div>
-      <div class="my-16 border-t-2 border-grey-200 flex justify-center items-center" v-if="post.type === 'thoughts'">
+      <div v-if="post.type === 'thoughts'" class="my-16 border-t-2 border-grey-200 flex justify-center items-center">
         <ContentRendererMarkdown :value="post" class="w-full max-w-[680px] post-default prose prose-md mt-16">
           <p class="m-0">
             {{ post }}
@@ -51,7 +53,7 @@ const route = useRoute()
 const path = computed(() => route.path)
 const post = ref()
 
-async function getShowcase() {
+async function getShowcase () {
   const trimPath = route.path.charAt(path.value.length - 1) === '/' ? path.value.slice(0, -1) : path.value
   const options: QueryBuilderWhere = props.id !== 0 ? { id: 1 } : { visible_on: trimPath }
   post.value = await queryContent('tasks').where(options).findOne()

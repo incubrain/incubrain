@@ -129,7 +129,7 @@
 
 <script setup>
 
-function dropdownHandler(event) {
+function dropdownHandler (event) {
   const single = event.currentTarget.getElementsByTagName('ul')[0]
   single.classList.toggle('hidden')
 }

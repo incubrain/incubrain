@@ -1,75 +1,75 @@
 <template>
-<div class="testimonials" style="background-image: url('https://images.unsplash.com/photo-1580912458702-6fa698fc553e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');">
-        <div class="container">
-            <div class="title">
-                <h5>Testimonials</h5>
-                <h2>What our clients say</h2>
+  <div class="testimonials" style="background-image: url('https://images.unsplash.com/photo-1580912458702-6fa698fc553e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');">
+    <div class="container">
+      <div class="title">
+        <h5>Testimonials</h5>
+        <h2>What our clients say</h2>
+      </div>
+      <div class="owl-carousel owl-theme testi bg-white">
+        <div class="item">
+          <div class="profile">
+            <img src="https://images.unsplash.com/photo-1521225099409-8e1efc95321d?ixlib=rb-1.2.1&auto=format&fit=crop&h=153&q=80" alt="">
+            <div class="information">
+              <div class="stars">
+                <i class="fa fa-star" />
+                <i class="fa fa-star" />
+                <i class="fa fa-star" />
+                <i class="fa fa-star" />
+                <i class="fa fa-star" />
+              </div>
+              <p>Furkan Giray</p>
+              <span>Web Developer</span>
             </div>
-             <div class="owl-carousel owl-theme testi bg-white">
-                                <div class="item">
-                  <div class="profile">
-                      <img src="https://images.unsplash.com/photo-1521225099409-8e1efc95321d?ixlib=rb-1.2.1&auto=format&fit=crop&h=153&q=80" alt="">
-                      <div class="information">
-                          <div class="stars">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                          </div>
-                          <p>Furkan Giray</p>
-                          <span>Web Developer</span>
-                      </div>
-                    </div>
-                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita velit labore suscipit distinctio, officiis deserunt rem blanditiis ducimus. Voluptate quaerat assumenda qui veniam facilis doloribus maiores impedit ducimus cum accusamus.</p>
-                      <div class="icon">
-                          <i class="fa fa-quote-right" aria-hidden="true"></i>
-                      </div>
-                </div>
-  
-                <div class="item">
-                  <div class="profile">
-                      <img src="https://images.unsplash.com/photo-1521225099409-8e1efc95321d?ixlib=rb-1.2.1&auto=format&fit=crop&h=153&q=80" alt="">
-                      <div class="information">
-                          <div class="stars">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                          </div>
-                          <p>Furkan Giray</p>
-                          <span>Web Developer</span>
-                      </div>
-                    </div>
-                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita velit labore suscipit distinctio, officiis deserunt rem blanditiis ducimus. Voluptate quaerat assumenda qui veniam facilis doloribus maiores impedit ducimus cum accusamus.</p>
-                      <div class="icon">
-                          <i class="fa fa-quote-right" aria-hidden="true"></i>
-                      </div>
-                </div>
-                <div class="item">
-                  <div class="profile">
-                      <img src="https://images.unsplash.com/photo-1521225099409-8e1efc95321d?ixlib=rb-1.2.1&auto=format&fit=crop&h=153&q=80" alt="">
-                      <div class="information">
-                          <div class="stars">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                          </div>
-                          <p>Furkan Giray</p>
-                          <span>Web Developer</span>
-                      </div>
-                    </div>
-                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita velit labore suscipit distinctio, officiis deserunt rem blanditiis ducimus. Voluptate quaerat assumenda qui veniam facilis doloribus maiores impedit ducimus cum accusamus.</p>
-                      <div class="icon">
-                          <i class="fa fa-quote-right" aria-hidden="true"></i>
-                      </div>
-                </div>
-            </div>
+          </div>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita velit labore suscipit distinctio, officiis deserunt rem blanditiis ducimus. Voluptate quaerat assumenda qui veniam facilis doloribus maiores impedit ducimus cum accusamus.</p>
+          <div class="icon">
+            <i class="fa fa-quote-right" aria-hidden="true" />
+          </div>
         </div>
+
+        <div class="item">
+          <div class="profile">
+            <img src="https://images.unsplash.com/photo-1521225099409-8e1efc95321d?ixlib=rb-1.2.1&auto=format&fit=crop&h=153&q=80" alt="">
+            <div class="information">
+              <div class="stars">
+                <i class="fa fa-star" />
+                <i class="fa fa-star" />
+                <i class="fa fa-star" />
+                <i class="fa fa-star" />
+                <i class="fa fa-star" />
+              </div>
+              <p>Furkan Giray</p>
+              <span>Web Developer</span>
+            </div>
+          </div>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita velit labore suscipit distinctio, officiis deserunt rem blanditiis ducimus. Voluptate quaerat assumenda qui veniam facilis doloribus maiores impedit ducimus cum accusamus.</p>
+          <div class="icon">
+            <i class="fa fa-quote-right" aria-hidden="true" />
+          </div>
+        </div>
+        <div class="item">
+          <div class="profile">
+            <img src="https://images.unsplash.com/photo-1521225099409-8e1efc95321d?ixlib=rb-1.2.1&auto=format&fit=crop&h=153&q=80" alt="">
+            <div class="information">
+              <div class="stars">
+                <i class="fa fa-star" />
+                <i class="fa fa-star" />
+                <i class="fa fa-star" />
+                <i class="fa fa-star" />
+                <i class="fa fa-star" />
+              </div>
+              <p>Furkan Giray</p>
+              <span>Web Developer</span>
+            </div>
+          </div>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita velit labore suscipit distinctio, officiis deserunt rem blanditiis ducimus. Voluptate quaerat assumenda qui veniam facilis doloribus maiores impedit ducimus cum accusamus.</p>
+          <div class="icon">
+            <i class="fa fa-quote-right" aria-hidden="true" />
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </template>
 
 <script setup>
