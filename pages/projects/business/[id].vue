@@ -22,7 +22,7 @@
             <p>{{ post.updated }}</p>
             <div class="h-1 w-1 rounded-full bg-black" />
           </div>
-          <img :src="post.post_image" class="rounded-xl shadow-xl" />
+          <img :src="post.post_image" class="rounded-xl shadow-xl">
         </div>
         <div class="max-w-[920px] mx-auto">
           <ContentRendererMarkdown :value="post">
@@ -37,6 +37,6 @@
 </template>
 
 <script setup lang="ts">
-const post = ref();
-post.value = await queryContent("projects").where({ id: 1 }).skip(0).findOne();
+const post = ref()
+post.value = await queryContent('projects').where({ id: 1 }).skip(0).findOne()
 </script>

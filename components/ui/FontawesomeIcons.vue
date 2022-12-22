@@ -57,16 +57,21 @@
       </span>
     </div> -->
     <div
-      class="w-full h-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 grid-rows-6 lg:grid-rows-3 justify-center items-center gap-2 lg:gap-6 xl:gap-8">
-      <div v-for="i in icons"
+      class="w-full h-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 grid-rows-6 lg:grid-rows-3 justify-center items-center gap-2 lg:gap-6 xl:gap-8"
+    >
+      <div
+        v-for="i in icons"
+        :id="`icon${i.id}`"
         :key="i.id"
         class="cursor-pointer flex flex-col justify-center items-center px-4 lg:px-8 py-6 lg:py-12  w-full h-auto bg-white hover:bg-[#FFD43B] rounded-md shadow-md"
         :data-info="i.icon"
-        :id="`icon${i.id}`"
-        @click="copy(`icon${i.id}`)">
+        @click="copy(`icon${i.id}`)"
+      >
         <span>
-          <font-awesome-icon :icon="'fa-solid ' + i.icon"
-            class="w-10 h-10 lg:w-12 lg:h-12" />
+          <font-awesome-icon
+            :icon="'fa-solid ' + i.icon"
+            class="w-10 h-10 lg:w-12 lg:h-12"
+          />
         </span>
         <p class="mt-6">
           {{ i.icon }}
@@ -93,7 +98,6 @@ const copy = (id: string) => {
     }
   )
 }
-
 
 const color = ref({
   bg: '#e5e5f7',

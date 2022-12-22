@@ -37,8 +37,10 @@
     </div>
     <div class="w-full pt-7 flex items-center justify-center">
       <div class="h-full w-full">
-        <canvas id="lineMany"
-          width="100%" />
+        <canvas
+          id="lineMany"
+          width="100%"
+        />
       </div>
     </div>
   </div>
@@ -47,7 +49,7 @@
 <script setup>
 import Chart from 'chart.js/auto'
 
-function createChart() {
+function createChart () {
   new Chart(document.getElementById('lineMany'), {
     type: 'line',
     data: {
@@ -122,7 +124,7 @@ function createChart() {
       }
     }
   })
-  }
+}
 
 onMounted(() => {
   createChart()

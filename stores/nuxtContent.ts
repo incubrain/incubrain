@@ -1,30 +1,30 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
 
-const delay = (t: number) => new Promise((r) => setTimeout(r, t))
+const delay = async (t: number) => await new Promise(r => setTimeout(r, t))
 
 export const useCounter = defineStore('counter', {
   state: () => ({
     n: 2,
     incrementedTimes: 0,
     decrementedTimes: 0,
-    numbers: [] as number[],
+    numbers: [] as number[]
   }),
 
   getters: {
-    double: (state) => state.n * 2,
+    double: state => state.n * 2
   },
 
   actions: {
-    increment(amount = 1) {
+    increment (amount = 1) {
       this.incrementedTimes++
       this.n += amount
     },
 
-    changeMe() {
+    changeMe () {
       console.log('change me to test HMR')
     },
 
-    async fail() {
+    async fail () {
       const n = this.n
       await delay(1000)
       this.numbers.push(n)
@@ -36,8 +36,8 @@ export const useCounter = defineStore('counter', {
       return n
     },
 
-    async decrementToZero(interval: number = 300) {
-      if (this.n <= 0) return
+    async decrementToZero (interval = 300) {
+      if (this.n <= 0) { return }
 
       while (this.n > 0) {
         this.$patch((state) => {
@@ -46,10 +46,10 @@ export const useCounter = defineStore('counter', {
         })
         await delay(interval)
       }
-    },
-  },
+    }
+  }
 })
 
-if (import.meta.hot) {
+if (import.meta.hot != null) {
   import.meta.hot.accept(acceptHMRUpdate(useCounter, import.meta.hot))
 }

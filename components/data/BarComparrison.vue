@@ -17,7 +17,7 @@
 <script setup>
 import Chart from 'chart.js/auto'
 
-function createChart() {
+function createChart () {
   new Chart(document.getElementById('barComparison'), {
     type: 'bar',
     indexAxis: 'y',
@@ -74,7 +74,6 @@ function createChart() {
 onMounted(() => {
   createChart()
 })
-
 
 </script>
 

@@ -10,8 +10,8 @@
       </span>
     </div>
     <div
-      class="fixed invisible flex top-0 right-0 justify-center items-center transition-all ease-in-out duration-1000"
       ref="mobiMenu"
+      class="fixed invisible flex top-0 right-0 justify-center items-center transition-all ease-in-out duration-1000"
       :style=" visible ? {
         width: '100%',
         height: '100%',
@@ -23,16 +23,16 @@
         background: 'white',
         opacity: 0
       }"
-      >
+    >
       <ul
         class="space-y-6 h-full flex flex-col justify-center items-center  w-[50%]"
         @click="toggleMenu"
       >
         <li
-        v-for="page in pages"
-        :key="page.id"
-        @click="navigateTo(page.slug); setPage(page.name)"
-        class="w-full flex items-center justify-center cursor-pointer"
+          v-for="page in pages"
+          :key="page.id"
+          class="w-full flex items-center justify-center cursor-pointer"
+          @click="navigateTo(page.slug); setPage(page.name)"
         >
           <a to="/" class="w-full flex items-center justify-center">
             <span class="w-full text-center text-black bg-white rounded-lg dark:bg-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 py-2 px-6">{{ page.name }}</span>
@@ -49,13 +49,11 @@ const mobiMenu = ref()
 const visible = ref()
 const { pages, setPage } = usePages()
 
-function toggleMenu() {
+function toggleMenu () {
   if (mobiMenu.value) {
     mobiMenu.value.classList?.toggle('invisible')
-    if (mobiMenu.value.classList.contains('invisible')) visible.value = false
-    else visible.value = true
+    if (mobiMenu.value.classList.contains('invisible')) { visible.value = false } else { visible.value = true }
   }
 }
 
 </script>
-

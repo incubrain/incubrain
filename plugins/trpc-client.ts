@@ -14,7 +14,7 @@ export default defineNuxtPlugin(() => {
           (opts.direction === 'down' && opts.result instanceof Error)
       }),
       httpBatchLink({
-        url: `${config.public.api_url as string}/api/trpc`
+        url: `${config.public.api_url}/api/trpc`
       })
     ]
   })

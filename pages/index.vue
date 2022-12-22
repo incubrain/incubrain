@@ -21,7 +21,6 @@
 
 <script setup lang="ts">
 
-
 definePageMeta({
   layout: 'tabbed',
   name: 'Home'

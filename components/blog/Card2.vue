@@ -12,12 +12,16 @@
           :style="{ 'background': `url(${show.card_image})`, 'background-size': 'cover' }"
         />
         <div class="flex flex-col gap-2 items-start w-full p-2 lg:p-4 justify-center">
-          <h3 class=" text-md lg:text-2xl font-bold">{{ show.title }}</h3>
+          <h3 class=" text-md lg:text-2xl font-bold">
+            {{ show.title }}
+          </h3>
           <div class="flex flex-row gap-2 lg:gap-3 justify-center items-center font-semibold text-[#333c7d]">
             <p>{{ show.updated }}</p>
             <!-- <div class="w-1 h-1 rounded-full bg-black" /> -->
           </div>
-          <p class="hidden lg:flex text-sm">{{ show.excerpt }}</p>
+          <p class="hidden lg:flex text-sm">
+            {{ show.excerpt }}
+          </p>
         </div>
       </div>
     </NuxtLink>

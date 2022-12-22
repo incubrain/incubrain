@@ -4,7 +4,7 @@
   <nav class="w-full h-[60px] flex justify-centermx-auto bg-gray-800 shadow relative z-[1000] m-0">
     <div class="container px-6 flex items-center justify-between mx-auto">
       <div class="flex items-center w-[68.72px] lg:w-[40px] h-full bg-red">
-      <!-- <div class="rounded-full relative p-3 flex justify-end text-white">
+        <!-- <div class="rounded-full relative p-3 flex justify-end text-white">
         <input type="text" class="bg-transparent focus:outline-none text-xs w-0 transition duration-150 ease-in-out absolute left-0 ml-10" placeholder="Type something..." />
         <svg @click="searchHandler($event)" xmlns="http://www.w3.org/2000/svg" class="cursor-pointer icon icon-tabler icon-tabler-search" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z"></path>
@@ -37,8 +37,8 @@
           v-for="page in pages.slice(3,5)"
           :key="page.id"
           :class="route.fullPath.includes(page.slug)
-          ? 'cursor-pointer h-full lg:flex items-center text-sm text-yellow-300 tracking-normal mr-10 hidden'
-          : 'hover:text-yellow-300 cursor-pointer h-full lg:flex hidden items-center text-sm text-white mr-10 tracking-normal relative'"
+            ? 'cursor-pointer h-full lg:flex items-center text-sm text-yellow-300 tracking-normal mr-10 hidden'
+            : 'hover:text-yellow-300 cursor-pointer h-full lg:flex hidden items-center text-sm text-white mr-10 tracking-normal relative'"
           @click="navigateTo(page.slug); setPage(page.name)"
         >
           {{ page.name }}

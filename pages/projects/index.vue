@@ -1,6 +1,5 @@
 <template>
-  <div class="w-full grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8">
-  </div>
+  <div class="w-full grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8" />
 </template>
 
 <script setup lang="ts">

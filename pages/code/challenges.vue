@@ -4,9 +4,9 @@
       v-for="challenge in data"
       :key="challenge.title"
     >
-    <ContentRenderer :value="challenge!">
-      <CodeChallenge>
-        <template #spec>
+      <ContentRenderer :value="challenge!">
+        <CodeChallenge>
+          <template #spec>
             <div class="prose prose-md">
               <h2 class="mt-0 mb-4">
                 {{ challenge.title }}

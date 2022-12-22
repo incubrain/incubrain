@@ -38,7 +38,7 @@
 <script setup>
 import Chart from 'chart.js/auto'
 
-function createChart() {
+function createChart () {
   new Chart(document.getElementById('singleEarnings'), {
     type: 'doughnut',
     data: {

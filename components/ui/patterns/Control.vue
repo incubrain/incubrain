@@ -1,74 +1,101 @@
 <template>
   <div class="w-full relative">
     <div
-      class=" sticky w-full rounded-md shadow-lg p-4 lg:p-6 xl:p-8 flex flex-row flex-wrap top-6 lg:top-12 z-10 justify-between bg-white gap-4 lg:gap-6 xl:gap-8 text-sm">
+      class=" sticky w-full rounded-md shadow-lg p-4 lg:p-6 xl:p-8 flex flex-row flex-wrap top-6 lg:top-12 z-10 justify-between bg-white gap-4 lg:gap-6 xl:gap-8 text-sm"
+    >
       <div class="flex flex-row gap-2 w-full md:w-[40%] lg:w-1/5">
-        <div class="min-w-6 w-6 h-6 rounded-full border-solid border-black border-2"
+        <div
+          class="min-w-6 w-6 h-6 rounded-full border-solid border-black border-2"
           :style="{ 'background-color': color.bg }"
-          @click="openPicker('bg', picker.bg)" />
-        <span><font-awesome-icon icon="fa-solid fa-palette"
-            class=" w-6 h-6 cursor-pointer" /> </span>
+          @click="openPicker('bg', picker.bg)"
+        />
+        <span><font-awesome-icon
+          icon="fa-solid fa-palette"
+          class=" w-6 h-6 cursor-pointer"
+        /> </span>
         <p> Background </p>
-        <AppButton v-if="picker.bg"
+        <AppButton
+          v-if="picker.bg"
           class="h-6 flex items-center p-0 mx-4"
-          @click="openPicker('bg', picker.bg)">
+          @click="openPicker('bg', picker.bg)"
+        >
           close
         </AppButton>
-        <hex-color-picker v-if="picker.bg"
+        <hex-color-picker
+          v-if="picker.bg"
           :color="color.bg"
-          @color-changed="handleColorChanged('bg', $event)" />
+          @color-changed="handleColorChanged('bg', $event)"
+        />
       </div>
       <div
-        class="flex flex-row gap-2 w-full md:w-[40%] md:flex-row-reverse md:justify-start lg:w-1/5 lg:justify-center lg:flex-row">
+        class="flex flex-row gap-2 w-full md:w-[40%] md:flex-row-reverse md:justify-start lg:w-1/5 lg:justify-center lg:flex-row"
+      >
         <span>
-          <font-awesome-icon icon="fa-solid fa-brush"
-            class="cursor-pointer w-6 h-6" />
+          <font-awesome-icon
+            icon="fa-solid fa-brush"
+            class="cursor-pointer w-6 h-6"
+          />
         </span>
-        <div class="w-6 h-6 rounded-full border-1-black"
+        <div
+          class="w-6 h-6 rounded-full border-1-black"
           :style="{ 'background-color': color.pat }"
-          @click="openPicker('pat', picker.pat)" />
-        <AppButton v-if="picker.pat"
+          @click="openPicker('pat', picker.pat)"
+        />
+        <AppButton
+          v-if="picker.pat"
           class="h-6 flex items-center p-0 mx-4"
-          @click="openPicker('pat', picker.pat)">
+          @click="openPicker('pat', picker.pat)"
+        >
           close
         </AppButton>
-        <hex-color-picker v-if="picker.pat"
+        <hex-color-picker
+          v-if="picker.pat"
           :color="color.pat"
-          @color-changed="handleColorChanged('pat', $event)" />
+          @color-changed="handleColorChanged('pat', $event)"
+        />
         <p> Pattern </p>
       </div>
       <div
-        class="flex flex-row-reverse justify-end md:flex-row gap-2 w-full md:w-[40%] lg:w-1/5 md:justify-start lg:justify-center">
+        class="flex flex-row-reverse justify-end md:flex-row gap-2 w-full md:w-[40%] lg:w-1/5 md:justify-start lg:justify-center"
+      >
         <p> Opacity </p>
-        <AppSlider :min="0"
+        <AppSlider
+          :min="0"
           :value="0.5"
-          :max="1" />
+          :max="1"
+        />
         <span>
-          <font-awesome-icon icon="fa-solid fa-droplet"
-            class="cursor-pointer w-6 h-6" />
+          <font-awesome-icon
+            icon="fa-solid fa-droplet"
+            class="cursor-pointer w-6 h-6"
+          />
         </span>
       </div>
       <span class="w-full md:w-[40%] lg:w-1/5 gap-2 md:justify-start flex md:flex-row-reverse">
         <span>
-          <font-awesome-icon icon="fa-solid fa-eye"
-            class="cursor-pointer w-6 h-6 left-0 flex" />
+          <font-awesome-icon
+            icon="fa-solid fa-eye"
+            class="cursor-pointer w-6 h-6 left-0 flex"
+          />
         </span>
         <p>Off/On</p>
       </span>
     </div>
     <div class="h-full w-full grid gap-12 my-20 auto-rows-[minmax(200px,20vw)] grid-cols-[repeat(auto-fill,minmax(200px,_20vw))] justify-center md:justify-between items-center">
-      <div class="h-full w-full"> 
+      <div class="h-full w-full">
         <div
-          class="test-color-change  h-full w-full rounded-full shadow-md overflow-hidden border-[10px] border-opacity-20 border-white" />
+          class="test-color-change  h-full w-full rounded-full shadow-md overflow-hidden border-[10px] border-opacity-20 border-white"
+        />
       </div>
-      <div v-for="pattern in patterns"
+      <div
+        v-for="pattern in patterns"
         :key="pattern.id"
         class="h-full w-full"
-        >
+      >
         <div
           class="h-full w-full rounded-full shadow-md overflow-hidden border-[10px] border-opacity-20 border-white"
           :style="pattern.code"
-          />
+        />
       </div>
     </div>
   </div>
@@ -85,9 +112,9 @@ const color = ref({
   pat: '#444cf7'
 })
 
-function handleColorChanged(t, event) {
+function handleColorChanged (t, event) {
   color.value[t] = event.target.color
-  if (t === 'bg') document.getElementById('tabBG').style.background = event.target.color
+  if (t === 'bg') { document.getElementById('tabBG').style.background = event.target.color }
   console.log('eee', t, event.target.color, color.value[t])
 }
 
@@ -96,7 +123,7 @@ const picker = ref({
   bg: false
 })
 
-function openPicker(t, bol) {
+function openPicker (t, bol) {
   if (bol) { picker.value[t] = false } else { picker.value[t] = true }
 }
 

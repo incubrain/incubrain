@@ -309,7 +309,7 @@
 <script setup>
 const show = ref(boolean)
 
-function popuphandler(flag) {
+function popuphandler (flag) {
   if (flag) {
     show.value = true
   } else {
