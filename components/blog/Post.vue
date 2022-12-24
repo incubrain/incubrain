@@ -43,9 +43,8 @@ const post = ref()
 
 async function getProject () {
   const options: QueryBuilderWhere = {
-    id: Number(route.path.charAt(path.value.length - 1))
+    id: Number(route.path.split('/').at(-1))
   }
-  console.log('ops', options)
   post.value = await queryContent('projects').where(options).findOne()
 }
 
