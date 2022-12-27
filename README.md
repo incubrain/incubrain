@@ -40,16 +40,17 @@ If I don't fail, I coasted... that won't happen!
 
 **Full disclosure**, the basic setup of this portfolio was completed before I began working on the **I’m Too Young to Die** sprint.
 
-The first sprint was riddled with challenges, I experienced some laptop issues and was working from my laptop mostly on my brother's couch. I was about 30% less productive without an extra screen, my powerful machine and a comfy chair in a distraction free room.
+The first sprint was riddled with challenges, I experienced some laptop issues and was working from my laptop mostly on my brother's couch. I was about 30% less productive without an extra screen, my powerful machine, and a comfy chair in a distraction free room.
 
 &nbsp;  
 
 ## Stack
 
 - [x] Nuxt 3 (stable) - using nitro v.1 for the server (first time using Nuxt 3 since the stable version was released)
+- [x] Typescript
 - [x] Hosting - Render.com
 - [x] Tailwind 3
-- [x] [Tailwind UI Kit](https://app.tailwinduikit.com/listing/webapp/master_layout/boxed_layout) - I have a pro license, this is my first time using and it greatly sped up my UI work
+- [ ] Storybook
 
 <!-- 
 &nbsp;  
