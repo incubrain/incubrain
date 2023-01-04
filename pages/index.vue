@@ -2,7 +2,7 @@
   <div
     class="container mx-auto"
   >
-    <MulticolorHeading />
+    <!-- <MulticolorHeading /> -->
     <!-- <Testimonial /> -->
     <!-- <AppCardCarosel /> -->
     <FormContact />

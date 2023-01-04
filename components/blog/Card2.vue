@@ -41,8 +41,6 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const showcases = ref()
-showcases.value = await queryContent(props.type).where({ type: props.filter }).skip(0).limit(5).find()
-
-console.log('updated', showcases.value, props)
+showcases.value = await queryContent(props.type).where({ type: props.filter }).skip(0).limit(10).find()
 
 </script>

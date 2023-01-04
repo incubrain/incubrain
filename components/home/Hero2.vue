@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col-reverse lg:flex-row w-full justify-around items-center lg:justify-around overflow-hidden">
     <!-- left side -->
-    <div class="mt-8 flex flex-col justify-center text-center lg:text-left">
+    <div class="mt-8 flex flex-col justify-center text-center lg:text-left w-1/2">
       <div
         class="flex flex-col justify-center  lg:justify-left text-4xl main-heading lg:text-5xl xl:text-7xl text-gray-800 tracking-1px"
       >
@@ -43,17 +43,17 @@
       </div>
     </div>
     <!--  Right Side -->
-    <div>
+    <div class="w-1/2">
       <div class="text-5xl hello xl:text-5xl mt-8 text-gray-800 tracking-1px mx-auto">
         <h2 class="mb-12 lg:mb-6 xl:mb-8 text-center">
           The creator (non-biblical)
         </h2>
       </div>
       <div class="w-full mt-8 lg:mt-0 relative flex flex-row justify-center items-center">
-        <AppLottie
+        <!-- <AppLottie
           :src="'https://assets2.lottiefiles.com/packages/lf20_yeyxce62.json'"
           class="-rotate-90 w-[40%] mr-[-50px] h-full hidden lg:block"
-        />
+        /> -->
         <div class="img-bg flex justify-center items-center rounded-2xl relative z-20 overflow-hidden">
           <img
             src="/drew-img.png"
@@ -61,10 +61,10 @@
             class="min-h-[439px] min-w-full object-cover -mb-[35px] px-8 pt-8"
           >
         </div>
-        <AppLottie
+        <!-- <AppLottie
           :src="'https://assets2.lottiefiles.com/packages/lf20_yeyxce62.json'"
           class="rotate-90 w-[40%] h-full ml-[-50px] hidden lg:block"
-        />
+        /> -->
       </div>
       <div class="text-3xl hello xl:text-5xl text-gray-800 tracking-1px mx-auto">
         <h2 class="my-12 lg:mt-6 xl:mt-8 text-center">
