@@ -16,19 +16,20 @@
         <p> Background </p>
         <AppButton
           v-if="picker.bg"
-          class="h-6 flex items-center p-0 mx-4"
+          class="absolute h-6 z-50 mt-[-24px] flex items-center p-0"
           @click="openPicker('bg', picker.bg)"
         >
           close
         </AppButton>
         <hex-color-picker
           v-if="picker.bg"
+          class="absolute z-30"
           :color="color.bg"
           @color-changed="handleColorChanged('bg', $event)"
         />
       </div>
       <div
-        class="flex flex-row gap-2 w-full md:w-[40%] md:flex-row-reverse md:justify-start lg:w-1/5 lg:justify-center lg:flex-row"
+        class="flex flex-row gap-2 w-full md:w-[40%] md:flex-row-reverse md:justify-start lg:w-1/5 lg:justify-center lg:flex-row relative"
       >
         <span>
           <font-awesome-icon
@@ -43,13 +44,14 @@
         />
         <AppButton
           v-if="picker.pat"
-          class="h-6 flex items-center p-0 mx-4"
+          class="absolute h-6 z-50 mt-[-24px] flex items-center p-0"
           @click="openPicker('pat', picker.pat)"
         >
           close
         </AppButton>
         <hex-color-picker
           v-if="picker.pat"
+          class="absolute z-30"
           :color="color.pat"
           @color-changed="handleColorChanged('pat', $event)"
         />
