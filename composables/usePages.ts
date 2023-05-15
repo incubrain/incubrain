@@ -47,7 +47,8 @@ const pages = ref([
     slug: '/code',
     children: [
       { id: 30, name: 'Code Thoughts', current: false, slug: '/' },
-      { id: 31, name: 'Challenges', current: false, slug: '/challenges' }
+      { id: 31, name: 'Challenges', current: false, slug: '/challenges' },
+      { id: 32, name: 'Supabase', current: false, slug: '/supabase' }
     ]
   },
   {

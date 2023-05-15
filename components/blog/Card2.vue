@@ -1,26 +1,26 @@
 <template>
   <div
-    v-for="show in showcases"
-    :key="show.id"
+    v-for="post in posts"
+    :key="post.id"
   >
     <NuxtLink
-      :to="(`/${props.type}/${props.filter}/${show.id}`)"
+      :to="(`/${props.type}/${props.filter}/${post.id}`)"
     >
       <div class="relative w-full rounded-md hover:bg-[#F9FAFB] hover:shadow-md cursor-pointer h-[118px] lg:h-[184px] lg:p-4 lg:gap-2 lg:flex-row-reverse flex flex-row overflow-hidden">
         <div
           class="w-[118px] h-full lg:w-[540px]"
-          :style="{ 'background': `url(${show.card_image})`, 'background-size': 'cover' }"
+          :style="{ 'background': `url(${post.card_image})`, 'background-size': 'cover', 'background-position': 'center' }"
         />
         <div class="flex flex-col gap-2 items-start w-full p-2 lg:p-4 justify-center">
           <h3 class=" text-md lg:text-2xl font-bold">
-            {{ show.title }}
+            {{ post.title }}
           </h3>
           <div class="flex flex-row gap-2 lg:gap-3 justify-center items-center font-semibold text-[#333c7d]">
-            <p>{{ show.updated }}</p>
+            <p>{{ post.updated }}</p>
             <!-- <div class="w-1 h-1 rounded-full bg-black" /> -->
           </div>
           <p class="hidden lg:flex text-sm">
-            {{ show.excerpt }}
+            {{ post.excerpt }}
           </p>
         </div>
       </div>
@@ -40,7 +40,7 @@ const props = withDefaults(defineProps<Props>(), {
   filter: 'hello'
 })
 
-const showcases = ref()
-showcases.value = await queryContent(props.type).where({ type: props.filter }).skip(0).limit(10).find()
+const posts = ref()
+posts.value = await queryContent(props.type).where({ type: props.filter }).skip(0).limit(10).find()
 
 </script>

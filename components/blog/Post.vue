@@ -29,13 +29,12 @@
 <script setup lang="ts">
 import { QueryBuilderWhere } from '@nuxt/content/dist/runtime/types'
 
-// interface Props {
-//   id: number
-// }
-
-// const props = withDefaults(defineProps<Props>(), {
-//   id: 0
-// })
+const { type } = defineProps({
+  type: {
+    type: String,
+    required: true
+  }
+})
 
 const route = useRoute()
 const path = computed(() => route.path)
@@ -45,7 +44,7 @@ async function getProject () {
   const options: QueryBuilderWhere = {
     id: Number(route.path.split('/').at(-1))
   }
-  post.value = await queryContent('projects').where(options).findOne()
+  post.value = await queryContent(type).where(options).findOne()
 }
 
 getProject()
@@ -55,4 +54,5 @@ watch(
   () => getProject(),
   { deep: true }
 )
+
 </script>
