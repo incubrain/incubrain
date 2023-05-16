@@ -1,23 +1,31 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 
 export default defineNuxtConfig({
+  unlighthouse: {
+    scanner: {
+      // simulate a desktop device
+      device: 'desktop'
+    }
+  },
+  alias: {
+    assets: '/<rootDir>/assets'
+  },
   app: {
     layoutTransition: { name: 'layout', mode: 'out-in' },
     head: {
       link: [
         { rel: 'stylesheet', href: 'https://unpkg.com/flowbite@latest/dist/flowbite.min.css' }
       ],
-      script: [
-        { src: 'https://unpkg.com/flowbite@latest/dist/flowbite.js' }
-      ]
+      script: [{ src: 'https://unpkg.com/flowbite@latest/dist/flowbite.js' }]
     }
   },
-  css: ['/assets/main.css'],
+  css: ['/assets/main.css', '@milkdown/theme-nord/style.css'],
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/supabase',
     '@pinia/nuxt',
-    '@nuxt/content'
+    '@nuxt/content',
+    '@unlighthouse/nuxt'
   ],
   typescript: {
     shim: false
