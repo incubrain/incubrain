@@ -9,138 +9,143 @@ post_image: /projects/mlfx-website/hero.png
 published: 8th June 2023
 ---
 
-This interview is designed to test the candidate's frontend ability.
+Welcome, brave coder, to the frontline of our mission to conquer the internet - one pixel at a time.
+Our task today is to test your mettle in the fire of front-end development. Do not fear, this isn't
+one of those mind-numbing whiteboard tests where you have to reverse a binary tree while standing on
+your head. Our aim is a tad more practical and a smidge less torturous.
 
-This interview will measure:
+Here's what we're eager to discover:
 
-1. **Problem solving:** Can the candidate solve problems in a logical and efficient way?
-2. **Code quality:** Can the candidate write clean, readable, and maintainable code?
-3. **Communication:** Can the candidate communicate effectively with the interviewer?
-4. **Technical knowledge:** Does the candidate have the technical knowledge required for the role?
-5. **Design Implementation:** Can the candidate implement a design to a high standard?
+1. **Problem-solving:** Can you unravel a problem like a basket of yarn? Or, at the very least, not
+   get too tangled in it?
+2. **Code quality:** Will your code look like an abstract painting or a well-crafted sonnet? Hint:
+   We're poetry fans.
+3. **Communication:** Will we vibe like rock band or clash like cats in a bag? Let's find out!
+4. **Technical knowledge:** Do you have the technical know-how to wield Vue/Nuxt or React/Next like
+   a Jedi knight wields a lightsaber?
+5. **Design Implementation:** Can you turn a wireframe into a symphony of pixels that will make our
+   eyes weep with joy?
 
-I'm not a fan of whiteboard interviews, so I've designed this interview to be as close to real work
-as possible. The candidate will be given a task to complete, and will be able to use any resources
-they would normally use in their day-to-day work. The interviewer will be available to answer any
-questions the candidate has, and will provide feedback and guidance throughout the interview.
+During this interview, you will have the chance to display your skills in a more "work-like"
+environment. You're free to use any resources, tools, and even perform a quick Google search, just
+like in your day-to-day work. I'll be here, not as a stern examiner, but more like a friendly tour
+guide through our discussion.
 
-The candidate should keep following in mind:
+Just keep in mind:
 
-- **This is not a test.** The interviewer is not looking for a perfect solution, they are looking
-  for a solution that demonstrates your ability to solve problems and write clean, maintainable
-  code.
-- **You are not expected to know everything.** If you don't know something, ask the interviewer.
-- **Please talk through your thought process:** The interviewer wants to know how you think, so
-  please talk through your thought process as you work through the tasks.
-- **You are not expected to finish:** The interviewer is more interested in how you approach the
-  task.
+- **This isn't the SATs.** We aren't looking for the "perfect" solution - we're interested in your
+  journey to a solution.
+- **This isn't Jeopardy.** If you don't know something, don't fret. Ask!
+- **This is your stage.** Let us into your thought process, let us hear the gears turn and see how
+  your mind tackles the tasks.
+- **This isn't a sprint.** We care more about how you approach the tasks than if you finish them.
+- **These are our tools.** Our tech stack includes Vue/Nuxt 3, TailwindCSS, Pinia, Vite, Vitest, and
+  Zod. If you know any of these, awesome! If not, no biggie, we're still cool.
 
-**1. Introduction (10 minutes):**
+Let's dive in:
 
-- Brief self-introduction, explaining your role and the objectives of the interview.
-- Ask their experience in frontend development and specific experience with Vue/Nuxt or React/Next.
+**1. Opening Act (10 minutes):**
 
-**4. Hands-on Pair Coding (60 minutes):**
+- Meet and greet, chit-chat, introductions - the usual networking jazz.
+- Let's hear about your front-end adventures so far, and your daring duels with Vue/Nuxt or
+  React/Next.
 
-- **Simple Task** (20 minutes): Create an application with a navigation bar and three routes/pages -
-  Home, About, and Contact.
-- **Complex Task** (40 minutes): Develop a feature where a user can fetch data from a public API
-  (like a list of users from https://jsonplaceholder.typicode.com/users), display this data in a
-  list/card grid on the Home page, clicking on an item in the list takes the user to a detailed view
-  of that item. **Bonus:**
-  - Add a search bar to the Home page that allows users to search the list of items.
-  - Add a pagination feature to the Home page that allows users to navigate between pages of items.
-  - Add state managed CRUD functionality.
+**2. Headliner - Hands-on Pair Coding (60 minutes):**
 
-**5. Code Review and Discussion (20 minutes):**
+- This is where you rock the stage. You'll be asked to complete a simple task, and if you're up for
+  it, a more complex one. If there's still time to burn, we could chat about how you'd implement the
+  "Bonus" tasks, or you can wow us by actually doing it.
 
-- Discuss the code written, ask why they made the choices they did, what they could improve or do
-  differently, how they would scale it up, etc.
+Here are some examples of what we might tackle:
 
-**6. Best Practices & Performant Applications (20 minutes):**
+**Example 1:**
 
-- Question: How do you ensure your web applications are accessible?
-- Question: What steps do you take to optimize the performance of your applications?
-- Question: How do you handle security in your applications?
+- **Simple Task (20 minutes):** Create a Vue/React application with a form to add a new "todo" item
+  to a list.
 
-**7. Q&A (15 minutes):**
+- **Complex Task (40 minutes):** Extend the simple task to allow for marking todos as done, deleting
+  them, and filtering the view to show all, done, or undone tasks.
+  - **Bonus:**
+    - Add local storage support to persist todos between browser sessions.
+    - Implement a feature to edit existing todos.
+    - Add due dates for todos and sort them based on these dates.
 
-- Give the candidate an opportunity to ask any questions they have. This will help you understand
-  their expectations and what they value in their work environment.
+**Example 2:**
 
-Remember to approach the interview as a conversation, not a one-way interrogation. Provide feedback
-and guidance throughout the coding exercise to mimic the collaboration they would experience on the
-job.
+- **Simple Task (20 minutes):** Create a Vue/React application that fetches data from a public API
+  (like a list of users from https://jsonplaceholder.typicode.com/users) and displays the data in a
+  list on the Home page.
 
----
+- **Complex Task (40 minutes):** Extend the application by adding functionality for the user to
+  select a user from the list and view more details about that user on a separate page.
+  - **Bonus:**
+    - Add a search bar that allows users to filter the user list in real-time.
+    - Implement pagination for the list of users.
+    - Save the user's last viewed user and show it when they revisit the application.
 
-Sure, here are some task ideas:
+**Example 3:**
 
-**Simple Tasks**
+- **Simple Task (20 minutes):** Create a Vue/React application with a navigation bar and three
+  routes/pages - Home, About, and Contact.
 
-1. **Create a basic CRUD app:** This would involve creating, reading, updating, and deleting data
-   from a simple data store (it could be local data in the state, or remote data from an API).
+- **Complex Task (40 minutes):** Extend the application by fetching some data from a public API and
+  displaying it on the Home page. Include a "More Details" button on each item that opens a modal or
+  new page with more information when clicked.
+  - **Bonus:**
+    - Add a feature that allows users to "favorite" items, and show a list of these favorites on a
+      separate page.
+    - Implement sorting and filtering for the fetched data.
+    - Add responsive design to make sure the app looks good on both desktop and mobile devices.
 
-2. **Create a blog site:** Make a simple blog with a homepage that lists blog posts and a page that
-   shows individual blog post content.
+**Example 4:**
 
-3. **Build a to-do list:** This is a classic application that would involve adding to-dos, marking
-   them as complete, and deleting them.
+- **Simple Task (20 minutes):** Create a Vue/React application that includes a simple form with
+  fields for name, email, and message to simulate a contact page.
 
-4. **Make a weather dashboard:** This could involve fetching data from a weather API and displaying
-   it.
+- **Complex Task (40 minutes):** Expand the application to handle the form submission with
+  client-side validation. Show success or error messages to the user depending on whether the
+  validation passes or fails.
+  - **Bonus:**
+    - Implement a "live" form validation that provides user feedback as they type, rather than on
+      submission.
+    - Add a captcha to the form for extra security.
+    - Include other form elements like checkboxes, radio buttons, or select dropdowns, and handle
+      their data on form submission.
 
-5. **Form validation:** Create a registration form with different fields (email, password, confirm
-   password) and perform client-side validation.
+**Example 5:**
 
-6. **Image gallery:** Create a simple image gallery where images can be added, viewed, and deleted.
+- **Simple Task (20 minutes):** Create a Vue/React application that displays a list of items with
+  their names and prices.
 
-7. **User Profile page:** Create a user profile page where users can update their profile
-   information.
+- **Complex Task (40 minutes):** Extend the application by adding a shopping cart feature. Users
+  should be able to add items to the cart, view the caret with all added items, and see the total
+  price of the items in the cart.
+  - **Bonus:**
+    - Allow users to adjust the quantity of each item in the cart.
+    - Implement a feature to remove items from the cart.
+    - Add a checkout button that simulates a checkout process by clearing the cart and showing a
+      success message.
 
-8. **Commenting system:** Build a simple commenting system where users can post comments and see
-   comments from others.
+**Example 6:**
 
-9. **Pagination:** Implement a pagination feature on a page that lists multiple items (like blog
-   posts or products).
+- **Simple Task (20 minutes):** Create a Vue/React application that displays a list of posts fetched
+  from a public API like JSONPlaceholder.
 
-10. **Theming switcher:** Implement a feature that allows users to switch between light and dark
-    modes in the application.
+- **Complex Task (40 minutes):** Extend the application by adding a feature for users to click on a
+  post to view the full details of the post in a separate page.
+  - **Bonus:**
+    - Implement a feature that allows users to add comments to the posts.
+    - Add a feature to filter posts by user.
+    - Include a pagination feature to navigate through the list of posts.
 
-## Complex Tasks
+**3. After-party - Code Review and Discussion (20 minutes):**
 
-1. **State-Dependent Rendering:** Build a component that changes its rendering based on the state of
-   the application. For example, show a different UI if data is loading, if an error occurred, or if
-   data loaded successfully.
+- We'll chat about the code you wrote like two friends discussing the latest blockbuster. Why did
+  you make the choices you did? How would you improve it? What if it needed to scale?
 
-2. **Advanced Form:** Create a form with various fields that demonstrates your understanding of form
-   validation, handling form state, and handling form submission. This could involve a mixture of
-   text inputs, select dropdowns, radio buttons, and checkboxes.
+**4. Backstage - Best Practices & Performant Applications (20 minutes):**
 
-3. **Filterable List:** Fetch data from a public API and render it in a list. Add functionality to
-   filter list items based on user input.
+- Here's where we chat about your take on accessibility, performance optimization, and security.
+  Think of it as us comparing notes on our craft.
 
-4. **Nested Routing:** Create an application with nested routing. For instance, a user list where
-   clicking on a user takes you to a detail page for that user.
-
-5. **Infinite Scroll:** Implement an infinite scroll feature, where more data loads automatically as
-   the user scrolls down the page.
-
-6. **Custom Hook:** For React/Next.js candidates, ask them to build a custom hook to perform a
-   common task, like fetching data from an API.
-
-7. **Client-Side Search:** Build a client-side search feature where users can search data (fetched
-   from an API) that's stored on the client-side.
-
-8. **Real-Time Search Results:** Create a search bar that shows results in real time as the user
-   types, based on data fetched from an API.
-
-9. **Interactive Dashboard:** Develop a simple dashboard with mock data where clicking on a data
-   point filters or changes the data displayed elsewhere on the dashboard.
-
-10. **Dynamic Page Generation:** For Next.js candidates, have them build an application that
-    dynamically generates pages based on data fetched from an API. For Nuxt.js candidates, a similar
-    task can be done with the Nuxt's dynamic routing.
-
-Remember to make these tasks relevant to the actual work they will be doing, and to consider how
-much time is reasonable for the task considering the time pressure of the interview setting.
+Remember, this isn't a test - it's an adventure. Let's enjoy the journey!
