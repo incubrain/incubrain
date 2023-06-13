@@ -58,19 +58,34 @@ const pages = ref([
     slug: '/tech',
     children: [
       { id: 40, name: 'Tech Thoughts', current: false, slug: '/' },
-      { id: 41, name: 'My Stack', current: false, slug: '/my-stack' }
-    // { id: 40, name: 'projects', current: false, slug: '/4projects' },
+      { id: 41, name: 'Our Stack', current: false, slug: '/our-stack' },
+      { id: 42, name: 'Productivity', current: false, slug: '/productivity' },
+      { id: 43, name: 'Milkdown', current: false, slug: '/milkdown' }
+    ]
+  },
+  {
+    id: 5,
+    name: 'Business',
+    current: false,
+    slug: '/business',
+    children: [
+      { id: 50, name: 'Philosophy', current: false, slug: '/' },
+      { id: 51, name: 'Culture', current: false, slug: '/culture' },
+      { id: 52, name: 'Hiring', current: false, slug: '/hiring' }
     ]
   }
 ] as Page[])
 
 const currentPage = ref('Home')
 
-export default function usePages () {
+export default function usePages() {
   return {
     currentPage: computed(() => currentPage.value),
-    setPage: (newPage: string) => { currentPage.value = newPage },
+    setPage: (newPage: string) => {
+      currentPage.value = newPage
+    },
     pages: computed(() => pages.value),
-    tabs: (currentPage: string) => pages.value.find(p => p.name.toLocaleLowerCase() === currentPage)
+    tabs: (currentPage: string) =>
+      pages.value.find((p) => p.name.toLocaleLowerCase() === currentPage)
   }
 }

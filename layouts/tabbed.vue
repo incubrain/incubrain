@@ -2,7 +2,7 @@
   <div>
     <NavMain />
     <AppTabs>
-      <AppLoader v-if="parentRoute[1] !== 'get-lost'" :duration="3000" :throttle="1000" />
+      <AppLoader v-if="parentRoute[1] !== 'get-lost'" :duration="2000" :throttle="1000" />
       <slot />
     </AppTabs>
   </div>

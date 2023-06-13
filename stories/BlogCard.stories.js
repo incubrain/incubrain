@@ -1,4 +1,4 @@
-import Card2 from '../components/blog/Card2.vue'
+import Card2 from '../components/blog/BlogCard2.vue'
 
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
