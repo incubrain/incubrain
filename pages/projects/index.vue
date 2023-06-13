@@ -1,14 +1,14 @@
 <template>
-  <div class="w-full grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8" />
+  <div
+    class="grid gap-2 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 lg:gap-6 xl:gap-8 xl:grid-cols-2"
+  >
+    <BlogCard2 base-folder="projects" />
+  </div>
 </template>
 
 <script setup lang="ts">
-
-// const projects = await fetch('https://utcibapwakryadpqrgjl.supabase.co/rest/v1')
-
 definePageMeta({
   layout: 'tabbed',
-  name: 'Project Thoughts'
+  name: 'ProjectsAll'
 })
-
 </script>

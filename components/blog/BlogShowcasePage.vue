@@ -6,13 +6,13 @@
   >
     <BlogToTop />
     <ContentRenderer :value="post">
-      <div class="w-full flex flex-col px-4 lg:p-12">
-        <div class="flex flex-col-reverse lg:flex-row w-full justify-around items-center lg:justify-around">
-          <div class="flex flex-col justify-center items-center lg:justify-start lg:items-start prose prose-4xl">
-            <h1 class="text-4xl lg:text-6xl leading-10 prose prose-xl lg:whitespace-nowrap">
+      <div class="w-full flex flex-col px-4 xl:p-12">
+        <div class="flex flex-col-reverse xl:flex-row w-full justify-around items-center xl:justify-around">
+          <div class="flex flex-col justify-center items-center xl:justify-start xl:items-start prose prose-4xl">
+            <h1 class="text-4xl xl:text-6xl leading-10 prose prose-xl xl:whitespace-nowrap">
               {{ post?.title || 'Something on the way' }}
             </h1>
-            <p class="text-xl lg:min-w-[360px]">
+            <p class="text-xl xl:min-w-[360px]">
               {{ post?.excerpt || 'I will leave most of the written content to the last 6 hours, because it is easy to predict how long each article will take' }}
             </p>
             <div class="flex flex-col md:flex-row gap-4 items-center">
@@ -22,7 +22,7 @@
           </div>
           <AppLottie
             :src="'/projects/pages/happy-hacker.json'"
-            class="h-[420px] lg:h-[600px] lg:ml-[-30px]"
+            class="h-[420px] xl:h-[600px] xl:ml-[-30px]"
           />
         </div>
       </div>

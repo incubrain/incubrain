@@ -1,5 +1,5 @@
 <template>
-  <Milkdown />
+  <Milkdown class="flex justify-center items-center py-4" />
 </template>
 
 <script setup lang="ts">
@@ -49,3 +49,6 @@ useEditor((root) =>
     .use(commonmark)
 )
 </script>
+
+<style scoped>
+</style>

@@ -1,6 +1,4 @@
-## Tailwind UI Kit https://app.tailwinduikit.com/listing/webapp/master_layout/boxed_layout (Mac owns)
 <template>
-  <!-- Navigation starts -->
   <nav class="w-full h-[60px] flex justify-centermx-auto bg-gray-800 shadow relative z-[1000] m-0">
     <div class="container px-6 flex items-center justify-between mx-auto">
       <div class="flex items-center w-[68.72px] lg:w-[40px] h-full bg-red">
@@ -16,13 +14,13 @@
             ? 'cursor-pointer h-full lg:flex  text-sm text-yellow-300 tracking-normal items-center hidden mr-10 min-w-[50px]'
             : 'hover:text-yellow-300 cursor-pointer h-full lg:flex hidden items-center text-sm text-white mr-10 tracking-normal relative min-w-[50px]'
           "
-          @click="navigateTo(page.slug); setPage(page.name)"
+          @click="navigateTo(page.slug)"
         >
-          {{ page.name }}
+          {{ page.title }}
         </li>
         <li class="mx-0 lg:mr-12 cursor-pointer h-12">
           <NuxtLink to="/">
-            <img src="/logo.png" alt="Drew MacGibbon Development (DM Development)" class="h-full" @click="setPage(pages[0].name)">
+            <img src="/logo.png" alt="Drew MacGibbon Development (DM Development)" class="h-full">
           </NuxtLink>
         </li>
         <li
@@ -31,9 +29,9 @@
           :class="route.fullPath.includes(page.slug)
             ? 'cursor-pointer h-full lg:flex items-center text-sm text-yellow-300 tracking-normal mr-10 hidden'
             : 'hover:text-yellow-300 cursor-pointer h-full lg:flex hidden items-center text-sm text-white mr-10 tracking-normal relative'"
-          @click="navigateTo(page.slug); setPage(page.name)"
+          @click="navigateTo(page.slug)"
         >
-          {{ page.name }}
+          {{ page.title }}
         </li>
       </ul>
       <div aria-haspopup="true" class="cursor-pointer h-full lg:flex items-center justify-end hidden relative">
@@ -54,5 +52,13 @@
 
 const { pages, setPage } = usePages()
 const route = useRoute()
+const pageChange = computed(() => route.path.split('/')[1])
+
+watchEffect(() => {
+  if (pageChange.value) {
+    console.log('pageSet', pageChange, route)
+    setPage(route.name)
+  }
+})
 
 </script>

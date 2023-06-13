@@ -1,37 +1,4 @@
 {
   // https://v3.nuxtjs.org/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json",
-  "compilerOptions": {
-    "target": "es6" //above es6 like ES2015,ES2018 ...
-  },
-  "theme": {
-    "extend": {
-        "colors": {
-            "redpink": {
-                "DEFAULT": "#EF476F",
-            },
-            "customyellow": {
-                "DEFAULT": "#FFD166",
-            },
-            "customgreen": {
-                "DEFAULT": "#06D6A0",
-                "600": "#DDFEF5",
-            },
-            "skyblue": {
-                "DEFAULT": "#118AB2",
-            },
-            "darkblue": {
-                "DEFAULT": "#073B4C",
-                "300": "#BFEBF9",
-                "500": "#62CDF0",
-            },
-            "darklow": {
-                "DEFAULT": "#1A1A1A"
-            },
-            "darkhigh": {
-                "DEFAULT": "#121212"
-            }
-        },
-    },
-  },
+    "extends": "./.nuxt/tsconfig.json"
 }

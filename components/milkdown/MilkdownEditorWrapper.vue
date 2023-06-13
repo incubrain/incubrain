@@ -9,3 +9,5 @@
 <script setup lang="ts">
 import { MilkdownProvider } from '@milkdown/vue'
 </script>
+
+<style scoped></style>

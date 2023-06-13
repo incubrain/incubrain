@@ -32,7 +32,7 @@
           v-for="page in pages"
           :key="page.id"
           class="w-full flex items-center justify-center cursor-pointer"
-          @click="navigateTo(page.slug); setPage(page.name)"
+          @click="navigateTo(page.slug)"
         >
           <a to="/" class="w-full flex items-center justify-center">
             <span class="w-full text-center text-black bg-white rounded-lg dark:bg-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 py-2 px-6">{{ page.name }}</span>
@@ -47,7 +47,7 @@
 
 const mobiMenu = ref()
 const visible = ref()
-const { pages, setPage } = usePages()
+const { pages } = usePages()
 
 function toggleMenu () {
   if (mobiMenu.value) {
