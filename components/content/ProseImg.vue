@@ -1,10 +1,17 @@
 <template>
-  <img
-    :src="src"
-    :alt="alt"
-    :width="width"
-    :height="height"
-  >
+  <div>
+    <NuxtImg
+      :src="src"
+      :alt="alt"
+      :width="width"
+      :height="height"
+      @click="openModal"
+    />
+    <dialog ref="dialog">
+      <NuxtImg :src="src" :alt="alt" />
+      <button @click="closeModal">Close</button>
+    </dialog>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -26,4 +33,14 @@ defineProps({
     default: undefined
   }
 })
+
+const dialog = ref(null)
+
+function openModal() {
+  if (dialog.value) dialog.value.showModal()
+}
+
+function closeModal() {
+  dialog.value.close()
+}
 </script>
