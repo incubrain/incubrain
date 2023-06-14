@@ -2,7 +2,7 @@
 id: 1
 title: Junior Frontend Technical Interview
 category: business
-visible_on: null
+
 tags: ['hiring', 'businss']
 excerpt: 'A list of tasks to give to frontend candidates during a technical interview.'
 featured_image: /projects/mlfx-website/hero.png
