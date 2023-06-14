@@ -7,9 +7,6 @@ export default defineNuxtConfig({
       device: 'desktop'
     }
   },
-  alias: {
-    assets: '/<rootDir>/assets'
-  },
   app: {
     layoutTransition: { name: 'layout', mode: 'out-in' },
     head: {
@@ -25,7 +22,8 @@ export default defineNuxtConfig({
     '@nuxtjs/supabase',
     '@pinia/nuxt',
     '@nuxt/content',
-    '@unlighthouse/nuxt'
+    '@unlighthouse/nuxt',
+    '@nuxt/image'
   ],
   typescript: {
     shim: false

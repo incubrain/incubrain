@@ -19,6 +19,7 @@
   "devDependencies": {
     "@babel/core": "^7.22.5",
     "@nuxt/content": "^2.6.0",
+    "@nuxt/image": "^1.0.0-rc.1",
     "@nuxtjs/supabase": "^0.3.5",
     "@nuxtjs/tailwindcss": "^6.7.0",
     "@storybook/addon-actions": "^7.0.20",
@@ -34,7 +35,6 @@
     "@unlighthouse/nuxt": "^0.7.4",
     "babel-loader": "^9.1.2",
     "eslint": "^8.40.0",
-    "eslint-config-standard-with-typescript": "^35.0.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-n": "^16.0.0",
     "eslint-plugin-promise": "^6.1.1",
