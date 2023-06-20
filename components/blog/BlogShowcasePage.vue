@@ -57,25 +57,14 @@
 </template>
 
 <script setup lang="ts">
-import { QueryBuilderWhere } from '@nuxt/content/dist/runtime/types'
-
-interface Props {
-  id: number
-}
-
-const props = withDefaults(defineProps<Props>(), {
-  id: 0
-})
-
 const route = useRoute()
-const path = computed(() => route.path)
+const fullPath = computed(() => route.fullPath)
 const post = ref()
 
 async function getShowcase() {
-  const trimPath =
-    route.path.charAt(path.value.length - 1) === '/' ? path.value.slice(0, -1) : path.value
-  const options: QueryBuilderWhere = props.id !== 0 ? { id: props.id } : { visible_on: trimPath }
-  post.value = await queryContent('pages').where(options).findOne()
+  const folder = fullPath.value.split('/')[1]
+  if (route.params.id) return
+  post.value = await queryContent('pages', folder).where({ slug: { $eq: fullPath.value } }).findOne()
 }
 
 getShowcase()
