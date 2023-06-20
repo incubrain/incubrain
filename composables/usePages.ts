@@ -10,25 +10,22 @@ interface Page {
 }
 
 const pages = ref([
-  { id: 0, component: 'Home', title: 'All', current: true, slug: '/' },
+  { id: 0, title: 'Home', current: true, slug: '/' },
   {
     id: 1,
-    component: 'ProjectsAll',
     title: 'Projects',
     current: false,
     slug: '/projects',
     children: [
       {
         id: 11,
-        component: 'ProjectsFrontend',
         title: 'Frontend',
         current: false,
         slug: '/projects/frontend'
       },
-      { id: 12, component: 'ProjectsBackend', title: 'Backend', current: false, slug: '/projects/backend' },
+      { id: 12, title: 'Backend', current: false, slug: '/projects/backend' },
       {
         id: 13,
-        component: 'ProjectsBusiness',
         title: 'Business',
         current: false,
         slug: '/projects/business'
@@ -59,29 +56,26 @@ const pages = ref([
   },
   {
     id: 3,
-    component: 'Examples',
     title: 'Examples',
     current: false,
     slug: '/examples',
     children: [
-      { id: 31, component: 'ExamplesChart', title: 'Charts', current: false, slug: '/examples/charts' },
+      { id: 31, title: 'Charts', current: false, slug: '/examples/charts' },
       // { id: 22, component: 'ExamplesLists',  title: 'Lists', current: false, slug: '/examples/lists' },
-      { id: 33, component: 'ExamplesMobile', title: 'Mobile', current: false, slug: '/examples/mobile' },
-      { id: 34, component: 'ExamplesUI', title: 'UI', current: false, slug: '/examples/ui' },
+      { id: 33, title: 'Mobile', current: false, slug: '/examples/mobile' },
+      { id: 34, title: 'UI', current: false, slug: '/examples/ui' },
       // { id: 25, component: 'ExamplesBasic', title: 'Basic', current: false, slug: '/examples/basic' },
       // { id: 25, component: 'ExamplesClothing', title: 'Ecommerce', current: false, slug: '/examples/clothing' },
       {
         id: 36,
-        component: 'ExamplesPattern',
         title: 'Patterns',
         current: false,
         slug: '/examples/patterns'
       },
-      { id: 37, component: 'ExamplesLottie', title: 'Lotties', current: false, slug: '/examples/lottie' },
-      { id: 38, component: 'ExamplesIcon', title: 'Icons', current: false, slug: '/examples/icons' },
+      { id: 37, title: 'Lotties', current: false, slug: '/examples/lottie' },
+      { id: 38, title: 'Icons', current: false, slug: '/examples/icons' },
       {
         id: 39,
-        component: 'ExamplesMilkdown',
         title: 'Milkdown',
         current: false,
         slug: '/examples/milkdown'
@@ -90,11 +84,10 @@ const pages = ref([
   },
   {
     id: 4,
-    component: 'Stack',
     title: 'Stack',
     current: false,
     slug: '/stack',
-    children: [{ id: 42, component: 'StackTools', title: 'Tools', current: false, slug: '/stack/tools' }]
+    children: [{ id: 42, title: 'Tools', current: false, slug: '/stack/tools' }]
   }
 ] as Page[])
 

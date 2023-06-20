@@ -39,6 +39,8 @@
 const route = useRoute()
 const parentRoute = computed(() => route.path.split('/'))
 
+console.log('parentRoute', parentRoute)
+
 const props = defineProps({
   throttle: {
     type: Number,

@@ -9,7 +9,7 @@
           WE'RE LOST
         </h3>
         <NuxtLink
-          :to="{ name: 'Home' }"
+          to="/"
           class="whitespace-nowrap px-8 pt-4"
         >
           GO BACK HOME
