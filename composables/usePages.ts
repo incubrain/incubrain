@@ -23,34 +23,37 @@ const pages = ref([
         component: 'ProjectsFrontend',
         title: 'Frontend',
         current: false,
-        slug: '/frontend'
+        slug: '/projects/frontend'
       },
-      { id: 12, component: 'ProjectsBackend', title: 'Backend', current: false, slug: '/backend' },
+      { id: 12, component: 'ProjectsBackend', title: 'Backend', current: false, slug: '/projects/backend' },
       {
         id: 13,
         component: 'ProjectsBusiness',
         title: 'Business',
         current: false,
-        slug: '/business'
+        slug: '/projects/business'
       }
     ]
   },
   {
     id: 2,
-    component: 'BlogAll',
     title: 'Blog',
     current: false,
     slug: '/blog',
     children: [
-      { id: 21, component: 'BlogFrontend', title: 'Frontend', current: false, slug: '/frontend' },
-      { id: 22, component: 'BlogBackend', title: 'Backend', current: false, slug: '/backend' },
-      { id: 23, component: 'BlogBusiness', title: 'Business', current: false, slug: '/business' },
+      {
+        id: 21,
+        title: 'Frontend',
+        current: false,
+        slug: '/blog/frontend'
+      },
+      { id: 22, title: 'Backend', current: false, slug: '/blog/backend' },
+      { id: 23, title: 'Business', current: false, slug: '/blog/business' },
       {
         id: 24,
-        component: 'BlogChallenges',
         title: 'Challenges',
         current: false,
-        slug: '/challenges'
+        slug: '/blog/challenges'
       }
     ]
   },
@@ -61,27 +64,27 @@ const pages = ref([
     current: false,
     slug: '/examples',
     children: [
-      { id: 31, component: 'ExamplesChart', title: 'Charts', current: false, slug: '/charts' },
-      // { id: 22, component: 'ExamplesLists',  title: 'Lists', current: false, slug: '/lists' },
-      { id: 33, component: 'ExamplesMobile', title: 'Mobile', current: false, slug: '/mobile' },
-      { id: 34, component: 'ExamplesUI', title: 'UI', current: false, slug: '/ui' },
-      // { id: 25, component: 'ExamplesBasic', title: 'Basic', current: false, slug: '/basic' },
-      // { id: 25, component: 'ExamplesClothing', title: 'Ecommerce', current: false, slug: '/clothing' },
+      { id: 31, component: 'ExamplesChart', title: 'Charts', current: false, slug: '/examples/charts' },
+      // { id: 22, component: 'ExamplesLists',  title: 'Lists', current: false, slug: '/examples/lists' },
+      { id: 33, component: 'ExamplesMobile', title: 'Mobile', current: false, slug: '/examples/mobile' },
+      { id: 34, component: 'ExamplesUI', title: 'UI', current: false, slug: '/examples/ui' },
+      // { id: 25, component: 'ExamplesBasic', title: 'Basic', current: false, slug: '/examples/basic' },
+      // { id: 25, component: 'ExamplesClothing', title: 'Ecommerce', current: false, slug: '/examples/clothing' },
       {
         id: 36,
         component: 'ExamplesPattern',
         title: 'Patterns',
         current: false,
-        slug: '/patterns'
+        slug: '/examples/patterns'
       },
-      { id: 37, component: 'ExamplesLottie', title: 'Lotties', current: false, slug: '/lottie' },
-      { id: 38, component: 'ExamplesIcon', title: 'Icons', current: false, slug: '/icons' },
+      { id: 37, component: 'ExamplesLottie', title: 'Lotties', current: false, slug: '/examples/lottie' },
+      { id: 38, component: 'ExamplesIcon', title: 'Icons', current: false, slug: '/examples/icons' },
       {
         id: 39,
         component: 'ExamplesMilkdown',
         title: 'Milkdown',
         current: false,
-        slug: '/milkdown'
+        slug: '/examples/milkdown'
       }
     ]
   },
@@ -91,19 +94,20 @@ const pages = ref([
     title: 'Stack',
     current: false,
     slug: '/stack',
-    children: [{ id: 42, component: 'StackTools', title: 'Tools', current: false, slug: '/tools' }]
+    children: [{ id: 42, component: 'StackTools', title: 'Tools', current: false, slug: '/stack/tools' }]
   }
 ] as Page[])
 
 const currentPage = ref('Home')
 
-function findPage(pages: Page[], componentName: string): Page | undefined {
+function findPage(pages: Page[], path: string): Page | undefined {
   for (const page of pages) {
-    if (page.component === componentName) {
+    console.log('page', page.slug, path)
+    if (page.slug === path) {
       return page
     }
     if (page.children !== undefined) {
-      const childPage = findPage(page.children, componentName)
+      const childPage = findPage(page.children, path)
       if (childPage !== undefined) {
         return childPage
       }

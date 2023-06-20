@@ -33,7 +33,7 @@
       <ul
         class="container mx-auto px-4 sm:px-0 flex flex-row cursor-pointer mt-8 items-center overflow-x-scroll scrollbar-hide transition-all duration-300 ease-in-out"
         :style="
-          !noTabs.includes(route.name)
+          !noTabs.includes(route.title)
             ? {
                 height: '60px'
               }
@@ -47,7 +47,7 @@
           :key="tab.id"
           class="py-5 px-12 text-sm rounded-t whitespace-nowrap transition-all duration-1000 ease-in-out relative bg-transparent"
           :style="
-            route.name === tab.component
+            path === tab.slug
               ? {
                   color: 'black',
                   background: '#E5E7EB',
@@ -58,7 +58,7 @@
                   fontWeight: 500
                 }
           "
-          :to="{ name: tab.component }"
+          :to="tab.slug"
         >
           {{ tab.title }}
         </NuxtLink>
@@ -72,6 +72,15 @@ const noTabs = ['Home']
 
 const route = useRoute()
 const { tabs } = usePages()
+console.log('tabs', tabs, route)
+
+const path = computed(() => {
+  if (route.params.id) {
+    // still display tabs when viewing a single post
+    return route.fullPath.replace(`/${route.params.id}`, '')
+  }
+  return route.fullPath
+})
 
 const parentRoute = computed(() => route.path.split('/'))
 

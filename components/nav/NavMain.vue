@@ -52,12 +52,21 @@
 
 const { pages, setPage } = usePages()
 const route = useRoute()
+
+const path = computed(() => {
+  if (route.params.id) {
+    // still display tabs when viewing a single post
+    return route.fullPath.replace(`/${route.params.id}`, '')
+  }
+  return route.fullPath
+})
+
 const pageChange = computed(() => route.path.split('/')[1])
 
 watchEffect(() => {
   if (pageChange.value) {
     console.log('pageSet', pageChange, route)
-    setPage(route.name)
+    setPage(path.value)
   }
 })
 
