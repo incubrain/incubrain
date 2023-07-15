@@ -6,7 +6,7 @@
     <ContentRenderer :value="post">
       <div class="w-full flex flex-col px-4 xl:p-12">
         <div
-          class="flex flex-col-reverse xl:flex-row w-full justify-around items-center xl:justify-around"
+          class="flex flex-col-reverse xl:flex-row w-full justify-around items-center xl:justify-around gap-16"
         >
           <div
             class="flex flex-col justify-center items-center xl:justify-start xl:items-start prose prose-4xl"
@@ -32,10 +32,9 @@
               </a>
             </div>
           </div>
-          <!-- <AppLottie
-            :src="'/projects/pages/happy-hacker.json'"
-            class="h-[420px] xl:h-[600px] xl:ml-[-30px]"
-          /> -->
+          <NuxtImg
+            src="/happy-hacker.gif"
+          />
         </div>
       </div>
       <div
@@ -64,7 +63,7 @@ async function getShowcase() {
   const folder = fullPath.value.split('/')[1]
   if (route.params.id) return
   console.log('path', fullPath.value, folder)
-  post.value = await queryContent('pages', folder)
+  post.value = await queryContent('pages', folder) 
     .where({ slug: { $eq: fullPath.value } })
     .findOne()
 }
