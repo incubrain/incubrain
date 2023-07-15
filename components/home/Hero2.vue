@@ -1,75 +1,38 @@
 <template>
-  <div class="flex flex-col-reverse lg:flex-row w-full justify-around items-center lg:justify-around overflow-hidden">
+  <div
+    class="grid grid-cols-1 lg:grid-cols-2 w-full justify-around items-start lg:justify-around overflow-hidden"
+  >
     <!-- left side -->
-    <div class="mt-8 flex flex-col justify-center text-center lg:text-left w-1/2">
+    <div class="mt-8 flex flex-col justify-center text-center lg:text-left w-full">
       <div
-        class="flex flex-col justify-center  lg:justify-left text-4xl main-heading lg:text-5xl xl:text-7xl text-gray-800 tracking-1px"
+        class="flex flex-col justify-center lg:justify-left text-4xl main-heading lg:text-5xl xl:text-6xl text-gray-800 tracking-tight gap-2"
       >
-        <h2 class="mt-2 lg:mt-2">
-          Presenting...
-        </h2>
-        <h2 class="mt-2 lg:mt-2 text-yellow-400">
-          Meta-portfolio
-        </h2>
-        <h2 class="mt-2 lg:mt-2">
-          Portfolio-ception
-        </h2>
+        <h2> Presenting... </h2>
+        <h2 class="text-yellow-400"> Meta-portfolio </h2>
+        <h2> Portfolio-ception </h2>
       </div>
-      <div
-        class="my-8 flex flex-col justify-center items-center gap-6 relative
-          lg:items-left
-          xl:flex-row xl:p-6
-        "
-      >
-        <div class="w-full lg:w-3/4 justify-items-stretch flex flex-col">
-          <h3 class="text-lg lg:text-2xl tracking-wide text-gray-700">
-            For the next 48 hours (working hours) I will complete as much work as possible documenting the process on
-            this
-            website and my Github.
-          </h3>
-          <p class="lg:max-w-[80%] text-sm mt-4">
-            Thanks Nicole for the name idea (meta-portfolio) and for putting up with my delays 😊
-          </p>
-        </div>
-        <a
-          href="https://github.com/Drew-Macgibbon"
-          class="w-[50%] h-full mt-10 lg:mt-0 lg:w-[30%] max-w-[280px] lg:max-w-[400px] lg:h-auto aspect-auto right-0 y-6 p-4 flex justify-center items-center relative bg-[#ffffff] rounded-full shadow-lg"
-        >
-          <AppLottie
-            :src="'https://lottie.host/7ed66755-ef23-4d41-8f01-6ccf8e7e4572/CHYE6gVPVA.json'"
-            height="70%"
-          />
-        </a>
-      </div>
+
+      <h3 class="text-lg lg:text-2xl tracking-wide text-gray-700 pt-8">
+        For the next 48 hours (working hours) I will complete as much work as possible documenting
+        the process on this website and my Github.
+      </h3>
     </div>
     <!--  Right Side -->
-    <div class="w-1/2">
+    <div class="w-full">
       <div class="text-5xl hello xl:text-5xl mt-8 text-gray-800 tracking-1px mx-auto">
-        <h2 class="mb-12 lg:mb-6 xl:mb-8 text-center">
-          The creator (non-biblical)
-        </h2>
+        <h2 class="mb-12 lg:mb-6 xl:mb-8 text-center"> The creator (non-biblical) </h2>
       </div>
       <div class="w-full mt-8 lg:mt-0 relative flex flex-row justify-center items-center">
-        <!-- <AppLottie
-          :src="'https://assets2.lottiefiles.com/packages/lf20_yeyxce62.json'"
-          class="-rotate-90 w-[40%] mr-[-50px] h-full hidden lg:block"
-        /> -->
-        <div class="img-bg flex justify-center items-center rounded-2xl relative z-20 overflow-hidden">
-          <img
+        <div class="img-bg flex justify-center items-center rounded-2xl relative overflow-hidden">
+          <NuxtImg
             src="/drew-img.png"
             alt="Drew MacGibbon"
             class="min-h-[439px] min-w-full object-cover -mb-[35px] px-8 pt-8"
-          >
+          />
         </div>
-        <!-- <AppLottie
-          :src="'https://assets2.lottiefiles.com/packages/lf20_yeyxce62.json'"
-          class="rotate-90 w-[40%] h-full ml-[-50px] hidden lg:block"
-        /> -->
       </div>
       <div class="text-3xl hello xl:text-5xl text-gray-800 tracking-1px mx-auto">
-        <h2 class="my-12 lg:mt-6 xl:mt-8 text-center">
-          👋, I'm Mac
-        </h2>
+        <h2 class="my-12 lg:mt-6 xl:mt-8 text-center"> 👋, I'm Mac </h2>
       </div>
       <div class="w-full max-w-[420px] relative bg-[#ebe9e5] rounded-md p-6 shadow-lg mt-6 mx-auto">
         <div class="absolute right-0 top-0 -mt-6">
@@ -103,13 +66,11 @@
 </template>
 
 <script setup>
-
 const quote = await $fetch('https://api.quotable.io/random')
-
 </script>
 
 <style>
-@import url("https://cdn.tuk.dev/dist/css/tailwind-v2.2.11.min.css");
+@import url('https://cdn.tuk.dev/dist/css/tailwind-v2.2.11.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
 
@@ -118,7 +79,6 @@ const quote = await $fetch('https://api.quotable.io/random')
   --col2: #ac7b09;
   --col3: rgba(254, 2, 2, 0);
   --col4: rgb(135, 15, 15);
-
 }
 
 .hello {
@@ -126,13 +86,36 @@ const quote = await $fetch('https://api.quotable.io/random')
 }
 
 .img-bg {
-  background:
-    radial-gradient(circle farthest-side at 0% 50%, var(--col1) 23.5%, var(--col3) 0)21px 30px,
-    radial-gradient(circle farthest-side at 0% 50%, var(--col2) 24%, var(--col3) 0)19px 30px,
-    linear-gradient(var(--col1) 14%, var(--col3) 0, var(--col3) 85%, var(--col1) 0)0 0,
-    linear-gradient(150deg, var(--col1) 24%, var(--col2) 0, var(--col2) 26%, var(--col3) 0, var(--col3) 74%, var(--col2) 0, var(--col2) 76%, var(--col1) 0)0 0,
-    linear-gradient(30deg, var(--col1) 24%, var(--col2) 0, var(--col2) 26%, var(--col3) 0, var(--col3) 74%, var(--col2) 0, var(--col2) 76%, var(--col1) 0)0 0,
-    linear-gradient(90deg, var(--col4) 2%, var(--col1) 0, var(--col1) 98%, var(--col2) 0%)0 0 var(--col1);
+  background: radial-gradient(circle farthest-side at 0% 50%, var(--col1) 23.5%, var(--col3) 0) 21px
+      30px,
+    radial-gradient(circle farthest-side at 0% 50%, var(--col2) 24%, var(--col3) 0) 19px 30px,
+    linear-gradient(var(--col1) 14%, var(--col3) 0, var(--col3) 85%, var(--col1) 0) 0 0,
+    linear-gradient(
+        150deg,
+        var(--col1) 24%,
+        var(--col2) 0,
+        var(--col2) 26%,
+        var(--col3) 0,
+        var(--col3) 74%,
+        var(--col2) 0,
+        var(--col2) 76%,
+        var(--col1) 0
+      )
+      0 0,
+    linear-gradient(
+        30deg,
+        var(--col1) 24%,
+        var(--col2) 0,
+        var(--col2) 26%,
+        var(--col3) 0,
+        var(--col3) 74%,
+        var(--col2) 0,
+        var(--col2) 76%,
+        var(--col1) 0
+      )
+      0 0,
+    linear-gradient(90deg, var(--col4) 2%, var(--col1) 0, var(--col1) 98%, var(--col2) 0%) 0 0
+      var(--col1);
   background-size: 40px 60px;
 }
 

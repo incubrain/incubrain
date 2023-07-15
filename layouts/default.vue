@@ -1,15 +1,13 @@
 <template>
   <div>
-    <NavMain />
+    <NavTop />
     <AppTabs>
       <slot />
     </AppTabs>
   </div>
 </template>
 
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <style>
 html {

@@ -10,24 +10,33 @@ interface Page {
 }
 
 const pages = ref([
-  { id: 0, title: 'Home', current: true, slug: '/' },
+  { id: 0, title: 'Home', current: true, icon: 'i-mdi-chevron-right', slug: '/' },
   {
     id: 1,
     title: 'Projects',
     current: false,
+    icon: 'i-mdi-chevron-right',
     slug: '/projects',
     children: [
       {
         id: 11,
         title: 'Frontend',
         current: false,
+        icon: 'i-mdi-chevron-right',
         slug: '/projects/frontend'
       },
-      { id: 12, title: 'Backend', current: false, slug: '/projects/backend' },
+      {
+        id: 12,
+        title: 'Backend',
+        current: false,
+        icon: 'i-mdi-chevron-right',
+        slug: '/projects/backend'
+      },
       {
         id: 13,
         title: 'Business',
         current: false,
+        icon: 'i-mdi-chevron-right',
         slug: '/projects/business'
       }
     ]
@@ -36,20 +45,35 @@ const pages = ref([
     id: 2,
     title: 'Blog',
     current: false,
+    icon: 'i-mdi-chevron-right',
     slug: '/blog',
     children: [
       {
         id: 21,
         title: 'Frontend',
         current: false,
+        icon: 'i-mdi-chevron-right',
         slug: '/blog/frontend'
       },
-      { id: 22, title: 'Backend', current: false, slug: '/blog/backend' },
-      { id: 23, title: 'Business', current: false, slug: '/blog/business' },
+      {
+        id: 22,
+        title: 'Backend',
+        current: false,
+        icon: 'i-mdi-chevron-right',
+        slug: '/blog/backend'
+      },
+      {
+        id: 23,
+        title: 'Business',
+        current: false,
+        icon: 'i-mdi-chevron-right',
+        slug: '/blog/business'
+      },
       {
         id: 24,
         title: 'Challenges',
         current: false,
+        icon: 'i-mdi-chevron-right',
         slug: '/blog/challenges'
       }
     ]
@@ -58,26 +82,53 @@ const pages = ref([
     id: 3,
     title: 'Examples',
     current: false,
+    icon: 'i-mdi-chevron-right',
     slug: '/examples',
     children: [
-      { id: 31, title: 'Charts', current: false, slug: '/examples/charts' },
-      // { id: 22, component: 'ExamplesLists',  title: 'Lists', current: false, slug: '/examples/lists' },
-      { id: 33, title: 'Mobile', current: false, slug: '/examples/mobile' },
-      { id: 34, title: 'UI', current: false, slug: '/examples/ui' },
-      // { id: 25, component: 'ExamplesBasic', title: 'Basic', current: false, slug: '/examples/basic' },
-      // { id: 25, component: 'ExamplesClothing', title: 'Ecommerce', current: false, slug: '/examples/clothing' },
+      {
+        id: 31,
+        title: 'Charts',
+        current: false,
+        icon: 'i-mdi-chevron-right',
+        slug: '/examples/charts'
+      },
+      // { id: 22, component: 'ExamplesLists',  title: 'Lists', current: false, icon: 'i-mdi-chevron-right', slug: '/examples/lists' },
+      {
+        id: 33,
+        title: 'Mobile',
+        current: false,
+        icon: 'i-mdi-chevron-right',
+        slug: '/examples/mobile'
+      },
+      { id: 34, title: 'UI', current: false, icon: 'i-mdi-chevron-right', slug: '/examples/ui' },
+      // { id: 25, component: 'ExamplesBasic', title: 'Basic', current: false, icon: 'i-mdi-chevron-right', slug: '/examples/basic' },
+      // { id: 25, component: 'ExamplesClothing', title: 'Ecommerce', current: false, icon: 'i-mdi-chevron-right', slug: '/examples/clothing' },
       {
         id: 36,
         title: 'Patterns',
         current: false,
+        icon: 'i-mdi-chevron-right',
         slug: '/examples/patterns'
       },
-      { id: 37, title: 'Lotties', current: false, slug: '/examples/lottie' },
-      { id: 38, title: 'Icons', current: false, slug: '/examples/icons' },
+      {
+        id: 37,
+        title: 'Lotties',
+        current: false,
+        icon: 'i-mdi-chevron-right',
+        slug: '/examples/lottie'
+      },
+      {
+        id: 38,
+        title: 'Icons',
+        current: false,
+        icon: 'i-mdi-chevron-right',
+        slug: '/examples/icons'
+      },
       {
         id: 39,
         title: 'Milkdown',
         current: false,
+        icon: 'i-mdi-chevron-right',
         slug: '/examples/milkdown'
       }
     ]
@@ -86,8 +137,11 @@ const pages = ref([
     id: 4,
     title: 'Stack',
     current: false,
+    icon: 'i-mdi-chevron-right',
     slug: '/stack',
-    children: [{ id: 42, title: 'Tools', current: false, slug: '/stack/tools' }]
+    children: [
+      { id: 42, title: 'Tools', current: false, icon: 'i-mdi-chevron-right', slug: '/stack/tools' }
+    ]
   }
 ] as Page[])
 
@@ -95,7 +149,6 @@ const currentPage = ref('Home')
 
 function findPage(pages: Page[], path: string): Page | undefined {
   for (const page of pages) {
-    console.log('page', page.slug, path)
     if (page.slug === path) {
       return page
     }
