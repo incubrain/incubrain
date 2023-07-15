@@ -33,10 +33,10 @@
               </a>
             </div>
           </div>
-          <AppLottie
+          <!-- <AppLottie
             :src="'/projects/pages/happy-hacker.json'"
             class="h-[420px] xl:h-[600px] xl:ml-[-30px]"
-          />
+          /> -->
         </div>
       </div>
       <div

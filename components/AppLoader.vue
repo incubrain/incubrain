@@ -1,8 +1,8 @@
 <template>
   <div
     class="
-      rounded-md
-      bg-white
+      rounded-b-md
+      background
       nuxt-loading-indicator
       min-h-[800px]
       lg:min-h-[640px]
@@ -38,8 +38,6 @@
 <script setup lang="ts">
 const route = useRoute()
 const parentRoute = computed(() => route.path.split('/'))
-
-console.log('parentRoute', parentRoute)
 
 const props = defineProps({
   throttle: {
