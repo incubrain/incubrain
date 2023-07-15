@@ -1,14 +1,16 @@
 <template>
   <div>
     <NavTop />
-    <AppTabs>
-      <AppLoader
-        v-if="parentRoute[1] !== 'get-lost'"
-        :duration="2000"
-        :throttle="1000"
-      />
-      <slot />
-    </AppTabs>
+    <AppBody :mobi-bottom-nav="false">
+      <AppTabs>
+        <AppLoader
+          v-if="parentRoute[1] !== 'get-lost'"
+          :duration="2000"
+          :throttle="1000"
+        />
+        <slot />
+      </AppTabs>
+    </AppBody>
   </div>
 </template>
 

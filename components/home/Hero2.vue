@@ -5,7 +5,7 @@
     <!-- left side -->
     <div class="mt-8 flex flex-col justify-center text-center lg:text-left w-full">
       <div
-        class="flex flex-col justify-center lg:justify-left text-4xl main-heading lg:text-5xl xl:text-6xl text-gray-800 tracking-tight gap-2"
+        class="flex flex-col justify-center lg:justify-left text-4xl main-heading lg:text-5xl xl:text-5xl text-gray-800 tracking-tight gap-2"
       >
         <h2> Presenting... </h2>
         <h2 class="text-yellow-400"> Meta-portfolio </h2>

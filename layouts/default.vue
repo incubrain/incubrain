@@ -1,9 +1,11 @@
 <template>
-  <div>
+  <div class="w-full">
     <NavTop />
-    <AppTabs>
-      <slot />
-    </AppTabs>
+    <AppBody :mobi-bottom-nav="false">
+      <AppTabs>
+        <slot />
+      </AppTabs>
+    </AppBody>
   </div>
 </template>
 

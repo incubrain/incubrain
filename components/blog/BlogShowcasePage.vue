@@ -3,7 +3,6 @@
     v-if="post"
     class="w-full"
   >
-    <BlogToTop />
     <ContentRenderer :value="post">
       <div class="w-full flex flex-col px-4 xl:p-12">
         <div
@@ -12,7 +11,7 @@
           <div
             class="flex flex-col justify-center items-center xl:justify-start xl:items-start prose prose-4xl"
           >
-            <h1 class="text-4xl xl:text-6xl leading-10 prose prose-xl xl:whitespace-nowrap">
+            <h1 class="text-4xl xl:text-5xl leading-10 prose prose-xl xl:whitespace-nowrap">
               {{ post?.title || 'Something on the way' }}
             </h1>
             <p class="text-xl xl:min-w-[360px]">
@@ -64,7 +63,9 @@ const post = ref()
 async function getShowcase() {
   const folder = fullPath.value.split('/')[1]
   if (route.params.id) return
-  post.value = await queryContent('pages', folder).where({ slug: { $eq: fullPath.value } }).findOne()
+  post.value = await queryContent('pages', folder)
+    .where({ slug: { $eq: fullPath.value } })
+    .findOne()
 }
 
 getShowcase()

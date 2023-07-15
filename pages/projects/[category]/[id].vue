@@ -1,6 +1,5 @@
 <template>
   <div>
-    <BlogToTop />
     <div class="max-w-[760px] mx-auto flex flex-col prose justify-center">
       <BlogPost :post="post" />
     </div>

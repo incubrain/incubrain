@@ -1,13 +1,13 @@
 <template>
   <div class="flex items-center justify-center w-full h-full py-8 px-4">
-    <div class="max-w-7xl py-6 px-8 bg-white dark:bg-gray-800">
+    <div class="max-w-5xl py-6 px-8 bg-white dark:bg-gray-800">
       <div class="sm:flex items-center justify-between">
         <div class="sm:mb-0 mb-4 flex items-center">
           <img
             alt="profile"
             src="https://images.unsplash.com/photo-1518725522904-4b3939358342?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
             class="w-8 h-8 rounded object-cover object-center"
-          >
+          />
           <p class="text-xl pl-4 font-semibold leading-5 text-gray-800 dark:text-gray-100">
             Antonin Hafer
           </p>
@@ -18,8 +18,12 @@
       </div>
       <div class="sm:flex items-center justify-between w-full sm:px-24 pt-6">
         <div class="sm:block flex w-full items-center">
-          <div class="sm:w-full w-2 sm:h-2 h-64 bg-gray-100 flex sm:flex-row flex-col items-center justify-between">
-            <div class="w-4 h-4 bg-gray-800 dark:bg-gray-100 rounded flex items-center justify-center">
+          <div
+            class="sm:w-full w-2 sm:h-2 h-64 bg-gray-100 flex sm:flex-row flex-col items-center justify-between"
+          >
+            <div
+              class="w-4 h-4 bg-gray-800 dark:bg-gray-100 rounded flex items-center justify-center"
+            >
               <svg
                 class="text-white dark:text-black icon icon-tabler icon-tabler-check"
                 xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +44,9 @@
                 <path d="M5 12l5 5l10 -10" />
               </svg>
             </div>
-            <div class="w-4 h-4 bg-gray-800 dark:bg-gray-100 rounded flex items-center justify-center md:ml-8 lg:ml-20">
+            <div
+              class="w-4 h-4 bg-gray-800 dark:bg-gray-100 rounded flex items-center justify-center md:ml-8 lg:ml-20"
+            >
               <svg
                 class="text-white dark:text-black icon icon-tabler icon-tabler-check"
                 xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +67,9 @@
                 <path d="M5 12l5 5l10 -10" />
               </svg>
             </div>
-            <div class="w-4 h-4 bg-indigo-700 rounded flex items-center justify-center md:ml-8 lg:ml-20" />
+            <div
+              class="w-4 h-4 bg-indigo-700 rounded flex items-center justify-center md:ml-8 lg:ml-20"
+            />
             <div
               class="w-4 h-4 bg-gray-500 dark:bg-gray-400 rounded flex items-center justify-center md:ml-8 lg:ml-20"
             />
@@ -84,9 +92,7 @@
               </p>
             </div>
             <div class="flex flex-col items-start">
-              <p class="text-sm font-medium leading-4 text-indigo-700">
-                Ready for delivery
-              </p>
+              <p class="text-sm font-medium leading-4 text-indigo-700"> Ready for delivery </p>
               <p class="text-xs leading-3 pt-2.5 text-gray-500 dark:text-gray-400">
                 May 14, 2019 - 8:25 AM
               </p>
@@ -144,5 +150,5 @@
 </template>
 
 <style scoped>
-@import url("https://cdn.tuk.dev/dist/css/tailwind-v2.2.11.min.css");
+@import url('https://cdn.tuk.dev/dist/css/tailwind-v2.2.11.min.css');
 </style>
