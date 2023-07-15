@@ -18,15 +18,24 @@ export default defineNuxtConfig({
   },
   css: ['/assets/main.css', '@milkdown/theme-nord/style.css'],
   modules: [
-    '@nuxtjs/tailwindcss',
     '@nuxtjs/supabase',
     '@pinia/nuxt',
     '@nuxt/content',
     '@unlighthouse/nuxt',
-    '@nuxt/image'
+    '@nuxt/image',
+    '@nuxthq/ui'
   ],
   typescript: {
     shim: false
+  },
+  colorMode: {
+    classSuffix: ''
+  },
+  ui: {
+    icons: ['mdi', 'heroicons', 'material-symbols']
+  },
+  image: {
+    format: ['webp', 'jpg']
   },
   runtimeConfig: {
     // The private keys which are only available within server-side

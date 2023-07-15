@@ -1,4 +1,8 @@
-// This supports HMR
 export default defineAppConfig({
-  title: 'Mac\'s Nuxt 3 Starter'
+  title: 'Portfolio of Doom',
+  ui: {
+    slideover: {
+      background: 'background'
+    }
+  }
 })
