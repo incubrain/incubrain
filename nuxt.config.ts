@@ -9,6 +9,7 @@ export default defineNuxtConfig({
   },
   app: {
     layoutTransition: { name: 'layout', mode: 'out-in' },
+    pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       link: [
         { rel: 'stylesheet', href: 'https://unpkg.com/flowbite@latest/dist/flowbite.min.css' }
