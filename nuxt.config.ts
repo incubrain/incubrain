@@ -17,7 +17,7 @@ export default defineNuxtConfig({
       script: [{ src: 'https://unpkg.com/flowbite@latest/dist/flowbite.js' }]
     }
   },
-  css: ['/assets/main.css', '@milkdown/theme-nord/style.css'],
+  css: ['@milkdown/theme-nord/style.css'],
   modules: [
     '@nuxtjs/supabase',
     '@pinia/nuxt',
