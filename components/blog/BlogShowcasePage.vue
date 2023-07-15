@@ -63,12 +63,11 @@ const post = ref()
 async function getShowcase() {
   const folder = fullPath.value.split('/')[1]
   if (route.params.id) return
+  console.log('path', fullPath.value, folder)
   post.value = await queryContent('pages', folder)
     .where({ slug: { $eq: fullPath.value } })
     .findOne()
 }
-
-getShowcase()
 
 watch(
   () => route.name,
