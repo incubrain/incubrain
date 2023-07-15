@@ -2,6 +2,7 @@ import { ref, computed } from 'vue'
 
 interface Page {
   id: number
+  icon: string
   component: string
   title: string
   current: boolean
@@ -112,20 +113,13 @@ const pages = ref([
       },
       {
         id: 37,
-        title: 'Lotties',
-        current: false,
-        icon: 'i-mdi-chevron-right',
-        slug: '/examples/lottie'
-      },
-      {
-        id: 38,
         title: 'Icons',
         current: false,
         icon: 'i-mdi-chevron-right',
         slug: '/examples/icons'
       },
       {
-        id: 39,
+        id: 38,
         title: 'Milkdown',
         current: false,
         icon: 'i-mdi-chevron-right',
@@ -187,12 +181,12 @@ export default function usePages() {
       // If it's a child page, return the parent and all its children as tabs
       const parentPage = pages.value.find((page: Page) => page.children?.includes(p))
       if (parentPage !== undefined) {
-        return [parentPage, ...parentPage.children]
+        return [parentPage, ...(parentPage.children || [])]
       }
 
       // If it's a parent page, return it and all its children as tabs
       if (p.children !== undefined) {
-        return [p, ...p.children]
+        return [p, ...(p.children || [])]
       }
 
       // If it's a standalone page without children, return only this page as a tab
