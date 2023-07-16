@@ -22,13 +22,13 @@
             to="/"
             @click="isOpen = false"
           >
-            <h3 class="text-xl font-semibold">Portfolio Of</h3>
             <NuxtImg
-              src="/doom-logo.png"
+              src="/incubrain-logo.png"
               alt="Astron Era Logo"
               width="46"
               height="29"
             />
+            <h3 class="text-xl font-semibold">Incubrain</h3>
           </NuxtLink>
           <UButton
             variant="solid"

@@ -31,6 +31,9 @@
   .link {
     @apply cursor-pointer text-primary-600 dark:text-primary-700 hover:text-primary-500 dark:hover:text-primary-600;
   }
+  .link-active {
+    @apply cursor-pointer text-primary-600 dark:text-primary-700 hover:text-primary-500 dark:hover:text-primary-600;
+  }
   .foreground {
     @apply bg-zinc-200 dark:bg-zinc-900;
   }

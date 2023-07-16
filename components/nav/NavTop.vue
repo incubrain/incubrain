@@ -8,10 +8,10 @@
       <li
         v-for="page in pages.slice(1, 3)"
         :key="page.id"
-        class="hover:text-yellow-300 cursor-pointer hidden h-full lg:flex items-center text-sm text-white mr-10 tracking-normal relative"
+        class="link cursor-pointer hidden h-full lg:flex items-center text-sm text-white mr-10 tracking-normal relative"
         :class="
           route.fullPath.includes(page.slug)
-            ? ' text-yellow-300'
+            ? ' link-active'
             : 'items-center text-sm text-white mr-10 tracking-normal relative min-w-[50px]'
         "
         @click="navigateTo(page.slug)"
@@ -24,9 +24,9 @@
           class="h-full flex justify-center items-center"
         >
           <NuxtImg
-            src="/logo.png"
+            src="/incubrain-logo.png"
             alt="Drew MacGibbon Development (DM Development)"
-            height="32"
+            height="46"
           />
         </NuxtLink>
       </li>
@@ -35,8 +35,8 @@
         :key="page.id"
         :class="
           route.fullPath.includes(page.slug)
-            ? 'cursor-pointer h-full lg:flex items-center text-sm text-yellow-300 tracking-normal mr-10 hidden'
-            : 'hover:text-yellow-300 cursor-pointer h-full lg:flex hidden items-center text-sm text-white mr-10 tracking-normal relative'
+            ? 'cursor-pointer h-full lg:flex items-center text-sm link-active tracking-normal mr-10 hidden'
+            : 'link cursor-pointer h-full lg:flex hidden items-center text-sm text-white mr-10 tracking-normal relative'
         "
         @click="navigateTo(page.slug)"
       >
