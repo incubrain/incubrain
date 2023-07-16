@@ -25,7 +25,7 @@
       <div class="w-full mt-8 lg:mt-0 relative flex flex-row justify-center items-center">
         <div class="img-bg flex justify-center items-center rounded-2xl relative overflow-hidden">
           <NuxtImg
-            src="/drew-macgibbon.png"
+            src="drew-macgibbon.png"
             alt="Drew MacGibbon"
             height="500"
             class="object-cover -mb-[35px] px-8 pt-8"
