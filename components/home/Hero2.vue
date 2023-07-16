@@ -27,7 +27,8 @@
           <NuxtImg
             src="/drew-img.png"
             alt="Drew MacGibbon"
-            class="min-h-[439px] min-w-full object-cover -mb-[35px] px-8 pt-8"
+            height="500"
+            class="min-w-full object-cover -mb-[35px] px-8 pt-8"
           />
         </div>
       </div>

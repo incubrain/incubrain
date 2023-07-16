@@ -1,5 +1,5 @@
 export default defineAppConfig({
-  title: 'Portfolio of Doom',
+  title: 'Incubrain',
   ui: {
     slideover: {
       background: 'background'
