@@ -10,6 +10,7 @@
         />
         <slot />
       </AppTabs>
+      <UNotifications />
     </AppBody>
   </div>
 </template>

@@ -3,6 +3,9 @@ export default defineAppConfig({
   ui: {
     slideover: {
       background: 'background'
+    },
+    notifications: {
+      position: 'bottom-1 right-1'
     }
   }
 })
