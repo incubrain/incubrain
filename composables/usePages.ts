@@ -136,6 +136,19 @@ const pages = ref([
     children: [
       { id: 42, title: 'Tools', current: false, icon: 'i-mdi-chevron-right', slug: '/stack/tools' }
     ]
+  },
+  {
+    id: 5,
+    title: 'About',
+    current: false,
+    icon: 'i-mdi-chevron-right',
+    slug: '/about',
+    children: [
+      { id: 51, title: 'Careers', current: false, icon: 'i-mdi-chevron-right', slug: '/about/careers' },
+      { id: 52, title: 'Team', current: false, icon: 'i-mdi-chevron-right', slug: '/about/team' },
+      { id: 53, title: 'Support', current: false, icon: 'i-mdi-chevron-right', slug: '/about/support' },
+      { id: 54, title: 'Enquire', current: false, icon: 'i-mdi-chevron-right', slug: '/about/enquire' }
+    ]
   }
 ] as Page[])
 
