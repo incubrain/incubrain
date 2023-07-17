@@ -24,10 +24,28 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@unlighthouse/nuxt',
     '@nuxt/image',
-    '@nuxthq/ui'
+    '@nuxthq/ui',
+    'nuxt-swiper',
+    '@vee-validate/nuxt'
   ],
   typescript: {
-    shim: false
+    shim: false,
+    tsConfig: {
+      exclude: ['node_modules', 'dist'],
+      compilerOptions: {
+        // types: ['@nuxt/types', 'vite/client', './types/types.d.ts'],
+        strict: true
+      }
+    }
+  },
+  veeValidate: {
+    autoImports: true,
+    componentNames: {
+      Form: 'VeeForm',
+      Field: 'VeeField',
+      FieldArray: 'VeeFieldArray',
+      ErrorMessage: 'VeeErrorMessage'
+    }
   },
   colorMode: {
     classSuffix: ''
@@ -41,6 +59,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     // The private keys which are only available within server-side
     apiSecret: '123',
+    SLACK_SUPPORT_URL: process.env.SLACK_SUPPORT_URL,
+    SLACK_ENQUIRE_URL: process.env.SLACK_ENQUIRE_URL,
     // Keys within public, will be also exposed to the client-side
     public: {
       supabase: {
@@ -62,10 +82,12 @@ export default defineNuxtConfig({
       '@fortawesome/free-brands-svg-icons'
     ]
   },
-  nitro: {
-    preset: 'digital-ocean'
-  },
   ssr: true,
+  swiper: {
+    // prefix: 'Swiper',
+    styleLang: 'css',
+    modules: ['navigation', 'autoplay'] // import modules as needed https://nuxt.com/modules/swiper#module-options
+  },
   content: {
     highlight: {
       // Theme used in all color schemes.
