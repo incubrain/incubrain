@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="w-full flex sticky top-0 left-0 px-4 justify-between mx-auto bg-gray-800 shadow z-[10] h-[var(--nav-height-sm)] md:h-[var(--nav-height-md)] lg:h-[var(--nav-height-lg)]"
+    class="w-full flex fixed top-0 left-0 px-4 justify-between backdrop-blur-md bg-white/25 mx-auto z-[10] h-[var(--nav-height-sm)] md:h-[var(--nav-height-md)] lg:h-[var(--nav-height-lg)]"
   >
     <NavMobiSlideover class="lg:hidden pl-3 md:pl-4 flex items-center" />
     <div class="hidden lg:block w-6" />
@@ -8,11 +8,11 @@
       <li
         v-for="page in pages.slice(1, 3)"
         :key="page.id"
-        class="link cursor-pointer hidden h-full lg:flex items-center text-sm text-white mr-10 tracking-normal relative"
+        class="link-alt cursor-pointer hidden h-full lg:flex items-center text-sm mr-10 tracking-normal relative"
         :class="
           route.fullPath.includes(page.slug)
             ? ' link-active'
-            : 'items-center text-sm text-white mr-10 tracking-normal relative min-w-[50px]'
+            : 'items-center text-sm mr-10 tracking-normal relative min-w-[50px]'
         "
         @click="navigateTo(page.slug)"
       >
@@ -37,7 +37,7 @@
         :class="
           route.fullPath.includes(page.slug)
             ? 'cursor-pointer h-full lg:flex items-center text-sm link-active tracking-normal mr-10 hidden'
-            : 'link cursor-pointer h-full lg:flex hidden items-center text-sm text-white mr-10 tracking-normal relative'
+            : 'link-alt cursor-pointer h-full lg:flex hidden items-center text-sm mr-10 tracking-normal relative'
         "
         @click="navigateTo(page.slug)"
       >
@@ -51,7 +51,7 @@
     >
       <UIcon
         name="i-mdi-github"
-        class="w-6 h-6 text-white"
+        class="w-6 h-6"
       />
     </NuxtLink>
   </nav>
