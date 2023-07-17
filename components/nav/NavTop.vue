@@ -1,9 +1,11 @@
 <template>
   <nav
-    class="w-full flex fixed top-0 left-0 px-4 justify-between backdrop-blur-md bg-white/25 mx-auto z-[10] h-[var(--nav-height-sm)] md:h-[var(--nav-height-md)] lg:h-[var(--nav-height-lg)]"
+    class="w-full flex rounded-br-lg overflow-hidden fixed top-0 right-[var(--scroll-width-sm)] md:right-[calc(var(--scroll-width-md)/2)] px-4 justify-between backdrop-blur-md bg-white/25 mx-auto z-[10] h-[var(--nav-height-sm)] lg:h-[var(--nav-height-lg)]"
   >
     <NavMobiSlideover class="lg:hidden pl-3 md:pl-4 flex items-center" />
-    <div class="hidden lg:block w-6" />
+    <div class="hidden lg:flex justify-center items-center pl-4">
+      <h3 class="text-lg font-bold">INCUBRAIN</h3>
+    </div>
     <ul class="flex h-full items-center">
       <li
         v-for="page in pages.slice(1, 3)"
@@ -51,7 +53,7 @@
     >
       <UIcon
         name="i-mdi-github"
-        class="w-6 h-6"
+        class="w-6 h-6 md:w-8 md:h-8 text-black dark:text-white"
       />
     </NuxtLink>
   </nav>
