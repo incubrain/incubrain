@@ -8,8 +8,9 @@
   :root {
     --nav-height-mobi: 46px;
     --nav-height-sm: 50px;
-    --nav-height-md: 50px;
     --nav-height-lg: 60px;
+    --scroll-width-md: 26px;
+    --scroll-width-sm: 0px;
   }
 
   h1,

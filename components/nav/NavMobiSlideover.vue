@@ -7,7 +7,7 @@
     >
       <UIcon
         name="i-mdi-hamburger"
-        class="w-6 h-6 md:w-8 md:h-8 text-white"
+        class="w-6 h-6 md:w-8 md:h-8 text-black dark:text-white"
       />
     </UButton>
     <USlideover

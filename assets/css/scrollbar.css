@@ -2,7 +2,7 @@
 
 @layer utilities {
   *::-webkit-scrollbar {
-    @apply border-l bg-zinc-200 dark:bg-zinc-900 border-zinc-300 w-[16px];
+    @apply border-l bg-zinc-800 dark:bg-zinc-900 border-zinc-300 w-[var(--scroll-width-md)];
   }
 
   *::-webkit-scrollbar-thumb:hover {
@@ -14,7 +14,7 @@
   }
 
   *::-webkit-scrollbar-corner {
-    @apply bg-zinc-200 dark:bg-zinc-900;
+    @apply bg-zinc-800 dark:bg-zinc-900;
   }
 
   @media screen and (max-width: 768px) {
@@ -22,13 +22,13 @@
       display: none;
     }
   }
-    /* For Webkit-based browsers (Chrome, Safari and Opera) */
+  /* For Webkit-based browsers (Chrome, Safari and Opera) */
   .scrollbar-hide::-webkit-scrollbar {
-    @apply hidden
+    @apply hidden;
   }
   /* For IE, Edge and Firefox */
   .scrollbar-hide {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 }
