@@ -28,7 +28,8 @@
             src="drew-macgibbon.png"
             alt="Drew MacGibbon"
             height="500"
-            class="object-cover -mb-[35px] px-8 pt-8"
+            width="300"
+            class="object-cover -mb-[35px]"
           />
         </div>
       </div>
