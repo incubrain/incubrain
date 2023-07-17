@@ -36,7 +36,7 @@ export default defineNuxtConfig({
     icons: ['mdi', 'heroicons', 'material-symbols']
   },
   image: {
-    format: ['webp', 'jpg']
+    format: ['webp', 'jpg', 'png']
   },
   runtimeConfig: {
     // The private keys which are only available within server-side
