@@ -1,0 +1,42 @@
+[
+  {
+    "label": "What services does your company offer?",
+    "content": "We provide a wide range of software solutions, including web development, mobile app development, cloud services, software integration, and many more. Our services are tailor-made to address the unique needs of your business."
+  },
+  {
+    "label": "How long does a typical project take?",
+    "content": "The timeline of a project varies greatly depending on its complexity and requirements. However, a typical software development project might take anywhere from a few weeks to several months."
+  },
+  {
+    "label": "How do you ensure the quality of your services?",
+    "content": "We ensure quality by adhering to best practices in software development, conducting thorough testing, and performing rigorous code reviews. We also prioritize clear communication and transparency with our clients."
+  },
+  {
+    "label": "What technologies do you specialize in?",
+    "content": "Our team is experienced in a variety of technologies, including but not limited to, JavaScript, Python, Ruby, Java, C#, Swift, Kotlin, and their respective frameworks. We choose the best technology stack according to the project's requirements."
+  },
+  {
+    "label": "Do you offer maintenance and support after project completion?",
+    "content": "Yes, we offer post-launch maintenance and support services to ensure your software continues to operate smoothly and meets your business needs."
+  },
+  {
+    "label": "Can you help me update my existing software?",
+    "content": "Absolutely, we can help you update your existing software, fix bu2gs, add new features, and improve its performance as per your requirements."
+  },
+  {
+    "label": "How much does a software development project cost?",
+    "content": "The cost of a project varies based on its complexity, required technology stack, and the time it will take to complete. We can provide a more accurate estimate after discussing your project requirements in detail."
+  },
+  {
+    "label": "What's the first step to start a project with you?",
+    "content": "The first step is to get in touch with us through our contact form. From there, we will arrange a meeting to discuss your project requirements, objectives, and expectations in detail."
+  },
+  {
+    "label": "What is your project management style?",
+    "content": "We use Agile project management methodologies. This allows us to work in iterative cycles, prioritizing flexibility and customer feedback. We provide regular progress updates and involve our clients at every stage of the development process."
+  },
+  {
+    "label": "What industries do you typically work with?",
+    "content": "We have experience working with a diverse range of industries, including finance, healthcare, education, entertainment, retail, and more. Regardless of your industry, we're capable of building a solution that fits your needs."
+  }
+]

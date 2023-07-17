@@ -1,28 +1,17 @@
 <template>
-  <div
-    class="container mx-auto"
-  >
-    <!-- <MulticolorHeading /> -->
-    <!-- <Testimonial /> -->
-    <!-- <AppCardCarosel /> -->
-    <FormContact />
-    <!-- <HomeHero />
-    <HomeProjectSteps />
-    <HomeProjectMain />
-    <HomeProjects />
-    <HomeCTA /> -->
-    <!-- <HomeFeatures />
-    <HomeComponents />
-    <HomeCode />
-    <HomeSkills />
-    <HomeTech /> -->
+  <div class="mx-auto">
+    <HomeHero />
+    <HomeServices />
+    <HomeAbout />
+    <HomeAboutUs />
+    <HomeTestimonial />
+    <HomeFaq />
   </div>
 </template>
 
 <script setup lang="ts">
-
 definePageMeta({
-  layout: 'tabbed',
+  layout: 'home',
   name: 'Home'
 })
 
@@ -36,5 +25,4 @@ definePageMeta({
 //   },
 //   script: [ { src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js', children: 'console.log("test3");' } ]
 // })
-
 </script>
