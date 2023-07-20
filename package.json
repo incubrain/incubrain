@@ -59,7 +59,7 @@
     "@heroicons/vue": "^2.0.17",
     "@milkdown/core": "^7.2.1",
     "@milkdown/ctx": "^7.2.3",
-    "@milkdown/preset-commonmark": "^7.2.3",
+    "@milkdown/preset-commonmark": "^7.2.4",
     "@milkdown/prose": "^7.2.3",
     "@milkdown/theme-nord": "^7.2.4",
     "@milkdown/transformer": "^7.2.1",
