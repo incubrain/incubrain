@@ -2,9 +2,7 @@
   <div class="w-full">
     <NavTop />
     <AppBody :mobi-bottom-nav="false">
-      <AppTabs>
         <slot />
-      </AppTabs>
       <UNotifications />
     </AppBody>
   </div>

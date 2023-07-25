@@ -3,40 +3,34 @@ import { ref, computed } from 'vue'
 interface Page {
   id: number
   icon: string
-  component: string
-  title: string
-  current: boolean
+  label: string
   slug: string
   children?: Page[]
 }
 
 const pages = ref([
-  { id: 0, title: 'Home', current: true, icon: 'i-mdi-chevron-right', slug: '/' },
+  // { id: 0, label: 'Home', icon: 'i-mdi-chevron-right', slug: '/' },
   {
     id: 1,
-    title: 'Projects',
-    current: false,
+    label: 'Projects',
     icon: 'i-mdi-chevron-right',
     slug: '/projects',
     children: [
       {
         id: 11,
-        title: 'Frontend',
-        current: false,
+        label: 'Frontend',
         icon: 'i-mdi-chevron-right',
         slug: '/projects/frontend'
       },
       {
         id: 12,
-        title: 'Backend',
-        current: false,
+        label: 'Backend',
         icon: 'i-mdi-chevron-right',
         slug: '/projects/backend'
       },
       {
         id: 13,
-        title: 'Business',
-        current: false,
+        label: 'Business',
         icon: 'i-mdi-chevron-right',
         slug: '/projects/business'
       }
@@ -44,36 +38,31 @@ const pages = ref([
   },
   {
     id: 2,
-    title: 'Blog',
-    current: false,
+    label: 'Blog',
     icon: 'i-mdi-chevron-right',
     slug: '/blog',
     children: [
       {
         id: 21,
-        title: 'Frontend',
-        current: false,
+        label: 'Frontend',
         icon: 'i-mdi-chevron-right',
         slug: '/blog/frontend'
       },
       {
         id: 22,
-        title: 'Backend',
-        current: false,
+        label: 'Backend',
         icon: 'i-mdi-chevron-right',
         slug: '/blog/backend'
       },
       {
         id: 23,
-        title: 'Business',
-        current: false,
+        label: 'Business',
         icon: 'i-mdi-chevron-right',
         slug: '/blog/business'
       },
       {
         id: 24,
-        title: 'Challenges',
-        current: false,
+        label: 'Challenges',
         icon: 'i-mdi-chevron-right',
         slug: '/blog/challenges'
       }
@@ -81,47 +70,38 @@ const pages = ref([
   },
   {
     id: 3,
-    title: 'Examples',
-    current: false,
+    label: 'Examples',
     icon: 'i-mdi-chevron-right',
     slug: '/examples',
     children: [
       {
         id: 31,
-        title: 'Charts',
-        current: false,
+        label: 'Charts',
         icon: 'i-mdi-chevron-right',
         slug: '/examples/charts'
       },
-      // { id: 22, component: 'ExamplesLists',  title: 'Lists', current: false, icon: 'i-mdi-chevron-right', slug: '/examples/lists' },
       {
         id: 33,
-        title: 'Mobile',
-        current: false,
+        label: 'Mobile',
         icon: 'i-mdi-chevron-right',
         slug: '/examples/mobile'
       },
-      { id: 34, title: 'UI', current: false, icon: 'i-mdi-chevron-right', slug: '/examples/ui' },
-      // { id: 25, component: 'ExamplesBasic', title: 'Basic', current: false, icon: 'i-mdi-chevron-right', slug: '/examples/basic' },
-      // { id: 25, component: 'ExamplesClothing', title: 'Ecommerce', current: false, icon: 'i-mdi-chevron-right', slug: '/examples/clothing' },
+      { id: 34, label: 'UI', icon: 'i-mdi-chevron-right', slug: '/examples/ui' },
       {
         id: 36,
-        title: 'Patterns',
-        current: false,
+        label: 'Patterns',
         icon: 'i-mdi-chevron-right',
         slug: '/examples/patterns'
       },
       {
         id: 37,
-        title: 'Icons',
-        current: false,
+        label: 'Icons',
         icon: 'i-mdi-chevron-right',
         slug: '/examples/icons'
       },
       {
         id: 38,
-        title: 'Milkdown',
-        current: false,
+        label: 'Milkdown',
         icon: 'i-mdi-chevron-right',
         slug: '/examples/milkdown'
       }
@@ -129,25 +109,21 @@ const pages = ref([
   },
   {
     id: 4,
-    title: 'Stack',
-    current: false,
+    label: 'Stack',
     icon: 'i-mdi-chevron-right',
     slug: '/stack',
-    children: [
-      { id: 42, title: 'Tools', current: false, icon: 'i-mdi-chevron-right', slug: '/stack/tools' }
-    ]
+    children: [{ id: 42, label: 'Tools', icon: 'i-mdi-chevron-right', slug: '/stack/tools' }]
   },
   {
     id: 5,
-    title: 'About',
-    current: false,
+    label: 'About',
     icon: 'i-mdi-chevron-right',
     slug: '/about',
     children: [
-      { id: 51, title: 'Careers', current: false, icon: 'i-mdi-chevron-right', slug: '/about/careers' },
-      { id: 52, title: 'Team', current: false, icon: 'i-mdi-chevron-right', slug: '/about/team' },
-      { id: 53, title: 'Support', current: false, icon: 'i-mdi-chevron-right', slug: '/about/support' },
-      { id: 54, title: 'Enquire', current: false, icon: 'i-mdi-chevron-right', slug: '/about/enquire' }
+      { id: 51, label: 'Careers', icon: 'i-mdi-chevron-right', slug: '/about/careers' },
+      { id: 52, label: 'Team', icon: 'i-mdi-chevron-right', slug: '/about/team' },
+      { id: 53, label: 'Support', icon: 'i-mdi-chevron-right', slug: '/about/support' },
+      { id: 54, label: 'Enquire', icon: 'i-mdi-chevron-right', slug: '/about/enquire' }
     ]
   }
 ] as Page[])
