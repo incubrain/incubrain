@@ -62,7 +62,7 @@
     "@milkdown/preset-commonmark": "^7.2.4",
     "@milkdown/prose": "^7.2.4",
     "@milkdown/theme-nord": "^7.2.4",
-    "@milkdown/transformer": "^7.2.1",
+    "@milkdown/transformer": "^7.2.4",
     "@milkdown/vue": "^7.2.1",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@octokit/core": "^4.2.0",
