@@ -23,7 +23,7 @@
     "@nuxt/content": "^2.7.0",
     "@nuxt/image": "^1.0.0-rc.1",
     "@nuxthq/ui": "^2.5.0",
-    "@nuxtjs/supabase": "^0.3.5",
+    "@nuxtjs/supabase": "^1.0.2",
     "@storybook/addon-actions": "^7.0.20",
     "@storybook/addon-essentials": "^7.0.27",
     "@storybook/addon-interactions": "^7.0.20",
