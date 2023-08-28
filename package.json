@@ -68,7 +68,7 @@
     "@octokit/core": "^4.2.0",
     "@pinia/nuxt": "^0.4.11",
     "axios": "^1.4.0",
-    "chart.js": "^4.3.0",
+    "chart.js": "^4.4.0",
     "dotenv": "^16.0.3",
     "muuri": "^0.9.5",
     "storybook": "^7.0.20",
