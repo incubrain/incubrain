@@ -14,59 +14,13 @@ const pages = ref([
     id: 1,
     label: 'Projects',
     icon: 'i-mdi-chevron-right',
-    slug: '/projects',
-    children: [
-      {
-        id: 11,
-        label: 'Frontend',
-        icon: 'i-mdi-chevron-right',
-        slug: '/projects/frontend'
-      },
-      {
-        id: 12,
-        label: 'Backend',
-        icon: 'i-mdi-chevron-right',
-        slug: '/projects/backend'
-      },
-      {
-        id: 13,
-        label: 'Business',
-        icon: 'i-mdi-chevron-right',
-        slug: '/projects/business'
-      }
-    ]
+    slug: '/projects'
   },
   {
     id: 2,
     label: 'Blog',
     icon: 'i-mdi-chevron-right',
-    slug: '/blog',
-    children: [
-      {
-        id: 21,
-        label: 'Frontend',
-        icon: 'i-mdi-chevron-right',
-        slug: '/blog/frontend'
-      },
-      {
-        id: 22,
-        label: 'Backend',
-        icon: 'i-mdi-chevron-right',
-        slug: '/blog/backend'
-      },
-      {
-        id: 23,
-        label: 'Business',
-        icon: 'i-mdi-chevron-right',
-        slug: '/blog/business'
-      },
-      {
-        id: 24,
-        label: 'Challenges',
-        icon: 'i-mdi-chevron-right',
-        slug: '/blog/challenges'
-      }
-    ]
+    slug: '/blog'
   },
   {
     id: 3,
@@ -74,12 +28,12 @@ const pages = ref([
     icon: 'i-mdi-chevron-right',
     slug: '/examples',
     children: [
-      {
-        id: 31,
-        label: 'Charts',
-        icon: 'i-mdi-chevron-right',
-        slug: '/examples/charts'
-      },
+      // {
+      //   id: 31,
+      //   label: 'Charts',
+      //   icon: 'i-mdi-chevron-right',
+      //   slug: '/examples/charts'
+      // },
       {
         id: 33,
         label: 'Mobile',
@@ -108,13 +62,6 @@ const pages = ref([
     ]
   },
   {
-    id: 4,
-    label: 'Stack',
-    icon: 'i-mdi-chevron-right',
-    slug: '/stack',
-    children: [{ id: 42, label: 'Tools', icon: 'i-mdi-chevron-right', slug: '/stack/tools' }]
-  },
-  {
     id: 5,
     label: 'About',
     icon: 'i-mdi-chevron-right',
@@ -122,8 +69,18 @@ const pages = ref([
     children: [
       { id: 51, label: 'Careers', icon: 'i-mdi-chevron-right', slug: '/about/careers' },
       { id: 52, label: 'Team', icon: 'i-mdi-chevron-right', slug: '/about/team' },
-      { id: 53, label: 'Support', icon: 'i-mdi-chevron-right', slug: '/about/support' },
-      { id: 54, label: 'Enquire', icon: 'i-mdi-chevron-right', slug: '/about/enquire' }
+      { id: 53, label: 'Stack', icon: 'i-mdi-chevron-right', slug: '/about/stack' },
+      { id: 54, label: 'Tools', icon: 'i-mdi-chevron-right', slug: '/about/tools' }
+    ]
+  },
+  {
+    id: 6,
+    label: 'Contact',
+    icon: 'i-mdi-chevron-right',
+    slug: '/contact',
+    children: [
+      { id: 61, label: 'Support', icon: 'i-mdi-chevron-right', slug: '/contact/support' },
+      { id: 62, label: 'Enquire', icon: 'i-mdi-chevron-right', slug: '/contact/enquire' }
     ]
   }
 ] as Page[])

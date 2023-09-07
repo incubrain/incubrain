@@ -1,5 +1,5 @@
 <template>
-  <TransitionBounce v-for="product in products">
+  <TransitionBounce>
     <div
       class="background shadow-lg rounded-lg overflow-hidden transform transition hover:scale-105"
     >
@@ -33,20 +33,11 @@
 </template>
 
 <script setup lang="ts">
-import products from '@/data/products.json'
 
-let services = ref(null)
-
-onMounted(async () => {
-  const route = useRoute()
-  const serviceId = route.params.id
-  service.value = services.find(s => s.id === serviceId)
+defineProps({
+  product: {
+    type: Object,
+    required: true
+  }
 })
-
-// defineProps({
-//   services: {
-//     type: Object as () => ServiceType[],
-//     required: true
-//   }
-// })
 </script>

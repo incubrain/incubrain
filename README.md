@@ -42,7 +42,6 @@
 
 ### Technologies Used
 
-- [Flowbite]() | A library of Tailwind elements, I learned how to integrate the library with Nuxt only to switch out my mobile menu for my own design.
 - [Fontawesome icons]() | added while working on the patterns page, was my first time using it with Nuxt 3
 - [Vercel](): Vercel is a great platform for hosting Nuxt 3 projects.
 - [Storybook]() | I had minimal exposure to Storybook and no experience with Nuxt 3, so this was a good addition to my skill set.

@@ -1,9 +1,13 @@
 <template>
-  <div class="w-full">
+  <div class="w-full background">
     <NavTop />
     <AppBody :mobi-bottom-nav="false">
-      <slot />
+      <HomeHero />
+      <div class="py-8 lg:py-20">
+        <slot />
+      </div>
       <UNotifications />
+      <NavFooterWebsite />
     </AppBody>
   </div>
 </template>

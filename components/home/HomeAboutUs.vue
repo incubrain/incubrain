@@ -1,6 +1,6 @@
 <template>
   <section class="background">
-    <div class="container mx-auto py-20 px-6">
+    <div class="py-20 px-6">
       <!-- Video Section -->
       <div class="video-section mb-12">
         <AppVideo :src="videoSrc" :title="videoTitle" class="w-full h-64 md:h-auto" />
@@ -33,7 +33,7 @@ const videoTitle = ref('Company Overview')
 const vision = ref(`
   At OpenAI, we believe in the power of technology to reshape our world. Our vision is to lead the way in artificial intelligence, creating systems that not only replicate human intelligence, but surpass it. We seek to drive the adoption of AI across all sectors, creating new opportunities and solutions for the most pressing global challenges. We aim to contribute to open source projects and share our success with our employees, creating a vibrant and forward-thinking community. Together, we are building the future.
 `)
-const ceoAvatar = ref('path/to/ceo-image.jpg')
+const ceoAvatar = ref('images/testimonials/drew-macgibbon.jpg')
 const ceoMessage = ref(`
   As CEO, my vision for this company is to create an open company that shares its success with its employees, strives to deliver value to our customers, contributes to open source to move the industry forwards, and builds cool things. I firmly believe in these principles and work every day to ensure they are integrated into every aspect of our operations. I am thrilled you have taken the time to learn more about us.
 `)

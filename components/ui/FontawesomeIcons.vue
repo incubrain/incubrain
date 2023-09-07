@@ -1,61 +1,5 @@
 <template>
   <div class="w-full h-full relative">
-    <!-- <div
-      class=" sticky w-full rounded-md shadow-lg p-4 lg:p-6 xl:p-8 flex flex-row flex-wrap top-6 lg:top-12 z-10 justify-between bg-white gap-4 lg:gap-6 xl:gap-8 text-sm">
-      <div class="flex flex-row gap-2 w-full md:w-[40%] lg:w-1/5">
-        <div class="min-w-6 w-6 h-6 rounded-full border-solid border-black border-2"
-          :style="{ 'background-color': color.bg }"
-          @click="openPicker('bg', picker.bg)" />
-        <span><font-awesome-icon icon="fa-solid fa-palette"
-            class=" w-6 h-6 cursor-pointer" /> </span>
-        <p> Background </p>
-        <AppButton v-if="picker.bg"
-          class="h-6 flex items-center p-0 mx-4"
-          @click="openPicker('bg', picker.bg)">
-          close
-        </AppButton>
-        <hex-color-picker v-if="picker.bg"
-          :color="color.bg"
-          @color-changed="handleColorChanged('bg', $event)" />
-      </div>
-      <div
-        class="flex flex-row gap-2 w-full md:w-[40%] md:flex-row-reverse md:justify-start lg:w-1/5 lg:justify-center lg:flex-row">
-        <span>
-          <font-awesome-icon icon="fa-solid fa-brush"
-            class="cursor-pointer w-6 h-6" />
-        </span>
-        <div class="w-6 h-6 rounded-full border-1-black"
-          :style="{ 'background-color': color.pat }"
-          @click="openPicker('pat', picker.pat)" />
-        <AppButton v-if="picker.pat"
-          class="h-6 flex items-center p-0 mx-4"
-          @click="openPicker('pat', picker.pat)">
-          close
-        </AppButton>
-        <hex-color-picker v-if="picker.pat"
-          :color="color.pat"
-          @color-changed="handleColorChanged('pat', $event)" />
-        <p> Pattern </p>
-      </div>
-      <div
-        class="flex flex-row-reverse justify-end md:flex-row gap-2 w-full md:w-[40%] lg:w-1/5 md:justify-start lg:justify-center">
-        <p> Opacity </p>
-        <AppSlider :min="0"
-          :value="0.5"
-          :max="1" />
-        <span>
-          <font-awesome-icon icon="fa-solid fa-droplet"
-            class="cursor-pointer w-6 h-6" />
-        </span>
-      </div>
-      <span class="w-full md:w-[40%] lg:w-1/5 gap-2 md:justify-start flex md:flex-row-reverse">
-        <span>
-          <font-awesome-icon icon="fa-solid fa-eye"
-            class="cursor-pointer w-6 h-6 left-0 flex" />
-        </span>
-        <p>Off/On</p>
-      </span>
-    </div> -->
     <div
       class="w-full h-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 grid-rows-6 lg:grid-rows-3 justify-center items-center gap-2 lg:gap-6 xl:gap-8"
     >
@@ -63,7 +7,7 @@
         v-for="i in icons"
         :id="`icon${i.id}`"
         :key="i.id"
-        class="cursor-pointer flex flex-col justify-center items-center px-4 lg:px-8 py-6 lg:py-12  w-full h-auto bg-white hover:bg-[#FFD43B] rounded-md shadow-md"
+        class="cursor-pointer flex flex-col justify-center items-center px-4 lg:px-8 py-6 lg:py-12  w-full h-auto foreground hover:bg-yellow-400 dark:hover:bg-yellow-600 rounded-md shadow-md"
         :data-info="i.icon"
         @click="copy(`icon${i.id}`)"
       >

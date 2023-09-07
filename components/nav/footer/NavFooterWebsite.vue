@@ -1,6 +1,6 @@
 <template>
-  <footer class="bg-gray-800 text-white py-10 px-8 md:px-20">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+  <footer class="foreground">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 container-lg p-4 xl:p-8 " v-if="routes">
       <div
         v-for="item in routes"
         :key="item.section"
@@ -11,16 +11,12 @@
             v-for="link in item.links"
             :key="link.path"
           >
-            <NuxtLink
-              :to="link.path"
-              class="text-gray-300 hover:text-white"
-              >{{ link.name }}</NuxtLink
-            >
+            <NuxtLink :to="link.path">{{ link.name }}</NuxtLink>
           </li>
         </ul>
       </div>
     </div>
-    <div class="mt-8 flex justify-center space-x-4">
+    <div class="mt-8 flex justify-center space-x-4 container-lg ">
       <a
         v-for="social in socials"
         :key="social.name"

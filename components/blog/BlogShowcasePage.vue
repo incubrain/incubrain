@@ -1,40 +1,31 @@
 <template>
   <div
     v-if="post"
-    class="w-full"
+    class="w-full foreground"
   >
     <ContentRenderer :value="post">
-      <div class="w-full flex flex-col px-4 xl:p-12">
-        <div
-          class="flex flex-col-reverse xl:flex-row w-full justify-around items-center xl:justify-around gap-16"
-        >
-          <div
-            class="flex flex-col justify-center items-center xl:justify-start xl:items-start prose prose-4xl"
-          >
-            <h1 class="text-4xl xl:text-5xl leading-10 prose prose-xl xl:whitespace-nowrap">
-              {{ post?.title || 'Something on the way' }}
+      <div class="w-full container-lg flex flex-col p-4 xl:p-8">
+        <div class="flex flex-col-reverse xl:flex-row w-full justify-between items-center gap-16">
+          <div class="flex flex-col justify-center items-center xl:justify-start xl:items-start gap-4">
+            <h1 class="text-4xl xl:text-5xl font-bold">
+              {{ post?.title }}
             </h1>
-            <p class="text-xl xl:min-w-[360px]">
-              {{
-                post?.excerpt ||
-                'I will leave most of the written content to the last 6 hours, because it is easy to predict how long each article will take'
-              }}
+            <p class="text-xl xl:max-w-[80%]">
+              {{ post?.excerpt }}
             </p>
             <div class="flex flex-col md:flex-row gap-4 items-center">
               <p> Completed: {{ post?.updated || 'sometime in the future' }}</p>
               <a
                 v-if="post.link"
                 :href="post.link"
-                class="text-[#5a4ec9] no-underline cursor-pointer"
+                class="no-underline cursor-pointer"
                 target="_blank"
               >
                 Reference
               </a>
             </div>
           </div>
-          <NuxtImg
-            src="/happy-hacker.gif"
-          />
+          <NuxtImg src="/happy-hacker.gif" />
         </div>
       </div>
       <div
@@ -56,23 +47,22 @@
 
 <script setup lang="ts">
 const route = useRoute()
-const fullPath = computed(() => route.fullPath)
-const post = ref()
+const post = ref({})
 
 async function getShowcase() {
-  const folder = fullPath.value.split('/')[1]
   if (route.params.id) return
-  console.log('path', fullPath.value, folder)
-  post.value = await queryContent('pages', folder) 
-    .where({ slug: { $eq: fullPath.value } })
+  console.log('path', route.fullPath, route)
+  const path = route.fullPath.endsWith('/') ? route.fullPath.slice(0, -1) : route.fullPath
+  post.value = await queryContent('pages')
+    .where({ _path: `/pages${path}` })
     .findOne()
 }
 
-watch(
-  () => route.name,
-  () => getShowcase(),
-  { deep: true }
-)
+watchEffect(() => {
+  if (route.fullPath) {
+    getShowcase()
+  }
+})
 </script>
 
 <style>

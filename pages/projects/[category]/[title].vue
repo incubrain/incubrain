@@ -10,14 +10,12 @@
 const route = useRoute()
 
 const post = ref({})
-const category = ref('' as string | string[])
-const id = ref(1)
+const category = ref(String(route.params.category))
+console.log('article', category.value, route)
 
 onBeforeMount(async () => {
-  category.value = route.params.category as string
-  id.value = Number(route.params.id)
-  post.value = await queryContent('projects', String(category.value))
-    .where({ id: { $eq: id.value } })
+  post.value = await queryContent('projects', category.value)
+    .where({ _path: route.path })
     .findOne()
 })
 </script>

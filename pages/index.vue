@@ -1,11 +1,10 @@
 <template>
-  <div class="mx-auto">
-    <HomeHero />
-    <HomeServices />
-    <HomeAbout />
-    <HomeAboutUs />
+  <div>
+    <HomeAbout class="container-md" />
+    <HomeAboutUs class="container-md" />
     <HomeTestimonial />
-    <HomeFaq />
+    <HomeProducts class="container-md" />
+    <HomeFaq class="container-md" />
   </div>
 </template>
 

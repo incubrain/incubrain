@@ -1,6 +1,6 @@
 <template>
   <div class="border-t border-gray-700 py-4 mt-8 text-center text-sm">
-    <p class="mb-2"> {{ currentYear }} Incubrain Private Limited. All rights reserved.</p>
+    <p class="mb-2"> COPYRIGHT INCUBRAIN PVT LTD {{ currentYear }}</p>
     <div class="space-x-4">
       <NuxtLink
         to="/terms-of-use"

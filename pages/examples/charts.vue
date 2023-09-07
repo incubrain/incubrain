@@ -7,26 +7,12 @@
         <DataGraphWithControls />
         <DataBarRevenue />
         <DataLineSimple />
-        <!-- <DataLineUsers /> -->
-        <!-- <DataTacho />
-        <DataCardPieData />
-        <DataCardData />
-        <DataLocationData /> -->
       </div>
       <div class="xl:w-2/5 flex flex-col w-full gap-2 lg:gap-6 xl:gap-8">
         <DataBarCard />
         <DataLineMany />
         <DataSingleCongrats />
-        <!-- <DataSingleEarnings /> -->
-        <!-- <DataLineWave /> -->
-        <!-- <DataFourCardAlt2 />
-        <DataFourCardAlt3 /> -->
-        <!-- <DataTall /> -->
         <DataTallSolid />
-        <!-- <DataBarComparrison /> -->
-        <!-- <DataPie /> -->
-        <!-- <DataFourCardBasic />
-        <DataFourCardAlt /> -->
       </div>
     </div>
   </div>

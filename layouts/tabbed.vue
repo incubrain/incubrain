@@ -2,15 +2,12 @@
   <div>
     <NavTop />
     <AppBody :mobi-bottom-nav="false">
-      <AppLoader
-        v-if="parentRoute[1] !== 'get-lost'"
-        :duration="2000"
-        :throttle="1000"
-      />
-      <div class="container-lg">
+      <BlogShowcasePage v-if="parentRoute[1]" />
+      <div class="container-lg p-8 lg:py-20">
         <slot />
       </div>
       <UNotifications />
+      <NavFooterWebsite />
     </AppBody>
   </div>
 </template>

@@ -1,19 +1,15 @@
 <template>
-  <div
-    v-for="post in posts"
-    :key="post.id"
-  >
-    <NuxtLink :to="`/${p.baseFolder}/${post.category}/${post.id}`">
+  <TransitionBounce>
+    <NuxtLink :to="post._path">
       <div
-        class="relative w-full rounded-md hover:bg-[#F9FAFB] hover:shadow-md cursor-pointer h-[118px] lg:h-[190px] lg:p-4 lg:gap-2 lg:flex-row-reverse flex flex-row overflow-hidden"
+        class="relative w-full rounded-md foreground cursor-pointer lg:p-4 lg:gap-2 flex flex-col overflow-hidden"
       >
-        <div
-          class="w-[118px] h-full lg:w-[540px]"
-          :style="{
-            background: `url(${post.featured_image})`,
-            'background-size': 'cover',
-            'background-position': 'center'
-          }"
+        <NuxtImg
+          class="rounded-md w-full h-48 lg:h-64 object-cover"
+          :src="`/images/blog/${post.featured_image}`"
+          width="400"
+          height="300"
+          quality="80"
         />
         <div class="flex flex-col gap-2 items-start w-full p-2 lg:p-4 justify-center">
           <h3 class="text-md lg:text-2xl font-bold">
@@ -25,33 +21,20 @@
             <p>{{ post.updated }}</p>
             <!-- <div class="w-1 h-1 rounded-full bg-black" /> -->
           </div>
-          <p class="hidden xl:flex text-sm">
+          <p class="text-sm">
             {{ post.excerpt }}
           </p>
         </div>
       </div>
     </NuxtLink>
-  </div>
+  </TransitionBounce>
 </template>
 
 <script setup lang="ts">
-const p = defineProps({
-  baseFolder: {
-    type: String,
-    default: 'blog'
-  },
-  category: {
-    type: String,
-    default: 'all'
+defineProps({
+  post: {
+    type: Object,
+    required: true
   }
 })
-
-const posts = ref()
-
-if (p.category === 'all') {
-  posts.value = await queryContent(p.baseFolder).where({ category: { $ne: 'challenges' } }).skip(0).limit(10).find()
-} else {
-  posts.value = await queryContent(p.baseFolder, p.category).skip(0).limit(10).find()
-}
-
 </script>
