@@ -17,31 +17,23 @@
             v-for="link in item.children"
             :key="link.slug"
           >
-            <NuxtLink :to="link.slug">{{ link.label }}</NuxtLink>
+            <NuxtLink :to="link.slug">
+              <UIcon
+                v-if="link.slug.includes('http')"
+                :name="link.icon"
+                aria-hidden="true"
+              />
+              {{ link.label }}
+            </NuxtLink>
           </li>
         </ul>
       </div>
-    </div>
-    <div class="mt-8 flex justify-center space-x-4 container-lg">
-      <a
-        v-for="social in socials"
-        :key="social.name"
-        :href="social.url"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <UIcon
-          :name="social.icon"
-          aria-hidden="true"
-        />
-      </a>
     </div>
     <NavFooterBottomBar />
   </footer>
 </template>
 
 <script setup>
-import socials from '@/data/socials.json'
 
 const p = usePages()
 const { footerLinks: routes } = storeToRefs(p)

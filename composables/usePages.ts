@@ -64,8 +64,41 @@ const pages = ref([
   // }
 ] as Page[])
 
+const socials = {
+  id: 0,
+  slug: '',
+  label: 'Socials',
+  icon: 'i-mdi-chevron-right',
+  children: [
+    {
+      id: 1,
+      label: 'Github',
+      slug: 'https://github.com/yourusername',
+      icon: 'fab fa-github'
+    },
+    {
+      id: 2,
+      label: 'LinkedIn',
+      slug: 'https://linkedin.com/in/yourusername',
+      icon: 'fab fa-linkedin'
+    },
+    {
+      id: 3,
+      label: 'YouTube',
+      slug: 'https://youtube.com/channel/yourchannelid',
+      icon: 'fab fa-youtube'
+    },
+    {
+      id: 4,
+      label: 'Instagram',
+      slug: 'https://instagram.com/yourusername',
+      icon: 'fab fa-instagram'
+    }
+  ]
+}
+
 const footerPages = [3, 5]
-const footerLinks = ref(pages.value.filter((page) => footerPages.includes(page.id)))
+const footerLinks = ref([...pages.value.filter((page) => footerPages.includes(page.id)), socials])
 
 const currentPage = ref('Home')
 
@@ -103,6 +136,7 @@ export default function usePages() {
     },
     pages,
     footerLinks,
+    socials,
     tabs: computed(() => {
       const p = findPage(pages.value, currentPage.value)
       if (p === undefined) return []

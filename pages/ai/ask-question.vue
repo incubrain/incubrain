@@ -34,7 +34,7 @@
     </ContentRenderer> -->
     <div
       v-if="answer"
-      class="mt-4 mx-auto max-w-[var(--max-width-md)] prose"
+      class="mt-4 mx-auto max-w-[var(--max-width-md)]"
     > {{ answer }}</div>
   </div>
 </template>

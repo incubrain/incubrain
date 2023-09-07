@@ -25,8 +25,14 @@
           color="primary"
           :variant="selectedTags.includes(tag) ? 'solid' : 'outline'"
           :label="tag"
-          size="2xs"
+          size="sm"
           class="cursor-pointer"
+          :ui="{
+            font: 'font-semibold',
+            padding: {
+              sm: 'py-1 px-2',
+            }
+          }"
           @click="filter.toggleTag(tag)"
         />
       </div>

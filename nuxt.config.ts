@@ -17,7 +17,6 @@ export default defineNuxtConfig({
       // script: [{ src: 'https://unpkg.com/flowbite@latest/dist/flowbite.js' }]
     }
   },
-  css: ['@milkdown/theme-nord/style.css'],
   modules: [
     '@nuxtjs/supabase',
     '@nuxt/content',
@@ -94,17 +93,6 @@ export default defineNuxtConfig({
       }
     }
   },
-  build: {
-    transpile: [
-      '@headlessui/vue',
-      'chart.js',
-      '@fortawesome/fontawesome-svg-core',
-      '@fortawesome/pro-solid-svg-icons',
-      '@fortawesome/pro-regular-svg-icons',
-      '@fortawesome/pro-light-svg-icons',
-      '@fortawesome/free-brands-svg-icons'
-    ]
-  },
   imports: {
     dirs: ['stores', 'data']
   },
@@ -115,16 +103,16 @@ export default defineNuxtConfig({
     modules: ['navigation', 'autoplay', 'grid'] // import modules as needed https://nuxt.com/modules/swiper#module-options
   },
   content: {
-    highlight: {
-      // Theme used in all color schemes.
-      theme: {
-        // Default theme (same as single string)
-        default: 'github-dark',
-        // Theme used if `html.dark`
-        dark: 'github-light',
-        // Theme used if `html.sepia`
-        sepia: 'monokai'
-      }
-    }
+    // highlight: {
+    //   // Theme used in all color schemes.
+    //   theme: {
+    //     // Default theme (same as single string)
+    //     default: 'github-dark',
+    //     // Theme used if `html.dark`
+    //     dark: 'github-light',
+    //     // Theme used if `html.sepia`
+    //     sepia: 'monokai'
+    //   }
+    // }
   }
 })
