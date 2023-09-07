@@ -4,13 +4,12 @@
 
     <section>
       <h2 class="text-2xl mb-3">Working at Our Company</h2>
-      <p><!-- Add some description about working at your company --></p>
+      <p>Add some description about working at your company</p>
     </section>
 
     <section>
       <h2 class="text-2xl mb-3">Benefits & Perks</h2>
       <ul>
-        <!-- Use v-for to list the benefits -->
         <li
           v-for="(benefit, index) in benefits"
           :key="index"
@@ -24,12 +23,6 @@
         <!-- Customize how the job is displayed here -->
       </template>
     </AboutJobs>
-
-    <AppTestimonials>
-      <template #testimonial="{ testimonial }">
-        <!-- Customize how the testimonial is displayed here -->
-      </template>
-    </AppTestimonials>
   </div>
 </template>
 

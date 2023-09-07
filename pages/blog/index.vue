@@ -1,10 +1,8 @@
 <template>
   <div class="lg:flex items-start w-full gap-4 xl:gap-8 relative">
     <BlogFilter />
-    <div
-      class="grid gap-2 sm:grid-cols-1 md:grid-cols-1 xl:gap-8 xl:grid-cols-2"
-    >
-      <BlogCard2
+    <div class="grid gap-2 sm:grid-cols-1 md:grid-cols-1 xl:gap-8 xl:grid-cols-2">
+      <BlogCard
         v-for="post in posts"
         :key="post.id"
         :post="post"
@@ -41,8 +39,6 @@ const { selectedCategory, selectedTags } = storeToRefs(filter)
 addTags(tags.value)
 addCategories(categories.value)
 
-
-
 const posts = ref()
 
 watchEffect(async () => {
@@ -68,6 +64,4 @@ definePageMeta({
 })
 </script>
 
-<style>
-
-</style>
+<style></style>
