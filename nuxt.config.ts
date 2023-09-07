@@ -11,22 +11,27 @@ export default defineNuxtConfig({
     layoutTransition: { name: 'layout', mode: 'out-in' },
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
-      link: [
-        { rel: 'stylesheet', href: 'https://unpkg.com/flowbite@latest/dist/flowbite.min.css' }
-      ],
-      script: [{ src: 'https://unpkg.com/flowbite@latest/dist/flowbite.js' }]
+      // link: [
+      // { rel: 'stylesheet', href: 'https://unpkg.com/flowbite@latest/dist/flowbite.min.css' }
+      // ]
+      // script: [{ src: 'https://unpkg.com/flowbite@latest/dist/flowbite.js' }]
     }
   },
   css: ['@milkdown/theme-nord/style.css'],
   modules: [
     '@nuxtjs/supabase',
-    '@pinia/nuxt',
     '@nuxt/content',
     '@unlighthouse/nuxt',
     '@nuxt/image',
     '@nuxthq/ui',
     'nuxt-swiper',
-    '@vee-validate/nuxt'
+    '@vee-validate/nuxt',
+    [
+      '@pinia/nuxt',
+      {
+        autoImports: ['defineStore', 'acceptHMRUpdate', 'storeToRefs']
+      }
+    ]
   ],
   typescript: {
     shim: false,
@@ -58,9 +63,11 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     // The private keys which are only available within server-side
-    apiSecret: '123',
     SLACK_SUPPORT_URL: process.env.SLACK_SUPPORT_URL,
     SLACK_ENQUIRE_URL: process.env.SLACK_ENQUIRE_URL,
+    OPENAI_API_KEY: process.env.OPENAI_API_KEY,
+    OPENAI_ORG: process.env.OPENAI_ORG,
+    GH_USER_API: process.env.GH_USER_API,
     // Keys within public, will be also exposed to the client-side
     public: {
       supabase: {
@@ -69,6 +76,22 @@ export default defineNuxtConfig({
         key: process.env.SUPABASE_KEY
       },
       api_url: process.env.API_URL_BASE
+    }
+  },
+  nitro: {
+    // Production
+    storage: {
+      data: {
+        driver: 'vercelKV',
+        base: 'incubrain:'
+      }
+    },
+    // Development
+    devStorage: {
+      data: {
+        driver: 'fs',
+        base: './data/kv'
+      }
     }
   },
   build: {
@@ -82,11 +105,14 @@ export default defineNuxtConfig({
       '@fortawesome/free-brands-svg-icons'
     ]
   },
+  imports: {
+    dirs: ['stores', 'data']
+  },
   ssr: true,
   swiper: {
     // prefix: 'Swiper',
     styleLang: 'css',
-    modules: ['navigation', 'autoplay'] // import modules as needed https://nuxt.com/modules/swiper#module-options
+    modules: ['navigation', 'autoplay', 'grid'] // import modules as needed https://nuxt.com/modules/swiper#module-options
   },
   content: {
     highlight: {

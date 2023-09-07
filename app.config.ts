@@ -6,6 +6,13 @@ export default defineAppConfig({
     },
     notifications: {
       position: 'bottom-1 right-1'
+    },
+    dropdown: {
+      background: 'background',
+      ring: '',
+      item: {
+        active: 'foreground'
+      }
     }
   }
 })
