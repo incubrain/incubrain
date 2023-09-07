@@ -23,7 +23,7 @@ const callOpenAI = async (prompt: string, systemMessage: string, config: CallOpe
     if (!response) throw createError('No data returned from OpenAI API')
     if (response.status !== 200) throw createError('Error calling OpenAI API')
 
-    if (response instanceof CreateChatCompletionResponse) {
+    if (response.choices[0].message.content) {
       return response.choices[0].message.content
     }
     return null

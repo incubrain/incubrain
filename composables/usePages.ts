@@ -24,40 +24,15 @@ const pages = ref([
   },
   {
     id: 3,
-    label: 'Examples',
+    label: 'Services',
     icon: 'i-mdi-chevron-right',
-    slug: '/examples',
+    slug: '/services',
     children: [
-      // {
-      //   id: 31,
-      //   label: 'Charts',
-      //   icon: 'i-mdi-chevron-right',
-      //   slug: '/examples/charts'
-      // },
       {
-        id: 33,
-        label: 'Mobile',
+        id: 31,
+        label: 'Business Starter',
         icon: 'i-mdi-chevron-right',
-        slug: '/examples/mobile'
-      },
-      { id: 34, label: 'UI', icon: 'i-mdi-chevron-right', slug: '/examples/ui' },
-      {
-        id: 36,
-        label: 'Patterns',
-        icon: 'i-mdi-chevron-right',
-        slug: '/examples/patterns'
-      },
-      {
-        id: 37,
-        label: 'Icons',
-        icon: 'i-mdi-chevron-right',
-        slug: '/examples/icons'
-      },
-      {
-        id: 38,
-        label: 'Milkdown',
-        icon: 'i-mdi-chevron-right',
-        slug: '/examples/milkdown'
+        slug: '/services/business-starter'
       }
     ]
   },
