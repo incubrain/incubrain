@@ -50,7 +50,7 @@
             class="h-full"
           />
           <template #item="{ item }">
-            <NuxtLink :to="item.slug" class="w-full flex justify-between">
+            <NuxtLink :to="item.slug" class="w-full flex justify-between items-center">
               {{ item.label }}
               <UIcon
                 :name="item.icon"

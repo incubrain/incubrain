@@ -29,6 +29,12 @@ const pages = ref([
     children: [
       {
         id: 31,
+        label: 'Hire Us',
+        icon: 'i-mdi-chevron-right',
+        slug: '/services/hire-us'
+      },
+      {
+        id: 32,
         label: 'Business Starter',
         icon: 'i-mdi-chevron-right',
         slug: '/services/business-starter'
@@ -41,25 +47,24 @@ const pages = ref([
     icon: 'i-mdi-chevron-right',
     slug: '/about',
     children: [
-      { id: 51, label: 'Careers', icon: 'i-mdi-chevron-right', slug: '/about/careers' },
-      { id: 52, label: 'Team', icon: 'i-mdi-chevron-right', slug: '/about/team' },
-      { id: 53, label: 'Stack', icon: 'i-mdi-chevron-right', slug: '/about/stack' },
-      { id: 54, label: 'Tools', icon: 'i-mdi-chevron-right', slug: '/about/tools' }
-    ]
-  },
-  {
-    id: 6,
-    label: 'Contact',
-    icon: 'i-mdi-chevron-right',
-    slug: '/contact',
-    children: [
-      { id: 61, label: 'Support', icon: 'i-mdi-chevron-right', slug: '/contact/support' },
-      { id: 62, label: 'Enquire', icon: 'i-mdi-chevron-right', slug: '/contact/enquire' }
+      { id: 51, label: 'Culture', icon: 'i-mdi-chevron-right', slug: '/about/culture' },
+      // { id: 52, label: 'Team', icon: 'i-mdi-chevron-right', slug: '/about/team' },
+      { id: 53, label: 'Stack', icon: 'i-mdi-chevron-right', slug: '/about/stack' }
     ]
   }
+  // {
+  //   id: 6,
+  //   label: 'Contact',
+  //   icon: 'i-mdi-chevron-right',
+  //   slug: '/contact',
+  //   children: [
+  //     { id: 61, label: 'Support', icon: 'i-mdi-chevron-right', slug: '/contact/support' },
+  //     { id: 62, label: 'Enquire', icon: 'i-mdi-chevron-right', slug: '/contact/enquire' }
+  //   ]
+  // }
 ] as Page[])
 
-const footerPages = [3, 5, 6]
+const footerPages = [3, 5]
 const footerLinks = ref(pages.value.filter((page) => footerPages.includes(page.id)))
 
 const currentPage = ref('Home')
