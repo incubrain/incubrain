@@ -1,9 +1,9 @@
-import { IncomingEnquiry, enquirySchema } from '@/types/enquiry'
+import { Enquiry, EnquiryValidation } from '@/types/forms'
 
 export default defineEventHandler(async (event) => {
-  const body = await readBody<IncomingEnquiry>(event)
+  const body = await readBody<Enquiry>(event)
   // Validate the incoming data
-  const validated = await enquirySchema.parseAsync(body)
+  const validated = await EnquiryValidation.parseAsync(body)
   if (!validated) {
     return { status: 400, body: { error: 'Error parsing enquiry data' } }
   }

@@ -1,22 +1,19 @@
-// server/api/submit.post.ts
-import { defineEventHandler } from 'nuxt3'
-import { readBody } from 'vue'
-import { IncomingEnquiry, enquirySchema } from './models/enquiry'
-import { sendToSlack } from './utils/slack' //Assuming you have a util function to send to Slack
+import { Support, SupportValidation } from '@/types/forms'
 
 export default defineEventHandler(async (event) => {
-  const body = await readBody<IncomingEnquiry>(event)
+  const body = await readBody<Support>(event)
 
   // Validate the incoming data
-  const { error, value } = enquirySchema.safeParse(body)
-  if (error) {
-    return { status: 400, body: { error: error.message } }
+  const validated = SupportValidation.parse(body)
+
+  if (!validated) {
+    return { status: 400, body: { error: 'error validating support message' } }
   }
 
-  const enquiry = value
+  const message = `Support Request\n\nName: ${validated.name}\nEmail: ${validated.email}\nService Interest: ${validated.serviceInterest}\nMessage: ${validated.message}`
 
-  // send enquiry to Slack
-  await sendToSlack(enquiry)
+  // send message to Slack
+  await sendToSlack(message, 'support')
 
-  return { status: 200, body: { enquiry } }
+  return { status: 200, body: 'message sent to slack' }
 })
