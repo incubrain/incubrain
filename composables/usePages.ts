@@ -9,7 +9,6 @@ interface Page {
 }
 
 const pages = ref([
-  // { id: 0, label: 'Home', icon: 'i-mdi-chevron-right', slug: '/' },
   {
     id: 1,
     label: 'Projects',
@@ -60,6 +59,9 @@ const pages = ref([
   }
 ] as Page[])
 
+const footerPages = [3, 5, 6]
+const footerLinks = ref(pages.value.filter((page) => footerPages.includes(page.id)))
+
 const currentPage = ref('Home')
 
 function findPage(pages: Page[], path: string): Page | undefined {
@@ -94,7 +96,8 @@ export default function usePages() {
     setPage: (newPage: string) => {
       currentPage.value = newPage
     },
-    pages: computed(() => pages.value),
+    pages,
+    footerLinks,
     tabs: computed(() => {
       const p = findPage(pages.value, currentPage.value)
       if (p === undefined) return []

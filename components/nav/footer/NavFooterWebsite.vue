@@ -1,22 +1,28 @@
 <template>
   <footer class="foreground">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 container-lg p-4 xl:p-8 " v-if="routes">
+    <div
+      v-if="routes"
+      class="grid grid-cols-1 lg:grid-cols-3 gap-8 p-4 xl:p-8 mx-auto max-w-[var(--max-width-lg)]"
+    >
       <div
         v-for="item in routes"
-        :key="item.section"
+        :key="item.label"
+        class="col-span-1 mx-auto"
       >
-        <h4 class="font-semibold mb-4">{{ item.section }}</h4>
+        <NuxtLink :to="item.slug">
+          <h4 class="font-semibold mb-4">{{ item.label }}</h4>
+        </NuxtLink>
         <ul class="space-y-2">
           <li
-            v-for="link in item.links"
-            :key="link.path"
+            v-for="link in item.children"
+            :key="link.slug"
           >
-            <NuxtLink :to="link.path">{{ link.name }}</NuxtLink>
+            <NuxtLink :to="link.slug">{{ link.label }}</NuxtLink>
           </li>
         </ul>
       </div>
     </div>
-    <div class="mt-8 flex justify-center space-x-4 container-lg ">
+    <div class="mt-8 flex justify-center space-x-4 container-lg">
       <a
         v-for="social in socials"
         :key="social.name"
@@ -35,6 +41,8 @@
 </template>
 
 <script setup>
-import routes from '../routes/nav-routes-web-footer.json'
 import socials from '@/data/socials.json'
+
+const p = usePages()
+const { footerLinks: routes } = storeToRefs(p)
 </script>
