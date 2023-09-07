@@ -9,8 +9,11 @@
     --nav-height-mobi: 46px;
     --nav-height-sm: 50px;
     --nav-height-lg: 60px;
-    --scroll-width-md: 26px;
+    --scroll-width-md: 12px;
     --scroll-width-sm: 0px;
+    --max-width-sm: 840px;
+    --max-width-md: 1040px;
+    --max-width-lg: 1440px;
   }
 
   h1,
@@ -34,6 +37,12 @@
   .link {
     @apply cursor-pointer text-primary-600 dark:text-primary-700 hover:text-primary-500 dark:hover:text-primary-600;
   }
+  .container-md {
+    @apply max-w-[var(--max-width-md)] mx-auto flex flex-col;
+  }
+  .container-lg {
+    @apply max-w-[var(--max-width-lg)] mx-auto flex flex-col;
+  }
   .link-alt {
     @apply cursor-pointer font-semibold hover:text-primary-700 dark:hover:text-primary-600;
   }
@@ -41,7 +50,7 @@
     @apply cursor-pointer text-primary-600 dark:text-primary-700 hover:text-primary-500 dark:hover:text-primary-600;
   }
   .foreground {
-    @apply bg-zinc-200 dark:bg-zinc-900;
+    @apply bg-gray-50 dark:bg-zinc-900;
   }
   .background {
     @apply text-zinc-800 dark:text-zinc-300 bg-white dark:bg-neutral-950;
@@ -56,7 +65,7 @@
     @apply border-zinc-800 dark:border-zinc-300;
   }
   body {
-    @apply text-zinc-800 dark:text-zinc-300 bg-zinc-100 dark:bg-neutral-950 border-zinc-300 dark:border-zinc-800;
+    @apply text-zinc-800 dark:text-zinc-300 bg-white dark:bg-neutral-950 border-zinc-300 dark:border-zinc-800;
   }
   .text-light {
     @apply text-zinc-100 dark:text-zinc-300;
