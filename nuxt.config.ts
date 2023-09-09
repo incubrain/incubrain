@@ -22,7 +22,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@unlighthouse/nuxt',
     '@nuxt/image',
-    '@nuxthq/ui',
+    '@nuxt/ui',
     'nuxt-swiper',
     '@vee-validate/nuxt',
     [
