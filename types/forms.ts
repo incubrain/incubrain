@@ -27,7 +27,7 @@ export const EnquiryValidation = z.object({
     .optional(),
   preferredContact: z.string().max(100).optional(),
   enquiryArea: z.string().min(1).max(200),
-  detailedEnquiry: z.string().min(1).max(1000),
+  message: z.string().min(1).max(1000),
   bestTimeToContact: z.string().max(100).optional()
 })
 

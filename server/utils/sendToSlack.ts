@@ -1,6 +1,6 @@
-const sendToSlack = async (message: string, type: 'enquire' | 'support' = 'enquire') => {
+const sendToSlack = async (message: string) => {
   const env = useRuntimeConfig()
-  const webhookURL = type === 'enquire' ? env.SLACK_ENQUIRE_URL : env.SLACK_SUPPORT_URL
+  const webhookURL = env.SLACK_ENQUIRE_URL
   try {
     await $fetch(webhookURL as string, {
       method: 'POST',

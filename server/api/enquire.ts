@@ -14,7 +14,7 @@ export default defineEventHandler(async (event) => {
     // Format the message
     const text = `Enquiry received!\n\nArea of Enquiry: ${enquiry.enquiryArea}\nEmail: ${enquiry.email}\nMessage: ${enquiry.message}`
 
-    const isSent = sendToSlack(text, 'enquire')
+    const isSent = sendToSlack(text)
     if (!isSent) throw createError('Error sending enquiry to Slack')
 
     return {
