@@ -92,7 +92,7 @@ const path = computed(() => {
   return route.fullPath
 })
 
-const pageChange = computed(() => route.path?.split('/')[1])
+const pageChange = computed(() => route.path.split('/')[1])
 
 watchEffect(() => {
   if (pageChange.value) {

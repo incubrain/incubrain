@@ -67,7 +67,7 @@ export default defineNuxtConfig({
 
   image: {
     ipx: {
-      dir: path.resolve('./images')
+      dir: './images'
     },
     dir: path.resolve('./public/images'),
     format: ['webp', 'jpg', 'png']
@@ -80,6 +80,17 @@ export default defineNuxtConfig({
     public: {
       api_url: process.env.API_URL_BASE
     }
+  },
+
+  routeRules: {
+    // pre-rendered at build time
+    '/': { prerender: true },
+    '/about/**': { prerender: true },
+    '/services/**': { prerender: true },
+    // Blog post generated on-demand once until next deploy
+    '/blog/**': { isr: true },
+    // Add cors headers on API routes
+    '/api/**': { cors: true }
   },
 
   nitro: {
