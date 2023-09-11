@@ -24,6 +24,7 @@ export default defineNuxtConfig({
     '@unlighthouse/nuxt',
     '@nuxt/image',
     '@nuxt/ui',
+    '@vueuse/nuxt',
     'nuxt-swiper',
     '@vee-validate/nuxt',
     [
@@ -110,17 +111,14 @@ export default defineNuxtConfig({
   },
 
   content: {
-    // highlight: {
-    //   // Theme used in all color schemes.
-    //   theme: {
-    //     // Default theme (same as single string)
-    //     default: 'github-dark',
-    //     // Theme used if `html.dark`
-    //     dark: 'github-light',
-    //     // Theme used if `html.sepia`
-    //     sepia: 'monokai'
-    //   }
-    // }
+    highlight: {
+      // Theme used in all color schemes.
+      theme: {
+        default: 'github-dark',
+        dark: 'github-dark',
+        sepia: 'monokai'
+      }
+    }
   },
 
   devtools: {
