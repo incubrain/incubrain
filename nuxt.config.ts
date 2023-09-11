@@ -7,6 +7,7 @@ export default defineNuxtConfig({
       device: 'desktop'
     }
   },
+
   app: {
     layoutTransition: { name: 'layout', mode: 'out-in' },
     pageTransition: { name: 'page', mode: 'out-in' },
@@ -17,8 +18,8 @@ export default defineNuxtConfig({
       // script: [{ src: 'https://unpkg.com/flowbite@latest/dist/flowbite.js' }]
     }
   },
+
   modules: [
-    '@nuxtjs/supabase',
     '@nuxt/content',
     '@unlighthouse/nuxt',
     '@nuxt/image',
@@ -32,6 +33,7 @@ export default defineNuxtConfig({
       }
     ]
   ],
+
   typescript: {
     shim: false,
     tsConfig: {
@@ -42,6 +44,7 @@ export default defineNuxtConfig({
       }
     }
   },
+
   veeValidate: {
     autoImports: true,
     componentNames: {
@@ -51,15 +54,19 @@ export default defineNuxtConfig({
       ErrorMessage: 'VeeErrorMessage'
     }
   },
+
   colorMode: {
     classSuffix: ''
   },
+
   ui: {
     icons: ['mdi', 'heroicons', 'material-symbols']
   },
+
   image: {
     format: ['webp', 'jpg', 'png']
   },
+
   runtimeConfig: {
     // The private keys which are only available within server-side
     SLACK_SUPPORT_URL: process.env.SLACK_SUPPORT_URL,
@@ -69,14 +76,10 @@ export default defineNuxtConfig({
     GH_USER_API: process.env.GH_USER_API,
     // Keys within public, will be also exposed to the client-side
     public: {
-      supabase: {
-        // Options
-        url: process.env.SUPABASE_URL,
-        key: process.env.SUPABASE_KEY
-      },
       api_url: process.env.API_URL_BASE
     }
   },
+
   nitro: {
     // Production
     storage: {
@@ -93,15 +96,19 @@ export default defineNuxtConfig({
       }
     }
   },
+
   imports: {
     dirs: ['stores', 'data']
   },
+
   ssr: true,
+
   swiper: {
     // prefix: 'Swiper',
     styleLang: 'css',
     modules: ['navigation', 'autoplay', 'grid'] // import modules as needed https://nuxt.com/modules/swiper#module-options
   },
+
   content: {
     // highlight: {
     //   // Theme used in all color schemes.
@@ -114,5 +121,9 @@ export default defineNuxtConfig({
     //     sepia: 'monokai'
     //   }
     // }
+  },
+
+  devtools: {
+    enabled: true
   }
 })
