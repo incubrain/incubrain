@@ -40,7 +40,7 @@
             <h4 class="mb-4">{{ testimonial.position }}</h4>
             <UIcon name="i-mid-quote-right" class="mb-4"/>
             <p class="mb-4">{{ testimonial.testimonial }}</p>
-            <UButton color="primary" variant="solid" :to="testimonial.projectLink" target="_blank">View Project</UButton>
+            <!-- <UButton color="primary" variant="solid" :to="testimonial.projectLink" target="_blank">View Project</UButton> -->
           </div>
         </div>
       </SwiperSlide>
