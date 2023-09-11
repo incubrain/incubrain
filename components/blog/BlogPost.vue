@@ -6,7 +6,7 @@
         class="container"
       >
         <NuxtImg
-          :src="`blog/${post.featured_image}`"
+          :src="`images/blog/${post.featured_image}`"
           class="lg:rounded-t-xl shadow-xl"
           width="1080"
           height="605"
@@ -48,7 +48,8 @@
             <UAlert
               color="primary"
               variant="outline"
-              :description="post.description"
+              title="Overview"
+              :description="String(post.description)"
             />
             <!-- <BlogToc :toc="post.body.toc.links" /> -->
             <ContentRendererMarkdown :value="post.body">

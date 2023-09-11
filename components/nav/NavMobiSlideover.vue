@@ -23,7 +23,7 @@
             @click="isOpen = false"
           >
             <NuxtImg
-              src="/incubrain-logo.png"
+              src="images/incubrain-logo.png"
               alt="Astron Era Logo"
               width="46"
               height="29"

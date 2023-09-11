@@ -1,5 +1,4 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
-import path from 'path'
 
 export default defineNuxtConfig({
   unlighthouse: {
@@ -66,10 +65,6 @@ export default defineNuxtConfig({
   },
 
   image: {
-    ipx: {
-      dir: path.resolve('./images')
-    },
-    dir: path.resolve('./public/images'),
     format: ['webp', 'jpg', 'png']
   },
 

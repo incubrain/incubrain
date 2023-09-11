@@ -28,7 +28,7 @@
       </div>
       <div class="flex justify-end items-end mr-0 w-full">
         <NuxtImg
-          src="incubrain-hero.png"
+          src="images/incubrain-hero.png"
           alt="Incubrain"
           width="600"
           height="600"

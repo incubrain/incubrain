@@ -21,7 +21,7 @@ const partners = ref([
   {
     id: 1,
     name: 'Partner 1',
-    logo: 'incubrain-logo.png'
+    logo: 'images/incubrain-logo.png'
   }
   // Add more partners here
 ])

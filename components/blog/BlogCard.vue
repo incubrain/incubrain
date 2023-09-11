@@ -6,7 +6,7 @@
       >
         <NuxtImg
           class="rounded-md w-full object-cover aspect-video"
-          :src="`blog/${post.featured_image}`"
+          :src="`images/blog/${post.featured_image}`"
           width="400"
           height="300"
           quality="80"

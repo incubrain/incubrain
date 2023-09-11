@@ -14,7 +14,7 @@
               {{ post.description }}
             </p>
           </div>
-          <NuxtImg src="/happy-hacker.gif" />
+          <NuxtImg src="images/happy-hacker.gif" />
         </div>
       </div>
     </ContentRenderer>
