@@ -18,7 +18,6 @@ const tags = ref([
   'nuxt',
   'vue',
   'typescript',
-  'typescript',
   // backend
   'nitro',
   'supabase',
@@ -28,6 +27,7 @@ const tags = ref([
   // design
   'tailwindcss',
   // general
+  'learning',
   'code quality',
   'testing',
   'productivity'
@@ -43,7 +43,6 @@ addCategories(categories.value)
 const posts = ref()
 
 watchEffect(async () => {
-  console.log('selectedCategory', selectedCategory.value)
   if (selectedCategory.value === 'all') {
     posts.value = await queryContent('blog')
       .where({ tags: { $in: selectedTags.value } })

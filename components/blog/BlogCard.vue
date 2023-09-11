@@ -2,7 +2,7 @@
   <TransitionBounce>
     <NuxtLink :to="post._path">
       <div
-        class="relative w-full rounded-md foreground cursor-pointer p-4 lg:gap-2 flex flex-col overflow-hidden"
+        class="relative w-full h-full rounded-md foreground cursor-pointer p-4 lg:gap-2 flex flex-col overflow-hidden"
       >
         <NuxtImg
           class="rounded-md w-full object-cover aspect-video"

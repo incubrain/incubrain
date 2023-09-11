@@ -20,17 +20,15 @@
 const route = useRoute()
 
 const post = ref({})
-const navigation = ref({})
+const navigation = ref({ prev: null, next: null })
 
 const category = ref(String(route.params.category))
 
-onBeforeMount(async () => {
-  post.value = await queryContent('blog', category.value).where({ _path: route.path }).findOne()
-  const [prev, next] = await queryContent()
-    .only(['_path', 'title'])
-    .findSurround(route.path, { before: 1, after: 1 })
-  navigation.value = { prev, next }
-})
+post.value = await queryContent('blog', category.value).where({ _path: route.path }).findOne()
+const [prev, next] = await queryContent()
+  .only(['_path', 'title'])
+  .findSurround(route.path, { before: 1, after: 1 })
+navigation.value = { prev, next }
 </script>
 
 <style>
