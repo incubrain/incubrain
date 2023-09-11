@@ -76,41 +76,5 @@ const test = async () => {
 </script>
 
 <style>
-pre code .line {
-  white-space: normal;
-}
 
-.code-challenge {
-  margin: 0;
-  padding: 1.6rem;
-  line-height: 1.6rem;
-}
-
-.code-challenge,
-li {
-  line-height: 2rem;
-}
-
-.code-challenge ol {
-  margin: 30px 0;
-}
-
-.code-challenge h3 {
-  font-size: 1.4rem;
-  font-weight: 500;
-  margin: 1.6rem 0;
-}
-
-.code-challenge h5 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin: 1.4rem 0;
-}
-
-pre {
-  margin-top: 1.6rem;
-  background: black !important;
-  border-radius: 8px;
-  padding: 1rem;
-}
 </style>

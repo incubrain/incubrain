@@ -21,5 +21,4 @@
 - [Vercel](): Vercel is a great platform for hosting Nuxt 3 projects.
 - [Github API]() | 
 - [Spotify API]()
-- [Supabase]()
 - [Vue Search]()

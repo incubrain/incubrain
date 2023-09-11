@@ -1,0 +1,45 @@
+<template>
+  <div class="grid grid-cols-2 gap-4 my-4">
+    <NuxtLink
+      v-if="navigation.prev"
+      :to="navigation.prev._path"
+      class="flex foreground items-center justify-center gap-2 lg:rounded-md cursor-pointer p-4"
+    >
+      <h3 class="text-sm lg:text-xl font-semibold flex justify-center items-center gap-2">
+        <div class="p-5 background rounded-full relative items-center justify-center flex">
+          <UIcon
+            name="i-mdi-chevron-left"
+            class="h-5 w-5 lg:h-7 lg:w-7 inline-block shrink-0 absolute"
+          />
+        </div>
+        {{ navigation.prev.title }}
+      </h3>
+    </NuxtLink>
+    <NuxtLink
+      v-if="navigation.next"
+      :to="navigation.next._path"
+      class="flex foreground justify-center items-center gap-2 lg:rounded-md cursor-pointer p-4"
+    >
+      <h3 class="text-sm lg:text-xl font-semibold flex justify-center items-center gap-2">
+        {{ navigation.next.title }}
+        <div class="p-5 background rounded-full relative items-center justify-center flex">
+          <UIcon
+            name="i-mdi-chevron-right"
+            class="h-5 w-5 lg:h-7 lg:w-7 inline-block shrink-0 absolute"
+          />
+        </div>
+      </h3>
+    </NuxtLink>
+  </div>
+</template>
+
+<script setup lang="ts">
+defineProps({
+  navigation: {
+    type: Object,
+    required: true
+  }
+})
+</script>
+
+<style scoped></style>

@@ -1,9 +1,17 @@
 <template>
-  <div class="relative">
-    <div class="triangle absolute top-0 left-0 before:border-t-emerald-400 dark:before:border-t-emerald-700 before:border-x-transparent before:border-b-transparent" />
-    <div class="triangle absolute top-0 right-0 before:border-t-emerald-400 dark:before:border-t-emerald-700 before:border-x-transparent before:border-b-transparent" />
-    <div class="max-w-[1080px] mx-auto flex flex-col justify-center relative py-20">
+  <div class="relative overflow-hidden">
+    <div
+      class="triangle hidden lg:block absolute top-0 left-0 before:border-t-emerald-400 dark:before:border-t-emerald-700 before:border-x-transparent before:border-b-transparent"
+    />
+    <div
+      class="triangle hidden lg:block absolute top-0 right-0 before:border-t-emerald-400 dark:before:border-t-emerald-700 before:border-x-transparent before:border-b-transparent"
+    />
+    <div class="max-w-[1080px] mx-auto flex flex-col justify-center relative lg:py-20">
       <BlogPost :post="post" />
+      <BlogNavigation
+        v-if="navigation.prev || navigation.next"
+        :navigation="navigation"
+      />
     </div>
   </div>
 </template>
@@ -12,17 +20,20 @@
 const route = useRoute()
 
 const post = ref({})
+const navigation = ref({})
+
 const category = ref(String(route.params.category))
-// const title = ref(String(route.params.title))
-console.log('article', category.value, route)
 
 onBeforeMount(async () => {
   post.value = await queryContent('blog', category.value).where({ _path: route.path }).findOne()
+  const [prev, next] = await queryContent()
+    .only(['_path', 'title'])
+    .findSurround(route.path, { before: 1, after: 1 })
+  navigation.value = { prev, next }
 })
 </script>
 
 <style>
-
 .triangle::before {
   content: '';
   position: absolute;

@@ -11,30 +11,24 @@ interface Page {
 const pages = ref([
   {
     id: 1,
-    label: 'Projects',
-    icon: 'i-mdi-chevron-right',
-    slug: '/projects'
-  },
-  {
-    id: 2,
     label: 'Blog',
     icon: 'i-mdi-chevron-right',
     slug: '/blog'
   },
   {
-    id: 3,
+    id: 2,
     label: 'Services',
     icon: 'i-mdi-chevron-right',
     slug: '/services',
     children: [
       {
-        id: 31,
+        id: 21,
         label: 'Hire Us',
         icon: 'i-mdi-chevron-right',
         slug: '/services/hire-us'
       },
       {
-        id: 32,
+        id: 22,
         label: 'Business Starter',
         icon: 'i-mdi-chevron-right',
         slug: '/services/business-starter'
@@ -42,14 +36,15 @@ const pages = ref([
     ]
   },
   {
-    id: 5,
+    id: 3,
     label: 'About',
     icon: 'i-mdi-chevron-right',
     slug: '/about',
     children: [
-      { id: 51, label: 'Culture', icon: 'i-mdi-chevron-right', slug: '/about/culture' },
-      // { id: 52, label: 'Team', icon: 'i-mdi-chevron-right', slug: '/about/team' },
-      { id: 53, label: 'Stack', icon: 'i-mdi-chevron-right', slug: '/about/stack' }
+      { id: 30, label: 'About Us', icon: 'i-mdi-chevron-right', slug: '/about' },
+      { id: 31, label: 'Culture', icon: 'i-mdi-chevron-right', slug: '/about/culture' },
+      // { id: 32, label: 'Team', icon: 'i-mdi-chevron-right', slug: '/about/team' },
+      { id: 33, label: 'Stack', icon: 'i-mdi-chevron-right', slug: '/about/stack' }
     ]
   }
   // {
@@ -74,25 +69,25 @@ const socials = {
       id: 1,
       label: 'Github',
       slug: 'https://github.com/yourusername',
-      icon: 'fab fa-github'
+      icon: 'i-mdi-github'
     },
     {
       id: 2,
       label: 'LinkedIn',
       slug: 'https://linkedin.com/in/yourusername',
-      icon: 'fab fa-linkedin'
+      icon: 'i-mdi-linkedin'
     },
     {
       id: 3,
       label: 'YouTube',
       slug: 'https://youtube.com/channel/yourchannelid',
-      icon: 'fab fa-youtube'
+      icon: 'i-mdi-youtube'
     },
     {
       id: 4,
       label: 'Instagram',
       slug: 'https://instagram.com/yourusername',
-      icon: 'fab fa-instagram'
+      icon: 'i-mdi-instagram'
     }
   ]
 }

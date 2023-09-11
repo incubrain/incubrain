@@ -66,7 +66,7 @@ const testimonials: Testimonial[] = ref([
     name: 'John Doe',
     position: 'CEO at Company1',
     testimonial: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, rem.',
-    projectLink: '/projects/project1'
+    projectLink: '/blog/projects/project1'
   },
   {
     id: 2,
@@ -74,7 +74,7 @@ const testimonials: Testimonial[] = ref([
     name: 'Jane Doe',
     position: 'CTO at Company2',
     testimonial: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, aliquam.',
-    projectLink: '/projects/project2'
+    projectLink: '/blog/projects/project2'
   },
   {
     id: 3,
@@ -82,7 +82,7 @@ const testimonials: Testimonial[] = ref([
     name: 'Jane Doe',
     position: 'CTO at Company2',
     testimonial: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, aliquam.',
-    projectLink: '/projects/project2'
+    projectLink: '/blog/projects/project2'
   },
   {
     id: 4,
@@ -90,7 +90,7 @@ const testimonials: Testimonial[] = ref([
     name: 'Jane Doe',
     position: 'CTO at Company2',
     testimonial: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, aliquam.',
-    projectLink: '/projects/project2'
+    projectLink: '/blog/projects/project2'
   },
   {
     id: 5,
@@ -98,7 +98,7 @@ const testimonials: Testimonial[] = ref([
     name: 'Jane Doe',
     position: 'CTO at Company2',
     testimonial: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, aliquam.',
-    projectLink: '/projects/project2'
+    projectLink: '/blog/projects/project2'
   },
   {
     id: 6,
@@ -106,7 +106,7 @@ const testimonials: Testimonial[] = ref([
     name: 'Jane Doe',
     position: 'CTO at Company2',
     testimonial: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, aliquam.',
-    projectLink: '/projects/project2'
+    projectLink: '/blog/projects/project2'
   },
   {
     id: 7,
@@ -114,7 +114,7 @@ const testimonials: Testimonial[] = ref([
     name: 'Jane Doe',
     position: 'CTO at Company2',
     testimonial: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, aliquam.',
-    projectLink: '/projects/project2'
+    projectLink: '/blog/projects/project2'
   },
   {
     id: 8,
@@ -122,7 +122,7 @@ const testimonials: Testimonial[] = ref([
     name: 'Jane Doe',
     position: 'CTO at Company2',
     testimonial: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, aliquam.',
-    projectLink: '/projects/project2'
+    projectLink: '/blog/projects/project2'
   }
 ])
 </script>

@@ -2,17 +2,17 @@
   <TransitionBounce>
     <NuxtLink :to="post._path">
       <div
-        class="relative w-full rounded-md foreground cursor-pointer lg:p-4 lg:gap-2 flex flex-col overflow-hidden"
+        class="relative w-full rounded-md foreground cursor-pointer p-4 lg:gap-2 flex flex-col overflow-hidden"
       >
         <NuxtImg
-          class="rounded-md w-full h-48 lg:h-64 object-cover"
+          class="rounded-md w-full object-cover aspect-video"
           :src="`/images/blog/${post.featured_image}`"
           width="400"
           height="300"
           quality="80"
         />
         <div class="flex flex-col gap-2 items-start w-full p-2 lg:p-4 justify-center">
-          <h3 class="text-md lg:text-2xl font-bold">
+          <h3 class="text-xl lg:text-2xl font-bold">
             {{ post.title }}
           </h3>
           <div
@@ -22,7 +22,7 @@
             <!-- <div class="w-1 h-1 rounded-full bg-black" /> -->
           </div>
           <p class="text-sm">
-            {{ post.excerpt }}
+            {{ post.description }}
           </p>
         </div>
       </div>

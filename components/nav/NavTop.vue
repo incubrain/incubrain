@@ -3,7 +3,7 @@
     class="w-full grid grid-cols-[160px_1fr_160px] sticky top-0 shadow-sm px-4 justify-between backdrop-blur-md bg-white/70 dark:bg-black/60 z-[10] h-[var(--nav-height-sm)] lg:h-[var(--nav-height-lg)]"
   >
     <NavMobiSlideover class="lg:hidden flex items-start justify-start" />
-    <div class="hidden lg:flex justify-start">
+    <div class="hidden lg:flex justify-center border-r border-color pr-4">
       <NuxtLink
         to="/"
         class="h-full flex justify-center items-center gap-2"
@@ -17,15 +17,15 @@
         <h3 class="text-xl font-bold">INCUBRAIN</h3>
       </NuxtLink>
     </div>
-    <ul class="flex h-full w-full pl-10 items-center justify-center">
+    <ul class="flex h-full w-full items-center justify-start pl-4">
       <li
         v-for="page in pages"
         :key="page.id"
-        class="link-alt cursor-pointer hidden h-full lg:flex items-center text-sm px-6 tracking-normal relative"
+        class="link-alt cursor-pointer justify-center hidden h-full lg:flex text-sm pr-4 w-[80px] tracking-normal relative"
         :class="
           route.fullPath.includes(page.slug)
             ? ' link-active'
-            : 'items-center text-sm tracking-normal relative min-w-[50px]'
+            : ''
         "
       >
         <NuxtLink
@@ -50,7 +50,10 @@
             class="h-full"
           />
           <template #item="{ item }">
-            <NuxtLink :to="item.slug" class="w-full flex justify-between items-center">
+            <NuxtLink
+              :to="item.slug"
+              class="w-full flex justify-between items-center"
+            >
               {{ item.label }}
               <UIcon
                 :name="item.icon"

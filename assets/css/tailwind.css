@@ -59,7 +59,7 @@
     @apply text-zinc-800 dark:text-zinc-300 bg-zinc-100 dark:bg-zinc-300;
   }
   .border-color {
-    @apply border-zinc-300 dark:border-zinc-800;
+    @apply border-zinc-200 dark:border-zinc-800;
   }
   .border-inverted {
     @apply border-zinc-800 dark:border-zinc-300;
