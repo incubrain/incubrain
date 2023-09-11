@@ -3,7 +3,7 @@
     <NuxtLink
       v-if="navigation[0]"
       :to="navigation[0]._path"
-      class="flex foreground items-center justify-center gap-2 lg:rounded-md cursor-pointer p-4"
+      class="flex foreground items-center justify-start gap-2 lg:rounded-md cursor-pointer p-4"
     >
       <h3 class="text-sm lg:text-xl font-semibold flex justify-center items-center gap-2">
         <div class="p-5 background rounded-full relative items-center justify-center flex">
@@ -18,9 +18,9 @@
     <NuxtLink
       v-if="navigation[1]"
       :to="navigation[1]._path"
-      class="flex foreground justify-center items-center gap-2 lg:rounded-md cursor-pointer p-4"
+      class="flex foreground justify-end items-center gap-2 lg:rounded-md cursor-pointer p-4"
     >
-      <h3 class="text-sm lg:text-xl font-semibold flex justify-center items-center gap-2">
+      <h3 class="text-sm lg:text-xl font-semibold flex justify-between items-center gap-2">
         {{ navigation[1].title }}
         <div class="p-5 background rounded-full relative items-center justify-center flex">
           <UIcon
