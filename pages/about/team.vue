@@ -38,8 +38,8 @@
 <script setup lang="ts">
 const teamMembers = ref([
   // Your team members data here. This can be replaced with a fetch() call to get data from your backend.
-  { id: 1, name: 'John Doe', role: 'CEO', image: '/images/john-doe.jpg', bio: 'Short bio here' },
-  { id: 2, name: 'Jane Doe', role: 'CTO', image: '/images/jane-doe.jpg', bio: 'Short bio here' }
+  { id: 1, name: 'John Doe', role: 'CEO', image: 'john-doe.jpg', bio: 'Short bio here' },
+  { id: 2, name: 'Jane Doe', role: 'CTO', image: 'images/jane-doe.jpg', bio: 'Short bio here' }
   // ...
 ])
 

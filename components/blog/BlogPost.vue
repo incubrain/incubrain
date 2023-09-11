@@ -6,7 +6,7 @@
         class="container"
       >
         <NuxtImg
-          :src="`images/blog/${post.featured_image}`"
+          :src="`blog/${post.featured_image}`"
           class="lg:rounded-t-xl shadow-xl"
           width="1080"
           height="605"

@@ -62,7 +62,7 @@ interface Testimonial {
 const testimonials: Testimonial[] = ref([
   {
     id: 1,
-    avatar: 'images/testimonials/drew-macgibbon.jpg',
+    avatar: 'testimonials/drew-macgibbon.jpg',
     name: 'John Doe',
     position: 'CEO at Company1',
     testimonial: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, rem.',
@@ -70,7 +70,7 @@ const testimonials: Testimonial[] = ref([
   },
   {
     id: 2,
-    avatar: 'images/testimonials/shweta-kulkarni.jpg',
+    avatar: 'testimonials/shweta-kulkarni.jpg',
     name: 'Jane Doe',
     position: 'CTO at Company2',
     testimonial: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, aliquam.',
@@ -78,7 +78,7 @@ const testimonials: Testimonial[] = ref([
   },
   {
     id: 3,
-    avatar: 'images/testimonials/shweta-kulkarni.jpg',
+    avatar: 'testimonials/shweta-kulkarni.jpg',
     name: 'Jane Doe',
     position: 'CTO at Company2',
     testimonial: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, aliquam.',
@@ -86,7 +86,7 @@ const testimonials: Testimonial[] = ref([
   },
   {
     id: 4,
-    avatar: 'images/testimonials/shweta-kulkarni.jpg',
+    avatar: 'testimonials/shweta-kulkarni.jpg',
     name: 'Jane Doe',
     position: 'CTO at Company2',
     testimonial: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, aliquam.',
@@ -94,7 +94,7 @@ const testimonials: Testimonial[] = ref([
   },
   {
     id: 5,
-    avatar: 'images/testimonials/shweta-kulkarni.jpg',
+    avatar: 'testimonials/shweta-kulkarni.jpg',
     name: 'Jane Doe',
     position: 'CTO at Company2',
     testimonial: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, aliquam.',
@@ -102,7 +102,7 @@ const testimonials: Testimonial[] = ref([
   },
   {
     id: 6,
-    avatar: 'images/testimonials/shweta-kulkarni.jpg',
+    avatar: 'testimonials/shweta-kulkarni.jpg',
     name: 'Jane Doe',
     position: 'CTO at Company2',
     testimonial: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, aliquam.',
@@ -110,7 +110,7 @@ const testimonials: Testimonial[] = ref([
   },
   {
     id: 7,
-    avatar: 'images/testimonials/shweta-kulkarni.jpg',
+    avatar: 'testimonials/shweta-kulkarni.jpg',
     name: 'Jane Doe',
     position: 'CTO at Company2',
     testimonial: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, aliquam.',
@@ -118,7 +118,7 @@ const testimonials: Testimonial[] = ref([
   },
   {
     id: 8,
-    avatar: 'images/testimonials/shweta-kulkarni.jpg',
+    avatar: 'testimonials/shweta-kulkarni.jpg',
     name: 'Jane Doe',
     position: 'CTO at Company2',
     testimonial: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, aliquam.',

@@ -19,8 +19,8 @@
     }
   ],
   "images": [
-    { "title": "Featured", "src": "images/shweta-kulkarni-painting-common-man-looking-at-universe.jpg", "alt": "Painting by Shweta Kulkarni, CEO of AstronEra, of common man looking at the universe" },
-    { "src": "images/astronera.png", "alt": "AstronEra Logo" }
+    { "title": "Featured", "src": "shweta-kulkarni-painting-common-man-looking-at-universe.jpg", "alt": "Painting by Shweta Kulkarni, CEO of AstronEra, of common man looking at the universe" },
+    { "src": "astronera.png", "alt": "AstronEra Logo" }
   ],
   "timeline": [
     {

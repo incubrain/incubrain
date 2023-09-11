@@ -1,4 +1,5 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
+import path from 'path'
 
 export default defineNuxtConfig({
   unlighthouse: {
@@ -22,7 +23,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/content',
     '@unlighthouse/nuxt',
-    '@nuxt/image',
+    '@nuxt/image-edge',
     '@nuxt/ui',
     '@vueuse/nuxt',
     'nuxt-swiper',
@@ -65,7 +66,10 @@ export default defineNuxtConfig({
   },
 
   image: {
-    dir: 'public/',
+    ipx: {
+      dir: path.resolve('./public/images/')
+    },
+    dir: path.resolve('./public/images/'),
     format: ['webp', 'jpg', 'png']
   },
 
@@ -80,6 +84,7 @@ export default defineNuxtConfig({
   },
 
   nitro: {
+    preset: 'vercel_edge',
     // Production
     storage: {
       data: {

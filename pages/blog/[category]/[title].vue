@@ -9,7 +9,7 @@
     <div class="max-w-[1080px] mx-auto flex flex-col justify-center relative lg:py-20">
       <BlogPost :post="post" />
       <BlogNavigation
-        v-if="navigation.prev || navigation.next"
+        v-if="navigation"
         :navigation="navigation"
       />
     </div>
@@ -19,16 +19,14 @@
 <script setup lang="ts">
 const route = useRoute()
 
-const post = ref({})
-const navigation = ref({ prev: null, next: null })
-
 const category = ref(String(route.params.category))
 
-post.value = await queryContent('blog', category.value).where({ _path: route.path }).findOne()
-const [prev, next] = await queryContent()
-  .only(['_path', 'title'])
-  .findSurround(route.path, { before: 1, after: 1 })
-navigation.value = { prev, next }
+const { data: post } = await useAsyncData('post', () =>
+  queryContent('blog', category.value).where({ _path: route.path }).findOne()
+)
+const { data: navigation } = await useAsyncData('navigation', () =>
+  queryContent().only(['_path', 'title']).findSurround(route.path, { before: 1, after: 1 })
+)
 </script>
 
 <style>

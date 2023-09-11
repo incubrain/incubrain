@@ -14,7 +14,7 @@
 
 <script setup lang="ts">
 const route = useRoute()
-const parentRoute = computed(() => route.path.split('/'))
+const parentRoute = computed(() => route.path?.split('/'))
 </script>
 
 <style>

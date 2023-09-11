@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Shweta Kulkarni",
     "position": "CEO",
-    "avatar": "/images/team/shweta-kulkarni.jpg",
+    "avatar": "/team/shweta-kulkarni.jpg",
     "bio": "Shweta Kulkarni is the founder and director of AstronEra. She has experience in Science Communication for more than a decade. She was selected as one of the top 100 women astronomers in India (2018) under the women’s startup program supported by DST GOI. She was awarded a fellowship from the Royal Astronomical Society of England to appreciate her work. She has worked on various State, national and international projects to popularise astronomy. She is currently pursuing her education part-time at the university of central Lancashire in England while working full-time with her startup.",
     "socials": [
       { "platform": "twitter", "link": "https://twitter.com/AstronEra"},
@@ -15,7 +15,7 @@
     "id": 2,
     "name": "Drew MacGibbon",
     "position": "CTO",
-    "avatar": "/images/team/drew-macgibbon.jpg",
+    "avatar": "/team/drew-macgibbon.jpg",
     "bio": "some bio",
     "socials": [
       { "platform": "twitter", "link": "https://twitter.com/AstronEra"},
