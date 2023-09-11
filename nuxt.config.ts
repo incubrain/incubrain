@@ -67,9 +67,9 @@ export default defineNuxtConfig({
 
   image: {
     ipx: {
-      dir: path.resolve('./public/images/')
+      dir: path.resolve('./public/images')
     },
-    dir: path.resolve('./public/images/'),
+    dir: path.resolve('./public/images'),
     format: ['webp', 'jpg', 'png']
   },
 
