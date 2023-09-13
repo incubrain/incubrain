@@ -1,45 +1,60 @@
 <template>
-  <VeeForm :validation-schema="validationSchema">
-    <div
-      v-for="field in schema"
-      :key="field.name"
-      class="mb-4"
-    >
-      <label
-        v-if="hasLabels"
-        :for="field.name"
-        class="block mb-2 text-xs font-semibold"
-      >{{ field.label }}</label>
-      <VeeField
-        :id="field.name"
-        :as="field.as"
+  <UForm
+    :schema="p.validation"
+    :state="formState"
+    @submit="submit"
+  >
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 lg:gap-6 pb-4">
+      <UFormGroup
+        v-for="field in schema"
+        :key="field.name"
+        :label="field.label"
         :name="field.name"
-        class="w-full px-3 py-2 leading-tight border rounded shadow appearance-none focus:outline-none focus:shadow-outline placeholder:text-sm placeholder:text-gray-300 dark:placeholder-gray-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-100"
-        :placeholder="field.label"
-      />
-      <VeeErrorMessage
-        :name="field.name"
-        class="block px-3 py-1 text-xs italic text-error-400 dark:text-error-800"
-      />
+        class="pb-4"
+        :class="{
+          'w-full md:col-span-2': field.fullWidth
+        }"
+      >
+        <FormComponent
+          :field="field"
+          class="pt-2"
+          @updated-value="updateState"
+        />
+      </UFormGroup>
     </div>
     <slot />
-  </VeeForm>
+  </UForm>
 </template>
 
 <script setup lang="ts">
-defineProps({
+const p = defineProps({
   schema: {
     type: Object,
     required: true
   },
-  validationSchema: {
+  validation: {
+    type: Object,
+    required: true
+  },
+  state: {
     type: Object,
     required: true
   },
   hasLabels: {
     type: Boolean,
-    default: false
+    default: true
   }
 })
 
+const formState = ref(p.state)
+
+const updateState = (event: { name: string; value: string }) => {
+  formState.value[event.name] = event.value
+}
+
+const emit = defineEmits(['form-submitted'])
+
+const submit = () => {
+  emit('form-submitted', formState.value)
+}
 </script>
