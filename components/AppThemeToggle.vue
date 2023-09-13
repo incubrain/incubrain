@@ -1,6 +1,6 @@
 <template>
   <UIcon
-    :name="color.value === 'dark' ? 'i-heroicons-moon' : 'i-heroicons-sun'"
+    :name="color.value === 'dark' ? 'i-heroicons-sun' : 'i-heroicons-moon'"
     class="w-6 h-6 cursor-pointer"
     @click="toggleDark"
   />

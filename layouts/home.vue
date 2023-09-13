@@ -2,10 +2,7 @@
   <div class="w-full background">
     <NavTop />
     <AppBody :mobi-bottom-nav="false">
-      <HomeHero />
-      <div class="py-8 lg:py-20">
-        <slot />
-      </div>
+      <slot />
       <UNotifications />
       <NavFooterWebsite />
     </AppBody>

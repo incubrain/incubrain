@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="w-full grid grid-cols-[160px_1fr_160px] sticky top-0 shadow-sm px-4 justify-between backdrop-blur-md bg-white/70 dark:bg-black/60 z-[10] h-[var(--nav-height-sm)] lg:h-[var(--nav-height-lg)]"
+    class="w-full grid grid-cols-[160px_1fr_0.5fr] sticky top-0 shadow-sm px-4 border-b border-color justify-between backdrop-blur-md bg-white/70 dark:bg-black/60 z-[10] h-[var(--nav-height-sm)] lg:h-[var(--nav-height-lg)]"
   >
     <NavMobiSlideover class="lg:hidden flex items-start justify-start" />
     <div class="hidden lg:flex justify-center border-r border-color pr-4">
@@ -17,16 +17,12 @@
         <h3 class="text-xl font-bold">INCUBRAIN</h3>
       </NuxtLink>
     </div>
-    <ul class="flex h-full w-full items-center justify-start pl-4">
+    <ul class="flex h-full items-center w-full">
       <li
         v-for="page in pages"
         :key="page.id"
         class="link-alt cursor-pointer justify-center hidden h-full lg:flex text-sm pr-4 w-[80px] tracking-normal relative"
-        :class="
-          route.fullPath.includes(page.slug)
-            ? ' link-active'
-            : ''
-        "
+        :class="route.fullPath.includes(page.slug) ? ' link-active' : ''"
       >
         <NuxtLink
           v-if="!page.children"
@@ -45,10 +41,15 @@
           <UButton
             color="white"
             variant="link"
-            :label="page.label"
             :to="page.slug"
             class="h-full"
-          />
+          >
+            {{ page.label }}
+            <UIcon
+              name="i-mdi-chevron-down"
+              class="h-4 w-4"
+            />
+          </UButton>
           <template #item="{ item }">
             <NuxtLink
               :to="item.slug"
@@ -64,7 +65,7 @@
         </UDropdown>
       </li>
     </ul>
-    <div class="flex gap-2 justify-end items-center">
+    <div class="flex gap-3 justify-end items-center">
       <AppThemeToggle />
       <NuxtLink
         href="https://github.com/Drew-Macgibbon"
@@ -76,6 +77,16 @@
           class="w-6 h-6 text-black dark:text-white"
         />
       </NuxtLink>
+      <UButton
+        to="/services/business-starter"
+        color="primary"
+      >
+        Get Started
+        <UIcon
+          name="i-mdi-chevron-right"
+          class="h-4 w-4"
+        />
+      </UButton>
     </div>
   </nav>
 </template>

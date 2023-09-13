@@ -1,9 +1,9 @@
 <template>
   <div
-    class="flex min-h-screen bg-gradient-to-br from-emerald-400 via-emerald-600 to-emerald-800 dark:from-emerald-800 dark:via-emerald-950 dark:to-slate-950 p-4 lg:p-8"
+    class="flex flex-col overflow-hidden min-h-screen space-y-12 bg-gradient-to-br from-emerald-400 via-emerald-600 to-emerald-800 dark:from-emerald-800 dark:via-emerald-950 dark:to-slate-950"
   >
     <div
-      class="grid grid-cols-1 lg:grid-cols-2 justify-center items-center mx-auto max-w-[var(--max-width-lg)]"
+      class="grid grid-cols-1 lg:grid-cols-2 justify-center items-center mx-auto padded-x overflow-hidden"
     >
       <div class="justify-center space-y-6 lg:space-y-8 lg:pr-20">
         <UBadge
@@ -24,7 +24,6 @@
           into powerful SaaS solutions. As active contributors to Nuxt open source, we're committed
           to fostering growth within the community and beyond.
         </p>
-        <UButton to="/services"> Explore Our Services </UButton>
       </div>
       <div class="flex justify-end items-end mr-0 w-full">
         <NuxtImg
@@ -34,12 +33,12 @@
           height="600"
         />
       </div>
-      <div
-        class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4 lg:gap-8 w-full justify-between lg:col-span-2"
-      >
+    </div>
+    <div class="infinite-scroll lg:col-span-2">
+      <div class="flex gap-4 w-full">
         <TransitionBounce
-          v-for="feature in features"
-          :key="feature.id"
+          v-for="(feature, i) in allFeatures"
+          :key="`feature-${i}`"
         >
           <div class="rounded-md foreground shadow-md p-4 gap-4 flex-grow">
             <h3 class="text-xl font-semibold mb-2">{{ feature.title }}</h3>
@@ -74,33 +73,42 @@ const features = [
   },
   {
     id: 3,
-    title: 'Open Source',
+    title: 'Third',
     description:
       'We are committed to open source and are actively contributing to the Nuxt 3 ecosystem.',
     icon: 'i-mdi-github'
   },
   {
     id: 4,
-    title: 'Community',
+    title: 'Fourth',
     description:
       'We are committed to open source and are actively contributing to the Nuxt 3 ecosystem.',
-    icon: 'i-mdi-account-group'
+    icon: 'i-mdi-github'
   },
   {
     id: 5,
-    title: 'Consulting',
+    title: 'Fifth',
     description:
       'We are committed to open source and are actively contributing to the Nuxt 3 ecosystem.',
-    icon: 'i-mdi-account-tie'
+    icon: 'i-mdi-github'
   },
   {
     id: 6,
-    title: 'Training',
+    title: 'Sixth',
     description:
       'We are committed to open source and are actively contributing to the Nuxt 3 ecosystem.',
-    icon: 'i-mdi-school'
+    icon: 'i-mdi-github'
+  },
+  {
+    id: 7,
+    title: 'Seventh',
+    description:
+      'We are committed to open source and are actively contributing to the Nuxt 3 ecosystem.',
+    icon: 'i-mdi-github'
   }
 ]
+
+const allFeatures = [...features, ...features]
 
 useHead({ title: title.value, meta: [{ name: description.value }] })
 </script>
@@ -110,5 +118,23 @@ useHead({ title: title.value, meta: [{ name: description.value }] })
 
 body {
   font-family: 'Inter', sans-serif;
+}
+
+@keyframes scrollRightToLeft {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-2072px);
+  }
+}
+
+.infinite-scroll {
+  width: 4144px;
+  animation: scrollRightToLeft 80s linear infinite;
+}
+
+.infinite-scroll:hover {
+  animation-play-state: paused;
 }
 </style>

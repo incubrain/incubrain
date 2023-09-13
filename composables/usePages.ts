@@ -42,7 +42,7 @@ const pages = ref([
     slug: '/about',
     children: [
       { id: 30, label: 'About Us', icon: 'i-mdi-chevron-right', slug: '/about' },
-      { id: 31, label: 'Culture', icon: 'i-mdi-chevron-right', slug: '/about/culture' },
+      // { id: 31, label: 'Culture', icon: 'i-mdi-chevron-right', slug: '/about/culture' },
       // { id: 32, label: 'Team', icon: 'i-mdi-chevron-right', slug: '/about/team' },
       { id: 33, label: 'Stack', icon: 'i-mdi-chevron-right', slug: '/about/stack' }
     ]

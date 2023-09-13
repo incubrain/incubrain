@@ -15,11 +15,8 @@
           <h3 class="text-xl lg:text-2xl font-bold">
             {{ post.title }}
           </h3>
-          <div
-            class="flex flex-row gap-2 lg:gap-3 justify-center items-center font-semibold text-[#333c7d]"
-          >
-            <p>{{ post.updated }}</p>
-            <!-- <div class="w-1 h-1 rounded-full bg-black" /> -->
+          <div class="flex flex-row gap-2 lg:gap-3 justify-center items-center">
+            <p class="text-primary text-sm font-semibold"> {{ post.published }}</p>
           </div>
           <p class="text-sm">
             {{ post.description }}
