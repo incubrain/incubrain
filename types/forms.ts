@@ -1,4 +1,3 @@
-import { toTypedSchema } from '@vee-validate/zod'
 import { z } from 'zod'
 
 // Forms
@@ -24,17 +23,13 @@ export const EnquiryValidation = z.object({
   phoneNumber: z
     .string()
     .regex(/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s./0-9]*$/)
+    .min(7)
     .optional(),
   preferredContact: z.string().max(100).optional(),
   enquiryArea: z.string().min(1).max(200),
   message: z.string().min(1).max(1000),
   bestTimeToContact: z.string().max(100).optional()
 })
-
-// Form Validtion Vee Validate
-export const EnquiryFormValidation = toTypedSchema(EnquiryValidation)
-export const ServiceFormValidation = toTypedSchema(ServiceValidation)
-export const SupportFormValidation = toTypedSchema(SupportValidation)
 
 // Types
 export type Enquiry = z.infer<typeof EnquiryValidation>

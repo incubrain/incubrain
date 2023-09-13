@@ -26,7 +26,6 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@vueuse/nuxt',
     'nuxt-swiper',
-    '@vee-validate/nuxt',
     [
       '@pinia/nuxt',
       {
@@ -43,16 +42,6 @@ export default defineNuxtConfig({
         // types: ['@nuxt/types', 'vite/client', './types/types.d.ts'],
         strict: true
       }
-    }
-  },
-
-  veeValidate: {
-    autoImports: true,
-    componentNames: {
-      Form: 'VeeForm',
-      Field: 'VeeField',
-      FieldArray: 'VeeFieldArray',
-      ErrorMessage: 'VeeErrorMessage'
     }
   },
 
