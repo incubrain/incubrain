@@ -23,13 +23,13 @@ const pages = ref([
     children: [
       {
         id: 21,
-        label: 'Hire Us',
+        label: 'Hire us',
         icon: 'i-mdi-chevron-right',
         slug: '/services/hire-us'
       },
       {
         id: 22,
-        label: 'Business Starter',
+        label: 'Business starter',
         icon: 'i-mdi-chevron-right',
         slug: '/services/business-starter'
       }
@@ -41,25 +41,22 @@ const pages = ref([
     icon: 'i-mdi-chevron-right',
     slug: '/about',
     children: [
-      { id: 30, label: 'About Us', icon: 'i-mdi-chevron-right', slug: '/about' },
+      { id: 30, label: 'About', icon: 'i-mdi-chevron-right', slug: '/about' },
       // { id: 31, label: 'Culture', icon: 'i-mdi-chevron-right', slug: '/about/culture' },
       // { id: 32, label: 'Team', icon: 'i-mdi-chevron-right', slug: '/about/team' },
       { id: 33, label: 'Stack', icon: 'i-mdi-chevron-right', slug: '/about/stack' }
     ]
+  },
+  {
+    id: 4,
+    label: 'Contact',
+    icon: 'i-mdi-chevron-right',
+    slug: '/contact',
+    children: []
   }
-  // {
-  //   id: 6,
-  //   label: 'Contact',
-  //   icon: 'i-mdi-chevron-right',
-  //   slug: '/contact',
-  //   children: [
-  //     { id: 61, label: 'Support', icon: 'i-mdi-chevron-right', slug: '/contact/support' },
-  //     { id: 62, label: 'Enquire', icon: 'i-mdi-chevron-right', slug: '/contact/enquire' }
-  //   ]
-  // }
 ] as Page[])
 
-const socials = {
+const socials = ref({
   id: 0,
   slug: '',
   label: 'Socials',
@@ -90,10 +87,14 @@ const socials = {
       icon: 'i-mdi-instagram'
     }
   ]
-}
+})
 
-const footerPages = [3, 5]
-const footerLinks = ref([...pages.value.filter((page) => footerPages.includes(page.id)), socials])
+const footerPages = ref(
+  pages.value.flatMap((page) => {
+    if ([2, 3].includes(page.id)) return page.children
+    else return [page]
+  })
+)
 
 const currentPage = ref('Home')
 
@@ -114,7 +115,6 @@ function findPage(pages: Page[], path: string): Page | undefined {
 export default function usePages() {
   const parentRoute = computed(() => {
     const p = findPage(pages.value, currentPage.value)
-
     // If it's a child page, return the parent
     const parentPage = pages.value.find((page: Page) => page.children?.includes(p))
     if (parentPage !== undefined) {
@@ -130,7 +130,7 @@ export default function usePages() {
       currentPage.value = newPage
     },
     pages,
-    footerLinks,
+    footerPages,
     socials,
     tabs: computed(() => {
       const p = findPage(pages.value, currentPage.value)
