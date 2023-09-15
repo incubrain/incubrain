@@ -52,12 +52,19 @@
           View all
         </UButton>
       </CommonTimeline>
+    </div>
+    <CommonCTA
+      :title="cta.title"
+      :description="cta.description"
+      :image="cta.image"
+    />
+    <div class="spaced-y wrapper padded-x padded-y">
       <CommonCeoMessage
         :label="ceo.title"
         :title="ceo.title"
         :message="ceo.description"
       />
-      <PricingCards>
+      <PricingCards single-card>
         <UButton
           to="/contact"
           variant="outline"
@@ -66,23 +73,8 @@
           Enquire Now
         </UButton>
       </PricingCards>
-    </div>
-    <CommonCTA
-      :title="cta.title"
-      :description="cta.description"
-      :image="cta.image"
-    />
-    <div class="spaced-y wrapper padded-x padded-y">
       <CommonContactForm />
       <CommonFAQ :faqs="faqs" />
-      <BlogDisplay :posts="posts">
-        <UButton
-          to="/blog"
-          variant="outline"
-        >
-          View all
-        </UButton>
-      </BlogDisplay>
     </div>
   </div>
 </template>
@@ -231,14 +223,6 @@ const faqs = [
     content: 'One developer is assigned to each project.'
   }
 ]
-
-const { data: posts } = await useAsyncData('posts', () =>
-  queryContent('blog', 'business')
-    .where({ category: 'business' })
-    .only(['id', 'title', '_path', 'description', 'featured_image', 'authors', 'category', 'tags'])
-    .limit(3)
-    .find()
-)
 </script>
 
 <style scoped></style>

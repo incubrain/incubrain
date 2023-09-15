@@ -16,7 +16,12 @@
           Join The Team
         </UButton>
       </CommonSingleFeat>
-      <CommonTestimonial />
+      <CommonManyFeatures
+        :label="manyFeat.label"
+        :title="manyFeat.title"
+        :description="manyFeat.description"
+        :items="manyFeat.items"
+      />
     </div>
     <CommonCTA
       :title="cta.title"
@@ -29,6 +34,7 @@
         :title="ceo.title"
         :message="ceo.description"
       />
+      <CommonTestimonial />
       <BlogDisplay
         :posts="posts"
         label="our latest blog posts"
@@ -56,6 +62,51 @@ const singleFeat = {
   continuous learning, and teamwork. Our team is passionate about helping startups succeed and we believe that a strong company culture
   is the foundation for achieving our vision.`,
   image: 'images/hero.jpg'
+}
+
+const manyFeat = {
+  label: 'Features',
+  title: 'Why Incubrain',
+  description: `growing your business together
+  with us is a great idea`,
+  items: [
+    {
+      image: 'images/icon.png',
+      title: 'Resource Library',
+      description:
+        'Get support in talent acquisition and management. Access our network of skilled professionals to find the right talent for your business needs, ensuring you have the right team to drive success.'
+    },
+    {
+      image: 'images/icon.png',
+      title: 'Resource Library',
+      description:
+        'Get support in talent acquisition and management. Access our network of skilled professionals to find the right talent for your business needs, ensuring you have the right team to drive success.'
+    },
+    {
+      image: 'images/icon.png',
+      title: 'Resource Library',
+      description:
+        'Get support in talent acquisition and management. Access our network of skilled professionals to find the right talent for your business needs, ensuring you have the right team to drive success.'
+    },
+    {
+      image: 'images/icon.png',
+      title: 'Resource Library',
+      description:
+        'Get support in talent acquisition and management. Access our network of skilled professionals to find the right talent for your business needs, ensuring you have the right team to drive success.'
+    },
+    {
+      image: 'images/icon.png',
+      title: 'Resource Library',
+      description:
+        'Get support in talent acquisition and management. Access our network of skilled professionals to find the right talent for your business needs, ensuring you have the right team to drive success.'
+    },
+    {
+      image: 'images/icon.png',
+      title: 'Resource Library',
+      description:
+        'Get support in talent acquisition and management. Access our network of skilled professionals to find the right talent for your business needs, ensuring you have the right team to drive success.'
+    }
+  ]
 }
 
 const cta = {

@@ -25,7 +25,7 @@
         :class="route.fullPath.includes(page.slug) ? ' link-active' : ''"
       >
         <NuxtLink
-          v-if="!page.children"
+          v-if="!page.children?.length"
           :to="page.slug"
           class="h-full flex justify-center items-center"
         >

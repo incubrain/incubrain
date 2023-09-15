@@ -3,9 +3,7 @@
     <NuxtImg
       :src="image"
       alt="Hero Image"
-      class="absolute top-0 left-0 w-full object-left"
-      width="100%"
-      height="100%"
+      class="absolute top-0 left-0 w-full h-full object-left object-cover"
     />
     <div class="w-full h-full absolute top-0 left-0 bg-black/40" />
     <div class="space-y-4 lg:space-y-6 relative z-10 wrapper padded">

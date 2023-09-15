@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-1 lg:grid-cols-[0.5fr_1fr] items-start w-full gap-4 xl:gap-8 relative">
+  <div class="wrapper grid grid-cols-1 lg:grid-cols-[0.5fr_1fr] items-start w-full gap-4 xl:gap-8 relative">
     <BlogFilter />
     <div class="grid gap-4 grid-cols-1 xl:gap-8 md:grid-cols-2">
       <BlogCard

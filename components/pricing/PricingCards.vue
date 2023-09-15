@@ -5,10 +5,14 @@
       :title="pricing.title"
       :description="pricing.description"
       class="max-w-xl"
+      :alignment="singleCard ? 'center mx-auto' : 'left'"
     />
-    <div :class="`grid grid-cols-1 lg:grid-cols-${pricing.items.length || 1} gap-4 lg:gap-8`">
+    <div
+      :class="!singleCard ? `lg:grid-cols-${pricing.items.length || 1}` : 'lg:grid-cols-1'"
+      class="grid grid-cols-1 gap-4 lg:gap-8"
+    >
       <UCard
-        v-for="item in pricing.items"
+        v-for="item in pricing.items.slice(0, singleCard ? 1 : pricing.items.length)"
         :key="item.id"
         class="max-w-xl mx-auto"
       >
@@ -23,7 +27,7 @@
               />
             </div>
             <h4 class="font-semibold"> {{ item.title }}</h4>
-            <h2 class="text-xl lg:text-2xl font-semibold"> ${{ item.price }}/mo</h2>
+            <h2 class="text-xl lg:text-2xl font-semibold"> ${{ item.price }}</h2>
             <p> {{ item.description }}</p>
           </div>
         </template>
@@ -33,7 +37,10 @@
             :key="benefit"
             class="flex gap-3 items-center"
           >
-            <UIcon name="i-mdi-check" class="flex-shrink-0 text-primary-500" />
+            <UIcon
+              name="i-mdi-check"
+              class="flex-shrink-0 text-primary-500"
+            />
             {{ benefit }}
           </li>
         </ul>
@@ -44,7 +51,6 @@
 </template>
 
 <script setup lang="ts">
-
 const pricing = {
   label: 'Pricing',
   title: 'Our Pricing',
@@ -58,7 +64,7 @@ const pricing = {
       title: 'Business Starter',
       description: 'Get support in talent acquisition and management.',
       image: 'images/icon.png',
-      price: '1,250 PM',
+      price: '? PM',
       benefits: [
         'Get support in talent acquisition and management.',
         'Access our network of skilled professionals to find the right talent for your business needs, ensuring you have the right team to drive success.',
@@ -82,6 +88,12 @@ const pricing = {
   ]
 }
 
+defineProps({
+  singleCard: {
+    type: Boolean,
+    default: false
+  }
+})
 </script>
 
 <style scoped></style>

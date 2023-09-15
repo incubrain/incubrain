@@ -54,11 +54,11 @@
   }
 
   .padded-y {
-    @apply py-14 lg:py-28;
+    @apply py-16 lg:py-32;
   }
 
   .spaced-y {
-    @apply space-y-14 lg:space-y-28;
+    @apply space-y-16 lg:space-y-32;
   }
 
   .link-alt {
@@ -68,7 +68,7 @@
     @apply cursor-pointer text-primary-600 dark:text-primary-700 hover:text-primary-500 dark:hover:text-primary-600;
   }
   .foreground {
-    @apply bg-gray-50 dark:bg-neutral-900;
+    @apply bg-gray-100 dark:bg-neutral-900;
   }
   .background {
     @apply text-zinc-800 dark:text-zinc-300 bg-white dark:bg-neutral-950;

@@ -1,9 +1,9 @@
 <template>
   <div
-    class="flex flex-col overflow-hidden min-h-screen space-y-12 bg-gradient-to-br from-emerald-400 via-emerald-600 to-emerald-800 dark:from-emerald-800 dark:via-emerald-950 dark:to-slate-950"
+    class="flex flex-col overflow-hidden min-h-screen space-y-12 bg-gradient-to-br padded-y from-emerald-400 via-emerald-600 to-emerald-800 dark:from-emerald-800 dark:via-emerald-950 dark:to-slate-950"
   >
     <div
-      class="grid grid-cols-1 lg:grid-cols-2 justify-center items-center mx-auto padded-x overflow-hidden"
+      class="grid grid-cols-1 lg:grid-cols-2 justify-center items-center mx-auto padded-x lg:max-w-[calc(100%-320px)] overflow-hidden"
     >
       <div class="justify-center space-y-6 lg:space-y-8 lg:pr-20">
         <UBadge
@@ -24,6 +24,13 @@
           into powerful SaaS solutions. As active contributors to Nuxt open source, we're committed
           to fostering growth within the community and beyond.
         </p>
+        <UButton
+          to="/contact"
+          variant="outline"
+          class="w-full lg:w-auto"
+        >
+          Find Out more
+        </UButton>
       </div>
       <div class="flex justify-end items-end mr-0 w-full">
         <NuxtImg

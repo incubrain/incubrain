@@ -21,7 +21,7 @@
           <li
             v-for="link in footerPages"
             :key="link.label"
-            class="md:border-r border-color last:border-none last:pr-0 pb-2 md:pr-2"
+            class="md:border-r border-color last:border-none last:pr-0 pb-2 md:pr-2 md:pb-0"
           >
             <NuxtLink
               :to="link.slug"
