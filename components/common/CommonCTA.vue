@@ -5,12 +5,23 @@
       alt="Hero Image"
       class="absolute top-0 left-0 w-full h-full object-left object-cover"
     />
-    <div class="w-full h-full absolute top-0 left-0 bg-black/40" />
-    <div class="space-y-4 lg:space-y-6 relative z-10 wrapper padded">
-      <h2 class="text-xl lg:text-2xl font-bold">
-        {{ title }}
-      </h2>
-      <p class="text-base"> {{ description }}</p>
+    <div class="w-full h-full absolute top-0 left-0 bg-black/40 dark:bg-black/70" />
+    <div class="padded w-full wrapper">
+      <UAlert
+        class="w-full"
+        color="primary"
+        variant="subtle"
+        :title="title"
+      >
+        <template #title>
+          <h2 class="text-xl lg:text-2xl font-bold">
+            {{ title }}
+          </h2>
+        </template>
+        <template #description>
+          <p class="text-base leading-5"> {{ description }}</p>
+        </template>
+      </UAlert>
       <div class="flex gap-2">
         <slot />
       </div>

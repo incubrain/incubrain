@@ -1,5 +1,5 @@
 <template>
-  <div :class="`flex flex-col gapped text-${alignment}`">
+  <div :class="`flex flex-col gapped text-${alignment} lg:max-w-xl`">
     <p
       v-if="label"
       class="text-sm font-bold uppercase text-primary"
