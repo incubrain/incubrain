@@ -1,30 +1,40 @@
 <template>
-  <div class="flex flex-col space-y-6 lg:space-y-12">
-    <CommonTitle
-      :label="label"
-      :title="title"
-      :description="description"
-    />
-    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
-      <UCard
-        v-for="item in items"
-        :key="item.id"
+  <section id="how_it_works">
+    <div class="wrapper space-y-12">
+      <CommonTitle
+        :label="label"
+        :title="title"
+        :description="description"
+      />
+
+      <div
+        class="flex flex-wrap gap-4 md:grid md:grid-cols-[repeat(auto-fill,minmax(320px,1fr))] md:gap-6"
       >
-        <template #header>
-          <div class="flex gap-4 items-center">
-            <NuxtImg
-              :src="item.image"
-              alt="Hero Image"
-              width="100%"
-              height="100%"
-            />
-            <h3 class="text-lg lg:text-xl font-semibold"> {{ item.title }}</h3>
+        <div
+          v-for="item in items"
+          :key="item.title"
+          class="relative bounce-on-hover flex-none w-full overflow-hidden rounded-lg border border-color px-8 pb-8 pt-12"
+        >
+          <div
+            class="bg-pattern pointer-events-none absolute -right-[836px] -top-[448px] h-[651px] w-[1314px]"
+          />
+          <div class="relative">
+            <div
+              class="flex h-[32px] w-[32px] background items-center justify-center rounded-full border border-color"
+            >
+              <UIcon
+                :name="item.icon"
+                width="30px"
+                height="30px"
+              />
+            </div>
+            <h3 class="pt-2 text-lg font-medium">{{ item.title }}</h3>
+            <p class="text-base pt-2 font-normal">{{ item.description }}</p>
           </div>
-        </template>
-        <p> {{ item.description }}</p>
-      </UCard>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">

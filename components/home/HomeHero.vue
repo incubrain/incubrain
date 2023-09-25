@@ -1,9 +1,9 @@
 <template>
   <div
-    class="flex flex-col overflow-hidden min-h-screen space-y-12 bg-gradient-to-br padded-y from-emerald-400 via-emerald-600 to-emerald-800 dark:from-emerald-800 dark:via-emerald-950 dark:to-slate-950"
+    class="flex py-8 flex-col overflow-hidden min-h-screen space-y-12 bg-gradient-to-br from-emerald-400 via-emerald-600 to-emerald-800 dark:from-emerald-800 dark:via-emerald-950 dark:to-slate-950"
   >
     <div
-      class="grid grid-cols-1 lg:grid-cols-2 justify-center items-center mx-auto padded-x lg:max-w-[calc(100%-320px)] overflow-hidden"
+      class="grid grid-cols-1 lg:grid-cols-2 justify-center items-center mx-auto padded-x lg:p-0 lg:max-w-[calc(100%-320px)] overflow-hidden"
     >
       <div class="justify-center space-y-6 lg:space-y-8 lg:pr-20">
         <UBadge
@@ -18,21 +18,22 @@
             Incubrain ❤️'s Nuxt
           </a>
         </UBadge>
-        <h1 class="text-5xl font-bold leading-normal">Bringing your SaaS ideas to life</h1>
-        <p class="text-xl leading-relaxed">
+        <h1 class="text-4xl lg:text-5xl font-bold leading-tight"
+          >Bringing your SaaS ideas to life</h1
+        >
+        <p class="text-lg lg:text-xl leading-relaxed">
           Merging decades of startup experience with cutting-edge Nuxt 3 technology, we turn ideas
-          into powerful SaaS solutions. As active contributors to Nuxt open source, we're committed
-          to fostering growth within the community and beyond.
+          into powerful SaaS solutions.
         </p>
         <UButton
           to="/contact"
           variant="outline"
-          class="w-full lg:w-auto"
+          color="white"
         >
           Find Out more
         </UButton>
       </div>
-      <div class="flex justify-end items-end mr-0 w-full">
+      <div class="hidden lg:flex justify-end items-end mr-0 w-full">
         <NuxtImg
           src="images/incubrain-hero.png"
           alt="Incubrain"
@@ -42,16 +43,24 @@
       </div>
     </div>
     <div class="infinite-scroll lg:col-span-2">
-      <div class="flex gap-4 w-full">
-        <TransitionBounce
+      <div class="flex gap-8 w-full">
+        <div
           v-for="(feature, i) in allFeatures"
           :key="`feature-${i}`"
+          class="bounce-on-hover"
         >
-          <div class="rounded-md foreground shadow-md p-4 gap-4 flex-grow">
-            <h3 class="text-xl font-semibold mb-2">{{ feature.title }}</h3>
-            <p>{{ feature.description }}</p>
+          <div
+            class="relative h-full overflow-hidden pt-12 rounded-md shadow-lg background px-4 pb-4 gap-4 flex-grow"
+          >
+            <div
+              class="bg-pattern pointer-events-none absolute -right-[836px] -top-[448px] h-[651px] w-[1314px]"
+            />
+            <div class="relative">
+              <h3 class="text-xl font-semibold pb-2">{{ feature.title }}</h3>
+              <p>{{ feature.description }}</p>
+            </div>
           </div>
-        </TransitionBounce>
+        </div>
       </div>
     </div>
   </div>

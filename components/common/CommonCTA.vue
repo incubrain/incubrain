@@ -1,31 +1,27 @@
 <template>
-  <div class="relative overflow-hidden padded-y text-white flex justify-center items-center">
-    <NuxtImg
-      :src="image"
-      alt="Hero Image"
-      class="absolute top-0 left-0 w-full h-full object-left object-cover"
+  <div class="relative overflow-hidden padded-y flex justify-center items-center background">
+    <div
+      class="h-1/3 w-full absolute z-10 top-0 left-0 bg-gradient-to-b from-white via-white dark:via-neutral-950 dark:from-neutral-950 to-transparent"
     />
-    <div class="w-full h-full absolute top-0 left-0 bg-black/40 dark:bg-black/70" />
-    <div class="padded w-full wrapper">
-      <UAlert
-        class="w-full"
-        color="primary"
-        variant="subtle"
-        :title="title"
+    <div class="bg-pattern absolute z-0 top-0 left-0 w-full h-full" />
+    <div class="relative padded-y wrapper space-y-12 flex justify-center items-center flex-col">
+      <CommonTitle
+        label="CTA"
+        title="Something Amazing"
+        description="Some information about that amazing thing"
+        alignment="center"
+      />
+      <UButton
+        to="/contact"
+        variant="outline"
+        color="white"
       >
-        <template #title>
-          <h2 class="text-xl lg:text-2xl font-bold">
-            {{ title }}
-          </h2>
-        </template>
-        <template #description>
-          <p class="text-base leading-5"> {{ description }}</p>
-        </template>
-      </UAlert>
-      <div class="flex gap-2">
-        <slot />
-      </div>
+        Contact us
+      </UButton>
     </div>
+    <div
+      class="h-1/3 absolute z-10 bottom-0 w-full bg-gradient-to-b from-transparent via-white dark:via-neutral-950 to-white dark:to-neutral-950"
+    />
   </div>
 </template>
 

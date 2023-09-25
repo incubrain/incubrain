@@ -4,14 +4,33 @@
       title="FAQs"
       description="Find answers to frequently asked questions about our high-ticket service."
     />
-    <div>
+    <div class="grid lg:grid-cols-2 gap-2 lg:gap-4">
       <UAccordion
-        :ui="{ wrapper: 'grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8' }"
-        :items="faqs"
-        variant="outline"
+        :items="faqs.slice(0, Math.ceil(faqs.length / 2))"
+        variant="soft"
+        :ui="{ wrapper: 'space-y-2 lg:space-y-4' }"
         size="lg"
         multiple
-      />
+      >
+        <template #item="{ item }">
+          <p class="italic padded-x">
+            {{ item.description }}
+          </p>
+        </template>
+      </UAccordion>
+      <UAccordion
+        :items="faqs.slice(Math.ceil(faqs.length / 2))"
+        :ui="{ wrapper: 'space-y-2 lg:space-y-4' }"
+        variant="soft"
+        size="lg"
+        multiple
+      >
+        <template #item="{ item }">
+          <p class="italic padded-x">
+            {{ item.description }}
+          </p>
+        </template>
+      </UAccordion>
     </div>
   </div>
 </template>

@@ -22,6 +22,7 @@
         :description="manyFeat.description"
         :items="manyFeat.items"
       />
+      <CommonTest />
     </div>
     <CommonCTA
       :title="cta.title"
@@ -71,40 +72,40 @@ const manyFeat = {
   with us is a great idea`,
   items: [
     {
-      image: 'images/icon.png',
+      icon: 'i-mdi-github',
       title: 'Resource Library',
       description:
-        'Get support in talent acquisition and management. Access our network of skilled professionals to find the right talent for your business needs, ensuring you have the right team to drive success.'
+        'Get support in talent acquisition and management. Access our network of skilled professionals to find the right talent.'
     },
     {
-      image: 'images/icon.png',
+      icon: 'i-mdi-github',
       title: 'Resource Library',
       description:
-        'Get support in talent acquisition and management. Access our network of skilled professionals to find the right talent for your business needs, ensuring you have the right team to drive success.'
+        'Get support in talent acquisition and management. Access our network of skilled professionals to find the right talent.'
     },
     {
-      image: 'images/icon.png',
+      icon: 'i-mdi-github',
       title: 'Resource Library',
       description:
-        'Get support in talent acquisition and management. Access our network of skilled professionals to find the right talent for your business needs, ensuring you have the right team to drive success.'
+        'Get support in talent acquisition and management. Access our network of skilled professionals to find the right talent.'
     },
     {
-      image: 'images/icon.png',
+      icon: 'i-mdi-github',
       title: 'Resource Library',
       description:
-        'Get support in talent acquisition and management. Access our network of skilled professionals to find the right talent for your business needs, ensuring you have the right team to drive success.'
+        'Get support in talent acquisition and management. Access our network of skilled professionals to find the right talent.'
     },
     {
-      image: 'images/icon.png',
+      icon: 'i-mdi-github',
       title: 'Resource Library',
       description:
-        'Get support in talent acquisition and management. Access our network of skilled professionals to find the right talent for your business needs, ensuring you have the right team to drive success.'
+        'Get support in talent acquisition and management. Access our network of skilled professionals to find the right talent.'
     },
     {
-      image: 'images/icon.png',
+      icon: 'i-mdi-github',
       title: 'Resource Library',
       description:
-        'Get support in talent acquisition and management. Access our network of skilled professionals to find the right talent for your business needs, ensuring you have the right team to drive success.'
+        'Get support in talent acquisition and management. Access our network of skilled professionals to find the right talent.'
     }
   ]
 }
@@ -127,42 +128,59 @@ const ceo = {
   is the foundation for achieving our vision.`
 }
 
+const twoFeat = [
+  {
+    image: '/vectors/first_startup.svg',
+    title: 'Crie sua própria startup',
+    description:
+      'Aprenda a criar um MVP, estude desenvolvimento de produto e coloque suas ideias em prática.',
+    cta: 'Criar minha conta'
+  },
+  {
+    image: '/vectors/first_job.svg',
+    title: 'Consiga seu primeiro emprego',
+    description:
+      'Construa projetos reais, melhore seu portfólio e se destaque nas vagas de emprego.',
+    cta: 'Começar agora'
+  }
+]
+
 const faqs = [
   {
     label: 'How many developers are assigned?',
-    content: 'One developer is assigned to each project.'
+    description: 'One developer is assigned to each project.'
   },
   {
     label: 'How many developers are assigned?',
-    content: 'One developer is assigned to each project.'
+    description: 'One developer is assigned to each project.'
   },
   {
     label: 'How many developers are assigned?',
-    content: 'One developer is assigned to each project.'
+    description: 'One developer is assigned to each project.'
   },
   {
     label: 'How many developers are assigned?',
-    content: 'One developer is assigned to each project.'
+    description: 'One developer is assigned to each project.'
   },
   {
     label: 'How many developers are assigned?',
-    content: 'One developer is assigned to each project.'
+    description: 'One developer is assigned to each project.'
   },
   {
     label: 'How many developers are assigned?',
-    content: 'One developer is assigned to each project.'
+    description: 'One developer is assigned to each project.'
   },
   {
     label: 'How many developers are assigned?',
-    content: 'One developer is assigned to each project.'
+    description: 'One developer is assigned to each project.'
   },
   {
     label: 'How many developers are assigned?',
-    content: 'One developer is assigned to each project.'
+    description: 'One developer is assigned to each project.'
   },
   {
     label: 'How many developers are assigned?',
-    content: 'One developer is assigned to each project.'
+    description: 'One developer is assigned to each project.'
   }
 ]
 
