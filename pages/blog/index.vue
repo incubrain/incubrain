@@ -1,22 +1,67 @@
 <template>
-  <div
-    class="grid gap-2 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 lg:gap-6 xl:gap-8 xl:grid-cols-2"
-  >
-    <BlogCard2 />
+  <div class="wrapper grid grid-cols-1 lg:grid-cols-[0.5fr_1fr] items-start w-full gap-4 xl:gap-8 relative">
+    <BlogFilter />
+    <div class="grid gap-4 grid-cols-1 xl:gap-8 md:grid-cols-2">
+      <BlogCard
+        v-for="post in posts"
+        :key="post.id"
+        :post="post"
+      />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+const categories = ref(['all', 'frontend', 'backend', 'business', 'projects'])
+const tags = ref([
+  // frontend
+  'nuxt',
+  'vue',
+  'typescript',
+  // backend
+  'nitro',
+  'supabase',
+  'postgresql',
+  'auth',
+  'ci/cd',
+  // design
+  'tailwindcss',
+  // general
+  'learning',
+  'code quality',
+  'testing',
+  'productivity'
+])
+
+const filter = useFiltersStore()
+const { addCategories, addTags } = filter
+const { selectedCategory, selectedTags } = storeToRefs(filter)
+
+addTags(tags.value)
+addCategories(categories.value)
+
+const posts = ref()
+
+watchEffect(async () => {
+  if (selectedCategory.value === 'all') {
+    posts.value = await queryContent('blog')
+      .where({ tags: { $in: selectedTags.value } })
+      .skip(0)
+      .limit(10)
+      .find()
+  } else {
+    posts.value = await queryContent('blog')
+      .where({ category: selectedCategory.value, tags: { $in: selectedTags.value } })
+      .skip(0)
+      .limit(10)
+      .find()
+  }
+})
+
 definePageMeta({
   layout: 'tabbed',
   name: 'BlogAll'
 })
 </script>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap');
-
-.blog-heading {
-  font-family: 'Rubik Distressed', cursive;
-}
-</style>
+<style></style>

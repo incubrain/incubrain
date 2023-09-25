@@ -1,0 +1,103 @@
+@import './scrollbar.css';
+@import './transitions.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --nav-height-mobi: 46px;
+    --nav-height-sm: 50px;
+    --nav-height-lg: 60px;
+    --scroll-width-md: 12px;
+    --scroll-width-sm: 0px;
+    --max-width-sm: 840px;
+    --max-width-md: 1040px;
+    --max-width-lg: 1140px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  .card {
+    @apply w-full p-4 border border-zinc-300 dark:border-zinc-800 md:p-12 md:rounded-lg md:shadow-sm bg-zinc-200 dark:bg-zinc-900;
+  }
+}
+
+@layer utilities {
+  .nav-link {
+    @apply cursor-pointer text-zinc-800 dark:text-zinc-100 hover:text-primary-600 dark:hover:text-primary-700;
+  }
+  .link {
+    @apply cursor-pointer text-primary-600 dark:text-primary-700 hover:text-primary-500 dark:hover:text-primary-600;
+  }
+  .wrapper {
+    @apply max-w-[var(--max-width-md)] lg:max-w-[var(--max-width-lg)] mx-auto;
+  }
+
+  .padded {
+    @apply p-4 lg:p-8;
+  }
+
+  .gapped {
+    @apply gap-2 lg:gap-4;
+  }
+
+  .padded-x {
+    @apply px-4 lg:px-8;
+  }
+
+  .padded-y {
+    @apply py-16 lg:py-32;
+  }
+
+  .spaced-y {
+    @apply space-y-16 lg:space-y-32;
+  }
+
+  .link-alt {
+    @apply cursor-pointer font-semibold hover:text-primary-700 dark:hover:text-primary-600;
+  }
+  .link-active {
+    @apply cursor-pointer text-primary-600 dark:text-primary-700 hover:text-primary-500 dark:hover:text-primary-600;
+  }
+  .foreground {
+    @apply bg-gray-100 dark:bg-neutral-900;
+  }
+  .background {
+    @apply text-zinc-800 dark:text-zinc-300 bg-white dark:bg-neutral-950;
+  }
+  .bg-light {
+    @apply text-zinc-800 dark:text-zinc-300 bg-zinc-100 dark:bg-zinc-300;
+  }
+  .border-color {
+    @apply border-zinc-200 dark:border-zinc-800;
+  }
+  .ring-color {
+    @apply ring-zinc-200 dark:ring-zinc-800;
+  }
+  .divide-color {
+    @apply divide-zinc-200 dark:divide-zinc-800;
+  }
+  .border-inverted {
+    @apply border-zinc-800 dark:border-zinc-300;
+  }
+  body {
+    @apply text-zinc-800 dark:text-zinc-300 bg-white dark:bg-neutral-950 border-zinc-300 dark:border-zinc-800;
+  }
+  .text-light {
+    @apply text-zinc-100 dark:text-zinc-300;
+  }
+  .home-width {
+    @apply max-w-[100%] md:max-w-[80%] lg:max-w-[1240px];
+  }
+  .inverted {
+    @apply text-[#fff];
+  }
+}

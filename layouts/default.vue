@@ -1,15 +1,15 @@
 <template>
-  <div>
-    <NavMain />
-    <AppTabs>
+  <div class="w-full">
+    <NavTop />
+    <AppBody :mobi-bottom-nav="false">
       <slot />
-    </AppTabs>
+      <UNotifications />
+      <NavFooterWebsite />
+    </AppBody>
   </div>
 </template>
 
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <style>
 html {

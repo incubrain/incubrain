@@ -1,22 +1,23 @@
 <template>
   <div>
-    <NavMain />
-    <AppTabs>
-      <AppLoader v-if="parentRoute[1] !== 'get-lost'" :duration="2000" :throttle="1000" />
-      <slot />
-    </AppTabs>
+    <NavTop />
+    <AppBody :mobi-bottom-nav="false">
+      <BlogShowcasePage v-if="parentRoute[1]" />
+      <div class="p-4 xl:p-8 lg:py-20">
+        <slot />
+      </div>
+      <UNotifications />
+      <NavFooterWebsite />
+    </AppBody>
   </div>
 </template>
 
 <script setup lang="ts">
-
 const route = useRoute()
 const parentRoute = computed(() => route.path.split('/'))
-
 </script>
 
 <style>
-
 html {
   margin: 0;
   padding: 0;
@@ -27,5 +28,4 @@ html {
   padding: 0;
   margin: 0;
 }
-
 </style>

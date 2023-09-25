@@ -1,0 +1,147 @@
+<template>
+  <div
+    class="flex flex-col overflow-hidden min-h-screen space-y-12 bg-gradient-to-br padded-y from-emerald-400 via-emerald-600 to-emerald-800 dark:from-emerald-800 dark:via-emerald-950 dark:to-slate-950"
+  >
+    <div
+      class="grid grid-cols-1 lg:grid-cols-2 justify-center items-center mx-auto padded-x lg:max-w-[calc(100%-320px)] overflow-hidden"
+    >
+      <div class="justify-center space-y-6 lg:space-y-8 lg:pr-20">
+        <UBadge
+          size="md"
+          color="emerald"
+          variant="solid"
+        >
+          <a
+            href="https://nuxt.com/"
+            target="_blank"
+          >
+            Incubrain ❤️'s Nuxt
+          </a>
+        </UBadge>
+        <h1 class="text-5xl font-bold leading-normal">Bringing your SaaS ideas to life</h1>
+        <p class="text-xl leading-relaxed">
+          Merging decades of startup experience with cutting-edge Nuxt 3 technology, we turn ideas
+          into powerful SaaS solutions. As active contributors to Nuxt open source, we're committed
+          to fostering growth within the community and beyond.
+        </p>
+        <UButton
+          to="/contact"
+          variant="outline"
+          class="w-full lg:w-auto"
+        >
+          Find Out more
+        </UButton>
+      </div>
+      <div class="flex justify-end items-end mr-0 w-full">
+        <NuxtImg
+          src="images/incubrain-hero.png"
+          alt="Incubrain"
+          width="600"
+          height="600"
+        />
+      </div>
+    </div>
+    <div class="infinite-scroll lg:col-span-2">
+      <div class="flex gap-4 w-full">
+        <TransitionBounce
+          v-for="(feature, i) in allFeatures"
+          :key="`feature-${i}`"
+        >
+          <div class="rounded-md foreground shadow-md p-4 gap-4 flex-grow">
+            <h3 class="text-xl font-semibold mb-2">{{ feature.title }}</h3>
+            <p>{{ feature.description }}</p>
+          </div>
+        </TransitionBounce>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+const title = ref('Ignite Your Ideas with Incubrain')
+const description = ref(
+  "Merging decades of startup experience with cutting-edge Nuxt 3 technology, we turn ideas into powerful SaaS solutions. As active contributors to Nuxt open source, we're committed to fostering growth within the community and beyond."
+)
+
+const features = [
+  {
+    id: 1,
+    title: 'Nuxt 3',
+    description:
+      'We are the first Nuxt 3 adopters and are actively contributing to the Nuxt 3 ecosystem.',
+    icon: 'i-mdi-nuxt'
+  },
+  {
+    id: 2,
+    title: 'SaaS',
+    description:
+      'We have decades of experience building SaaS products and can help you build yours.',
+    icon: 'i-mdi-cloud'
+  },
+  {
+    id: 3,
+    title: 'Third',
+    description:
+      'We are committed to open source and are actively contributing to the Nuxt 3 ecosystem.',
+    icon: 'i-mdi-github'
+  },
+  {
+    id: 4,
+    title: 'Fourth',
+    description:
+      'We are committed to open source and are actively contributing to the Nuxt 3 ecosystem.',
+    icon: 'i-mdi-github'
+  },
+  {
+    id: 5,
+    title: 'Fifth',
+    description:
+      'We are committed to open source and are actively contributing to the Nuxt 3 ecosystem.',
+    icon: 'i-mdi-github'
+  },
+  {
+    id: 6,
+    title: 'Sixth',
+    description:
+      'We are committed to open source and are actively contributing to the Nuxt 3 ecosystem.',
+    icon: 'i-mdi-github'
+  },
+  {
+    id: 7,
+    title: 'Seventh',
+    description:
+      'We are committed to open source and are actively contributing to the Nuxt 3 ecosystem.',
+    icon: 'i-mdi-github'
+  }
+]
+
+const allFeatures = [...features, ...features]
+
+useHead({ title: title.value, meta: [{ name: description.value }] })
+</script>
+
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+@keyframes scrollRightToLeft {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-2072px);
+  }
+}
+
+.infinite-scroll {
+  width: 4144px;
+  animation: scrollRightToLeft 80s linear infinite;
+}
+
+.infinite-scroll:hover {
+  animation-play-state: paused;
+}
+</style>

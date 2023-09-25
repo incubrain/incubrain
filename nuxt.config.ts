@@ -7,66 +7,118 @@ export default defineNuxtConfig({
       device: 'desktop'
     }
   },
+
   app: {
     layoutTransition: { name: 'layout', mode: 'out-in' },
+    pageTransition: { name: 'page', mode: 'out-in' },
     head: {
-      link: [
-        { rel: 'stylesheet', href: 'https://unpkg.com/flowbite@latest/dist/flowbite.min.css' }
-      ],
-      script: [{ src: 'https://unpkg.com/flowbite@latest/dist/flowbite.js' }]
+      // link: [
+      // { rel: 'stylesheet', href: 'https://unpkg.com/flowbite@latest/dist/flowbite.min.css' }
+      // ]
+      // script: [{ src: 'https://unpkg.com/flowbite@latest/dist/flowbite.js' }]
     }
   },
-  css: ['/assets/main.css', '@milkdown/theme-nord/style.css'],
+
   modules: [
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/supabase',
-    '@pinia/nuxt',
     '@nuxt/content',
     '@unlighthouse/nuxt',
-    '@nuxt/image'
+    '@nuxt/image-edge',
+    '@nuxt/ui',
+    '@vueuse/nuxt',
+    'nuxt-swiper',
+    [
+      '@pinia/nuxt',
+      {
+        autoImports: ['defineStore', 'acceptHMRUpdate', 'storeToRefs']
+      }
+    ]
   ],
+
   typescript: {
-    shim: false
+    shim: false,
+    tsConfig: {
+      exclude: ['node_modules', 'dist'],
+      compilerOptions: {
+        // types: ['@nuxt/types', 'vite/client', './types/types.d.ts'],
+        strict: true
+      }
+    }
   },
+
+  colorMode: {
+    classSuffix: ''
+  },
+
+  ui: {
+    icons: ['mdi', 'heroicons', 'material-symbols']
+  },
+
+  image: {
+    format: ['webp', 'jpg', 'png']
+  },
+
   runtimeConfig: {
     // The private keys which are only available within server-side
-    apiSecret: '123',
+    SLACK_ENQUIRE_URL: process.env.SLACK_ENQUIRE_URL,
     // Keys within public, will be also exposed to the client-side
     public: {
-      supabase: {
-        // Options
-        url: process.env.SUPABASE_URL,
-        key: process.env.SUPABASE_KEY
-      },
       api_url: process.env.API_URL_BASE
     }
   },
-  build: {
-    transpile: [
-      '@headlessui/vue',
-      'chart.js',
-      '@fortawesome/fontawesome-svg-core',
-      '@fortawesome/pro-solid-svg-icons',
-      '@fortawesome/pro-regular-svg-icons',
-      '@fortawesome/pro-light-svg-icons',
-      '@fortawesome/free-brands-svg-icons'
-    ]
+
+  routeRules: {
+    // pre-rendered at build time
+    '/': { prerender: true },
+    '/about/**': { prerender: true },
+    '/services/**': { prerender: true },
+    // Blog post generated on-demand once until next deploy
+    '/blog/**': { isr: true },
+    // Add cors headers on API routes
+    '/api/**': { cors: true }
   },
+
   nitro: {
-    preset: 'digital-ocean'
+    preset: 'vercel_edge',
+    // Production
+    storage: {
+      data: {
+        driver: 'vercelKV',
+        base: 'incubrain:'
+      }
+    },
+    // Development
+    devStorage: {
+      data: {
+        driver: 'fs',
+        base: './data/kv'
+      }
+    }
   },
+
+  imports: {
+    dirs: ['stores', 'data']
+  },
+
   ssr: true,
+
+  swiper: {
+    // prefix: 'Swiper',
+    styleLang: 'css',
+    modules: ['navigation', 'autoplay', 'grid'] // import modules as needed https://nuxt.com/modules/swiper#module-options
+  },
+
   content: {
     highlight: {
       // Theme used in all color schemes.
       theme: {
-        // Default theme (same as single string)
         default: 'github-dark',
-        // Theme used if `html.dark`
-        dark: 'github-light',
-        // Theme used if `html.sepia`
+        dark: 'github-dark',
         sepia: 'monokai'
       }
     }
+  },
+
+  devtools: {
+    enabled: true
   }
 })

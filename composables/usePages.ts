@@ -2,100 +2,104 @@ import { ref, computed } from 'vue'
 
 interface Page {
   id: number
-  component: string
-  title: string
-  current: boolean
+  icon: string
+  label: string
   slug: string
   children?: Page[]
 }
 
 const pages = ref([
-  { id: 0, title: 'Home', current: true, slug: '/' },
   {
     id: 1,
-    title: 'Projects',
-    current: false,
-    slug: '/projects',
-    children: [
-      {
-        id: 11,
-        title: 'Frontend',
-        current: false,
-        slug: '/projects/frontend'
-      },
-      { id: 12, title: 'Backend', current: false, slug: '/projects/backend' },
-      {
-        id: 13,
-        title: 'Business',
-        current: false,
-        slug: '/projects/business'
-      }
-    ]
+    label: 'Blog',
+    icon: 'i-mdi-chevron-right',
+    slug: '/blog'
   },
   {
     id: 2,
-    title: 'Blog',
-    current: false,
-    slug: '/blog',
+    label: 'Services',
+    icon: 'i-mdi-chevron-right',
+    slug: '/services',
     children: [
       {
         id: 21,
-        title: 'Frontend',
-        current: false,
-        slug: '/blog/frontend'
+        label: 'Hire us',
+        icon: 'i-mdi-chevron-right',
+        slug: '/services/hire-us'
       },
-      { id: 22, title: 'Backend', current: false, slug: '/blog/backend' },
-      { id: 23, title: 'Business', current: false, slug: '/blog/business' },
       {
-        id: 24,
-        title: 'Challenges',
-        current: false,
-        slug: '/blog/challenges'
+        id: 22,
+        label: 'Business starter',
+        icon: 'i-mdi-chevron-right',
+        slug: '/services/business-starter'
       }
     ]
   },
   {
     id: 3,
-    title: 'Examples',
-    current: false,
-    slug: '/examples',
+    label: 'About',
+    icon: 'i-mdi-chevron-right',
+    slug: '/about',
     children: [
-      { id: 31, title: 'Charts', current: false, slug: '/examples/charts' },
-      // { id: 22, component: 'ExamplesLists',  title: 'Lists', current: false, slug: '/examples/lists' },
-      { id: 33, title: 'Mobile', current: false, slug: '/examples/mobile' },
-      { id: 34, title: 'UI', current: false, slug: '/examples/ui' },
-      // { id: 25, component: 'ExamplesBasic', title: 'Basic', current: false, slug: '/examples/basic' },
-      // { id: 25, component: 'ExamplesClothing', title: 'Ecommerce', current: false, slug: '/examples/clothing' },
-      {
-        id: 36,
-        title: 'Patterns',
-        current: false,
-        slug: '/examples/patterns'
-      },
-      { id: 37, title: 'Lotties', current: false, slug: '/examples/lottie' },
-      { id: 38, title: 'Icons', current: false, slug: '/examples/icons' },
-      {
-        id: 39,
-        title: 'Milkdown',
-        current: false,
-        slug: '/examples/milkdown'
-      }
+      { id: 30, label: 'About', icon: 'i-mdi-chevron-right', slug: '/about' },
+      // { id: 31, label: 'Culture', icon: 'i-mdi-chevron-right', slug: '/about/culture' },
+      // { id: 32, label: 'Team', icon: 'i-mdi-chevron-right', slug: '/about/team' },
+      { id: 33, label: 'Stack', icon: 'i-mdi-chevron-right', slug: '/about/stack' }
     ]
   },
   {
     id: 4,
-    title: 'Stack',
-    current: false,
-    slug: '/stack',
-    children: [{ id: 42, title: 'Tools', current: false, slug: '/stack/tools' }]
+    label: 'Contact',
+    icon: 'i-mdi-chevron-right',
+    slug: '/contact',
+    children: []
   }
 ] as Page[])
+
+const socials = ref({
+  id: 0,
+  slug: '',
+  label: 'Socials',
+  icon: 'i-mdi-chevron-right',
+  children: [
+    {
+      id: 1,
+      label: 'Github',
+      slug: 'https://github.com/yourusername',
+      icon: 'i-mdi-github'
+    },
+    {
+      id: 2,
+      label: 'LinkedIn',
+      slug: 'https://linkedin.com/in/yourusername',
+      icon: 'i-mdi-linkedin'
+    },
+    {
+      id: 3,
+      label: 'YouTube',
+      slug: 'https://youtube.com/channel/yourchannelid',
+      icon: 'i-mdi-youtube'
+    },
+    {
+      id: 4,
+      label: 'Instagram',
+      slug: 'https://instagram.com/yourusername',
+      icon: 'i-mdi-instagram'
+    }
+  ]
+})
+
+const footerPages = ref(
+  pages.value.flatMap((page) => {
+    if ([2, 3].includes(page.id)) return page.children
+    else return [page]
+  })
+)
 
 const currentPage = ref('Home')
 
 function findPage(pages: Page[], path: string): Page | undefined {
   for (const page of pages) {
-    console.log('page', page.slug, path)
     if (page.slug === path) {
       return page
     }
@@ -111,7 +115,6 @@ function findPage(pages: Page[], path: string): Page | undefined {
 export default function usePages() {
   const parentRoute = computed(() => {
     const p = findPage(pages.value, currentPage.value)
-
     // If it's a child page, return the parent
     const parentPage = pages.value.find((page: Page) => page.children?.includes(p))
     if (parentPage !== undefined) {
@@ -126,7 +129,9 @@ export default function usePages() {
     setPage: (newPage: string) => {
       currentPage.value = newPage
     },
-    pages: computed(() => pages.value),
+    pages,
+    footerPages,
+    socials,
     tabs: computed(() => {
       const p = findPage(pages.value, currentPage.value)
       if (p === undefined) return []
@@ -134,12 +139,12 @@ export default function usePages() {
       // If it's a child page, return the parent and all its children as tabs
       const parentPage = pages.value.find((page: Page) => page.children?.includes(p))
       if (parentPage !== undefined) {
-        return [parentPage, ...parentPage.children]
+        return [parentPage, ...(parentPage.children || [])]
       }
 
       // If it's a parent page, return it and all its children as tabs
       if (p.children !== undefined) {
-        return [p, ...p.children]
+        return [p, ...(p.children || [])]
       }
 
       // If it's a standalone page without children, return only this page as a tab

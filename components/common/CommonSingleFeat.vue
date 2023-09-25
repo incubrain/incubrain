@@ -1,0 +1,46 @@
+<template>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+    <div class="space-y-4 lg:space-y-6">
+      <CommonTitle
+        :label="label"
+        :title="title"
+        :description="description"
+      />
+      <div class="flex gap-2">
+        <slot />
+      </div>
+    </div>
+    <div class="w-full h-full">
+      <NuxtImg
+        :src="image"
+        alt="Hero Image"
+        class="rounded-sm"
+        width="100%"
+        height="100%"
+      />
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+defineProps({
+  label: {
+    type: String,
+    default: 'label'
+  },
+  title: {
+    type: String,
+    default: 'Title'
+  },
+  description: {
+    type: String,
+    default: 'Description'
+  },
+  image: {
+    type: String,
+    default: '/images/hero.jpg'
+  }
+})
+</script>
+
+<style scoped></style>

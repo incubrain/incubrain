@@ -1,26 +1,63 @@
 <template>
   <div v-if="post.title">
-    <BlogToTop />
-    <div class="max-w-[760px] mx-auto flex flex-col prose justify-center">
-      <ContentRenderer :value="post">
-        <div class="my-10 lg:my-10 flex flex-col justify-center">
-          <img
-            :src="useAsset(post.featured_image)"
-            class="rounded-xl shadow-xl"
-          />
-          <h1 class="text-4xl lg:text-6xl leading-10 text-center">
-            {{ post.title }}
-          </h1>
-          <div class="flex flex-row gap-2items-center justify-center">
-            <p class="font-semibold"> Published: {{ post.published }} </p>
+    <div class="mx-auto flex flex-col justify-center">
+      <ContentRenderer
+        :value="post"
+        class="container"
+      >
+        <NuxtImg
+          :src="`images/blog/${post.featured_image}`"
+          class="lg:rounded-t-xl shadow-xl"
+          width="1080"
+          height="605"
+        />
+        <div class="lg:foreground rounded-b-md pb-20 px-4 shadow-sm">
+          <div class="my-10 flex gap-6 flex-col justify-center items-center w-full">
+            <h1 class="text-4xl lg:text-5xl text-center leading-tight">
+              {{ post.title }}
+            </h1>
+            <div class="flex flex-row gap-2 items-center justify-center">
+              <p class="font-semibold"> Published {{ post.published }} </p>
+              <p class="font-semibold"> By </p>
+              <div
+                v-for="author in authorNames.filter((a) => post.authors.includes(a.id))"
+                :key="`post-author-${author.id}`"
+              >
+                <span class="font-semibold"> {{ author.givenName }} {{ author.surname }} </span>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <UBadge
+                :label="post.category"
+                color="primary"
+                variant="solid"
+                class="text-sm"
+              />
+              <UBadge
+                v-for="tag in post.tags"
+                :key="tag"
+                :label="tag"
+                color="secondary"
+                variant="soft"
+                class="text-sm"
+              />
+            </div>
+            <BlogFloat :slug="post._id.replaceAll(':', '/')" />
           </div>
-        </div>
-        <div class="max-w-[920px] mx-auto">
-          <ContentRendererMarkdown :value="post.body">
-            <p class="m-0">
-              {{ post.body }}
-            </p>
-          </ContentRendererMarkdown>
+          <div class="mx-auto px-4 prose dark:prose-invert lg:px-0">
+            <UAlert
+              color="primary"
+              variant="outline"
+              title="Overview"
+              :description="String(post.description)"
+            />
+            <!-- <BlogToc :toc="post.body.toc.links" /> -->
+            <ContentRendererMarkdown :value="post.body">
+              <p class="m-0">
+                {{ post.body }}
+              </p>
+            </ContentRendererMarkdown>
+          </div>
         </div>
       </ContentRenderer>
     </div>
@@ -28,6 +65,13 @@
 </template>
 
 <script setup lang="ts">
+const authorNames = [
+  {
+    id: 1,
+    givenName: 'Drew',
+    surname: 'MacGibbon'
+  }
+]
 
 defineProps({
   post: {
@@ -35,14 +79,6 @@ defineProps({
     required: true
   }
 })
-
-function useAsset(path: string): string {
-  const assets = import.meta.glob('~/assets/**/*', {
-    eager: true,
-    import: 'default'
-  })
-  // @ts-expect-error: wrong type info
-  return assets['/assets/' + path]
-}
-
 </script>
+
+<style></style>
