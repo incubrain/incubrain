@@ -1,9 +1,9 @@
 <template>
   <div
-    class="flex py-8 flex-col overflow-hidden min-h-screen space-y-12 bg-gradient-to-br from-emerald-400 via-emerald-600 to-emerald-800 dark:from-emerald-800 dark:via-emerald-950 dark:to-slate-950"
+    class="flex py-8 flex-col overflow-hidden space-y-12 bg-gradient-to-br justify-between from-emerald-400 via-emerald-600 to-emerald-800 dark:from-emerald-800 dark:via-emerald-950 dark:to-slate-950"
   >
     <div
-      class="grid grid-cols-1 lg:grid-cols-2 justify-center items-center mx-auto padded-x lg:p-0 lg:max-w-[calc(100%-320px)] overflow-hidden"
+      class="grid grid-cols-1 lg:grid-cols-2 justify-center h-full items-center mx-auto padded-x p-8 wrapper-hero overflow-hidden"
     >
       <div class="justify-center space-y-6 lg:space-y-8 lg:pr-20">
         <UBadge
@@ -34,15 +34,21 @@
         </UButton>
       </div>
       <div class="hidden lg:flex justify-end items-end mr-0 w-full">
-        <NuxtImg
-          src="images/incubrain-hero.png"
-          alt="Incubrain"
-          width="600"
-          height="600"
-        />
+        <div
+          class="flex w-full h-full background rounded-[90%_40%] overflow-hidden justify-center relative items-center shadow-lg"
+        >
+          <div class="bg-pattern absolute z-0 top-0 left-0 w-full h-full" />
+          <NuxtImg
+            src="images/incubrain-hero.png"
+            alt="Incubrain"
+            width="500"
+            height="500"
+            class="relative"
+          />
+        </div>
       </div>
     </div>
-    <div class="infinite-scroll lg:col-span-2">
+    <div class="infinite-scroll lg:col-span-2 pt-12">
       <div class="flex gap-8 w-full">
         <div
           v-for="(feature, i) in allFeatures"

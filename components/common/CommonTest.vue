@@ -34,9 +34,9 @@
             </div>
           </div>
         </div>
-        <div class="col-span-1 h-full md:col-span-2 lg:col-span-1 lg:row-span-2 group space-y-6">
+        <div class="col-span-1 flex flex-col h-full md:col-span-2 lg:col-span-1 lg:row-span-2 group space-y-6">
           <div
-            class="relative mb-6 min-h-[258px] overflow-hidden rounded-lg border border-solid border-color px-8 pb-6 pt-10 text-3xl font-semibold"
+            class="relative h-full overflow-hidden rounded-lg border border-solid border-color px-8 pb-6 pt-10 text-3xl font-semibold"
           >
             <NuxtImg
               loading="lazy"
@@ -49,7 +49,7 @@
             <h3 class="relative mb-6"> Global Founder Network </h3>
           </div>
           <div
-            class="relative min-h-[200px] flex-grow overflow-hidden rounded-lg border border-solid border-color py-6 px-8 text-3xl font-semibold flex items-end text-right"
+            class="relative h-full flex-grow overflow-hidden rounded-lg border border-solid border-color py-6 px-8 text-3xl font-semibold flex items-end text-right"
           >
             <div class="absolute top-0 left-0 w-full h-[99px]">
               <NuxtImg

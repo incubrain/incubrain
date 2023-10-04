@@ -8,13 +8,7 @@
         :title="singleFeat.title"
         image="images/hero.jpg"
       >
-        <UButton to="/about"> Learn More </UButton>
-        <UButton
-          to="/about"
-          variant="outline"
-        >
-          Join The Team
-        </UButton>
+        <UButton to="/about" variant="outline"> Learn More </UButton>
       </CommonSingleFeat>
       <CommonManyFeatures
         :label="manyFeat.label"

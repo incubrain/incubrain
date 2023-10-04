@@ -41,6 +41,10 @@
     @apply max-w-[var(--max-width-md)] lg:max-w-[var(--max-width-lg)] mx-auto;
   }
 
+  .wrapper-hero {
+    @apply max-w-[var(--max-width-md)] lg:max-w-[calc(var(--max-width-lg)+320px)] mx-auto;
+  }
+
   .padded {
     @apply p-4 lg:p-8;
   }

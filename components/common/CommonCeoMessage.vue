@@ -1,17 +1,23 @@
 <template>
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center justify-center">
     <CommonTitle
       :label="label"
       :title="title"
       :description="message"
     />
-    <div class="gap-3 flex flex-col flex-shrink-0 justify-center items-center">
-      <div class="overflow-hidden flex foreground rounded-md h-64 px-4 pt-4">
-        <NuxtImg
-          src="images/team/drew-macgibbon.png"
-          alt="Drew MacGibbon Ceo/Founder of Incubrain"
-          class="-mb-28"
-        />
+    <div class="gap-3 flex flex-col w-full items-center">
+      <div class="relative w-full flex justify-center items-center">
+        <div
+          class="flex w-[600px] lg:w-full h-full relative rounded-[90%_40%] overflow-x-hidden justify-center items-center shadow-md border-2 border-color"
+        >
+          <div class="bg-pattern absolute z-0 top-0 left-0 w-full h-full" />
+          <NuxtImg
+            src="images/team/drew-macgibbon.png"
+            alt="Drew MacGibbon Ceo/Founder of Incubrain"
+            height="600"
+            class="relative"
+          />
+        </div>
       </div>
       <div>
         <h4 class="font-semibold">Drew MacGibbon</h4>

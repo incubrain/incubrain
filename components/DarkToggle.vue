@@ -1,7 +1,7 @@
 <template>
-  <UButton variant="link">
+  <div class="flex">
     <slot v-bind="context" />
-  </UButton>
+  </div>
 </template>
 
 <script setup lang="ts">
