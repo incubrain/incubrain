@@ -203,7 +203,6 @@ const { data: posts } = await useAsyncData('posts', () =>
 )
 
 definePageMeta({
-  layout: 'home',
   name: 'Home'
 })
 

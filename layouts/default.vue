@@ -1,11 +1,6 @@
 <template>
   <div class="w-full">
-    <NavTop />
-    <AppBody :mobi-bottom-nav="false">
       <slot />
-      <UNotifications />
-      <NavFooterWebsite />
-    </AppBody>
   </div>
 </template>
 

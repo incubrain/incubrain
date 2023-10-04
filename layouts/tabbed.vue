@@ -1,14 +1,9 @@
 <template>
   <div>
-    <NavTop />
-    <AppBody :mobi-bottom-nav="false">
-      <BlogShowcasePage v-if="parentRoute[1]" />
-      <div class="p-4 xl:p-8 lg:py-20">
-        <slot />
-      </div>
-      <UNotifications />
-      <NavFooterWebsite />
-    </AppBody>
+    <BlogShowcasePage v-if="parentRoute[1]" />
+    <div class="p-4 xl:p-8 lg:py-20">
+      <slot />
+    </div>
   </div>
 </template>
 
