@@ -24,7 +24,6 @@
 </template>
 
 <script setup lang="ts">
-const scrollContainer = ref(null)
 
 defineProps({
   slug: {
@@ -34,8 +33,8 @@ defineProps({
 })
 
 function toTop() {
-  if (scrollContainer.value) {
-    scrollContainer.value.scrollTop = 0
+  if (window) {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 }
 </script>
