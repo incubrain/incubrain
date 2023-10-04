@@ -26,7 +26,6 @@
 
 <script setup lang="ts">
 const { copy, copied, text } = useClipboard()
-console.log('Hello from ProseCode.vue', copy)
 
 defineProps({
   code: {
