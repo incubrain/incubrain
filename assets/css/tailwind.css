@@ -86,6 +86,7 @@
   .background {
     @apply text-zinc-800 dark:text-zinc-300 bg-white dark:bg-neutral-950;
   }
+
   .bg-light {
     @apply text-zinc-800 dark:text-zinc-300 bg-zinc-100 dark:bg-zinc-300;
   }

@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="w-full grid grid-cols-[160px_1fr_0.5fr] sticky top-0 shadow-sm px-4 border-b border-color justify-between backdrop-blur-md bg-white/70 dark:bg-black/60 z-[10] h-[var(--nav-height-sm)] lg:h-[var(--nav-height-lg)]"
+    class="w-full grid grid-cols-[160px_1fr_0.5fr] sticky top-0 shadow-sm px-4 border-b border-color justify-between backdrop-blur-md bg-white/70 dark:bg-black/60 z-40 h-[var(--nav-height-sm)] lg:h-[var(--nav-height-lg)]"
   >
     <NavMobiSlideover class="lg:hidden flex items-start justify-start" />
     <div class="hidden lg:flex justify-center border-r border-color pr-4">
@@ -66,7 +66,13 @@
       </li>
     </ul>
     <div class="flex gap-3 justify-end items-center">
-      <AppThemeToggle />
+      <DarkToggle v-slot="{ toggle, isDark }">
+        <UIcon
+          :name="isDark.value ? 'i-heroicons-moon' : 'i-heroicons-sun'"
+          class="w-6 h-6 cursor-pointer"
+          @click="toggle"
+        />
+      </DarkToggle>
       <NuxtLink
         href="https://github.com/Drew-Macgibbon"
         target="_blank"
