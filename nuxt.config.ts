@@ -119,6 +119,7 @@ export default defineNuxtConfig({
   },
 
   devtools: {
-    enabled: true
+    enabled: true,
+    vscode: {}
   }
 })
