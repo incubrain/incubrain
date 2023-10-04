@@ -16,11 +16,11 @@
           class="relative bounce-on-hover flex-none w-full overflow-hidden rounded-lg border border-color px-8 pb-8 pt-12"
         >
           <div
-            class="bg-pattern pointer-events-none absolute -right-[836px] -top-[448px] h-[651px] w-[1314px]"
+            class="bg-pattern pointer-events-none absolute -right-[836px] top-0 h-[651px] w-[1314px]"
           />
           <div class="relative">
             <div
-              class="flex h-[32px] w-[32px] background items-center justify-center rounded-full border border-color"
+              class="flex h-[32px] w-[32px] background shadow-lg items-center justify-center rounded-full border border-color"
             >
               <UIcon
                 :name="item.icon"

@@ -40,12 +40,7 @@ const pages = ref([
     label: 'About',
     icon: 'i-mdi-chevron-right',
     slug: '/about',
-    children: [
-      { id: 30, label: 'About', icon: 'i-mdi-chevron-right', slug: '/about' },
-      // { id: 31, label: 'Culture', icon: 'i-mdi-chevron-right', slug: '/about/culture' },
-      // { id: 32, label: 'Team', icon: 'i-mdi-chevron-right', slug: '/about/team' },
-      { id: 33, label: 'Stack', icon: 'i-mdi-chevron-right', slug: '/about/stack' }
-    ]
+    children: []
   },
   {
     id: 4,
@@ -91,7 +86,7 @@ const socials = ref({
 
 const footerPages = ref(
   pages.value.flatMap((page) => {
-    if ([2, 3].includes(page.id)) return page.children
+    if ([2].includes(page.id)) return page.children
     else return [page]
   })
 )
