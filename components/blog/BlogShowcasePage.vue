@@ -38,8 +38,8 @@ async function getShowcase() {
   if (route.params.id) return
   console.log('path', route.fullPath, route)
   const path = route.fullPath.endsWith('/') ? route.fullPath.slice(0, -1) : route.fullPath
-  post.value = await queryContent('pages')
-    .where({ _path: `/pages${path}` })
+  post.value = await queryContent('_pages')
+    .where({ _path: `/_pages${path}` })
     .findOne()
 }
 

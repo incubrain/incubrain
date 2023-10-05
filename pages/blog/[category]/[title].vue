@@ -8,10 +8,7 @@
     />
     <div class="max-w-[1080px] mx-auto flex flex-col justify-center relative lg:py-20">
       <BlogPost :post="post" />
-      <BlogNavigation
-        v-if="navigation"
-        :navigation="navigation"
-      />
+      <BlogNavigation />
     </div>
   </div>
 </template>
@@ -23,9 +20,6 @@ const category = ref(String(route.params.category))
 
 const { data: post } = await useAsyncData('post', () =>
   queryContent('blog', category.value).where({ _path: route.path }).findOne()
-)
-const { data: navigation } = await useAsyncData('navigation', () =>
-  queryContent().only(['_path', 'title']).findSurround(route.path, { before: 1, after: 1 })
 )
 </script>
 
