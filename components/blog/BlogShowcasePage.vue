@@ -3,10 +3,12 @@
     v-if="post"
     class="w-full foreground"
   >
-    <ContentRenderer :value="post">
-      <div class="w-full wrapper flex flex-col p-4 lg:p-8">
-        <div class="flex flex-col-reverse lg:flex-row w-full justify-between items-center lg:gap-16">
-          <div class="flex flex-col justify-center items-center lg:justify-start lg:items-start gap-4">
+    <div class="w-full wrapper flex flex-col p-4 lg:p-8">
+      <div class="flex flex-col-reverse lg:flex-row w-full justify-between items-center lg:gap-16">
+        <ContentRenderer :value="post">
+          <div
+            class="flex flex-col justify-center items-center lg:justify-start lg:items-start gap-4"
+          >
             <h1 class="text-4xl lg:text-5xl font-bold">
               {{ post?.title }}
             </h1>
@@ -14,10 +16,17 @@
               {{ post.description }}
             </p>
           </div>
-          <NuxtImg src="images/happy-hacker.gif" />
+        </ContentRenderer>
+        <div class="h-[260px] w-full flex justify-center items-center">
+          <NuxtImg
+            src="images/happy-hacker.gif"
+            width="260"
+            height="260"
+            quality="80"
+          />
         </div>
       </div>
-    </ContentRenderer>
+    </div>
   </div>
 </template>
 
