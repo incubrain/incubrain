@@ -10,6 +10,8 @@ export default <RouterConfig>{
           },
           !from || to.path !== from.path ? 500 : 1
         )
+      } else if (savedPosition) {
+        resolve({ top: savedPosition.top })
       } else {
         resolve({ top: 0, behavior: 'smooth' })
       }
