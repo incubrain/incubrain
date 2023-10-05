@@ -34,7 +34,7 @@
     >
       <SwiperSlide v-for="testimonial in testimonials" :key="testimonial.id">
         <div class="p-4">
-          <div class="border border-color rounded-lg p-4 foreground">
+          <div class="border border-color rounded-lg p-4">
             <NuxtImg :src="testimonial.avatar" alt="avatar" class="h-16 w-16 rounded-full mx-auto mb-4" />
             <h3 class="text-lg font-bold mb-2">{{ testimonial.name }}</h3>
             <h4 class="mb-4">{{ testimonial.position }}</h4>

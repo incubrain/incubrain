@@ -14,6 +14,7 @@
       <UCard
         v-for="item in pricing.items.slice(0, singleCard ? 1 : pricing.items.length)"
         :key="item.id"
+        :ui="{ background: '', ring: 'ring-1 ring-color' }"
         class="max-w-xl mx-auto"
       >
         <template #header>

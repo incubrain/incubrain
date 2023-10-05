@@ -7,11 +7,11 @@
     />
     <UTabs
       :items="items"
-      orientation="vertical"
+      :orientation="width > 1000 ? 'vertical' : 'horizontal'"
       class="w-full"
       :ui="{
-        wrapper: 'flex items-start justify-start gap-4 space-y-0',
-        list: { width: 'w-48', rounded: 'rounded-md' }
+        wrapper: 'flex flex-col lg:flex-row items-start justify-start gap-4 space-y-0',
+        list: { width: 'w-full lg:w-48', height: 'h-auto lg:h-10', base: 'relative grid grid-flow-row', rounded: 'rounded-md' }
       }"
     >
       <template #default="{ item, index, selected }">
@@ -38,6 +38,9 @@
 </template>
 
 <script setup lang="ts">
+
+const { width } = useWindowSize()
+
 defineProps({
   label: {
     type: String,

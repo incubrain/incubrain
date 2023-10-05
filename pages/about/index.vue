@@ -137,6 +137,18 @@ const values = {
     {
       label: 'Drive',
       content: 'Finally, this is the content for Tab3'
+    },
+    {
+      label: 'Drive',
+      content: 'Finally, this is the content for Tab3'
+    },
+    {
+      label: 'Drive',
+      content: 'Finally, this is the content for Tab3'
+    },
+    {
+      label: 'Drive',
+      content: 'Finally, this is the content for Tab3'
     }
   ]
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="lg:sticky top-8 space-y-4 h-auto foreground rounded-md p-4 xl:p-8">
+  <div class="lg:sticky top-24 space-y-4 h-auto border border-color rounded-md p-4 xl:p-8">
     <h3 class="text-lg font-semibold">Filters</h3>
     <div class="space-y-2">
       <p class="text-xs">Categories:</p>
