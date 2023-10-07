@@ -1,7 +1,7 @@
 <template>
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
     <div class="h-full">
-      <div class="lg:sticky lg:top-12 space-y-4 lg:space-y-6">
+      <div class="lg:sticky lg:top-24 space-y-4 lg:space-y-6">
         <CommonTitle
           :label="label"
           :title="title"

@@ -16,12 +16,6 @@
         image="images/hero.jpg"
       >
         <UButton to="/about"> Learn More </UButton>
-        <UButton
-          to="/about"
-          variant="outline"
-        >
-          Join The Team
-        </UButton>
       </CommonSingleFeat>
       <CommonTabCards
         :label="values.label"

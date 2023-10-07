@@ -14,7 +14,8 @@
           <NuxtImg
             src="images/team/drew-macgibbon.png"
             alt="Drew MacGibbon Ceo/Founder of Incubrain"
-            height="600"
+            height="439"
+            width="228"
             class="relative"
           />
         </div>
