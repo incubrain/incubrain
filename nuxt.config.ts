@@ -109,7 +109,7 @@ export default defineNuxtConfig({
   content: {
     highlight: {
       // Theme used in all color schemes.
-      preload: ['sql'],
+      // preload: ['sql'],
       theme: {
         default: 'github-dark',
         dark: 'github-dark',
