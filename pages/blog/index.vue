@@ -60,6 +60,7 @@ watchEffect(async () => {
       .limit(10)
       .find()
   }
+  console.log('posts', posts.value)
 })
 
 definePageMeta({

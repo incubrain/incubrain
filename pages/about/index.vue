@@ -158,7 +158,7 @@ const { data: posts } = await useAsyncData('posts', () =>
       'authors',
       'category',
       'tags',
-      'published'
+      'date'
     ])
     .sort({ date: -1 })
     .limit(3)

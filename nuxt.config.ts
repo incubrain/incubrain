@@ -106,7 +106,7 @@ export default defineNuxtConfig({
     modules: ['navigation', 'autoplay', 'grid'] // import modules as needed https://nuxt.com/modules/swiper#module-options
   },
 
-  // content: {
+  content: {},
   //   highlight: {
   //     // Theme used in all color schemes.
   //     theme: {
