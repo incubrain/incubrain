@@ -3,6 +3,7 @@
     <UTabs
       :items="tabs"
       :ui="{ wrapper: 'space-y-4 lg:space-y-8' }"
+      :default-index="getActiveTab(activeTab)"
       class="w-full"
     >
       <template
@@ -36,6 +37,26 @@
 import type { FormSubmitEvent } from '@nuxt/ui/dist/runtime/types'
 import { EnquiryValidation, Enquiry } from '@/types/forms'
 
+defineProps({
+  activeTab: {
+    type: String,
+    required: true
+  }
+})
+
+const getActiveTab = (t: string) => {
+  switch (t) {
+    case 'collaborate':
+      return 0
+    case 'incubation':
+      return 1
+    case 'hire-us':
+      return 2
+    default:
+      return 0
+  }
+}
+
 const { add } = useToast()
 
 const tabs = [
@@ -44,7 +65,7 @@ const tabs = [
     label: 'Collaborate',
     icon: 'i-heroicons-information-circle',
     slider:
-      'We\'re always looking for new opportunities to collaborate with other businesses. If you have an idea for a project, we’d love to hear from you.',
+      "We're always looking for new opportunities to collaborate with other businesses. If you have an idea for a project, we’d love to hear from you.",
     content: 'This is the content shown for Tab1'
   },
   {
@@ -55,7 +76,7 @@ const tabs = [
     content: 'And, this is the content for Tab2'
   },
   {
-    slot: 'hire',
+    slot: 'hire-us',
     label: 'Hire us',
     icon: 'i-heroicons-eye-dropper',
     slider: 'Prefer to directly hire us? We can help you with that too.',

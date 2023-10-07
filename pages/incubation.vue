@@ -63,7 +63,7 @@
       />
       <PricingCards single-card>
         <UButton
-          to="/contact"
+          to="/contact-incubation"
           variant="outline"
           block
         >
@@ -99,19 +99,21 @@ const cta = {
 
 const how = {
   label: 'How It Works',
-  title: 'We\'re Founder First',
+  title: "We're Founder First",
   description: `growing your business together
   with us is a great idea`,
   items: [
     {
       image: 'images/icon.png',
       title: 'Resource Library',
-      description: 'Harness the power of a part-time developer for your project. With a team ready to jump in, you always get the best talent for your needs.'
+      description:
+        'Harness the power of a part-time developer for your project. With a team ready to jump in, you always get the best talent for your needs.'
     },
     {
       image: 'images/icon.png',
       title: 'Resource Library',
-      description: 'Harness the power of a part-time developer for your project. With a team ready to jump in, you always get the best talent for your needs.'
+      description:
+        'Harness the power of a part-time developer for your project. With a team ready to jump in, you always get the best talent for your needs.'
     },
     {
       image: 'images/icon.png',

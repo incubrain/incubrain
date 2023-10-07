@@ -45,6 +45,14 @@
             {{ benefit }}
           </li>
         </ul>
+        <UButton
+          v-if="!singleCard"
+          :to="item.link"
+          variant="outline"
+          block
+        >
+          Enquire Now
+        </UButton>
         <slot />
       </UCard>
     </div>
@@ -66,6 +74,7 @@ const pricing = {
       description: 'Get support in talent acquisition and management.',
       image: 'images/icon.png',
       price: '? PM',
+      link: '/contact-incubation',
       benefits: [
         'Get support in talent acquisition and management.',
         'Access our network of skilled professionals to find the right talent for your business needs, ensuring you have the right team to drive success.',
@@ -79,6 +88,7 @@ const pricing = {
       description: 'Get support in talent acquisition and management.',
       image: 'images/icon.png',
       price: '80 PH',
+      link: '/contact-hire-us',
       benefits: [
         'Get support in talent acquisition and management.',
         'Access our network of skilled professionals to find the right talent for your business needs, ensuring you have the right team to drive success.',

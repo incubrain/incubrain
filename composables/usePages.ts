@@ -33,7 +33,7 @@ const pages = ref([
     id: 4,
     label: 'Contact',
     icon: 'i-mdi-chevron-right',
-    slug: '/contact',
+    slug: '/contact-collaborate',
     children: []
   }
 ] as Page[])

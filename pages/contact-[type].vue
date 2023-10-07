@@ -15,13 +15,16 @@
         title="We want to hear from you"
         description="Choose your area of enquiry and we'll get back to you as soon as possible."
       />
-      <ContactTabs />
+      <ContactTabs :active-tab="contactType" />
       <CommonFAQ :faqs="contactFAQs" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+
+const contactType = useRoute().params.type
+
 const contactFAQs = [
   {
     label: 'How many developers are assigned?',
