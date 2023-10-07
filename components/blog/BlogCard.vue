@@ -16,7 +16,9 @@
             {{ post.title }}
           </h3>
           <div class="flex flex-row gap-2 lg:gap-3 justify-center items-center">
-            <p class="text-primary text-sm font-semibold"> {{ post.published }}</p>
+            <p class="text-primary text-sm font-semibold">
+              {{ useDateFormat(post.date, 'DD MMM YYYY').value }}
+            </p>
           </div>
           <p class="text-sm">
             {{ post.description }}

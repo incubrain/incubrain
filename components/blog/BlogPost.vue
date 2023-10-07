@@ -11,13 +11,15 @@
           width="1080"
           height="605"
         />
-        <div class="lg:foreground rounded-b-md pb-20 px-4 shadow-sm">
+        <div class="rounded-b-md border border-color pb-20 px-4 shadow-sm">
           <div class="my-10 flex gap-6 flex-col justify-center items-center w-full">
             <h1 class="text-4xl lg:text-5xl text-center leading-tight">
               {{ post.title }}
             </h1>
             <div class="flex flex-row gap-2 items-center justify-center">
-              <p class="font-semibold"> Published {{ post.published }} </p>
+              <p class="font-semibold">
+                Published {{ useDateFormat(post.date, 'DD MMM YYYY').value }}
+              </p>
               <p class="font-semibold"> By </p>
               <div
                 v-for="author in authorNames.filter((a) => post.authors.includes(a.id))"

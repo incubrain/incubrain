@@ -1,5 +1,7 @@
 <template>
-  <div class="wrapper grid grid-cols-1 lg:grid-cols-[0.5fr_1fr] items-start w-full gap-4 xl:gap-8 relative">
+  <div
+    class="wrapper grid grid-cols-1 lg:grid-cols-[0.5fr_1fr] items-start w-full gap-4 xl:gap-8 relative"
+  >
     <BlogFilter />
     <div class="grid gap-4 grid-cols-1 xl:gap-8 md:grid-cols-2">
       <BlogCard
@@ -46,12 +48,14 @@ watchEffect(async () => {
   if (selectedCategory.value === 'all') {
     posts.value = await queryContent('blog')
       .where({ tags: { $in: selectedTags.value } })
+      .sort({ date: -1 })
       .skip(0)
       .limit(10)
       .find()
   } else {
     posts.value = await queryContent('blog')
       .where({ category: selectedCategory.value, tags: { $in: selectedTags.value } })
+      .sort({ date: -1 })
       .skip(0)
       .limit(10)
       .find()
