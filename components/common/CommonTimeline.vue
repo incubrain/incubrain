@@ -16,6 +16,7 @@
       <UCard
         v-for="item in items"
         :key="item.id"
+        :ui="{ body: { padding: '' } }"
       >
         <template #header>
           <div class="flex gap-4 items-center">
@@ -28,7 +29,10 @@
             <h3 class="text-lg lg:text-xl font-semibold"> {{ item.title }}</h3>
           </div>
         </template>
-        <p> {{ item.description }}</p>
+        <div class="w-full h-full relative p-4 xl:p-8">
+          <div class="bg-pattern" />
+          <p> {{ item.description }}</p>
+        </div>
       </UCard>
     </div>
   </div>

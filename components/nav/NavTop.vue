@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="w-full grid grid-cols-[160px_1fr_0.5fr] sticky top-0 shadow-sm px-4 border-b border-color justify-between backdrop-blur-md bg-white/70 dark:bg-black/60 z-40 h-[var(--nav-height-sm)] lg:h-[var(--nav-height-lg)]"
+    class="w-full grid grid-cols-[160px_1fr_0.5fr] sticky top-0 shadow-sm px-4 border-b border-color justify-between backdrop-blur-md background z-40 h-[var(--nav-height-sm)] lg:h-[var(--nav-height-lg)]"
   >
     <NavMobiSlideover class="lg:hidden flex items-start justify-start" />
     <div class="hidden lg:flex justify-center border-r border-color pr-4">
@@ -17,11 +17,11 @@
         <h3 class="text-xl font-bold">INCUBRAIN</h3>
       </NuxtLink>
     </div>
-    <ul class="flex h-full items-center w-full">
+    <ul class="flex h-full items-center w-full pl-4">
       <li
         v-for="page in pages"
         :key="page.id"
-        class="link-alt cursor-pointer justify-center hidden h-full lg:flex text-sm pr-4 w-[80px] tracking-normal relative"
+        class="link-alt cursor-pointer justify-center hidden h-full lg:flex items-center text-sm px-4 tracking-normal relative"
         :class="route.fullPath.includes(page.slug) ? ' link-active' : ''"
       >
         <NuxtLink
@@ -34,22 +34,25 @@
         <UDropdown
           v-else
           :items="Array(page.children!) || [[{}]]"
-          mode="hover"
-          :popper="{ placement: 'bottom-start' }"
           class="z-50 h-full text-sm"
+          mode="hover"
+          :popper="{
+            placement: 'bottom-start'
+          }"
+          :ui="{
+            padding: 'p-2'
+          }"
         >
-          <UButton
-            color="white"
-            variant="link"
+          <NuxtLink
             :to="page.slug"
-            class="h-full"
+            class="h-full flex justify-center items-center relative"
           >
             {{ page.label }}
             <UIcon
               name="i-mdi-chevron-down"
               class="h-4 w-4"
             />
-          </UButton>
+          </NuxtLink>
           <template #item="{ item }">
             <NuxtLink
               :to="item.slug"

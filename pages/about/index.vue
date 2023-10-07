@@ -166,7 +166,7 @@ const { data: posts } = await useAsyncData('posts', () =>
       'tags',
       'published'
     ])
-    .sort({ published: -1 })
+    .sort({ date: -1 })
     .limit(3)
     .find()
 )

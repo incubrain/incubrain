@@ -1,6 +1,6 @@
 <template>
   <footer class="foreground flex flex-col justify-center items-center">
-    <div class="wrapper padded flex justify-between rounded-md w-full items-center">
+    <div class="wrapper p-4 xl:py-8 xl:px-0 flex justify-between rounded-md w-full items-center">
       <div
         class="flex justify-between rounded-md w-full items-start md:items-center gap-8 p-4 xl:p-8 mx-auto max-w-[var(--max-width-lg)] background"
       >

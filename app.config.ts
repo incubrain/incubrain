@@ -6,9 +6,12 @@ export default defineAppConfig({
       background: 'background'
     },
     card: {
-      background: 'foreground',
+      background: '',
       ring: 'ring-1 ring-color',
-      divide: 'divide-y divide-color'
+      divide: 'divide-y divide-color',
+      header: {
+        background: 'foreground'
+      }
     },
     notifications: {
       position: 'bottom-1 right-1'

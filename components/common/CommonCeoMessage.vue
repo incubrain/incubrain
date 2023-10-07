@@ -8,9 +8,9 @@
     <div class="gap-3 flex flex-col w-full items-center">
       <div class="relative w-full flex justify-center items-center">
         <div
-          class="flex w-[600px] lg:w-full h-full relative rounded-[90%_40%] overflow-x-hidden justify-center items-center shadow-md border-2 border-color"
+          class="flex w-[600px] lg:w-full h-full relative rounded-[90%_40%] overflow-hidden justify-center items-center shadow-md border-2 border-color"
         >
-          <div class="bg-pattern absolute z-0 top-0 left-0 w-full h-full" />
+          <div class="bg-pattern z-0" />
           <NuxtImg
             src="images/team/drew-macgibbon.png"
             alt="Drew MacGibbon Ceo/Founder of Incubrain"

@@ -8,7 +8,12 @@
         :title="singleFeat.title"
         image="images/hero.jpg"
       >
-        <UButton to="/about" variant="outline"> Learn More </UButton>
+        <UButton
+          to="/about"
+          variant="outline"
+        >
+          Learn More
+        </UButton>
       </CommonSingleFeat>
       <CommonManyFeatures
         :label="manyFeat.label"
@@ -191,7 +196,7 @@ const { data: posts } = await useAsyncData('posts', () =>
       'tags',
       'published'
     ])
-    .sort({ published: -1 })
+    .sort({ date: -1 })
     .limit(3)
     .find()
 )

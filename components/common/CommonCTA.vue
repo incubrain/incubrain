@@ -13,8 +13,6 @@
       />
       <UButton
         to="/contact"
-        variant="outline"
-        color="white"
       >
         Contact us
       </UButton>
