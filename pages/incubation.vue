@@ -37,10 +37,10 @@
         </UButton>
       </CommonManyFeatures>
       <CommonTimeline
-        :label="benefits.label"
-        :title="benefits.title"
-        :description="benefits.description"
-        :items="benefits.items"
+        :label="how.label"
+        :title="how.title"
+        :description="how.description"
+        :items="how.items"
       >
         <UButton
           to="/blog"
@@ -70,7 +70,6 @@
           Enquire Now
         </UButton>
       </PricingCards>
-      <CommonContactForm />
       <CommonFAQ :faqs="faqs" />
     </div>
   </div>
@@ -98,21 +97,21 @@ const cta = {
   image: 'images/hero.jpg'
 }
 
-const benefits = {
-  label: 'Benefits',
-  title: 'Why Incubrain',
+const how = {
+  label: 'How It Works',
+  title: 'We\'re Founder First',
   description: `growing your business together
   with us is a great idea`,
   items: [
     {
       image: 'images/icon.png',
       title: 'Resource Library',
-      description: ''
+      description: 'Harness the power of a part-time developer for your project. With a team ready to jump in, you always get the best talent for your needs.'
     },
     {
       image: 'images/icon.png',
       title: 'Resource Library',
-      description: ''
+      description: 'Harness the power of a part-time developer for your project. With a team ready to jump in, you always get the best talent for your needs.'
     },
     {
       image: 'images/icon.png',

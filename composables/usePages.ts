@@ -17,23 +17,10 @@ const pages = ref([
   },
   {
     id: 2,
-    label: 'Services',
+    label: 'Incubation',
     icon: 'i-mdi-chevron-right',
-    slug: '/services',
-    children: [
-      {
-        id: 21,
-        label: 'Hire us',
-        icon: 'i-mdi-chevron-right',
-        slug: '/services/hire-us'
-      },
-      {
-        id: 22,
-        label: 'Business starter',
-        icon: 'i-mdi-chevron-right',
-        slug: '/services/business-starter'
-      }
-    ]
+    slug: '/Incubation',
+    children: []
   },
   {
     id: 3,
@@ -86,7 +73,7 @@ const socials = ref({
 
 const footerPages = ref(
   pages.value.flatMap((page) => {
-    if ([2].includes(page.id)) return page.children
+    if ([0].includes(page.id)) return page.children
     else return [page]
   })
 )
