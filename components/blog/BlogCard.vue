@@ -17,7 +17,7 @@
           </h3>
           <div class="flex flex-row gap-2 lg:gap-3 justify-center items-center">
             <p class="text-primary text-sm font-semibold">
-              {{ useDateFormat(post.date, 'DD MMM YYYY').value }}
+              {{ setDate(post.date) }}
             </p>
           </div>
           <p class="text-sm">
@@ -30,6 +30,11 @@
 </template>
 
 <script setup lang="ts">
+const setDate = (d: string) => {
+  const [year, month, day] = d.split('/')
+  const timestamp = new Date(Number(year), Number(month) - 1, Number(day))
+  return useDateFormat(timestamp, 'DD MMM YYYY').value
+}
 defineProps({
   post: {
     type: Object,
