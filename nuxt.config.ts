@@ -106,15 +106,15 @@ export default defineNuxtConfig({
     modules: ['navigation', 'autoplay', 'grid'] // import modules as needed https://nuxt.com/modules/swiper#module-options
   },
 
-  content: {
-    highlight: {
-      // Theme used in all color schemes.
-      theme: {
-        default: 'github-dark',
-        dark: 'github-dark'
-      }
-    }
-  },
+  // content: {
+  //   highlight: {
+  //     // Theme used in all color schemes.
+  //     theme: {
+  //       default: 'github-dark',
+  //       dark: 'github-dark'
+  //     }
+  //   }
+  // },
 
   devtools: {
     enabled: true,
