@@ -18,9 +18,8 @@ const route = useRoute()
 const category = ref(String(route.params.category))
 
 const { data: post } = await useAsyncData('post', () => {
-  return queryContent('blog', category.value)
-    .where({ _path: route.path.replace(/\/$/, '') })
-    .findOne()
+  console.log('pathTest', route.path)
+  return queryContent('blog', category.value).where({ _path: route.path }).findOne()
 })
 </script>
 
