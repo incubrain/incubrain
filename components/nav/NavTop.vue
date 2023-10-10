@@ -10,7 +10,7 @@
       >
         <NuxtImg
           src="images/incubrain-logo.png"
-          alt="Drew MacGibbon Development (DM Development)"
+          alt="Incubrain Logo"
           height="26"
           width="26"
         />
@@ -77,7 +77,7 @@
         />
       </DarkToggle>
       <NuxtLink
-        href="https://github.com/Drew-Macgibbon"
+        href="https://github.com/incubrain"
         target="_blank"
         class="flex justify-center items-center"
       >
