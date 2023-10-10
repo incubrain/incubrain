@@ -3,8 +3,7 @@
     <CommonCoverImage
       :img="img"
       :title="title"
-      :subtitle="subtitle"
-      object-position="object-bottom"
+      object-position="object-center"
       fit="cover"
     >
       <div class="flex flex-row gap-4 rounded-md pb-6">
@@ -15,6 +14,7 @@
 </template>
 
 <script setup lang="ts">
+import { Title } from '~/types/content'
 
 interface Image {
   title: string
@@ -24,11 +24,7 @@ interface Image {
 
 defineProps({
   title: {
-    type: String,
-    required: true
-  },
-  subtitle: {
-    type: String,
+    type: Object as PropType<Title>,
     required: true
   },
   img: {

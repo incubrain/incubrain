@@ -1,14 +1,9 @@
 <template>
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
     <div class="space-y-4 lg:space-y-6">
-      <CommonTitle
-        :label="label"
-        :title="title"
-        :description="description"
-      />
-      <div class="flex gap-2">
+      <CommonTitle :title="title">
         <slot />
-      </div>
+      </CommonTitle>
     </div>
     <div class="w-full h-full">
       <NuxtImg
@@ -23,18 +18,12 @@
 </template>
 
 <script setup lang="ts">
+import { Title } from '~/types/content'
+
 defineProps({
-  label: {
-    type: String,
-    default: 'label'
-  },
   title: {
-    type: String,
-    default: 'Title'
-  },
-  description: {
-    type: String,
-    default: 'Description'
+    type: Object as PropType<Title>,
+    required: true
   },
   image: {
     type: String,

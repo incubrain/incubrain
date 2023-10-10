@@ -1,11 +1,7 @@
 <template>
   <section id="how_it_works">
     <div class="wrapper space-y-12">
-      <CommonTitle
-        :label="label"
-        :title="title"
-        :description="description"
-      />
+      <CommonTitle :title="title" />
 
       <div
         class="flex flex-wrap gap-4 md:grid md:grid-cols-[repeat(auto-fill,minmax(320px,1fr))] md:gap-6"
@@ -38,18 +34,12 @@
 </template>
 
 <script setup lang="ts">
+import { Title } from '~/types/content'
+
 defineProps({
-  label: {
-    type: String,
-    default: 'Label'
-  },
   title: {
-    type: String,
-    default: 'Title'
-  },
-  description: {
-    type: String,
-    default: 'Description'
+    type: Object as PropType<Title>,
+    required: true
   },
   items: {
     type: Array,

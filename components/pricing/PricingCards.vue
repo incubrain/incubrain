@@ -1,9 +1,7 @@
 <template>
   <div class="flex flex-col space-y-6 lg:space-y-12">
     <CommonTitle
-      :label="pricing.label"
-      :title="pricing.title"
-      :description="pricing.description"
+      :title="pricingTitle"
       class="max-w-xl"
       :alignment="singleCard ? 'center mx-auto' : 'left'"
     />
@@ -60,13 +58,16 @@
 </template>
 
 <script setup lang="ts">
-const pricing = {
+const pricingTitle = {
   label: 'Pricing',
-  title: 'Our Pricing',
-  description: `
+  main: 'Our Pricing',
+  subtitle: `
   At Incubrain, we foster a dynamic and inclusive company culture that encourages creativity,
   continuous learning, and teamwork. Our team is passionate about helping startups succeed and we believe that a strong company culture
-  is the foundation for achieving our vision.`,
+  is the foundation for achieving our vision.`
+}
+
+const pricing = {
   items: [
     {
       id: 1,

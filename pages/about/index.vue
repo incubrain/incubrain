@@ -3,30 +3,24 @@
     <CommonHero
       :img="{
         title: 'Featured image for the Dark Sky Conservation India Conference',
-        src: 'images/hero.jpg',
+        src: 'images/contact-us-3.png',
         alt: 'Featured image for the Dark Sky Conservation India Conference'
       }"
-      title="About Incubrain"
-      subtitle="some info about the company"
+      :title="heroTitle"
     />
     <div class="wrapper padded-x padded-y spaced-y">
       <CommonSingleFeat
-        :description="singleFeat.description"
         :title="singleFeat.title"
         image="images/hero.jpg"
       >
         <UButton to="/about"> Learn More </UButton>
       </CommonSingleFeat>
       <CommonTabCards
-        :label="values.label"
         :title="values.title"
-        :description="values.description"
         :items="values.items"
       />
       <CommonTimeline
-        :label="benefits.label"
         :title="benefits.title"
-        :description="benefits.description"
         :items="benefits.items"
       >
         <UButton
@@ -37,18 +31,19 @@
         </UButton>
       </CommonTimeline>
     </div>
-    <CommonCTA
-      :title="cta.title"
-      :description="cta.description"
-      :image="cta.image"
-    />
+    <CommonCTA :title="cta.title">
+      <UButton
+        to="/incubation"
+        variant="outline"
+      >
+        Find Out More
+      </UButton>
+    </CommonCTA>
     <div class="wrapper padded-x padded-y spaced-y">
       <!-- Add blog section -->
       <BlogDisplay
         :posts="posts"
-        label="our latest blog posts"
-        title="Our Posts"
-        subtitle="some more information"
+        :title="postTitle"
       >
         <UButton
           to="/blog"
@@ -63,29 +58,40 @@
 </template>
 
 <script setup lang="ts">
+const heroTitle = {
+  label: 'About',
+  main: 'About Incubrain',
+  subtitle: `growing your business together
+  with us is a great idea`
+}
+
 const cta = {
-  title: 'Ignite Your Ideas with Incubrain',
-  description: `
-  Merging decades of startup experience with cutting-edge Nuxt 3 technology,
-  we turn ideas into powerful SaaS solutions. As active contributors to Nuxt open source,
-  we're committed to fostering growth within the community and beyond.`,
+  title: {
+    label: 'Incubrain Your Business',
+    main: 'Ignite Your Ideas with Incubrain'
+  },
   image: 'images/hero.jpg'
 }
 
 const singleFeat = {
-  title: 'Building a Culture of Innovation and Collaboration',
-  description: `
-  At Incubrain, we foster a dynamic and inclusive company culture that encourages creativity,
-  continuous learning, and teamwork. Our team is passionate about helping startups succeed and we believe that a strong company culture
-  is the foundation for achieving our vision.`,
+  title: {
+    main: 'Building a Culture of Innovation and Collaboration',
+    subtitle: `
+    At Incubrain, we foster a dynamic and inclusive company culture that encourages creativity,
+    continuous learning, and teamwork. Our team is passionate about helping startups succeed and we believe that a strong company culture
+    is the foundation for achieving our vision.`
+  },
+
   image: 'images/hero.jpg'
 }
 
 const benefits = {
-  label: 'Benefits',
-  title: 'Why Incubrain',
-  description: `growing your business together
-  with us is a great idea`,
+  title: {
+    label: 'Benefits',
+    main: 'Why Incubrain',
+    subtitle: `growing your business together
+    with us is a great idea`
+  },
   items: [
     {
       image: 'images/icon.png',
@@ -115,13 +121,15 @@ const benefits = {
 }
 
 const values = {
-  label: 'Values',
-  title: 'Why Incubrain',
-  description: `growing your business together
-  with us is a great idea`,
+  title: {
+    label: 'Values',
+    main: 'Why Incubrain',
+    subtitle: `growing your business together
+    with us is a great idea`
+  },
   items: [
     {
-      label: 'Passtion',
+      label: 'Passion',
       content: 'This is the content shown for Tab1'
     },
     {
@@ -145,6 +153,15 @@ const values = {
       content: 'Finally, this is the content for Tab3'
     }
   ]
+}
+
+const postTitle = {
+  label: 'Blog',
+  main: 'Our Blog',
+  subtitle: `
+  At Incubrain, we foster a dynamic and inclusive company culture that encourages creativity,
+  continuous learning, and teamwork. Our team is passionate about helping startups succeed and we believe that a strong company culture
+  is the foundation for achieving our vision.`
 }
 
 const { data: posts } = await useAsyncData('posts', () =>

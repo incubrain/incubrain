@@ -3,90 +3,79 @@
     <CommonHero
       :img="{
         title: 'Featured image for the Dark Sky Conservation India Conference',
-        src: 'images/hero.jpg',
+        src: 'images/contact-us-3.png',
         alt: 'Featured image for the Dark Sky Conservation India Conference'
       }"
-      subtitle="send us a message, we don't bite"
-      title="Reach out"
+      :title="heroTitle"
     />
     <div class="wrapper padded-x padded-y spaced-y">
-      <CommonTitle
-        label="Contact us"
-        title="We want to hear from you"
-        description="Choose your area of enquiry and we'll get back to you as soon as possible."
+      <CommonTitle :title="contactTitle" />
+      <ContactTabs :active-tab="String(contactType)" />
+      <CommonFAQ
+        :faqs="contactFAQs.items"
+        :title="contactFAQs.title"
       />
-      <ContactTabs :active-tab="contactType" />
-      <CommonFAQ :faqs="contactFAQs" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-
 const contactType = useRoute().params.type
 
-const contactFAQs = [
-  {
-    label: 'How many developers are assigned?',
-    content: 'One developer is assigned to each project.'
-  },
-  {
-    label: 'How many developers are assigned?',
-    content: 'One developer is assigned to each project.'
-  },
-  {
-    label: 'How many developers are assigned?',
-    content: 'One developer is assigned to each project.'
-  },
-  {
-    label: 'How many developers are assigned?',
-    content: 'One developer is assigned to each project.'
-  },
-  {
-    label: 'How many developers are assigned?',
-    content: 'One developer is assigned to each project.'
-  },
-  {
-    label: 'How many developers are assigned?',
-    content: 'One developer is assigned to each project.'
-  },
-  {
-    label: 'How many developers are assigned?',
-    content: 'One developer is assigned to each project.'
-  },
-  {
-    label: 'How many developers are assigned?',
-    content: 'One developer is assigned to each project.'
-  },
-  {
-    label: 'How many developers are assigned?',
-    content: 'One developer is assigned to each project.'
-  }
-]
+const heroTitle = {
+  label: 'Contact us',
+  main: 'Contact us',
+  subtitle: "send us a message, we don't bite"
+}
 
-const cardRow = {
-  label: 'Incubrain Services',
-  title: 'Helping your grow your business',
-  description: `
-  At Incubrain, we foster a dynamic and inclusive company culture that encourages creativity,
-  continuous learning, and teamwork. Our team is passionate about helping startups succeed and we believe that a strong company culture
-  is the foundation for achieving our vision.`,
+const contactTitle = {
+  label: 'Contact us',
+  main: 'We want to hear from you',
+  subtitle: "Choose your area of enquiry and we'll get back to you as soon as possible."
+}
+
+const contactFAQs = {
+  title: {
+    label: 'FAQs',
+    main: "We'd love to hear from you",
+    subtitle: 'reach out if you have further questions'
+  },
   items: [
     {
-      label: 'Business Starter',
-      title: 'helping your get to the next level',
-      description: 'Get support in talent acquisition and management.',
-      image: 'images/icon.png',
-      link: '/services/business-starter',
-      price: '1,250'
+      label: 'How many developers are assigned?',
+      description: 'One developer is assigned to each project.'
     },
     {
-      label: 'Hire us',
-      title: 'Hire us',
-      description: 'Prefer to directly hire us? We can help you with that too.',
-      image: 'images/icon.png',
-      link: '/services/hire-us',
-      price: '$80 PH'
+      label: 'How many developers are assigned?',
+      description: 'One developer is assigned to each project.'
+    },
+    {
+      label: 'How many developers are assigned?',
+      description: 'One developer is assigned to each project.'
+    },
+    {
+      label: 'How many developers are assigned?',
+      description: 'One developer is assigned to each project.'
+    },
+    {
+      label: 'How many developers are assigned?',
+      description: 'One developer is assigned to each project.'
+    },
+    {
+      label: 'How many developers are assigned?',
+      description: 'One developer is assigned to each project.'
+    },
+    {
+      label: 'How many developers are assigned?',
+      description: 'One developer is assigned to each project.'
+    },
+    {
+      label: 'How many developers are assigned?',
+      description: 'One developer is assigned to each project.'
+    },
+    {
+      label: 'How many developers are assigned?',
+      description: 'One developer is assigned to each project.'
     }
   ]
 }

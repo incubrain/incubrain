@@ -1,9 +1,5 @@
 <template>
   <div class="space-y-12">
-    <CommonTitle
-      title="Contact Us"
-      description="We are here to help you with your next project. Get in touch with us today."
-    />
     <FormDynamic
       :validation="EnquiryValidation"
       :state="state"

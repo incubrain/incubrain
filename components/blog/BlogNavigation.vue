@@ -46,8 +46,6 @@ const { data: navigation } = await useAsyncData('navigation', () =>
     .sort({ date: 1 })
     .findSurround(route.path)
 )
-
-console.log('Nav', navigation.value)
 </script>
 
 <style scoped></style>

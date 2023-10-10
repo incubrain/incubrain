@@ -4,185 +4,49 @@
 
     <div class="spaced-y wrapper padded-x padded-y">
       <CommonSingleFeat
-        :description="singleFeat.description"
-        :title="singleFeat.title"
+        :title="content.mainFeat.title"
         image="images/hero.jpg"
       >
         <UButton
-          to="/about"
+          to="/incubation"
           variant="outline"
         >
-          Learn More
+          {{ content.mainFeat.cta }}
         </UButton>
       </CommonSingleFeat>
       <CommonManyFeatures
-        :label="manyFeat.label"
-        :title="manyFeat.title"
-        :description="manyFeat.description"
-        :items="manyFeat.items"
+        :title="content.manyFeat.title"
+        :items="content.manyFeat.items"
       />
-      <CommonTest />
+      <CommonTest :title="content.joinCommunity.title" />
     </div>
-    <CommonCTA
-      :title="cta.title"
-      :description="cta.description"
-      :image="cta.image"
-    />
+    <CommonCTA :title="content.mainCTA.title">
+      <UButton to="/contact"> {{ content.mainCTA.cta }} </UButton>
+    </CommonCTA>
     <div class="spaced-y wrapper padded-x padded-y">
-      <CommonCeoMessage
-        :label="ceo.title"
-        :title="ceo.title"
-        :message="ceo.description"
-      />
+      <CommonCeoMessage :title="content.ceoMessage.title" />
       <CommonTestimonial />
       <BlogDisplay
         :posts="posts"
-        label="our latest blog posts"
-        title="Our Posts"
-        subtitle="some more information"
+        :title="content.recentPosts.title"
       >
         <UButton
           to="/blog"
           variant="outline"
         >
-          View all
+          {{ content.recentPosts.cta }}
         </UButton>
       </BlogDisplay>
       <PricingCards />
-      <CommonFAQ :faqs="faqs" />
+      <CommonFAQ
+        :faqs="content.faqs.items"
+        :title="content.faqs.title"
+      />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-const singleFeat = {
-  title: 'Building a Culture of Innovation and Collaboration',
-  description: `
-  At Incubrain, we foster a dynamic and inclusive company culture that encourages creativity,
-  continuous learning, and teamwork. Our team is passionate about helping startups succeed and we believe that a strong company culture
-  is the foundation for achieving our vision.`,
-  image: 'images/hero.jpg'
-}
-
-const manyFeat = {
-  label: 'Features',
-  title: 'Why Incubrain',
-  description: `growing your business together
-  with us is a great idea`,
-  items: [
-    {
-      icon: 'i-mdi-github',
-      title: 'Resource Library',
-      description:
-        'Get support in talent acquisition and management. Access our network of skilled professionals to find the right talent.'
-    },
-    {
-      icon: 'i-mdi-github',
-      title: 'Resource Library',
-      description:
-        'Get support in talent acquisition and management. Access our network of skilled professionals to find the right talent.'
-    },
-    {
-      icon: 'i-mdi-github',
-      title: 'Resource Library',
-      description:
-        'Get support in talent acquisition and management. Access our network of skilled professionals to find the right talent.'
-    },
-    {
-      icon: 'i-mdi-github',
-      title: 'Resource Library',
-      description:
-        'Get support in talent acquisition and management. Access our network of skilled professionals to find the right talent.'
-    },
-    {
-      icon: 'i-mdi-github',
-      title: 'Resource Library',
-      description:
-        'Get support in talent acquisition and management. Access our network of skilled professionals to find the right talent.'
-    },
-    {
-      icon: 'i-mdi-github',
-      title: 'Resource Library',
-      description:
-        'Get support in talent acquisition and management. Access our network of skilled professionals to find the right talent.'
-    }
-  ]
-}
-
-const cta = {
-  title: 'Ignite Your Ideas with Incubrain',
-  description: `
-  Merging decades of startup experience with cutting-edge Nuxt 3 technology,
-  we turn ideas into powerful SaaS solutions. As active contributors to Nuxt open source,
-  we're committed to fostering growth within the community and beyond.`,
-  image: 'images/hero.jpg'
-}
-
-const ceo = {
-  label: 'CEO',
-  title: 'Message from CEO',
-  description: `
-  At Incubrain, we foster a dynamic and inclusive company culture that encourages creativity,
-  continuous learning, and teamwork. Our team is passionate about helping startups succeed and we believe that a strong company culture
-  is the foundation for achieving our vision.`
-}
-
-const twoFeat = [
-  {
-    image: '/vectors/first_startup.svg',
-    title: 'Crie sua própria startup',
-    description:
-      'Aprenda a criar um MVP, estude desenvolvimento de produto e coloque suas ideias em prática.',
-    cta: 'Criar minha conta'
-  },
-  {
-    image: '/vectors/first_job.svg',
-    title: 'Consiga seu primeiro emprego',
-    description:
-      'Construa projetos reais, melhore seu portfólio e se destaque nas vagas de emprego.',
-    cta: 'Começar agora'
-  }
-]
-
-const faqs = [
-  {
-    label: 'How many developers are assigned?',
-    description: 'One developer is assigned to each project.'
-  },
-  {
-    label: 'How many developers are assigned?',
-    description: 'One developer is assigned to each project.'
-  },
-  {
-    label: 'How many developers are assigned?',
-    description: 'One developer is assigned to each project.'
-  },
-  {
-    label: 'How many developers are assigned?',
-    description: 'One developer is assigned to each project.'
-  },
-  {
-    label: 'How many developers are assigned?',
-    description: 'One developer is assigned to each project.'
-  },
-  {
-    label: 'How many developers are assigned?',
-    description: 'One developer is assigned to each project.'
-  },
-  {
-    label: 'How many developers are assigned?',
-    description: 'One developer is assigned to each project.'
-  },
-  {
-    label: 'How many developers are assigned?',
-    description: 'One developer is assigned to each project.'
-  },
-  {
-    label: 'How many developers are assigned?',
-    description: 'One developer is assigned to each project.'
-  }
-]
-
 const { data: posts } = await useAsyncData('posts', () =>
   queryContent('blog')
     .only([
@@ -215,4 +79,171 @@ definePageMeta({
 //   },
 //   script: [ { src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js', children: 'console.log("test3");' } ]
 // })
+
+const content = {
+  hero: {
+    title: {
+      label: "Incubrain ❤️'s Nuxt",
+      main: 'Bringing your SaaS ideas to life',
+      subtitle:
+        'Unleashing the power of Nuxt/Supabase, we turn your startup visions into tangible, market-ready solutions, all while keeping costs optimized.'
+    },
+    cta: 'Explore Our Services'
+  },
+  mainFeat: {
+    title: {
+      label: 'Unmatched Value',
+      main: 'Affordable Excellence for Startups',
+      subtitle:
+        "Blending the cost-effectiveness of India's talent landscape with our deep-rooted expertise in Nuxt/Supabase, we ensure your startup gets the tech advantage it deserves."
+    },
+    cta: 'Discover Our Approach',
+    image: 'images/hero.jpg'
+  },
+  manyFeat: {
+    title: {
+      label: 'Our Offerings',
+      main: 'What Makes Incubrain Exceptional?',
+      subtitle:
+        "Beyond conventional IT support, we're your strategic partners, providing a plethora of tailored services aimed at ensuring your startup's growth and sustainability."
+    },
+    items: [
+      {
+        icon: 'i-mdi-business-center',
+        title: 'Cost-Effective Solutions',
+        description:
+          'Harness the benefits of cost-effective talent in India, combined with our optimized operational strategies to give your startup the best ROI.'
+      },
+      {
+        icon: 'i-heroicons-graph',
+        title: 'Business Coaching',
+        description:
+          'Benefit from our experienced mentors who guide you through startup challenges, helping you make informed decisions.'
+      },
+      {
+        icon: 'i-mdi-computer',
+        title: 'Product Lifecycle Support',
+        description:
+          'From ideation to testing, receive hands-on support during each phase of your product development, ensuring quality and efficiency.'
+      },
+      {
+        icon: 'i-material-symbols-code',
+        title: 'Dedicated Development',
+        description:
+          'Leverage the expertise of a full-time developer, dedicated to turning your SaaS vision into a functioning reality.'
+      },
+      {
+        icon: 'i-heroicons-review',
+        title: 'Quality Assurance',
+        description:
+          'Ensure your product meets the highest standards with our thorough code reviews, ensuring performance and security.'
+      },
+      {
+        icon: 'i-mdi-bulb-outline',
+        title: 'Innovation with Nuxt/Supabase',
+        description:
+          'Stay ahead of the competition by utilizing the unmatched capabilities of Nuxt and Supabase, ensuring a cutting-edge product.'
+      }
+    ]
+  },
+  joinCommunity: {
+    title: {
+      label: 'Engage & Evolve',
+      main: 'Become a Part of Our Growing Community',
+      subtitle:
+        'Dive into a dynamic community of entrepreneurs and tech enthusiasts; share, learn, and evolve as you leverage our pool of resources and knowledge.'
+    }
+  },
+  mainCTA: {
+    title: {
+      label: 'Join the Conversation',
+      main: 'Experience the Incubrain Advantage'
+    },
+    cta: 'Join Our FREE Discord Group'
+  },
+  ceoMessage: {
+    title: {
+      label: 'A Word from Our CEO',
+      main: 'Driven by Passion, Guided by Experience',
+      subtitle:
+        "We at Incubrain aren't just about business; we're about dreams, visions, and a commitment to seeing our partners reach their pinnacle of success."
+    }
+  },
+  recentPosts: {
+    title: {
+      label: 'Insights & Innovations',
+      main: 'Stay Updated with Incubrain',
+      subtitle:
+        'From the latest in tech innovations to invaluable business strategies, our posts aim to keep you ahead of the curve and informed in this fast-evolving domain.'
+    },
+    cta: 'View All'
+  },
+  pricing: {
+    title: {
+      label: 'Transparent & Fair',
+      main: 'Choose the Right Plan for You',
+      subtitle:
+        "Whether you're looking for direct engagement or keen on exploring a mutually beneficial incubation partnership, we've designed our pricing to meet varied needs and visions."
+    }
+  },
+  faqs: {
+    title: {
+      label: 'Got Questions?',
+      main: "We've Got Answers",
+      subtitle:
+        'Navigating the world of startups can be full of questions. Here, we address common queries to make your journey with us transparent and informed.'
+    },
+    items: [
+      {
+        label: 'How many developers are assigned?',
+        description: 'One developer is assigned to each project.'
+      },
+      {
+        label: 'What technologies do you specialize in?',
+        description:
+          'We exclusively develop with Nuxt and Supabase, ensuring a streamlined and optimized solution for your startup.'
+      },
+      {
+        label: 'How do you ensure code quality?',
+        description:
+          'Every piece of code undergoes a rigorous review by our expert team to ensure it meets industry standards and best practices.'
+      },
+      {
+        label: 'What if I need more than one developer?',
+        description:
+          'We can certainly accommodate additional developer requirements. Do get in touch to discuss specific needs.'
+      },
+      {
+        label: 'How do business coaching sessions work?',
+        description:
+          'Our experienced mentors provide guidance on key aspects of startup management, from strategy formulation to operational challenges.'
+      },
+      {
+        label: 'Are there any hidden costs?',
+        description:
+          'Transparency is a core value for us. All costs are clearly outlined upfront, with no hidden fees or unexpected charges.'
+      },
+      {
+        label: 'How do I join your Discord/Slack community?',
+        description:
+          'Click on the "Join Now" CTA on our landing page, and you\'ll be guided through the simple process.'
+      },
+      {
+        label: 'How do you handle data security?',
+        description:
+          'Data security is paramount to us. We adhere to best practices and implement stringent measures to protect all data assets.'
+      },
+      {
+        label: 'Can I opt out of the incubation process?',
+        description:
+          "Absolutely. Our incubation process is designed to be flexible. If you decide it's not for you, you can opt-out at any stage."
+      },
+      {
+        label: 'What if I need more than one developer?',
+        description:
+          'We can certainly accommodate additional developer requirements. Do get in touch to discuss specific needs.'
+      }
+    ]
+  }
+}
 </script>

@@ -1,10 +1,6 @@
 <template>
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center justify-center">
-    <CommonTitle
-      :label="label"
-      :title="title"
-      :description="message"
-    />
+    <CommonTitle :title="title" />
     <div class="gap-3 flex flex-col w-full items-center">
       <div class="relative w-full flex justify-center items-center">
         <div
@@ -29,18 +25,12 @@
 </template>
 
 <script setup lang="ts">
+import { Title } from '~/types/content'
+
 defineProps({
-  label: {
-    type: String,
-    default: 'label'
-  },
   title: {
-    type: String,
-    default: 'Title'
-  },
-  message: {
-    type: String,
-    default: 'Message from ceo'
+    type: Object as PropType<Title>,
+    required: true
   }
 })
 </script>

@@ -1,21 +1,23 @@
 <template>
   <div class="relative w-full h-full flex items-center justify-center overflow-hidden">
     <NuxtImg
-      :class="`w-full absolute object-${fit} ${objectPosition}`"
+      :class="`w-full h-full absolute object-${fit} ${objectPosition}`"
       :src="img.src"
       :alt="img.alt"
     />
     <div class="w-full h-full absolute top-0 left-0 bg-black/50" />
-    <div class="relative flex flex-col w-full padded-x justify-center items-center lg:flex-row text-white gap-8 lg:gap-16 wrapper h-[540px]">
+    <div
+      class="relative flex flex-col w-full padded-x justify-center items-center lg:flex-row text-white gap-8 lg:gap-16 wrapper h-64 lg:h-[580px]"
+    >
       <div class="space-y-4 w-full">
         <h2 class="text-3xl font-bold lg:text-5xl">
-          {{ title }}
+          {{ title.main }}
         </h2>
         <h4
-          v-if="subtitle"
+          v-if="title.subtitle"
           class="text-xl w-auto inline-block font-semibold lg:text-3xl"
         >
-          {{ subtitle }}
+          {{ title.subtitle }}
         </h4>
         <slot />
       </div>
@@ -24,6 +26,8 @@
 </template>
 
 <script setup lang="ts">
+import { Title } from '~/types/content'
+
 interface ImageProps {
   src: string
   alt: string
@@ -35,11 +39,7 @@ defineProps({
     required: true
   },
   title: {
-    type: String,
-    required: true
-  },
-  subtitle: {
-    type: String,
+    type: Object as PropType<Title>,
     required: true
   },
   fit: {

@@ -1,31 +1,31 @@
 <template>
-  <div :class="`flex flex-col gapped text-${alignment} lg:max-w-xl`">
+  <div :class="`flex flex-col gap-4 lg:gap-6 text-${alignment} lg:max-w-xl`">
     <p
-      v-if="label"
+      v-if="title.label"
       class="text-sm font-bold uppercase text-primary"
     >
-      {{ label }}</p
-    >
+      {{ title.label }}
+    </p>
     <h2 class="text-2xl lg:text-4xl font-bold">
-      {{ title }}
+      {{ title.main }}
     </h2>
-    <p class="text-base"> {{ description }}</p>
+    <p
+      v-if="title.subtitle"
+      class="text-base"
+    >
+      {{ title.subtitle }}
+    </p>
+    <slot />
   </div>
 </template>
 
 <script setup lang="ts">
+import { Title } from '~/types/content'
+
 defineProps({
-  label: {
-    type: String,
-    default: null
-  },
   title: {
-    type: String,
-    default: 'Title'
-  },
-  description: {
-    type: String,
-    default: 'Description'
+    type: Object as PropType<Title>,
+    required: true
   },
   alignment: {
     type: String,

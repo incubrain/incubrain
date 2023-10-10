@@ -4,12 +4,7 @@
     class="my-20 md:my-32"
   >
     <div>
-      <CommonTitle
-        label="label test"
-        subtitle="subtitle test"
-        title="some title?"
-        description="some description about what we do."
-      />
+      <CommonTitle :title="title" />
       <div
         class="space-y-6 pt-10 sm:grid sm:grid-cols-[repeat(auto-fill,_minmax(320px,_1fr))] sm:gap-6 sm:space-y-0"
       >
@@ -34,7 +29,9 @@
             </div>
           </div>
         </div>
-        <div class="col-span-1 flex flex-col h-full md:col-span-2 lg:col-span-1 lg:row-span-2 group space-y-6">
+        <div
+          class="col-span-1 flex flex-col h-full md:col-span-2 lg:col-span-1 lg:row-span-2 group space-y-6"
+        >
           <div
             class="relative h-full overflow-hidden rounded-lg border border-solid border-color px-8 pb-6 pt-10 text-3xl font-semibold"
           >
@@ -69,7 +66,16 @@
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { Title } from '~/types/content'
+
+defineProps({
+  title: {
+    type: Object as PropType<Title>,
+    required: true
+  }
+})
+</script>
 
 <style>
 #why_us {

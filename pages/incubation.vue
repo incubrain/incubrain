@@ -6,14 +6,11 @@
         src: 'images/hero.jpg',
         alt: 'Nurturing your vision with world-class development & business expertise from India to the globe.'
       }"
-      title="Propel Your Startup to Success with Incubrain"
-      subtitle="Nurturing your vision with world-class development & business expertise from India to the globe."
+      :title="heroTitle"
     />
     <div class="spaced-y wrapper padded-x padded-y">
       <CommonSingleFeat
-        :label="singleFeat.label"
         :title="singleFeat.title"
-        :description="singleFeat.description"
         image="images/hero.jpg"
       >
         <UButton
@@ -24,9 +21,7 @@
         </UButton>
       </CommonSingleFeat>
       <CommonManyFeatures
-        :label="manyFeat.label"
         :title="manyFeat.title"
-        :description="manyFeat.description"
         :items="manyFeat.items"
       >
         <UButton
@@ -37,9 +32,7 @@
         </UButton>
       </CommonManyFeatures>
       <CommonTimeline
-        :label="how.label"
         :title="how.title"
-        :description="how.description"
         :items="how.items"
       >
         <UButton
@@ -50,17 +43,9 @@
         </UButton>
       </CommonTimeline>
     </div>
-    <CommonCTA
-      :title="cta.title"
-      :description="cta.description"
-      :image="cta.image"
-    />
+    <CommonCTA :title="cta.title" />
     <div class="spaced-y wrapper padded-x padded-y">
-      <CommonCeoMessage
-        :label="ceo.title"
-        :title="ceo.title"
-        :message="ceo.description"
-      />
+      <CommonCeoMessage :title="ceo" />
       <PricingCards single-card>
         <UButton
           to="/contact-incubation"
@@ -70,38 +55,54 @@
           Enquire Now
         </UButton>
       </PricingCards>
-      <CommonFAQ :faqs="faqs" />
+      <CommonFAQ
+        :faqs="faqs.items"
+        :title="faqs.title"
+      />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+const heroTitle = {
+  label: 'Incubrain',
+  main: 'Propel Your Startup to Success with Incubrain',
+  subtitle: `growing your business together
+  with us is a great idea`
+}
+
 const singleFeat = {
-  label: 'Exclusive Nuxt 3 Development with a Business Edge',
-  title: 'Combining Tech Prowess with Business Acumen',
-  description: `
-  With over a decade of experience in business and half of that dedicated to the intricacies of internet businesses,
-  Incubrain stands uniquely poised to help your early-stage startup or business idea flourish. By incorporating in Pune, we've harnessed cost-effective,
-  top-tier talent that's passionate about your success. Benefit from our unwavering focus on Nuxt 3 and Supabase,
-  and let us simplify and strengthen the foundations of your digital venture.`,
+  title: {
+    label: 'Exclusive Nuxt 3 Development with a Business Edge',
+    main: 'Combining Tech Prowess with Business Acumen',
+    subtitle: `
+    With over a decade of experience in business and half of that dedicated to the intricacies of internet businesses,
+    Incubrain stands uniquely poised to help your early-stage startup or business idea flourish. By incorporating in Pune, we've harnessed cost-effective,
+    top-tier talent that's passionate about your success. Benefit from our unwavering focus on Nuxt 3 and Supabase,
+    and let us simplify and strengthen the foundations of your digital venture.`
+  },
   image: 'images/hero.jpg',
   cta: 'Incubrain Your Business'
 }
 
 const cta = {
-  title: 'A Customer Is An Investor',
-  description: `
-  Merging decades of startup experience with cutting-edge Nuxt 3 technology,
-  we turn ideas into powerful SaaS solutions. As active contributors to Nuxt open source,
-  we're committed to fostering growth within the community and beyond.`,
+  title: {
+    main: 'A Customer Is An Investor',
+    subtitle: `
+    Merging decades of startup experience with cutting-edge Nuxt 3 technology,
+    we turn ideas into powerful SaaS solutions. As active contributors to Nuxt open source,
+    we're committed to fostering growth within the community and beyond.`
+  },
   image: 'images/hero.jpg'
 }
 
 const how = {
-  label: 'How It Works',
-  title: "We're Founder First",
-  description: `growing your business together
-  with us is a great idea`,
+  title: {
+    label: 'How It Works',
+    main: "We're Founder First",
+    subtitle: `growing your business together
+    with us is a great idea`
+  },
   items: [
     {
       image: 'images/icon.png',
@@ -129,11 +130,13 @@ const how = {
 }
 
 const manyFeat = {
-  label: 'Your Launchpad to Success',
-  title: 'All-Inclusive Support for Budding Entrepreneurs',
-  description: `
-  We don’t just offer development; we provide a holistic environment designed to elevate your startup from conception to a cash-flow positive reality.
-  See why solo tech-preneurs, part-timers, and early-stage startups are trusting us with their dream ventures.`,
+  title: {
+    label: 'Your Launchpad to Success',
+    main: 'All-Inclusive Support for Budding Entrepreneurs',
+    subtitle: `
+    We don’t just offer development; we provide a holistic environment designed to elevate your startup from conception to a cash-flow positive reality.
+    See why solo tech-preneurs, part-timers, and early-stage startups are trusting us with their dream ventures.`
+  },
   items: [
     {
       image: 'images/icon.png',
@@ -175,51 +178,58 @@ const manyFeat = {
 
 const ceo = {
   label: 'CEO',
-  title: 'Message from CEO',
-  description: `
+  main: 'Message from CEO',
+  subtitle: `
   At Incubrain, we foster a dynamic and inclusive company culture that encourages creativity,
   continuous learning, and teamwork. Our team is passionate about helping startups succeed and we believe that a strong company culture
   is the foundation for achieving our vision.`
 }
 
-const faqs = [
-  {
-    label: 'How many developers are assigned?',
-    content: 'One developer is assigned to each project.'
+const faqs = {
+  title: {
+    label: 'some label',
+    main: 'some title',
+    subtitle: 'if you have further questions reach out'
   },
-  {
-    label: 'How many developers are assigned?',
-    content: 'One developer is assigned to each project.'
-  },
-  {
-    label: 'How many developers are assigned?',
-    content: 'One developer is assigned to each project.'
-  },
-  {
-    label: 'How many developers are assigned?',
-    content: 'One developer is assigned to each project.'
-  },
-  {
-    label: 'How many developers are assigned?',
-    content: 'One developer is assigned to each project.'
-  },
-  {
-    label: 'How many developers are assigned?',
-    content: 'One developer is assigned to each project.'
-  },
-  {
-    label: 'How many developers are assigned?',
-    content: 'One developer is assigned to each project.'
-  },
-  {
-    label: 'How many developers are assigned?',
-    content: 'One developer is assigned to each project.'
-  },
-  {
-    label: 'How many developers are assigned?',
-    content: 'One developer is assigned to each project.'
-  }
-]
+  items: [
+    {
+      label: 'How many developers are assigned?',
+      description: 'One developer is assigned to each project.'
+    },
+    {
+      label: 'How many developers are assigned?',
+      description: 'One developer is assigned to each project.'
+    },
+    {
+      label: 'How many developers are assigned?',
+      description: 'One developer is assigned to each project.'
+    },
+    {
+      label: 'How many developers are assigned?',
+      description: 'One developer is assigned to each project.'
+    },
+    {
+      label: 'How many developers are assigned?',
+      description: 'One developer is assigned to each project.'
+    },
+    {
+      label: 'How many developers are assigned?',
+      description: 'One developer is assigned to each project.'
+    },
+    {
+      label: 'How many developers are assigned?',
+      description: 'One developer is assigned to each project.'
+    },
+    {
+      label: 'How many developers are assigned?',
+      description: 'One developer is assigned to each project.'
+    },
+    {
+      label: 'How many developers are assigned?',
+      description: 'One developer is assigned to each project.'
+    }
+  ]
+}
 </script>
 
 <style scoped></style>

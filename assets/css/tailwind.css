@@ -62,10 +62,6 @@
     transform: translateY(-10px); /* Move up by 10px on hover */
   }
 
-  .gapped {
-    @apply gap-2 lg:gap-4;
-  }
-
   .padded-x {
     @apply px-4 lg:px-8;
   }
