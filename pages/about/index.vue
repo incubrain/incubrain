@@ -7,6 +7,7 @@
         alt: 'Incubrain Logo on contact page'
       }"
       :title="heroTitle"
+      invert
     />
     <div class="wrapper padded-x padded-y spaced-y">
       <CommonSingleFeat

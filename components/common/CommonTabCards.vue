@@ -8,21 +8,16 @@
       :ui="{
         wrapper: 'flex flex-col lg:flex-row items-start justify-start gap-4 space-y-0',
         list: {
+          background: '',
           width: 'w-full lg:w-48',
           height: 'h-auto lg:h-10',
           base: 'relative grid grid-flow-row',
-          rounded: 'rounded-md',
-          background: 'foreground'
-        },
-        tab: { background: '' }
+          rounded: 'rounded-md border border-color'
+        }
       }"
     >
       <template #default="{ item, index, selected }">
         <div class="flex items-center w-full justify-centergap-2 relative truncate">
-          <UIcon
-            :name="item.icon"
-            class="w-4 h-4 flex-shrink-0"
-          />
           <span class="truncate">{{ index + 1 }}. {{ item.label }}</span>
           <span
             v-if="selected"
@@ -41,6 +36,7 @@
 </template>
 
 <script setup lang="ts">
+import { baseURL } from 'nuxt/dist/core/runtime/nitro/paths'
 import { Title } from '~/types/content'
 
 const { width } = useWindowSize()

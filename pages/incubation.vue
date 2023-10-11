@@ -3,7 +3,7 @@
     <CommonHero
       :img="{
         title: 'Propel Your Startup to Success with Incubrain',
-        src: 'images/hero.jpg',
+        src: 'images/mid/incubrain-1.png',
         alt: 'Nurturing your vision with world-class development & business expertise from India to the globe.'
       }"
       :title="heroTitle"

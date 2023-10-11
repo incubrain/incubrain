@@ -19,7 +19,8 @@
             :alt="img.alt"
             width="220"
             height="300"
-            class="dark:invert"
+            class="rounded-md"
+            :class="invert ? 'dark:invert' : ''"
           />
         </div>
         <div class="space-y-4">
@@ -69,6 +70,10 @@ defineProps({
       src: null,
       alt: null
     })
+  },
+  invert: {
+    type: Boolean,
+    default: false
   }
 })
 </script>

@@ -2,9 +2,9 @@
   <div>
     <CommonHero
       :img="{
-        title: 'Featured image for the Dark Sky Conservation India Conference',
-        src: 'images/contact-us-3.png',
-        alt: 'Featured image for the Dark Sky Conservation India Conference'
+        title: 'Contact Incubrain',
+        src: 'images/mid/incubrain-2.png',
+        alt: 'Neon green phone'
       }"
       :title="heroTitle"
     />

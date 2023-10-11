@@ -5,7 +5,7 @@
     <div class="spaced-y wrapper padded-x padded-y">
       <CommonSingleFeat
         :title="content.mainFeat.title"
-        image="images/hero.jpg"
+        image="images/mid/incubrain-2.png"
       >
         <UButton
           to="/incubation"
