@@ -18,6 +18,7 @@
             :src="img.src"
             :alt="img.alt"
             width="220"
+            height="300"
             class="dark:invert"
           />
         </div>

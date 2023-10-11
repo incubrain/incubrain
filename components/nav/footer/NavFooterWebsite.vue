@@ -13,6 +13,7 @@
               src="images/incubrain-logo.svg"
               alt="Drew MacGibbon Development (DM Development)"
               width="36"
+              height="42"
               class="dark:invert"
             />
             INCUBRAIN

@@ -26,6 +26,7 @@
               src="images/incubrain-logo.svg"
               alt="Incubrain Logo"
               width="34"
+              height="42"
               class="dark:invert"
             />
             <h3 class="text-sm font-bold">INCUBRAIN</h3>
