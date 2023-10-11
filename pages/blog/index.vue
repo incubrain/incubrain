@@ -1,14 +1,27 @@
 <template>
-  <div
-    class="wrapper grid grid-cols-1 lg:grid-cols-[0.5fr_1fr] items-start w-full gap-4 xl:gap-8 relative"
-  >
-    <BlogFilter />
-    <div class="grid gap-4 grid-cols-1 xl:gap-8 md:grid-cols-2">
-      <BlogCard
-        v-for="post in posts"
-        :key="post.id"
-        :post="post"
-      />
+  <div>
+    <CommonHero
+      :img="{
+        title: 'Incubrain Blog Happy Hacker',
+        src: 'images/happy-hacker.gif',
+        alt: 'Incubrain Blog Happy Hacker'
+      }"
+      :title="{
+        main: 'Incubrain Blog',
+        subtitle: `If you're not learning, you're not growing.`
+      }"
+    />
+    <div
+      class="wrapper p-4 lg:p-8 grid grid-cols-1 lg:grid-cols-[0.5fr_1fr] items-start w-full gap-4 xl:gap-8 relative"
+    >
+      <BlogFilter />
+      <div class="grid gap-4 grid-cols-1 xl:gap-8 md:grid-cols-2">
+        <BlogCard
+          v-for="post in posts"
+          :key="post.id"
+          :post="post"
+        />
+      </div>
     </div>
   </div>
 </template>
