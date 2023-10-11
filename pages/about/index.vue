@@ -41,8 +41,7 @@
       </UButton>
     </CommonCTA>
     <div class="wrapper padded-x padded-y spaced-y">
-      <!-- Add blog section -->
-      <!-- <BlogDisplay
+      <BlogDisplay
         :posts="posts"
         :title="postTitle"
       >
@@ -52,7 +51,7 @@
         >
           View all
         </UButton>
-      </BlogDisplay> -->
+      </BlogDisplay>
       <!-- Add team section -->
     </div>
   </div>
@@ -151,6 +150,14 @@ const values = {
     },
     {
       label: 'Drive',
+      content: 'Finally, this is the content for Tab3'
+    },
+    {
+      label: 'Something',
+      content: 'Finally, this is the content for Tab3'
+    },
+    {
+      label: 'Extra',
       content: 'Finally, this is the content for Tab3'
     }
   ]

@@ -69,9 +69,9 @@ export default defineAppConfig({
         background: '',
         height: 'h-auto',
         rounded: 'rounded-md border border-color',
-        padding: 'p-2',
+        padding: 'p-1 lg:p-2',
         marker: {
-          base: 'w-full h-full',
+          base: 'w-auto h-full',
           background: 'bg-gray-100 dark:bg-neutral-900'
         },
         tab: { background: '' }

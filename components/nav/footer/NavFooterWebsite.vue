@@ -2,9 +2,9 @@
   <footer class="foreground flex flex-col justify-center items-center">
     <div class="wrapper padded-x py-4 lg:py-8 flex justify-between rounded-md w-full items-center">
       <div
-        class="flex justify-between rounded-md w-full items-start md:items-center gap-8 p-4 xl:p-8 mx-auto background"
+        class="grid grid-cols-3 grid-rows-1 rounded-md w-full h-auto gap-4 lg:gap-8 p-4 xl:p-8 mx-auto background"
       >
-        <div class="flex flex-shrink-0 justify-center md:pr-4">
+        <div class="flex flex-shrink-0 row-start-1 col-start-2 lg:col-start-1 justify-center lg:justify-start md:pr-4">
           <NuxtLink
             to="/"
             class="h-full flex justify-center flex-col lg:flex-row items-center gap-2 font-semibold text-sm"
@@ -19,7 +19,7 @@
             INCUBRAIN
           </NuxtLink>
         </div>
-        <ul class="flex flex-col md:flex-row gap-2 items-center text-sm">
+        <ul class="flex flex-col row-start-1 col-start-1 lg:col-start-2 md:flex-row gap-2 items-start lg:items-center text-sm">
           <li
             v-for="link in footerPages"
             :key="link.label"
@@ -33,7 +33,7 @@
             </NuxtLink>
           </li>
         </ul>
-        <div class="flex flex-col md:flex-row gap-2">
+        <div class="flex flex-col items-end lg:justify-end lg:items-center row-start-1 col-start-3 md:flex-row gap-2">
           <NuxtLink
             v-for="social in socials.children"
             :key="social.label"

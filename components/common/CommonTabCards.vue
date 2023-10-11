@@ -3,25 +3,25 @@
     <CommonTitle :title="title" />
     <UTabs
       :items="items"
-      :orientation="width > 1000 ? 'vertical' : 'horizontal'"
+      orientation="vertical"
       class="w-full"
       :ui="{
-        wrapper: 'flex flex-col lg:flex-row items-start justify-start gap-4 space-y-0',
+        wrapper: 'flex flex-row items-start justify-start gap-2 lg:gap-4 space-y-0',
         list: {
           background: '',
-          width: 'w-full lg:w-48',
+          width: 'w-24 lg:w-48',
           height: 'h-auto lg:h-10',
-          base: 'relative grid grid-flow-row',
+          base: 'relative',
           rounded: 'rounded-md border border-color'
         }
       }"
     >
       <template #default="{ item, index, selected }">
-        <div class="flex items-center w-full justify-centergap-2 relative truncate">
-          <span class="truncate">{{ index + 1 }}. {{ item.label }}</span>
+        <div class="flex items-start lg:items-center whitespace-nowrap w-full justify-start gap-2 relative min-w-64">
+          <span class="text-xs uppercase font-bold">{{ item.label }}</span>
           <span
             v-if="selected"
-            class="absolute right-1 w-2 h-2 rounded-full bg-primary-500 dark:bg-primary-400 transition-all"
+            class="hidden lg:flex absolute right-1 w-2 h-2 rounded-full bg-primary-500 dark:bg-primary-400 transition-all"
           />
         </div>
       </template>
