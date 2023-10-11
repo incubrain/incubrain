@@ -15,7 +15,9 @@
     >
       {{ title.subtitle }}
     </p>
-    <slot />
+    <div>
+      <slot />
+    </div>
   </div>
 </template>
 
