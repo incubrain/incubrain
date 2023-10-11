@@ -3,24 +3,24 @@ export default defineAppConfig({
   ui: {
     primary: 'emerald',
     slideover: {
-      background: 'background'
+      background: 'bg-gray-100 dark:bg-neutral-900'
     },
     card: {
       background: '',
       ring: 'ring-1 ring-color',
       divide: 'divide-y divide-color',
       header: {
-        background: 'foreground'
+        background: 'bg-gray-100 dark:bg-neutral-900'
       }
     },
     notifications: {
       position: 'bottom-1 right-1'
     },
     dropdown: {
-      background: 'background',
+      background: 'bg-gray-100 dark:bg-neutral-900',
       ring: '',
       item: {
-        active: 'foreground'
+        active: 'bg-gray-100 dark:bg-neutral-900'
       }
     },
     accordion: {
@@ -30,7 +30,7 @@ export default defineAppConfig({
       color: {
         white: {
           outline:
-            'foreground shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-700 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400'
+            'bg-gray-100 dark:bg-neutral-900 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-700 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400'
         }
       }
     },
@@ -38,7 +38,7 @@ export default defineAppConfig({
       color: {
         white: {
           outline:
-            'foreground shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-700 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400'
+            'bg-gray-100 dark:bg-neutral-900 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-700 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400'
         }
       }
     },
@@ -46,7 +46,7 @@ export default defineAppConfig({
       color: {
         white: {
           outline:
-            'foreground shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-700 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400'
+            'bg-gray-100 dark:bg-neutral-900 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-700 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400'
         }
       },
       default: {
@@ -55,21 +55,26 @@ export default defineAppConfig({
     },
     selectMenu: {
       padding: 'p-2',
-      input: 'foreground',
-      background: 'foreground',
+      input: 'bg-gray-100 dark:bg-neutral-900',
+      background: 'bg-gray-100 dark:bg-neutral-900',
       option: {
-        active: 'background'
+        active: 'bg-gray-100 dark:bg-neutral-900'
       }
     },
     radio: {
-      background: 'foreground'
+      background: 'bg-gray-100 dark:bg-neutral-900'
     },
     tabs: {
       list: {
-        background: 'foreground',
+        background: '',
+        height: 'h-auto',
+        rounded: 'rounded-md border border-color',
+        padding: 'p-2',
         marker: {
-          background: 'background'
-        }
+          base: 'w-full h-full',
+          background: 'bg-gray-100 dark:bg-neutral-900'
+        },
+        tab: { background: '' }
       }
     }
   }
