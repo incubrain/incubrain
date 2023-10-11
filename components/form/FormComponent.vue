@@ -27,10 +27,13 @@
       v-model="selected"
       :label="p.field.label"
     />
-    <div class="grid grid-flow-col auto-cols-max gap-4">
+    <div
+      v-if="p.field.type === 'radio'"
+      class="flex flex-wrap gap-4 w-full"
+    >
       <URadio
-        v-if="p.field.type === 'radio'"
         v-for="option in p.field.options"
+        :key="option.name"
         v-model="selected"
         v-bind="option"
       />

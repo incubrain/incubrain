@@ -8,10 +8,10 @@
     />
     <div class="relative flex flex-row items-center justify-center gap-4 rounded-md">
       <div
-        class="relative flex flex-col w-full padded-x justify-start items-center lg:flex-row gap-8 lg:gap-16 wrapper h-64 lg:h-[580px]"
+        class="relative flex w-full padded-x justify-start items-center flex-row gap-4 lg:gap-16 wrapper h-64 lg:h-[580px]"
       >
         <div
-          class="flex justify-center h-auto lg:h-full p-4 items-center background border-x border-color"
+          class="flex justify-center h-full p-4 items-center background border-x border-color"
         >
           <NuxtImg
             v-if="img.src"
@@ -24,12 +24,12 @@
           />
         </div>
         <div class="space-y-4">
-          <h2 class="text-3xl font-bold lg:text-5xl leading-none">
+          <h2 class="text-2xl font-bold lg:text-5xl leading-none">
             {{ title.main }}
           </h2>
           <h4
             v-if="title.subtitle"
-            class="text-xl w-auto inline-block font-semibold lg:text-3xl"
+            class="text-lg w-auto inline-block font-semibold lg:text-3xl"
           >
             {{ title.subtitle }}
           </h4>

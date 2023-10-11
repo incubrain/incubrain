@@ -7,7 +7,7 @@
         <div class="flex flex-shrink-0 justify-center md:pr-4">
           <NuxtLink
             to="/"
-            class="h-full flex justify-center items-center gap-2 font-semibold text-sm"
+            class="h-full flex justify-center flex-col lg:flex-row items-center gap-2 font-semibold text-sm"
           >
             <NuxtImg
               src="images/incubrain-logo.svg"
