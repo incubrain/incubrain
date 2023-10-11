@@ -8,11 +8,9 @@
     />
     <div class="relative flex flex-row items-center justify-center gap-4 rounded-md">
       <div
-        class="relative flex w-full padded-x justify-start items-center flex-row gap-4 lg:gap-16 wrapper h-64 lg:h-[580px]"
+        class="relative flex w-full padded-x justify-center lg:justify-start items-center flex-row gap-4 lg:gap-16 wrapper h-48 lg:h-[580px]"
       >
-        <div
-          class="flex justify-center h-full p-4 items-center background border-x border-color"
-        >
+        <div class="hidden lg:flex justify-center h-full p-4 items-center background border-x border-color">
           <NuxtImg
             v-if="img.src"
             :src="img.src"
@@ -23,13 +21,16 @@
             :class="invert ? 'dark:invert' : ''"
           />
         </div>
-        <div class="space-y-4">
-          <h2 class="text-2xl font-bold lg:text-5xl leading-none">
+        <div class="space-y-4 text-center lg:text-left">
+          <h2
+            class="text-3xl font-bold lg:text-5xl leading-normal bg-gradient-to-r from-primary-500 via-primary-500 to-primary-900 bg-clip-text text-transparent drop-shadow-lg"
+          >
             {{ title.main }}
           </h2>
+
           <h4
             v-if="title.subtitle"
-            class="text-lg w-auto inline-block font-semibold lg:text-3xl"
+            class="text-lg w-auto inline-block font-semibold lg:text-2xl  decoration-primary-500 dark:decoration-primary-900 underline"
           >
             {{ title.subtitle }}
           </h4>

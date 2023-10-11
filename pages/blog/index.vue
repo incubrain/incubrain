@@ -7,7 +7,7 @@
         alt: 'Incubrain Blog Happy Hacker'
       }"
       :title="{
-        main: 'Incubrain Blog',
+        main: 'INCUBRAIN BLOG',
         subtitle: `If you're not learning, you're not growing.`
       }"
     />
