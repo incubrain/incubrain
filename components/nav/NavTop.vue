@@ -1,20 +1,20 @@
 <template>
   <nav
-    class="w-full grid grid-cols-[160px_1fr_0.5fr] sticky top-0 shadow-sm px-4 border-b border-color justify-between backdrop-blur-md background z-40 h-[var(--nav-height-sm)] lg:h-[var(--nav-height-lg)]"
+    class="w-full grid grid-cols-[160px_1fr_0.5fr] sticky top-0 shadow-sm border-b border-color justify-between backdrop-blur-md background z-40 h-[var(--nav-height-sm)] lg:h-[var(--nav-height-lg)]"
   >
-    <NavMobiSlideover class="lg:hidden flex items-start justify-start" />
-    <div class="hidden lg:flex justify-center border-r border-color pr-4">
+    <NavMobiSlideover class="lg:hidden flex items-start justify-start px-2" />
+    <div class="hidden lg:flex justify-center border-r border-color px-4">
       <NuxtLink
         to="/"
-        class="h-full flex justify-center items-center gap-2"
+        class="h-full flex justify-center items-center gap-1"
       >
         <NuxtImg
-          src="images/incubrain-logo.png"
+          src="images/incubrain-logo.svg"
           alt="Incubrain Logo"
-          height="26"
-          width="26"
+          width="32"
+          class="dark:invert"
         />
-        <h3 class="text-xl font-bold">INCUBRAIN</h3>
+        <h3 class="text-sm font-bold">INCUBRAIN</h3>
       </NuxtLink>
     </div>
     <ul class="flex h-full items-center w-full pl-4">
@@ -68,7 +68,7 @@
         </UDropdown>
       </li>
     </ul>
-    <div class="flex gap-3 justify-end items-center">
+    <div class="flex gap-3 justify-end items-center px-4">
       <DarkToggle v-slot="{ toggle, isDark }">
         <UIcon
           :name="isDark.value ? 'i-heroicons-moon' : 'i-heroicons-sun'"
@@ -89,11 +89,12 @@
       <UButton
         to="/services/business-starter"
         color="primary"
+        class="lg:before:content-['Join']"
       >
-        Get Started
+        Community
         <UIcon
           name="i-mdi-chevron-right"
-          class="h-4 w-4"
+          class="h-4 w-4 hidden lg:inline-block"
         />
       </UButton>
     </div>

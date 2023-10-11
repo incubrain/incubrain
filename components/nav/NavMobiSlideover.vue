@@ -16,19 +16,19 @@
       class="z-50"
     >
       <div class="border-r border-color">
-        <div class="foreground w-full flex items-center justify-between p-4">
+        <div class="foreground w-full flex items-center border-b border-color justify-between p-4">
           <NuxtLink
-            class="flex gap-2"
+            class="flex justify-center items-center gap-2"
             to="/"
             @click="isOpen = false"
           >
             <NuxtImg
-              src="images/incubrain-logo.png"
-              alt="Astron Era Logo"
-              width="46"
-              height="29"
+              src="images/incubrain-logo.svg"
+              alt="Incubrain Logo"
+              width="34"
+              class="dark:invert"
             />
-            <h3 class="text-xl font-semibold">Incubrain</h3>
+            <h3 class="text-sm font-bold">INCUBRAIN</h3>
           </NuxtLink>
           <UButton
             variant="solid"
@@ -46,7 +46,7 @@
             class="w-full flex justify-end items-center border-b border-color py-3 px-8 text-sm font-medium"
             @click="isOpen = false"
           >
-            {{ page.title }}
+            {{ page.label }}
             <UIcon
               :name="page.icon"
               class="ml-2 w-4 h-4"

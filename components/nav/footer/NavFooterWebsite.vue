@@ -10,10 +10,10 @@
             class="h-full flex justify-center items-center gap-2 font-semibold text-sm"
           >
             <NuxtImg
-              src="images/incubrain-logo.png"
+              src="images/incubrain-logo.svg"
               alt="Drew MacGibbon Development (DM Development)"
-              height="26"
-              width="26"
+              width="36"
+              class="dark:invert"
             />
             INCUBRAIN
           </NuxtLink>

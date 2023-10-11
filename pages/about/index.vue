@@ -2,9 +2,9 @@
   <div>
     <CommonHero
       :img="{
-        title: 'Featured image for the Dark Sky Conservation India Conference',
-        src: 'images/contact-us-3.png',
-        alt: 'Featured image for the Dark Sky Conservation India Conference'
+        title: 'Incubrain Logo on contact page',
+        src: 'images/incubrain-logo.svg',
+        alt: 'Incubrain Logo on contact page'
       }"
       :title="heroTitle"
     />
@@ -41,7 +41,7 @@
     </CommonCTA>
     <div class="wrapper padded-x padded-y spaced-y">
       <!-- Add blog section -->
-      <BlogDisplay
+      <!-- <BlogDisplay
         :posts="posts"
         :title="postTitle"
       >
@@ -51,7 +51,7 @@
         >
           View all
         </UButton>
-      </BlogDisplay>
+      </BlogDisplay> -->
       <!-- Add team section -->
     </div>
   </div>
