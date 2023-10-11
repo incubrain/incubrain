@@ -5,10 +5,11 @@
       :src="img.src"
       :alt="img.alt"
     />
-    <div class="w-full h-full absolute top-0 left-0 bg-black/50" />
+    <div class="w-full h-full absolute top-0 left-0 bg-black/10 dark:bg-black/50" />
     <div
       class="relative flex flex-col w-full padded-x justify-center items-center lg:flex-row text-white gap-8 lg:gap-16 wrapper h-64 lg:h-[580px]"
     >
+      <slot />
       <div class="space-y-4 w-full">
         <h2 class="text-3xl font-bold lg:text-5xl">
           {{ title.main }}
@@ -19,7 +20,6 @@
         >
           {{ title.subtitle }}
         </h4>
-        <slot />
       </div>
     </div>
   </div>
