@@ -12,15 +12,24 @@
       }"
     />
     <div
-      class="wrapper p-4 lg:p-8 grid grid-cols-1 lg:grid-cols-[0.5fr_1fr] items-start w-full gap-4 xl:gap-8 relative"
+      class="wrapper md:p-4 lg:p-8 grid grid-cols-1 lg:grid-cols-[0.5fr_1fr] items-start w-full md:gap-4 xl:gap-8 relative"
     >
       <BlogFilter />
-      <div class="grid gap-4 grid-cols-1 xl:gap-8 md:grid-cols-2 h-full">
+      <div class="grid md:gap-4 grid-cols-1 xl:gap-8 md:grid-cols-2 h-full">
         <BlogCard
           v-for="post in posts"
           :key="post.id"
           :post="post"
         />
+        <div
+          v-if="postsLoading"
+          class="w-full h-full md:col-span-2 flex flex-col md:flex-row md:gap-4 xl:gap-8"
+        >
+          <BlogCardSkeleton
+            v-for="i in 2"
+            :key="`blog-skeleton-loader-${i}`"
+          />
+        </div>
         <div ref="sentinel" />
       </div>
       <!-- <template #fallback>
@@ -38,7 +47,7 @@
 
 <script setup lang="ts">
 const postStore = usePostsStore()
-const { posts } = storeToRefs(postStore)
+const { posts, postsLoading } = storeToRefs(postStore)
 const sentinel = ref<HTMLElement | null>(null)
 let observer: IntersectionObserver | null = null
 
