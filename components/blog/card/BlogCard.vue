@@ -1,12 +1,13 @@
 <template>
   <TransitionBounce>
     <div
-      class="relative w-full h-full md:rounded-md border border-color cursor-pointer p-4 gap-4 flex flex-col overflow-hidden"
+      class="relative w-full h-full md:rounded-md border border-color cursor-pointer p-4 gap-2 flex flex-col overflow-hidden"
     >
       <BlogCatTag
         :tags="post.tags"
         :category="post.category"
         :post-slug="post._path.split('/')[2]"
+        class="pb-2 pl-2"
       />
       <NuxtLink :to="post._path">
         <NuxtImg
@@ -17,7 +18,7 @@
           quality="80"
         />
       </NuxtLink>
-      <div class="flex flex-col gap-2 items-start w-full p-2 lg:p-4 justify-center">
+      <div class="flex flex-col gap-2 items-start w-full p-2 justify-center">
         <h3 class="text-xl lg:text-2xl font-bold">
           {{ post.title }}
         </h3>

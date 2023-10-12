@@ -8,12 +8,12 @@
     <div class="w-full">
       <div class="flex flex-nowrap w-full">
         <h3
-          class="text-xl lg:text-5xl font-bold whitespace-nowrap animate-marquee pr-6 bg-primary-100 shadow-md underline decoration-primary-500 dark:decoration-primary-900"
+          class="text-xl lg:text-5xl font-bold whitespace-nowrap animate-marquee pr-6 bg-primary-100 dark:bg-primary-900 shadow-md underline decoration-primary-500 dark:decoration-primary-600"
         >
           {{ bannerText }}
         </h3>
         <h3
-          class="absolute left-0 text-xl lg:text-5xl font-bold whitespace-nowrap animate-marquee2 bg-primary-100 shadow-md underline decoration-primary-500 dark:decoration-primary-900"
+          class="absolute left-0 text-xl lg:text-5xl font-bold whitespace-nowrap animate-marquee2 bg-primary-100 dark:bg-primary-900 shadow-md underline decoration-primary-500 dark:decoration-primary-600"
         >
           {{ bannerText }}
         </h3>
