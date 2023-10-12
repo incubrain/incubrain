@@ -1,23 +1,23 @@
 <template>
   <div
-    class="group min-h-[258px] overflow-hidden rounded-lg border border-color px-8 pb-6 pt-10 text-3xl font-semibold"
+    id="stack"
+    class="group min-h-[258px] overflow-hidden rounded-lg border flex flex-col justify-around border-color px-8 pb-6 pt-10 "
     role="presentation"
     aria-label="Our Technology Stack"
   >
-    <h3 class="mb-6">Incubrain Stack</h3>
-
+    <h3 class="text-3xl font-semibold underline decoration-primary-500 dark:decoration-primary-900">Incubrain Stack</h3>
     <div
       v-for="i in 2"
       :key="`stacks-group-${i}`"
       class="-ml-8 mb-2 flex gap-2"
     >
       <div
+        v-for="index in 2"
+        :key="index"
         :class="[
           'flex min-w-full gap-2',
           i === 1 ? 'animation-stacks-left' : 'animation-stacks-right'
         ]"
-        v-for="index in 2"
-        :key="index"
       >
         <NuxtLink
           v-for="stack in getStacksForGroup(i)"
@@ -43,7 +43,7 @@
 </template>
 
 <script setup lang="ts">
-const stacks: { logo: string; name: string; link: string, invert?: boolean }[] = [
+const stacks: { logo: string; name: string; link: string; invert?: boolean }[] = [
   {
     logo: 'images/logos/vue.svg',
     name: 'Vue',
@@ -90,6 +90,11 @@ const stacks: { logo: string; name: string; link: string, invert?: boolean }[] =
     logo: 'images/logos/vueuse.svg',
     name: 'VueUse',
     link: 'https://vueuse.org/'
+  },
+  {
+    logo: 'images/logos/postgresql.svg',
+    name: 'PostgreSQL',
+    link: 'https://www.postgresql.org/'
   }
 ]
 
@@ -100,4 +105,71 @@ const getStacksForGroup = (groupNumber: number) => {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+#stack {
+  --gap: 0.5rem;
+  --duration: 30s;
+  --scroll-start: 0;
+  --scroll-end: calc(-100%);
+}
+.animation-text-left {
+  flex-shrink: 0;
+  min-width: 100%;
+  animation: scroll-left var(--duration) linear infinite;
+}
+
+.animation-stacks-left {
+  --duration: 20s;
+  --scroll-end: calc(-100% - var(--gap));
+  flex-shrink: 0;
+  min-width: 100%;
+  animation: scroll-left var(--duration) linear infinite;
+}
+
+.animation-text-right {
+  flex-shrink: 0;
+  min-width: 100%;
+  animation: scroll-right var(--duration) linear infinite;
+}
+
+.animation-stacks-right {
+  --duration: 20s;
+  --scroll-end: calc(-100% - var(--gap));
+  flex-shrink: 0;
+  min-width: 100%;
+  animation: scroll-right var(--duration) linear infinite;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(var(--scroll-start));
+  }
+  to {
+    transform: translateX(var(--scroll-end));
+  }
+}
+
+@keyframes scroll-right {
+  from {
+    transform: translateX(var(--scroll-end));
+  }
+  to {
+    transform: translateX(var(--scroll-start));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animation-text-left {
+    animation-play-state: paused;
+  }
+  .animation-stacks-left {
+    animation-play-state: paused;
+  }
+  .animation-text-right {
+    animation-play-state: paused;
+  }
+  .animation-stacks-right {
+    animation-play-state: paused;
+  }
+}
+</style>

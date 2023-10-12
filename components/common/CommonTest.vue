@@ -1,66 +1,27 @@
 <template>
-  <section
-    id="why_us"
-    class="my-20 md:my-32"
-  >
+  <section class="my-20 md:my-32">
     <div>
       <CommonTitle :title="title" />
       <div
-        class="space-y-6 pt-10 sm:grid sm:grid-cols-[repeat(auto-fill,_minmax(320px,_1fr))] sm:gap-6 sm:space-y-0"
+        class="space-y-6 pt-10 sm:grid sm:grid-cols-[repeat(auto-fill,_minmax(320px,_1fr))] gap-4 lg:gap-8 sm:space-y-0"
       >
-        <div class="group relative h-full overflow-hidden lg:row-span-2 text-3xl font-semibold">
-          <CommonSlider />
-          <CommonStack />
-        </div>
-        <div
-          class="group mb-6 h-full lg:row-span-2 overflow-hidden rounded-lg border border-color px-8 pb-4 pt-10 text-3xl font-semibold block"
-        >
-          <div class="relative h-full flex flex-col">
-            <h3 class="mb-9 w-full">Code Review</h3>
-            <div class="h-full min-w-[calc(100%_+_32px)] flex-1 border border-color shadow-lg">
-              <NuxtImg
-                loading="lazy"
-                src="images/vectors/terminal.svg"
-                alt="Menthor terminal"
-                height="380"
-                width="334"
-                class="block h-full w-full dark:invert rounded-l-lg object-cover object-left-top"
-              />
-            </div>
+        <div class="group relative h-full lg:row-span-2 flex flex-col gap-4 lg:gap-8">
+          <div class="rounded-lg border border-color p-8">
+            <h3 class="text-3xl font-semibold underline decoration-primary-500 dark:decoration-primary-900">Behind The Scenes</h3>
+            <p class="text-base">
+              some information about our company
+              <strong class="font-semibold text-primary-500">Incubrain</strong>
+            </p>
           </div>
+          <CommonStack class="flex-grow" />
         </div>
-        <div
-          class="col-span-1 flex flex-col h-full md:col-span-2 lg:col-span-1 lg:row-span-2 group space-y-6"
-        >
-          <div
-            class="relative h-full overflow-hidden rounded-lg border border-solid border-color px-8 pb-6 pt-10 text-3xl font-semibold"
-          >
-            <NuxtImg
-              loading="lazy"
-              src="images/vectors/world_map.svg"
-              height="264"
-              alt="Menthor mapa mundial"
-              width="810"
-              class="absolute -top-[8px] left-[62px] h-[264px] w-[810px]"
-            />
-            <h3 class="relative mb-6"> Global Founder Network </h3>
-          </div>
-          <div
-            class="relative h-full flex-grow overflow-hidden rounded-lg border border-solid border-color py-6 px-8 text-3xl font-semibold flex items-end text-right"
-          >
-            <div class="absolute top-0 left-0 w-full h-[99px]">
-              <NuxtImg
-                loading="lazy"
-                src="images/vectors/courses.svg"
-                alt="Lista de cursos da plataforma menthor.io"
-                width="354"
-                height="99"
-                class="w-full h-full object-cover object-center"
-              />
-            </div>
-            <h3 class="block text-3xl font-semibold"> What should I have here? </h3>
-          </div>
-        </div>
+        <CommonCardBgImage
+          v-for="(card, index) in commonCards"
+          :key="index"
+          :img="card.img"
+          :title="card.title"
+          :parent="card.parent"
+        />
       </div>
     </div>
   </section>
@@ -75,74 +36,44 @@ defineProps({
     required: true
   }
 })
+
+const commonCards = [
+  {
+    title: 'Code Review',
+    parent: 'relative lg:row-span-2',
+    img: {
+      src: 'images/vectors/terminal.svg',
+      height: 380,
+      alt: 'Menthor terminal',
+      width: 334,
+      class: 'block h-full w-full dark:invert rounded-l-lg object-cover object-left-top',
+      parentClass: 'h-full min-w-[calc(100%_+_32px)] flex-1 border border-color shadow-lg'
+    }
+  },
+  {
+    title: 'Global Founder Network',
+    parent: 'relative h-full flex flex-col',
+    img: {
+      src: 'images/vectors/world_map.svg',
+      height: 264,
+      alt: 'Menthor mapa mundial',
+      width: 810,
+      class: 'absolute -top-[8px] left-[62px] h-[264px] w-[810px] dark:invert'
+    }
+  },
+  {
+    title: 'Website Audits',
+    parent:
+      'relative h-full flex flex-col justify-center items-center',
+    img: {
+      src: 'images/home/website-audit.png',
+      alt: 'Website Audit image',
+      width: 240,
+      height: 240,
+      class: 'object-cover object-center -mb-28'
+    }
+  }
+]
 </script>
 
-<style>
-#why_us {
-  --gap: 0.5rem;
-  --duration: 30s;
-  --scroll-start: 0;
-  --scroll-end: calc(-100%);
-}
-
-.animation-text-left {
-  flex-shrink: 0;
-  min-width: 100%;
-  animation: scroll-left var(--duration) linear infinite;
-}
-
-.animation-stacks-left {
-  --duration: 20s;
-  --scroll-end: calc(-100% - var(--gap));
-  flex-shrink: 0;
-  min-width: 100%;
-  animation: scroll-left var(--duration) linear infinite;
-}
-
-.animation-text-right {
-  flex-shrink: 0;
-  min-width: 100%;
-  animation: scroll-right var(--duration) linear infinite;
-}
-
-.animation-stacks-right {
-  --duration: 20s;
-  --scroll-end: calc(-100% - var(--gap));
-  flex-shrink: 0;
-  min-width: 100%;
-  animation: scroll-right var(--duration) linear infinite;
-}
-
-@keyframes scroll-left {
-  from {
-    transform: translateX(var(--scroll-start));
-  }
-  to {
-    transform: translateX(var(--scroll-end));
-  }
-}
-
-@keyframes scroll-right {
-  from {
-    transform: translateX(var(--scroll-end));
-  }
-  to {
-    transform: translateX(var(--scroll-start));
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .animation-text-left {
-    animation-play-state: paused;
-  }
-  .animation-stacks-left {
-    animation-play-state: paused;
-  }
-  .animation-text-right {
-    animation-play-state: paused;
-  }
-  .animation-stacks-right {
-    animation-play-state: paused;
-  }
-}
-</style>
+<style></style>

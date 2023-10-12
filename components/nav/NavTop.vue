@@ -15,7 +15,7 @@
           height="42"
           class="dark:invert"
         />
-        <h3 class="text-sm font-bold">INCUBRAIN</h3>
+        <h3 class="text-sm font-bold leading-normal">INCUBRAIN</h3>
       </NuxtLink>
     </div>
     <ul class="flex h-full w-full items-center">
