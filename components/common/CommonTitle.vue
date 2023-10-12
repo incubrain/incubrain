@@ -6,7 +6,7 @@
     >
       {{ title.label }}
     </p>
-    <h2 class="text-2xl lg:text-4xl font-bold">
+    <h2 class="text-2xl lg:text-4xl font-bold" :class="isCta ? 'underline decoration-primary-500 dark:decoration-primary-900' : ''">
       {{ title.main }}
     </h2>
     <p
@@ -32,6 +32,10 @@ defineProps({
   alignment: {
     type: String,
     default: 'left'
+  },
+  isCta: {
+    type: Boolean,
+    default: false
   }
 })
 </script>

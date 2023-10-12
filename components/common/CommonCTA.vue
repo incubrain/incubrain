@@ -8,6 +8,7 @@
       <CommonTitle
         :title="title"
         alignment="center"
+        is-cta
       >
         <slot />
       </CommonTitle>
