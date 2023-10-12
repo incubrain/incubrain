@@ -109,13 +109,13 @@ const content = {
     },
     items: [
       {
-        icon: 'i-mdi-business-center',
+        icon: 'i-material-symbols-attach-money',
         title: 'Cost-Effective Solutions',
         description:
           'Harness the benefits of cost-effective talent in India, combined with our optimized operational strategies to give your startup the best ROI.'
       },
       {
-        icon: 'i-heroicons-graph',
+        icon: 'i-material-symbols-table-chart-view-outline',
         title: 'Business Coaching',
         description:
           'Benefit from our experienced mentors who guide you through startup challenges, helping you make informed decisions.'
@@ -133,7 +133,7 @@ const content = {
           'Leverage the expertise of a full-time developer, dedicated to turning your SaaS vision into a functioning reality.'
       },
       {
-        icon: 'i-heroicons-review',
+        icon: 'i-material-symbols-preview',
         title: 'Quality Assurance',
         description:
           'Ensure your product meets the highest standards with our thorough code reviews, ensuring performance and security.'
