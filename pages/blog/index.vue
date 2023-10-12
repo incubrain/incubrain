@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div ref="infinateBlogs">
     <CommonHero
       :img="{
         title: 'Incubrain Blog Happy Hacker',
@@ -15,69 +15,58 @@
       class="wrapper p-4 lg:p-8 grid grid-cols-1 lg:grid-cols-[0.5fr_1fr] items-start w-full gap-4 xl:gap-8 relative"
     >
       <BlogFilter />
-      <div class="grid gap-4 grid-cols-1 xl:gap-8 md:grid-cols-2">
+      <div class="grid gap-4 grid-cols-1 xl:gap-8 md:grid-cols-2 h-full">
         <BlogCard
           v-for="post in posts"
           :key="post.id"
           :post="post"
         />
+        <div ref="sentinel" />
       </div>
+      <!-- <template #fallback>
+          <div class="grid gap-4 grid-cols-1 xl:gap-8 md:grid-cols-2">
+            <h1 class="text-3xl"> loading posts... </h1>
+            <BlogCardSkeleton
+              v-for="i in 2"
+              :key="i"
+            />
+          </div>
+        </template> -->
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-const categories = ref(['all', 'frontend', 'backend', 'business', 'projects'])
-const tags = ref([
-  // frontend
-  'nuxt',
-  'vue',
-  'typescript',
-  // backend
-  'nitro',
-  'supabase',
-  'postgresql',
-  'auth',
-  'ci/cd',
-  // design
-  'tailwindcss',
-  // general
-  'learning',
-  'code quality',
-  'testing',
-  'productivity'
-])
+const postStore = usePostsStore()
+const { posts } = storeToRefs(postStore)
+const sentinel = ref<HTMLElement | null>(null)
+let observer: IntersectionObserver | null = null
 
-const filter = useFiltersStore()
-const { addCategories, addTags } = filter
-const { selectedCategory, selectedTags } = storeToRefs(filter)
-
-addTags(tags.value)
-addCategories(categories.value)
-
-const posts = ref()
-
-watchEffect(async () => {
-  if (selectedCategory.value === 'all') {
-    posts.value = await queryContent('blog')
-      .where({ tags: { $in: selectedTags.value } })
-      .sort({ date: -1 })
-      .skip(0)
-      .limit(10)
-      .find()
-  } else {
-    posts.value = await queryContent('blog')
-      .where({ category: selectedCategory.value, tags: { $in: selectedTags.value } })
-      .sort({ date: -1 })
-      .skip(0)
-      .limit(10)
-      .find()
+onMounted(() => {
+  const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 1.0
   }
-  console.log('posts', posts.value)
+
+  observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        postStore.getPostsOnScroll()
+      }
+    })
+  }, options)
+
+  if (sentinel.value) observer.observe(sentinel.value)
+})
+
+onUnmounted(() => {
+  if (observer && sentinel.value) {
+    observer.unobserve(sentinel.value)
+  }
 })
 
 definePageMeta({
-  layout: 'tabbed',
   name: 'BlogAll'
 })
 </script>
