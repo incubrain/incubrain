@@ -1,8 +1,8 @@
 <template>
-  <div class="lg:sticky top-24 space-y-4 h-auto border border-color rounded-md p-4 xl:p-8">
+  <div class="lg:sticky top-24 space-y-4 h-auto border border-color md:rounded-md p-4 xl:p-8">
     <div class="space-y-2">
       <p class="text-sm">Categories</p>
-      <div class="flex gap-2 flex-wrap">
+      <div class="flex gap-4 flex-wrap">
         <UButton
           v-for="cat in categories"
           :key="cat"

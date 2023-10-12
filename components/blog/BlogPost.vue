@@ -21,12 +21,7 @@
                 Published {{ useDateFormat(post.date, 'DD MMM YYYY').value }}
               </p>
               <p class="font-semibold"> By </p>
-              <div
-                v-for="author in authorNames.filter((a) => post.authors.includes(a.id))"
-                :key="`post-author-${author.id}`"
-              >
-                <span class="font-semibold"> {{ author.givenName }} {{ author.surname }} </span>
-              </div>
+              <BlogAuthor :author-ids="post.authors" />
             </div>
             <div class="flex gap-2">
               <UBadge
@@ -67,13 +62,7 @@
 </template>
 
 <script setup lang="ts">
-const authorNames = [
-  {
-    id: 1,
-    givenName: 'Drew',
-    surname: 'MacGibbon'
-  }
-]
+
 
 defineProps({
   post: {
