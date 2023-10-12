@@ -4,7 +4,7 @@
     role="presentation"
     aria-label="Our Technology Stack"
   >
-    <h3 class="mb-6">Simple Stack</h3>
+    <h3 class="mb-6">Incubrain Stack</h3>
 
     <div
       v-for="i in 2"
@@ -33,6 +33,7 @@
             width="26"
             height="16"
             :alt="stack.name"
+            :class="stack.invert ? 'dark:invert' : ''"
           />
           <span class="text-sm font-semibold">{{ stack.name }}</span>
         </NuxtLink>
@@ -42,7 +43,7 @@
 </template>
 
 <script setup lang="ts">
-const stacks: { logo: string; name: string; link: string }[] = [
+const stacks: { logo: string; name: string; link: string, invert?: boolean }[] = [
   {
     logo: 'images/logos/vue.svg',
     name: 'Vue',
@@ -61,17 +62,14 @@ const stacks: { logo: string; name: string; link: string }[] = [
   {
     logo: 'images/logos/vercel.svg',
     name: 'Vercel',
-    link: 'https://vercel.com/'
+    link: 'https://vercel.com/',
+    invert: true
   },
   {
     logo: 'images/logos/github.svg',
     name: 'GitHub',
-    link: 'https://github.com/'
-  },
-  {
-    logo: 'images/logos/playwright.svg',
-    name: 'Playwright',
-    link: 'https://playwright.dev/'
+    link: 'https://github.com/',
+    invert: true
   },
   {
     logo: 'images/logos/nuxt.svg',
@@ -79,9 +77,19 @@ const stacks: { logo: string; name: string; link: string }[] = [
     link: 'https://nuxt.com/'
   },
   {
-    logo: 'images/logos/turborepo.svg',
-    name: 'Turborepo',
-    link: 'https://turbo.build/repo'
+    logo: 'images/logos/vitejs.svg',
+    name: 'Vite',
+    link: 'https://vitejs.dev/'
+  },
+  {
+    logo: 'images/logos/typescript.svg',
+    name: 'TypeScript',
+    link: 'https://www.typescriptlang.org/'
+  },
+  {
+    logo: 'images/logos/vueuse.svg',
+    name: 'VueUse',
+    link: 'https://vueuse.org/'
   }
 ]
 
