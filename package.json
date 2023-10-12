@@ -9,9 +9,7 @@
     "start": "node .output/server/index.mjs",
     "cache:clean": "npm cache clean --force && npx nuxi cleanup",
     "lint": "eslint . --ext .ts,.js,.vue",
-    "lint:fix": "eslint . --ext .ts,.js,.vue --fix",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "lint:fix": "eslint . --ext .ts,.js,.vue --fix"
   },
   "devDependencies": {
     "@iconify-json/material-symbols": "^1.1.57",
