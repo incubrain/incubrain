@@ -1,20 +1,7 @@
-export const usePostsStore = defineStore('posts', () => {
-  type PostCategories = 'all' | 'frontend' | 'backend' | 'business' | 'projects'
-  type PostTags =
-    | 'nuxt'
-    | 'vue'
-    | 'typescript'
-    | 'nitro'
-    | 'supabase'
-    | 'postgresql'
-    | 'auth'
-    | 'ci/cd'
-    | 'tailwindcss'
-    | 'learning'
-    | 'code quality'
-    | 'testing'
-    | 'productivity'
+import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
+import { PostTags, PostCategories } from '../types/posts'
 
+export const usePostsStore = defineStore('posts', () => {
   type PostsType = {
     // eslint-disable-next-line no-unused-vars
     [key in PostCategories]: any[]
@@ -60,58 +47,57 @@ export const usePostsStore = defineStore('posts', () => {
     }
   }
 
-  function toggleCategory(category: PostCategories) {
+  const postsToLoad = 10
+  const postsLoading = ref(false)
+
+  async function toggleCategory(category: PostCategories) {
+    console.log('toggleCategory', category)
     if (selectedCategory.value !== category) {
       selectedCategory.value = category
+      await getPosts(postsToLoad, 0)
+      console.log('toggleCategory 2', posts[selectedCategory.value])
     }
   }
 
-  const postsToLoad = 10
-  const fetchingPosts = ref(false)
+  const getPosts = async (limit: number, skip: number) => {
+    console.log('getPosts 1')
+    if (postsLoading.value) return
+    if (!selectedCategory.value) return
+    postsLoading.value = true
+    await new Promise((resolve) => setTimeout(resolve, 1000))
 
-  const getPosts = (limit: number, skip: number) => {
-    if (selectedCategory.value === 'all') {
-      return queryContent('blog')
-        .where({ tags: { $in: selectedTags.value } })
-        .sort({ date: -1 })
-        .skip(skip)
-        .limit(limit)
-        .find()
-    } else {
-      return queryContent('blog')
-        .where({ category: selectedCategory.value, tags: { $in: selectedTags.value } })
-        .sort({ date: -1 })
-        .skip(skip)
-        .limit(limit)
-        .find()
+    console.log('getPosts 2')
+    const whereOptions: QueryBuilderParams = { tags: { $in: selectedTags.value } }
+
+    if (selectedCategory.value !== 'all') {
+      whereOptions.category = selectedCategory.value
     }
+    console.log('getPosts 3', whereOptions)
+    const newPosts = await queryContent('blog')
+      .where(whereOptions)
+      .sort({ date: -1 })
+      .skip(skip)
+      .limit(limit)
+      .find()
+    console.log('new posts', newPosts)
+    posts[selectedCategory.value].push(...newPosts)
+    postsLoading.value = false
   }
 
   const getPostsOnScroll = async () => {
-    console.log('post load', !posts[selectedCategory.value])
     if (!posts[selectedCategory.value]) return
-    console.log('post load', posts[selectedCategory.value].length % postsToLoad !== 0)
+    console.log('have posts', !posts[selectedCategory.value])
     if (posts[selectedCategory.value].length % postsToLoad !== 0) return
-    if (fetchingPosts.value) return
-    fetchingPosts.value = true
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    const newPosts = await getPosts(postsToLoad, posts[selectedCategory.value].length)
-    posts[selectedCategory.value].push(...newPosts)
-    fetchingPosts.value = false
-  }
+    console.log('max posts fetched', posts[selectedCategory.value].length % postsToLoad !== 0)
 
-  watch(
-    categories,
-    async () => {
-      posts[selectedCategory.value] = await getPosts(postsToLoad, 0)
-    },
-    { immediate: true }
-  )
+    await getPosts(postsToLoad, posts[selectedCategory.value].length)
+  }
 
   return {
     tags,
     categories,
     posts: computed(() => posts[selectedCategory.value]),
+    postsLoading,
     selectedCategory,
     selectedTags,
     toggleTag,
