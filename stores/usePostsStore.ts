@@ -8,7 +8,7 @@ import {
   postFullSchema
 } from '../types/posts'
 
-const postCardProperties = [
+const POST_CARD_PROPERTIES = [
   'title',
   'description',
   'category',
@@ -20,55 +20,52 @@ const postCardProperties = [
   '_path'
 ]
 
-const postFullProperties = [...postCardProperties, 'body', 'id']
+const CATEGORIES: PostCategories[] = ['all', 'frontend', 'backend', 'business', 'projects']
+
+const TAGS: PostTags[] = [
+  'nuxt',
+  'vue',
+  'typescript',
+  'nitro',
+  'supabase',
+  'postgresql',
+  'auth',
+  'ci/cd',
+  'tailwindcss',
+  'learning',
+  'code quality',
+  'testing',
+  'productivity'
+]
+
+const POST_FULL_PROPERTIES = [...POST_CARD_PROPERTIES, 'body', 'id', '_draft', '_id']
 
 export const usePostsStore = defineStore('posts', () => {
-  type PostsType = {
-    // eslint-disable-next-line no-unused-vars
-    [key in PostCategories]: any[]
+  type PostsType = Record<PostCategories, PostCard[]>
+
+  function initializeCategories<T>(
+    initializer: (category: PostCategories) => T
+  ): Record<PostCategories, T> {
+    return Object.fromEntries(
+      CATEGORIES.map((category) => [category, initializer(category)])
+    ) as Record<PostCategories, T>
   }
 
-  const posts: PostsType = reactive({
-    all: [],
-    frontend: [],
-    backend: [],
-    business: [],
-    projects: []
-  })
-
-  const categories = ref<PostCategories[]>(['all', 'frontend', 'backend', 'business', 'projects'])
-  const tags = ref<PostTags[]>([
-    // frontend
-    'nuxt',
-    'vue',
-    'typescript',
-    // backend
-    'nitro',
-    'supabase',
-    'postgresql',
-    'auth',
-    'ci/cd',
-    // design
-    'tailwindcss',
-    // general
-    'learning',
-    'code quality',
-    'testing',
-    'productivity'
-  ])
+  const posts: PostsType = reactive(initializeCategories(() => <PostCard[]>[]))
+  const allPostsFetched: Record<PostCategories, boolean> = reactive(
+    initializeCategories(() => false)
+  )
 
   const selectedCategory = ref<PostCategories>('all')
-  const selectedTags = ref<PostTags[]>([...tags.value])
+  const selectedTags = ref<PostTags[]>([...TAGS])
 
   const postsToLoad = 10
   const postsLoading = ref(false)
-  const allPostsFetched: Record<PostCategories, boolean> = reactive({
-    all: false,
-    frontend: false,
-    backend: false,
-    business: false,
-    projects: false
-  })
+
+  /**
+   * Toggle the selected tag in the filter.
+   * @param tag - The tag to toggle.
+   */
 
   function toggleTag(tag: PostTags) {
     const index = selectedTags.value.indexOf(tag)
@@ -79,6 +76,11 @@ export const usePostsStore = defineStore('posts', () => {
     }
   }
 
+  /**
+   * Change the selected category and fetch relevant posts.
+   * @param category - The new category to set.
+   */
+
   async function toggleCategory(category: PostCategories) {
     if (selectedCategory.value !== category) {
       selectedCategory.value = category
@@ -86,53 +88,87 @@ export const usePostsStore = defineStore('posts', () => {
     }
   }
 
+  /**
+   * Fetches and validates posts based on current filters.
+   * @param limit - Max number of posts to fetch.
+   * @param skip - Number of posts to skip.
+   */
+
   const getPosts = async (limit: number, skip: number) => {
     if (postsLoading.value) return
     if (!selectedCategory.value) return
     postsLoading.value = true
-    await new Promise((resolve) => setTimeout(resolve, 1000))
 
-    const whereOptions: QueryBuilderParams = { tags: { $in: selectedTags.value } }
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 1000))
 
-    if (selectedCategory.value !== 'all') {
-      whereOptions.category = selectedCategory.value
-    }
-
-    const newPosts = await queryContent('blog')
-      .where(whereOptions)
-      .only(postCardProperties)
-      .sort({ date: -1 })
-      .skip(skip)
-      .limit(limit)
-      .find()
-
-    if (newPosts.length < postsToLoad) {
-      allPostsFetched[selectedCategory.value] = true
-    }
-
-    // validate the posts data structure
-    const validPosts = newPosts.filter((post) => {
-      const validationResult = postCardSchema.safeParse(post)
-
-      if (!validationResult.success) {
-        console.error('post (', post.title, ') has and invalid structure:', validationResult.error)
-        return false // Exclude post from resulting array
+      const whereOptions: QueryBuilderParams = {
+        tags: { $in: selectedTags.value },
+        status: { $eq: 'published' }
       }
-      return true // Include post in resulting array
-    })
 
-    posts[selectedCategory.value].push(...validPosts)
-    postsLoading.value = false
+      if (selectedCategory.value !== 'all') {
+        whereOptions.category = selectedCategory.value
+      }
+
+      const newPosts = await queryContent('blog')
+        .where(whereOptions)
+        .only(POST_CARD_PROPERTIES)
+        .sort({ date: -1 })
+        .skip(skip)
+        .limit(limit)
+        .find()
+
+      if (newPosts.length < postsToLoad) {
+        allPostsFetched[selectedCategory.value] = true
+      }
+
+      const validPosts = newPosts.filter((post) => isValidPost(post as PostCard, postCardSchema))
+      posts[selectedCategory.value].push(...(validPosts as PostCard[]))
+    } catch (error) {
+      console.error('Failed to get posts:', error)
+    } finally {
+      postsLoading.value = false
+    }
+  }
+
+  const getSinglePost = async ({ path, category }: { path: string; category: string }) => {
+    console.log('getSinglePost', category, path)
+    const { data } = await useAsyncData('post', () =>
+      queryContent('blog', category).only(POST_FULL_PROPERTIES).where({ _path: path }).findOne()
+    )
+    console.log('getSinglePost2', data)
+    const validPost = isValidPost(data.value as PostFull, postFullSchema)
+    if (!validPost) return console.error('Post failed to load')
+    return data.value as PostFull
+  }
+
+  /**
+   * Validates the structure of the given post, filtering out invalid posts.
+   * @param post - The post to validate.
+   * @param schema - The validation schema to use.
+   * @returns `true` if the post has a valid structure; otherwise, `false`.
+   */
+
+  function isValidPost(
+    post: PostCard | PostFull,
+    schema: typeof postCardSchema | typeof postFullSchema
+  ): boolean {
+    const { success } = schema.safeParse(post)
+    if (!success) {
+      console.error('Invalid post structure for', post.title)
+    }
+    return success
   }
 
   const getPostsOnScroll = async () => {
-    if (!posts[selectedCategory.value]) return
+    if (!posts[selectedCategory.value]?.length) return
     await getPosts(postsToLoad, posts[selectedCategory.value].length)
   }
 
   return {
-    tags,
-    categories,
+    tags: TAGS,
+    categories: CATEGORIES,
     posts: computed(() => posts[selectedCategory.value]),
     postsEnd: computed(() => allPostsFetched[selectedCategory.value]),
     postsLoading,
@@ -140,6 +176,8 @@ export const usePostsStore = defineStore('posts', () => {
     selectedTags,
     toggleTag,
     toggleCategory,
+    getPosts,
+    getSinglePost,
     getPostsOnScroll
   }
 })
