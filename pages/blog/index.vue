@@ -30,24 +30,26 @@
             :key="`blog-skeleton-loader-${i}`"
           />
         </div>
-        <div ref="sentinel" />
+        <div
+          v-if="!postsEnd"
+          ref="sentinel"
+        />
+        <div
+          v-if="postsEnd"
+          variant="outline"
+          color="primary"
+          class="flex justify-center items-center w-full border border-primary-500 md:rounded-md p-8"
+        >
+          <p class="foreground px-2">No more posts to load</p>
+        </div>
       </div>
-      <!-- <template #fallback>
-          <div class="grid gap-4 grid-cols-1 xl:gap-8 md:grid-cols-2">
-            <h1 class="text-3xl"> loading posts... </h1>
-            <BlogCardSkeleton
-              v-for="i in 2"
-              :key="i"
-            />
-          </div>
-        </template> -->
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 const postStore = usePostsStore()
-const { posts, postsLoading } = storeToRefs(postStore)
+const { posts, postsLoading, postsEnd } = storeToRefs(postStore)
 const sentinel = ref<HTMLElement | null>(null)
 let observer: IntersectionObserver | null = null
 

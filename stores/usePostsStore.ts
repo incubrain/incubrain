@@ -14,6 +14,7 @@ export const usePostsStore = defineStore('posts', () => {
     business: [],
     projects: []
   })
+
   const categories = ref<PostCategories[]>(['all', 'frontend', 'backend', 'business', 'projects'])
   const tags = ref<PostTags[]>([
     // frontend
@@ -38,6 +39,16 @@ export const usePostsStore = defineStore('posts', () => {
   const selectedCategory = ref<PostCategories>('all')
   const selectedTags = ref<PostTags[]>([...tags.value])
 
+  const postsToLoad = 10
+  const postsLoading = ref(false)
+  const allPostsFetched: Record<PostCategories, boolean> = reactive({
+    all: false,
+    frontend: false,
+    backend: false,
+    business: false,
+    projects: false
+  })
+
   function toggleTag(tag: PostTags) {
     const index = selectedTags.value.indexOf(tag)
     if (index < 0) {
@@ -47,49 +58,42 @@ export const usePostsStore = defineStore('posts', () => {
     }
   }
 
-  const postsToLoad = 10
-  const postsLoading = ref(false)
-
   async function toggleCategory(category: PostCategories) {
-    console.log('toggleCategory', category)
     if (selectedCategory.value !== category) {
       selectedCategory.value = category
       await getPosts(postsToLoad, 0)
-      console.log('toggleCategory 2', posts[selectedCategory.value])
     }
   }
 
   const getPosts = async (limit: number, skip: number) => {
-    console.log('getPosts 1')
     if (postsLoading.value) return
     if (!selectedCategory.value) return
     postsLoading.value = true
     await new Promise((resolve) => setTimeout(resolve, 1000))
 
-    console.log('getPosts 2')
     const whereOptions: QueryBuilderParams = { tags: { $in: selectedTags.value } }
 
     if (selectedCategory.value !== 'all') {
       whereOptions.category = selectedCategory.value
     }
-    console.log('getPosts 3', whereOptions)
+
     const newPosts = await queryContent('blog')
       .where(whereOptions)
       .sort({ date: -1 })
       .skip(skip)
       .limit(limit)
       .find()
-    console.log('new posts', newPosts)
+
+    if (newPosts.length < postsToLoad) {
+      allPostsFetched[selectedCategory.value] = true
+    }
+
     posts[selectedCategory.value].push(...newPosts)
     postsLoading.value = false
   }
 
   const getPostsOnScroll = async () => {
     if (!posts[selectedCategory.value]) return
-    console.log('have posts', !posts[selectedCategory.value])
-    if (posts[selectedCategory.value].length % postsToLoad !== 0) return
-    console.log('max posts fetched', posts[selectedCategory.value].length % postsToLoad !== 0)
-
     await getPosts(postsToLoad, posts[selectedCategory.value].length)
   }
 
@@ -97,6 +101,7 @@ export const usePostsStore = defineStore('posts', () => {
     tags,
     categories,
     posts: computed(() => posts[selectedCategory.value]),
+    postsEnd: computed(() => allPostsFetched[selectedCategory.value]),
     postsLoading,
     selectedCategory,
     selectedTags,
