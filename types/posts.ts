@@ -43,15 +43,8 @@ export const postCardArraySchema = z.array(postCardSchema)
 export const postFullSchema = postCardSchema.extend({
   id: z.number(),
   body: z.object({}).passthrough(), // passthrough allows any structure within the object
-  _dir: z.string(),
   _draft: z.boolean(),
-  _extension: z.string(),
-  _file: z.string(),
-  _id: z.string(),
-  _locale: z.string(),
-  _partial: z.boolean(),
-  _source: z.string(),
-  _type: z.string()
+  _id: z.string()
 })
 
 export type PostCategories = z.infer<typeof postCategorySchema>
