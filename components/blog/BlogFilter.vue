@@ -4,7 +4,7 @@
       <p class="text-sm">Categories</p>
       <div class="flex gap-4 flex-wrap">
         <UButton
-          v-for="cat in categories"
+          v-for="cat in postStore.categories"
           :key="cat"
           color="primary"
           :variant="selectedCategory === cat ? 'solid' : 'outline'"
@@ -44,7 +44,7 @@
 
 <script setup lang="ts">
 const postStore = usePostsStore()
-const { selectedCategory, categories } = storeToRefs(postStore)
+const { selectedCategory } = storeToRefs(postStore)
 
 function toTop() {
   if (window) {

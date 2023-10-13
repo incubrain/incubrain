@@ -84,7 +84,7 @@ export const usePostsStore = defineStore('posts', () => {
   async function toggleCategory(category: PostCategories) {
     if (selectedCategory.value !== category) {
       selectedCategory.value = category
-      await getPosts(postsToLoad, 0)
+      await getPosts()
     }
   }
 
@@ -94,7 +94,7 @@ export const usePostsStore = defineStore('posts', () => {
    * @param skip - Number of posts to skip.
    */
 
-  const getPosts = async (limit: number, skip: number) => {
+  const getPosts = async ({ limit = postsToLoad, skip = 0 } = {}) => {
     if (postsLoading.value) return
     if (!selectedCategory.value) return
     postsLoading.value = true
@@ -163,7 +163,7 @@ export const usePostsStore = defineStore('posts', () => {
 
   const getPostsOnScroll = async () => {
     if (!posts[selectedCategory.value]?.length) return
-    await getPosts(postsToLoad, posts[selectedCategory.value].length)
+    await getPosts({ skip: posts[selectedCategory.value].length })
   }
 
   return {

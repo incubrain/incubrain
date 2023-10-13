@@ -1,9 +1,9 @@
 <template>
   <div
-    v-for="(author, i) in authorNames.filter((a) => authorIds.includes(a.id))"
+    v-for="author in authorNames.filter((a) => authorIds.includes(a.id))"
     :key="`post-author-${author.id}`"
   >
-    <span class="text-sm font-semibold last:after:content-[''] after:content-[',']">
+    <span class="text-sm last:after:content-[''] after:content-[',']">
       {{ author.givenName }} {{ author.surname }}
     </span>
   </div>

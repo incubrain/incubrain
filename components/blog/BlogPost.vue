@@ -11,7 +11,7 @@
           width="1080"
           height="605"
         />
-        <div class="rounded-b-md border border-color pb-20 px-4 shadow-sm">
+        <div class="lg:rounded-b-md border border-color pb-20 px-4 shadow-sm">
           <div class="my-10 flex gap-6 flex-col justify-center items-center w-full">
             <h1 class="text-4xl lg:text-5xl text-center leading-tight">
               {{ post.title }}
@@ -62,11 +62,11 @@
 </template>
 
 <script setup lang="ts">
-
+import { PostFull } from '~/types/posts'
 
 defineProps({
   post: {
-    type: Object,
+    type: Object as PropType<PostFull>,
     required: true
   }
 })

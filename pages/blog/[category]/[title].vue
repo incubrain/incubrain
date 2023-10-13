@@ -16,11 +16,9 @@
 <script setup lang="ts">
 const route = useRoute()
 const category = ref(String(route.params.category))
+const p = usePostsStore()
 
-const { data: post } = await useAsyncData('post', () => {
-  console.log('pathTest', route.path)
-  return queryContent('blog', category.value).where({ _path: route.path }).findOne()
-})
+const post = await p.getSinglePost({ path: route.path, category: category.value })
 </script>
 
 <style>
