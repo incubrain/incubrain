@@ -1,5 +1,26 @@
 import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
-import { PostTags, PostCategories } from '../types/posts'
+import {
+  PostTags,
+  PostCategories,
+  PostFull,
+  PostCard,
+  postCardSchema,
+  postFullSchema
+} from '../types/posts'
+
+const postCardProperties = [
+  'title',
+  'description',
+  'category',
+  'tags',
+  'authors',
+  'status',
+  'featured_image',
+  'date',
+  '_path'
+]
+
+const postFullProperties = [...postCardProperties, 'body', 'id']
 
 export const usePostsStore = defineStore('posts', () => {
   type PostsType = {
@@ -79,6 +100,7 @@ export const usePostsStore = defineStore('posts', () => {
 
     const newPosts = await queryContent('blog')
       .where(whereOptions)
+      .only(postCardProperties)
       .sort({ date: -1 })
       .skip(skip)
       .limit(limit)
@@ -88,7 +110,18 @@ export const usePostsStore = defineStore('posts', () => {
       allPostsFetched[selectedCategory.value] = true
     }
 
-    posts[selectedCategory.value].push(...newPosts)
+    // validate the posts data structure
+    const validPosts = newPosts.filter((post) => {
+      const validationResult = postCardSchema.safeParse(post)
+
+      if (!validationResult.success) {
+        console.error('post (', post.title, ') has and invalid structure:', validationResult.error)
+        return false // Exclude post from resulting array
+      }
+      return true // Include post in resulting array
+    })
+
+    posts[selectedCategory.value].push(...validPosts)
     postsLoading.value = false
   }
 
