@@ -154,11 +154,13 @@ export const usePostsStore = defineStore('posts', () => {
     post: PostCard | PostFull,
     schema: typeof postCardSchema | typeof postFullSchema
   ): boolean {
-    const { success } = schema.safeParse(post)
-    if (!success) {
-      console.error('Invalid post structure for', post.title)
+    try {
+      schema.parse(post)
+      return true
+    } catch (error) {
+      console.error(post.title, 'failed to validate:', error)
+      return false
     }
-    return success
   }
 
   const getPostsOnScroll = async () => {

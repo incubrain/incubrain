@@ -26,11 +26,6 @@ const authorNames = <Author[]>[
     id: 2,
     givenName: 'Test',
     surname: 'eeRoony'
-  },
-  {
-    id: 3,
-    givenName: 'Drew',
-    surname: 'MacGibbon'
   }
 ]
 
