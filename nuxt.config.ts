@@ -21,6 +21,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/content',
     '@unlighthouse/nuxt',
+    '@nuxtjs/supabase',
     '@nuxt/image-edge',
     '@nuxt/ui',
     '@vueuse/nuxt',
@@ -77,21 +78,7 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    preset: 'vercel_edge',
-    // Production
-    storage: {
-      data: {
-        driver: 'vercelKV',
-        base: 'incubrain:'
-      }
-    },
-    // Development
-    devStorage: {
-      data: {
-        driver: 'fs',
-        base: './data/kv'
-      }
-    }
+    preset: 'vercel_edge'
   },
 
   imports: {
@@ -104,6 +91,14 @@ export default defineNuxtConfig({
     // prefix: 'Swiper',
     styleLang: 'css',
     modules: ['navigation', 'autoplay', 'grid'] // import modules as needed https://nuxt.com/modules/swiper#module-options
+  },
+
+  supabase: {
+    redirectOptions: {
+      login: '/login',
+      callback: '/confirm',
+      exclude: ['/*']
+    }
   },
 
   content: {},
