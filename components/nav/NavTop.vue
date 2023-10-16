@@ -88,7 +88,8 @@
         />
       </NuxtLink>
       <UButton
-        to="/services/business-starter"
+        :to="discord.url"
+        target="_blank"
         color="primary"
         class="lg:before:content-['Join']"
       >
@@ -104,6 +105,7 @@
 
 <script setup lang="ts">
 const { pages, setPage } = usePages()
+const { discord } = useSocial()
 const route = useRoute()
 
 const path = computed(() => {
