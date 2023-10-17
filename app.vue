@@ -5,7 +5,7 @@
       <NuxtPage />
     </NuxtLayout>
     <NavFooterWebsite />
-    <UNotifications />
+    <UNotifications :timeout="4000" />
   </div>
 </template>
 

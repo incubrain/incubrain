@@ -58,7 +58,7 @@ export default defineAppConfig({
       input: 'bg-gray-100 dark:bg-neutral-900',
       background: 'bg-gray-100 dark:bg-neutral-900',
       option: {
-        active: 'bg-gray-100 dark:bg-neutral-900'
+        active: 'bg-white dark:bg-neutral-950'
       }
     },
     radio: {

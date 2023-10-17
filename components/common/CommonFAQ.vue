@@ -1,6 +1,9 @@
 <template>
   <div class="flex flex-col gap-6 lg:gap-12">
-    <CommonTitle :title="title" />
+    <CommonTitle
+      v-if="title.main"
+      :title="title"
+    />
     <div class="grid lg:grid-cols-2 gap-2 lg:gap-4">
       <UAccordion
         :items="faqs.slice(0, Math.ceil(faqs.length / 2))"
@@ -38,7 +41,8 @@ import { Title, Faq } from '~/types/content'
 defineProps({
   title: {
     type: Object as PropType<Title>,
-    required: true
+    required: false,
+    default: () => ({})
   },
   faqs: {
     type: Array as PropType<Faq[]>,

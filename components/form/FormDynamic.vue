@@ -4,20 +4,23 @@
     :state="formState"
     @submit="submit"
   >
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 lg:gap-6 pb-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 lg:gap-8 pb-4 lg:pb-8">
       <UFormGroup
         v-for="field in schema"
         :key="field.name"
-        :label="field.label"
         :name="field.name"
-        class="pb-4"
         :class="{
           'w-full md:col-span-2': field.fullWidth
         }"
       >
+        <!-- <template
+          v-if="field.showLabel"
+          #label
+        >
+          <p class="pb-2"> {{ field.label }} </p>
+        </template> -->
         <FormComponent
           :field="field"
-          class="pt-2"
           @updated-value="updateState"
         />
       </UFormGroup>

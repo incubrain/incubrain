@@ -8,75 +8,19 @@
       }"
       :title="heroTitle"
     />
-    <div class="wrapper padded-x padded-y spaced-y">
-      <CommonTitle :title="contactTitle" />
-      <ContactTabs :active-tab="String(contactType)" />
-      <CommonFAQ
-        :faqs="contactFAQs.items"
-        :title="contactFAQs.title"
-      />
+    <div class="wrapper padded-x py-4 lg:py-8 spaced-y">
+      <ContactTabs :default-tab="String(contactType)" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-const contactType = useRoute().params.type
+type ContactType = 'incubation' | 'hire-us' | 'collaborate'
+const contactType: ContactType = (useRoute().params.type as ContactType) || 'incubation'
 
 const heroTitle = {
-  label: 'Contact us',
-  main: 'Contact us',
-  subtitle: "send us a message, we don't bite"
-}
-
-const contactTitle = {
-  label: 'Contact us',
-  main: 'We want to hear from you',
-  subtitle: "Choose your area of enquiry and we'll get back to you as soon as possible."
-}
-
-const contactFAQs = {
-  title: {
-    label: 'FAQs',
-    main: "We'd love to hear from you",
-    subtitle: 'reach out if you have further questions'
-  },
-  items: [
-    {
-      label: 'How many developers are assigned?',
-      description: 'One developer is assigned to each project.'
-    },
-    {
-      label: 'How many developers are assigned?',
-      description: 'One developer is assigned to each project.'
-    },
-    {
-      label: 'How many developers are assigned?',
-      description: 'One developer is assigned to each project.'
-    },
-    {
-      label: 'How many developers are assigned?',
-      description: 'One developer is assigned to each project.'
-    },
-    {
-      label: 'How many developers are assigned?',
-      description: 'One developer is assigned to each project.'
-    },
-    {
-      label: 'How many developers are assigned?',
-      description: 'One developer is assigned to each project.'
-    },
-    {
-      label: 'How many developers are assigned?',
-      description: 'One developer is assigned to each project.'
-    },
-    {
-      label: 'How many developers are assigned?',
-      description: 'One developer is assigned to each project.'
-    },
-    {
-      label: 'How many developers are assigned?',
-      description: 'One developer is assigned to each project.'
-    }
-  ]
+  label: 'Get in Touch',
+  main: "Let's Connect",
+  subtitle: "Drop a line; we're friendly!"
 }
 </script>

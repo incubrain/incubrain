@@ -1,5 +1,5 @@
 <template>
-  <div :class="`flex flex-col gap-4 lg:gap-6 text-${alignment} lg:max-w-xl`">
+  <div :class="`flex flex-col gap-4 lg:gap-6 text-${alignment} lg:max-w-lg`">
     <p
       v-if="title.label"
       class="text-sm font-bold uppercase text-primary"
@@ -9,12 +9,12 @@
     <h2 class="text-2xl lg:text-4xl font-bold" :class="isCta ? 'underline decoration-primary-500 dark:decoration-primary-900' : ''">
       {{ title.main }}
     </h2>
-    <p
+    <h5
       v-if="title.subtitle"
       class="text-base"
     >
       {{ title.subtitle }}
-    </p>
+    </h5>
     <div>
       <slot />
     </div>

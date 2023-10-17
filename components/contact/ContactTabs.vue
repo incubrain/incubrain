@@ -3,25 +3,26 @@
     <UTabs
       :items="tabs"
       :ui="{ wrapper: 'space-y-4 lg:space-y-8' }"
-      :default-index="getActiveTab(activeTab)"
+      :default-index="activeTab.index"
       class="w-full"
+      @change="tabToggled"
     >
       <template
         v-for="tab in tabs"
-        :key="tab.label"
+        :key="tab.title.main"
         #[tab.slot]="{ item, index, selected }"
       >
         <div class="space-y-4 lg:space-y-8">
-          <CommonTextBanner :banner-text="item.slider" />
-          <UCard>
+          <!-- <CommonTextBanner :banner-text="item.slider" /> -->
+          <CommonFAQ :faqs="currentFAQs" />
+          <UCard :ui="{ body: { padding: 'p4 lg:p-8' }, header: { padding: 'p4 lg:p-8' } }">
             <template #header>
-              <h1 class="text-2xl font-bold pb-2"> {{ item.label }}</h1>
-              <p> {{ item.content }} </p>
+              <CommonTitle :title="item.title" />
             </template>
             <FormDynamic
-              :validation="EnquiryValidation"
-              :state="state"
-              :schema="schema"
+              :validation="forms[activeTab.index].validation"
+              :state="forms[activeTab.index].state"
+              :schema="forms[activeTab.index].schema"
               @form-submitted="submitForm"
             >
               <UButton type="submit"> Submit </UButton>
@@ -34,159 +35,210 @@
 </template>
 
 <script setup lang="ts">
-import type { FormSubmitEvent } from '@nuxt/ui/dist/runtime/types'
-import { EnquiryValidation, Enquiry } from '@/types/forms'
+import { Incubation, Collaborate, HireUs } from '~/types/forms'
 
-defineProps({
-  activeTab: {
+type ContactNames = 'incubation' | 'hire-us' | 'collaborate'
+interface ActiveTab {
+  name: ContactNames
+  index: number
+}
+
+const p = defineProps({
+  defaultTab: {
     type: String,
     required: true
   }
 })
 
-const getActiveTab = (t: string) => {
+const setActiveTab = (t: string | number): ActiveTab => {
   switch (t) {
-    case 'collaborate':
-      return 0
     case 'incubation':
-      return 1
+    case 0:
+      return { name: 'incubation', index: 0 }
     case 'hire-us':
-      return 2
+    case 1:
+      return { name: 'hire-us', index: 1 }
+    case 'collaborate':
+    case 2:
+      return { name: 'collaborate', index: 2 }
     default:
-      return 0
+      return { name: 'incubation', index: 0 }
   }
 }
 
+const tabToggled = (t: number) => {
+  console.log('tabToggled:', t)
+  activeTab.value = setActiveTab(t)
+}
+
+const activeTab: Ref<ActiveTab> = ref(
+  setActiveTab(p.defaultTab) || ({ name: 'incubation', index: 0 } as ActiveTab)
+)
+
+const { forms, submit } = useContact()
 const { add } = useToast()
 
 const tabs = [
   {
-    slot: 'collaborate',
-    label: 'Collaborate',
-    icon: 'i-heroicons-information-circle',
-    slider:
-      "We're always looking for new opportunities to collaborate with other businesses. If you have an idea for a project, we’d love to hear from you.",
-    content: 'This is the content shown for Tab1'
-  },
-  {
     slot: 'incubation',
-    label: 'Business Starter',
+    label: 'Incubation',
+    title: {
+      main: 'Business Starter',
+      subtitle:
+        'Are you a budding startup looking for the right incubation environment? Reach out and let us guide you through the process of kickstarting your tech journey with Incubrain.'
+    },
     icon: 'i-heroicons-arrow-down-tray',
-    slider: 'Looking to take your SaaS business to the next level? We can help you with that.',
-    content: 'And, this is the content for Tab2'
+    slider: ''
   },
   {
     slot: 'hire-us',
     label: 'Hire us',
+    title: {
+      main: 'Hire us',
+      subtitle:
+        'Need specialized IT services or dedicated developers? Discover how our team can serve your immediate and long-term tech needs. Connect with us now.'
+    },
     icon: 'i-heroicons-eye-dropper',
-    slider: 'Prefer to directly hire us? We can help you with that too.',
-    content: 'Finally, this is the content for Tab3'
+    slider: ''
+  },
+  {
+    slot: 'collaborate',
+    label: 'Collaborate',
+    title: {
+      main: 'Collaborate',
+      subtitle:
+        "Got an innovative idea or a proposal for a partnership? We're all ears! Share your thoughts, and let's explore the potential of our collaboration."
+    },
+    icon: 'i-heroicons-information-circle',
+    slider: ''
   }
 ]
 
-const state = ref({
-  fullName: '',
-  company: '',
-  phone: '',
-  email: '',
-  preferredContact: '',
-  enquiryArea: '',
-  message: ''
-})
+const submitForm = (event: Incubation | HireUs | Collaborate) => {
+  try {
+    submit({ formType: tabs[activeTab.value.index].slot, formData: event })
+    add({ title: "Your message has been submitted. We'll be in contact soon." })
+  } catch (error: Error | any) {
+    add({
+      title: 'There was an error submitting your message, please try again',
+      description: error.message,
+      color: 'red'
+    })
+    throw createError('Failed to submit the form. Please try again.')
+  }
+}
 
-const schema = reactive([
-  {
-    name: 'fullName',
-    label: 'Full Name',
-    type: 'input'
+const contactFAQs = {
+  title: {
+    label: 'Frequently Asked Questions',
+    main: 'Have a question? We have the answer.',
+    subtitle: 'Check out our FAQs below or reach out to us directly.'
   },
-  {
-    name: 'company',
-    label: 'Company',
-    type: 'input'
-  },
-  {
-    name: 'email',
-    label: 'Email',
-    type: 'input'
-  },
-  {
-    name: 'phoneNumber',
-    label: 'Phone Number',
-    type: 'input'
-  },
-  {
-    name: 'preferredContact',
-    label: 'Preferred Contact',
-    default: 'email',
-    type: 'input'
-  },
-  {
-    name: 'enquiryArea',
-    label: 'Enquiry Area',
-    type: 'select-menu',
-    options: ['hire us', 'business starter package', 'collaboration', 'other']
-  },
-  {
-    name: 'referred',
-    label: 'How did you hear about us?',
-    type: 'radio',
-    default: 'google',
-    options: [
+  items: {
+    incubation: [
       {
-        name: 'google',
-        label: 'Google',
-        value: 'google'
+        label: 'What criteria do you look for in startups to incubate?',
+        description:
+          'We look for startups with a promising idea, a passionate team, and a viable market fit. Each application is reviewed on a case-by-case basis.'
       },
       {
-        name: 'youtube',
-        label: 'Youtube',
-        value: 'youtube'
+        label: 'Is there a particular stage at which you prefer to intervene?',
+        description:
+          'We typically engage during the early stages, but are open to startups at any stage with a compelling proposition.'
       },
       {
-        name: 'referred',
-        label: 'Referred',
-        value: 'referred'
+        label: 'How long does the incubation process typically last?',
+        description:
+          "Our incubation process typically lasts for 6-12 months, depending on the startup's needs and progress."
       },
       {
-        name: 'other',
-        label: 'Other',
-        value: 'other'
+        label: 'Do you take equity from startups you incubate?',
+        description:
+          'Our long-term vision includes incubating selected companies in exchange for company shares. Specific terms are discussed individually with each startup.'
+      },
+      {
+        label: 'What resources and support do startups receive during incubation?',
+        description:
+          'Startups receive business coaching, product planning, testing, review, a full-time developer, and code reviews, ensuring a holistic support structure.'
+      },
+      {
+        label: 'Can startups from any geographic location apply?',
+        description:
+          'Yes, while we are based in Pune, India, we are open to startups from around the globe looking for incubation support.'
+      }
+    ],
+    'hire-us': [
+      {
+        label: "How do you ensure that the developer assigned matches our project's needs?",
+        description:
+          'Our team assesses your project requirements and matches you with a developer whose expertise aligns best with your needs.'
+      },
+      {
+        label: "What measures do you take to guarantee the project's timeline?",
+        description:
+          'We adopt agile methodologies and maintain regular communication to ensure that projects remain on schedule.'
+      },
+      {
+        label: 'How do you handle project confidentiality?',
+        description:
+          'We prioritize confidentiality and sign NDAs when required. All our developers follow strict ethical standards to ensure project confidentiality.'
+      },
+      {
+        label: 'Is there post-project support?',
+        description:
+          'Yes, we offer post-project support and maintenance services to ensure that your product runs smoothly after the launch.'
+      },
+      {
+        label: 'Do you offer discounts for long-term contracts?',
+        description:
+          'We are always open to discussions regarding pricing for long-term or large-scale projects.'
+      },
+      {
+        label: "What's the process for hiring a developer from Incubrain?",
+        description:
+          'Reach out to us via the "Hire us" tab. We will understand your requirements, suggest the best fit, and take it forward from there.'
+      }
+    ],
+    collaborate: [
+      {
+        label: 'What kind of collaborations are you open to?',
+        description:
+          'We are open to various forms of collaborations including partnerships, joint ventures, and co-hosting of events.'
+      },
+      {
+        label: 'Do you engage in joint ventures or mergers?',
+        description:
+          'While our primary focus is on incubation and hiring, we are open to discussing joint ventures or mergers with the right partners.'
+      },
+      {
+        label: 'How can I propose a collaboration?',
+        description:
+          'Simply reach out to us via the "Collaborate" tab with your proposal, and our team will review and get back to you.'
+      },
+      {
+        label: 'Is there a specific sector or industry you prefer to collaborate in?',
+        description:
+          "While we primarily focus on the IT sector, we are open to potential collaborations in other sectors if there's a strong synergy."
+      },
+      {
+        label: 'Do you offer co-hosting for tech events or webinars?',
+        description:
+          'Yes, we often engage in co-hosting opportunities for events and webinars that align with our expertise and values.'
+      },
+      {
+        label: "What's the benefit of collaborating with Incubrain?",
+        description:
+          'With our deep expertise in the IT industry and our vast network, collaborating with Incubrain can provide valuable insights, resources, and reach for your initiative.'
       }
     ]
-  },
-  {
-    name: 'message',
-    label: 'Detailed Enquiry',
-    type: 'textarea',
-    fullWidth: true
   }
-])
-
-const submitForm = async (event: FormSubmitEvent<Enquiry>) => {
-  console.log('form submit main', event)
-  // const { error } = await useFetch('/api/enquiry', {
-  //   method: 'POST',
-  //   body: {
-  //     fullName: event.fullName,
-  //     company: event.company,
-  //     jobTitle: event.jobTitle,
-  //     email: event.email,
-  //     phoneNumber: event.phoneNumber,
-  //     preferredContact: event.preferredContact,
-  //     enquiryArea: event.enquiryArea,
-  //     detailedEnquiry: event.detailedEnquiry,
-  //     bestTimeToContact: event.bestTimeToContact
-  //   }
-  // })
-
-  // if (error) {
-  //   add({ title: 'Failed to submit the form. Please try again.' })
-  //   throw createError('Failed to submit the form. Please try again.')
-  // } else {
-  //   add({ title: 'Your message has been submitted. We will contact you soon.' })
-  // }
 }
+
+const currentFAQs = computed(() => contactFAQs.items[activeTab.value.name])
+
+watch(currentFAQs, (newValue) => {
+  console.log('currentFAQs changed:', newValue)
+})
 </script>
 
 <style scoped></style>
