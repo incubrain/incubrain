@@ -20,9 +20,10 @@
       />
       <CommonTest :title="content.joinCommunity.title" />
     </div>
-    <CommonCTA :title="content.mainCTA.title">
+    <CommonCommunityCTA />
+    <!-- <CommonCTA :title="content.mainCTA.title">
       <UButton to="/contact"> {{ content.mainCTA.cta }} </UButton>
-    </CommonCTA>
+    </CommonCTA> -->
     <div class="spaced-y wrapper padded-x padded-y">
       <CommonCeoMessage :title="content.ceoMessage.title" />
       <CommonTestimonial />

@@ -24,6 +24,9 @@ export default <Partial<Config>>{
         warning: c.yellow,
         info: c.cyan
       },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))'
+      },
       animation: {
         marquee: 'marquee 25s linear infinite',
         marquee2: 'marquee2 25s linear infinite'
