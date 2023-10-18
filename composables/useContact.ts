@@ -141,8 +141,8 @@ function submitForm({
     body: JSON.stringify(formData)
   })
 
-  if (error) console.log('error', error)
-  console.log('data', data)
+  if (error.value) return console.log('error', error.value)
+  navigateTo('/about/community')
 }
 
 const contacts = ref([])
