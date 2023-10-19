@@ -41,7 +41,7 @@ const route = useRoute()
 
 const { data: navigation } = await useAsyncData('navigation', () =>
   queryContent()
-    .where({ _partial: { $ne: true } })
+    .where({ _partial: { $ne: true }, status: 'published' })
     .only(['_path', 'title'])
     .sort({ date: 1 })
     .findSurround(route.path)
