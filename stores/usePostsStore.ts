@@ -35,7 +35,8 @@ const TAGS: PostTags[] = [
   'learning',
   'code quality',
   'testing',
-  'productivity'
+  'productivity',
+  'culture'
 ]
 
 const POST_FULL_PROPERTIES = [...POST_CARD_PROPERTIES, 'body', 'id', '_draft', '_id']
