@@ -36,12 +36,12 @@ export const postCardSchema = z.object({
     .max(70, 'Title has a max length of 70 char'),
   description: z
     .string()
-    .min(180, 'Description must be at least 180 char long')
-    .max(260, 'Description has a max length of 260 char'),
+    .min(160, 'Description must be at least 160 char long')
+    .max(280, 'Description has a max length of 280 char'),
   category: postCategorySchema,
   tags: z
     .array(postTagSchema)
-    .min(3, 'Minimum of 1 tag allowed')
+    .min(1, 'Minimum of 1 tag allowed')
     .max(3, 'Maximum of 3 tags allowed'),
   authors: z.array(z.number().lt(2)).refine((items) => new Set(items).size === items.length, {
     message: 'Authors must be an array of unique numbers'
