@@ -5,41 +5,15 @@ import {
   PostFull,
   PostCard,
   postCardSchema,
-  postFullSchema
+  postFullSchema,
+  POST_FULL_PROPERTIES,
+  POST_CARD_PROPERTIES,
+  CATEGORIES,
+  TAGS
 } from '../types/posts'
 
-const POST_CARD_PROPERTIES = [
-  'title',
-  'description',
-  'category',
-  'tags',
-  'authors',
-  'status',
-  'featured_image',
-  'date',
-  '_path'
-]
-
-const CATEGORIES: PostCategories[] = ['all', 'frontend', 'backend', 'business', 'projects']
-
-const TAGS: PostTags[] = [
-  'nuxt',
-  'vue',
-  'typescript',
-  'nitro',
-  'supabase',
-  'postgresql',
-  'auth',
-  'ci/cd',
-  'tailwindcss',
-  'learning',
-  'code quality',
-  'testing',
-  'productivity',
-  'culture'
-]
-
-const POST_FULL_PROPERTIES = [...POST_CARD_PROPERTIES, 'body', 'id', '_draft', '_id']
+const postsToLoad = 10
+const postsLoading = ref(false)
 
 export const usePostsStore = defineStore('posts', () => {
   type PostsType = Record<PostCategories, PostCard[]>
@@ -59,9 +33,6 @@ export const usePostsStore = defineStore('posts', () => {
 
   const selectedCategory = ref<PostCategories>('all')
   const selectedTags = ref<PostTags[]>([...TAGS])
-
-  const postsToLoad = 10
-  const postsLoading = ref(false)
 
   /**
    * Toggle the selected tag in the filter.
@@ -94,10 +65,16 @@ export const usePostsStore = defineStore('posts', () => {
    * @param limit - Max number of posts to fetch.
    * @param skip - Number of posts to skip.
    */
-
-  const getPosts = async ({ limit = postsToLoad, skip = 0 } = {}) => {
+  const getPosts = async ({
+    limit = postsToLoad,
+    skip = 0
+  }: {
+    limit?: number
+    skip?: number
+  } = {}) => {
     if (postsLoading.value) return
     if (!selectedCategory.value) return
+
     postsLoading.value = true
 
     try {
@@ -120,12 +97,13 @@ export const usePostsStore = defineStore('posts', () => {
         .limit(limit)
         .find()
 
-      if (newPosts.length < postsToLoad) {
+      if (newPosts.length < limit) {
         allPostsFetched[selectedCategory.value] = true
       }
 
       const validPosts = newPosts.filter((post) => isValidPost(post as PostCard, postCardSchema))
       posts[selectedCategory.value].push(...(validPosts as PostCard[]))
+      console.log('posts fetched')
     } catch (error) {
       console.error('Failed to get posts:', error)
     } finally {
@@ -133,12 +111,19 @@ export const usePostsStore = defineStore('posts', () => {
     }
   }
 
+  const getShowcasePosts = async (category: PostCategories) => {
+    if (posts[category].length > 2) return posts[category].slice(0, 3)
+    console.log('no posts in store')
+    selectedCategory.value = category
+    await getPosts({ limit: 3, skip: 0 })
+    console.log('returning posts')
+    return posts[category].slice(0, 3)
+  }
+
   const getSinglePost = async ({ path, category }: { path: string; category: string }) => {
-    console.log('getSinglePost', category, path)
     const { data } = await useAsyncData('post', () =>
       queryContent('blog', category).only(POST_FULL_PROPERTIES).where({ _path: path }).findOne()
     )
-    console.log('getSinglePost2', data)
     const validPost = isValidPost(data.value as PostFull, postFullSchema)
     if (!validPost) return console.error('Post failed to load')
     return data.value as PostFull
@@ -181,7 +166,8 @@ export const usePostsStore = defineStore('posts', () => {
     toggleCategory,
     getPosts,
     getSinglePost,
-    getPostsOnScroll
+    getPostsOnScroll,
+    getShowcasePosts
   }
 })
 

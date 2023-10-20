@@ -1,8 +1,17 @@
 import { z } from 'zod'
 
 // !important: if you change post validation eg. add a new tag, update the blog template: content\blog\.template.md
+export const postStatusSchema = z.enum(['published', 'draft', 'unpublished', 'archived'])
+export const dateSchema = z
+  .string()
+  .regex(/^\d{4}\/\d{2}\/\d{2}$/, 'Date must be in YYYY/MM/DD format.')
 
+// POST CATEGORIES
 export const postCategorySchema = z.enum(['all', 'frontend', 'backend', 'business', 'projects'])
+export type PostCategories = z.infer<typeof postCategorySchema>
+export const CATEGORIES: PostCategories[] = ['all', 'frontend', 'backend', 'business', 'projects']
+
+// POST TAGS
 export const postTagSchema = z.enum([
   // frontend
   'nuxt',
@@ -21,14 +30,29 @@ export const postTagSchema = z.enum([
   'code quality',
   'testing',
   'productivity',
-  'culture'
+  'culture',
+  'hiring'
 ])
+export type PostTags = z.infer<typeof postTagSchema>
+export const TAGS: PostTags[] = [
+  'nuxt',
+  'vue',
+  'typescript',
+  'nitro',
+  'supabase',
+  'postgresql',
+  'auth',
+  'ci/cd',
+  'tailwindcss',
+  'learning',
+  'code quality',
+  'testing',
+  'productivity',
+  'culture',
+  'hiring'
+]
 
-export const postStatusSchema = z.enum(['published', 'draft', 'unpublished'])
-export const dateSchema = z
-  .string()
-  .regex(/^\d{4}\/\d{2}\/\d{2}$/, 'Date must be in YYYY/MM/DD format.')
-
+// POST CARD
 export const postCardSchema = z.object({
   title: z
     .string()
@@ -51,17 +75,31 @@ export const postCardSchema = z.object({
   date: dateSchema,
   _path: z.string()
 })
+export type PostCard = z.infer<typeof postCardSchema>
+export const POST_CARD_PROPERTIES: PostCard = [
+  'title',
+  'description',
+  'category',
+  'tags',
+  'authors',
+  'status',
+  'featured_image',
+  'date',
+  '_path'
+]
 
-export const postCardArraySchema = z.array(postCardSchema)
-
+// POST FULL POST
 export const postFullSchema = postCardSchema.extend({
   id: z.number(),
   body: z.object({}).passthrough(), // passthrough allows any structure within the object
   _draft: z.boolean(),
   _id: z.string()
 })
-
-export type PostCategories = z.infer<typeof postCategorySchema>
-export type PostTags = z.infer<typeof postTagSchema>
 export type PostFull = z.infer<typeof postFullSchema>
-export type PostCard = z.infer<typeof postCardSchema>
+export const POST_FULL_PROPERTIES: PostFull = [
+  ...POST_CARD_PROPERTIES,
+  'body',
+  'id',
+  '_draft',
+  '_id'
+]
