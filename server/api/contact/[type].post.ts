@@ -1,7 +1,18 @@
 import { HireUs, Incubation, Collaborate } from '~/types/forms'
 import { serverSupabaseClient } from '#supabase/server'
 
-const formatFormData = (formType: string, formData: HireUs | Incubation | Collaborate) => {
+interface ContactSubmission {
+  contact_type: string
+  given_name: string
+  surname: string
+  email: string
+  body: any
+}
+
+const formatFormData = (
+  formType: string,
+  formData: HireUs | Incubation | Collaborate
+): ContactSubmission => {
   // this is mapped to the supabase table
   const remainingData = { ...formData }
   delete (remainingData as any).givenName
@@ -35,7 +46,12 @@ export default defineEventHandler(async (event) => {
     // Format the message
     // const text = `Enquiry received!\n\nArea of Enquiry: ${enquiry.enquiryArea}\nEmail: ${enquiry.email}\nMessage: ${enquiry.message}`
 
-    // const isSent = sendToSlack(text)
+    sendToDiscord({
+      title: formattedData.contact_type,
+      name: `${formattedData.given_name} ${formattedData.surname}`,
+      description: formattedData.body.message,
+      email: formattedData.email
+    })
     // if (!isSent) throw createError('Error sending enquiry to Slack')
 
     return {
@@ -43,10 +59,10 @@ export default defineEventHandler(async (event) => {
       message: 'Enquiry received and stored'
     }
   } catch (error: any) {
-    console.log('Slack notification error', error.message)
+    console.error('Error sending contact message', error.message)
     return {
       status: 500,
-      message: 'Error sending enquiry to Slack',
+      message: 'Error sending your message',
       error
     }
   }

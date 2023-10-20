@@ -59,7 +59,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     // The private keys which are only available within server-side
-    SLACK_ENQUIRE_URL: process.env.SLACK_ENQUIRE_URL,
+    DISCORD_NOTIFICATION_URL: process.env.DISCORD_NOTIFICATION_URL,
     // Keys within public, will be also exposed to the client-side
     public: {
       api_url: process.env.API_URL_BASE,
