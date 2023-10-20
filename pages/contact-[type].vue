@@ -3,10 +3,13 @@
     <CommonHero
       :img="{
         title: 'Contact Incubrain',
-        src: 'images/mid/incubrain-2.png',
-        alt: 'Neon green phone'
+        src: 'images/contact-icon.png',
+        alt: 'Letter with technology contents',
+        width: 140,
+        height: 140
       }"
       :title="heroTitle"
+      invert
     />
     <div class="wrapper padded-x py-4 lg:py-8 spaced-y">
       <ContactTabs :default-tab="String(contactType)" />

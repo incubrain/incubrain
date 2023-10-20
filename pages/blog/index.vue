@@ -3,13 +3,16 @@
     <CommonHero
       :img="{
         title: 'Incubrain Blog Happy Hacker',
-        src: 'images/happy-hacker.gif',
-        alt: 'Incubrain Blog Happy Hacker'
+        src: 'images/blog-icon.svg',
+        alt: 'Incubrain Blog Happy Hacker',
+        width: 140,
+        height: 140
       }"
       :title="{
         main: 'INCUBRAIN BLOG',
         subtitle: `If you're not learning, you're not growing.`
       }"
+      invert
     />
     <div
       class="wrapper md:p-4 xl:p-8 grid grid-cols-1 lg:grid-cols-[0.5fr_1fr] items-start w-full md:gap-4 xl:gap-8 relative"

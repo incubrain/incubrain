@@ -10,18 +10,18 @@
       <div
         class="relative flex w-full padded-x justify-center lg:justify-start items-center flex-row gap-4 lg:gap-16 wrapper h-48 lg:h-[580px]"
       >
-        <div class="hidden lg:flex justify-center h-full p-4 items-center background border-x border-color">
+        <div class="hidden lg:flex justify-center h-full p-4 items-center background border-x border-color flex-shrink-0">
           <NuxtImg
             v-if="img.src"
             :src="img.src"
             :alt="img.alt"
-            width="220"
-            height="300"
+            :width="img.width ? img.width : 220"
+            :height="img.height ? img.height : 300"
             class="rounded-md"
             :class="invert ? 'dark:invert' : ''"
           />
         </div>
-        <div class="space-y-4 text-center lg:text-left">
+        <div class="space-y-4 text-center lg:text-left flex-shrink">
           <h2
             class="text-3xl font-bold lg:text-5xl leading-normal bg-gradient-to-r from-primary-500 via-primary-500 to-primary-900 bg-clip-text text-transparent drop-shadow-lg"
           >
@@ -56,6 +56,8 @@ interface Image {
   title: string
   src: string
   alt: string
+  width?: number
+  height?: number
 }
 
 defineProps({
@@ -69,7 +71,9 @@ defineProps({
     default: () => ({
       title: null,
       src: null,
-      alt: null
+      alt: null,
+      height: null,
+      width: null
     })
   },
   invert: {

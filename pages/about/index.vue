@@ -4,7 +4,9 @@
       :img="{
         title: 'Incubrain Logo on contact page',
         src: 'images/incubrain-logo.svg',
-        alt: 'Incubrain Logo on contact page'
+        alt: 'Incubrain Logo on contact page',
+        width: 140,
+        height: 140
       }"
       :title="heroTitle"
       invert

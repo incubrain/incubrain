@@ -3,10 +3,13 @@
     <CommonHero
       :img="{
         title: 'Propel Your Startup to Success with Incubrain',
-        src: 'images/mid/incubrain-1.png',
-        alt: 'Nurturing your vision with world-class development & business expertise from India to the globe.'
+        src: 'images/incubation-icon.png',
+        alt: 'Nurturing your vision with world-class development & business expertise from India to the globe.',
+        width: 140,
+        height: 140
       }"
       :title="heroTitle"
+      invert
     />
     <div class="spaced-y wrapper padded-x padded-y">
       <CommonSingleFeat
