@@ -42,6 +42,7 @@
       <UButton
         :to="discord.url"
         target="_blank"
+        @click="$posthog()?.capture('join_community')"
       >
         Join now, it's FREE
       </UButton>

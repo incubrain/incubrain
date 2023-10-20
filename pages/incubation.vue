@@ -16,6 +16,7 @@
         <UButton
           to="/contact-incubation"
           variant="outline"
+          @click="$posthog()?.capture('intent_shown_incubation')"
         >
           {{ singleFeat.cta }}
         </UButton>
@@ -51,6 +52,7 @@
           to="/contact-incubation"
           variant="outline"
           block
+          @click="$posthog()?.capture('intent_shown_incubation')"
         >
           Enquire Now
         </UButton>
@@ -82,7 +84,7 @@ const singleFeat = {
     and let us simplify and strengthen the foundations of your digital venture.`
   },
   image: 'images/hero.jpg',
-  cta: 'Incubrain Your Business'
+  cta: 'Enquire Now'
 }
 
 const cta = {
@@ -100,7 +102,8 @@ const how = {
   title: {
     label: 'our methodology',
     main: 'Building Value Driven Businesses That Last',
-    subtitle: "First we understand your buisness vision, the product, where you stand today, your goals for the future, and then we tailor a solution that's right for you."
+    subtitle:
+      "First we understand your buisness vision, the product, where you stand today, your goals for the future, and then we tailor a solution that's right for you."
   },
   items: [
     {

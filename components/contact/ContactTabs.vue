@@ -25,10 +25,15 @@
               :schema="forms[activeTab.index].schema"
               @form-submitted="submitForm"
             >
-              <UButton type="submit"> Submit </UButton>
+              <UButton
+                type="submit"
+                @click="$posthog()?.capture(`contacted_${activeTab.name.replaceAll('-', '_')}`)"
+              >
+                Submit
+              </UButton>
             </FormDynamic>
           </UCard>
-        </div>
+      </div>
       </template>
     </UTabs>
   </div>

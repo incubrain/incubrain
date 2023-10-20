@@ -81,6 +81,7 @@
         href="https://github.com/incubrain"
         target="_blank"
         class="flex justify-center items-center"
+        @click="$posthog()?.capture('view_github')"
       >
         <UIcon
           name="i-mdi-github"
@@ -92,6 +93,7 @@
         target="_blank"
         color="primary"
         class="lg:before:content-['Join']"
+        @click="$posthog()?.capture('join_community')"
       >
         Community
         <UIcon
@@ -105,6 +107,8 @@
 
 <script setup lang="ts">
 const { pages, setPage } = usePages()
+const { $posthog } = useNuxtApp()
+
 const { discord } = useSocial()
 const route = useRoute()
 
