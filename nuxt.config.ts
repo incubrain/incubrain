@@ -62,7 +62,9 @@ export default defineNuxtConfig({
     SLACK_ENQUIRE_URL: process.env.SLACK_ENQUIRE_URL,
     // Keys within public, will be also exposed to the client-side
     public: {
-      api_url: process.env.API_URL_BASE
+      api_url: process.env.API_URL_BASE,
+      posthogPublicKey: process.env.POSTHOG_PUBLIC_KEY,
+      posthogHost: process.env.POSTHOG_HOST
     }
   },
 
