@@ -23,14 +23,7 @@
       <CommonTimeline
         :title="benefits.title"
         :items="benefits.items"
-      >
-        <UButton
-          to="/blog"
-          variant="outline"
-        >
-          View all
-        </UButton>
-      </CommonTimeline>
+      />
     </div>
     <CommonCTA :title="cta.title">
       <UButton
@@ -77,6 +70,7 @@ const cta = {
 
 const singleFeat = {
   title: {
+    label: 'culture is everything',
     main: 'Building a Culture of Innovation and Collaboration',
     subtitle: `
     At Incubrain, we foster a dynamic and inclusive company culture that encourages creativity,
@@ -89,35 +83,41 @@ const singleFeat = {
 
 const benefits = {
   title: {
-    label: 'Benefits',
-    main: 'Why Incubrain',
-    subtitle: `growing your business together
-    with us is a great idea`
+    label: 'Incubrain Roadmap',
+    main: "We've Got Grand Plans For The Future!",
+    subtitle:
+      'We ❤️ Business and Nuxt, our ultimate vision is to create something similar to Y Combinator specifically for Nuxt projects. To get there we first have to prove ourselves and create an invaluable service for our customers.'
   },
   items: [
     {
-      image: 'images/icon.png',
-      title: 'Resource Library',
+      icon: 'i-mdi-security',
+      title: 'Security (Current Phase)',
       description:
-        'Get support in talent acquisition and management. Access our network of skilled professionals to find the right talent for your business needs, ensuring you have the right team to drive success.'
+        'Achieving self-sufficiency with two foundational clients as our bedrock. Emphasizing on high-quality content creation that resonates, enhancing user experience on our website, laying the groundwork for a dedicated community of enthusiasts, and intensifying outreach and strategic marketing efforts to increase visibility.'
     },
     {
-      image: 'images/icon.png',
-      title: 'Resource Library',
+      icon: 'i-mdi-ear-hearing',
+      title: 'Active Listening',
       description:
-        'Get support in talent acquisition and management. Access our network of skilled professionals to find the right talent for your business needs, ensuring you have the right team to drive success.'
+        "As we scale to serve ten esteemed clients, our ear is firmly to the ground. We're dedicated to understanding their unique challenges, outpacing expectations by delivering solutions tailored to their needs, diversifying our tech offerings based on feedback, and onboarding essential team players who align with our mission to drive unmatched value."
     },
     {
-      image: 'images/icon.png',
-      title: 'Resource Library',
+      icon: 'i-material-symbols-foundation',
+      title: 'Building Foundations',
       description:
-        'Get support in talent acquisition and management. Access our network of skilled professionals to find the right talent for your business needs, ensuring you have the right team to drive success.'
+        "With the objective of crafting a robust, cohesive product suite and fostering a team spirit that mirrors our core values, we're investing in foundational pillars. Emphasis on process streamlining ensures efficiency, top-tier automation tools boost productivity, and comprehensive documentation ensures clarity. Soon, we'll be unveiling a tailored Nuxt Module Suite, responsive to customer demands."
     },
     {
-      image: 'images/icon.png',
-      title: 'Resource Library',
+      icon: 'i-mdi-trending-up',
+      title: 'Strategic Expansion',
       description:
-        'Get support in talent acquisition and management. Access our network of skilled professionals to find the right talent for your business needs, ensuring you have the right team to drive success.'
+        "Plans are underway to energize the Nuxt community through engaging conferences and creative hackathons, promoting collaboration and innovation. We're branching into education, launching expert-curated online masterclasses for enthusiasts worldwide. Furthermore, our ambitious one-year flagship incubation initiative is poised to foster budding talent and innovation, supported by our ever-growing expert team."
+    },
+    {
+      icon: 'i-material-symbols-gesture',
+      title: 'Philanthropic Ventures',
+      description:
+        "Beyond business, we're diving deep into incubating and investing in visionary startups that echo our vision for a sustainable tech future. Our calendar will soon be dotted with flagship events, hackathons, and more, all aimed at empowering the community and propelling the Nuxt/Open-Source movement to unparalleled heights."
     }
   ]
 }

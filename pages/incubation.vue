@@ -199,8 +199,9 @@ const faqs = {
       description: 'One developer is assigned to each project.'
     },
     {
-      label: 'How many developers are assigned?',
-      description: 'One developer is assigned to each project.'
+      label: 'Is Incubrain looking for investors?',
+      description:
+        "Not directly, the only way to become an investor is to become an Incubrain customer. After 3 years of consistent payment to Incubrain, all your montly payments will be vested as shares. If you want to invest but don't need our services, we suggest finding a company to sponser"
     },
     {
       label: 'How many developers are assigned?',

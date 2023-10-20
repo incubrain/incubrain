@@ -7,26 +7,20 @@
         </CommonTitle>
       </div>
     </div>
-    <div class="w-full h-full space-y-6 lg:space-y-12">
+    <div class="w-full h-full space-y-4 lg:space-y-8">
       <UCard
         v-for="item in items"
-        :key="item.id"
+        :key="item.title"
         :ui="{ body: { padding: '' } }"
       >
         <template #header>
           <div class="flex gap-4 items-center">
-            <NuxtImg
-              :src="item.image"
-              alt="Hero Image"
-              width="100%"
-              height="100%"
-            />
+            <UIcon :name="item.icon" />
             <h3 class="text-lg lg:text-xl font-semibold"> {{ item.title }}</h3>
           </div>
         </template>
         <div class="w-full h-full relative p-4 xl:p-8">
-          <div class="bg-pattern" />
-          <p> {{ item.description }}</p>
+          <p class="relative"> {{ item.description }}</p>
         </div>
       </UCard>
     </div>
@@ -36,13 +30,19 @@
 <script setup lang="ts">
 import { Title } from '~/types/content'
 
+interface Item {
+  title: string
+  description: string
+  icon: string
+}
+
 defineProps({
   title: {
     type: Object as PropType<Title>,
     required: true
   },
   items: {
-    type: Array,
+    type: Array as PropType<Item[]>,
     required: true
   }
 })
