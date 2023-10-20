@@ -16,10 +16,10 @@
       >
         <UButton to="/about"> Learn More </UButton>
       </CommonSingleFeat>
-      <CommonTabCards
+      <!-- <CommonTabCards
         :title="values.title"
         :items="values.items"
-      />
+      /> -->
       <CommonTimeline
         :title="benefits.title"
         :items="benefits.items"
@@ -58,11 +58,13 @@
 </template>
 
 <script setup lang="ts">
+const postStore = usePostsStore()
+const posts = await postStore.getShowcasePosts('business')
+
 const heroTitle = {
   label: 'About',
-  main: 'About Incubrain',
-  subtitle: `growing your business together
-  with us is a great idea`
+  main: 'The Incubrain Vision',
+  subtitle: 'Follow our journey from idea to flourishing company'
 }
 
 const cta = {
@@ -122,43 +124,69 @@ const benefits = {
 
 const values = {
   title: {
-    label: 'Values',
-    main: 'Why Incubrain',
-    subtitle: `growing your business together
-    with us is a great idea`
+    label: 'Our Core Values',
+    main: 'What Drives Incubrain',
+    subtitle: 'Discover the principles that guide our actions and decisions.'
   },
   items: [
     {
-      label: 'Passion',
-      content: 'This is the content shown for Tab1'
+      label: 'Innovation',
+      content: `We foster a culture where new ideas and unconventional thinking are not just welcomed, but actively
+      encouraged. We're not afraid to step into the unknown, embracing the creative process and all the
+      unique solutions it brings.`
     },
     {
-      label: 'Ambition',
-      content: 'blah blah blah'
+      label: 'Ownership',
+      content: `We believe that every employee is a stakeholder. We don't just do tasks; we take full responsibility
+      for the outcomes. From profits to mistakes, we share everything. Our commitment is to go beyond
+      'business as usual' and truly own our roles within the company.`
     },
     {
-      label: 'Drive',
-      content: 'Finally, this is the content for Tab3'
+      label: 'Resourcefulness',
+      content: `When faced with challenges, we don't back down. We exhaust all avenues, tap into our creativity, and
+      persevere until we find a solution. The phrase "it can't be done" isn't in our vocabulary. Instead,
+      we say, "We'll find a way."`
     },
     {
-      label: 'Drive',
-      content: 'Finally, this is the content for Tab3'
+      label: 'Resilience',
+      content: `We're made of grit. We understand that success isn't linear, and we're not discouraged by obstacles
+      or setbacks. We push forward, meet deadlines, and maintain our 'never give up' attitude, no matter
+      the circumstance.`
     },
     {
-      label: 'Drive',
-      content: 'Finally, this is the content for Tab3'
+      label: 'Fundamental Improvement',
+      content: `We approach problems by breaking them down to their most basic elements. Using a first-principles
+      perspective, we build solutions from the ground up, always looking for ways to enhance and improve.
+      We firmly believe that there's always room to get better, and that every situation, good or bad,
+      presents a learning opportunity.`
     },
     {
-      label: 'Drive',
-      content: 'Finally, this is the content for Tab3'
+      label: 'Insatiable Curiosity',
+      content: `We're lifelong learners who thrive on questions. If we don't know something, we ask. Our constant
+      thirst for knowledge fuels our innovations and drives us to dig deeper, understanding the 'why'
+      behind every 'what'.`
     },
     {
-      label: 'Something',
-      content: 'Finally, this is the content for Tab3'
+      label: 'Transparency',
+      content: `We keep an open house. From discussions and decisions to roadmaps and codebases, we ensure that
+      transparency is maintained. We believe that everyone's opinion matters, fostering an inclusive
+      environment where employees are part of our key business decisions.`
     },
     {
-      label: 'Extra',
-      content: 'Finally, this is the content for Tab3'
+      label: 'Collaboration',
+      content: `We work together, combining our skills and knowledge to deliver end-to-end products and features. We
+      believe that the best solutions come from group discussions and collective inputs. We share ideas
+      and learn from each other, focusing on achieving common goals.`
+    },
+    {
+      label: 'Passionate Engagement',
+      content: `We do more than just work - we pour our hearts into what we do. We believe that passion is the spark
+      that drives excellence, innovation, and satisfaction. When we love what we do, we do it better.`
+    },
+    {
+      label: 'Pursuit of Excellence',
+      content: `We are obsessed with quality. Every product we create, every service we deliver, is a testament to
+      our commitment to excellence. We continuously set and surpass high standards, delivering nothing`
     }
   ]
 }
@@ -171,24 +199,6 @@ const postTitle = {
   continuous learning, and teamwork. Our team is passionate about helping startups succeed and we believe that a strong company culture
   is the foundation for achieving our vision.`
 }
-
-const { data: posts } = await useAsyncData('posts', () =>
-  queryContent('blog')
-    .only([
-      'id',
-      'title',
-      '_path',
-      'description',
-      'featured_image',
-      'authors',
-      'category',
-      'tags',
-      'date'
-    ])
-    .sort({ date: -1 })
-    .limit(3)
-    .find()
-)
 
 definePageMeta({
   name: 'About'

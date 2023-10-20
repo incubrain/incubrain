@@ -2,10 +2,10 @@
   <div>
     <div class="space-y-6 lg:space-y-12">
       <CommonTitle :title="title" />
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
+      <div v-if="posts.length > 1" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
         <BlogCard
           v-for="post in posts"
-          :key="post.id"
+          :key="post.title"
           :post="post"
         />
       </div>
@@ -18,6 +18,7 @@
 
 <script setup lang="ts">
 import { Title } from '~/types/content'
+import { PostCard } from '~/types/posts'
 
 defineProps({
   title: {
@@ -25,7 +26,7 @@ defineProps({
     required: true
   },
   posts: {
-    type: Array,
+    type: Array as PropType<PostCard[]>,
     required: true
   }
 })

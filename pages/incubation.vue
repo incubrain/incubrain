@@ -14,7 +14,7 @@
         image="images/hero.jpg"
       >
         <UButton
-          to="/about"
+          to="/contact-incubation"
           variant="outline"
         >
           {{ singleFeat.cta }}
@@ -73,7 +73,7 @@ const heroTitle = {
 
 const singleFeat = {
   title: {
-    label: 'Exclusive Nuxt 3 Development with a Business Edge',
+    label: 'Exclusively Nuxt',
     main: 'Combining Tech Prowess with Business Acumen',
     subtitle: `
     With over a decade of experience in business and half of that dedicated to the intricacies of internet businesses,
@@ -98,10 +98,9 @@ const cta = {
 
 const how = {
   title: {
-    label: 'How It Works',
-    main: "We're Founder First",
-    subtitle: `growing your business together
-    with us is a great idea`
+    label: 'our methodology',
+    main: 'Building Value Driven Businesses That Last',
+    subtitle: "First we understand your buisness vision, the product, where you stand today, your goals for the future, and then we tailor a solution that's right for you."
   },
   items: [
     {

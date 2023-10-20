@@ -83,7 +83,8 @@ const tabs = [
     slot: 'incubation',
     label: 'Incubation',
     title: {
-      main: 'Business Starter',
+      label: '$2,000 per month',
+      main: 'Give Your Business The Support It Deserves',
       subtitle:
         'Are you a budding startup looking for the right incubation environment? Reach out and let us guide you through the process of kickstarting your tech journey with Incubrain.'
     },
@@ -94,7 +95,8 @@ const tabs = [
     slot: 'hire-us',
     label: 'Hire us',
     title: {
-      main: 'Hire us',
+      label: '$80 per hour',
+      main: "We'll Help Bring Your Project To Life",
       subtitle:
         'Need specialized IT services or dedicated developers? Discover how our team can serve your immediate and long-term tech needs. Connect with us now.'
     },
@@ -105,7 +107,8 @@ const tabs = [
     slot: 'collaborate',
     label: 'Collaborate',
     title: {
-      main: 'Collaborate',
+      label: "let's collaborate",
+      main: 'Serious About Nuxt / Business?',
       subtitle:
         "Got an innovative idea or a proposal for a partnership? We're all ears! Share your thoughts, and let's explore the potential of our collaboration."
     },

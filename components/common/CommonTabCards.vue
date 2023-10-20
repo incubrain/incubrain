@@ -6,11 +6,11 @@
       orientation="vertical"
       class="w-full"
       :ui="{
-        wrapper: 'flex flex-row items-start justify-start gap-2 lg:gap-4 space-y-0',
+        wrapper: 'flex flex-col lg:flex-row items-start justify-start gap-2 lg:gap-4 space-y-0',
         list: {
           background: '',
-          width: 'w-24 lg:w-48',
-          height: 'h-auto lg:h-10',
+          width: 'w-full lg:w-48',
+          height: 'h-48 lg:h-10',
           base: 'relative',
           rounded: 'rounded-md border border-color'
         }
@@ -26,8 +26,8 @@
         </div>
       </template>
       <template #item="{ item }">
-        <div class="w-full h-full p-4 lg:p-8 rounded-md border border-color">
-          <h3 class="text-xl font-bold">{{ item.label }}</h3>
+        <div class="w-full h-full p-4 lg:p-8 rounded-md border border-color space-y-4">
+          <h3 class="text-lg lg:text-xl font-semibold">{{ item.label }}</h3>
           <p class="text-base">{{ item.content }}</p>
         </div>
       </template>
@@ -36,7 +36,6 @@
 </template>
 
 <script setup lang="ts">
-import { baseURL } from 'nuxt/dist/core/runtime/nitro/paths'
 import { Title } from '~/types/content'
 
 const { width } = useWindowSize()
