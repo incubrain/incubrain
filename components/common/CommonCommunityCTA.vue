@@ -1,13 +1,13 @@
 <template>
   <div
-    class="background p-8 text-center py-24 gap-8 flex flex-col justify-center items-center relative overflow-hidden"
+    class="background p-8 text-center padded-y gap-8 flex flex-col justify-center items-center relative overflow-hidden"
   >
     <div
       class="h-full w-full absolute bg-gradient-radial z-10 top-0 left-0 from-transparent via-white/30 dark:via-neutral-950/30 dark:to-neutral-950 to-white"
     />
     <div class="bg-pattern" />
-    <div class="relative z-20 flex flex-col gap-8 justify-center py-24 items-center">
-      <div class="rounded-full p-4 border-2 border-color background shadow-lg">
+    <div class="relative z-20 flex flex-col gap-8 justify-center padded-y items-center">
+      <div class="rounded-full p-4 border-2 border-color background shadow-lg w-[100px] lg:w-[160px]">
         <NuxtImg
           src="images/incubrain-logo.svg"
           alt="Incubrain Logo on contact page"
@@ -20,8 +20,8 @@
         <div
           v-for="i in 12"
           :key="i"
-          :class="`w-12 h-12 rounded-full border-2 border-color overflow-hidden absolute`"
-          :style="getPosition(i, 7, 160)"
+          :class="`w-10 h-10 lg:w-12 lg:h-12 rounded-full border-2 border-color overflow-hidden absolute`"
+          :style="getPosition(i, 7)"
         >
           <NuxtImg
             :src="`https://xsgames.co/randomusers/avatar.php?g=${i % 2 === 0 ? 'male' : 'female'}`"
@@ -32,7 +32,7 @@
     </div>
     <div class="flex flex-col relative z-20 justify-center items-center gap-4 lg:gap-8">
       <h1
-        class="text-3xl lg:text-4xl relative z-10 px-3 underline decoration-primary-500 dark:decoration-primary-700 font-bold max-w-md"
+        class="text-3xl lg:text-4xl relative z-10 px-3 underline decoration-primary-500 dark:decoration-primary-700 font-bold max-w-sm lg:max-w-md"
       >
         International Community of Nuxt Developers
       </h1>
@@ -52,9 +52,14 @@
 
 <script lang="ts" setup>
 const { discord } = useSocial()
+const { width } = useWindowSize()
 
-const getPosition = (index: number, total: number, radius: number) => {
+const getPosition = (index: number, total: number) => {
   // Adjust starting and ending angles for semi-circle distribution
+  let radius = 160
+  if (width.value < 1024) {
+    radius = 100
+  }
   const startAngle = 0 // Starting at 0 degrees
   const endAngle = Math.PI // Ending at 180 degrees
 

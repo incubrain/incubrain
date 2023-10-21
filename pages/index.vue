@@ -18,7 +18,7 @@
         :title="content.manyFeat.title"
         :items="content.manyFeat.items"
       />
-      <CommonTest :title="content.joinCommunity.title" />
+      <CommonCommunity :title="content.joinCommunity.title" />
     </div>
     <CommonCommunityCTA />
     <!-- <CommonCTA :title="content.mainCTA.title">

@@ -1,9 +1,16 @@
 <template>
   <div
-    class="relative h-full overflow-hidden rounded-lg border border-solid border-color px-8 pb-6 pt-10"
+    class="relative h-full overflow-hidden rounded-lg border border-solid border-color px-8 pt-10"
     :class="parent"
   >
-    <h3 class="pb-8 relative z-10 underline decoration-primary-500 dark:decoration-primary-900 text-3xl font-semibold">{{ title }}</h3>
+    <div class="relative z-10 space-y-2 pb-6 w-full">
+      <h3
+        class="underline decoration-primary-500 dark:decoration-primary-900 text-3xl font-semibold"
+      >
+        {{ content.title }}
+      </h3>
+      <p>{{ content.description }}</p>
+    </div>
     <div :class="img.parentClass ? img.parentClass : ''">
       <NuxtImg
         loading="lazy"
@@ -27,13 +34,18 @@ interface ImgProps {
   parentClass?: string
 }
 
+interface Content {
+  title: string
+  description: string
+}
+
 defineProps({
   img: {
     type: Object as PropType<ImgProps>,
     required: true
   },
-  title: {
-    type: String,
+  content: {
+    type: Object as PropType<Content>,
     required: true
   },
   parent: {

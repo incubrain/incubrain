@@ -1,42 +1,51 @@
 <template>
   <div
     id="stack"
-    class="group min-h-[258px] overflow-hidden rounded-lg border flex flex-col justify-around border-color px-8 pb-6 pt-10 "
+    class="group min-h-[258px] overflow-hidden rounded-lg border flex flex-col justify-between border-color px-8 pb-6 pt-10"
     role="presentation"
     aria-label="Our Technology Stack"
   >
-    <h3 class="text-3xl font-semibold underline decoration-primary-500 dark:decoration-primary-900">Incubrain Stack</h3>
-    <div
-      v-for="i in 2"
-      :key="`stacks-group-${i}`"
-      class="-ml-8 mb-2 flex gap-2"
-    >
-      <div
-        v-for="index in 2"
-        :key="index"
-        :class="[
-          'flex min-w-full gap-2',
-          i === 1 ? 'animation-stacks-left' : 'animation-stacks-right'
-        ]"
+    <div class="space-y-2 pb-6">
+      <h3
+        class="text-3xl font-semibold underline decoration-primary-500 dark:decoration-primary-900"
       >
-        <NuxtLink
-          v-for="stack in getStacksForGroup(i)"
-          :key="stack.link"
-          :to="stack.link"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex h-[40px] items-center foreground gap-2 rounded-full border border-color px-4 py-2 hover:border-primary-500"
+        Incubrain Stack
+      </h3>
+      <p>Our stack reduces friction; helping us move quickly, with confidence!</p>
+    </div>
+    <div>
+      <div
+        v-for="i in 2"
+        :key="`stacks-group-${i}`"
+        class="-ml-8 mb-2 flex gap-2"
+      >
+        <div
+          v-for="index in 2"
+          :key="index"
+          :class="[
+            'flex min-w-full gap-2',
+            i === 1 ? 'animation-stacks-left' : 'animation-stacks-right'
+          ]"
         >
-          <NuxtImg
-            :src="stack.logo"
-            class="h-[16px] w-auto"
-            width="26"
-            height="16"
-            :alt="stack.name"
-            :class="stack.invert ? 'dark:invert' : ''"
-          />
-          <span class="text-sm font-semibold">{{ stack.name }}</span>
-        </NuxtLink>
+          <NuxtLink
+            v-for="stack in getStacksForGroup(i)"
+            :key="stack.link"
+            :to="stack.link"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex h-[40px] items-center foreground gap-2 rounded-full border border-color px-4 py-2 hover:border-primary-500"
+          >
+            <NuxtImg
+              :src="stack.logo"
+              class="h-[16px] w-auto"
+              width="26"
+              height="16"
+              :alt="stack.name"
+              :class="stack.invert ? 'dark:invert' : ''"
+            />
+            <span class="text-sm font-semibold">{{ stack.name }}</span>
+          </NuxtLink>
+        </div>
       </div>
     </div>
   </div>

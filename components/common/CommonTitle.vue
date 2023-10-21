@@ -15,7 +15,7 @@
     >
       {{ title.subtitle }}
     </h5>
-    <div>
+    <div class="space-x-2">
       <slot />
     </div>
   </div>

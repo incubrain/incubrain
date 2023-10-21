@@ -7,10 +7,21 @@
       >
         <div class="group relative h-full lg:row-span-2 flex flex-col gap-4 lg:gap-8">
           <div class="rounded-lg border border-color p-8">
-            <h3 class="text-3xl font-semibold underline decoration-primary-500 dark:decoration-primary-900">Behind The Scenes</h3>
-            <p class="text-base">
-              some information about our company
-              <strong class="font-semibold text-primary-500">Incubrain</strong>
+            <h3
+              class="text-3xl font-semibold underline decoration-primary-500 dark:decoration-primary-900"
+            >
+              Exclusive Access
+            </h3>
+            <p class="text-base pt-2">
+              Join our
+              <NuxtLink
+                :to="discord.url"
+                class="font-semibold text-primary-500 dark:text-primary-700"
+                @click="$posthog()?.capture('join_community')"
+              >
+                Discord
+              </NuxtLink>
+              for a peek behind the scenes, see how we run Incubrain and learn from our wins/fails.
             </p>
           </div>
           <CommonStack class="flex-grow" />
@@ -19,7 +30,7 @@
           v-for="(card, index) in commonCards"
           :key="index"
           :img="card.img"
-          :title="card.title"
+          :content="card.content"
           :parent="card.parent"
         />
       </div>
@@ -29,6 +40,7 @@
 
 <script setup lang="ts">
 import { Title } from '~/types/content'
+const { discord } = useSocial()
 
 defineProps({
   title: {
@@ -39,7 +51,10 @@ defineProps({
 
 const commonCards = [
   {
-    title: 'Code Review',
+    content: {
+      title: 'Code Review',
+      description: 'Weekly code-review sessions'
+    },
     parent: 'relative lg:row-span-2',
     img: {
       src: 'images/vectors/terminal.svg',
@@ -51,20 +66,25 @@ const commonCards = [
     }
   },
   {
-    title: 'Global Founder Network',
+    content: {
+      title: 'Global Founder Network',
+      description: 'Grow with other passionate founders'
+    },
     parent: 'relative h-full flex flex-col',
     img: {
       src: 'images/vectors/world_map.svg',
       height: 264,
-      alt: 'Menthor mapa mundial',
+      alt: 'Dotted map of the world',
       width: 810,
       class: 'absolute -top-[8px] left-[62px] h-[264px] w-[810px] dark:invert'
     }
   },
   {
-    title: 'Website Audits',
-    parent:
-      'relative h-full flex flex-col justify-center items-center',
+    content: {
+      title: 'Website Audits',
+      description: 'Weekly expert website/app reviews'
+    },
+    parent: 'relative h-full flex flex-col justify-center items-center',
     img: {
       src: 'images/home/website-audit.png',
       alt: 'Website Audit image',
