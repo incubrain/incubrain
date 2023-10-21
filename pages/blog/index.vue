@@ -20,9 +20,10 @@
     <div
       class="wrapper px-4 lg:px-8 pb-4 lg:pb-8 grid grid-cols-1 lg:grid-cols-[0.5fr_1fr] items-start w-full md:gap-4 lg:gap-8 relative"
     >
-      <div class="sticky top-24 w-full p-4 lg:p-8 border border-color rounded-md">
-        ad placement
-      </div>
+      <BlogAdFloat
+        title="Founder Group"
+        description="Grow your Nuxt business with us"
+      />
       <div class="grid md:gap-4 grid-cols-1 lg:gap-8 md:grid-cols-2 h-full">
         <BlogCard
           v-for="(post, i) in posts"

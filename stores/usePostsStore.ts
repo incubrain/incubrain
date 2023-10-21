@@ -187,7 +187,8 @@ export const usePostsStore = defineStore('posts', () => {
     getPosts,
     getSinglePost,
     getPostsOnScroll,
-    getShowcasePosts
+    getShowcasePosts,
+    adVisible: ref(true)
   }
 })
 

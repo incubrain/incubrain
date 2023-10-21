@@ -1,22 +1,16 @@
 <template>
-  <div class="lg:sticky top-24 space-y-4 h-auto border border-color md:rounded-md p-4 xl:p-8">
-    <div class="space-y-2">
-      <p class="text-sm">Categories</p>
-      <div class="flex gap-4 flex-wrap">
-        <UButton
-          v-for="cat in postStore.categories"
-          :key="cat"
-          color="primary"
-          :variant="selectedCategory === cat ? 'solid' : 'outline'"
-          :label="cat"
-          size="sm"
-          class="cursor-pointer"
-          @click="
-            postStore.toggleCategory(cat);
-            toTop()
-          "
-        />
-      </div>
+  <div class="space-y-4 h-auto border border-color md:rounded-md p-4 lg:p-8">
+    <div class="flex gap-4 flex-wrap">
+      <UButton
+        v-for="cat in postStore.categories"
+        :key="cat"
+        color="primary"
+        :variant="selectedCategory === cat ? 'solid' : 'outline'"
+        :label="cat"
+        size="sm"
+        class="cursor-pointer"
+        @click="handleClick"
+      />
     </div>
     <!-- <div class="space-y-2">
       <p class="text-xs">Tags:</p>
@@ -43,6 +37,7 @@
 </template>
 
 <script setup lang="ts">
+import { PostCategories } from '~/types/posts'
 const postStore = usePostsStore()
 const { selectedCategory } = storeToRefs(postStore)
 
@@ -50,5 +45,10 @@ function toTop() {
   if (window) {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
+}
+
+const handleClick = (cat: PostCategories) => {
+  postStore.toggleCategory(cat)
+  toTop()
 }
 </script>
