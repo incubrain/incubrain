@@ -76,7 +76,7 @@ export const postCardSchema = z.object({
   _path: z.string()
 })
 export type PostCard = z.infer<typeof postCardSchema>
-export const POST_CARD_PROPERTIES: PostCard = [
+export const POST_CARD_PROPERTIES = [
   'title',
   'description',
   'category',
@@ -96,7 +96,7 @@ export const postFullSchema = postCardSchema.extend({
   _id: z.string()
 })
 export type PostFull = z.infer<typeof postFullSchema>
-export const POST_FULL_PROPERTIES: PostFull = [
+export const POST_FULL_PROPERTIES = [
   ...POST_CARD_PROPERTIES,
   'body',
   'id',

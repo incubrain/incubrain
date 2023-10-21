@@ -27,6 +27,7 @@ export const usePostsStore = defineStore('posts', () => {
   }
 
   const posts: PostsType = reactive(initializeCategories(() => <PostCard[]>[]))
+  const postsShowcase: PostsType = reactive(initializeCategories(() => <PostCard[]>[]))
   const allPostsFetched: Record<PostCategories, boolean> = reactive(
     initializeCategories(() => false)
   )
@@ -60,6 +61,33 @@ export const usePostsStore = defineStore('posts', () => {
     }
   }
 
+  const fetchPosts = async ({
+    skip,
+    limit,
+    category
+  }: {
+    skip: number
+    limit: number
+    category: PostCategories
+  }): Promise<PostCard[]> => {
+    const whereOptions: QueryBuilderParams = {
+      tags: { $in: selectedTags.value },
+      status: { $eq: 'published' }
+    }
+
+    if (category !== 'all') {
+      whereOptions.category = category
+    }
+
+    return (await queryContent('blog')
+      .where(whereOptions)
+      .only(POST_CARD_PROPERTIES)
+      .sort({ date: -1 })
+      .skip(skip)
+      .limit(limit)
+      .find()) as PostCard[]
+  }
+
   /**
    * Fetches and validates posts based on current filters.
    * @param limit - Max number of posts to fetch.
@@ -74,28 +102,18 @@ export const usePostsStore = defineStore('posts', () => {
   } = {}) => {
     if (postsLoading.value) return
     if (!selectedCategory.value) return
+    if (allPostsFetched[selectedCategory.value]) return
 
     postsLoading.value = true
 
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000))
 
-      const whereOptions: QueryBuilderParams = {
-        tags: { $in: selectedTags.value },
-        status: { $eq: 'published' }
-      }
-
-      if (selectedCategory.value !== 'all') {
-        whereOptions.category = selectedCategory.value
-      }
-
-      const newPosts = await queryContent('blog')
-        .where(whereOptions)
-        .only(POST_CARD_PROPERTIES)
-        .sort({ date: -1 })
-        .skip(skip)
-        .limit(limit)
-        .find()
+      const newPosts = await fetchPosts({
+        category: selectedCategory.value,
+        skip,
+        limit
+      })
 
       if (newPosts.length < limit) {
         allPostsFetched[selectedCategory.value] = true
@@ -112,12 +130,14 @@ export const usePostsStore = defineStore('posts', () => {
   }
 
   const getShowcasePosts = async (category: PostCategories) => {
-    if (posts[category].length > 2) return posts[category].slice(0, 3)
-    console.log('no posts in store')
-    selectedCategory.value = category
-    await getPosts({ limit: 3, skip: 0 })
-    console.log('returning posts')
-    return posts[category].slice(0, 3)
+    if (postsShowcase[category].length > 2) return postsShowcase[category].slice(0, 3)
+    const newPosts = await fetchPosts({
+      category,
+      skip: 0,
+      limit: 3
+    })
+    postsShowcase[category].push(...(newPosts as PostCard[]))
+    return postsShowcase[category].slice(0, 3)
   }
 
   const getSinglePost = async ({ path, category }: { path: string; category: string }) => {

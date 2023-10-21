@@ -14,14 +14,19 @@
       }"
       invert
     />
-    <div
-      class="wrapper md:p-4 xl:p-8 grid grid-cols-1 lg:grid-cols-[0.5fr_1fr] items-start w-full md:gap-4 xl:gap-8 relative"
-    >
+    <div class="wrapper p-4 lg:p-8">
       <BlogFilter />
-      <div class="grid md:gap-4 grid-cols-1 xl:gap-8 md:grid-cols-2 h-full">
+    </div>
+    <div
+      class="wrapper px-4 lg:px-8 pb-4 lg:pb-8 grid grid-cols-1 lg:grid-cols-[0.5fr_1fr] items-start w-full md:gap-4 lg:gap-8 relative"
+    >
+      <div class="sticky top-24 w-full p-4 lg:p-8 border border-color rounded-md">
+        ad placement
+      </div>
+      <div class="grid md:gap-4 grid-cols-1 lg:gap-8 md:grid-cols-2 h-full">
         <BlogCard
-          v-for="post in posts"
-          :key="post.id"
+          v-for="(post, i) in posts"
+          :key="`incubrain-post-${i}`"
           :post="post"
         />
         <BlogCardSkeleton v-if="postsLoading" />
@@ -36,7 +41,7 @@
           color="primary"
           class="flex justify-center items-center w-full border border-primary-500 md:rounded-md p-8"
         >
-          <p class="foreground px-2">No more posts to load</p>
+          <p class="foreground px-2">You've reached the end of the line</p>
         </div>
       </div>
     </div>
@@ -46,11 +51,12 @@
 <script setup lang="ts">
 const postStore = usePostsStore()
 const { posts, postsLoading, postsEnd } = storeToRefs(postStore)
+
 const sentinel = ref<HTMLElement | null>(null)
 let observer: IntersectionObserver | null = null
 
-onMounted(() => {
-  postStore.getPosts()
+onMounted(async () => {
+  await postStore.getPosts()
   const options = {
     root: null,
     rootMargin: '0px',
