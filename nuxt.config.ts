@@ -84,10 +84,6 @@ export default defineNuxtConfig({
     '/api/**': { cors: true }
   },
 
-  nitro: {
-    preset: 'vercel_edge'
-  },
-
   imports: {
     dirs: ['stores', 'data']
   },
