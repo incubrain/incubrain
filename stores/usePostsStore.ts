@@ -111,6 +111,7 @@ export const usePostsStore = defineStore('posts', () => {
       }
 
       const validPosts = newPosts.filter((post) => isValidPost(post as PostCard, postCardSchema))
+      if (!validPosts.length) return
       posts[selectedCategory.value].push(...(validPosts as PostCard[]))
       console.log('posts fetched')
     } catch (error) {
