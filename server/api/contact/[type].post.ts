@@ -41,8 +41,11 @@ export default defineEventHandler(async (event) => {
   // store the data in supabase
 
   try {
+    console.log('supabse', supabase)
     const { data: storedMessage, error } = await supabase.from('contact').insert(formattedData)
     console.log('message stored', storedMessage, error)
+
+    if (error) throw createError({ message: error.message, statusCode: 404 })
     // Format the message
 
     sendToDiscord({
@@ -57,11 +60,9 @@ export default defineEventHandler(async (event) => {
       message: 'Enquiry received and stored'
     }
   } catch (error: any) {
-    console.error('Error sending contact message', error.message)
-    return {
-      status: 500,
-      message: 'Error sending your message',
-      error
-    }
+    throw createError({
+      message: error.message,
+      statusCode: 404
+    })
   }
 })
