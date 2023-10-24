@@ -26,6 +26,7 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@vueuse/nuxt',
     'nuxt-swiper',
+    'nuxt-vitest',
     [
       '@pinia/nuxt',
       {
@@ -77,7 +78,7 @@ export default defineNuxtConfig({
     '/about/**': { prerender: true },
     '/services/**': { prerender: true },
     // Blog post generated on-demand once until next deploy
-    '/blog/**': { prerender: true },
+    // '/blog/**': { prerender: true },
     // Add cors headers on API routes
     '/api/**': { cors: true }
   },
