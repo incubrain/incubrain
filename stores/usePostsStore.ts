@@ -12,7 +12,6 @@ import {
 } from '../types/posts'
 
 const postsToLoad = 10
-const postsLoading = ref(false)
 
 export const usePostsStore = defineStore('posts', () => {
   type PostsType = Record<PostCategories, PostCard[]>
@@ -25,6 +24,7 @@ export const usePostsStore = defineStore('posts', () => {
     ) as Record<PostCategories, T>
   }
 
+  const postsLoading = ref(false)
   const posts: PostsType = reactive(initializeCategories(() => <PostCard[]>[]))
   const postsShowcase: PostsType = reactive(initializeCategories(() => <PostCard[]>[]))
   const allPostsFetched: Record<PostCategories, boolean> = reactive(

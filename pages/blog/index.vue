@@ -43,7 +43,7 @@
       </div>
     </div>
     <div
-      v-if="allPostsFetched[selectedCategory]"
+      v-if="!allPostsFetched[selectedCategory]"
       ref="sentinel"
     />
   </div>
