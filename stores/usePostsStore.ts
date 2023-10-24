@@ -68,7 +68,7 @@ export const usePostsStore = defineStore('posts', () => {
     }
 
     const { data: posts } = await useAsyncData('posts', () =>
-      queryContent('blog')
+      queryContent('/blog')
         .where(whereOptions)
         .only(POST_CARD_PROPERTIES)
         .sort({ date: -1 })
@@ -105,7 +105,7 @@ export const usePostsStore = defineStore('posts', () => {
         skip,
         limit
       })
-
+      console.log('newPosts', newPosts, limit)
       if (newPosts.length < limit) {
         allPostsFetched[selectedCategory.value] = true
       }
@@ -135,19 +135,20 @@ export const usePostsStore = defineStore('posts', () => {
 
   const getShowcasePosts = async (category: PostCategories) => {
     if (postsShowcase[category].length > 2) return postsShowcase[category].slice(0, 3)
-    const { data: newPosts } = await useAsyncData('posts', () => fetchPosts({
+    const { data: newPosts } = await fetchPosts({
       category,
       skip: 0,
       limit: 3
-    }))
+    })
     postsShowcase[category].push(...(newPosts.value as PostCard[]))
     return postsShowcase[category].slice(0, 3)
   }
 
   const getSinglePost = async ({ path, category }: { path: string; category: string }) => {
     const { data } = await useAsyncData('post', () =>
-      queryContent('blog', category).only(POST_FULL_PROPERTIES).where({ _path: path }).findOne()
+      queryContent('/blog', category).only(POST_FULL_PROPERTIES).where({ _path: path }).findOne()
     )
+    console.log('singlePost', data)
     const validPost = isValidPost(data.value as PostFull, postFullSchema)
     if (!validPost) return console.error('Post failed to load')
     return data.value as PostFull
