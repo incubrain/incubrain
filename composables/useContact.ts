@@ -138,6 +138,7 @@ function submitForm({
   console.log('submitting form', formType, formData)
   const { data, error } = useFetch(`/api/contact/${formType}`, {
     method: 'POST',
+    headers: useRequestHeaders(['cookie']),
     body: JSON.stringify(formData)
   })
 
