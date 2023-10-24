@@ -54,11 +54,11 @@ function toggle(event?: MouseEvent) {
   })
 }
 
-const context = {
+const context = reactive({
   mode,
   isDark,
   toggle
-}
+})
 
 useHead({
   meta: [
