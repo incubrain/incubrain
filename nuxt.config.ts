@@ -79,6 +79,7 @@ export default defineNuxtConfig({
     // Blog post generated on-demand once until next deploy
     '/blog/**': { prerender: true },
     '/blog': { prerender: true },
+    '/incubation': { prerender: true },
     // Add cors headers on API routes
     '/api/**': { cors: true }
   },
