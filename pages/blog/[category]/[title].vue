@@ -14,13 +14,22 @@
 </template>
 
 <script setup lang="ts">
+import { POST_FULL_PROPERTIES, PostFull, postFullSchema } from '~/types/posts'
+
 const route = useRoute()
 const category = ref(String(route.params.category))
 const p = usePostsStore()
 
-const { data: post } = await useAsyncData('single-post', () =>
-  p.getSinglePost({ path: route.path, category: category.value })
-)
+const { data: post } = await useAsyncData('post', async () => {
+  const post = await queryContent('/blog', category.value)
+    .only(POST_FULL_PROPERTIES)
+    .where({ _path: route.path })
+    .findOne()
+  const validPost = p.isValidPost(post as PostFull, postFullSchema)
+  if (!validPost) return console.error('Post failed to load')
+  return post as PostFull
+})
+
 </script>
 
 <style>

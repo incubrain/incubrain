@@ -144,16 +144,6 @@ export const usePostsStore = defineStore('posts', () => {
     return postsShowcase[category].slice(0, 3)
   }
 
-  const getSinglePost = async ({ path, category }: { path: string; category: string }) => {
-    const { data } = await useAsyncData('post', () =>
-      queryContent('/blog', category).only(POST_FULL_PROPERTIES).where({ _path: path }).findOne()
-    )
-    console.log('singlePost', data)
-    const validPost = isValidPost(data.value as PostFull, postFullSchema)
-    if (!validPost) return console.error('Post failed to load')
-    return data.value as PostFull
-  }
-
   /**
    * Validates the structure of the given post, filtering out invalid posts.
    * @param post - The post to validate.
@@ -193,7 +183,7 @@ export const usePostsStore = defineStore('posts', () => {
     toggleTag,
     toggleCategory,
     getPosts,
-    getSinglePost,
+    isValidPost,
     getPostsOnScroll,
     getShowcasePosts,
     adVisible: ref(true)
