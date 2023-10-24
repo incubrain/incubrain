@@ -62,7 +62,6 @@ export default defineNuxtConfig({
     DISCORD_NOTIFICATION_URL: process.env.DISCORD_NOTIFICATION_URL,
     // Keys within public, will be also exposed to the client-side
     public: {
-      api_url: process.env.API_URL_BASE,
       posthogPublicKey: process.env.POSTHOG_PUBLIC_KEY,
       posthogHost: process.env.POSTHOG_HOST
     }
@@ -79,9 +78,8 @@ export default defineNuxtConfig({
     // Blog post generated on-demand once until next deploy
     '/blog/**': { prerender: true },
     '/blog': { prerender: true },
-    '/incubation': { prerender: true },
+    '/incubation': { prerender: true }
     // Add cors headers on API routes
-    '/api/**': { cors: true }
   },
 
   imports: {

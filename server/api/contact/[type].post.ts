@@ -22,7 +22,7 @@ const formatFormData = (
   return {
     contact_type: formType,
     given_name: formData.givenName,
-    surname: formData.surname,
+    surname: formData.surname || '',
     email: formData.email,
     body: remainingData
   }
@@ -30,13 +30,13 @@ const formatFormData = (
 
 export default defineEventHandler(async (event) => {
   const enquiry = await readBody(event)
-  const type = event.context.params.type
+  const params = getRouterParams(event)
   // Validate the incoming data
   const supabase = await serverSupabaseClient(event)
-  console.log('server enquiry', enquiry, type)
+  console.log('server enquiry', enquiry, params.type)
 
   // format the data
-  const formattedData = formatFormData(type, enquiry)
+  const formattedData = formatFormData(params.type, enquiry)
 
   // store the data in supabase
 
@@ -44,7 +44,6 @@ export default defineEventHandler(async (event) => {
     const { data: storedMessage, error } = await supabase.from('contact').insert(formattedData)
     console.log('message stored', storedMessage, error)
     // Format the message
-    // const text = `Enquiry received!\n\nArea of Enquiry: ${enquiry.enquiryArea}\nEmail: ${enquiry.email}\nMessage: ${enquiry.message}`
 
     sendToDiscord({
       title: formattedData.contact_type,
@@ -52,7 +51,6 @@ export default defineEventHandler(async (event) => {
       description: formattedData.body.message,
       email: formattedData.email
     })
-    // if (!isSent) throw createError('Error sending enquiry to Slack')
 
     return {
       status: 200,

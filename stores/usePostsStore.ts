@@ -6,7 +6,6 @@ import {
   PostCard,
   postCardSchema,
   postFullSchema,
-  POST_FULL_PROPERTIES,
   POST_CARD_PROPERTIES,
   CATEGORIES,
   TAGS
