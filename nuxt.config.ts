@@ -71,6 +71,7 @@ export default defineNuxtConfig({
   routeRules: {
     // pre-rendered at build time
     '/': { prerender: true },
+    '/contact-**': { prerender: true },
     '/about/**': { prerender: true },
     '/services/**': { prerender: true },
     // Blog post generated on-demand once until next deploy
