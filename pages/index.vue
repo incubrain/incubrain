@@ -29,6 +29,7 @@
       <!-- <CommonTestimonial /> -->
       <BlogDisplay
         :title="content.recentPosts.title"
+        post-type="business"
       >
         <UButton
           to="/blog"
@@ -47,7 +48,6 @@
 </template>
 
 <script setup lang="ts">
-
 definePageMeta({
   name: 'Home'
 })

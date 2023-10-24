@@ -26,33 +26,33 @@
       />
       <div class="grid md:gap-4 grid-cols-1 lg:gap-8 md:grid-cols-2 h-full">
         <BlogCard
-          v-for="(post, i) in posts"
+          v-for="(post, i) in postStore.postsByCategory"
           :key="`incubrain-post-${i}`"
           :post="post"
         />
         <BlogCardSkeleton v-if="postsLoading" />
         <BlogCardSkeleton v-if="postsLoading" />
         <div
-          v-if="!postsEnd"
-          ref="sentinel"
-        />
-        <div
-          v-if="postsEnd"
+          v-if="postStore.postEnd"
           variant="outline"
           color="primary"
           class="flex justify-center items-center w-full border border-primary-500 md:rounded-md p-8"
         >
-          <p class="foreground px-2">You've reached the end of the line</p>
+          <p class="foreground px-2">You've reached the end of the line {{ postStore.postEnd }}</p>
         </div>
       </div>
     </div>
+    <div
+      v-if="postStore.postEnd"
+      ref="sentinel"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
 const postStore = usePostsStore()
-const { posts, postsLoading, postsEnd } = storeToRefs(postStore)
-await useAsyncData('posts', () => postStore.getPosts())
+await postStore.getPosts()
+const { postsLoading } = storeToRefs(postStore)
 
 const sentinel = ref<HTMLElement | null>(null)
 let observer: IntersectionObserver | null = null

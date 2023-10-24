@@ -9,7 +9,7 @@
         :label="cat"
         size="sm"
         class="cursor-pointer"
-        @click="handleClick"
+        @click="handleClick(cat)"
       />
     </div>
     <!-- <div class="space-y-2">

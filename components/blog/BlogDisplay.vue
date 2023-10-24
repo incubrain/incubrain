@@ -11,11 +11,6 @@
           :key="post.title"
           :post="post"
         />
-        <BlogCard
-          v-for="post2 in posts2"
-          :key="post2.title"
-          :post="post2"
-        />
       </div>
       <div class="flex justify-end">
         <slot />
@@ -26,25 +21,21 @@
 
 <script setup lang="ts">
 import { Title } from '~/types/content'
-import { PostCard, POST_CARD_PROPERTIES } from '~/types/posts'
-const postStore = usePostsStore()
-const { data: posts } = await useAsyncData('posts2', () => postStore.getShowcasePosts('business'))
+import { PostCategories } from '~/types/posts'
 
-const posts2 = ref([] as PostCard[])
-
-if (!posts2.value.length) {
-  const { data } = (await useAsyncData('posts2', () =>
-    queryContent('blog').only(POST_CARD_PROPERTIES).sort({ date: -1 }).limit(3).find()
-  )) as { data: Ref<PostCard[]> }
-  posts2.value = data.value
-}
-
-defineProps({
+const p = defineProps({
   title: {
     type: Object as PropType<Title>,
     required: true
+  },
+  postType: {
+    type: String as PropType<PostCategories>,
+    required: true
   }
 })
+
+const postStore = usePostsStore()
+const { data: posts } = await useAsyncData('posts2', () => postStore.getShowcasePosts(p.postType))
 </script>
 
 <style scoped></style>

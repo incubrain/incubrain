@@ -42,7 +42,7 @@
     </CommonCTA>
     <div class="wrapper padded-x padded-y spaced-y">
       <BlogDisplay
-        :posts="posts"
+        post-type="business"
         :title="postTitle"
       >
         <UButton
