@@ -110,24 +110,24 @@ const how = {
   },
   items: [
     {
-      image: 'images/icon.png',
+      icon: 'images/icon.png',
       title: 'Resource Library',
       description:
         'Harness the power of a part-time developer for your project. With a team ready to jump in, you always get the best talent for your needs.'
     },
     {
-      image: 'images/icon.png',
+      icon: 'images/icon.png',
       title: 'Resource Library',
       description:
         'Harness the power of a part-time developer for your project. With a team ready to jump in, you always get the best talent for your needs.'
     },
     {
-      image: 'images/icon.png',
+      icon: 'images/icon.png',
       title: 'Resource Library',
       description: ''
     },
     {
-      image: 'images/icon.png',
+      icon: 'images/icon.png',
       title: 'Resource Library',
       description: ''
     }

@@ -31,9 +31,9 @@
 import { Title } from '~/types/content'
 
 interface Item {
+  icon: string
   title: string
   description: string
-  icon: string
 }
 
 defineProps({
