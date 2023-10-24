@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import { PostTags, PostCategories } from '../types/posts'
+import { PostTags, PostCategories } from '~/types/posts'
 
 // TODO: Add full post as prop and types for post
 defineProps({

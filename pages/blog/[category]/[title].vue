@@ -18,7 +18,9 @@ const route = useRoute()
 const category = ref(String(route.params.category))
 const p = usePostsStore()
 
-const post = await p.getSinglePost({ path: route.path, category: category.value })
+const { data: post } = await useAsyncData('single-post', () =>
+  p.getSinglePost({ path: route.path, category: category.value })
+)
 </script>
 
 <style>

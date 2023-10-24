@@ -35,7 +35,7 @@ const p = defineProps({
 })
 
 const postStore = usePostsStore()
-const { data: posts } = await useAsyncData('posts2', () => postStore.getShowcasePosts(p.postType))
+const { data: posts } = await useAsyncData('posts', () => postStore.getShowcasePosts(p.postType))
 </script>
 
 <style scoped></style>

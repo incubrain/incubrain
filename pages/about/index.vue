@@ -58,8 +58,6 @@
 </template>
 
 <script setup lang="ts">
-const postStore = usePostsStore()
-const posts = await postStore.getShowcasePosts('business')
 
 const heroTitle = {
   label: 'About',
