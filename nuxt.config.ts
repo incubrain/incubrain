@@ -26,7 +26,6 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@vueuse/nuxt',
     'nuxt-swiper',
-    'nuxt-vitest',
     [
       '@pinia/nuxt',
       {
