@@ -9,7 +9,7 @@
         :label="cat"
         size="sm"
         class="cursor-pointer"
-        @click="handleClick(cat)"
+        @click="postStore.toggleCategory(cat)"
       />
     </div>
     <!-- <div class="space-y-2">
@@ -37,18 +37,7 @@
 </template>
 
 <script setup lang="ts">
-import { PostCategories } from '~/types/posts'
 const postStore = usePostsStore()
 const { selectedCategory } = storeToRefs(postStore)
 
-function toTop() {
-  if (window) {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-}
-
-const handleClick = (cat: PostCategories) => {
-  postStore.toggleCategory(cat)
-  toTop()
-}
 </script>

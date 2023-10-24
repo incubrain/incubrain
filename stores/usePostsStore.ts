@@ -171,9 +171,8 @@ export const usePostsStore = defineStore('posts', () => {
   return {
     tags: TAGS,
     categories: CATEGORIES,
-    postsByCategory: computed(() => posts[selectedCategory.value]),
     posts,
-    postEnd: computed(() => allPostsFetched[selectedCategory.value]),
+    allPostsFetched,
     postsLoading,
     selectedCategory,
     selectedTags,

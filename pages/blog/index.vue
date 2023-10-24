@@ -33,7 +33,7 @@
         <BlogCardSkeleton v-if="postsLoading" />
         <BlogCardSkeleton v-if="postsLoading" />
         <div
-          v-if="postEnd"
+          v-if="allPostsFetched[selectedCategory]"
           variant="outline"
           color="primary"
           class="flex justify-center items-center w-full border border-primary-500 md:rounded-md p-8"
@@ -43,7 +43,7 @@
       </div>
     </div>
     <div
-      v-if="postEnd"
+      v-if="allPostsFetched[selectedCategory]"
       ref="sentinel"
     />
   </div>
@@ -52,7 +52,7 @@
 <script setup lang="ts">
 const postStore = usePostsStore()
 await postStore.getPosts()
-const { postsLoading, posts, postEnd, selectedCategory } = storeToRefs(postStore)
+const { postsLoading, posts, allPostsFetched, selectedCategory } = storeToRefs(postStore)
 
 const sentinel = ref<HTMLElement | null>(null)
 let observer: IntersectionObserver | null = null
