@@ -46,9 +46,9 @@ export default defineEventHandler(async (event) => {
       .from('contact')
       .insert(formattedData)
       .select()
-    console.log('message stored', storedMessage, error)
+    console.log('message stored', storedMessage, error?.message)
 
-    if (error) throw createError({ message: error.message, statusCode: 404 })
+    if (error?.code) throw createError({ message: error.message, statusCode: Number(error.code) })
     // Format the message
 
     sendToDiscord({

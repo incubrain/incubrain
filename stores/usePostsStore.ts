@@ -168,14 +168,12 @@ export const usePostsStore = defineStore('posts', () => {
     await getPosts({ skip: posts[selectedCategory.value].length })
   }
 
-  const postEnd = computed(() => allPostsFetched[selectedCategory.value])
-  const postsByCategory = computed(() => posts[selectedCategory.value])
-
   return {
     tags: TAGS,
     categories: CATEGORIES,
-    postsByCategory,
-    postEnd,
+    postsByCategory: computed(() => posts[selectedCategory.value]),
+    posts,
+    postEnd: computed(() => allPostsFetched[selectedCategory.value]),
     postsLoading,
     selectedCategory,
     selectedTags,

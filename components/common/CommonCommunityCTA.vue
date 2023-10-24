@@ -6,7 +6,7 @@
       class="h-full w-full absolute bg-gradient-radial z-10 top-0 left-0 from-transparent via-white/30 dark:via-neutral-950/30 dark:to-neutral-950 to-white"
     />
     <div class="bg-pattern" />
-    <div class="relative z-20 flex flex-col gap-8 justify-center padded-y items-center">
+    <div class="relative z-20 flex flex-col gap-8 justify-center py-12 lg:py-20 items-center">
       <div class="rounded-full p-4 border-2 border-color background shadow-lg w-[100px] lg:w-[160px]">
         <NuxtImg
           src="images/incubrain-logo.svg"
@@ -56,7 +56,7 @@ const { width } = useWindowSize()
 
 const getPosition = (index: number, total: number) => {
   // Adjust starting and ending angles for semi-circle distribution
-  let radius = 160
+  let radius = 150
   if (width.value < 1024) {
     radius = 100
   }
