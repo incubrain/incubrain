@@ -26,9 +26,8 @@
     </CommonCTA> -->
     <div class="spaced-y wrapper padded-x padded-y">
       <CommonCeoMessage :title="content.ceoMessage.title" />
-      <CommonTestimonial />
+      <!-- <CommonTestimonial /> -->
       <BlogDisplay
-        :posts="posts"
         :title="content.recentPosts.title"
       >
         <UButton
@@ -48,23 +47,6 @@
 </template>
 
 <script setup lang="ts">
-const { data: posts } = await useAsyncData('posts', () =>
-  queryContent('blog')
-    .only([
-      'id',
-      'title',
-      '_path',
-      'description',
-      'featured_image',
-      'authors',
-      'category',
-      'tags',
-      'date'
-    ])
-    .sort({ date: -1 })
-    .limit(3)
-    .find()
-)
 
 definePageMeta({
   name: 'Home'

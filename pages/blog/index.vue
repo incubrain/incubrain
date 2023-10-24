@@ -52,7 +52,7 @@
 <script setup lang="ts">
 const postStore = usePostsStore()
 const { posts, postsLoading, postsEnd } = storeToRefs(postStore)
-await postStore.getPosts()
+await useAsyncData('posts', () => postStore.getPosts())
 
 const sentinel = ref<HTMLElement | null>(null)
 let observer: IntersectionObserver | null = null

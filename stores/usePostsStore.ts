@@ -26,11 +26,9 @@ export const usePostsStore = defineStore('posts', () => {
     ) as Record<PostCategories, T>
   }
 
-  const posts: PostsType = reactive(initializeCategories(() => <PostCard[]>[]))
-  const postsShowcase: PostsType = reactive(initializeCategories(() => <PostCard[]>[]))
-  const allPostsFetched: Record<PostCategories, boolean> = reactive(
-    initializeCategories(() => false)
-  )
+  const posts: PostsType = ref(initializeCategories(() => <PostCard[]>[]))
+  const postsShowcase: PostsType = ref(initializeCategories(() => <PostCard[]>[]))
+  const allPostsFetched: Record<PostCategories, boolean> = ref(initializeCategories(() => false))
 
   const selectedCategory = ref<PostCategories>('all')
   const selectedTags = ref<PostTags[]>([...TAGS])
@@ -49,7 +47,7 @@ export const usePostsStore = defineStore('posts', () => {
     }
   }
 
-  const fetchPosts = async ({
+  const fetchPosts = ({
     skip,
     limit,
     category
@@ -67,16 +65,15 @@ export const usePostsStore = defineStore('posts', () => {
       whereOptions.category = category
     }
 
-    const { data: posts } = await useAsyncData('posts', () =>
-      queryContent('/blog')
-        .where(whereOptions)
-        .only(POST_CARD_PROPERTIES)
-        .sort({ date: -1 })
-        .skip(skip)
-        .limit(limit)
-        .find()
-    )
-    return posts.value as PostCard[]
+    const posts = queryContent('/blog')
+      .where(whereOptions)
+      .only(POST_CARD_PROPERTIES)
+      .sort({ date: -1 })
+      .skip(skip)
+      .limit(limit)
+      .find()
+
+    return posts as PostCard[]
   }
 
   /**
@@ -112,7 +109,7 @@ export const usePostsStore = defineStore('posts', () => {
 
       const validPosts = newPosts.filter((post) => isValidPost(post as PostCard, postCardSchema))
       if (!validPosts.length) return
-      posts[selectedCategory.value].push(...(validPosts as PostCard[]))
+      posts.value[selectedCategory.value].push(...(validPosts as PostCard[]))
       console.log('posts fetched')
     } catch (error) {
       console.error('Failed to get posts:', error)
@@ -134,14 +131,14 @@ export const usePostsStore = defineStore('posts', () => {
   }
 
   const getShowcasePosts = async (category: PostCategories) => {
-    if (postsShowcase[category].length > 2) return postsShowcase[category].slice(0, 3)
+    if (postsShowcase.value[category].length > 2) return postsShowcase[category].slice(0, 3)
     const { data: newPosts } = await fetchPosts({
       category,
       skip: 0,
       limit: 3
     })
-    postsShowcase[category].push(...(newPosts.value as PostCard[]))
-    return postsShowcase[category].slice(0, 3)
+    postsShowcase.value[category].push(...(newPosts.value as PostCard[]))
+    return postsShowcase.value[category].slice(0, 3)
   }
 
   const getSinglePost = async ({ path, category }: { path: string; category: string }) => {
