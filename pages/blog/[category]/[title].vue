@@ -7,7 +7,7 @@
       class="triangle hidden lg:block absolute top-0 right-0 before:border-t-emerald-400 dark:before:border-t-emerald-700 before:border-x-transparent before:border-b-transparent"
     />
     <div class="max-w-[1080px] mx-auto flex flex-col justify-center relative lg:py-20">
-      <BlogPost :post="post" />
+      <BlogPost v-if="post" :post="post" />
       <BlogNavigation />
     </div>
   </div>
@@ -20,7 +20,7 @@ const route = useRoute()
 const category = ref(String(route.params.category))
 const p = usePostsStore()
 
-const { data: post } = await useAsyncData('post', async () => {
+const { data: post } = await useAsyncData('post', async (): Promise<PostFull | void> => {
   const post = await queryContent('/blog', category.value)
     .only(POST_FULL_PROPERTIES)
     .where({ _path: route.path })
