@@ -41,8 +41,11 @@ export default defineEventHandler(async (event) => {
   // store the data in supabase
 
   try {
-    console.log('supabse', supabase)
-    const { data: storedMessage, error } = await supabase.from('contact').insert(formattedData)
+    console.log('supabse', formattedData)
+    const { data: storedMessage, error } = await supabase
+      .from('contact')
+      .insert(formattedData)
+      .select()
     console.log('message stored', storedMessage, error)
 
     if (error) throw createError({ message: error.message, statusCode: 404 })
