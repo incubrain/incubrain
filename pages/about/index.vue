@@ -16,7 +16,12 @@
         :title="singleFeat.title"
         image="images/hero.jpg"
       >
-        <UButton to="/about"> Learn More </UButton>
+        <UButton
+          to="/blog/business/incubrain-company-values"
+          variant="outline"
+        >
+          Our Values
+        </UButton>
       </CommonSingleFeat>
       <!-- <CommonTabCards
         :title="values.title"
@@ -28,12 +33,12 @@
       />
     </div>
     <CommonCTA :title="cta.title">
-      <UButton
+      <!-- <UButton
         to="/incubation"
         variant="outline"
       >
         Find Out More
-      </UButton>
+      </UButton> -->
     </CommonCTA>
     <div class="wrapper padded-x padded-y spaced-y">
       <BlogDisplay
@@ -64,8 +69,8 @@ const heroTitle = {
 
 const cta = {
   title: {
-    label: 'Incubrain Your Business',
-    main: 'Ignite Your Ideas with Incubrain'
+    label: 'Profit Sharing',
+    main: "We Share Incubrain's Profits With Our Team"
   },
   image: 'images/hero.jpg'
 }
@@ -93,7 +98,7 @@ const benefits = {
   items: [
     {
       icon: 'i-mdi-security',
-      title: 'Security (Current Phase)',
+      title: 'Vision Security (Current Phase)',
       description:
         'Achieving self-sufficiency with two foundational clients as our bedrock. Emphasizing on high-quality content creation that resonates, enhancing user experience on our website, laying the groundwork for a dedicated community of enthusiasts, and intensifying outreach and strategic marketing efforts to increase visibility.'
     },
@@ -101,7 +106,7 @@ const benefits = {
       icon: 'i-mdi-ear-hearing',
       title: 'Active Listening',
       description:
-        "As we scale to serve ten esteemed clients, our ear is firmly to the ground. We're dedicated to understanding their unique challenges, outpacing expectations by delivering solutions tailored to their needs, diversifying our tech offerings based on feedback, and onboarding essential team players who align with our mission to drive unmatched value."
+        "As we scale to serve ten clients, our ear is firmly to the ground. We're dedicated to understanding their unique challenges, outpacing expectations by delivering solutions tailored to their needs, diversifying our tech offerings based on feedback, and onboarding essential team players who align with our mission to drive unmatched value."
     },
     {
       icon: 'i-material-symbols-foundation',
@@ -194,12 +199,8 @@ const values = {
 }
 
 const postTitle = {
-  label: 'Blog',
-  main: 'Our Blog',
-  subtitle: `
-  At Incubrain, we foster a dynamic and inclusive company culture that encourages creativity,
-  continuous learning, and teamwork. Our team is passionate about helping startups succeed and we believe that a strong company culture
-  is the foundation for achieving our vision.`
+  label: 'Documenting Our Success',
+  main: 'Check Out Our Latest Business Blog Posts'
 }
 
 definePageMeta({

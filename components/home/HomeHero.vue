@@ -56,10 +56,10 @@
           class="bounce-on-hover"
         >
           <div
-            class="relative h-full overflow-hidden pt-12 rounded-md shadow-lg background px-4 pb-4 gap-4 flex-grow"
+            class="relative h-full overflow-hidden rounded-md shadow-lg background p-4 gap-4 flex-grow w-[280px]"
           >
             <div
-              class="bg-pattern pointer-events-none absolute -right-[836px] -top-[448px] h-[651px] w-[1314px]"
+              class="bg-pattern"
             />
             <div class="relative">
               <h3 class="text-xl font-semibold pb-2">{{ feature.title }}</h3>
@@ -73,59 +73,58 @@
 </template>
 
 <script setup lang="ts">
-const title = ref('Ignite Your Ideas with Incubrain')
-const description = ref(
+const title = 'Ignite Your Ideas with Incubrain'
+const description =
   "Merging decades of startup experience with cutting-edge Nuxt 3 technology, we turn ideas into powerful SaaS solutions. As active contributors to Nuxt open source, we're committed to fostering growth within the community and beyond."
-)
 
 const features = [
   {
     id: 1,
-    title: 'Nuxt 3',
+    title: 'Nuxt Is King',
     description:
-      'We are the first Nuxt 3 adopters and are actively contributing to the Nuxt 3 ecosystem.',
+      'We are committed to pushing the Nuxt ecosystem forward, and donate 5% of our profits to the Nuxt team.',
     icon: 'i-mdi-nuxt'
   },
   {
     id: 2,
-    title: 'SaaS',
+    title: 'Open-source Company',
     description:
-      'We have decades of experience building SaaS products and can help you build yours.',
+      'Incubrain is an open-source, transparent company. We share our knowledge and code with the community.',
     icon: 'i-mdi-cloud'
   },
   {
     id: 3,
-    title: 'Third',
+    title: 'Business Expertise',
     description:
-      'We are committed to open source and are actively contributing to the Nuxt 3 ecosystem.',
+      '',
     icon: 'i-mdi-github'
   },
   {
     id: 4,
-    title: 'Fourth',
+    title: 'Customers = Investors',
     description:
-      'We are committed to open source and are actively contributing to the Nuxt 3 ecosystem.',
+      'Remain an Incubation customer for 3 years to vest your spending as shares in Incubrain',
     icon: 'i-mdi-github'
   },
   {
     id: 5,
-    title: 'Fifth',
+    title: 'Employees Share Profits',
     description:
-      'We are committed to open source and are actively contributing to the Nuxt 3 ecosystem.',
+      '',
     icon: 'i-mdi-github'
   },
   {
     id: 6,
-    title: 'Sixth',
+    title: 'Community Brain Trust',
     description:
-      'We are committed to open source and are actively contributing to the Nuxt 3 ecosystem.',
+      '',
     icon: 'i-mdi-github'
   },
   {
     id: 7,
-    title: 'Seventh',
+    title: 'Value Is Key',
     description:
-      'We are committed to open source and are actively contributing to the Nuxt 3 ecosystem.',
+      '',
     icon: 'i-mdi-github'
   }
 ]

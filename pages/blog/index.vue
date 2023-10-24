@@ -2,9 +2,9 @@
   <div ref="infinateBlogs">
     <CommonHero
       :img="{
-        title: 'Incubrain Blog Happy Hacker',
+        title: 'Incubrain blog icon',
         src: 'images/blog-icon.svg',
-        alt: 'Incubrain Blog Happy Hacker',
+        alt: 'Incubrain blog icon',
         width: 140,
         height: 140
       }"

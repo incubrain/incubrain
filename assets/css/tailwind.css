@@ -51,7 +51,7 @@
   }
 
   .bg-pattern {
-    @apply bg-no-repeat bg-center bg-cover bg-[url('assets/patterns/default.svg')] opacity-60 dark:opacity-20 w-[200%] h-[200%] absolute top-0 left-0 max-w-[100vw] max-h-[150vh];
+    @apply bg-no-repeat bg-center bg-cover bg-[url('assets/patterns/default.svg')] opacity-100 dark:opacity-10 w-[200%] h-[200%] absolute top-0 left-0 max-w-[100vw] max-h-[150vh];
   }
 
   .bounce-on-hover {
