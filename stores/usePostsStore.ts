@@ -49,18 +49,6 @@ export const usePostsStore = defineStore('posts', () => {
     }
   }
 
-  /**
-   * Change the selected category and fetch relevant posts.
-   * @param category - The new category to set.
-   */
-
-  async function toggleCategory(category: PostCategories) {
-    if (selectedCategory.value !== category) {
-      selectedCategory.value = category
-      await getPosts()
-    }
-  }
-
   const fetchPosts = async ({
     skip,
     limit,
@@ -79,13 +67,16 @@ export const usePostsStore = defineStore('posts', () => {
       whereOptions.category = category
     }
 
-    return (await queryContent('blog')
-      .where(whereOptions)
-      .only(POST_CARD_PROPERTIES)
-      .sort({ date: -1 })
-      .skip(skip)
-      .limit(limit)
-      .find()) as PostCard[]
+    const { data: posts } = await useAsyncData('posts', () =>
+      queryContent('blog')
+        .where(whereOptions)
+        .only(POST_CARD_PROPERTIES)
+        .sort({ date: -1 })
+        .skip(skip)
+        .limit(limit)
+        .find()
+    )
+    return posts.value as PostCard[]
   }
 
   /**
@@ -129,14 +120,26 @@ export const usePostsStore = defineStore('posts', () => {
     }
   }
 
+  /**
+   * Change the selected category and fetch relevant posts.
+   * @param category - The new category to set.
+   */
+
+  async function toggleCategory(category: PostCategories) {
+    if (selectedCategory.value !== category) {
+      selectedCategory.value = category
+      await getPosts()
+    }
+  }
+
   const getShowcasePosts = async (category: PostCategories) => {
     if (postsShowcase[category].length > 2) return postsShowcase[category].slice(0, 3)
-    const newPosts = await fetchPosts({
+    const { data: newPosts } = await useAsyncData('posts', () => fetchPosts({
       category,
       skip: 0,
       limit: 3
-    })
-    postsShowcase[category].push(...(newPosts as PostCard[]))
+    }))
+    postsShowcase[category].push(...(newPosts.value as PostCard[]))
     return postsShowcase[category].slice(0, 3)
   }
 
