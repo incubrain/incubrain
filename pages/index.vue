@@ -64,68 +64,58 @@ definePageMeta({
 // })
 
 const content = {
-  hero: {
-    title: {
-      label: "Incubrain ❤️'s Nuxt",
-      main: 'Bringing your SaaS ideas to life',
-      subtitle:
-        'Unleashing the power of Nuxt/Supabase, we turn your startup visions into tangible, market-ready solutions, all while keeping costs optimized.'
-    },
-    cta: 'Explore Our Services'
-  },
   mainFeat: {
     title: {
-      label: 'Unmatched Value',
-      main: 'Affordable Excellence for Startups',
+      label: 'The Incubrain Promise',
+      main: 'Unmatched Value for Early-Stage Businesses',
       subtitle:
-        "Blending the cost-effectiveness of India's talent landscape with our deep-rooted expertise in Nuxt/Supabase, we ensure your startup gets the tech advantage it deserves."
+        'We provide essential growth services for online businesses, levelling them up. Our online business knowledge, Nuxt expertise, and India base, makes our offer unique.'
     },
-    cta: 'Discover Our Approach',
-    image: 'images/hero.jpg'
+    cta: 'Find Out More'
   },
   manyFeat: {
     title: {
-      label: 'Our Offerings',
-      main: 'What Makes Incubrain Exceptional?',
+      label: 'Comitted to Your Success',
+      main: 'Incubrain Customers = Incubrain Investors',
       subtitle:
-        "Beyond conventional IT support, we're your strategic partners, providing a plethora of tailored services aimed at ensuring your startup's growth and sustainability."
+        "We value our early customers! After 3 years of being an Incubrain customer, ALL your spending with us is vested as shares in Incubrain. We're in this together."
     },
     items: [
       {
         icon: 'i-material-symbols-attach-money',
         title: 'Cost-Effective Solutions',
         description:
-          'Harness the benefits of cost-effective talent in India, combined with our optimized operational strategies to give your startup the best ROI.'
+          'With each new customer, we hire experts to expand our services and value provided to you.'
       },
       {
         icon: 'i-material-symbols-table-chart-view-outline',
-        title: 'Business Coaching',
+        title: 'Business Planning/Coaching',
         description:
-          'Benefit from our experienced mentors who guide you through startup challenges, helping you make informed decisions.'
+          'We will guide you through startup challenges, helping you make informed decisions.'
       },
       {
         icon: 'i-mdi-computer',
         title: 'Product Lifecycle Support',
         description:
-          'From ideation to testing, receive hands-on support during each phase of your product development, ensuring quality and efficiency.'
+          'From ideation to testing, receive hands-on support during each phase of your product development.'
       },
       {
         icon: 'i-material-symbols-code',
-        title: 'Dedicated Development',
+        title: 'Dedicated Developer Pool',
         description:
-          'Leverage the expertise of a full-time developer, dedicated to turning your SaaS vision into a functioning reality.'
+          'The equivalent of full-time, selected and rotated from our talent pool to match your evolving project needs.'
       },
       {
         icon: 'i-material-symbols-preview',
         title: 'Quality Assurance',
         description:
-          'Ensure your product meets the highest standards with our thorough code reviews, ensuring performance and security.'
+          'Thorough code reviews and website audits by experts ensure your product continues to improve.'
       },
       {
         icon: 'i-mdi-bulb-outline',
-        title: 'Innovation with Nuxt/Supabase',
+        title: 'Innovative Thinking',
         description:
-          'Stay ahead of the competition by utilizing the unmatched capabilities of Nuxt and Supabase, ensuring a cutting-edge product.'
+          'We love exploring new ideas and technologies that will help propel your business forward.'
       }
     ]
   },

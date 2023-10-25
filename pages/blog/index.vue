@@ -30,8 +30,8 @@
           :key="`incubrain-post-${i}`"
           :post="post"
         />
-        <BlogCardSkeleton v-if="postsLoading" />
-        <BlogCardSkeleton v-if="postsLoading" />
+        <BlogCardSkeleton v-show="postsLoading" />
+        <BlogCardSkeleton v-show="postsLoading" />
         <div
           v-if="allPostsFetched[selectedCategory]"
           variant="outline"

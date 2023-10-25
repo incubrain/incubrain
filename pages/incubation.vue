@@ -138,45 +138,45 @@ const manyFeat = {
   title: {
     label: 'Your Launchpad to Success',
     main: 'All-Inclusive Support for Budding Entrepreneurs',
-    subtitle: `
-    We don’t just offer development; we provide a holistic environment designed to elevate your startup from conception to a cash-flow positive reality.
-    See why solo tech-preneurs, part-timers, and early-stage startups are trusting us with their dream ventures.`
+    subtitle:
+      "We don't just offer development; we provide an environment designed to elevate your business from conception to a cash-flow positive reality."
   },
   items: [
     {
-      image: 'images/icon.png',
+      icon: 'i-mdi-eye-outline',
+      title: 'Business Planning',
+      description:
+        "We'll help create a comprehensive business plan, validating your idea to potential investors / employees."
+    },
+    {
+      icon: 'i-mdi-lightbulb-outline',
       title: 'Business Coaching',
       description:
-        "Two dedicated sessions per month to strategize, plan, and envision your business's future. We're not just developers; we're your partners in success."
+        'Monthly coaching / strategizing sessions to keep your business inline with your long-term vision.'
     },
     {
-      image: 'images/icon.png',
-      title: 'Code Review',
-      description:
-        'Ensure your code meets the highest standards with our monthly pull-request reviews. Build scalable and robust applications with our expert feedback.'
-    },
-    {
-      image: 'images/icon.png',
-      title: 'Behind-The-Scenes Access',
-      description:
-        'Get real-time insights into our operations. Learn our growth tactics, employee management strategies, and more on our Slack.'
-    },
-    {
-      image: 'images/icon.png',
+      icon: 'i-mdi-chat-outline',
       title: 'Founder Group Chat',
       description:
-        "Collaborate, ask questions, and get peer support. Each month, the collective focuses on supercharging one founder's business, rotating to ensure everyone benefits."
+        'Join an exclusive Incubrain Investor group chat. Share ideas, get feedback, and level up your businesses together.'
     },
     {
-      image: 'images/icon.png',
+      icon: 'i-mdi-hammer-screwdriver',
+      title: 'Product Development',
+      description:
+        'No product is perfect, our fresh perspective will help uncover valuable areas for improvement.'
+    },
+    {
+      icon: 'i-mdi-code-tags-check',
+      title: 'Monthly Code Review',
+      description:
+        'A clean and maintainable codebase will save your thousands of devhours as your projects scales.'
+    },
+    {
+      icon: 'i-mdi-account-cog-outline',
       title: 'Dedicated Developer Support',
       description:
-        'Harness the power of a part-time developer for your project. With a team ready to jump in, you always get the best talent for your needs.'
-    },
-    {
-      image: 'images/icon.png',
-      title: 'Resource Library',
-      description: ''
+        'Access 40 hours a week of our diversely skilled developer talent pool. The right developer for the problem.'
     }
   ]
 }
