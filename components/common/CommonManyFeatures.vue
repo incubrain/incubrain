@@ -1,13 +1,13 @@
 <template>
   <section id="how_it_works">
     <div class="wrapper space-y-12">
-      <CommonTitle :title="title" />
+      <CommonTitle :title="manyFeat.title" />
 
       <div
         class="flex flex-wrap gap-4 md:grid md:grid-cols-[repeat(auto-fill,minmax(320px,1fr))] md:gap-6"
       >
         <div
-          v-for="item in items"
+          v-for="item in manyFeat.items"
           :key="item.title"
           class="relative bounce-on-hover flex-none w-full overflow-hidden rounded-lg border border-color px-8 pb-8 pt-12"
         >
@@ -34,18 +34,54 @@
 </template>
 
 <script setup lang="ts">
-import { Title } from '~/types/content'
 
-defineProps({
+const manyFeat = {
   title: {
-    type: Object as PropType<Title>,
-    required: true
+    label: 'Comitted to Your Success',
+    main: 'Incubrain Customers = Incubrain Investors',
+    subtitle:
+      "We value our early customers! After 3 years of being an Incubrain customer, ALL your spending with us is vested as shares in Incubrain. We're in this together."
   },
-  items: {
-    type: Array,
-    required: true
-  }
-})
+  items: [
+    {
+      icon: 'i-mdi-eye-outline',
+      title: 'Business Planning',
+      description:
+        "We'll help create a comprehensive business plan, validating your idea to potential investors / employees."
+    },
+    {
+      icon: 'i-mdi-lightbulb-outline',
+      title: 'Business Coaching',
+      description:
+        'Monthly coaching / strategizing sessions to keep your business inline with your long-term vision.'
+    },
+    {
+      icon: 'i-mdi-chat-outline',
+      title: 'Founder Group Chat',
+      description:
+        'Join an exclusive Incubrain Investor group chat. Share ideas, get feedback, and level up your businesses together.'
+    },
+    {
+      icon: 'i-mdi-hammer-screwdriver',
+      title: 'Product Development',
+      description:
+        'No product is perfect, our fresh perspective will help uncover valuable areas for improvement.'
+    },
+    {
+      icon: 'i-mdi-code-tags-check',
+      title: 'Monthly Code Review',
+      description:
+        'A clean and maintainable codebase will save your thousands of devhours as your projects scales.'
+    },
+    {
+      icon: 'i-mdi-account-cog-outline',
+      title: 'Dedicated Developer Support',
+      description:
+        'Access 40 hours a week of our diversely skilled developer talent pool. The right developer for the problem.'
+    }
+  ]
+}
+
 </script>
 
 <style scoped></style>
