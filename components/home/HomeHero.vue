@@ -1,25 +1,20 @@
 <template>
   <div
-    class="flex py-8 flex-col overflow-hidden relative bg-gradient-to-br justify-between from-emerald-400 via-emerald-600 to-emerald-800 dark:from-emerald-800 dark:via-emerald-950 dark:to-slate-950"
+    class="flex py-8 flex-col min-h-screen overflow-hidden relative bg-gradient-to-br justify-between from-emerald-400 via-emerald-600 to-emerald-800 dark:from-emerald-800 dark:via-emerald-950 dark:to-slate-950"
   >
     <div
-      class="grid relative z-20 grid-cols-1 lg:grid-cols-2 justify-center h-full items-center mx-auto padded-x p-8 wrapper-hero overflow-hidden"
+      class="grid relative z-20 grid-cols-1 lg:grid-cols-2 justify-center h-full items-center mx-auto padded-x py-8 wrapper-hero overflow-hidden"
     >
       <div
         class="flex flex-col justify-center text-center items-center lg:text-left lg:items-start lg:justify-start max-w-md lg:max-w-none space-y-6 lg:space-y-8 lg:pr-20"
       >
-        <UBadge
-          size="md"
-          color="emerald"
-          variant="solid"
+        <NuxtLink
+          to="https://nuxt.com/"
+          target="_blank"
+          class="px-2 flex justify-center items-center py-1 text-sm font-semibold rounded-md border border-black/20 bg-black/5 dark:bg-white/10 dark:border-white/30"
         >
-          <a
-            href="https://nuxt.com/"
-            target="_blank"
-          >
-            Incubrain ❤️'s Nuxt
-          </a>
-        </UBadge>
+          Incubrain ❤️'s Nuxt
+        </NuxtLink>
         <h1 class="text-4xl lg:text-5xl font-bold leading-tight">
           {{ title.main }}
         </h1>
@@ -27,19 +22,17 @@
           {{ title.description }}
         </h4>
       </div>
-      <div class="hidden lg:flex justify-end items-end mr-0 w-full">
-        <div
-          class="flex w-full h-full background rounded-[90%_40%] overflow-hidden justify-center relative items-center shadow-lg"
-        >
-          <div class="bg-pattern absolute z-0 top-0 left-0 w-full h-full" />
-          <NuxtImg
-            src="images/incubrain-hero.png"
-            alt="Incubrain"
-            width="500"
-            height="500"
-            class="relative"
-          />
-        </div>
+      <div
+        class="hidden lg:flex w-full h-full background rounded-md overflow-hidden justify-center relative items-center shadow-lg"
+      >
+        <div class="bg-pattern absolute z-0 top-0 left-0 w-full h-full" />
+        <NuxtImg
+          src="images/incubrain-hero.png"
+          alt="Incubrain"
+          width="450"
+          height="450"
+          class="relative"
+        />
       </div>
     </div>
     <div class="infinite-scroll lg:col-span-2 pt-12">
@@ -50,11 +43,20 @@
           class="bounce-on-hover"
         >
           <div
-            class="relative h-full overflow-hidden rounded-md shadow-lg background p-4 gap-4 flex-grow w-[280px]"
+            class="relative h-full overflow-hidden rounded-md shadow-lg background px-4 py-6 gap-4 flex-grow w-[280px]"
           >
             <div class="bg-pattern" />
             <div class="relative">
-              <h3 class="text-xl font-semibold pb-2">{{ feature.title }}</h3>
+              <div
+                class="flex h-[32px] w-[32px] background shadow-lg items-center justify-center rounded-full border border-color"
+              >
+                <UIcon
+                  :name="feature.icon"
+                  width="30"
+                  height="30"
+                />
+              </div>
+              <h3 class="text-xl font-semibold py-2">{{ feature.title }}</h3>
               <p>{{ feature.description }}</p>
             </div>
           </div>
@@ -106,7 +108,7 @@ const features = [
   },
   {
     id: 6,
-    title: 'Nuxt Founder Community',
+    title: 'Founder Community',
     description: 'We have a vibrant community of Nuxt innovators and creators growing together.',
     icon: 'i-mdi-github'
   },

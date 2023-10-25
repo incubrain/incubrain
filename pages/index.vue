@@ -24,6 +24,7 @@
     <div class="spaced-y wrapper padded-x padded-y">
       <CommonCeoMessage :title="content.ceoMessage.title" />
       <!-- <CommonTestimonial /> -->
+      <PricingCards />
       <BlogDisplay
         :title="content.recentPosts.title"
         post-type="business"
@@ -35,7 +36,6 @@
           {{ content.recentPosts.cta }}
         </UButton>
       </BlogDisplay>
-      <PricingCards />
     </div>
   </div>
 </template>
