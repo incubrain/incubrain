@@ -3,28 +3,13 @@
     <HomeHero />
 
     <div class="spaced-y wrapper padded-x padded-y">
-      <CommonSingleFeat
-        :title="content.mainFeat.title"
-        image="images/mid/incubrain-2.png"
-      >
-        <UButton
-          to="/incubation"
-          variant="outline"
-        >
-          {{ content.mainFeat.cta }}
-        </UButton>
-      </CommonSingleFeat>
       <CommonManyFeatures />
       <CommonCommunity :title="content.joinCommunity.title" />
     </div>
     <CommonCommunityCTA />
-    <!-- <CommonCTA :title="content.mainCTA.title">
-      <UButton to="/contact"> {{ content.mainCTA.cta }} </UButton>
-    </CommonCTA> -->
     <div class="spaced-y wrapper padded-x padded-y">
       <CommonCeoMessage :title="content.ceoMessage.title" />
-      <!-- <CommonTestimonial /> -->
-      <PricingCards />
+      <PricingCards :title="pricingTitle" />
       <BlogDisplay
         :title="content.recentPosts.title"
         post-type="business"
@@ -45,6 +30,12 @@ definePageMeta({
   name: 'Home'
 })
 
+const pricingTitle = {
+  label: 'Our Services',
+  main: 'Essential Life-Support for Online Businesses',
+  subtitle: 'We challenge you to find better value for money than our Incubation program!'
+}
+
 // useHead({
 //   title: 'My App',
 //   meta: [
@@ -61,8 +52,7 @@ const content = {
     title: {
       label: 'The Incubrain Promise',
       main: 'Unmatched Value for Early-Stage Businesses',
-      subtitle:
-        'We provide essential growth services for online businesses, levelling them up. Our online business knowledge, Nuxt expertise, and India base, makes our offer unique.'
+      subtitle: 'We provide essential growth services for online businesses at an unbeatable rate.'
     },
     cta: 'Find Out More'
   },
@@ -83,10 +73,10 @@ const content = {
   },
   ceoMessage: {
     title: {
-      label: 'A Word from Our CEO',
-      main: 'Driven by Passion, Guided by Experience',
+      label: 'Our Guarantee',
+      main: 'We Treat Your Business as Our Own',
       subtitle:
-        "We at Incubrain aren't just about business; we're about dreams, visions, and a commitment to seeing our partners reach their pinnacle of success."
+        "Without your support Incubrain ceases to exist, within your success lies ours; so we'll do everything in our power to get you there!"
     }
   },
   recentPosts: {

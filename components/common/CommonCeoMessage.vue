@@ -7,10 +7,10 @@
           class="flex w-[600px] gap-4 pt-12 px-6 lg:w-full h-full relative rounded-md border-4 border-primary-600 dark:border-primary-900 overflow-hidden justify-around items-start shadow-md"
         >
           <div class="bg-pattern z-0" />
-          <div class="flex flex-col gap-4 text-base relative font-semibold bg-white/80">
-            <h4 class="text-xl font-bold">Reach out!</h4>
+          <div class="flex flex-col gap-2 text-sm font-semibold relative  bg-white/80 dark:bg-neutral-950/80">
+            <h4 class="text-xl font-bold pb-2">Let's Connect!</h4>
             <NuxtLink
-              class="flex gap-1 items-center"
+              class="flex gap-2 items-center"
               :to="discord.url"
               @click="
                 $posthog()?.capture('join_community', {
@@ -18,11 +18,11 @@
                 })
               "
             >
-              <UIcon name="i-mdi-discord" />
+              <UIcon name="i-mdi-discord" class="w-4 h-4" />
               Nuxt Founder Group
             </NuxtLink>
             <NuxtLink
-              class="flex gap-1 items-center"
+              class="flex gap-2 items-center"
               :to="personalLinkedin.url"
               @click="
                 $posthog()?.capture('view_linkedin', {
@@ -30,11 +30,11 @@
                 })
               "
             >
-              <UIcon name="i-mdi-linkedin" />
+              <UIcon name="i-mdi-linkedin" class="w-4 h-4" />
               Personal Linkedin
             </NuxtLink>
             <NuxtLink
-              class="flex gap-1 items-center"
+              class="flex gap-2 items-center"
               :to="personalGithub.url"
               @click="
                 $posthog()?.capture('view_github', {
@@ -42,11 +42,11 @@
                 })
               "
             >
-              <UIcon name="i-mdi-github" />
+              <UIcon name="i-mdi-github" class="w-4 h-4" />
               Personal Github
             </NuxtLink>
             <NuxtLink
-              class="flex gap-1 items-center"
+              class="flex gap-2 items-center"
               to="mailto:mac@incubrain.org"
               @click="
                 $posthog()?.capture('send_email', {
@@ -54,7 +54,7 @@
                 })
               "
             >
-              <UIcon name="i-mdi-email" />
+              <UIcon name="i-mdi-email" class="w-4 h-4" />
               Email
             </NuxtLink>
           </div>
@@ -63,7 +63,7 @@
             alt="Drew MacGibbon Ceo/Founder of Incubrain"
             height="439"
             width="228"
-            class="relative grayscale-[60%]"
+            class="relative grayscale-[60%] w-1/2 lg:w-auto"
           />
         </div>
       </div>

@@ -107,7 +107,6 @@
 
 <script setup lang="ts">
 const { pages, setPage } = usePages()
-const { $posthog } = useNuxtApp()
 
 const { discord } = useSocial()
 const route = useRoute()

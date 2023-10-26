@@ -1,64 +1,89 @@
 <template>
-  <div
-    class="flex py-8 flex-col min-h-screen overflow-hidden relative bg-gradient-to-br justify-between from-emerald-400 via-emerald-600 to-emerald-800 dark:from-emerald-800 dark:via-emerald-950 dark:to-slate-950"
-  >
-    <div
-      class="grid relative z-20 grid-cols-1 lg:grid-cols-2 justify-center h-full items-center mx-auto padded-x py-8 wrapper-hero overflow-hidden"
-    >
+  <div class="flex py-8 flex-col overflow-hidden relative dark:bg-black">
+    <div class="wrapper px-4">
       <div
-        class="flex flex-col justify-center text-center items-center lg:text-left lg:items-start lg:justify-start max-w-md lg:max-w-none space-y-6 lg:space-y-8 lg:pr-20"
+        class="flex flex-col gap-10 justify-center items-center text-center max-w-2xl mx-auto py-12"
       >
-        <NuxtLink
-          to="https://nuxt.com/"
-          target="_blank"
-          class="px-2 flex justify-center items-center py-1 text-sm font-semibold rounded-md border border-black/20 bg-black/5 dark:bg-white/10 dark:border-white/30"
+        <!-- <UBadge
+          color="primary"
+          variant="outline"
+          size="lg"
         >
-          Incubrain ❤️'s Nuxt
-        </NuxtLink>
-        <h1 class="text-4xl lg:text-5xl font-bold leading-tight">
+          <NuxtLink
+            to="https://nuxt.com/"
+            target="_blank"
+          >
+            Incubrain ❤️'s Nuxt
+          </NuxtLink>
+        </UBadge> -->
+        <h1 class="text-4xl lg:text-5xl font-bold leading-tight underline decoration-primary-500 dark:decoration-primary-800">
           {{ title.main }}
         </h1>
-        <h4 class="text-lg lg:text-xl leading-relaxed font-semibold">
+        <h3 class="text-lg lg:text-xl font-semibold">
           {{ title.description }}
-        </h4>
+        </h3>
+        <UButton
+          color="primary"
+          variant="outline"
+          size="xl"
+          to="/incubation"
+          @click="
+            $posthog()?.capture('interest_shown_incubation', {
+              source: 'home_hero'
+            })
+          "
+        >
+          Find Out More
+        </UButton>
       </div>
-      <div
-        class="hidden lg:flex w-full h-full background rounded-md overflow-hidden justify-center relative items-center shadow-lg"
-      >
-        <div class="bg-pattern absolute z-0 top-0 left-0 w-full h-full" />
-        <NuxtImg
-          src="images/incubrain-hero.png"
-          alt="Incubrain"
-          width="450"
-          height="450"
-          class="relative"
+      <div class="overflow-hidden relative flex justify-center items-center mx-auto object-center object-cover">
+        <div
+          class="h-full w-full absolute bg-gradient-radial z-10 top-0 left-0 from-transparent via-white/50 dark:via-black/50 via-70% dark:to-black to-90% to-white"
         />
+        <NuxtImg
+          src="images/hero-image.png"
+          alt="Incubrain"
+          width="900"
+          height="512"
+          class="relative min-w-[200%] md:min-w-full grayscale invert dark:invert-0"
+        />
+        <!-- <UButton
+          color="primary"
+          size="xl"
+          to="/incubation"
+          class="absolute top-6 z-10"
+          @click="
+            $posthog()?.capture('interest_shown_incubation', {
+              source: 'home_hero'
+            })
+          "
+        >
+          Find Out More
+        </UButton> -->
       </div>
     </div>
-    <div class="infinite-scroll lg:col-span-2 pt-12">
-      <div class="flex gap-8 w-full">
+    <div class="flex gap-8 w-full infinite-scroll z-20 mx-auto -mt-8">
+      <div
+        v-for="(feature, i) in allFeatures"
+        :key="`feature-${i}`"
+        class="bounce-on-hover"
+      >
         <div
-          v-for="(feature, i) in allFeatures"
-          :key="`feature-${i}`"
-          class="bounce-on-hover"
+          class="relative h-full overflow-hidden border border-color rounded-md shadow-lg background px-4 py-6 gap-4 flex-grow w-[280px]"
         >
-          <div
-            class="relative h-full overflow-hidden rounded-md shadow-lg background px-4 py-6 gap-4 flex-grow w-[280px]"
-          >
-            <div class="bg-pattern" />
-            <div class="relative">
-              <div
-                class="flex h-[32px] w-[32px] background shadow-lg items-center justify-center rounded-full border border-color"
-              >
-                <UIcon
-                  :name="feature.icon"
-                  width="30"
-                  height="30"
-                />
-              </div>
-              <h3 class="text-xl font-semibold py-2">{{ feature.title }}</h3>
-              <p>{{ feature.description }}</p>
+          <div class="bg-pattern" />
+          <div class="relative">
+            <div
+              class="flex h-[32px] w-[32px] background shadow-lg items-center justify-center rounded-full border border-color"
+            >
+              <UIcon
+                :name="feature.icon"
+                width="30"
+                height="30"
+              />
             </div>
+            <h3 class="text-xl font-semibold py-2">{{ feature.title }}</h3>
+            <p>{{ feature.description }}</p>
           </div>
         </div>
       </div>
@@ -68,8 +93,8 @@
 
 <script setup lang="ts">
 const title = {
-  main: 'Ignite Your Ideas with Incubrain',
-  description: 'We turn your ideas into sustainable online-businesses.'
+  main: 'Your Business From Idea To Profitable',
+  description: 'Essential growth services for early-stage businesses'
 }
 
 const features = [
@@ -84,40 +109,40 @@ const features = [
     id: 2,
     title: 'Open-source Company',
     description: 'Incubrain is an open-source company, we aspire to be more tansparent every day.',
-    icon: 'i-mdi-cloud'
+    icon: 'i-material-symbols-code'
   },
   {
     id: 3,
     title: 'Passion for Business',
     description: '10+ years obsessing about businesses, we create companies/teams that last.',
-    icon: 'i-mdi-github'
+    icon: 'i-mdi-chart-line'
   },
   {
     id: 4,
     title: 'Customers = Investors',
     description:
       'Remain an Incubation customer for 3 years to vest your spending as shares in Incubrain.',
-    icon: 'i-mdi-github'
+    icon: 'i-mdi-bank'
   },
   {
     id: 5,
     title: 'Employees Share Profits',
     description:
       'We believe in a collaborative success model, where profits are shared with all employees.',
-    icon: 'i-mdi-github'
+    icon: 'i-mdi-handshake'
   },
   {
     id: 6,
     title: 'Founder Community',
     description: 'We have a vibrant community of Nuxt innovators and creators growing together.',
-    icon: 'i-mdi-github'
+    icon: 'i-mdi-account-group'
   },
   {
     id: 7,
     title: 'Lifelong Learners',
     description:
-      'We are always levelling up our skills and knowledge, documenting our findings on our blog.',
-    icon: 'i-mdi-github'
+      'We are always levelling up our skills and knowledge, and documenting it on our blog.',
+    icon: 'i-mdi-book-open-outline'
   }
 ]
 

@@ -1,11 +1,11 @@
 <template>
   <div class="border-t border-color py-4 text-center text-sm">
     <p> COPYRIGHT INCUBRAIN PVT LTD {{ currentYear }}</p>
-    <div class="hidden space-x-4">
+    <!-- <div class="hidden space-x-4">
       <NuxtLink to="/terms-of-use"> Terms of Use </NuxtLink>
       <NuxtLink to="/privacy-policy"> Privacy Policy </NuxtLink>
       <NuxtLink to="/cookies-policy"> Cookies Policy </NuxtLink>
-    </div>
+    </div> -->
   </div>
 </template>
 

@@ -5,11 +5,15 @@
         <slot />
       </CommonTitle>
     </div>
-    <NuxtImg
-      :src="image"
-      alt="Hero Image"
-      class="rounded-md shadow-lg w-full"
-    />
+    <div class="background rounded-md">
+      <NuxtImg
+        :src="image"
+        alt="Hero Image"
+        class="rounded-md"
+        width="500"
+        height="500"
+      />
+    </div>
   </div>
 </template>
 

@@ -19,7 +19,9 @@
         <UButton
           to="/contact-incubation"
           variant="outline"
-          @click="$posthog()?.capture('intent_shown_incubation')"
+          @click="$posthog()?.capture('intent_shown_incubation', {
+            source: 'incubation_page'
+          })"
         >
           {{ singleFeat.cta }}
         </UButton>
@@ -47,16 +49,6 @@
     <CommonCTA :title="cta.title" />
     <div class="spaced-y wrapper padded-x padded-y">
       <CommonCeoMessage :title="ceo" />
-      <PricingCards single-card>
-        <UButton
-          to="/contact-incubation"
-          variant="outline"
-          block
-          @click="$posthog()?.capture('intent_shown_incubation')"
-        >
-          Enquire Now
-        </UButton>
-      </PricingCards>
     </div>
   </div>
 </template>

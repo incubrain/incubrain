@@ -1,13 +1,15 @@
 <template>
   <div
-    class="background p-8 text-center padded-y gap-8 flex flex-col justify-center items-center relative overflow-hidden"
+    class="p-8 text-center padded-y gap-8 flex flex-col justify-center items-center relative overflow-hidden dark:bg-black"
   >
     <div
-      class="h-full w-full absolute bg-gradient-radial z-10 top-0 left-0 from-transparent via-white/30 dark:via-neutral-950/30 dark:to-neutral-950 to-white"
+      class="h-full w-full absolute bg-gradient-radial z-10 top-0 left-0 from-transparent via-60% via-white/50 dark:via-black/60 dark:to-black to-white"
     />
     <div class="bg-pattern" />
     <div class="relative z-20 flex flex-col gap-8 justify-center py-12 lg:py-20 items-center">
-      <div class="rounded-full p-4 border-2 border-color background shadow-lg w-[100px] lg:w-[160px]">
+      <div
+        class="rounded-full p-4 border-2 border-color background shadow-lg w-[100px] lg:w-[160px]"
+      >
         <NuxtImg
           src="images/incubrain-logo.svg"
           alt="Incubrain Logo on contact page"
@@ -42,7 +44,12 @@
       <UButton
         :to="discord.url"
         target="_blank"
-        @click="$posthog()?.capture('join_community')"
+        variant="outline"
+        @click="
+          $posthog()?.capture('join_community', {
+            source: 'community_cta'
+          })
+        "
       >
         Join now, it's FREE
       </UButton>

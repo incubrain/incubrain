@@ -44,7 +44,6 @@
 
 <script setup lang="ts">
 const setDate = (d: string) => {
-  console.log('date', d)
   const [year, month, day] = d.split('/')
   const timestamp = new Date(Number(year), Number(month) - 1, Number(day))
   return useDateFormat(timestamp, 'DD MMM YYYY').value

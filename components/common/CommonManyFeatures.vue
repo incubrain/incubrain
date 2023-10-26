@@ -34,13 +34,12 @@
 </template>
 
 <script setup lang="ts">
-
 const manyFeat = {
   title: {
-    label: 'Comitted to Your Success',
+    label: "We're in this together",
     main: 'Incubrain Customers = Incubrain Investors',
     subtitle:
-      "We value our early customers! After 3 years of being an Incubrain customer, ALL your spending with us is vested as shares in Incubrain. We're in this together."
+      'We value our early customers! After 3 years of being an Incubrain customer, your spending is vested as shares in Incubrain.'
   },
   items: [
     {
@@ -81,7 +80,6 @@ const manyFeat = {
     }
   ]
 }
-
 </script>
 
 <style scoped></style>
