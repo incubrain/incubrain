@@ -1,8 +1,9 @@
 <template>
-  <div class="h-screen w-full">
-    <div class="w-full h-full flex flex-col gap-4 items-center justify-center leading-none">
-      <h2 class="text-3xl font-semibold">{{ error.statusCode }}</h2>
+  <div class="h-screen w-full wrapper">
+    <div class="w-full h-full flex flex-col gap-4 items-center justify-center leading-none max-w-xl mx-auto">
+      <h2 class="text-3xl font-semibold">Route {{ error.url }} returned {{ error.statusCode }}</h2>
       <p class="text-xl">{{ error.message }}</p>
+      <UAlert color="red" variant="soft" title="Stack Trace" :description="error.stack" />
       <UButton
         size="lg"
         @click="handleError"
@@ -21,6 +22,7 @@ interface Error {
   message: string
   description: string
   data: any
+  stack: string
 }
 
 defineProps({
