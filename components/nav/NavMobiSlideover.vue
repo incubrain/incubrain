@@ -33,10 +33,9 @@
           </NuxtLink>
           <UButton
             variant="solid"
-            icon="i-mdi-chevron-left"
             @click="isOpen = false"
           >
-            Return
+            <UIcon name="i-material-symbols-close-rounded" class="w-4 h-4" />
           </UButton>
         </div>
         <div v-show="pages">
