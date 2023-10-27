@@ -1,5 +1,5 @@
 <template>
-  <section class="my-20 md:my-32">
+  <section>
     <div>
       <CommonTitle :title="title" />
       <div
