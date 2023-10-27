@@ -7,7 +7,7 @@
     <div class="grid lg:grid-cols-2 gap-2 lg:gap-4">
       <UAccordion
         :items="faqs.slice(0, Math.ceil(faqs.length / 2))"
-        variant="soft"
+        variant="link"
         :ui="{ wrapper: 'space-y-2 lg:space-y-4' }"
         size="lg"
         multiple
@@ -21,7 +21,7 @@
       <UAccordion
         :items="faqs.slice(Math.ceil(faqs.length / 2))"
         :ui="{ wrapper: 'space-y-2 lg:space-y-4' }"
-        variant="soft"
+        variant="link"
         size="lg"
         multiple
       >

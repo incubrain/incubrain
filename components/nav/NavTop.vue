@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="w-full flex sticky top-0 shadow-sm border-b border-color justify-between backdrop-blur-md background z-40 h-[var(--nav-height-sm)] lg:h-[var(--nav-height-lg)]"
+    class="w-full flex sticky top-0 shadow-sm border-b border-color justify-between backdrop-blur-md bg-white dark:bg-black z-40 h-[var(--nav-height-sm)] lg:h-[var(--nav-height-lg)]"
   >
     <NavMobiSlideover class="lg:hidden flex items-start justify-start px-2" />
     <div class="hidden lg:flex lg:flex-shrink-0 justify-center px-4">

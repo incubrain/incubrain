@@ -1,16 +1,17 @@
 <template>
-  <div class="relative w-full h-full overflow-hidden border-b border-color">
-    <div class="w-full h-full absolute top-0 left-0" />
+  <div class="relative dark:bg-black w-full h-full overflow-hidden border-b border-color">
     <div
       ref="testParallax"
       class="bg-pattern"
       :style="testParallaxStyle"
     />
-    <div class="relative flex flex-row items-center justify-center gap-4 rounded-md">
+    <div class="flex background bg-highlight flex-row items-center justify-center gap-4 rounded-md">
       <div
         class="relative flex w-full padded-x justify-center lg:justify-start items-center flex-row gap-4 lg:gap-16 wrapper h-48 lg:h-[580px]"
       >
-        <div class="hidden lg:flex justify-center h-full p-4 items-center background border-x border-color flex-shrink-0">
+        <div
+          class="hidden lg:flex justify-center h-full p-4 items-center foreground border-x border-color flex-shrink-0"
+        >
           <NuxtImg
             v-if="img.src"
             :src="img.src"
@@ -30,7 +31,7 @@
 
           <h4
             v-if="title.subtitle"
-            class="text-lg w-auto inline-block font-semibold lg:text-2xl  decoration-primary-500 dark:decoration-primary-900 underline"
+            class="text-lg w-auto inline-block font-semibold lg:text-2xl decoration-primary-500 dark:decoration-primary-900 underline"
           >
             {{ title.subtitle }}
           </h4>

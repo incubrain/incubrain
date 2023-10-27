@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative w-full h-full md:rounded-md border border-color cursor-pointer p-4 gap-4 flex flex-col overflow-hidden"
+    class="relative w-full h-full md:rounded-md border border-color cursor-pointer p-4 gap-4 flex flex-col overflow-hidden background"
   >
     <!-- BlogCatTag Skeleton -->
     <div class="flex gap-2 w-full mb-4 flex-wrap">

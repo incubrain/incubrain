@@ -2,7 +2,7 @@
   <div>
     <UTabs
       :items="tabs"
-      :ui="{ wrapper: 'space-y-4 lg:space-y-8' }"
+      :ui="{ wrapper: 'space-y-4 lg:space-y-8', list: { background: 'background ' } }"
       :default-index="activeTab.index"
       class="w-full"
       @change="tabToggled"
@@ -15,7 +15,13 @@
         <div class="space-y-4 lg:space-y-8">
           <!-- <CommonTextBanner :banner-text="item.slider" /> -->
           <CommonFAQ :faqs="currentFAQs" />
-          <UCard :ui="{ body: { padding: 'p4 lg:p-8' }, header: { padding: 'p4 lg:p-8' } }">
+          <UCard
+            :ui="{
+              background: 'background',
+              body: { padding: 'p4 lg:p-8' },
+              header: { padding: 'p4 lg:p-8' }
+            }"
+          >
             <template #header>
               <CommonTitle :title="item.title" />
             </template>

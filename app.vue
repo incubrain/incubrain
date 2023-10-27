@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full background">
+  <div class="w-full foreground">
     <NavTop />
     <NuxtLayout>
       <NuxtPage />

@@ -1,6 +1,7 @@
 <template>
   <div>
     <HomeHero />
+    <CommonCardScroll />
 
     <div class="spaced-y wrapper padded-x padded-y">
       <CommonManyFeatures />

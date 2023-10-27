@@ -13,7 +13,7 @@
         v-for="item in pricing.items.slice(0, singleCard ? 1 : pricing.items.length)"
         :key="item.id"
         :ui="{
-          background: '',
+          background: 'background',
           ring: item.id === 1 ? 'ring-1 ring-primary-500' : 'ring-1 ring-color',
           footer: {
             base: 'flex justify-center items-center'

@@ -82,10 +82,14 @@
     @apply cursor-pointer text-primary-600 dark:text-primary-700 hover:text-primary-500 dark:hover:text-primary-600;
   }
   .foreground {
-    @apply bg-gray-100 dark:bg-neutral-900;
+    @apply bg-gray-50 dark:bg-neutral-950;
   }
   .background {
-    @apply text-zinc-800 dark:text-zinc-300 bg-white dark:bg-neutral-950;
+    @apply text-zinc-800 bg-white dark:text-zinc-300  dark:bg-black;
+  }
+
+  .bg-highlight {
+    @apply bg-gradient-to-tr from-20% to-90% from-cyan-50/10 via-teal-50/10 to-emerald-50/20 dark:bg-black dark:from-black dark:via-black/80 dark:to-emerald-950/10;
   }
 
   .bg-light {
@@ -104,7 +108,7 @@
     @apply border-zinc-800 dark:border-zinc-300;
   }
   body {
-    @apply text-zinc-800 dark:text-zinc-300 bg-white dark:bg-neutral-950 border-zinc-300 dark:border-zinc-800;
+    @apply text-zinc-800 dark:text-zinc-300 bg-white dark:bg-black border-zinc-300 dark:border-zinc-800;
   }
   .text-light {
     @apply text-zinc-100 dark:text-zinc-300;

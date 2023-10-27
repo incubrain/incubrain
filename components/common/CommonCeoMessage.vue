@@ -4,10 +4,12 @@
     <div class="gap-3 flex flex-col w-full items-start">
       <div class="relative w-full flex justify-center items-center">
         <div
-          class="flex w-[600px] gap-4 pt-12 px-6 lg:w-full h-full relative rounded-md border-4 border-primary-600 dark:border-primary-900 overflow-hidden justify-around items-start shadow-md"
+          class="flex w-[600px] gap-4 pt-12 px-6 lg:w-full h-full background bg-highlight relative rounded-md border border-color overflow-hidden justify-around items-start shadow-sm"
         >
           <div class="bg-pattern z-0" />
-          <div class="flex flex-col gap-2 text-sm font-semibold relative  bg-white/80 dark:bg-neutral-950/80">
+          <div
+            class="flex flex-col gap-2 text-sm font-semibold relative"
+          >
             <h4 class="text-xl font-bold pb-2">Let's Connect!</h4>
             <NuxtLink
               class="flex gap-2 items-center"
@@ -18,7 +20,10 @@
                 })
               "
             >
-              <UIcon name="i-mdi-discord" class="w-4 h-4" />
+              <UIcon
+                name="i-mdi-discord"
+                class="w-4 h-4"
+              />
               Nuxt Founder Group
             </NuxtLink>
             <NuxtLink
@@ -30,7 +35,10 @@
                 })
               "
             >
-              <UIcon name="i-mdi-linkedin" class="w-4 h-4" />
+              <UIcon
+                name="i-mdi-linkedin"
+                class="w-4 h-4"
+              />
               Personal Linkedin
             </NuxtLink>
             <NuxtLink
@@ -42,7 +50,10 @@
                 })
               "
             >
-              <UIcon name="i-mdi-github" class="w-4 h-4" />
+              <UIcon
+                name="i-mdi-github"
+                class="w-4 h-4"
+              />
               Personal Github
             </NuxtLink>
             <NuxtLink
@@ -54,7 +65,10 @@
                 })
               "
             >
-              <UIcon name="i-mdi-email" class="w-4 h-4" />
+              <UIcon
+                name="i-mdi-email"
+                class="w-4 h-4"
+              />
               Email
             </NuxtLink>
           </div>

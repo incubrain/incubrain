@@ -36,7 +36,7 @@
           v-if="allPostsFetched[selectedCategory]"
           variant="outline"
           color="primary"
-          class="flex justify-center items-center w-full border border-primary-500 md:rounded-md p-8"
+          class="flex justify-center items-center w-full border border-primary-500 md:rounded-md background p-8"
         >
           <p class="foreground px-2">You've reached the end of the line</p>
         </div>

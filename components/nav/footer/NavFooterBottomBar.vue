@@ -1,5 +1,5 @@
 <template>
-  <div class="border-t border-color py-4 text-center text-sm">
+  <div class="relative border-t border-color py-4 text-center text-sm background">
     <p> COPYRIGHT INCUBRAIN PVT LTD {{ currentYear }}</p>
     <!-- <div class="hidden space-x-4">
       <NuxtLink to="/terms-of-use"> Terms of Use </NuxtLink>

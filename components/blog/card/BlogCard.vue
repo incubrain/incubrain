@@ -1,7 +1,7 @@
 <template>
   <TransitionBounce>
     <div
-      class="relative w-full h-full md:rounded-md border border-color p-4 gap-2 flex flex-col overflow-hidden"
+      class="relative w-full h-full md:rounded-md border border-color p-4 gap-2 flex flex-col overflow-hidden background"
     >
       <BlogCatTag
         :tags="post.tags"

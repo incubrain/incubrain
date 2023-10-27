@@ -6,7 +6,7 @@
         class="space-y-6 pt-10 sm:grid sm:grid-cols-[repeat(auto-fill,_minmax(320px,_1fr))] gap-4 lg:gap-8 sm:space-y-0"
       >
         <div class="group relative h-full lg:row-span-2 flex flex-col gap-4 lg:gap-8">
-          <div class="rounded-lg border border-color p-8 hidden md:block">
+          <div class="rounded-lg background border border-color p-8 hidden md:block">
             <h3
               class="text-3xl font-semibold underline decoration-primary-500 dark:decoration-primary-900"
             >

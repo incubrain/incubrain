@@ -1,5 +1,5 @@
 <template>
-  <div class="space-y-4 h-auto border border-color md:rounded-md p-4 lg:p-8">
+  <div class="space-y-4 h-auto border border-color md:rounded-md p-4 lg:p-8 background">
     <div class="flex gap-4 flex-wrap">
       <UButton
         v-for="cat in postStore.categories"

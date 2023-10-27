@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative h-full overflow-hidden rounded-lg border border-solid border-color px-8 pt-10"
+    class="relative h-full overflow-hidden background rounded-lg border border-solid border-color px-8 pt-10"
     :class="parent"
   >
     <div class="relative z-10 space-y-2 pb-6 w-full">

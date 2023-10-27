@@ -9,12 +9,12 @@
         <div
           v-for="item in manyFeat.items"
           :key="item.title"
-          class="relative bounce-on-hover flex-none w-full overflow-hidden rounded-lg border border-color px-8 pb-8 pt-12"
+          class="relative bounce-on-hover z-0 flex-none w-full overflow-hidden rounded-lg border border-color background bg-highlight px-8 pb-8 pt-12"
         >
           <div
-            class="bg-pattern pointer-events-none absolute -right-[836px] top-0 h-[651px] w-[1314px]"
+            class="bg-pattern pointer-events- z-10 absolute -right-[836px] top-0 h-[651px] w-[1314px]"
           />
-          <div class="relative">
+          <div class="relative z-20">
             <div
               class="flex h-[32px] w-[32px] background shadow-lg items-center justify-center rounded-full border border-color"
             >

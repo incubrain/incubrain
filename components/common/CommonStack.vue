@@ -1,7 +1,7 @@
 <template>
   <div
     id="stack"
-    class="group min-h-[258px] overflow-hidden rounded-lg border flex flex-col justify-between border-color px-8 pb-6 pt-10"
+    class="group min-h-[258px] background overflow-hidden rounded-lg border flex flex-col justify-between border-color px-8 pb-6 pt-10"
     role="presentation"
     aria-label="Our Technology Stack"
   >

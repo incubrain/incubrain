@@ -11,10 +11,11 @@
       <UCard
         v-for="item in items"
         :key="item.title"
-        :ui="{ body: { padding: '' } }"
+        :ui="{ background: 'background', body: { padding: '' }, header: { background: 'bg-highlight', base: 'relative overflow-hidden' } }"
       >
         <template #header>
-          <div class="flex gap-4 items-center">
+          <div class="bg-pattern z-0" />
+          <div class="relative flex gap-4 items-center">
             <UIcon :name="item.icon" />
             <h3 class="text-lg lg:text-xl font-semibold"> {{ item.title }}</h3>
           </div>
