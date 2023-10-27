@@ -3,7 +3,7 @@
     <div
       class="h-1/5 w-full absolute z-10 top-0 left-0 bg-gradient-to-b from-gray-50 via-gray-50 dark:via-neutral-950 dark:from-neutral-950 to-transparent"
     />
-    <div class="bg-pattern absolute z-0 top-0 left-0 w-full h-full" />
+    <div class="bg-pattern" />
     <div class="relative wrapper padded-x space-y-4 lg:space-y-6 flex justify-center items-center flex-col">
       <CommonTitle
         :title="title"
