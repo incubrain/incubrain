@@ -1,9 +1,9 @@
 <template>
   <div
-    class="px-8 py-12 text-center gap-8 flex flex-col border-y border-color justify-center items-center relative overflow-hidden background bg-highlight"
+    class="relative w-full flex flex-col justify-center items-center overflow-hidden text-center py-12 background bg-highlight rounded-md border border-color"
   >
     <div class="bg-pattern" />
-    <div class="relative z-20 flex flex-col gap-8 justify-center py-12 lg:padded-y items-center">
+    <div class="relative z-20 flex flex-col gap-8 justify-center py-20 lg:py-28 items-center">
       <div
         class="rounded-full p-4 border-2 border-color background shadow-lg w-[100px] lg:w-[160px]"
       >

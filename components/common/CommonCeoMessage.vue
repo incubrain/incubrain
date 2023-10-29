@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center justify-center">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-12 items-start justify-start">
     <CommonTitle :title="title" />
     <div class="gap-3 flex flex-col w-full items-start">
       <div class="relative w-full flex justify-center items-center">
@@ -77,7 +77,7 @@
             alt="Drew MacGibbon Ceo/Founder of Incubrain"
             height="439"
             width="228"
-            class="relative grayscale-[60%] w-1/2 lg:w-auto"
+            class="relative grayscale-[60%] w-1/3 lg:w-auto"
           />
         </div>
       </div>

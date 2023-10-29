@@ -72,7 +72,7 @@
     <div class="flex gap-3 justify-end items-center px-4">
       <DarkToggle v-slot="{ toggle, isDark }">
         <UIcon
-          :name="isDark.value ? 'i-heroicons-moon' : 'i-heroicons-sun'"
+          :name="isDark ? 'i-heroicons-moon' : 'i-heroicons-sun'"
           class="w-6 h-6 cursor-pointer"
           @click="toggle"
         />

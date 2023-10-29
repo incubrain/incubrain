@@ -6,8 +6,8 @@
       :alignment="singleCard ? 'center mx-auto' : 'left'"
     />
     <div
-      :class="!singleCard ? `lg:grid-cols-${pricing.items.length + 1 || 1}` : 'lg:grid-cols-1'"
-      class="grid grid-cols-1 gap-4 lg:gap-8"
+      :class="!singleCard ? `md:grid-cols-2 lg:grid-cols-${pricing.items.length + 1 || 1}` : 'lg:grid-cols-[minmax(320px,_340px)]]'"
+      class="grid gap-4 lg:gap-8"
     >
       <UCard
         v-for="item in pricing.items.slice(0, singleCard ? 1 : pricing.items.length)"
@@ -19,7 +19,7 @@
             base: 'flex justify-center items-center'
           }
         }"
-        class="w-full max-w-xl mx-auto"
+        class="w-full max-w-lg mx-auto"
       >
         <template #header>
           <div class="flex flex-col gap-3">
@@ -31,7 +31,7 @@
             </div>
             <h4 class="font-semibold text-primary-500 uppercase text-sm"> ${{ item.price }}</h4>
             <h2 class="text-xl lg:text-2xl font-semibold"> {{ item.title }}</h2>
-            <p> {{ item.description }}</p>
+            <h5> {{ item.description }}</h5>
           </div>
         </template>
         <ul class="space-y-2 text-sm font-normal">
@@ -61,8 +61,8 @@
           >
             {{ item.cta.title }}
           </UButton>
+          <slot />
         </template>
-        <slot />
       </UCard>
     </div>
   </div>

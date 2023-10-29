@@ -3,7 +3,8 @@
     <HomeHero />
     <CommonCardScroll />
 
-    <div class="spaced-y wrapper padded-x padded-y">
+    <div class="spaced-y wrapper padded-x pb-16 lg:pb-32">
+      <CommonCTA2 :title="content.mainFeat.title" />
       <CommonManyFeatures />
       <CommonCommunity :title="content.joinCommunity.title" />
     </div>
@@ -33,7 +34,7 @@ definePageMeta({
 
 const pricingTitle = {
   label: 'Our Services',
-  main: 'Essential Life-Support for Online Businesses',
+  main: 'Essential Services For Growing Online Businesses',
   subtitle: 'We challenge you to find better value for money than our Incubation program!'
 }
 
@@ -53,7 +54,7 @@ const content = {
     title: {
       label: 'The Incubrain Promise',
       main: 'Unmatched Value for Early-Stage Businesses',
-      subtitle: 'We provide essential growth services for online businesses at an unbeatable rate.'
+      subtitle: 'Have an idea how we can improve? '
     },
     cta: 'Find Out More'
   },

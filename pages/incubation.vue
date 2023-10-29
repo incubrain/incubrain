@@ -12,20 +12,22 @@
       invert
     />
     <div class="spaced-y wrapper padded-x padded-y">
-      <CommonSingleFeat
+      <!-- <CommonSingleFeat
         :title="singleFeat.title"
-        image="images/hero.jpg"
+        :image="singleFeat.image"
       >
         <UButton
           to="/contact-incubation"
           variant="outline"
-          @click="$posthog()?.capture('intent_shown_incubation', {
-            source: 'incubation_page'
-          })"
+          @click="
+            $posthog()?.capture('intent_shown_incubation', {
+              source: 'incubation_page'
+            })
+          "
         >
           {{ singleFeat.cta }}
         </UButton>
-      </CommonSingleFeat>
+      </CommonSingleFeat> -->
       <CommonManyFeatures>
         <UButton
           to="/blog"
@@ -34,21 +36,34 @@
           View all
         </UButton>
       </CommonManyFeatures>
-      <CommonTimeline
-        :title="how.title"
-        :items="how.items"
-      >
+      <CommonCTA2 :title="singleFeat.title">
         <UButton
           to="/blog"
           variant="outline"
         >
-          View all
+          {{ singleFeat.cta }}
         </UButton>
-      </CommonTimeline>
+      </CommonCTA2>
+      <CommonTimeline
+        :title="how.title"
+        :items="how.items"
+      />
     </div>
-    <CommonCTA :title="cta.title" />
     <div class="spaced-y wrapper padded-x padded-y">
       <CommonCeoMessage :title="ceo" />
+      <CommonNextHires />
+      <PricingCards
+        single-card
+        :title="pricingTitle"
+      >
+        <UButton
+          variant="outline"
+          to="/contact-incubation"
+          block
+        >
+          Enquire Now
+        </UButton>
+      </PricingCards>
     </div>
   </div>
 </template>
@@ -57,75 +72,82 @@
 const heroTitle = {
   label: 'Incubrain',
   main: 'Propel Your Startup to Success with Incubrain',
-  subtitle: `growing your business together
-  with us is a great idea`
+  subtitle: 'Together your dreams will become reality.'
 }
 
 const singleFeat = {
   title: {
-    label: 'Exclusively Nuxt',
-    main: 'Combining Tech Prowess with Business Acumen',
-    subtitle: `
-    With over a decade of experience in business and half of that dedicated to the intricacies of internet businesses,
-    Incubrain stands uniquely poised to help your early-stage startup or business idea flourish. By incorporating in Pune, we've harnessed cost-effective,
-    top-tier talent that's passionate about your success. Benefit from our unwavering focus on Nuxt 3 and Supabase,
-    and let us simplify and strengthen the foundations of your digital venture.`
+    label: "WE'RE IN THIS TOGETHER",
+    main: 'Incubrain Customers Are Incubrain Investors',
+    subtitle:
+      'After 3 years of being an Incubrain customer, your spending is vested as shares in Incubrain.'
   },
-  image: 'images/hero.jpg',
-  cta: 'Enquire Now'
+  cta: 'More Information'
 }
 
-const cta = {
-  title: {
-    main: 'A Customer Is An Investor',
-    subtitle: `
-    Merging decades of startup experience with cutting-edge Nuxt 3 technology,
-    we turn ideas into powerful SaaS solutions. As active contributors to Nuxt open source,
-    we're committed to fostering growth within the community and beyond.`
-  },
-  image: 'images/hero.jpg'
+const pricingTitle = {
+  label: 'Incubrain Your Business',
+  main: 'Essential Services For Growing Online Businesses'
 }
 
 const how = {
   title: {
-    label: 'our methodology',
+    label: 'Our Methodology',
     main: 'Building Value Driven Businesses That Last',
     subtitle:
-      "First we understand your buisness vision, the product, where you stand today, your goals for the future, and then we tailor a solution that's right for you."
+      'We delve deep into your vision, gauge the current landscape of your business, and chart the path forward, crafting a tailored strategy for enduring success.'
   },
   items: [
     {
-      icon: 'images/icon.png',
-      title: 'Resource Library',
+      icon: 'i-mdi-lightbulb-outline',
+      title: 'Your Vision',
       description:
-        'Harness the power of a part-time developer for your project. With a team ready to jump in, you always get the best talent for your needs.'
+        'Diving deep, we uncover the core of your entrepreneurial dream, ensuring our strategies align with your long-term ambitions and values.'
     },
     {
-      icon: 'images/icon.png',
-      title: 'Resource Library',
+      icon: 'i-mdi-strategy',
+      title: 'Business Planning & Coaching',
       description:
-        'Harness the power of a part-time developer for your project. With a team ready to jump in, you always get the best talent for your needs.'
+        "Armed with clarity on your vision, we'll co-create a robust business blueprint, and through regular coaching, turn your plans into actionable milestones."
     },
     {
-      icon: 'images/icon.png',
-      title: 'Resource Library',
-      description: ''
+      icon: 'i-mdi-rocket-launch-outline',
+      title: 'MVP Planning',
+      description:
+        "In today's fast-paced world, speed is key. We'll strategize to craft an MVP that encapsulates your idea's essence, ready to be tested and validated swiftly."
     },
     {
-      icon: 'images/icon.png',
-      title: 'Resource Library',
-      description: ''
+      icon: 'i-mdi-code-braces-box',
+      title: 'MVP Development',
+      description:
+        "Our adept development team steps in, turning your MVP plan into a tangible product, ensuring it's primed for early users and feedback."
+    },
+    {
+      icon: 'i-mdi-magnet-on',
+      title: 'User Acquisition',
+      description:
+        "A great product needs visibility. We'll architect and assist in deploying a user acquisition blueprint, driving the right audience to your offering."
+    },
+    {
+      icon: 'i-mdi-target',
+      title: 'Product Market Fit',
+      description:
+        "Gathering user insights, we'll refine and iterate, ensuring your product resonates with market demands, setting the stage for growth."
+    },
+    {
+      icon: 'i-mdi-chart-line',
+      title: 'Scaling',
+      description:
+        "When you're set to soar, we bolster your wings. Tapping into our vast network, we'll help you enlist the right talent, amplifying your growth trajectory."
     }
   ]
 }
 
 const ceo = {
-  label: 'CEO',
-  main: 'Message from CEO',
-  subtitle: `
-  At Incubrain, we foster a dynamic and inclusive company culture that encourages creativity,
-  continuous learning, and teamwork. Our team is passionate about helping startups succeed and we believe that a strong company culture
-  is the foundation for achieving our vision.`
+  label: "Incubrain's future",
+  main: 'Propelling Nuxt to Global Heights, One Open-Source Project at a Time',
+  subtitle:
+    "Envision a global hub, reminiscent of YCombinator, fiercely propelling the open-source Nuxt ecosystem forward. That's our direction, and as an early partner in our journey you're also an investor in our shared dream!"
 }
 </script>
 
