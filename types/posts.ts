@@ -30,8 +30,13 @@ export const postTagSchema = z.enum([
   'code quality',
   'testing',
   'productivity',
+  // business
   'culture',
-  'hiring'
+  'hiring',
+  'systems',
+  'research',
+  'salaries',
+  'benefits'
 ])
 export type PostTags = z.infer<typeof postTagSchema>
 export const TAGS: PostTags[] = [
@@ -49,7 +54,11 @@ export const TAGS: PostTags[] = [
   'testing',
   'productivity',
   'culture',
-  'hiring'
+  'hiring',
+  'systems',
+  'research',
+  'salaries',
+  'benefits'
 ]
 
 // POST CARD
