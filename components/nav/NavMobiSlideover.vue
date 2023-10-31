@@ -7,7 +7,7 @@
     >
       <UIcon
         name="i-mdi-hamburger"
-        class="w-6 h-6 text-black dark:text-white"
+        class="w-7 h-7 text-black dark:text-white"
       />
     </UButton>
     <USlideover
@@ -35,7 +35,7 @@
             variant="solid"
             @click="isOpen = false"
           >
-            <UIcon name="i-material-symbols-close-rounded" class="w-4 h-4" />
+            <UIcon name="i-material-symbols-close-rounded" class="w-7 h-7" />
           </UButton>
         </div>
         <div v-show="pages">

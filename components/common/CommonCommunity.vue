@@ -1,7 +1,9 @@
 <template>
   <section>
     <div>
-      <CommonTitle :title="title" />
+      <CommonTitle :title="title">
+        <slot />
+      </CommonTitle>
       <div
         class="space-y-6 pt-10 sm:grid sm:grid-cols-[repeat(auto-fill,_minmax(320px,_1fr))] gap-4 lg:gap-8 sm:space-y-0"
       >

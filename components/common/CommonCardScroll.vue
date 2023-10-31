@@ -11,13 +11,10 @@
         >
           <div class="bg-pattern" />
           <div class="relative">
-            <div
-              class="flex h-[32px] w-[32px] background shadow-lg items-center justify-center rounded-full border border-color"
-            >
+            <div>
               <UIcon
                 :name="feature.icon"
-                width="30"
-                height="30"
+                class="w-7 h-7"
               />
             </div>
             <h3 class="text-xl font-semibold py-2">{{ feature.title }}</h3>
@@ -52,9 +49,8 @@ const features = [
   },
   {
     id: 4,
-    title: 'Customers = Investors',
-    description:
-      'Remain an Incubation customer for 3 years to vest your spending as shares in Incubrain.',
+    title: 'Systems Build Businesses',
+    description: 'To foster an open dialogue, we document our business systems on our blog.',
     icon: 'i-mdi-bank'
   },
   {

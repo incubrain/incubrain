@@ -1,75 +1,32 @@
 <template>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-12 items-start justify-start">
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-12 items-start justify-start overflow-hidden"
+  >
     <CommonTitle :title="title" />
     <div class="gap-3 flex flex-col w-full items-start">
       <div class="relative w-full flex justify-center items-center">
         <div
-          class="flex w-[600px] gap-4 pt-12 px-6 lg:w-full h-full background bg-highlight relative rounded-md border border-color overflow-hidden justify-around items-start shadow-sm"
+          class="flex w-[600px] gap-4 lg:pt-12 px-6 lg:w-full h-full background bg-highlight relative rounded-md border border-color overflow-hidden justify-around items-end lg:items-start shadow-sm"
         >
           <div class="bg-pattern z-0" />
-          <div
-            class="flex flex-col gap-2 text-sm font-semibold relative"
-          >
-            <h4 class="text-xl font-bold pb-2">Let's Connect!</h4>
+          <div class="flex py-8 flex-col gap-2 relative z-10">
+            <h4 class="text-2xl font-bold pb-4">Let's Connect!</h4>
             <NuxtLink
-              class="flex gap-2 items-center"
-              :to="discord.url"
+              v-for="link in ceoLinks"
+              :key="link.label"
+              class="flex gap-4 items-center"
+              :to="link.url"
               @click="
-                $posthog()?.capture('join_community', {
+                $posthog()?.capture(link.event.name, {
                   source: 'ceo_message'
                 })
               "
             >
               <UIcon
-                name="i-mdi-discord"
-                class="w-4 h-4"
+                :name="link.icon"
+                class="w-7 h-7"
               />
-              Nuxt Founder Group
-            </NuxtLink>
-            <NuxtLink
-              class="flex gap-2 items-center"
-              :to="personalLinkedin.url"
-              @click="
-                $posthog()?.capture('view_linkedin', {
-                  source: 'ceo_message'
-                })
-              "
-            >
-              <UIcon
-                name="i-mdi-linkedin"
-                class="w-4 h-4"
-              />
-              Personal Linkedin
-            </NuxtLink>
-            <NuxtLink
-              class="flex gap-2 items-center"
-              :to="personalGithub.url"
-              @click="
-                $posthog()?.capture('view_github', {
-                  source: 'ceo_message'
-                })
-              "
-            >
-              <UIcon
-                name="i-mdi-github"
-                class="w-4 h-4"
-              />
-              Personal Github
-            </NuxtLink>
-            <NuxtLink
-              class="flex gap-2 items-center"
-              to="mailto:mac@incubrain.org"
-              @click="
-                $posthog()?.capture('send_email', {
-                  source: 'ceo_message'
-                })
-              "
-            >
-              <UIcon
-                name="i-mdi-email"
-                class="w-4 h-4"
-              />
-              Email
+              {{ link.label }}
             </NuxtLink>
           </div>
           <NuxtImg
@@ -92,7 +49,7 @@
 <script setup lang="ts">
 import { Title } from '~/types/content'
 
-const { discord, personalGithub, personalLinkedin } = useSocial()
+const { ceoLinks } = useSocial()
 
 defineProps({
   title: {

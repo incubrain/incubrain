@@ -1,80 +1,89 @@
 <template>
   <section id="how_it_works">
     <div class="wrapper space-y-12">
-      <CommonTitle :title="manyFeat.title" />
+      <CommonTitle
+        v-if="title.main"
+        :title="title"
+      />
 
       <div
-        class="flex flex-wrap gap-4 md:grid md:grid-cols-[repeat(auto-fill,minmax(320px,1fr))] md:gap-6"
+        class="flex flex-wrap md:grid md:grid-cols-[repeat(auto-fill,minmax(320px,1fr))] gap-8"
       >
         <div
           v-for="item in manyFeat.items"
           :key="item.title"
-          class="relative bounce-on-hover z-0 flex-none w-full overflow-hidden rounded-lg border border-color background bg-highlight px-8 pb-8 pt-12"
+          class="relative bounce-on-hover z-0 flex-none w-full overflow-hidden rounded-lg border border-color background bg-highlight p-8"
         >
           <div class="bg-pattern" />
-          <div class="relative z-20">
+          <div class="relative flex justify-start items-start flex-col z-20">
             <div
-              class="flex h-[32px] w-[32px] background shadow-lg items-center justify-center rounded-full border border-color"
+              class="flex justify-center items-center"
             >
               <UIcon
                 :name="item.icon"
-                width="30px"
-                height="30px"
+                class="w-7 h-7"
               />
             </div>
-            <h3 class="pt-2 text-lg font-medium">{{ item.title }}</h3>
+            <h3 class="pt-4 text-lg font-medium">{{ item.title }}</h3>
             <p class="text-base pt-2 font-normal">{{ item.description }}</p>
           </div>
         </div>
       </div>
+      <slot />
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-const manyFeat = {
+import { Title } from '~/types/content'
+
+defineProps({
   title: {
-    label: "We're in this together",
-    main: 'Incubrain Customers = Incubrain Investors',
-    subtitle:
-      'We value our early customers! After 3 years of being an Incubrain customer, your spending is vested as shares in Incubrain.'
-  },
+    type: Object as PropType<Title>,
+    required: false,
+    default: () => ({
+      label: null,
+      main: null
+    })
+  }
+})
+const manyFeat = {
   items: [
     {
       icon: 'i-mdi-eye-outline',
       title: 'Business Planning',
       description:
-        "We'll help create a comprehensive business plan, validating your idea to potential investors / employees."
+        'Partner with us to draft a business narrative that highlights your vision to investors and team members.'
     },
     {
       icon: 'i-mdi-lightbulb-outline',
       title: 'Business Coaching',
       description:
-        'Monthly coaching / strategizing sessions to keep your business inline with your long-term vision.'
+        'Monthly mentoring and strategy sessions to ensure your business aligns with your long-term goals.'
     },
     {
       icon: 'i-mdi-chat-outline',
-      title: 'Founder Group Chat',
+      title: 'Investor Group Chat',
       description:
-        'Join an exclusive Incubrain Investor group chat. Share ideas, get feedback, and level up your businesses together.'
+        'Step into the exclusive circle of Incubrain Investors. Discuss, critique, and enhance your businesses as one.'
     },
     {
       icon: 'i-mdi-hammer-screwdriver',
       title: 'Product Development',
       description:
-        'No product is perfect, our fresh perspective will help uncover valuable areas for improvement.'
+        'All products have their evolution; our fresh approach will pinpoint the next steps in yours'
     },
     {
       icon: 'i-mdi-code-tags-check',
-      title: 'Monthly Code Review',
+      title: 'Task Delegation',
       description:
-        'A clean and maintainable codebase will save your thousands of devhours as your projects scales.'
+        'Your time is valuable, delegate to our Personal Assistants, freeing up your time to focus on what matters most.'
     },
     {
       icon: 'i-mdi-account-cog-outline',
-      title: 'Dedicated Developer Support',
+      title: 'Developer Support',
       description:
-        'Access 40 hours a week of our diversely skilled developer talent pool. The right developer for the problem.'
+        'Nuxt specialists on standby, ready to accelerate your MVP launch and swiftly connect with your users.'
     }
   ]
 }

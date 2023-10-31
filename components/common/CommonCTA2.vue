@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-full flex justify-center items-center overflow-hidden padded-y background bg-highlight rounded-md border border-color">
+  <div class="relative w-full flex justify-center items-center overflow-hidden padded-y padded-x background bg-highlight rounded-md border border-color">
     <div class="bg-pattern" />
     <CommonBg />
     <CommonTitle :title="title" alignment="center" class="mx-auto">

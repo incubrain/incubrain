@@ -11,31 +11,15 @@
       :title="heroTitle"
       invert
     />
-    <div class="spaced-y wrapper padded-x padded-y">
-      <!-- <CommonSingleFeat
-        :title="singleFeat.title"
-        :image="singleFeat.image"
-      >
-        <UButton
-          to="/contact-incubation"
-          variant="outline"
-          @click="
-            $posthog()?.capture('intent_shown_incubation', {
-              source: 'incubation_page'
-            })
-          "
-        >
-          {{ singleFeat.cta }}
-        </UButton>
-      </CommonSingleFeat> -->
-      <CommonManyFeatures>
-        <UButton
-          to="/blog"
-          variant="outline"
-        >
-          View all
-        </UButton>
-      </CommonManyFeatures>
+    <div class="spaced-y wrapper padded-x padded-b pt-8">
+      <div class="space-y-8">
+        <CommonCTA2 :title="mainCTA.title" />
+        <CommonManyFeatures />
+      </div>
+      <CommonTimeline
+        :title="how.title"
+        :items="how.items"
+      />
       <CommonCTA2 :title="singleFeat.title">
         <UButton
           to="/blog"
@@ -44,12 +28,6 @@
           {{ singleFeat.cta }}
         </UButton>
       </CommonCTA2>
-      <CommonTimeline
-        :title="how.title"
-        :items="how.items"
-      />
-    </div>
-    <div class="spaced-y wrapper padded-x padded-y">
       <CommonCeoMessage :title="ceo" />
       <CommonNextHires />
       <PricingCards
@@ -71,8 +49,16 @@
 <script setup lang="ts">
 const heroTitle = {
   label: 'Incubrain',
-  main: 'Propel Your Startup to Success with Incubrain',
-  subtitle: 'Together your dreams will become reality.'
+  main: 'Accelerate Your Startup Vision With Incubrain',
+  subtitle: 'Your aspiration, our polish, a shared success!'
+}
+
+const mainCTA = {
+  title: {
+    label: '50 Hours Per Week',
+    main: 'Gain Direct Access to Our Team Of Experts',
+    subtitle: 'Together, we WILL accelerate your journey to success.'
+  }
 }
 
 const singleFeat = {
@@ -80,14 +66,16 @@ const singleFeat = {
     label: "WE'RE IN THIS TOGETHER",
     main: 'Incubrain Customers Are Incubrain Investors',
     subtitle:
-      'After 3 years of being an Incubrain customer, your spending is vested as shares in Incubrain.'
+      'Three years with Incubrain, and your expenditure converts into shares in our company.'
   },
   cta: 'More Information'
 }
 
 const pricingTitle = {
   label: 'Incubrain Your Business',
-  main: 'Essential Services For Growing Online Businesses'
+  main: 'Incubrain Is Transparent, Flexible, And Affordable',
+  subtitle:
+    'For less than half the monthly cost of a full-time developer, you get so much more! Have concerns? Send us a message so we can address them.'
 }
 
 const how = {
@@ -95,12 +83,12 @@ const how = {
     label: 'Our Methodology',
     main: 'Building Value Driven Businesses That Last',
     subtitle:
-      'We delve deep into your vision, gauge the current landscape of your business, and chart the path forward, crafting a tailored strategy for enduring success.'
+      'We delve deep into your vision, gauge the current landscape of your business, and chart the path forward, crafting a tailored strategy for success.'
   },
   items: [
     {
       icon: 'i-mdi-lightbulb-outline',
-      title: 'Your Vision',
+      title: 'Align With Your Vision',
       description:
         'Diving deep, we uncover the core of your entrepreneurial dream, ensuring our strategies align with your long-term ambitions and values.'
     },
@@ -145,9 +133,9 @@ const how = {
 
 const ceo = {
   label: "Incubrain's future",
-  main: 'Propelling Nuxt to Global Heights, One Open-Source Project at a Time',
+  main: 'Pushing The Nuxt Ecosystem Forward, One Open-Source Project at a Time',
   subtitle:
-    "Envision a global hub, reminiscent of YCombinator, fiercely propelling the open-source Nuxt ecosystem forward. That's our direction, and as an early partner in our journey you're also an investor in our shared dream!"
+    "Envision a global founder hub, similar to YCombinator, fiercely propelling the Nuxt ecosystem forward. That's our direction, and as an early partner in our journey you're also an investor in our shared dream!"
 }
 </script>
 

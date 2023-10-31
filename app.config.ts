@@ -25,7 +25,9 @@ export default defineAppConfig({
       }
     },
     accordion: {
-      wrapper: ''
+      item: {
+        base: 'text-left flex justify-between items-start'
+      }
     },
     input: {
       color: {

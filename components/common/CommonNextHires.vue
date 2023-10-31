@@ -9,21 +9,20 @@
         <div
           v-for="item in manyFeat.hires"
           :key="item.title"
-          class="relative bounce-on-hover z-0 flex-none w-full overflow-hidden rounded-lg border border-color background bg-highlight px-8 pb-8 pt-12"
+          class="relative bounce-on-hover z-0 flex-none w-full overflow-hidden rounded-lg border border-color background bg-highlight p-8"
         >
           <div class="bg-pattern" />
-          <div class="relative z-20">
+          <div class="relative z-20 flex justify-start items-start flex-col">
             <div
-              class="flex h-[32px] w-[32px] background shadow-lg items-center justify-center rounded-full border border-color"
+              class="flex items-center justify-center"
             >
               <UIcon
                 :name="item.icon"
-                width="30px"
-                height="30px"
+                class="w-7 h-7"
               />
             </div>
-            <h3 class="pt-2 text-lg font-medium">{{ item.number }} {{ item.title }}</h3>
-            <p class="text-base pt-2 font-normal">{{ item.description }}</p>
+            <h3 class="pt-4 text-lg font-medium">{{ item.number }} {{ item.title }}</h3>
+            <p class="text-base pt-2 font-normal text-balance">{{ item.description }}</p>
           </div>
         </div>
       </div>
@@ -34,58 +33,53 @@
 <script setup lang="ts">
 const manyFeat = {
   title: {
-    label: 'OUR Next 10 hires',
-    main: 'Improved Services At No Additional Cost',
-    subtitle: 'sdf'
+    label: 'TEAM EXPANSION INSIGHT',
+    main: 'Incremental Expert Additions For Peak Performance',
+    subtitle:
+      'The support from our initial clients facilitates these hires. Roles might adjust to client-specific needs.'
   },
   hires: [
     {
-      icon: 'i-mdi-eye-outline',
+      icon: 'i-mdi-code-braces',
       title: 'Nuxt Experts',
       number: 3,
-      description: ''
+      description:
+        'Skilled specialists to optimize your Nuxt.js applications, ensuring peak performance and a seamless user experience.'
     },
     {
-      icon: 'i-mdi-lightbulb-outline',
+      icon: 'i-mdi-palette-outline',
       title: 'UI/UX Designer',
       number: 1,
       description:
-        ''
+        'Crafting intuitive and visually appealing designs to enhance user interaction, ensuring your platform is both functional and aesthetic.'
     },
     {
-      icon: 'i-mdi-chat-outline',
+      icon: 'i-mdi-cursor-pointer',
       title: 'UI/UX Developer',
       number: 1,
       description:
-        ''
+        'Bringing designs to life with responsive layouts and interactive elements, ensuring a consistent and immersive user experience across all devices.'
     },
     {
-      icon: 'i-mdi-hammer-screwdriver',
+      icon: 'i-mdi-search-web',
       title: 'SEO Expert',
       number: 1,
       description:
-        ''
+        'Optimizing your platform for search engines, boosting visibility, driving organic traffic, and ensuring you stand out in the digital space.'
     },
     {
-      icon: 'i-mdi-code-tags-check',
+      icon: 'i-mdi-database',
       title: 'Supabase / PostgreSQL Expert',
       number: 1,
       description:
-        ''
+        'Managing and optimizing your databases, ensuring swift data retrieval, secure storage, and efficient scalability for your platform.'
     },
     {
-      icon: 'i-mdi-account-cog-outline',
-      title: 'Video Editor',
-      number: 1,
-      description:
-        ''
-    },
-    {
-      icon: 'i-mdi-account-cog-outline',
+      icon: 'i-mdi-film-outline',
       title: 'Personal Assistants',
       number: 2,
       description:
-        'For completing research, creating content, or any other tasks that are taking up your valuable time.'
+        'Armed with productivity tools such as ChatGPT, our personal assistants can help with a range of tasks, keeping you focused on growing your business.'
     }
   ]
 }

@@ -7,7 +7,7 @@
 @layer base {
   :root {
     --nav-height-mobi: 46px;
-    --nav-height-sm: 50px;
+    --nav-height-sm: 60px;
     --nav-height-lg: 60px;
     --scroll-width-md: 12px;
     --scroll-width-sm: 0px;
@@ -71,21 +71,25 @@
     @apply py-16 lg:py-32;
   }
 
+  .padded-b {
+    @apply pb-16 lg:pb-32;
+  }
+
   .spaced-y {
     @apply space-y-16 lg:space-y-32;
   }
 
   .link-alt {
-    @apply cursor-pointer font-semibold hover:text-primary-700 dark:hover:text-primary-600;
+    @apply cursor-pointer font-semibold hover:text-primary-700 hover:underline;
   }
   .link-active {
-    @apply cursor-pointer text-primary-600 dark:text-primary-700 hover:text-primary-500 dark:hover:text-primary-600;
+    @apply cursor-pointer text-primary-600 dark:text-primary-600 hover:text-primary-500 dark:hover:text-primary-600;
   }
   .foreground {
     @apply bg-gray-50 dark:bg-neutral-950;
   }
   .background {
-    @apply text-zinc-800 bg-white dark:text-zinc-300  dark:bg-black;
+    @apply text-zinc-800 bg-white dark:text-zinc-300 dark:bg-black;
   }
 
   .bg-highlight {

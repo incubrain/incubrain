@@ -7,7 +7,7 @@
         </CommonTitle>
       </div>
     </div>
-    <div class="w-full h-full space-y-4 lg:space-y-8">
+    <div class="w-full h-full space-y-8">
       <UCard
         v-for="item in items"
         :key="item.title"
@@ -16,11 +16,11 @@
         <template #header>
           <div class="bg-pattern z-0" />
           <div class="relative flex gap-4 items-center">
-            <UIcon :name="item.icon" />
+            <UIcon :name="item.icon" class="w-7 h-7" />
             <h3 class="text-lg lg:text-xl font-semibold"> {{ item.title }}</h3>
           </div>
         </template>
-        <div class="w-full h-full relative p-4 xl:p-8">
+        <div class="w-full h-full relative p-8">
           <p class="relative"> {{ item.description }}</p>
         </div>
       </UCard>

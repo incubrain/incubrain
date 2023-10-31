@@ -7,7 +7,7 @@
     />
     <div class="flex background bg-highlight flex-row items-center justify-center gap-4 rounded-md">
       <div
-        class="relative flex w-full padded-x justify-center lg:justify-start items-center flex-row gap-4 lg:gap-16 wrapper h-48 lg:h-[580px]"
+        class="relative flex w-full padded-x justify-center lg:justify-start items-center flex-row gap-4 lg:gap-16 wrapper py-8 lg:py-0 lg:h-[580px]"
       >
         <div
           class="hidden lg:flex justify-center h-full p-4 items-center foreground border-x border-color flex-shrink-0"
@@ -24,14 +24,14 @@
         </div>
         <div class="space-y-4 text-center lg:text-left flex-shrink">
           <h2
-            class="text-3xl font-bold lg:text-5xl leading-normal bg-gradient-to-r from-primary-500 via-primary-500 to-primary-900 bg-clip-text text-transparent drop-shadow-lg"
+            class="text-4xl font-bold lg:text-5xl leading-normal bg-gradient-to-r from-primary-500 via-primary-500 to-primary-900 bg-clip-text text-transparent drop-shadow-lg"
           >
             {{ title.main }}
           </h2>
 
           <h4
             v-if="title.subtitle"
-            class="text-lg w-auto inline-block font-semibold lg:text-2xl decoration-primary-500 dark:decoration-primary-900 underline"
+            class="text-xl w-auto inline-block font-semibold lg:text-2xl decoration-primary-500 dark:decoration-primary-900 underline max-w-xs lg:max-w-none"
           >
             {{ title.subtitle }}
           </h4>

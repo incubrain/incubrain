@@ -94,10 +94,10 @@ const tabs = [
     slot: 'incubation',
     label: 'Incubation',
     title: {
-      label: '$2,000 per month',
+      label: '$2,500 per month',
       main: 'Give Your Business The Support It Deserves',
       subtitle:
-        'Are you a budding startup looking for the right incubation environment? Reach out and let us guide you through the process of kickstarting your tech journey with Incubrain.'
+        'Startup with big dreams and need the right boost? Engage with us, and discover how Incubrain supercharges your business aspirations.'
     },
     icon: 'i-heroicons-arrow-down-tray',
     slider: ''

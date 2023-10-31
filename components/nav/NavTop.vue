@@ -1,12 +1,12 @@
 <template>
   <nav
-    class="w-full flex sticky top-0 shadow-sm border-b border-color justify-between backdrop-blur-md bg-white dark:bg-black z-40 h-[var(--nav-height-sm)] lg:h-[var(--nav-height-lg)]"
+    class="w-full flex sticky top-0 px-4 shadow-sm border-b border-color justify-between backdrop-blur-md bg-white dark:bg-black z-40 h-[var(--nav-height-sm)] lg:h-[var(--nav-height-lg)]"
   >
-    <NavMobiSlideover class="lg:hidden flex items-start justify-start px-2" />
-    <div class="hidden lg:flex lg:flex-shrink-0 justify-center px-4">
+    <NavMobiSlideover class="lg:hidden flex items-start justify-start" />
+    <div class="hidden lg:flex lg:flex-shrink-0 justify-center pr-4">
       <NuxtLink
         to="/"
-        class="h-full flex justify-center items-center gap-1"
+        class="h-full flex justify-center items-center gap-2"
       >
         <NuxtImg
           src="images/incubrain-logo.svg"
@@ -15,14 +15,14 @@
           height="42"
           class="dark:invert"
         />
-        <h3 class="text-sm font-bold leading-normal">INCUBRAIN</h3>
+        <h3 class="font-bold leading-normal">INCUBRAIN</h3>
       </NuxtLink>
     </div>
     <ul class="flex h-full w-full items-center">
       <li
         v-for="page in pages"
         :key="page.id"
-        class="link-alt cursor-pointer justify-center hidden h-full lg:flex items-center text-sm px-4 tracking-normal relative"
+        class="link-alt cursor-pointer justify-center hidden h-full lg:flex items-center px-4 tracking-normal relative"
         :class="route.fullPath.includes(page.slug) ? ' link-active' : ''"
       >
         <NuxtLink
@@ -35,7 +35,7 @@
         <UDropdown
           v-else
           :items="Array(page.children!) || [[{}]]"
-          class="z-50 h-full text-sm"
+          class="z-50 h-full"
           mode="hover"
           :popper="{
             placement: 'bottom-start'
@@ -69,11 +69,11 @@
         </UDropdown>
       </li>
     </ul>
-    <div class="flex gap-3 justify-end items-center px-4">
+    <div class="flex gap-4 justify-end items-center">
       <DarkToggle v-slot="{ toggle, isDark }">
         <UIcon
           :name="isDark ? 'i-heroicons-moon' : 'i-heroicons-sun'"
-          class="w-6 h-6 cursor-pointer"
+          class="w-7 h-7 cursor-pointer"
           @click="toggle"
         />
       </DarkToggle>
@@ -85,7 +85,7 @@
       >
         <UIcon
           name="i-mdi-github"
-          class="w-6 h-6 text-black dark:text-white"
+          class="w-7 h-7 text-black dark:text-white"
         />
       </NuxtLink>
       <UButton

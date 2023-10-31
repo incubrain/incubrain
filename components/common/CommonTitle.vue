@@ -1,12 +1,17 @@
 <template>
-  <div :class="`flex flex-col gap-4 lg:gap-6 text-${alignment} items-${alignment} lg:max-w-lg relative`">
+  <div
+    :class="`flex flex-col gap-4 lg:gap-6 text-${alignment} items-${alignment} lg:max-w-lg relative`"
+  >
     <p
       v-if="title.label"
       class="text-sm font-bold uppercase text-primary"
     >
       {{ title.label }}
     </p>
-    <h2 class="text-2xl lg:text-4xl font-bold" :class="isCta ? 'underline decoration-primary-500 dark:decoration-primary-900' : ''">
+    <h2
+      class="text-3xl lg:text-4xl font-bold"
+      :class="isCta ? 'underline decoration-primary-500 dark:decoration-primary-900' : ''"
+    >
       {{ title.main }}
     </h2>
     <p
@@ -15,9 +20,7 @@
     >
       {{ title.subtitle }}
     </p>
-    <div class="space-x-2">
-      <slot />
-    </div>
+    <slot />
   </div>
 </template>
 

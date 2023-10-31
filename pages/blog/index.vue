@@ -18,7 +18,7 @@
       <BlogFilter />
     </div>
     <div
-      class="wrapper px-4 lg:px-8 pb-4 lg:pb-8 grid grid-cols-1 lg:grid-cols-[0.5fr_1fr] items-start w-full md:gap-4 lg:gap-8 relative"
+      class="wrapper lg:px-8 lg:pb-8 grid grid-cols-1 lg:grid-cols-[0.5fr_1fr] items-start w-full md:gap-4 lg:gap-8 relative"
     >
       <BlogAdFloat
         title="Founder Group"

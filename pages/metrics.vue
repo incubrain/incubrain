@@ -36,18 +36,13 @@ const poshogDashboard = ref(null as HTMLIFrameElement | null)
 
 const posthogTitle = {
   label: 'website metrics',
-  main: 'You Cannot Measure What You Do Not Track',
-  subtitle: 'PostHog'
+  main: 'You Cannot Measure What You Do Not Track'
 }
 
 onMounted(() => {
   window.addEventListener('message', (event) => {
-    console.log('message', event)
     if (event.data.event === 'posthog:dimensions' && event.data.height && poshogDashboard.value) {
-      console.log('posthog:dimensions', event.data)
       poshogDashboard.value.height = event.data.height
-      // poshogDashboard.value.frame.contentDocument?.body.setAttribute('theme', 'dark')
-      console.log('poshogDashboard', poshogDashboard.value.getAttributeNames())
     }
   })
 })

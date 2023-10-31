@@ -4,23 +4,44 @@
     <CommonCardScroll />
 
     <div class="spaced-y wrapper padded-x pb-16 lg:pb-32">
-      <CommonCTA2 :title="content.mainFeat.title" />
-      <CommonManyFeatures />
-      <CommonCommunity :title="content.joinCommunity.title" />
-    </div>
-    <CommonCommunityCTA />
-    <div class="spaced-y wrapper padded-x padded-y">
+      <CommonCTA2 :title="mainCTA.title">
+        <UButton
+          to="/blog"
+          variant="outline"
+        >
+          {{ mainCTA.cta }}
+        </UButton>
+      </CommonCTA2>
+      <CommonManyFeatures :title="manyFeat" />
       <CommonCeoMessage :title="content.ceoMessage.title" />
       <PricingCards :title="pricingTitle" />
+      <CommonDivider :title="dividerTitle" />
+      <CommonCommunity :title="content.joinCommunity.title">
+        <div>
+          <UButton
+            :to="discord.url"
+            target="_blank"
+            variant="outline"
+            @click="
+              $posthog()?.capture(discord.event.name, {
+                source: 'community_cta'
+              })
+            "
+          >
+            Join for free
+          </UButton>
+        </div>
+      </CommonCommunity>
+      <CommonDivider :title="dividerTitle2" />
       <BlogDisplay
-        :title="content.recentPosts.title"
+        :title="postTitle"
         post-type="business"
       >
         <UButton
           to="/blog"
           variant="outline"
         >
-          {{ content.recentPosts.cta }}
+          View All
         </UButton>
       </BlogDisplay>
     </div>
@@ -28,6 +49,8 @@
 </template>
 
 <script setup lang="ts">
+const { discord } = useSocial()
+
 definePageMeta({
   name: 'Home'
 })
@@ -38,6 +61,32 @@ const pricingTitle = {
   subtitle: 'We challenge you to find better value for money than our Incubation program!'
 }
 
+const mainCTA = {
+  title: {
+    label: "WE'RE IN THIS TOGETHER",
+    main: 'Incubrain Customers Are Incubrain Investors',
+    subtitle:
+      'Three years with Incubrain, and your expenditure converts into shares in our company.'
+  },
+  cta: 'More Information'
+}
+
+const manyFeat = {
+  label: 'What you get',
+  main: '50 Hours Per Week From Our Team Of Experts',
+  subtitle:
+    'Our experts a specifically selected based on how much value they can add to early-stage companies.'
+}
+
+const dividerTitle = {
+  main: 'Unsure?',
+  subtitle: 'Join our community!'
+}
+
+const dividerTitle2 = {
+  main: 'Incubrain Content',
+  subtitle: 'Learn something new'
+}
 // useHead({
 //   title: 'My App',
 //   meta: [
@@ -50,14 +99,6 @@ const pricingTitle = {
 // })
 
 const content = {
-  mainFeat: {
-    title: {
-      label: 'The Incubrain Promise',
-      main: 'Unmatched Value for Early-Stage Businesses',
-      subtitle: 'Have an idea how we can improve? '
-    },
-    cta: 'Find Out More'
-  },
   joinCommunity: {
     title: {
       label: 'Engage & Evolve',
@@ -66,37 +107,20 @@ const content = {
         'Dive into a dynamic community of entrepreneurs and tech enthusiasts; share, learn, and evolve as you leverage our pool of resources and knowledge.'
     }
   },
-  mainCTA: {
-    title: {
-      label: 'Join the Conversation',
-      main: 'Experience the Incubrain Advantage'
-    },
-    cta: 'Join Our FREE Discord Group'
-  },
   ceoMessage: {
     title: {
       label: 'Our Guarantee',
-      main: 'We Treat Your Business as Our Own',
+      main: 'We Treat Your Business As Our Own',
       subtitle:
         "Without your support Incubrain ceases to exist, within your success lies ours; so we'll do everything in our power to get you there!"
     }
-  },
-  recentPosts: {
-    title: {
-      label: 'Insights & Innovations',
-      main: 'Stay Updated with Incubrain',
-      subtitle:
-        'From the latest in tech innovations to invaluable business strategies, our posts aim to keep you ahead of the curve and informed in this fast-evolving domain.'
-    },
-    cta: 'View All'
-  },
-  pricing: {
-    title: {
-      label: 'Transparent & Fair',
-      main: 'Choose the Right Plan for You',
-      subtitle:
-        "Whether you're looking for direct engagement or keen on exploring a mutually beneficial incubation partnership, we've designed our pricing to meet varied needs and visions."
-    }
   }
+}
+
+const postTitle = {
+  label: 'Documenting Our Success',
+  main: 'Systems Build Successful Businesses!',
+  subtitle:
+    'Ours are open-source on our blog, we encourage you to read them and suggest improvements.'
 }
 </script>
