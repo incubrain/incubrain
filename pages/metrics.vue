@@ -1,8 +1,27 @@
 <template>
-  <div class="wrapper padded-x padded-y">
+  <div class="wrapper padded-x padded-y spaced-y">
+    <CommonCTA2 :title="posthogTitle">
+      <div class="flex gap-4">
+        <UButton
+          to="discord.url"
+          variant="outline"
+          color="primary"
+        >
+          Add PostHog To Nuxt
+        </UButton>
+        <UButton
+          to="discord.url"
+          variant="outline"
+          color="primary"
+        >
+          Why We Track Metrics
+        </UButton>
+      </div>
+    </CommonCTA2>
     <div class="background padded-x py-4 rounded-md border border-color">
       <iframe
         ref="poshogDashboard"
+        class="dark:invert dark:grayscale-[40%]"
         width="100%"
         height="400"
         frameborder="0"
@@ -15,12 +34,20 @@
 <script setup lang="ts">
 const poshogDashboard = ref(null as HTMLIFrameElement | null)
 
+const posthogTitle = {
+  label: 'website metrics',
+  main: 'You Cannot Measure What You Do Not Track',
+  subtitle: 'PostHog'
+}
+
 onMounted(() => {
   window.addEventListener('message', (event) => {
     console.log('message', event)
     if (event.data.event === 'posthog:dimensions' && event.data.height && poshogDashboard.value) {
       console.log('posthog:dimensions', event.data)
       poshogDashboard.value.height = event.data.height
+      // poshogDashboard.value.frame.contentDocument?.body.setAttribute('theme', 'dark')
+      console.log('poshogDashboard', poshogDashboard.value.getAttributeNames())
     }
   })
 })
