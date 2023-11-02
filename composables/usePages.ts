@@ -19,7 +19,7 @@ const pages = ref([
     id: 2,
     label: 'Incubation',
     icon: 'i-mdi-chevron-right',
-    slug: '/Incubation',
+    slug: '/incubation',
     children: []
   },
   {
