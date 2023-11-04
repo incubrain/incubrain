@@ -1,13 +1,6 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 
 export default defineNuxtConfig({
-  unlighthouse: {
-    scanner: {
-      // simulate a desktop device
-      device: 'desktop'
-    }
-  },
-
   app: {
     layoutTransition: { name: 'layout', mode: 'out-in' },
     head: {
@@ -18,9 +11,17 @@ export default defineNuxtConfig({
     }
   },
 
+  nitro: {
+    storage: {
+      data: {
+        driver: 'fs',
+        base: './data/'
+      }
+    }
+  },
+
   modules: [
     '@nuxt/content',
-    '@unlighthouse/nuxt',
     '@nuxtjs/supabase',
     '@nuxt/image-edge',
     '@nuxt/ui',
