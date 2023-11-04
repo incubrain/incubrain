@@ -3,7 +3,7 @@
     <div class="space-y-6 lg:space-y-12">
       <CommonTitle :title="title" />
       <div
-        v-if="posts.length > 1"
+        v-if="posts && posts.length > 1"
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8"
       >
         <BlogCard

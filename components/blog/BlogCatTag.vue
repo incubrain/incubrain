@@ -59,7 +59,7 @@ const badgeColor = (badge: PostCategories | PostTags): string => {
       return 'primary'
     case 'nitro':
     case 'auth':
-    case 'ci/cd':
+    case 'ci':
       return 'orange'
     case 'tailwindcss':
     case 'postgresql':

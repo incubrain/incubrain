@@ -18,7 +18,7 @@
         name="i-mdi-github"
         class="h-4 w-4 inline-block shrink-0"
       />
-      Edit Post
+      Suggest Edit
     </UButton>
   </div>
 </template>

@@ -7,7 +7,10 @@
       class="triangle hidden lg:block absolute top-0 right-0 before:border-t-emerald-400 dark:before:border-t-emerald-700 before:border-x-transparent before:border-b-transparent"
     />
     <div class="max-w-[1080px] mx-auto flex flex-col justify-center relative lg:py-20">
-      <BlogPost v-if="post" :post="post" />
+      <BlogPost
+        v-if="post"
+        :post="post"
+      />
       <BlogNavigation />
     </div>
   </div>
@@ -29,7 +32,6 @@ const { data: post } = await useAsyncData('post', async (): Promise<PostFull | v
   if (!validPost) return console.error('Post failed to load')
   return post as PostFull
 })
-
 </script>
 
 <style>
