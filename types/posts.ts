@@ -22,7 +22,7 @@ export const postTagSchema = z.enum([
   'supabase',
   'postgresql',
   'auth',
-  'ci/cd',
+  'ci',
   // design
   'tailwindcss',
   // general
@@ -36,7 +36,11 @@ export const postTagSchema = z.enum([
   'systems',
   'research',
   'salaries',
-  'benefits'
+  'customers',
+  'community',
+  'content-creation',
+  'seo',
+  'design'
 ])
 export type PostTags = z.infer<typeof postTagSchema>
 export const TAGS: PostTags[] = [
@@ -47,7 +51,7 @@ export const TAGS: PostTags[] = [
   'supabase',
   'postgresql',
   'auth',
-  'ci/cd',
+  'ci',
   'tailwindcss',
   'learning',
   'code quality',
@@ -58,7 +62,11 @@ export const TAGS: PostTags[] = [
   'systems',
   'research',
   'salaries',
-  'benefits'
+  'customers',
+  'community',
+  'content-creation',
+  'seo',
+  'design'
 ]
 
 // POST CARD
@@ -74,7 +82,7 @@ export const postCardSchema = z.object({
   category: postCategorySchema,
   tags: z
     .array(postTagSchema)
-    .min(1, 'Minimum of 1 tag allowed')
+    .min(2, 'Minimum of 2 tags allowed')
     .max(3, 'Maximum of 3 tags allowed'),
   authors: z.array(z.number().lt(2)).refine((items) => new Set(items).size === items.length, {
     message: 'Authors must be an array of unique numbers'
@@ -105,10 +113,4 @@ export const postFullSchema = postCardSchema.extend({
   _id: z.string()
 })
 export type PostFull = z.infer<typeof postFullSchema>
-export const POST_FULL_PROPERTIES = [
-  ...POST_CARD_PROPERTIES,
-  'body',
-  'id',
-  '_draft',
-  '_id'
-]
+export const POST_FULL_PROPERTIES = [...POST_CARD_PROPERTIES, 'body', 'id', '_draft', '_id']
