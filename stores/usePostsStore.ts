@@ -69,7 +69,7 @@ export const usePostsStore = defineStore('posts', () => {
     const newPosts = await queryContent('/blog')
       .where(whereOptions)
       .only(POST_CARD_PROPERTIES)
-      .sort({ date: -1 })
+      .sort({ publishedAt: -1 })
       .skip(skip)
       .limit(limit)
       .find()

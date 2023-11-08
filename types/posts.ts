@@ -89,7 +89,8 @@ export const postCardSchema = z.object({
   }),
   status: postStatusSchema,
   featured_image: z.string(),
-  date: dateSchema,
+  publishedAt: dateSchema,
+  updatedAt: dateSchema,
   _path: z.string()
 })
 export type PostCard = z.infer<typeof postCardSchema>

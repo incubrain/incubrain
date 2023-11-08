@@ -18,7 +18,7 @@
             </h1>
             <div class="flex flex-row gap-2 items-center justify-center">
               <p class="font-semibold">
-                Published {{ useDateFormat(post.date, 'DD MMM YYYY').value }}
+                Published {{ useDateFormat(post.publishedAt, 'DD MMM YYYY').value }}
               </p>
               <p class="font-semibold"> By </p>
               <BlogAuthor :author-ids="post.authors" />
