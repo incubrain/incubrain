@@ -94,6 +94,7 @@ export default defineNuxtConfig({
     '/contact-collaborate': { prerender: true },
     '/contact-hire-us': { prerender: true },
     '/about/**': { prerender: true },
+    '/transparency/**': { prerender: true },
     '/services/**': { prerender: true },
     // Blog post generated on-demand once until next deploy
     '/blog/**': { prerender: true },
