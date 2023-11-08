@@ -32,6 +32,26 @@ const { data: post } = await useAsyncData('post', async (): Promise<PostFull | v
   if (!validPost) return console.error('Post failed to load')
   return post as PostFull
 })
+
+const env = useRuntimeConfig().public
+
+useSeoMeta({
+  title: post.value?.title || 'My Amazing Site',
+  ogTitle: post.value?.title,
+  description: post.value?.description,
+  ogDescription: post.value?.description,
+  ogImage: `${env.baseURL}images/blog/${post.value?.featured_image}`,
+  twitterCard: 'summary_large_image',
+  twitterTitle: post.value?.title,
+  twitterDescription: post.value?.description,
+  twitterImage: `${env.baseURL}images/blog/${post.value?.featured_image}`
+})
+
+defineOgImage({
+  component: 'OgImageDefault',
+  image: `images/blog/${post.value?.featured_image}`,
+  baseURL: env.baseURL
+})
 </script>
 
 <style>

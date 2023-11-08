@@ -2,16 +2,7 @@
 
 export default defineNuxtConfig({
   app: {
-    layoutTransition: { name: 'layout', mode: 'out-in' },
-    head: {
-      htmlAttrs: {
-        lang: 'en'
-      }
-      // link: [
-      // { rel: 'stylesheet', href: 'https://unpkg.com/flowbite@latest/dist/flowbite.min.css' }
-      // ]
-      // script: [{ src: 'https://unpkg.com/flowbite@latest/dist/flowbite.js' }]
-    }
+    layoutTransition: { name: 'layout', mode: 'out-in' }
   },
 
   modules: [
@@ -32,7 +23,7 @@ export default defineNuxtConfig({
 
   site: {
     url: 'https://www.incubrain.org',
-    name: 'Incubrain - Nuxt Product Development Agency',
+    name: 'Incubrain Product Development Agency',
     description: 'Incubrain helps you build nuxt amazing products that sell themselves.',
     defaultLocale: 'en',
     trailingSlash: false,
@@ -42,10 +33,6 @@ export default defineNuxtConfig({
       type: 'Organization'
     },
     twitter: '@incubrain'
-  },
-
-  siteMap: {
-    strictNuxtContentPaths: true // required for nuxt content if you don't use document driven
   },
 
   nitro: {
@@ -95,6 +82,7 @@ export default defineNuxtConfig({
     DISCORD_NOTIFICATION_URL: process.env.DISCORD_NOTIFICATION_URL,
     // Keys within public, will be also exposed to the client-side
     public: {
+      baseURL: process.env.BASE_URL || 'https://www.incubrain.org/',
       posthogPublicKey: process.env.POSTHOG_PUBLIC_KEY,
       posthogHost: process.env.POSTHOG_HOST
     }
