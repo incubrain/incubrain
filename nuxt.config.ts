@@ -89,18 +89,18 @@ export default defineNuxtConfig({
 
   routeRules: {
     // pre-rendered at build time
-    '/': { prerender: true },
-    '/contact-incubation': { prerender: true },
-    '/contact-collaborate': { prerender: true },
-    '/contact-hire-us': { prerender: true },
-    '/about/**': { prerender: true },
-    '/transparency/**': { prerender: true },
-    '/services/**': { prerender: true },
-    // Blog post generated on-demand once until next deploy
-    '/blog/**': { prerender: true },
-    '/blog': { prerender: true },
-    '/incubation': { prerender: true },
-    '/sitemap.xml': { prerender: true }
+    '/**': { prerender: true }
+    // '/contact-incubation': { prerender: true },
+    // '/contact-collaborate': { prerender: true },
+    // '/contact-hire-us': { prerender: true },
+    // '/about/**': { prerender: true },
+    // '/transparency/**': { prerender: true },
+    // '/services/**': { prerender: true },
+    // // Blog post generated on-demand once until next deploy
+    // '/blog/**': { prerender: true },
+    // '/blog': { prerender: true },
+    // '/incubation': { prerender: true },
+    // '/sitemap.xml': { prerender: true }
   },
 
   imports: {
