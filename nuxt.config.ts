@@ -12,7 +12,7 @@ export default defineNuxtConfig({
   },
 
   site: {
-    url: 'https://incubrain.org',
+    url: 'https://www.incubrain.org',
     name: 'Incubrain - Nuxt Product Development Agency',
     description: 'Incubrain helps you build nuxt amazing products that sell themselves.',
     defaultLocale: 'en',
@@ -23,6 +23,10 @@ export default defineNuxtConfig({
       type: 'Organization'
     },
     twitter: '@incubrain'
+  },
+
+  siteMap: {
+    strictNuxtContentPaths: true // required for nuxt content if you don't use document driven
   },
 
   nitro: {
@@ -94,8 +98,8 @@ export default defineNuxtConfig({
     // Blog post generated on-demand once until next deploy
     '/blog/**': { prerender: true },
     '/blog': { prerender: true },
-    '/incubation': { prerender: true }
-    // Add cors headers on API routes
+    '/incubation': { prerender: true },
+    '/sitemap.xml': { prerender: true }
   },
 
   imports: {
