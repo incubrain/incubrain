@@ -27,7 +27,7 @@
 
         <div class="flex flex-row gap-2 justify-center items-center text-sm">
           <p class="text-primary">
-            {{ setDate(post.date) }}
+            {{ setDate(post.publishedAt) }}
           </p>
           <span class="flex gap-2">
             by
