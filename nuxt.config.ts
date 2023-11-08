@@ -4,12 +4,31 @@ export default defineNuxtConfig({
   app: {
     layoutTransition: { name: 'layout', mode: 'out-in' },
     head: {
+      htmlAttrs: {
+        lang: 'en'
+      }
       // link: [
       // { rel: 'stylesheet', href: 'https://unpkg.com/flowbite@latest/dist/flowbite.min.css' }
       // ]
       // script: [{ src: 'https://unpkg.com/flowbite@latest/dist/flowbite.js' }]
     }
   },
+
+  modules: [
+    '@nuxt/content',
+    '@nuxtjs/supabase',
+    '@nuxt/image-edge',
+    '@nuxt/ui',
+    '@nuxtseo/module',
+    '@vueuse/nuxt',
+    'nuxt-swiper',
+    [
+      '@pinia/nuxt',
+      {
+        autoImports: ['defineStore', 'acceptHMRUpdate', 'storeToRefs']
+      }
+    ]
+  ],
 
   site: {
     url: 'https://www.incubrain.org',
@@ -34,6 +53,12 @@ export default defineNuxtConfig({
       crawlLinks: true,
       routes: ['/']
     },
+    devStorage: {
+      data: {
+        driver: 'fs',
+        base: './public/data/'
+      }
+    },
     storage: {
       data: {
         driver: 'fs',
@@ -41,22 +66,6 @@ export default defineNuxtConfig({
       }
     }
   },
-
-  modules: [
-    '@nuxt/content',
-    '@nuxtjs/supabase',
-    '@nuxt/image-edge',
-    '@nuxt/ui',
-    '@nuxtseo/module',
-    '@vueuse/nuxt',
-    'nuxt-swiper',
-    [
-      '@pinia/nuxt',
-      {
-        autoImports: ['defineStore', 'acceptHMRUpdate', 'storeToRefs']
-      }
-    ]
-  ],
 
   typescript: {
     shim: false,
@@ -94,17 +103,6 @@ export default defineNuxtConfig({
   routeRules: {
     // pre-rendered at build time
     '/**': { prerender: true }
-    // '/contact-incubation': { prerender: true },
-    // '/contact-collaborate': { prerender: true },
-    // '/contact-hire-us': { prerender: true },
-    // '/about/**': { prerender: true },
-    // '/transparency/**': { prerender: true },
-    // '/services/**': { prerender: true },
-    // // Blog post generated on-demand once until next deploy
-    // '/blog/**': { prerender: true },
-    // '/blog': { prerender: true },
-    // '/incubation': { prerender: true },
-    // '/sitemap.xml': { prerender: true }
   },
 
   imports: {
