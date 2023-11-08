@@ -102,7 +102,8 @@ export const POST_CARD_PROPERTIES = [
   'authors',
   'status',
   'featured_image',
-  'date',
+  'publishedAt',
+  'updatedAt',
   '_path'
 ]
 
