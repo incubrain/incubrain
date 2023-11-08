@@ -1,6 +1,5 @@
 import { z } from 'zod'
 
-// !important: if you change post validation eg. add a new tag, update the blog template: content\blog\.template.md
 export const postStatusSchema = z.enum(['published', 'draft', 'unpublished', 'archived'])
 export const dateSchema = z
   .string()
@@ -111,8 +110,7 @@ export const POST_CARD_PROPERTIES = [
 export const postFullSchema = postCardSchema.extend({
   id: z.number(),
   body: z.object({}).passthrough(), // passthrough allows any structure within the object
-  _draft: z.boolean(),
   _id: z.string()
 })
 export type PostFull = z.infer<typeof postFullSchema>
-export const POST_FULL_PROPERTIES = [...POST_CARD_PROPERTIES, 'body', 'id', '_draft', '_id']
+export const POST_FULL_PROPERTIES = [...POST_CARD_PROPERTIES, 'body', 'id', '_id']
