@@ -11,6 +11,20 @@ export default defineNuxtConfig({
     }
   },
 
+  site: {
+    url: 'https://incubrain.org',
+    name: 'Incubrain - Nuxt Product Development Agency',
+    description: 'Incubrain helps you build nuxt amazing products that sell themselves.',
+    defaultLocale: 'en',
+    trailingSlash: false,
+    titleSeparator: ' | ',
+    debug: true,
+    identity: {
+      type: 'Organization'
+    },
+    twitter: '@incubrain'
+  },
+
   nitro: {
     storage: {
       data: {
@@ -25,6 +39,7 @@ export default defineNuxtConfig({
     '@nuxtjs/supabase',
     '@nuxt/image-edge',
     '@nuxt/ui',
+    '@nuxtseo/module',
     '@vueuse/nuxt',
     'nuxt-swiper',
     [
