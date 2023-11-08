@@ -30,6 +30,10 @@ export default defineNuxtConfig({
   },
 
   nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: ['/']
+    },
     storage: {
       data: {
         driver: 'fs',
