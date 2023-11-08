@@ -16,10 +16,15 @@ defineProps({
     required: false,
     default: 'No description provided'
   },
-  image: {
+  baseURL: {
     type: String,
     required: false,
-    default: './images/blog/incubrain-company-values.webp'
+    default: 'https://incubrain.com/'
+  },
+  imageSrc: {
+    type: String,
+    required: false,
+    default: 'images/blog/incubrain-company-values.webp'
   }
 })
 
@@ -31,7 +36,6 @@ const backgroundFlareAttrs = computed(() => {
     top: '0%',
     width: '200%',
     height: '200%',
-    zIndex: 1,
     backgroundImage:
       'radial-gradient(circle, rgba(0,220,130, 0.2) 0%,  rgba(5, 5, 5, 0.5) 50%, rgba(5, 5, 5,0) 70%)'
   }
@@ -39,46 +43,51 @@ const backgroundFlareAttrs = computed(() => {
 </script>
 
 <template>
-  <div class="w-full h-full flex z-10 bg-black">
-    <div :style="backgroundFlareAttrs" />
-    <!-- <div
-        class="bg-no-repeat bg-center bg-cover bg-[url('assets/patterns/default.svg')] opacity-90 w-[100vw] h-[100vh] invert absolute top-0 left-0 max-w-[100vw] max-h-[100vh]"
-      /> -->
-    <div class="w-full relative z-50 p-8">
-      <div class="flex flex-col w-full h-full justify-center text-gray-100">
-        <div class="flex flex-row justify-center items-center h-full">
-          <div class="flex flex-col">
-            <h1 style="font-size: 60px">
-              {{ title || 'No Title' }}
-            </h1>
-            <p style="font-size: 24px">
-              {{ description || 'No Description' }}
-            </p>
-          </div>
-        </div>
-        <div class="absolute text-white w-full flex flex-row gap-2 bottom-2 left-2">
-          <img
-            src="./incubrain-logo.svg"
-            alt="Incubrain Logo"
-            width="50"
-            height="50"
-            style="filter: invert(1)"
-          />
-          <p
-            class="font-bold"
-            style="font-size: 18px"
-          >
-            INCUBRAIN
-          </p>
+  <div
+    class="w-full h-full absolute top-0 left-0"
+    :style="{ backgroundColor: 'black' }"
+  />
+  <div :style="backgroundFlareAttrs" />
+  <div class="flex flex-row w-full max-h-full">
+    <div class="flex flex-col w-3/5 justify-center text-gray-200 p-8">
+      <div class="flex flex-row justify-center items-center h-full">
+        <div class="flex flex-col">
+          <h1 style="font-size: 64px">
+            {{ title || 'No Title' }}
+          </h1>
+          <p style="font-size: 26px"> {{ description.slice(0, 140) || 'No Description' }}... </p>
         </div>
       </div>
+    </div>
+    <!-- <div class="absolute text-white w-full flex flex-row gap-2 top-2 right-0">
+      <img
+        :src="baseURL + 'images/incubrain-logo.svg'"
+        alt="Incubrain Logo"
+        width="50"
+        height="50"
+        style="filter: invert(1)"
+      />
+      <p
+        class="font-bold"
+        style="font-size: 18px"
+      >
+        INCUBRAIN
+      </p>
+    </div> -->
+    <div class="w-2/5 h-full justify-center items-center">
+      <img
+        :src="baseURL + 'images/incubrain-logo.svg'"
+        alt="Incubrain Logo"
+        width="420"
+        height="420"
+        style="filter: invert(1)"
+      />
     </div>
   </div>
 </template>
 
-<style scoped>
-
-.w-full {
+<style>
+/* .w-full {
   width: 100%;
 }
 .h-full {
@@ -128,5 +137,5 @@ const backgroundFlareAttrs = computed(() => {
 }
 .justify-center {
   justify-content: center;
-}
+} */
 </style>
