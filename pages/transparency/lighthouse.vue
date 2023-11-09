@@ -11,7 +11,6 @@
         </UButton> -->
       </div>
     </CommonCTA2>
-    <UButton @click="getMetrics"> Get Reports</UButton>
     <div
       v-if="metrics.length"
       class="grid gap-8"
@@ -69,21 +68,18 @@ const lighthouseTitle = {
 
 const metrics = ref([] as any[])
 
-const getMetrics = async () => {
-  const { data, error } = await useFetch('/api/lighthouse/reports', {
-    method: 'POST',
-    body: {
-      website: 'incubrain',
-      year: '2023'
-    }
-  })
-
-  if (error.value) {
-    console.error(error.value)
-  } else if (data.value) {
-    console.log('data', data)
-    metrics.value.push(...data.value.metrics)
+const { data, error } = await useFetch('/api/lighthouse/reports', {
+  method: 'POST',
+  body: {
+    website: 'incubrain',
+    year: '2023'
   }
+})
+
+if (error.value) {
+  console.error(error.value)
+} else if (data.value) {
+  metrics.value.push(...data.value.metrics)
 }
 </script>
 
