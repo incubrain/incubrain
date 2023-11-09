@@ -1,0 +1,572 @@
+[
+  {
+    "year": 2023,
+    "month": "November",
+    "summary": {
+      "score": 0.86,
+      "categories": {
+        "performance": {
+          "averageScore": 0.97
+        },
+        "accessibility": {
+          "averageScore": 0.76
+        },
+        "best-practices": {
+          "averageScore": 1
+        },
+        "seo": {
+          "averageScore": 0.73
+        }
+      },
+      "metrics": {
+        "largest-contentful-paint": {
+          "averageNumericValue": 755.61
+        },
+        "cumulative-layout-shift": {
+          "averageNumericValue": 0
+        },
+        "first-contentful-paint": {
+          "averageNumericValue": 604.33
+        },
+        "total-blocking-time": {
+          "averageNumericValue": 45.54
+        },
+        "max-potential-fid": {
+          "averageNumericValue": 86.38
+        },
+        "interactive": {
+          "averageNumericValue": 2440.29
+        }
+      }
+    },
+    "routes": [
+      {
+        "path": "/",
+        "score": 0.85,
+        "categories": {
+          "performance": {
+            "score": 0.9
+          },
+          "accessibility": {
+            "score": 0.8
+          },
+          "best-practices": {
+            "score": 1
+          },
+          "seo": {
+            "score": 0.7
+          }
+        },
+        "metrics": {
+          "largest-contentful-paint": {
+            "numericValue": 669.746,
+            "displayValue": "0.7 s"
+          },
+          "cumulative-layout-shift": {
+            "numericValue": 0.000003922598721653096,
+            "displayValue": "0"
+          },
+          "first-contentful-paint": {
+            "numericValue": 669.746,
+            "displayValue": "0.7 s"
+          },
+          "total-blocking-time": {
+            "numericValue": 108.35199999999986,
+            "displayValue": "110 ms"
+          },
+          "max-potential-fid": {
+            "numericValue": 124.461,
+            "displayValue": "120 ms"
+          },
+          "interactive": {
+            "numericValue": 6860.799,
+            "displayValue": "6.9 s"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "year": 2023,
+    "month": "December",
+    "summary": {
+      "score": 0.9,
+      "categories": {
+        "performance": {
+          "averageScore": 0.82
+        },
+        "accessibility": {
+          "averageScore": 0.87
+        },
+        "best-practices": {
+          "averageScore": 0.97
+        },
+        "seo": {
+          "averageScore": 0.93
+        }
+      },
+      "metrics": {
+        "largest-contentful-paint": {
+          "averageNumericValue": 1507.58
+        },
+        "cumulative-layout-shift": {
+          "averageNumericValue": 0
+        },
+        "first-contentful-paint": {
+          "averageNumericValue": 1211.67
+        },
+        "total-blocking-time": {
+          "averageNumericValue": 101.54
+        },
+        "max-potential-fid": {
+          "averageNumericValue": 103.39
+        },
+        "interactive": {
+          "averageNumericValue": 4825.04
+        }
+      }
+    },
+    "routes": [
+      {
+        "path": "/",
+        "score": 0.86,
+        "categories": {
+          "performance": {
+            "score": 0.58
+          },
+          "accessibility": {
+            "score": 0.92
+          },
+          "best-practices": {
+            "score": 1
+          },
+          "seo": {
+            "score": 0.92
+          }
+        },
+        "metrics": {
+          "largest-contentful-paint": {
+            "numericValue": 3017.539,
+            "displayValue": "3.0 s"
+          },
+          "cumulative-layout-shift": {
+            "numericValue": 0.000003922598721653096,
+            "displayValue": "0"
+          },
+          "first-contentful-paint": {
+            "numericValue": 3017.539,
+            "displayValue": "3.0 s"
+          },
+          "total-blocking-time": {
+            "numericValue": 94.96000000000004,
+            "displayValue": "90 ms"
+          },
+          "max-potential-fid": {
+            "numericValue": 99.563,
+            "displayValue": "100 ms"
+          },
+          "interactive": {
+            "numericValue": 6413.515,
+            "displayValue": "6.4 s"
+          }
+        }
+      },
+      {
+        "path": "/about",
+        "score": 0.88,
+        "categories": {
+          "performance": {
+            "score": 0.58
+          },
+          "accessibility": {
+            "score": 0.92
+          },
+          "best-practices": {
+            "score": 1
+          },
+          "seo": {
+            "score": 1
+          }
+        },
+        "metrics": {
+          "largest-contentful-paint": {
+            "numericValue": 3191.331,
+            "displayValue": "3.2 s"
+          },
+          "cumulative-layout-shift": {
+            "numericValue": 0.000003922598721653096,
+            "displayValue": "0"
+          },
+          "first-contentful-paint": {
+            "numericValue": 3021.903,
+            "displayValue": "3.0 s"
+          },
+          "total-blocking-time": {
+            "numericValue": 60.7800000000002,
+            "displayValue": "60 ms"
+          },
+          "max-potential-fid": {
+            "numericValue": 82.725,
+            "displayValue": "80 ms"
+          },
+          "interactive": {
+            "numericValue": 6193.036,
+            "displayValue": "6.2 s"
+          }
+        }
+      },
+      {
+        "path": "/about/community",
+        "score": 0.91,
+        "categories": {
+          "performance": {
+            "score": 0.95
+          },
+          "accessibility": {
+            "score": 0.76
+          },
+          "best-practices": {
+            "score": 1
+          },
+          "seo": {
+            "score": 0.92
+          }
+        },
+        "metrics": {
+          "largest-contentful-paint": {
+            "numericValue": 811.89,
+            "displayValue": "0.8 s"
+          },
+          "cumulative-layout-shift": {
+            "numericValue": 0.000003922598721653096,
+            "displayValue": "0"
+          },
+          "first-contentful-paint": {
+            "numericValue": 569.348,
+            "displayValue": "0.6 s"
+          },
+          "total-blocking-time": {
+            "numericValue": 58.063000000000216,
+            "displayValue": "60 ms"
+          },
+          "max-potential-fid": {
+            "numericValue": 81.312,
+            "displayValue": "80 ms"
+          },
+          "interactive": {
+            "numericValue": 4038.101,
+            "displayValue": "4.0 s"
+          }
+        }
+      },
+      {
+        "path": "/blog",
+        "score": 0.83,
+        "categories": {
+          "performance": {
+            "score": 0.56
+          },
+          "accessibility": {
+            "score": 0.84
+          },
+          "best-practices": {
+            "score": 1
+          },
+          "seo": {
+            "score": 0.92
+          }
+        },
+        "metrics": {
+          "largest-contentful-paint": {
+            "numericValue": 3345.276,
+            "displayValue": "3.3 s"
+          },
+          "cumulative-layout-shift": {
+            "numericValue": 0.0005179745643989143,
+            "displayValue": "0.001"
+          },
+          "first-contentful-paint": {
+            "numericValue": 3270.595,
+            "displayValue": "3.3 s"
+          },
+          "total-blocking-time": {
+            "numericValue": 52.616999999999734,
+            "displayValue": "50 ms"
+          },
+          "max-potential-fid": {
+            "numericValue": 74.127,
+            "displayValue": "70 ms"
+          },
+          "interactive": {
+            "numericValue": 6400.123,
+            "displayValue": "6.4 s"
+          }
+        }
+      },
+      {
+        "path": "/blog/business/research/50-profit-sharing-companies-copy",
+        "score": 0.93,
+        "categories": {
+          "performance": {
+            "score": 0.94
+          },
+          "accessibility": {
+            "score": 0.92
+          },
+          "best-practices": {
+            "score": 0.92
+          },
+          "seo": {
+            "score": 0.92
+          }
+        },
+        "metrics": {
+          "largest-contentful-paint": {
+            "numericValue": 789.239,
+            "displayValue": "0.8 s"
+          },
+          "cumulative-layout-shift": {
+            "numericValue": 0.00029913667804920763,
+            "displayValue": "0"
+          },
+          "first-contentful-paint": {
+            "numericValue": 789.239,
+            "displayValue": "0.8 s"
+          },
+          "total-blocking-time": {
+            "numericValue": 77.51399999999978,
+            "displayValue": "80 ms"
+          },
+          "max-potential-fid": {
+            "numericValue": 106.258,
+            "displayValue": "110 ms"
+          },
+          "interactive": {
+            "numericValue": 4147.651,
+            "displayValue": "4.1 s"
+          }
+        }
+      },
+      {
+        "path": "/blog/business/research/best-saas-incubator-websites",
+        "score": 0.93,
+        "categories": {
+          "performance": {
+            "score": 0.96
+          },
+          "accessibility": {
+            "score": 0.92
+          },
+          "best-practices": {
+            "score": 0.92
+          },
+          "seo": {
+            "score": 0.92
+          }
+        },
+        "metrics": {
+          "largest-contentful-paint": {
+            "numericValue": 570.224,
+            "displayValue": "0.6 s"
+          },
+          "cumulative-layout-shift": {
+            "numericValue": 0.00029913667804920763,
+            "displayValue": "0"
+          },
+          "first-contentful-paint": {
+            "numericValue": 570.224,
+            "displayValue": "0.6 s"
+          },
+          "total-blocking-time": {
+            "numericValue": 52.26800000000026,
+            "displayValue": "50 ms"
+          },
+          "max-potential-fid": {
+            "numericValue": 82.285,
+            "displayValue": "80 ms"
+          },
+          "interactive": {
+            "numericValue": 3794.78,
+            "displayValue": "3.8 s"
+          }
+        }
+      },
+      {
+        "path": "/blog/business/research/company-handbooks",
+        "score": 0.9,
+        "categories": {
+          "performance": {
+            "score": 0.83
+          },
+          "accessibility": {
+            "score": 0.92
+          },
+          "best-practices": {
+            "score": 0.92
+          },
+          "seo": {
+            "score": 0.92
+          }
+        },
+        "metrics": {
+          "largest-contentful-paint": {
+            "numericValue": 1451.082,
+            "displayValue": "1.5 s"
+          },
+          "cumulative-layout-shift": {
+            "numericValue": 0.00029913667804920763,
+            "displayValue": "0"
+          },
+          "first-contentful-paint": {
+            "numericValue": 1451.082,
+            "displayValue": "1.5 s"
+          },
+          "total-blocking-time": {
+            "numericValue": 37.03899999999976,
+            "displayValue": "40 ms"
+          },
+          "max-potential-fid": {
+            "numericValue": 71.928,
+            "displayValue": "70 ms"
+          },
+          "interactive": {
+            "numericValue": 5893.84,
+            "displayValue": "5.9 s"
+          }
+        }
+      },
+      {
+        "path": "/blog/business/research/different-types-of-monetary-incentives-copy",
+        "score": 0.91,
+        "categories": {
+          "performance": {
+            "score": 0.89
+          },
+          "accessibility": {
+            "score": 0.92
+          },
+          "best-practices": {
+            "score": 0.92
+          },
+          "seo": {
+            "score": 0.92
+          }
+        },
+        "metrics": {
+          "largest-contentful-paint": {
+            "numericValue": 859.751,
+            "displayValue": "0.9 s"
+          },
+          "cumulative-layout-shift": {
+            "numericValue": 0.00029913667804920763,
+            "displayValue": "0"
+          },
+          "first-contentful-paint": {
+            "numericValue": 859.751,
+            "displayValue": "0.9 s"
+          },
+          "total-blocking-time": {
+            "numericValue": 40.43299999999954,
+            "displayValue": "40 ms"
+          },
+          "max-potential-fid": {
+            "numericValue": 72.167,
+            "displayValue": "70 ms"
+          },
+          "interactive": {
+            "numericValue": 8500.653,
+            "displayValue": "8.5 s"
+          }
+        }
+      },
+      {
+        "path": "/blog/business/research/must-read",
+        "score": 0.93,
+        "categories": {
+          "performance": {
+            "score": 0.96
+          },
+          "accessibility": {
+            "score": 0.92
+          },
+          "best-practices": {
+            "score": 0.92
+          },
+          "seo": {
+            "score": 0.92
+          }
+        },
+        "metrics": {
+          "largest-contentful-paint": {
+            "numericValue": 599.679,
+            "displayValue": "0.6 s"
+          },
+          "cumulative-layout-shift": {
+            "numericValue": 0.00029913667804920763,
+            "displayValue": "0"
+          },
+          "first-contentful-paint": {
+            "numericValue": 599.679,
+            "displayValue": "0.6 s"
+          },
+          "total-blocking-time": {
+            "numericValue": 21.031999999999925,
+            "displayValue": "20 ms"
+          },
+          "max-potential-fid": {
+            "numericValue": 69.414,
+            "displayValue": "70 ms"
+          },
+          "interactive": {
+            "numericValue": 3783.710000003815,
+            "displayValue": "3.8 s"
+          }
+        }
+      },
+      {
+        "path": "/blog/business/seo/guide-to-keyword-research",
+        "score": 0.86,
+        "categories": {
+          "performance": {
+            "score": 0.84
+          },
+          "accessibility": {
+            "score": 0.76
+          },
+          "best-practices": {
+            "score": 1
+          },
+          "seo": {
+            "score": 0.83
+          }
+        },
+        "metrics": {
+          "largest-contentful-paint": {
+            "numericValue": 1636.683,
+            "displayValue": "1.6 s"
+          },
+          "cumulative-layout-shift": {
+            "numericValue": 0.001475191423693197,
+            "displayValue": "0.001"
+          },
+          "first-contentful-paint": {
+            "numericValue": 1051.409,
+            "displayValue": "1.1 s"
+          },
+          "total-blocking-time": {
+            "numericValue": 125.1860000000006,
+            "displayValue": "130 ms"
+          },
+          "max-potential-fid": {
+            "numericValue": 110.587,
+            "displayValue": "110 ms"
+          },
+          "interactive": {
+            "numericValue": 4611.826,
+            "displayValue": "4.6 s"
+          }
+        }
+      }
+    ]
+  }
+]

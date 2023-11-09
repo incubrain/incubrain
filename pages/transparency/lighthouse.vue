@@ -70,17 +70,18 @@ const lighthouseTitle = {
 const metrics = ref([] as any[])
 
 const getMetrics = async () => {
-  const { data, error } = await useFetch('/api/lighthouse', {
+  const { data, error } = await useFetch('/api/lighthouse/reports', {
     method: 'POST',
     body: {
-      year: '2023',
-      months: ['10', '11']
+      website: 'incubrain',
+      year: '2023'
     }
   })
 
   if (error.value) {
     console.error(error.value)
-  } else if (data.value && data.value.metrics) {
+  } else if (data.value) {
+    console.log('data', data)
     metrics.value.push(...data.value.metrics)
   }
 }
