@@ -1,11 +1,6 @@
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
-  // Validate the incoming data
-  console.log('Get Lighthouse', body)
 
-  // get lighthouse data based on param year
-
-  // const formattedData = formatFormData(params.type)
   try {
     const storage = useStorage('data')
     const reports = [] as any[]

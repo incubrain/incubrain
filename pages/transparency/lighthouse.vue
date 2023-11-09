@@ -11,9 +11,13 @@
         </UButton> -->
       </div>
     </CommonCTA2>
-    <div v-if="data" class="grid gap-8">
+    <UButton @click="getMetrics"> Get Reports</UButton>
+    <div
+      v-if="metrics.length"
+      class="grid gap-8"
+    >
       <div
-        v-for="metric in data?.metrics"
+        v-for="metric in metrics"
         :key="`lighthouse-summary-${metric.month}`"
         class="background padded-x py-4 rounded-md border border-color"
       >
@@ -58,22 +62,27 @@
 </template>
 
 <script setup lang="ts">
-
 const lighthouseTitle = {
   label: 'website performance',
   main: 'Tracking Your Website Performance'
 }
 
-const { data, error } = await useFetch('/api/lighthouse', {
-  method: 'POST',
-  body: {
-    year: '2023',
-    months: ['10', '11']
-  }
-})
+const metrics = ref([] as any[])
 
-if (error.value) {
-  console.error(error.value)
+const getMetrics = async () => {
+  const { data, error } = await useFetch('/api/lighthouse', {
+    method: 'POST',
+    body: {
+      year: '2023',
+      months: ['10', '11']
+    }
+  })
+
+  if (error.value) {
+    console.error(error.value)
+  } else if (data.value && data.value.metrics) {
+    metrics.value.push(...data.value.metrics)
+  }
 }
 </script>
 
