@@ -47,25 +47,29 @@ const socials = ref({
     {
       id: 1,
       label: 'Github',
-      slug: 'https://github.com/yourusername',
+      slug: 'https://github.com/incubrain',
+      username: 'incubrain',
       icon: 'i-mdi-github'
     },
     {
       id: 2,
       label: 'LinkedIn',
-      slug: 'https://linkedin.com/in/yourusername',
+      slug: 'https://linkedin.com/in/incubrain',
+      username: 'incubrain',
       icon: 'i-mdi-linkedin'
     },
     {
       id: 3,
       label: 'YouTube',
-      slug: 'https://youtube.com/channel/yourchannelid',
+      slug: 'https://youtube.com/channel/incubrain',
+      username: 'incubrain',
       icon: 'i-mdi-youtube'
     },
     {
       id: 4,
       label: 'Instagram',
-      slug: 'https://instagram.com/yourusername',
+      slug: 'https://instagram.com/incubrain',
+      username: 'incubrain',
       icon: 'i-mdi-instagram'
     }
   ]
