@@ -10,7 +10,7 @@
         :alt="`${author.givenName} ${author.surname} is an author on the Incubrain Blog`"
         sizes="100vw sm:120px"
       />
-      <div class="text-left space-y-1">
+      <div class="text-left space-y-1 w-full">
         <h4 class="font-semibold"> About {{ author.givenName }} {{ author.surname }} </h4>
         <p class="text-sm">
           {{ author.bio }}

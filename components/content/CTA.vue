@@ -13,6 +13,7 @@
       <UButton
         variant="outline"
         :to="cta.link"
+        target="_blank"
       >
         {{ cta.title }}
       </UButton>
