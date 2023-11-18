@@ -2,7 +2,6 @@
   <div v-if="post.title">
     <main>
       <BlogPostHero :post="post" />
-      <BlogPostFloat />
       <div class="w-full grid grid-cols-[1fr] xl:grid-cols-[1fr_740px_1fr] xl:gap-8 pt-8 padded-x">
         <div
           class="flex flex-col h-full justify-start xl:items-end max-w-[700px] gap-8 mx-auto w-full"

@@ -1,6 +1,6 @@
 <template>
-  <div class="font-[Oswald]">
-    <div class="space-x-2">
+  <div class="font-[Oswald] relative">
+    <div class="flex gap-2">
       <UBadge
         :label="`Version ${version}`"
         color="white"
