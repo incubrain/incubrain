@@ -130,7 +130,8 @@ export const AUTHORS = <AuthorT[]>[
 export const postFullSchema = postCardSchema.extend({
   id: z.number(),
   body: z.object({}).passthrough(), // passthrough allows any structure within the object
+  version: z.number(),
   _id: z.string()
 })
 export type PostFullT = z.infer<typeof postFullSchema>
-export const POST_FULL_PROPERTIES = [...POST_CARD_PROPERTIES, 'body', 'id', '_id']
+export const POST_FULL_PROPERTIES = [...POST_CARD_PROPERTIES, 'body', 'id', '_id', 'version']
