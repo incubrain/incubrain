@@ -8,7 +8,7 @@
         height="480"
       />
       <div class="flex items-start p-3 rounded-md w-full justify-between">
-        <BlogAuthor
+        <BlogPostAuthor
           :author-id="post.authors[0]"
           :published-at="post.publishedAt"
         />

@@ -1,6 +1,19 @@
 <template>
   <div class="font-[Oswald]">
-    <UBadge :label="`Updated ${updatedAt}`" color="primary" variant="subtle" size="sm" />
+    <div class="space-x-2">
+      <UBadge
+        :label="`Version ${version}`"
+        color="white"
+        variant="solid"
+        size="sm"
+      />
+      <UBadge
+        :label="`Updated ${updatedAt}`"
+        color="primary"
+        variant="subtle"
+        size="sm"
+      />
+    </div>
     <h2 class="text-xl font-semibold py-4">Table of Contents</h2>
     <ul>
       <li
@@ -9,6 +22,7 @@
       >
         <NuxtLink
           :class="{ 'text-primary-500 dark:text-primary-800': isActiveSection(item.id) }"
+          class="font-semibold"
           :to="`#${item.id}`"
         >
           {{ item.text }}
@@ -16,15 +30,16 @@
         <ul
           v-if="item.children"
           :class="[
-            'transition-all duration-700 ease-out overflow-hidden',
+            'transition-all duration-700 ease-out overflow-hidden space-y-1',
             isSectionOrChildActive(item) || expanded ? 'max-h-96' : 'max-h-0'
           ]"
+          class="py-1"
         >
           <li
             v-for="child in item.children"
             :key="child.id"
             :class="{
-              'ml-4': child.depth === 3,
+              'ml-4 max-w-[80%]': child.depth === 3,
               'text-primary-500 dark:text-primary-800': isActiveSection(child.id)
             }"
           >
@@ -51,6 +66,10 @@ const p = defineProps({
   },
   updatedAt: {
     type: String,
+    required: true
+  },
+  version: {
+    type: Number,
     required: true
   },
   expanded: {

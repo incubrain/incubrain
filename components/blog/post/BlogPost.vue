@@ -2,16 +2,16 @@
   <div v-if="post.title">
     <main>
       <BlogPostHero :post="post" />
-      <div
-        class="w-full grid grid-cols-[1fr] xl:grid-cols-[1fr_740px_1fr] xl:gap-8 pt-8 padded-x"
-      >
+      <BlogPostFloat />
+      <div class="w-full grid grid-cols-[1fr] xl:grid-cols-[1fr_740px_1fr] xl:gap-8 pt-8 padded-x">
         <div
           class="flex flex-col h-full justify-start xl:items-end max-w-[700px] gap-8 mx-auto w-full"
         >
-          <BlogToc
+          <BlogPostToc
             class="visible xl:hidden"
             :toc="post.body.toc.links"
             :updated-at="post.updatedAt"
+            :version="post.version"
             expanded
           />
         </div>
@@ -39,15 +39,16 @@
           </ContentRenderer>
         </div>
         <div class="hidden xl:block xl:sticky top-24 h-[300px]">
-          <BlogToc
+          <BlogPostToc
             :toc="post.body.toc.links"
             :updated-at="post.updatedAt"
+            :version="post.version"
           />
         </div>
       </div>
     </main>
     <aside class="space-y-12 padded-x pb-12 pt-10 max-w-3xl mx-auto">
-      <BlogAuthorCard :author-id="post.authors[0]" />
+      <BlogPostAuthorCard :author-id="post.authors[0]" />
       <!-- <BlogDisplay
         :title="{ main: 'Recommended', label: 'keep learning' }"
         post-type="business"
@@ -98,13 +99,13 @@ defineProps({
 .nuxt-content h2 {
   margin-top: 48px;
   font-size: 32px;
-  line-height: 1.25;
+  line-height: 1.6;
 }
 
 .nuxt-content h3 {
   margin-top: 39px;
   font-size: 28px;
-  line-height: 1.3;
+  line-height: 1.6;
 }
 
 .nuxt-content h4 {
