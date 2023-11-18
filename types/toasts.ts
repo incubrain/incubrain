@@ -24,6 +24,6 @@ export const ToastStateValidator = z.object({
   toasts: z.array(ToastValidator)
 })
 
-export type ToastAction = z.infer<typeof ToastActionValidator>
-export type ToastProps = z.infer<typeof ToastValidator>
-export type ToastState = z.infer<typeof ToastStateValidator>
+export type ToastActionT = z.infer<typeof ToastActionValidator>
+export type ToastPropsT = z.infer<typeof ToastValidator>
+export type ToastStateT = z.infer<typeof ToastStateValidator>

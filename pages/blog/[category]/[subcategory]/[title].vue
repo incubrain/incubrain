@@ -10,7 +10,8 @@
 </template>
 
 <script setup lang="ts">
-import { POST_FULL_PROPERTIES, PostFullT, postFullSchema } from '~/types/posts'
+import { POST_FULL_PROPERTIES, postFullSchema } from '~/types/posts'
+import type { PostFullT } from '~/types/posts'
 
 const route = useRoute()
 const category = ref(String(route.params.category))

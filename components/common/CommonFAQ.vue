@@ -37,16 +37,16 @@
 </template>
 
 <script setup lang="ts">
-import { Title, Faq } from '~/types/content'
+import type { TitleT, FaqT } from '~/types/content'
 
 const p = defineProps({
   title: {
-    type: Object as PropType<Title>,
+    type: Object as PropType<TitleT>,
     required: false,
     default: () => ({})
   },
   faqs: {
-    type: Array as PropType<Faq[]>,
+    type: Array as PropType<FaqT[]>,
     required: true
   }
 })

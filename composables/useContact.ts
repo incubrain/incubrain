@@ -1,12 +1,10 @@
 import {
   incubationFormValidation,
   collaborateFormValidation,
-  hireUsFormValidation,
-  HireUs,
-  Incubation,
-  Collaborate,
-  FormField
+  hireUsFormValidation
 } from '~/types/forms'
+
+import type { HireUsT, IncubationT, CollaborateT, FormFieldT } from '~/types/forms'
 
 const personalDetailFields = [
   {
@@ -50,7 +48,7 @@ const personalDetailFields = [
       'Other'
     ]
   }
-] as FormField[]
+] as FormFieldT[]
 
 const companyDetailFields = [
   {
@@ -69,21 +67,21 @@ const companyDetailFields = [
     type: 'select-menu',
     options: ['Idea', 'Prototype', 'Launched', 'Revenue Generating', 'Profitable', 'Scaling']
   }
-] as FormField[]
+] as FormFieldT[]
 
 const messageField = {
   name: 'message',
   placeholder: 'Tell us about your company and what you think Incubrain can do for you...',
   type: 'textarea',
   fullWidth: true
-} as FormField
+} as FormFieldT
 
 const messageFieldCollab = {
   name: 'message',
   placeholder: 'Tell us about how we can work together...',
   type: 'textarea',
   fullWidth: true
-} as FormField
+} as FormFieldT
 
 const hireFields = [
   {
@@ -98,15 +96,15 @@ const hireFields = [
     type: 'select-menu',
     options: ['1 month', '3 months', '6 months', '6 months+', 'unknown']
   }
-] as FormField[]
+] as FormFieldT[]
 
-const incubationSchema: FormField[] = [
+const incubationSchema: FormFieldT[] = [
   ...personalDetailFields,
   ...companyDetailFields,
   messageField
 ]
-const collaborateSchema: FormField[] = [...personalDetailFields, messageFieldCollab]
-const hireUsSchema: FormField[] = [
+const collaborateSchema: FormFieldT[] = [...personalDetailFields, messageFieldCollab]
+const hireUsSchema: FormFieldT[] = [
   ...personalDetailFields,
   ...companyDetailFields,
   ...hireFields,
@@ -121,8 +119,8 @@ const hireUsSchema: FormField[] = [
  * @param schema The schema array containing the form fields.
  * @returns An object representing the default state.
  */
-function createDefaultStateForSchema(schema: FormField[]): Record<string, any> {
-  return schema.reduce((defaultState, field: FormField) => {
+function createDefaultStateForSchema(schema: FormFieldT[]): Record<string, any> {
+  return schema.reduce((defaultState, field: FormFieldT) => {
     defaultState[field.name] = ''
     return defaultState
   }, {} as Record<string, any>)
@@ -133,7 +131,7 @@ function submitForm({
   formData
 }: {
   formType: string
-  formData: HireUs | Incubation | Collaborate
+  formData: HireUsT | IncubationT | CollaborateT
 }) {
   console.log('submitting form', formType, formData)
   const { data, error } = useFetch(`/api/contact/${formType}`, {

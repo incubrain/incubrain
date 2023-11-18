@@ -102,7 +102,7 @@ const formFieldValidation = z.object({
 })
 
 // Types
-export type FormField = z.infer<typeof formFieldValidation>
-export type Incubation = z.infer<typeof incubationFormValidation>
-export type HireUs = z.infer<typeof hireUsFormValidation>
-export type Collaborate = z.infer<typeof collaborateFormValidation>
+export type FormFieldT = z.infer<typeof formFieldValidation>
+export type IncubationT = z.infer<typeof incubationFormValidation>
+export type HireUsT = z.infer<typeof hireUsFormValidation>
+export type CollaborateT = z.infer<typeof collaborateFormValidation>

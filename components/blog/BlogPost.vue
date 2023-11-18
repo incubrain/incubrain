@@ -55,7 +55,7 @@
 </template>
 
 <script setup lang="ts">
-import { PostFullT } from '~/types/posts'
+import type { PostFullT } from '~/types/posts'
 
 defineProps({
   post: {

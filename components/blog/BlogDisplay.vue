@@ -20,16 +20,16 @@
 </template>
 
 <script setup lang="ts">
-import { Title } from '~/types/content'
-import { PostCategories } from '~/types/posts'
+import type { TitleT } from '~/types/content'
+import type { PostCategoriesT } from '~/types/posts'
 
 const p = defineProps({
   title: {
-    type: Object as PropType<Title>,
+    type: Object as PropType<TitleT>,
     required: true
   },
   postType: {
-    type: String as PropType<PostCategories>,
+    type: String as PropType<PostCategoriesT>,
     required: true
   }
 })

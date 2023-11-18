@@ -7,8 +7,8 @@ export const dateSchema = z
 
 // POST CATEGORIES
 export const postCategorySchema = z.enum(['all', 'frontend', 'backend', 'business', 'projects'])
-export type PostCategories = z.infer<typeof postCategorySchema>
-export const CATEGORIES: PostCategories[] = ['all', 'frontend', 'backend', 'business', 'projects']
+export type PostCategoriesT = z.infer<typeof postCategorySchema>
+export const CATEGORIES: PostCategoriesT[] = ['all', 'frontend', 'backend', 'business', 'projects']
 
 // POST TAGS
 export const postTagSchema = z.enum([
@@ -41,8 +41,8 @@ export const postTagSchema = z.enum([
   'seo',
   'design'
 ])
-export type PostTags = z.infer<typeof postTagSchema>
-export const TAGS: PostTags[] = [
+export type PostTagsT = z.infer<typeof postTagSchema>
+export const TAGS: PostTagsT[] = [
   'nuxt',
   'vue',
   'typescript',
@@ -92,7 +92,7 @@ export const postCardSchema = z.object({
   updatedAt: dateSchema,
   _path: z.string()
 })
-export type PostCard = z.infer<typeof postCardSchema>
+export type PostCardT = z.infer<typeof postCardSchema>
 export const POST_CARD_PROPERTIES = [
   'title',
   'description',

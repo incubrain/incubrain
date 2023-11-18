@@ -29,7 +29,7 @@
 </template>
 
 <script setup lang="ts">
-import { Title } from '~/types/content'
+import type { TitleT } from '~/types/content'
 
 interface Item {
   icon: string
@@ -39,7 +39,7 @@ interface Item {
 
 defineProps({
   title: {
-    type: Object as PropType<Title>,
+    type: Object as PropType<TitleT>,
     required: true
   },
   items: {

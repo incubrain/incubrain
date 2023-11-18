@@ -26,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import { Title } from '~/types/content'
+import type { TitleT } from '~/types/content'
 
 interface ImageProps {
   src: string
@@ -39,7 +39,7 @@ defineProps({
     required: true
   },
   title: {
-    type: Object as PropType<Title>,
+    type: Object as PropType<TitleT>,
     required: true
   },
   fit: {

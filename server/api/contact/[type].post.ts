@@ -1,4 +1,4 @@
-import { HireUs, Incubation, Collaborate } from '~/types/forms'
+import type { HireUsT, IncubationT, CollaborateT } from '~/types/forms'
 import { serverSupabaseClient } from '#supabase/server'
 
 interface ContactSubmission {
@@ -11,7 +11,7 @@ interface ContactSubmission {
 
 const formatFormData = (
   formType: string,
-  formData: HireUs | Incubation | Collaborate
+  formData: HireUsT | IncubationT | CollaborateT
 ): ContactSubmission => {
   // this is mapped to the supabase table
   const remainingData = { ...formData }

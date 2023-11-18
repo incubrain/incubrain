@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import { PostTags, PostCategories } from '~/types/posts'
+import type { PostTagsT, PostCategoriesT } from '~/types/posts'
 
 // TODO: Add full post as prop and types for post
 defineProps({
@@ -27,18 +27,18 @@ defineProps({
     required: true
   },
   tags: {
-    type: Array as PropType<PostTags[]>,
+    type: Array as PropType<PostTagsT[]>,
     required: false,
     default: () => []
   },
   category: {
-    type: String as PropType<PostCategories>,
+    type: String as PropType<PostCategoriesT>,
     required: false,
     default: 'category missing'
   }
 })
 
-const badgeColor = (badge: PostCategories | PostTags): string => {
+const badgeColor = (badge: PostCategoriesT | PostTagsT): string => {
   switch (badge) {
     // Categories
     case 'all':

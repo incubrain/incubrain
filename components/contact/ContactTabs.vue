@@ -46,7 +46,7 @@
 </template>
 
 <script setup lang="ts">
-import { Incubation, Collaborate, HireUs } from '~/types/forms'
+import type { IncubationT, CollaborateT, HireUsT } from '~/types/forms'
 
 type ContactNames = 'incubation' | 'hire-us' | 'collaborate'
 interface ActiveTab {
@@ -128,7 +128,7 @@ const tabs = [
   }
 ]
 
-const submitForm = (event: Incubation | HireUs | Collaborate) => {
+const submitForm = (event: IncubationT | HireUsT | CollaborateT) => {
   try {
     submit({ formType: tabs[activeTab.value.index].slot, formData: event })
     add({ title: "Your message has been submitted. We'll be in contact soon." })

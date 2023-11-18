@@ -42,7 +42,7 @@
 </template>
 
 <script setup lang="ts">
-import { Title } from '~/types/content'
+import type { TitleT } from '~/types/content'
 
 const testParallax = ref<HTMLElement | null>(null)
 const { y } = useWindowScroll()
@@ -63,7 +63,7 @@ interface Image {
 
 defineProps({
   title: {
-    type: Object as PropType<Title>,
+    type: Object as PropType<TitleT>,
     required: true
   },
   img: {

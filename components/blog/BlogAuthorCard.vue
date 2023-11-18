@@ -5,11 +5,10 @@
   >
     <div class="flex flex-col sm:flex-row items-start gap-4 lg:gap-8">
       <NuxtImg
-        class="rounded-md w-full"
+        class="rounded-md"
         src="images/team/drew-macgibbon.jpg"
         :alt="`${author.givenName} ${author.surname} is an author on the Incubrain Blog`"
-        width="120"
-        height="120"
+        sizes="100vw md:120px"
       />
       <div class="text-left space-y-1">
         <h4 class="font-semibold"> About {{ author.givenName }} {{ author.surname }} </h4>

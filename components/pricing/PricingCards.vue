@@ -76,7 +76,18 @@
 </template>
 
 <script setup lang="ts">
-import { Title } from '~/types/content'
+import type { TitleT } from '~/types/content'
+
+defineProps({
+  singleCard: {
+    type: Boolean,
+    default: false
+  },
+  title: {
+    type: Object as PropType<TitleT>,
+    required: true
+  }
+})
 
 const pricing = {
   items: [
@@ -126,16 +137,6 @@ const pricing = {
   ]
 }
 
-defineProps({
-  singleCard: {
-    type: Boolean,
-    default: false
-  },
-  title: {
-    type: Object as PropType<Title>,
-    required: true
-  }
-})
 </script>
 
 <style scoped></style>

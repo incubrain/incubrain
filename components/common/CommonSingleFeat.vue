@@ -18,11 +18,11 @@
 </template>
 
 <script setup lang="ts">
-import { Title } from '~/types/content'
+import type { TitleT } from '~/types/content'
 
 defineProps({
   title: {
-    type: Object as PropType<Title>,
+    type: Object as PropType<TitleT>,
     required: true
   },
   image: {
