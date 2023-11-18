@@ -8,7 +8,7 @@
         class="rounded-md"
         src="images/team/drew-macgibbon.jpg"
         :alt="`${author.givenName} ${author.surname} is an author on the Incubrain Blog`"
-        sizes="100vw md:120px"
+        sizes="100vw sm:120px"
       />
       <div class="text-left space-y-1">
         <h4 class="font-semibold"> About {{ author.givenName }} {{ author.surname }} </h4>

@@ -2,29 +2,29 @@
   <div v-if="post.title">
     <main>
       <BlogPostHero :post="post" />
-      <div class="w-full grid grid-cols-[1fr] lg:grid-cols-[1fr_740px_1fr] gap-8 pt-8 padded-x">
-        <div class="flex flex-col h-full justify-start lg:items-end max-w-3xl gap-8">
-          <BlogAuthor
-            :author-id="post.authors[0]"
-            :published-at="post.publishedAt"
-            :updated-at="post.updatedAt"
-          />
+      <div
+        class="w-full grid grid-cols-[1fr] xl:grid-cols-[1fr_740px_1fr] xl:gap-8 pt-8 padded-x"
+      >
+        <div
+          class="flex flex-col h-full justify-start xl:items-end max-w-[700px] gap-8 mx-auto w-full"
+        >
           <BlogToc
-            class="visible lg:hidden"
+            class="visible xl:hidden"
             :toc="post.body.toc.links"
+            :updated-at="post.updatedAt"
             expanded
           />
         </div>
-        <div class="mx-auto flex flex-col justify-center w-full">
+        <div class="mx-auto flex flex-col justify-center items-center w-full">
           <ContentRenderer
             :value="post"
             class="w-full"
           >
             <div class="container">
-              <div class="mx-auto space-y-8 max-w-3xl">
+              <div class="mx-auto space-y-8 max-w-[700px]">
                 <ContentRendererMarkdown
                   :value="post.body"
-                  class="max-w-[700px] mx-auto nuxt-content"
+                  class="nuxt-content"
                 >
                   <div>
                     {{ post.body }}
@@ -38,18 +38,20 @@
             </div>
           </ContentRenderer>
         </div>
-        <div class="hidden lg:block lg:sticky top-24 h-[300px]">
-          <BlogToc :toc="post.body.toc.links" />
+        <div class="hidden xl:block xl:sticky top-24 h-[300px]">
+          <BlogToc
+            :toc="post.body.toc.links"
+            :updated-at="post.updatedAt"
+          />
         </div>
       </div>
     </main>
-    <aside class="space-y-12 padded-x pt-10 max-w-3xl mx-auto">
-      <!-- Author information and related content -->
+    <aside class="space-y-12 padded-x pb-12 pt-10 max-w-3xl mx-auto">
       <BlogAuthorCard :author-id="post.authors[0]" />
-      <BlogDisplay
+      <!-- <BlogDisplay
         :title="{ main: 'Recommended', label: 'keep learning' }"
         post-type="business"
-      />
+      /> -->
     </aside>
   </div>
 </template>

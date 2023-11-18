@@ -1,32 +1,38 @@
 <template>
-  <div class="relative w-full flex justify-center items-center py-12 foreground">
+  <div class="relative w-full flex justify-center items-center md:py-12 foreground">
     <div class="flex flex-col max-w-4xl">
-      <div class="flex p-2 rounded-md gap-2 w-full">
-        <UBadge
-          :label="post.category"
-          color="primary"
-          variant="solid"
-          class="text-sm"
-        />
-        <UBadge
-          v-for="tag in post.tags"
-          :key="tag"
-          :label="tag"
-          color="secondary"
-          variant="soft"
-          class="text-sm"
-        />
-      </div>
       <NuxtImg
         :src="`images/blog/${post.featured_image}`"
-        class="rounded-md relative"
+        class="md:rounded-md relative"
         width="900"
         height="480"
       />
+      <div class="flex items-start p-3 rounded-md w-full justify-between">
+        <BlogAuthor
+          :author-id="post.authors[0]"
+          :published-at="post.publishedAt"
+        />
+        <div class="space-x-2">
+          <UBadge
+            :label="post.category"
+            color="primary"
+            variant="solid"
+            class="text-sm"
+          />
+          <UBadge
+            v-for="tag in post.tags"
+            :key="tag"
+            :label="tag"
+            color="secondary"
+            variant="soft"
+            class="text-sm"
+          />
+        </div>
+      </div>
       <div
         class="flex relative z-10 gap-8 flex-col items-start mx-auto w-full rounded-md max-w-[740px] pt-8 px-4"
       >
-        <h1 class="text-3xl lg:text-5xl font-semibold font-[Oswald] text-center">
+        <h1 class="text-4xl lg:text-5xl font-semibold font-[Oswald] lg:text-center">
           {{ post.title }}
         </h1>
         <div

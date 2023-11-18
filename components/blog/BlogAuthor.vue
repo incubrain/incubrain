@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="author"
-    class="flex items-start gap-4"
+    class="flex items-start gap-2 rounded-md"
   >
     <NuxtImg
       class="border border-color rounded-full"
@@ -10,11 +10,10 @@
       width="44"
       height="44"
     />
-    <div class="flex flex-col gap-1">
+    <div class="flex flex-col">
       <p class="font-semibold"> {{ author.givenName }} {{ author.surname }} </p>
       <div>
         <p class="text-xs"> Pub: {{ useDateFormat(publishedAt, 'DD MMM YYYY').value }} </p>
-        <p class="text-xs"> Edit: {{ useDateFormat(updatedAt, 'DD MMM YYYY').value }} </p>
       </div>
     </div>
   </div>
@@ -27,10 +26,6 @@ const p = defineProps({
     required: true
   },
   publishedAt: {
-    type: String,
-    required: true
-  },
-  updatedAt: {
     type: String,
     required: true
   }

@@ -1,6 +1,7 @@
 <template>
   <div class="font-[Oswald]">
-    <h2 class="text-xl font-semibold pb-4">Table of Contents</h2>
+    <UBadge :label="`Updated ${updatedAt}`" color="primary" variant="subtle" size="sm" />
+    <h2 class="text-xl font-semibold py-4">Table of Contents</h2>
     <ul>
       <li
         v-for="item in toc"
@@ -15,7 +16,7 @@
         <ul
           v-if="item.children"
           :class="[
-            'text-sm transition-all duration-700 ease-out overflow-hidden',
+            'transition-all duration-700 ease-out overflow-hidden',
             isSectionOrChildActive(item) || expanded ? 'max-h-96' : 'max-h-0'
           ]"
         >
@@ -27,7 +28,7 @@
               'text-primary-500 dark:text-primary-800': isActiveSection(child.id)
             }"
           >
-            <NuxtLink :to="`#${child.id}`">{{ child.text }}</NuxtLink>
+            <NuxtLink :to="`#${child.id}`">- {{ child.text }}</NuxtLink>
           </li>
         </ul>
       </li>
@@ -46,6 +47,10 @@ type TOCItem = {
 const p = defineProps({
   toc: {
     type: Array as PropType<TOCItem[]>,
+    required: true
+  },
+  updatedAt: {
+    type: String,
     required: true
   },
   expanded: {
