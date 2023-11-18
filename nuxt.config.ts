@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/content',
     '@nuxtjs/supabase',
-    '@nuxt/image-edge',
+    '@nuxt/image',
     '@nuxt/ui',
     '@nuxtseo/module',
     '@vueuse/nuxt',
