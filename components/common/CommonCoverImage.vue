@@ -11,7 +11,7 @@
     >
       <slot />
       <div class="space-y-4 w-full">
-        <h2 class="text-3xl font-bold lg:text-5xl">
+        <h2 class="text-3xl font-bold lg:text-6xl">
           {{ title.main }}
         </h2>
         <h4

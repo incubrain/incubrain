@@ -42,13 +42,12 @@
         <div
           class="flex flex-col items-end lg:justify-end lg:items-center row-start-1 col-start-3 lg:flex-row gap-3"
         >
-          @incubrain on
           <NuxtLink
             v-for="social in socials.children"
             :key="social.label"
             :to="social.slug"
             target="_blank"
-            class="flex items-center text-xs"
+            class="flex items-center"
           >
             <UIcon
               :name="social.icon"

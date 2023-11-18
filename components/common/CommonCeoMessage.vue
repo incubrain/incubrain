@@ -30,7 +30,7 @@
             </NuxtLink>
           </div>
           <NuxtImg
-            src="images/team/drew-macgibbon.png"
+            src="images/drew-macgibbon-full.png"
             alt="Drew MacGibbon Ceo/Founder of Incubrain"
             height="439"
             width="228"

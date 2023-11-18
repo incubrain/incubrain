@@ -106,11 +106,31 @@ export const POST_CARD_PROPERTIES = [
   '_path'
 ]
 
+const authorSchema = z.object({
+  id: z.number(),
+  givenName: z.string(),
+  surname: z.string(),
+  avatar: z.string(),
+  bio: z.string()
+})
+
+export type AuthorT = z.infer<typeof authorSchema>
+
+export const AUTHORS = <AuthorT[]>[
+  {
+    id: 1,
+    givenName: 'Drew',
+    surname: 'MacGibbon',
+    avatar: 'drew-macgibbon.jpg',
+    bio: 'Drew MacGibbon is the CEO and Founder of Incubrain, with over a decade of online business expertise and similar full-stack Nuxt Developer experience. His focus on crafting exceptional digital products has positioned Incubrain as a leader in innovative tech solutions.'
+  }
+]
+
 // POST FULL POST
 export const postFullSchema = postCardSchema.extend({
   id: z.number(),
   body: z.object({}).passthrough(), // passthrough allows any structure within the object
   _id: z.string()
 })
-export type PostFull = z.infer<typeof postFullSchema>
+export type PostFullT = z.infer<typeof postFullSchema>
 export const POST_FULL_PROPERTIES = [...POST_CARD_PROPERTIES, 'body', 'id', '_id']

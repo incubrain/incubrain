@@ -31,7 +31,8 @@
           </p>
           <span class="flex gap-2">
             by
-            <BlogAuthor :author-ids="post.authors" />
+            {{ postStore.selectedAuthor(post.authors[0])?.givenName }}
+            {{ postStore.selectedAuthor(post.authors[0])?.surname }}
           </span>
         </div>
         <p class="text-sm">
@@ -43,6 +44,8 @@
 </template>
 
 <script setup lang="ts">
+const postStore = usePostsStore()
+
 const setDate = (d: string) => {
   const [year, month, day] = d.split('/')
   const timestamp = new Date(Number(year), Number(month) - 1, Number(day))

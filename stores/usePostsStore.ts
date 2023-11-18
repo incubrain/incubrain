@@ -2,12 +2,13 @@ import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
 import {
   PostTags,
   PostCategories,
-  PostFull,
+  PostFullT,
   PostCard,
   postCardSchema,
   postFullSchema,
   POST_CARD_PROPERTIES,
   CATEGORIES,
+  AUTHORS,
   TAGS
 } from '../types/posts'
 
@@ -151,7 +152,7 @@ export const usePostsStore = defineStore('posts', () => {
    */
 
   function isValidPost(
-    post: PostCard | PostFull,
+    post: PostCard | PostFullT,
     schema: typeof postCardSchema | typeof postFullSchema
   ): boolean {
     try {
@@ -171,6 +172,10 @@ export const usePostsStore = defineStore('posts', () => {
   return {
     tags: TAGS,
     categories: CATEGORIES,
+    authors: AUTHORS,
+    selectedAuthor: (authorId: number) => {
+      return AUTHORS.find((a) => authorId === a.id)
+    },
     posts,
     allPostsFetched,
     postsLoading,

@@ -17,7 +17,7 @@
           </NuxtLink>
         </UBadge> -->
         <h1
-          class="text-4xl lg:text-5xl font-bold leading-tight underline decoration-primary-500 dark:decoration-primary-800"
+          class="text-5xl lg:text-6xl font-bold leading-tight underline decoration-primary-500 dark:decoration-primary-800"
         >
           {{ title.main }}
         </h1>

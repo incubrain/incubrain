@@ -1,5 +1,10 @@
 <template>
   <nav
+    :class="{
+      'translate-y-[-100%]': navbarHidden,
+      'translate-y-0': !navbarHidden,
+      'transition-transform duration-300 ease-in-out': true
+    }"
     class="w-full flex sticky top-0 px-4 shadow-sm border-b border-color justify-between backdrop-blur-md bg-white dark:bg-black z-40 h-[var(--nav-height-sm)] lg:h-[var(--nav-height-lg)]"
   >
     <NavMobiSlideover class="lg:hidden flex items-start justify-start" />
@@ -110,6 +115,27 @@ const { pages, setPage } = usePages()
 
 const { discord } = useSocial()
 const route = useRoute()
+
+const navbarHidden = ref(false)
+
+let lastScrollTop = 0
+onMounted(() => {
+  window.addEventListener(
+    'scroll',
+    () => {
+      const currentScroll = window.scrollY || document.documentElement.scrollTop
+      if (currentScroll > lastScrollTop) {
+        // Scrolling down
+        navbarHidden.value = true
+      } else {
+        // Scrolling up
+        navbarHidden.value = false
+      }
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll // For Mobile or negative scrolling
+    },
+    false
+  )
+})
 
 const path = computed(() => {
   if (route.params.id) {

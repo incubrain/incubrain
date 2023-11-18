@@ -1,19 +1,12 @@
 {
   "editor.tabSize": 2,
   "files.associations": {
-      "*.css": "tailwindcss"
+    "*.css": "tailwindcss"
   },
   "editor.quickSuggestions": {
-      "strings": true
+    "strings": true
   },
   "tailwindCSS.experimental.configFile": "tailwind.config.ts",
-  "tailwindCSS.experimental.classRegex": [
-    ["ui:\\s*{([^)]*)\\s*}", "[\"'`]([^\"'`]*).*?[\"'`]"]
-  ],
-  "tailwindCSS.classAttributes": [
-    "class",
-    "className",
-    "ngClass",
-    "ui"
-  ]
+  "tailwindCSS.experimental.classRegex": [["ui:\\s*{([^)]*)\\s*}", "[\"'`]([^\"'`]*).*?[\"'`]"]],
+  "tailwindCSS.classAttributes": ["class", "className", "ngClass", "ui"]
 }

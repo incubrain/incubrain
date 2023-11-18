@@ -1,6 +1,6 @@
 <template>
   <div class="font-[Oswald]">
-    <h2 class="text-xl font-semibold py-4">Table of Contents</h2>
+    <h2 class="text-xl font-semibold pb-4">Table of Contents</h2>
     <ul>
       <li
         v-for="item in toc"
@@ -16,7 +16,7 @@
           v-if="item.children"
           :class="[
             'text-sm transition-all duration-700 ease-out overflow-hidden',
-            isSectionOrChildActive(item) ? 'max-h-96' : 'max-h-0'
+            isSectionOrChildActive(item) || expanded ? 'max-h-96' : 'max-h-0'
           ]"
         >
           <li
@@ -47,6 +47,10 @@ const p = defineProps({
   toc: {
     type: Array as PropType<TOCItem[]>,
     required: true
+  },
+  expanded: {
+    type: Boolean,
+    default: false
   }
 })
 

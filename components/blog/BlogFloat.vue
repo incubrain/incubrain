@@ -1,35 +1,40 @@
 <template>
   <div
-    class="fixed flex justify-center items-center gap-2 bottom-2 right-2 lg:bottom-3 lg:right-6 z-20"
+    v-show="showButton"
+    class="fixed flex justify-center items-center gap-2 top-24 right-1/2 z-20 animate-bounce"
   >
-    <div class="p-1 foreground rounded-full border border-color">
+    <div class="p-1 background rounded-full border border-color">
       <UIcon
         name="i-mdi-chevron-up"
-        class="h-5 w-5 flex justify-center items-center cursor-pointer"
+        class="h-6 w-6 flex justify-center items-center cursor-pointer"
         @click="toTop"
       />
     </div>
-    <UButton
-      :to="`https://github.com/incubrain/incubrain/edit/main/${slug}`"
-      target="_blank"
-      class="flex items-center justify-center"
-    >
-      <UIcon
-        name="i-mdi-github"
-        class="h-4 w-4 inline-block shrink-0"
-      />
-      Suggest Edit
-    </UButton>
   </div>
 </template>
 
 <script setup lang="ts">
+let lastScrollTop = 0
+const showButton = ref(false)
 
-defineProps({
-  slug: {
-    type: String as PropType<string>,
-    required: true
-  }
+onMounted(() => {
+  window.addEventListener(
+    'scroll',
+    () => {
+      const currentScroll = window.scrollY || document.documentElement.scrollTop
+      const scrolledPercentage = (currentScroll / document.documentElement.scrollHeight) * 100
+
+      if (scrolledPercentage < 30 || currentScroll > lastScrollTop) {
+        // Scrolling down and past 30% of the page
+        showButton.value = false
+      } else if (scrolledPercentage > 30 && currentScroll < lastScrollTop) {
+        // Scrolling up and past 30% of the page
+        showButton.value = true
+      }
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll // For Mobile or negative scrolling
+    },
+    false
+  )
 })
 
 function toTop() {
