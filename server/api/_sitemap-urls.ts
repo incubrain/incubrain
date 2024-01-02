@@ -6,6 +6,6 @@ export default defineEventHandler(async (event) => {
     .only(['_path', 'updatedAt'])
     .find()
   return articles.map((a) => {
-    return { loc: a._path, lastmod: a.updatedAt }
+    return { loc: a._path, lastmod: a.updatedAt.replaceAll('/', '-') }
   })
 })
