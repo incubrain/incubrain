@@ -5,7 +5,7 @@
   >
     <div class="flex flex-col sm:flex-row items-start gap-4 lg:gap-8">
       <NuxtImg
-        class="rounded-md"
+        class="rounded-md sm:max-w-[120px]"
         src="images/team/drew-macgibbon.jpg"
         :alt="`${author.givenName} ${author.surname} is an author on the Incubrain Blog`"
         sizes="100vw sm:120px"
