@@ -1,6 +1,6 @@
 <template>
   <div class="font-[Oswald] relative">
-    <div class="flex gap-2">
+    <div class="flex justify-end gap-2">
       <UBadge
         :label="`Version ${version}`"
         color="white"
@@ -14,8 +14,8 @@
         size="sm"
       />
     </div>
-    <h2 class="text-xl font-semibold py-4">Table of Contents</h2>
-    <ul>
+    <h2 class="text-xl text-right font-semibold py-4">Table of Contents</h2>
+    <ul dir="RTL">
       <li
         v-for="item in toc"
         :key="item.id"
@@ -39,7 +39,7 @@
             v-for="child in item.children"
             :key="child.id"
             :class="{
-              'ml-4 max-w-[80%]': child.depth === 3,
+              'mr-4 max-w-[80%]': child.depth === 3,
               'text-primary-500 dark:text-primary-800': isActiveSection(child.id)
             }"
           >

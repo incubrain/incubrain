@@ -37,7 +37,7 @@
             </div>
           </ContentRenderer>
         </div>
-        <div class="hidden xl:block xl:sticky top-24 h-[300px]">
+        <div class="hidden xl:block xl:sticky top-24 right-0 h-[300px]">
           <BlogPostToc
             :toc="post.body.toc.links"
             :updated-at="post.updatedAt"
