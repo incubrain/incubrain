@@ -6,9 +6,9 @@ export const dateSchema = z
   .regex(/^\d{4}\/\d{2}\/\d{2}$/, 'Date must be in YYYY/MM/DD format.')
 
 // POST CATEGORIES
-export const postCategorySchema = z.enum(['all', 'frontend', 'backend', 'business', 'projects'])
+export const postCategorySchema = z.enum(['all', 'frontend', 'backend', 'business', 'projects', 'future'])
 export type PostCategoriesT = z.infer<typeof postCategorySchema>
-export const CATEGORIES: PostCategoriesT[] = ['all', 'frontend', 'backend', 'business', 'projects']
+export const CATEGORIES: PostCategoriesT[] = ['all', 'frontend', 'backend', 'business', 'projects', 'future']
 
 // POST TAGS
 export const postTagSchema = z.enum([
@@ -25,6 +25,7 @@ export const postTagSchema = z.enum([
   // design
   'tailwindcss',
   // general
+  'imagine',
   'learning',
   'code quality',
   'testing',
@@ -58,6 +59,7 @@ export const TAGS: PostTagsT[] = [
   'productivity',
   'culture',
   'hiring',
+  'imagine',
   'systems',
   'research',
   'salaries',
