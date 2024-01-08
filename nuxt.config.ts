@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxtseo/module',
     '@vueuse/nuxt',
+    '@nuxthq/studio',
     'nuxt-swiper',
     [
       '@pinia/nuxt',
