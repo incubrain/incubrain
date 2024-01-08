@@ -1,10 +1,10 @@
 import {
-  incubationFormValidation,
+  serviceFormValidation,
   collaborateFormValidation,
   hireUsFormValidation
 } from '~/types/forms'
 
-import type { HireUsT, IncubationT, CollaborateT, FormFieldT } from '~/types/forms'
+import type { HireUsT, ServiceT, CollaborateT, FormFieldT } from '~/types/forms'
 
 const personalDetailFields = [
   {
@@ -98,7 +98,7 @@ const hireFields = [
   }
 ] as FormFieldT[]
 
-const incubationSchema: FormFieldT[] = [
+const serviceSchema: FormFieldT[] = [
   ...personalDetailFields,
   ...companyDetailFields,
   messageField
@@ -131,7 +131,7 @@ function submitForm({
   formData
 }: {
   formType: string
-  formData: HireUsT | IncubationT | CollaborateT
+  formData: HireUsT | ServiceT | CollaborateT
 }) {
   console.log('submitting form', formType, formData)
   const { data, error } = useFetch(`/api/contact/${formType}`, {
@@ -165,9 +165,9 @@ export default function useContact() {
     submit: submitForm,
     forms: [
       {
-        state: ref(createDefaultStateForSchema(incubationSchema)),
-        schema: incubationSchema,
-        validation: incubationFormValidation
+        state: ref(createDefaultStateForSchema(serviceSchema)),
+        schema: serviceSchema,
+        validation: serviceFormValidation
       },
       {
         state: ref(createDefaultStateForSchema(hireUsSchema)),

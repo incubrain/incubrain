@@ -28,9 +28,9 @@
           color="primary"
           variant="outline"
           size="xl"
-          to="/incubation"
+          to="/services"
           @click="
-            $posthog()?.capture('interest_shown_incubation', {
+            $posthog()?.capture('interest_shown_services', {
               source: 'home_hero'
             })
           "

@@ -18,8 +18,8 @@
 </template>
 
 <script setup lang="ts">
-type ContactType = 'incubation' | 'hire-us' | 'collaborate'
-const contactType: ContactType = (useRoute().params.type as ContactType) || 'incubation'
+type ContactType = 'services' | 'hire-us' | 'collaborate'
+const contactType: ContactType = (useRoute().params.type as ContactType) || 'services'
 
 const heroTitle = {
   label: 'Get in Touch',

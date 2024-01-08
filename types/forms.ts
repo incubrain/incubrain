@@ -77,7 +77,7 @@ const hireFields = z.object({
   })
 })
 
-export const incubationFormValidation = personalDetailFields.merge(companyDetailFields).extend({
+export const serviceFormValidation = personalDetailFields.merge(companyDetailFields).extend({
   message: messageField
 })
 
@@ -103,6 +103,6 @@ const formFieldValidation = z.object({
 
 // Types
 export type FormFieldT = z.infer<typeof formFieldValidation>
-export type IncubationT = z.infer<typeof incubationFormValidation>
+export type ServiceT = z.infer<typeof serviceFormValidation>
 export type HireUsT = z.infer<typeof hireUsFormValidation>
 export type CollaborateT = z.infer<typeof collaborateFormValidation>

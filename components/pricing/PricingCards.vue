@@ -93,15 +93,15 @@ const pricing = {
   items: [
     {
       id: 1,
-      title: 'Business Incubation',
+      title: 'Business services',
       description:
         'Get 50 hours per week from our team of experts to propel your business forwards!',
       icon: 'i-material-symbols-rocket-launch-rounded',
       price: '2,500 Per Month (Limited to 5)',
       cta: {
         title: 'More Information',
-        link: '/incubation',
-        event: 'view_incubation'
+        link: '/services',
+        event: 'view_services'
       },
       benefits: [
         'Align With Your Vision',
@@ -136,7 +136,6 @@ const pricing = {
     }
   ]
 }
-
 </script>
 
 <style scoped></style>

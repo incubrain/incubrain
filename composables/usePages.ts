@@ -1,5 +1,3 @@
-import { ref, computed } from 'vue'
-
 interface Page {
   id: number
   icon: string
@@ -17,9 +15,9 @@ const pages = ref([
   },
   {
     id: 2,
-    label: 'Incubation',
+    label: 'Services',
     icon: 'i-mdi-chevron-right',
-    slug: '/incubation',
+    slug: '/services',
     children: []
   },
   {

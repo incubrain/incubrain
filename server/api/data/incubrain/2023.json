@@ -393,7 +393,7 @@
         }
       },
       {
-        "path": "/contact-incubation",
+        "path": "/contact-services",
         "score": 0.93,
         "categories": {
           "performance": {
@@ -437,7 +437,7 @@
         }
       },
       {
-        "path": "/incubation",
+        "path": "/services",
         "score": 0.88,
         "categories": {
           "performance": {
@@ -481,7 +481,7 @@
         }
       },
       {
-        "path": "/Incubation",
+        "path": "/services",
         "score": 0.86,
         "categories": {
           "performance": {
@@ -1316,7 +1316,7 @@
         }
       },
       {
-        "path": "/contact-incubation",
+        "path": "/contact-services",
         "score": 0.98,
         "categories": {
           "performance": {
@@ -1360,7 +1360,7 @@
         }
       },
       {
-        "path": "/incubation",
+        "path": "/services",
         "score": 0.95,
         "categories": {
           "performance": {

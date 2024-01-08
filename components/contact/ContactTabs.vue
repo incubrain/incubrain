@@ -46,9 +46,9 @@
 </template>
 
 <script setup lang="ts">
-import type { IncubationT, CollaborateT, HireUsT } from '~/types/forms'
+import type { ServiceT, CollaborateT, HireUsT } from '~/types/forms'
 
-type ContactNames = 'incubation' | 'hire-us' | 'collaborate'
+type ContactNames = 'services' | 'hire-us' | 'collaborate'
 interface ActiveTab {
   name: ContactNames
   index: number
@@ -63,9 +63,9 @@ const p = defineProps({
 
 const setActiveTab = (t: string | number): ActiveTab => {
   switch (t) {
-    case 'incubation':
+    case 'services':
     case 0:
-      return { name: 'incubation', index: 0 }
+      return { name: 'services', index: 0 }
     case 'hire-us':
     case 1:
       return { name: 'hire-us', index: 1 }
@@ -73,7 +73,7 @@ const setActiveTab = (t: string | number): ActiveTab => {
     case 2:
       return { name: 'collaborate', index: 2 }
     default:
-      return { name: 'incubation', index: 0 }
+      return { name: 'services', index: 0 }
   }
 }
 
@@ -83,7 +83,7 @@ const tabToggled = (t: number) => {
 }
 
 const activeTab: Ref<ActiveTab> = ref(
-  setActiveTab(p.defaultTab) || ({ name: 'incubation', index: 0 } as ActiveTab)
+  setActiveTab(p.defaultTab) || ({ name: 'services', index: 0 } as ActiveTab)
 )
 
 const { forms, submit } = useContact()
@@ -91,8 +91,8 @@ const { add } = useToast()
 
 const tabs = [
   {
-    slot: 'incubation',
-    label: 'Incubation',
+    slot: 'services',
+    label: 'services',
     title: {
       label: '$2,500 per month',
       main: 'Give Your Business The Support It Deserves',
@@ -128,7 +128,7 @@ const tabs = [
   }
 ]
 
-const submitForm = (event: IncubationT | HireUsT | CollaborateT) => {
+const submitForm = (event: ServiceT | HireUsT | CollaborateT) => {
   try {
     submit({ formType: tabs[activeTab.value.index].slot, formData: event })
     add({ title: "Your message has been submitted. We'll be in contact soon." })
@@ -149,7 +149,7 @@ const contactFAQs = {
     subtitle: 'Check out our FAQs below or reach out to us directly.'
   },
   items: {
-    incubation: [
+    services: [
       {
         label: 'What criteria do you look for in startups to incubate?',
         description:
@@ -161,7 +161,7 @@ const contactFAQs = {
           'We typically engage during the early stages, but are open to startups at any stage with a compelling proposition.'
       },
       {
-        label: 'How long does the incubation process typically last?',
+        label: 'How long does the services process typically last?',
         description:
           "Our incubation process typically lasts for 6-12 months, depending on the startup's needs and progress."
       },
