@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex gap-4 my-12 p-4 lg:p-8 rounded-md justify-between items-center border border-color bg-primary-50 dark:bg-primary-950"
+    class="flex gap-4 my-12 p-4 lg:p-8 rounded-md justify-between items-center border border-color bg-primary-50 dark:bg-primary-950 h-64"
   >
     <div class="w-2/3">
       <h2
