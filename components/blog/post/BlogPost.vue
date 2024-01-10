@@ -78,11 +78,14 @@ defineProps({
 /* Responsive font size for mobile devices */
 @media (max-width: 768px) {
   .nuxt-content p {
-    font-size: 18px; /* Reduced font size for mobile */
+    font-size: 18px;
+  }
+
+  .nuxt-content li {
+    font-size: 18px;
   }
 }
 
-/* Base styles for headings */
 .nuxt-content h2,
 .nuxt-content h3,
 .nuxt-content h4,
@@ -102,7 +105,7 @@ defineProps({
 }
 
 .nuxt-content h3 {
-  margin-top: 39px;
+  margin-top: 2.8rem;
   font-size: 28px;
   line-height: 1.6;
 }
@@ -110,5 +113,31 @@ defineProps({
 .nuxt-content h4 {
   font-size: 22px;
   line-height: 1.3;
+}
+
+.nuxt-content ul, ol {
+  margin-bottom: 30px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.nuxt-content ul {
+  list-style: disc;
+}
+
+.nuxt-content ol {
+  list-style: decimal;
+}
+
+.nuxt-content li {
+  margin-left: 1.6rem;
+  font-size: 20px;
+  margin-bottom: 22px;
+  line-height: 1.55;
+}
+
+.nuxt-content p a {
+  color: #10B981;
+  text-decoration: none;
+  font-weight: 500;
 }
 </style>

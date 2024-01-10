@@ -1,5 +1,5 @@
 <template>
-  <div class="py-4">
+  <div class="my-12">
     <table class="w-full overflow-hidden border-collapse">
       <thead>
         <tr class="foreground">
@@ -16,7 +16,7 @@
         <tr
           v-for="(row, rowIndex) in modifiedRows"
           :key="rowIndex"
-          class="text-sm odd:background even:foreground hover:bg-primary-50 dark:hover:bg-primary-950"
+          class="text-sm odd:background even:foreground hover:bg-primary-50 dark:hover:bg-zinc-900"
         >
           <td
             v-for="(value, key) in row"
