@@ -28,14 +28,14 @@
           color="primary"
           variant="outline"
           size="xl"
-          to="/services"
+          to="#"
           @click="
             $posthog()?.capture('interest_shown_services', {
               source: 'home_hero'
-            })
+            }) && openCalendlyPopup
           "
         >
-          Find Out More
+          Enquire Today
         </UButton>
       </div>
       <div
@@ -58,9 +58,12 @@
 
 <script setup lang="ts">
 const title = {
-  main: 'Your Business From Idea To Profitable',
-  description: 'Essential growth services for early-stage businesses'
+  main: 'On-Demand Nuxt 3 Developers',
+  description:
+    'Highly skilled, affordable, and vetted Nuxt 3 contractors available on an as-needed basis.'
 }
+
+const { openCalendlyPopup } = useCalendly()
 
 useHead({ title: title.main, meta: [{ name: title.description }] })
 </script>

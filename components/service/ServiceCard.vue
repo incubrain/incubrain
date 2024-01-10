@@ -23,7 +23,7 @@
         <UButton
           color="primary"
           variant="solid"
-          :to="`/services/${service.title}`"
+          :to="`/${service.title}`"
         >
           Learn More
         </UButton>

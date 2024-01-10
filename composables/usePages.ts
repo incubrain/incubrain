@@ -12,28 +12,21 @@ const pages = ref([
     label: 'Blog',
     icon: 'i-mdi-chevron-right',
     slug: '/blog'
-  },
-  {
-    id: 2,
-    label: 'Services',
-    icon: 'i-mdi-chevron-right',
-    slug: '/services',
-    children: []
-  },
-  {
-    id: 3,
-    label: 'About',
-    icon: 'i-mdi-chevron-right',
-    slug: '/about',
-    children: []
-  },
-  {
-    id: 4,
-    label: 'Contact',
-    icon: 'i-mdi-chevron-right',
-    slug: '/contact-collaborate',
-    children: []
   }
+  // {
+  //   id: 2,
+  //   label: 'Incubation',
+  //   icon: 'i-mdi-chevron-right',
+  //   slug: '/incubation',
+  //   children: []
+  // },
+  // {
+  //   id: 3,
+  //   label: 'About',
+  //   icon: 'i-mdi-chevron-right',
+  //   slug: '/about',
+  //   children: []
+  // }
 ] as Page[])
 
 const socials = ref({

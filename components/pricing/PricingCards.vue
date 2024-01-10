@@ -10,7 +10,7 @@
     <div
       :class="
         !singleCard
-          ? `md:grid-cols-2 lg:grid-cols-${pricing.items.length + 1 || 1}`
+          ? `md:grid-cols-2 lg:grid-cols-${pricing.items.length || 1}`
           : 'lg:grid-cols-[minmax(320px,_340px)]]'
       "
       class="grid gap-4 lg:gap-8"
@@ -55,19 +55,32 @@
           </li>
         </ul>
         <template #footer>
-          <UButton
+          <div
             v-if="!singleCard"
-            :to="item.cta.link"
-            variant="outline"
-            block
-            @click="
-              $posthog()?.capture(item.cta.event, {
-                source: 'pricing_card'
-              })
-            "
+            class="w-full"
           >
-            {{ item.cta.title }}
-          </UButton>
+            <UButton
+              v-if="item.cta.disabled"
+              disabled
+              variant="outline"
+              block
+              @click="
+                $posthog()?.capture(item.cta.event, {
+                  source: 'pricing_card'
+                })
+              "
+            >
+              {{ item.cta.title }}
+            </UButton>
+            <UButton
+              v-else
+              variant="outline"
+              block
+              @click="pricingBtnClick(item.cta.event, $posthog)"
+            >
+              {{ item.cta.title }}
+            </UButton>
+          </div>
           <slot />
         </template>
       </UCard>
@@ -89,19 +102,63 @@ defineProps({
   }
 })
 
+const { openCalendlyPopup } = useCalendly()
+
+const pricingBtnClick = (event: string, posthog: any) => {
+  posthog()?.capture(event, {
+    source: 'pricing_card'
+  })
+  openCalendlyPopup()
+}
+
 const pricing = {
   items: [
     {
       id: 1,
-      title: 'Business services',
-      description:
-        'Get 50 hours per week from our team of experts to propel your business forwards!',
-      icon: 'i-material-symbols-rocket-launch-rounded',
-      price: '2,500 Per Month (Limited to 5)',
+      title: 'Managed Developers',
+      description: "Need one or more Nuxt experts? We've got you covered.",
+      icon: 'i-material-symbols-code-rounded',
+      price: '30 Per Hour Each',
       cta: {
-        title: 'More Information',
-        link: '/services',
-        event: 'view_services'
+        disabled: false,
+        title: 'Enquire Now',
+        event: 'contact_hire_developers'
+      },
+      benefits: [
+        'Only Nuxt Experts',
+        '20 or 40 Hours Per Week',
+        'Code Review Before You See It',
+        'Individual Developer, Team Environment'
+      ]
+    },
+    {
+      id: 2,
+      title: 'Talent Acquisition',
+      description: 'Find the best remote Nuxt developers for your team.',
+      icon: 'i-material-symbols-settings-outline',
+      price: '60 Per Hour',
+      cta: {
+        title: 'Enquire Now',
+        event: 'contact_talent_acquisition'
+      },
+      benefits: [
+        'Boots On The Ground in Pune, India',
+        'Unbeatable Employee Value',
+        'Pre-Screening Interviewing',
+        'Technical Interviewing',
+        'Guaranteed 3 Final Candidates'
+      ]
+    },
+    {
+      id: 3,
+      title: 'Nuxt Incubation',
+      description: 'Collaborate with our team to propel your business forwards!',
+      icon: 'i-material-symbols-rocket-launch-rounded',
+      price: '5,000 Per Month (Limited to 2)',
+      cta: {
+        disabled: true,
+        title: 'Coming Soon',
+        event: 'view_incubation'
       },
       benefits: [
         'Align With Your Vision',
@@ -109,29 +166,8 @@ const pricing = {
         'MVP Planning/Development',
         'Product R&D',
         'SEO Strategy',
-        'Exclusive Founder Group',
-        'Become an Incubrain Investor (T&Cs)'
-      ]
-    },
-    {
-      id: 2,
-      title: 'Hire Us',
-      description: 'Have a project that needs a team of experts? We can help!',
-      icon: 'i-material-symbols-settings-outline',
-      price: '80 Per Hour',
-      cta: {
-        title: 'Enquire Now',
-        link: '/contact-hire-us',
-        event: 'view_contact_hire_us'
-      },
-      benefits: [
-        'Nuxt Best Practices',
-        'Nuxt Module Creation',
-        'PWA & Ionic Apps',
-        'SEO Audit & Implementation',
-        'Business Consulting',
-        'Talent Acquisition',
-        'Content Creation'
+        'Developer Support',
+        'T&C Apply'
       ]
     }
   ]

@@ -2,7 +2,22 @@
 
 export default defineNuxtConfig({
   app: {
-    layoutTransition: { name: 'layout', mode: 'out-in' }
+    layoutTransition: { name: 'layout', mode: 'out-in' },
+    head: {
+      script: [
+        {
+          src: 'https://assets.calendly.com/assets/external/widget.js',
+          async: true
+        }
+      ],
+      link: [
+        {
+          rel: 'stylesheet',
+          href: 'https://assets.calendly.com/assets/external/widget.css',
+          async: true
+        }
+      ]
+    }
   },
 
   modules: [
