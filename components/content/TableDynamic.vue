@@ -34,20 +34,34 @@
 <script setup lang="ts">
 type TableRow = Record<string, any>
 
-const p = defineProps<{
-  addLink: string
-  headings: string[]
-  rows: TableRow[]
-}>()
+const p = defineProps({
+  addLink: {
+    type: String,
+    required: false,
+    default: null
+  },
+  headings: {
+    type: Array as PropType<string[]>,
+    required: true
+  },
+  rows: {
+    type: Array as PropType<TableRow[]>,
+    required: true
+  }
+})
 
 const modifiedRows = ref(
   p.rows.map((row) => {
-    const newRow = { ...row }
-    if (newRow.link) {
-      newRow[p.addLink] = `<a href="${newRow.link}" target="_blank" class="link">${newRow[p.addLink]}</a>`
-      delete newRow.link
+    const { link, ...newRowWithoutLink } = row
+    // If there's a link, add the anchor tag to the specified property
+    console.log('TableDynamic')
+    if (link) {
+      newRowWithoutLink[p.addLink] = `<a href="${link}" target="_blank" class="link">${
+        row[p.addLink]
+      }</a>`
     }
-    return newRow
+
+    return newRowWithoutLink
   })
 )
 </script>
