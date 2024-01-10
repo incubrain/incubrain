@@ -23,7 +23,7 @@
               >
                 Discord
               </NuxtLink>
-              for a peek behind the scenes, see how we run Incubrain and learn from our wins/fails.
+              and start networking and learning together with other Nuxt developers.
             </p>
           </div>
           <CommonStack class="flex-grow" />
@@ -69,8 +69,8 @@ const commonCards = [
   },
   {
     content: {
-      title: 'Global Founder Network',
-      description: 'Grow with other passionate founders'
+      title: 'Global Nuxt Network',
+      description: 'Grow with other passionate Nuxters'
     },
     parent: 'hidden relative h-full md:flex flex-col',
     img: {

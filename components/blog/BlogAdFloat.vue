@@ -23,20 +23,20 @@
       </div>
       <p class="text-sm font-semibold uppercase">Nuxt 💯</p>
     </div>
-    <div class="flex flex-col gap-1">
+    <div class="flex flex-col gap-1 w-full">
       <h3 class="text-2xl font-semibold">
         {{ title }}
       </h3>
       <p class="text-base">
         {{ description }}.
-        <NuxtLink
-          :to="discord.url"
-          class="underline font-semibold"
-          @click="$posthog()?.capture('join_community')"
-        >
-          It's FREE, join now!
-        </NuxtLink>
       </p>
+      <NuxtLink
+        :to="discord.url"
+        class="underline font-semibold"
+        @click="$posthog()?.capture('join_community')"
+      >
+        It's FREE, join now!
+      </NuxtLink>
     </div>
   </div>
 </template>

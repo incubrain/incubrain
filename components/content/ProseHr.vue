@@ -3,7 +3,7 @@
     <div class="absolute p-2 rounded-full foreground border border-color">
       <NuxtImg
         src="images/incubrain-logo.svg"
-        alt="Incubrain Logo on contact page"
+        alt="Incubrain logo inline separator"
         class="dark:invert"
         width="36"
         height="36"

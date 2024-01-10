@@ -4,22 +4,15 @@
     <CommonCardScroll />
 
     <div class="spaced-y wrapper padded-x pb-16 lg:pb-32">
-      <CommonCTA2 :title="mainCTA.title">
-        <UButton
-          to="/blog"
-          variant="outline"
-        >
-          {{ mainCTA.cta }}
-        </UButton>
-      </CommonCTA2>
-      <CommonManyFeatures :title="manyFeat" />
-      <CommonCeoMessage :title="content.ceoMessage.title" />
-      <PricingCards :title="pricingTitle" />
-      <CommonDivider :title="dividerTitle" />
-      <CommonCommunity :title="content.joinCommunity.title">
+      <!-- <LazyCommonCTA2 :title="mainCTA.title" /> -->
+      <CommonManyFeatures :title="manyFeat" class="pt-16" />
+      <LazyPricingCards :title="pricingTitle" />
+      <LazyCommonCeoMessage :title="content.ceoMessage.title" />
+      <LazyCommonDivider :title="dividerTitle" />
+      <LazyCommonCommunity :title="content.joinCommunity.title">
         <div>
           <UButton
-            :to="discord.url"
+          :to="discord.url"
             target="_blank"
             variant="outline"
             @click="
@@ -31,9 +24,9 @@
             Join for free
           </UButton>
         </div>
-      </CommonCommunity>
-      <CommonDivider :title="dividerTitle2" />
-      <BlogDisplay
+      </LazyCommonCommunity>
+      <LazyCommonDivider :title="dividerTitle2" />
+      <LazyBlogDisplay
         :title="postTitle"
         post-type="business"
       >
@@ -43,7 +36,7 @@
         >
           View All
         </UButton>
-      </BlogDisplay>
+      </LazyBlogDisplay>
     </div>
   </div>
 </template>
@@ -57,25 +50,24 @@ definePageMeta({
 
 const pricingTitle = {
   label: 'Our Services',
-  main: 'Essential Services For Growing Online Businesses',
-  subtitle: 'We challenge you to find better value for money than our Incubation program!'
+  main: 'Essential Services For Growing Nuxt Businesses',
+  subtitle: 'We settle for nothing less than excellence, if you\'re unsatasfied with our developers, we\'ll replace them at no extra cost. T&C\'s apply (enquire).'
 }
 
 const mainCTA = {
   title: {
-    label: "WE'RE IN THIS TOGETHER",
-    main: 'Incubrain Customers Are Incubrain Investors',
+    label: 'PARTNER WITH EXPERTISE',
+    main: 'Flexible Hiring: Individual Experts or Integrated Teams',
     subtitle:
-      'Three years with Incubrain, and your expenditure converts into shares in our company.'
-  },
-  cta: 'More Information'
+      'Experience unparalleled development flexibility with Incubrain. Tailor your team to fit your vision, leveraging our expertise for dynamic, scalable solutions.'
+  }
 }
 
 const manyFeat = {
-  label: 'What you get',
-  main: '50 Hours Per Week From Our Team Of Experts',
+  label: 'Custom Development Teams',
+  main: 'Dedicated Nuxt Contractors & Talent Acquisition',
   subtitle:
-    'Our experts a specifically selected based on how much value they can add to early-stage companies.'
+    "Opt for individual developers or full teams with managers, designers, and developers, tailored to your project's unique requirements."
 }
 
 const dividerTitle = {
@@ -104,7 +96,7 @@ const content = {
       label: 'Engage & Evolve',
       main: 'Become a Part of Our Growing Community',
       subtitle:
-        'Dive into a dynamic community of entrepreneurs and tech enthusiasts; share, learn, and evolve as you leverage our pool of resources and knowledge.'
+        'Dive into a dynamic community of entrepreneurs and nuxt enthusiasts; share, learn, and evolve as you leverage our pool of resources and knowledge.'
     }
   },
   ceoMessage: {
@@ -112,7 +104,7 @@ const content = {
       label: 'Our Guarantee',
       main: 'We Treat Your Business As Our Own',
       subtitle:
-        "Without your support Incubrain ceases to exist, within your success lies ours; so we'll do everything in our power to get you there!"
+        "Without your support Incubrain ceases to exist, within your success lies ours; so we'll do everything in our power to reach your goals!"
     }
   }
 }

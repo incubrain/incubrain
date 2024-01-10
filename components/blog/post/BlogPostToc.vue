@@ -4,11 +4,11 @@
       <UBadge
         :label="`Version ${version}`"
         color="white"
-        variant="solid"
+        variant="soft"
         size="sm"
       />
       <UBadge
-        :label="`Updated ${updatedAt}`"
+        :label="`Updated ${useDateFormat(updatedAt, 'DD MMM YYYY').value}`"
         color="primary"
         variant="subtle"
         size="sm"

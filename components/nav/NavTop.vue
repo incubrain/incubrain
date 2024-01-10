@@ -97,7 +97,6 @@
         :to="discord.url"
         target="_blank"
         color="primary"
-        class="lg:before:content-['Join']"
         @click="$posthog()?.capture('join_community')"
       >
         Community

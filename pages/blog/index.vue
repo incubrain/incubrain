@@ -21,8 +21,8 @@
       class="wrapper lg:px-8 lg:pb-8 grid grid-cols-1 lg:grid-cols-[0.5fr_1fr] items-start w-full md:gap-4 lg:gap-8 relative"
     >
       <BlogAdFloat
-        title="Founder Group"
-        description="Grow your Nuxt business with us"
+        title="Developer Group"
+        description="Learn and grow with us"
       />
       <div class="grid md:gap-4 grid-cols-1 lg:gap-8 md:grid-cols-2 h-full">
         <BlogCard

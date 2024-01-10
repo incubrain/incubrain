@@ -44,7 +44,7 @@ const features = [
   {
     id: 3,
     title: 'Passion for Business',
-    description: '10+ years obsessing about businesses, we create companies/teams that last.',
+    description: 'We know what a good business plan looks like, and can helf refine yours.',
     icon: 'i-mdi-chart-line'
   },
   {
@@ -62,15 +62,15 @@ const features = [
   },
   {
     id: 6,
-    title: 'Founder Community',
-    description: 'We have a vibrant community of Nuxt innovators and creators growing together.',
+    title: 'Developer Community',
+    description: 'We are building a vibrant community of Nuxt developers, come grow together.',
     icon: 'i-mdi-account-group'
   },
   {
     id: 7,
     title: 'Lifelong Learners',
     description:
-      'We are always levelling up our skills and knowledge, and documenting it on our blog.',
+      "Everyone at Incubrain is always levelling up their skills and knowledge, it's a core-value.",
     icon: 'i-mdi-book-open-outline'
   }
 ]
