@@ -1,6 +1,6 @@
 <template>
   <div class="font-[Oswald] relative">
-    <div class="flex justify-end gap-2">
+    <div class="flex xl:justify-end gap-2">
       <UBadge
         :label="`Version ${version}`"
         color="white"
@@ -14,8 +14,8 @@
         size="sm"
       />
     </div>
-    <h2 class="text-xl text-right font-semibold py-4">Table of Contents</h2>
-    <ul dir="RTL">
+    <h2 class="text-xl xl:text-right font-semibold py-4">Table of Contents</h2>
+    <ul :dir="width > 1280 ? 'RTL' : 'LTR'">
       <li
         v-for="item in toc"
         :key="item.id"
@@ -58,6 +58,8 @@ type TOCItem = {
   text: string
   children?: TOCItem[]
 }
+
+const { width } = useWindowSize()
 
 const p = defineProps({
   toc: {
