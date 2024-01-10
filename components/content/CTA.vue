@@ -50,6 +50,7 @@ defineProps({
   },
   imageUrl: {
     type: String,
+    required: false,
     default: 'incubrain-logo.svg'
   }
 })

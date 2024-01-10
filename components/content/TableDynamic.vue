@@ -54,7 +54,6 @@ const modifiedRows = ref(
   p.rows.map((row) => {
     const { link, ...newRowWithoutLink } = row
     // If there's a link, add the anchor tag to the specified property
-    console.log('TableDynamic')
     if (link) {
       newRowWithoutLink[p.addLink] = `<a href="${link}" target="_blank" class="link">${
         row[p.addLink]
