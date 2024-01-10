@@ -45,23 +45,30 @@ const socials = ref({
     {
       id: 2,
       label: 'LinkedIn',
-      slug: 'https://linkedin.com/in/incubrain',
+      slug: 'https://www.linkedin.com/company/incubrain/',
       username: 'incubrain',
       icon: 'i-mdi-linkedin'
     },
     {
       id: 3,
       label: 'YouTube',
-      slug: 'https://youtube.com/channel/incubrain',
+      slug: 'https://youtube.com/channel/UC8MV3xG8i_G47445TADB23A',
       username: 'incubrain',
       icon: 'i-mdi-youtube'
     },
+    // {
+    //   id: 4,
+    //   label: 'Instagram',
+    //   slug: 'https://instagram.com/incubrain',
+    //   username: 'incubrain',
+    //   icon: 'i-mdi-instagram'
+    // },
     {
-      id: 4,
-      label: 'Instagram',
-      slug: 'https://instagram.com/incubrain',
+      id: 5,
+      label: 'Twitter',
+      slug: 'https://twitter.com/incubrain',
       username: 'incubrain',
-      icon: 'i-mdi-instagram'
+      icon: 'i-mdi-twitter'
     }
   ]
 })
