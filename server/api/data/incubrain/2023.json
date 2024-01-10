@@ -349,7 +349,7 @@
         }
       },
       {
-        "path": "/contact-hire-us",
+        "path": "/contact-hire-team",
         "score": 0.93,
         "categories": {
           "performance": {
@@ -437,7 +437,7 @@
         }
       },
       {
-        "path": "/services",
+        "path": "/incubation",
         "score": 0.88,
         "categories": {
           "performance": {
@@ -481,7 +481,7 @@
         }
       },
       {
-        "path": "/services",
+        "path": "/incubation",
         "score": 0.86,
         "categories": {
           "performance": {
@@ -1272,7 +1272,7 @@
         }
       },
       {
-        "path": "/contact-hire-us",
+        "path": "/contact-hire-team",
         "score": 0.89,
         "categories": {
           "performance": {
@@ -1360,7 +1360,7 @@
         }
       },
       {
-        "path": "/services",
+        "path": "/incubation",
         "score": 0.95,
         "categories": {
           "performance": {

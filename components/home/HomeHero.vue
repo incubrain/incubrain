@@ -30,9 +30,7 @@
           size="xl"
           to="#"
           @click="
-            $posthog()?.capture('interest_shown_services', {
-              source: 'home_hero'
-            }) && openCalendlyPopup
+            handleBtnClick('contact_hire_developers', $posthog)
           "
         >
           Enquire Today
@@ -64,6 +62,13 @@ const title = {
 }
 
 const { openCalendlyPopup } = useCalendly()
+
+const handleBtnClick = (event: string, posthog: any) => {
+  posthog()?.capture(event, {
+    source: 'hero_cta'
+  })
+  openCalendlyPopup()
+}
 
 useHead({ title: title.main, meta: [{ name: title.description }] })
 </script>

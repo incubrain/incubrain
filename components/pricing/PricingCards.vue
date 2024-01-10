@@ -10,7 +10,7 @@
     <div
       :class="
         !singleCard
-          ? `md:grid-cols-2 lg:grid-cols-${pricing.items.length || 1}`
+          ? `md:grid-cols-2 lg:grid-cols-${pricing.items.length + 1 || 1}`
           : 'lg:grid-cols-[minmax(320px,_340px)]]'
       "
       class="grid gap-4 lg:gap-8"
@@ -133,24 +133,6 @@ const pricing = {
     },
     {
       id: 2,
-      title: 'Talent Acquisition',
-      description: 'Find the best remote Nuxt developers for your team.',
-      icon: 'i-material-symbols-settings-outline',
-      price: '60 Per Hour',
-      cta: {
-        title: 'Enquire Now',
-        event: 'contact_talent_acquisition'
-      },
-      benefits: [
-        'Boots On The Ground in Pune, India',
-        'Unbeatable Employee Value',
-        'Pre-Screening Interviewing',
-        'Technical Interviewing',
-        'Guaranteed 3 Final Candidates'
-      ]
-    },
-    {
-      id: 3,
       title: 'Nuxt Incubation',
       description: 'Collaborate with our team to propel your business forwards!',
       icon: 'i-material-symbols-rocket-launch-rounded',

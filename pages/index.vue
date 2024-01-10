@@ -5,14 +5,17 @@
 
     <div class="spaced-y wrapper padded-x pb-16 lg:pb-32">
       <!-- <LazyCommonCTA2 :title="mainCTA.title" /> -->
-      <CommonManyFeatures :title="manyFeat" class="pt-16" />
+      <CommonManyFeatures
+        :title="manyFeat"
+        class="pt-16"
+      />
       <LazyPricingCards :title="pricingTitle" />
       <LazyCommonCeoMessage :title="content.ceoMessage.title" />
       <LazyCommonDivider :title="dividerTitle" />
       <LazyCommonCommunity :title="content.joinCommunity.title">
         <div>
           <UButton
-          :to="discord.url"
+            :to="discord.url"
             target="_blank"
             variant="outline"
             @click="
@@ -51,23 +54,24 @@ definePageMeta({
 const pricingTitle = {
   label: 'Our Services',
   main: 'Essential Services For Growing Nuxt Businesses',
-  subtitle: 'We settle for nothing less than excellence, if you\'re unsatasfied with our developers, we\'ll replace them at no extra cost. T&C\'s apply (enquire).'
+  subtitle:
+    "We settle for nothing less than excellence, if you're unsatasfied with our developers, we'll replace them at no extra cost. T&C's apply (enquire)."
 }
 
 const mainCTA = {
   title: {
     label: 'PARTNER WITH EXPERTISE',
-    main: 'Flexible Hiring: Individual Experts or Integrated Teams',
+    main: 'Flexible Hiring: Part-Time, Full-Time, or Project-Based Developer',
     subtitle:
       'Experience unparalleled development flexibility with Incubrain. Tailor your team to fit your vision, leveraging our expertise for dynamic, scalable solutions.'
   }
 }
 
 const manyFeat = {
-  label: 'Custom Development Teams',
-  main: 'Dedicated Nuxt Contractors & Talent Acquisition',
+  label: 'Exclusively Nuxt',
+  main: 'We Hire Only The Best Nuxt Developers',
   subtitle:
-    "Opt for individual developers or full teams with managers, designers, and developers, tailored to your project's unique requirements."
+    'Our agile team has a wide range of expertise, but they all share one thing in common: a passion for Nuxt.'
 }
 
 const dividerTitle = {
