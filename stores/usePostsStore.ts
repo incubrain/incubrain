@@ -104,16 +104,13 @@ export const usePostsStore = defineStore('posts', () => {
         skip,
         limit
       })
-      console.log('newPosts', newPosts, limit)
       if (newPosts.length < limit) {
         allPostsFetched[selectedCategory.value] = true
-        console.log('all posts fetched', allPostsFetched[selectedCategory.value])
       }
 
       const validPosts = newPosts.filter((post) => isValidPost(post as PostCard, postCardSchema))
       if (!validPosts.length) return
       posts[selectedCategory.value].push(...(validPosts as PostCard[]))
-      console.log('posts fetched')
     } catch (error) {
       console.error('Failed to get posts:', error)
     } finally {

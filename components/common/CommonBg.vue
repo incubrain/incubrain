@@ -208,7 +208,6 @@ onMounted(() => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         // Add animation class when the component is in view
-        console.log('Element In View', entry)
         setTimeout(() => {
           entry.target
             .querySelectorAll('.svg-elem-1, .svg-elem-2, .svg-elem-3, .svg-elem-4, .svg-elem-5')

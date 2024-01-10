@@ -8,7 +8,6 @@ export default defineNuxtPlugin(() => {
       // get_property() can only be called after the PostHog library has finished loading.
 
       if (import.meta.env.MODE === 'development') posthog.debug()
-      console.log('posthog', posthog)
     }
     // callback_fn: (event, error) => {
     //   console.log('callback_fn', event, error)

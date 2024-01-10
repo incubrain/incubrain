@@ -51,7 +51,6 @@ const socialPlatforms = ref([])
 onMounted(() => {
   if (window) {
     currentUrl.value = encodeURIComponent(window.location.href)
-    console.log('currentUrl', currentUrl.value)
     socialPlatforms.value = [
       {
         name: 'Twitter',
