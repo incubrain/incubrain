@@ -6,9 +6,9 @@ export const dateSchema = z
   .regex(/^\d{4}\/\d{2}\/\d{2}$/, 'Date must be in YYYY/MM/DD format.')
 
 // POST CATEGORIES
-export const postCategorySchema = z.enum(['all', 'frontend', 'backend', 'business', 'projects', 'future'])
+export const postCategorySchema = z.enum(['all', 'frontend', 'backend', 'business', 'projects'])
 export type PostCategoriesT = z.infer<typeof postCategorySchema>
-export const CATEGORIES: PostCategoriesT[] = ['all', 'frontend', 'backend', 'business', 'projects', 'future']
+export const CATEGORIES: PostCategoriesT[] = ['all', 'frontend', 'backend', 'business', 'projects']
 
 // POST TAGS
 export const postTagSchema = z.enum([
@@ -31,6 +31,7 @@ export const postTagSchema = z.enum([
   'testing',
   'productivity',
   // business
+  'benefits',
   'culture',
   'hiring',
   'systems',
@@ -38,6 +39,7 @@ export const postTagSchema = z.enum([
   'salaries',
   'customers',
   'community',
+  'future',
   'content-creation',
   'seo',
   'design'
@@ -58,6 +60,8 @@ export const TAGS: PostTagsT[] = [
   'testing',
   'productivity',
   'culture',
+  'future',
+  'benefits',
   'hiring',
   'imagine',
   'systems',
@@ -74,11 +78,11 @@ export const TAGS: PostTagsT[] = [
 export const postCardSchema = z.object({
   title: z
     .string()
-    .min(40, 'Title must be at least 40 char long')
+    .min(10, 'Title must be at least 20 char long')
     .max(70, 'Title has a max length of 70 char'),
   description: z
     .string()
-    .min(160, 'Description must be at least 160 char long')
+    .min(1, 'Description must be at least 160 char long')
     .max(280, 'Description has a max length of 280 char'),
   category: postCategorySchema,
   tags: z
