@@ -163,7 +163,7 @@ export const usePostsStore = defineStore('posts', () => {
 
   const getPostsOnScroll = async () => {
     if (!posts[selectedCategory.value]?.length) return
-    await getPosts({ skip: posts[selectedCategory.value].length })
+    await getPosts({ skip: posts[selectedCategory.value].length + 1 })
   }
 
   return {
