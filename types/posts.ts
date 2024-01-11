@@ -28,21 +28,24 @@ export const postTagSchema = z.enum([
   'imagine',
   'learning',
   'code quality',
+  'kindness',
   'testing',
   'productivity',
   // business
+  'marketing',
   'benefits',
   'culture',
   'hiring',
   'systems',
   'research',
+  'tools',
   'salaries',
   'customers',
   'community',
   'future',
-  'content-creation',
   'seo',
-  'design'
+  'design',
+  'product-review'
 ])
 export type PostTagsT = z.infer<typeof postTagSchema>
 export const TAGS: PostTagsT[] = [
@@ -59,17 +62,19 @@ export const TAGS: PostTagsT[] = [
   'code quality',
   'testing',
   'productivity',
+  'kindness',
   'culture',
   'future',
   'benefits',
   'hiring',
+  'marketing',
+  'tools',
   'imagine',
   'systems',
   'research',
   'salaries',
   'customers',
   'community',
-  'content-creation',
   'seo',
   'design'
 ]
