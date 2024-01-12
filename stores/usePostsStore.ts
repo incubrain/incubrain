@@ -1,9 +1,5 @@
 import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
 import {
-  PostTags,
-  PostCategories,
-  PostFullT,
-  PostCard,
   postCardSchema,
   postFullSchema,
   POST_CARD_PROPERTIES,
@@ -12,35 +8,37 @@ import {
   TAGS
 } from '../types/posts'
 
+import type { PostTagsT, PostCategoriesT, PostFullT, PostCardT } from '../types/posts'
+
 const postsToLoad = 10
 
 export const usePostsStore = defineStore('posts', () => {
-  type PostsType = Record<PostCategories, PostCard[]>
+  type PostsType = Record<PostCategoriesT, PostCardT[]>
 
   function initializeCategories<T>(
-    initializer: (category: PostCategories) => T
-  ): Record<PostCategories, T> {
+    initializer: (category: PostCategoriesT) => T
+  ): Record<PostCategoriesT, T> {
     return Object.fromEntries(
       CATEGORIES.map((category) => [category, initializer(category)])
-    ) as Record<PostCategories, T>
+    ) as Record<PostCategoriesT, T>
   }
 
   const postsLoading = ref(false)
-  const posts: PostsType = reactive(initializeCategories(() => <PostCard[]>[]))
-  const postsShowcase: PostsType = reactive(initializeCategories(() => <PostCard[]>[]))
-  const allPostsFetched: Record<PostCategories, boolean> = reactive(
+  const posts: PostsType = reactive(initializeCategories(() => <PostCardT[]>[]))
+  const postsShowcase: PostsType = reactive(initializeCategories(() => <PostCardT[]>[]))
+  const allPostsFetched: Record<PostCategoriesT, boolean> = reactive(
     initializeCategories(() => false)
   )
 
-  const selectedCategory = ref<PostCategories>('all')
-  const selectedTags = ref<PostTags[]>([...TAGS])
+  const selectedCategory = ref<PostCategoriesT>('all')
+  const selectedTags = ref<PostTagsT[]>([...TAGS])
 
   /**
    * Toggle the selected tag in the filter.
    * @param tag - The tag to toggle.
    */
 
-  function toggleTag(tag: PostTags) {
+  function toggleTag(tag: PostTagsT) {
     const index = selectedTags.value.indexOf(tag)
     if (index < 0) {
       selectedTags.value.push(tag)
@@ -56,8 +54,8 @@ export const usePostsStore = defineStore('posts', () => {
   }: {
     skip: number
     limit: number
-    category: PostCategories
-  }): Promise<PostCard[]> => {
+    category: PostCategoriesT
+  }): Promise<PostCardT[]> => {
     const whereOptions: QueryBuilderParams = {
       tags: { $in: selectedTags.value },
       status: { $eq: 'published' }
@@ -75,7 +73,7 @@ export const usePostsStore = defineStore('posts', () => {
       .limit(limit)
       .find()
 
-    return newPosts as PostCard[]
+    return newPosts as PostCardT[]
   }
 
   /**
@@ -108,9 +106,9 @@ export const usePostsStore = defineStore('posts', () => {
         allPostsFetched[selectedCategory.value] = true
       }
 
-      const validPosts = newPosts.filter((post) => isValidPost(post as PostCard, postCardSchema))
+      const validPosts = newPosts.filter((post) => isValidPost(post as PostCardT, postCardSchema))
       if (!validPosts.length) return
-      posts[selectedCategory.value].push(...(validPosts as PostCard[]))
+      posts[selectedCategory.value].push(...(validPosts as PostCardT[]))
     } catch (error) {
       console.error('Failed to get posts:', error)
     } finally {
@@ -123,21 +121,21 @@ export const usePostsStore = defineStore('posts', () => {
    * @param category - The new category to set.
    */
 
-  async function toggleCategory(category: PostCategories) {
+  async function toggleCategory(category: PostCategoriesT) {
     if (selectedCategory.value !== category) {
       selectedCategory.value = category
       await getPosts()
     }
   }
 
-  const getShowcasePosts = async (category: PostCategories) => {
+  const getShowcasePosts = async (category: PostCategoriesT) => {
     if (postsShowcase[category].length > 2) return postsShowcase[category].slice(0, 3)
     const newPosts = await fetchPosts({
       category,
       skip: 0,
       limit: 3
     })
-    postsShowcase[category].push(...(newPosts as PostCard[]))
+    postsShowcase[category].push(...(newPosts as PostCardT[]))
     return postsShowcase[category].slice(0, 3)
   }
 
@@ -149,7 +147,7 @@ export const usePostsStore = defineStore('posts', () => {
    */
 
   function isValidPost(
-    post: PostCard | PostFullT,
+    post: PostCardT | PostFullT,
     schema: typeof postCardSchema | typeof postFullSchema
   ): boolean {
     try {
