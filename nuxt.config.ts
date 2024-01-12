@@ -1,6 +1,10 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 
 export default defineNuxtConfig({
+  devtools: {
+    enabled: true,
+    vscode: {}
+  },
   app: {
     layoutTransition: { name: 'layout', mode: 'out-in' },
     head: {
@@ -24,6 +28,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxtjs/supabase',
     '@nuxt/image',
+    '@nuxt/devtools',
     '@nuxt/ui',
     '@nuxtseo/module',
     '@vueuse/nuxt',
@@ -129,7 +134,7 @@ export default defineNuxtConfig({
     }
   },
 
-  content: {},
+  content: {}
   //   highlight: {
   //     // Theme used in all color schemes.
   //     theme: {
@@ -138,9 +143,4 @@ export default defineNuxtConfig({
   //     }
   //   }
   // },
-
-  devtools: {
-    enabled: true,
-    vscode: {}
-  }
 })

@@ -4,7 +4,7 @@
       <BlogPostHero :post="post" />
       <div class="w-full grid grid-cols-[1fr] xl:grid-cols-[1fr_740px_1fr] xl:gap-8 pt-8 padded-x">
         <div
-          class="flex flex-col h-full justify-start xl:items-end max-w-[700px] gap-8 mx-auto w-full"
+          class="flex flex-col h-full justify-start xl:items-end max-w-[700px] gap-8 py-12 mx-auto w-full"
         >
           <BlogPostToc
             class="visible xl:hidden"
@@ -69,20 +69,20 @@ defineProps({
 
 <style>
 .nuxt-content p {
-  font-size: 20px; /* Default font size for larger screens */
-  margin-bottom: 30px;
-  line-height: 1.65; /* Adjusted for better readability */
+  font-size: 18px; /* Default font size for larger screens */
+  margin-bottom: 28px;
+  line-height: 1.65;
   font-family: 'Open Sans', sans-serif;
 }
 
 /* Responsive font size for mobile devices */
 @media (max-width: 768px) {
   .nuxt-content p {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .nuxt-content li {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
@@ -92,15 +92,15 @@ defineProps({
 .nuxt-content h5,
 .nuxt-content h6 {
   text-decoration: none;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   font-family: 'Oswald', 'sans-serif';
-  font-weight: 500;
+  font-weight: 700;
 }
 
 /* Golden Ratio for heading sizes */
 .nuxt-content h2 {
   margin-top: 48px;
-  font-size: 32px;
+  font-size: 36px;
   line-height: 1.6;
 }
 
@@ -115,8 +115,9 @@ defineProps({
   line-height: 1.3;
 }
 
-.nuxt-content ul, ol {
-  margin-bottom: 30px;
+.nuxt-content ul,
+ol {
+  margin-bottom: 28px;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -130,13 +131,13 @@ defineProps({
 
 .nuxt-content li {
   margin-left: 1.6rem;
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 22px;
   line-height: 1.55;
 }
 
 .nuxt-content p a {
-  color: #10B981;
+  color: #10b981;
   text-decoration: none;
   font-weight: 500;
 }

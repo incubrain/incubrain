@@ -1,5 +1,5 @@
 <template>
-  <div class="my-12">
+  <div class="mb-12 mt-6">
     <table class="w-full overflow-hidden border-collapse">
       <thead>
         <tr class="foreground">

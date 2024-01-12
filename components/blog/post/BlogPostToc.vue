@@ -21,7 +21,7 @@
         :key="item.id"
       >
         <NuxtLink
-          :class="{ 'text-primary-500 dark:text-primary-800': isActiveSection(item.id) }"
+          :class="{ 'text-primary-500 dark:text-primary-600': isActiveSection(item.id) }"
           class="font-semibold"
           :to="`#${item.id}`"
         >
@@ -40,7 +40,7 @@
             :key="child.id"
             :class="{
               'mr-4 max-w-[80%]': child.depth === 3,
-              'text-primary-500 dark:text-primary-800': isActiveSection(child.id)
+              'text-primary-500 dark:text-primary-600': isActiveSection(child.id)
             }"
           >
             <NuxtLink :to="`#${child.id}`">- {{ child.text }}</NuxtLink>
