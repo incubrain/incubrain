@@ -30,7 +30,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/devtools',
     '@nuxt/ui',
-    '@nuxtseo/module',
+    '@nuxtjs/seo',
     '@vueuse/nuxt',
     '@nuxthq/studio',
     'nuxt-swiper',
@@ -54,6 +54,12 @@ export default defineNuxtConfig({
       type: 'Organization'
     },
     twitter: '@incubrain'
+  },
+
+  ogImage: {
+    componentOptions: {
+      global: true
+    }
   },
 
   nitro: {

@@ -41,10 +41,9 @@ useSeoMeta({
   twitterImage: `${env.baseURL}images/blog/${post.value?.featured_image}`
 })
 
-defineOgImage({
-  component: 'OgImageDefault',
-  image: `images/blog/${post.value?.featured_image}`,
-  baseURL: env.baseURL
+defineOgImageComponent('NuxtSeo', {
+  title: post.value?.title || 'Incubrain Blog',
+  image: `images/blog/${post.value?.featured_image}`
 })
 </script>
 

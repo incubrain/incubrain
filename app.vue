@@ -10,7 +10,6 @@
 </template>
 
 <script setup lang="ts">
-
 useHead({
   htmlAttrs: {
     lang: 'en'
@@ -30,7 +29,8 @@ useHead({
   ]
 })
 
-defineOgImage({
-  component: 'OgImageDefault'
+defineOgImageComponent('NuxtSeo', {
+  title: 'Welcome to Incubrain',
+  description: 'Affordable Nuxt Expert Contractors'
 })
 </script>
