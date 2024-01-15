@@ -26,8 +26,8 @@
       />
       <div class="grid md:gap-4 grid-cols-1 lg:gap-8 md:grid-cols-2 h-full">
         <BlogCard
-          v-for="(post, i) in posts[selectedCategory]"
-          :key="`incubrain-post-${i}`"
+          v-for="post in posts[selectedCategory]"
+          :key="`incubrain-post-${post.id}`"
           :post="post"
         />
         <BlogCardSkeleton v-show="postsLoading" />

@@ -5,6 +5,16 @@ export const dateSchema = z
   .string()
   .regex(/^\d{4}\/\d{2}\/\d{2}$/, 'Date must be in YYYY/MM/DD format.')
 
+const isUUID = (value: string): boolean => {
+  const regex = /^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i
+  return regex.test(value)
+}
+
+// Custom Zod validation
+const UUIDSchema = z.string().refine(isUUID, {
+  message: 'String must be a valid UUID'
+})
+
 // POST CATEGORIES
 export const postCategorySchema = z.enum(['all', 'frontend', 'backend', 'business', 'projects'])
 export type PostCategoriesT = z.infer<typeof postCategorySchema>
@@ -81,6 +91,7 @@ export const TAGS: PostTagsT[] = [
 
 // POST CARD
 export const postCardSchema = z.object({
+  id: UUIDSchema,
   title: z
     .string()
     .min(10, 'Title must be at least 20 char long')
@@ -105,6 +116,7 @@ export const postCardSchema = z.object({
 })
 export type PostCardT = z.infer<typeof postCardSchema>
 export const POST_CARD_PROPERTIES = [
+  'id',
   'title',
   'description',
   'category',
@@ -139,10 +151,9 @@ export const AUTHORS = <AuthorT[]>[
 
 // POST FULL POST
 export const postFullSchema = postCardSchema.extend({
-  id: z.number(),
   body: z.object({}).passthrough(), // passthrough allows any structure within the object
   version: z.number(),
   _id: z.string()
 })
 export type PostFullT = z.infer<typeof postFullSchema>
-export const POST_FULL_PROPERTIES = [...POST_CARD_PROPERTIES, 'body', 'id', '_id', 'version']
+export const POST_FULL_PROPERTIES = [...POST_CARD_PROPERTIES, 'body', '_id', 'version']
