@@ -44,8 +44,8 @@ export default defineNuxtConfig({
 
   site: {
     url: 'https://www.incubrain.org',
-    name: 'Incubrain Product Development Agency',
-    description: 'Incubrain helps you build nuxt amazing products that sell themselves.',
+    name: 'Incubrain - Nuxt Developer Agency',
+    description: 'Incubrain is a group of expert Nuxt contrators, ready to get started on your project today.',
     defaultLocale: 'en',
     trailingSlash: false,
     titleSeparator: ' | ',
