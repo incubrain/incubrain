@@ -39,6 +39,16 @@
           {{ post.description }}
         </p>
       </div>
+      <div class="w-full flex justify-end h-full items-end">
+        <UButton
+          :to="post._path"
+          color="primary"
+          variant="link"
+          class="mt-2"
+        >
+          Read More
+        </UButton>
+      </div>
     </div>
   </TransitionBounce>
 </template>

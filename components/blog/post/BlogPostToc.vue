@@ -1,24 +1,25 @@
 <template>
-  <div class="font-[Oswald] relative">
-    <div class="flex xl:justify-end gap-2">
-      <UBadge
-        :label="`Version ${version}`"
-        color="white"
-        variant="soft"
-        size="sm"
-      />
+  <div class="font-[Oswald] relative text-lg">
+    <div class="flex gap-2">
       <UBadge
         :label="`Updated ${useDateFormat(updatedAt, 'DD MMM YYYY').value}`"
         color="primary"
         variant="subtle"
         size="sm"
       />
+      <UBadge
+        :label="`Version ${version}`"
+        color="white"
+        variant="soft"
+        size="sm"
+      />
     </div>
-    <h2 class="text-xl xl:text-right font-semibold py-4">Table of Contents</h2>
-    <ul :dir="width > 1280 ? 'RTL' : 'LTR'">
+    <h2 class="text-2xl font-semibold py-4">Table of Contents</h2>
+    <ul>
       <li
         v-for="item in toc"
         :key="item.id"
+        class="py-1"
       >
         <NuxtLink
           :class="{ 'text-primary-500 dark:text-primary-600': isActiveSection(item.id) }"
@@ -30,20 +31,21 @@
         <ul
           v-if="item.children"
           :class="[
-            'transition-all duration-700 ease-out overflow-hidden space-y-1',
-            isSectionOrChildActive(item) || expanded ? 'max-h-96' : 'max-h-0'
+            'transition-all duration-700 ease-out overflow-hidden',
+            isSectionOrChildActive(item) || expanded
+              ? `max-h-[${Math.floor((item.children.length + 1) * 31)}px] pt-2`
+              : 'max-h-[0px] py-0'
           ]"
-          class="py-1"
         >
           <li
             v-for="child in item.children"
             :key="child.id"
             :class="{
-              'mr-4 max-w-[80%]': child.depth === 3,
+              'ml-4 max-w-[80%]': child.depth === 3,
               'text-primary-500 dark:text-primary-600': isActiveSection(child.id)
             }"
           >
-            <NuxtLink :to="`#${child.id}`">- {{ child.text }}</NuxtLink>
+            <NuxtLink :to="`#${child.id}`">{{ child.text }}</NuxtLink>
           </li>
         </ul>
       </li>
@@ -58,8 +60,6 @@ type TOCItem = {
   text: string
   children?: TOCItem[]
 }
-
-const { width } = useWindowSize()
 
 const p = defineProps({
   toc: {
@@ -81,6 +81,16 @@ const p = defineProps({
 })
 
 const activeSection = ref('')
+
+// const lineHeight = 31 // For example, 30px per item including margin and padding
+
+// const activeMaxHeight = computed(() => {
+//   return p.toc.map((item) => {
+//     return isSectionOrChildActive(item)
+//       ? `${Math.floor(item?.children?.length * lineHeight)}px`
+//       : '0'
+//   })
+// })
 
 const onScroll = () => {
   let currentSection = ''

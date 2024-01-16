@@ -3,18 +3,25 @@
     <main>
       <BlogPostHero :post="post" />
       <div class="w-full grid grid-cols-[1fr] xl:grid-cols-[1fr_740px_1fr] xl:gap-8 pt-8 padded-x">
+        <div class="hidden xl:block xl:sticky top-24 left-0 h-[300px] xl:col-start-1">
+          <BlogPostToc
+            :toc="post.body.toc.links"
+            :updated-at="post.updatedAt"
+            :version="post.version"
+          />
+        </div>
         <div
-          class="flex flex-col h-full justify-start xl:items-end max-w-[700px] gap-8 py-12 mx-auto w-full"
+          class="flex flex-col h-full justify-start max-w-[700px] gap-8 mx-auto w-full xl:hidden pb-6 "
         >
           <BlogPostToc
-            class="visible xl:hidden"
+            class="visible xl:hidden background py-6 px-4 rounded-md border border-color"
             :toc="post.body.toc.links"
             :updated-at="post.updatedAt"
             :version="post.version"
             expanded
           />
         </div>
-        <div class="mx-auto flex flex-col justify-center items-center w-full">
+        <div class="mx-auto flex flex-col justify-center items-center w-full xl:col-start-2">
           <ContentRenderer
             :value="post"
             class="w-full"
@@ -25,9 +32,7 @@
                   :value="post.body"
                   class="nuxt-content"
                 >
-                  <div>
-                    {{ post.body }}
-                  </div>
+                  {{ post.body }}
                 </ContentRendererMarkdown>
                 <BlogPostShare
                   :slug="post._id.replaceAll(':', '/')"
@@ -36,13 +41,6 @@
               </div>
             </div>
           </ContentRenderer>
-        </div>
-        <div class="hidden xl:block xl:sticky top-24 right-0 h-[300px]">
-          <BlogPostToc
-            :toc="post.body.toc.links"
-            :updated-at="post.updatedAt"
-            :version="post.version"
-          />
         </div>
       </div>
     </main>
@@ -69,21 +67,10 @@ defineProps({
 
 <style>
 .nuxt-content p {
-  font-size: 18px; /* Default font size for larger screens */
-  margin-bottom: 28px;
+  font-size: 18px;
+  margin-bottom: 22px;
   line-height: 1.65;
   font-family: 'Open Sans', sans-serif;
-}
-
-/* Responsive font size for mobile devices */
-@media (max-width: 768px) {
-  .nuxt-content p {
-    font-size: 16px;
-  }
-
-  .nuxt-content li {
-    font-size: 16px;
-  }
 }
 
 .nuxt-content h2,
@@ -99,7 +86,7 @@ defineProps({
 
 /* Golden Ratio for heading sizes */
 .nuxt-content h2 {
-  margin-top: 48px;
+  margin-top: 24px;
   font-size: 36px;
   line-height: 1.6;
 }
@@ -140,5 +127,42 @@ ol {
   color: #10b981;
   text-decoration: none;
   font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .nuxt-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .nuxt-content li {
+    font-size: 16px;
+  }
+
+  .nuxt-content h2 {
+    margin-top: 10px;
+    font-size: 30px;
+    line-height: 1.6;
+  }
+
+  .nuxt-content h3 {
+    margin-top: 2.8rem;
+    font-size: 26px;
+    line-height: 1.6;
+  }
+
+  .nuxt-content h4 {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+
+  .nuxt-content li {
+    margin-left: 1.6rem;
+    font-size: 16px;
+    margin-bottom: 22px;
+    line-height: 1.55;
+  }
 }
 </style>

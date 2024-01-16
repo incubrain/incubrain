@@ -3,12 +3,13 @@
     v-if="author"
     class="rounded-xl border border-color p-4 lg:p-8 foreground"
   >
-    <div class="flex flex-col sm:flex-row items-start gap-4 lg:gap-8">
+    <div class="flex flex-row items-center gap-4 lg:gap-8">
       <NuxtImg
-        class="rounded-md sm:max-w-[120px]"
+        class="rounded-full sm:max-w-[100px] h-full"
         src="images/team/drew-macgibbon.jpg"
         :alt="`${author.givenName} ${author.surname} is an author on the Incubrain Blog`"
-        sizes="100vw sm:120px"
+        sizes="18vw sm:120px"
+        fit="cover"
       />
       <div class="text-left space-y-1 w-full">
         <h4 class="font-semibold"> About {{ author.givenName }} {{ author.surname }} </h4>

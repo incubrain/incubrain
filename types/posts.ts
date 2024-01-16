@@ -145,7 +145,7 @@ export const AUTHORS = <AuthorT[]>[
     givenName: 'Drew',
     surname: 'MacGibbon',
     avatar: 'drew-macgibbon.jpg',
-    bio: 'Drew MacGibbon is the CEO and Founder of Incubrain, with over a decade of online business expertise and similar full-stack Nuxt Developer experience. His focus on crafting exceptional digital products has positioned Incubrain as a leader in innovative tech solutions.'
+    bio: 'Drew MacGibbon is the CEO and Founder of Incubrain, with over a decade of online business expertise and a wealth of Nuxt experience, he loves crafting exceptional products.'
   }
 ]
 

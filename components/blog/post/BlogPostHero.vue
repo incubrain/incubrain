@@ -7,11 +7,7 @@
         width="900"
         height="480"
       />
-      <div class="flex items-start p-3 rounded-md w-full justify-between">
-        <BlogPostAuthor
-          :author-id="post.authors[0]"
-          :published-at="post.publishedAt"
-        />
+      <div class="flex flex-col md:flex-row-reverse gap-12 items-start p-3 rounded-md w-full justify-between">
         <div class="space-x-2">
           <UBadge
             :label="post.category"
@@ -28,6 +24,10 @@
             class="text-sm"
           />
         </div>
+        <BlogPostAuthor
+          :author-id="post.authors[0]"
+          :published-at="post.publishedAt"
+        />
       </div>
       <div
         class="flex relative z-10 gap-8 flex-col items-start mx-auto w-full rounded-md max-w-[740px] pt-8 px-4"
