@@ -93,7 +93,7 @@
           class="w-7 h-7 text-black dark:text-white"
         />
       </NuxtLink>
-      <UButton
+      <!-- <UButton
         :to="discord.url"
         target="_blank"
         color="primary"
@@ -104,7 +104,7 @@
           name="i-mdi-chevron-right"
           class="h-4 w-4 hidden lg:inline-block"
         />
-      </UButton>
+      </UButton> -->
     </div>
   </nav>
 </template>

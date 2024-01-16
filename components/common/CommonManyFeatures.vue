@@ -12,7 +12,7 @@
           alt="Incubrain"
           width="260"
           height="260"
-          class="rounded-lg saturate-50"
+          class="rounded-lg saturate-50 hidden lg:block"
         />
       </div>
 

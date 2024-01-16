@@ -19,7 +19,7 @@
         v-for="item in pricing.items.slice(0, singleCard ? 1 : pricing.items.length)"
         :key="item.title"
         :ui="{
-          base: 'flex flex-col h-full',
+          base: 'flex flex-col h-full overflow-hidden',
           background: 'background',
           ring:
             item.id === 1 ? 'ring-1 ring-primary-500 dark:ring-primary-800' : 'ring-1 ring-color',

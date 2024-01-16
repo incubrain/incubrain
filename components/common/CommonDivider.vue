@@ -6,7 +6,7 @@
     <div
       class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 background border border-color py-2 px-4 rounded-md flex flex-col items-center space-y-1 text-center"
     >
-      <h4 class="font-bold text-lg text-primary-500 uppercase">{{ title.main }}</h4>
+      <h4 class="font-bold text-base lg:text-lg text-primary-500 uppercase text-nowrap">{{ title.main }}</h4>
       <span class="text-sm max-w-xs">{{ title.subtitle }}</span>
     </div>
   </div>
