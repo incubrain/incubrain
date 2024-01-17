@@ -1,10 +1,15 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 
 export default defineNuxtConfig({
-  devtools: {
-    enabled: true,
-    vscode: {}
-  },
+  sourcemap: process.env.NODE_ENV !== 'production',
+  debug: process.env.NODE_ENV !== 'production',
+  devtools:
+    process.env.NODE_ENV !== 'production'
+      ? {
+          enabled: true,
+          vscode: {}
+        }
+      : {},
   app: {
     layoutTransition: { name: 'layout', mode: 'out-in' },
     head: {
@@ -45,11 +50,12 @@ export default defineNuxtConfig({
   site: {
     url: 'https://www.incubrain.org',
     name: 'Incubrain - Nuxt Developer Agency',
-    description: 'Incubrain is a group of expert Nuxt contrators, ready to get started on your project today.',
+    description:
+      'Incubrain is a group of expert Nuxt contrators, ready to get started on your project today.',
     defaultLocale: 'en',
     trailingSlash: false,
     titleSeparator: ' | ',
-    debug: true,
+    debug: process.env.NODE_ENV !== 'production',
     identity: {
       type: 'Organization'
     },
