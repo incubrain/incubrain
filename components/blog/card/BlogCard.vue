@@ -31,8 +31,8 @@
           </p>
           <span class="flex gap-2">
             by
-            {{ postStore.selectedAuthor(post.authors[0])?.givenName }}
-            {{ postStore.selectedAuthor(post.authors[0])?.surname }}
+            {{ selectedAuthor(post.authors[0])?.givenName }}
+            {{ selectedAuthor(post.authors[0])?.surname }}
           </span>
         </div>
         <p class="text-sm">
@@ -54,7 +54,8 @@
 </template>
 
 <script setup lang="ts">
-const postStore = usePostsStore()
+
+const { selectedAuthor } = useAuthors()
 
 const setDate = (d: string) => {
   const [year, month, day] = d.split('/')

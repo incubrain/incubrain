@@ -11,7 +11,7 @@ const pages = ref([
     id: 1,
     label: 'Blog',
     icon: 'i-mdi-chevron-right',
-    slug: '/blog'
+    slug: '/blog/all'
   }
   // {
   //   id: 2,

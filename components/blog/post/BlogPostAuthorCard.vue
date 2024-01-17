@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="author"
+    v-if="author?.givenName"
     class="rounded-xl border border-color p-4 lg:p-8 foreground"
   >
     <div class="flex flex-row items-center gap-4 lg:gap-8">
@@ -29,7 +29,7 @@ const p = defineProps({
   }
 })
 
-const author = usePostsStore().selectedAuthor(p.authorId)
+const author = useAuthors().selectedAuthor(p.authorId)
 </script>
 
 <style scoped></style>

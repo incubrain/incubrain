@@ -21,7 +21,7 @@
 
 <script setup lang="ts">
 import type { TitleT } from '~/types/content'
-import type { PostCategoriesT } from '~/types/posts'
+import type { PostCategoriesT, PostCardT, PostsInitializerT } from '~/types/posts'
 
 const p = defineProps({
   title: {
@@ -34,8 +34,21 @@ const p = defineProps({
   }
 })
 
-const postStore = usePostsStore()
-const { data: posts } = await useAsyncData('posts', () => postStore.getShowcasePosts(p.postType))
+const { categories } = useCatTag()
+const postsShowcase: PostsType = reactive(categories.initialize(() => <PostCardT[]>[]))
+
+const getShowcasePosts = async (category: PostCategoriesT) => {
+  if (postsShowcase[category].length) return postsShowcase[category].slice(0, 3)
+  const newPosts = await fetchPosts({
+    category,
+    skip: 0,
+    limit: 3
+  })
+  postsShowcase[category].push(...(newPosts as PostCardT[]))
+  return postsShowcase[category].slice(0, 3)
+}
+
+const { data: posts } = await useAsyncData('posts', () => getShowcasePosts(p.postType))
 </script>
 
 <style scoped></style>

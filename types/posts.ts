@@ -112,6 +112,7 @@ export const postCardSchema = z.object({
   featured_image: z.string(),
   publishedAt: dateSchema,
   updatedAt: dateSchema,
+  isSSR: z.boolean().optional(),
   _path: z.string()
 })
 export type PostCardT = z.infer<typeof postCardSchema>
@@ -156,4 +157,5 @@ export const postFullSchema = postCardSchema.extend({
   _id: z.string()
 })
 export type PostFullT = z.infer<typeof postFullSchema>
+export type PostsInitializerT = Record<PostCategoriesT, PostCardT[]>
 export const POST_FULL_PROPERTIES = [...POST_CARD_PROPERTIES, 'body', '_id', 'version']

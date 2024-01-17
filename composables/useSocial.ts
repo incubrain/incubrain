@@ -8,8 +8,8 @@ interface Link {
   }
 }
 
-const links: Link[] = [
-  {
+const linksObject = {
+  discord: {
     id: 0,
     label: 'Discord',
     icon: 'i-mdi-discord',
@@ -18,7 +18,7 @@ const links: Link[] = [
       name: 'join_community'
     }
   },
-  {
+  personalGithub: {
     id: 1,
     label: 'Personal Github',
     icon: 'i-mdi-github',
@@ -27,7 +27,7 @@ const links: Link[] = [
       name: 'view_github'
     }
   },
-  {
+  personalLinkedin: {
     id: 2,
     label: 'Personal Linkedin',
     icon: 'i-mdi-linkedin',
@@ -36,11 +36,13 @@ const links: Link[] = [
       name: 'view_linkedin'
     }
   }
-]
+}
 
-const ceoLinks: Link[] = [
-  ...links,
-  {
+const links: Link[] = Object.values(linksObject)
+
+const ceoObject = {
+  ...linksObject,
+  personalEmail: {
     id: 3,
     label: 'Email',
     icon: 'i-mdi-email',
@@ -49,13 +51,16 @@ const ceoLinks: Link[] = [
       name: 'send_email'
     }
   }
-]
+}
+
+const ceoLinks: Link[] = Object.values(ceoObject)
 
 export default function useSocial() {
   return {
-    discord: links.filter((link) => link.id === 0)[0] as Link,
-    personalGithub: links.filter((link) => link.id === 1)[0] as Link,
-    personalLinkedin: links.filter((link) => link.id === 2)[0] as Link,
+    discord: linksObject.discord,
+    personalGithub: linksObject.personalGithub,
+    personalLinkedin: linksObject.personalLinkedin,
+    personalEmail: ceoObject.personalEmail,
     links,
     ceoLinks
   }

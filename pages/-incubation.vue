@@ -22,7 +22,7 @@
       />
       <CommonCTA2 :title="singleFeat.title">
         <UButton
-          to="/blog"
+          to="/blog/all"
           variant="outline"
         >
           {{ singleFeat.cta }}

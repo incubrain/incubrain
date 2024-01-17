@@ -31,7 +31,7 @@ const p = defineProps({
   }
 })
 
-const author = usePostsStore().selectedAuthor(p.authorId)
+const author = useAuthors().selectedAuthor(p.authorId)
 </script>
 
 <style scoped></style>

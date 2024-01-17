@@ -6,7 +6,7 @@
       @click="isOpen = true"
     >
       <UIcon
-        name="i-mdi-hamburger"
+        name="i-material-symbols-menu-rounded"
         class="w-7 h-7 text-black dark:text-white"
       />
     </UButton>

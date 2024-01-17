@@ -44,12 +44,23 @@
 <script setup lang="ts">
 import type { TitleT } from '~/types/content'
 
-const testParallax = ref<HTMLElement | null>(null)
+const isClient = ref(false)
+
+onMounted(() => {
+  isClient.value = true
+})
+
 const { y } = useWindowScroll()
 
 const testParallaxStyle = computed(() => {
+  if (isClient.value) {
+    return {
+      transform: `translateY(${y.value}px)`
+    }
+  }
+
   return {
-    transform: `translateY(${y.value}px)`
+    transform: 'translateY(0px)'
   }
 })
 

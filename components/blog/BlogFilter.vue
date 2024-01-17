@@ -1,15 +1,16 @@
 <template>
-  <div class="space-y-4 h-auto border border-color md:rounded-md p-4 lg:p-8 background">
+  <div class="space-y-4 h-auto md:border md:border-color md:rounded-md md:p-4 lg:p-8 foreground md:background">
     <div class="flex gap-4 flex-wrap">
       <UButton
-        v-for="cat in postStore.categories"
-        :key="cat"
+        v-for="cat in categories.array"
+        :key="`incubrain-blog-${cat}`"
         color="primary"
-        :variant="selectedCategory === cat ? 'solid' : 'outline'"
+        :variant="categories.selected.value === cat ? 'solid' : 'outline'"
+        :to="`/blog/${cat}`"
         :label="cat"
         size="sm"
         class="cursor-pointer"
-        @click="postStore.toggleCategory(cat)"
+        @click="categories.toggle(cat)"
       />
     </div>
     <!-- <div class="space-y-2">
@@ -37,7 +38,5 @@
 </template>
 
 <script setup lang="ts">
-const postStore = usePostsStore()
-const { selectedCategory } = storeToRefs(postStore)
-
+const { categories } = useCatTag()
 </script>

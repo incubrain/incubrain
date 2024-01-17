@@ -23,7 +23,7 @@
         :title="postTitle"
       >
         <UButton
-          to="/blog"
+          to="/blog/all"
           variant="outline"
         >
           View all
