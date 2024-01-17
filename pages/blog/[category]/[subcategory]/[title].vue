@@ -15,18 +15,21 @@ import type { PostFullT } from '~/types/posts'
 
 const route = useRoute()
 const category = ref(String(route.params.category))
+const post = ref<PostFullT | undefined>(undefined)
 
 const { validate } = useValidation()
 
-const { data: post } = await useAsyncData('post', async (): Promise<PostFullT | void> => {
-  const post = await queryContent('/blog', category.value)
+const { error } = await useAsyncData('post', async (): Promise<void> => {
+  const p = await queryContent('/blog', category.value)
     .only(POST_FULL_PROPERTIES)
     .where({ _path: route.path })
     .findOne()
-  const validPost = validate.posts(post as PostFullT, postFullSchema)
+  const validPost = validate.posts(p as PostFullT, postFullSchema)
   if (!validPost) return console.error('Post failed to load')
-  return post as PostFullT
+  post.value = p as PostFullT
 })
+
+if (error.value) console.error(error.value)
 
 const env = useRuntimeConfig().public
 
