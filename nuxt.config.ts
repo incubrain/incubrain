@@ -3,13 +3,9 @@
 export default defineNuxtConfig({
   sourcemap: process.env.NODE_ENV !== 'production',
   debug: process.env.NODE_ENV !== 'production',
-  devtools:
-    process.env.NODE_ENV !== 'production'
-      ? {
-          enabled: true,
-          vscode: {}
-        }
-      : {},
+  devtools: {
+    enabled: true
+  },
   app: {
     layoutTransition: { name: 'layout', mode: 'out-in' },
     head: {

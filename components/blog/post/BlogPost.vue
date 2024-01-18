@@ -2,7 +2,7 @@
   <div v-if="post.title">
     <main>
       <BlogPostHero :post="post" />
-      <div class="w-full grid grid-cols-[1fr] xl:grid-cols-[1fr_740px_1fr] xl:gap-8 pt-8 padded-x">
+      <div class="w-full grid grid-cols-[1fr] xl:grid-cols-[minmax(250px,1fr)_740px_minmax(250px,1fr)] xl:gap-8 pt-8 padded-x">
         <div class="hidden xl:block xl:sticky top-24 left-0 h-[300px] xl:col-start-1">
           <BlogPostToc
             :toc="post.body.toc.links"

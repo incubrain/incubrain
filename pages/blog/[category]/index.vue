@@ -24,17 +24,18 @@
         title="Hi 👋, I'm Drew"
         description="I built this website and lots of other cool things using Nuxt, currently I'm looking for contracting work urgently. If you know of any opportunities or need some work done, please get in touch."
       />
-      <div class="grid md:gap-4 grid-cols-1 lg:gap-8 md:grid-cols-2 h-full">
+      <div
+        v-if="havePosts"
+        class="grid md:gap-4 grid-cols-1 lg:gap-8 md:grid-cols-2 h-full"
+      >
         <BlogCard
           v-for="post in posts[categories.selected.value]"
           :key="`incubrain-${categories.selected.value}-post-${post.id}`"
           :post="post"
         />
-        <BlogCardSkeleton v-show="postsLoading" />
-        <BlogCardSkeleton v-show="postsLoading" />
-        <BlogCardSkeleton v-show="postsLoading" />
+        <BlogCardSkeleton v-show="loadingPosts" />
         <div
-          v-if="allPostsFetched[categories.selected.value]"
+          v-show="noMorePosts"
           variant="outline"
           color="primary"
           class="flex justify-center items-center w-full border border-primary-500 md:rounded-md background p-8"
@@ -44,7 +45,7 @@
       </div>
     </div>
     <div
-      v-if="!allPostsFetched[categories.selected.value]"
+      v-if="!noMorePosts"
       ref="sentinel"
     />
   </div>
@@ -70,6 +71,10 @@ const allPostsFetched: Record<PostCategoriesT, boolean> = reactive(
   categories.initialize(() => false)
 )
 
+const noMorePosts = computed(() => allPostsFetched[categories.selected.value])
+const havePosts = computed(() => posts[categories.selected.value].length > 0)
+const loadingPosts = computed(() => postsLoading.value)
+
 const fetchPosts = async ({
   skip,
   limit,
@@ -88,7 +93,7 @@ const fetchPosts = async ({
   if (category !== 'all') {
     whereOptions.category = category
   }
-
+  console.log('Fetching Posts')
   try {
     const posts = await queryContent('/blog')
       .where(whereOptions)
@@ -111,16 +116,8 @@ const fetchPosts = async ({
  * @param skip - Number of posts to skip.
  */
 
-const getPosts = async ({ limit = postsToLoad, skip = 0 } = {}): Promise<void> => {
-  if (postsLoading.value) return
-  if (!categories.selected.value) return
-  if (allPostsFetched[categories.selected.value]) return
-
-  postsLoading.value = true
-
+const getPosts = async ({ limit = postsToLoad, skip = 0 } = {}): Promise<void | PostCardT[]> => {
   try {
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-
     const newPosts = await fetchPosts({
       category: categories.selected.value,
       skip,
@@ -132,29 +129,45 @@ const getPosts = async ({ limit = postsToLoad, skip = 0 } = {}): Promise<void> =
     }
     const validPosts = newPosts.filter((post) => validate.posts(post as PostCardT, postCardSchema))
     if (!validPosts.length) return
-    posts[categories.selected.value].push(...(validPosts as PostCardT[]))
+    return validPosts as PostCardT[]
   } catch (error) {
     console.error('Failed to get posts:', error)
-  } finally {
-    postsLoading.value = false
   }
 }
 
-const isSSR = () => process.server
+// Fetch posts on server and client
+const { data: fetchedPosts, error } = await useAsyncData(
+  `posts-${categories.selected.value}`,
+  (): Promise<PostCardT[] | void> => getPosts()
+)
 
-if (!isSSR()) {
-  getPosts()
+if (error.value) {
+  console.error('Fetch Posts Error:', error.value)
 }
-/**
- * Validates the structure of the given post, filtering out invalid posts.
- * @param post - The post to validate.
- * @param schema - The validation schema to use.
- * @returns `true` if the post has a valid structure; otherwise, `false`.
- */
+
+// Use the fetchedPosts for rendering, which will be consistent across server and client
+watchEffect(() => {
+  if (fetchedPosts.value) {
+    posts[categories.selected.value] = fetchedPosts.value
+  }
+})
 
 const getPostsOnScroll = async () => {
-  if (!posts[categories.selected.value]?.length) return
-  await getPosts({ skip: posts[categories.selected.value].length + 1 })
+  if (loadingPosts) return
+  if (noMorePosts) return
+  console.log('Getting Posts on Scroll')
+  postsLoading.value = true
+  const { error } = await useAsyncData(
+    `posts-${categories.selected.value}`,
+    async (): Promise<void> => {
+      const p = await getPosts({ skip: posts[categories.selected.value].length + 1 })
+      posts[categories.selected.value].push(...(p as PostCardT[]))
+    }
+  )
+  postsLoading.value = false
+  if (error.value) {
+    console.error('Client Posts Error:', error.value)
+  }
 }
 
 const sentinel = ref<HTMLElement | null>(null)
@@ -185,7 +198,7 @@ onUnmounted(() => {
 })
 
 definePageMeta({
-  name: 'BlogAll'
+  name: 'Blog'
 })
 </script>
 
