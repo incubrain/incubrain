@@ -3,11 +3,11 @@
     <div class="space-y-6 lg:space-y-12">
       <CommonTitle :title="title" />
       <div
-        v-if="posts && posts.length > 1"
+        v-if="havePosts"
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8"
       >
         <BlogCard
-          v-for="post in posts"
+          v-for="post in postsShowcase[postType]"
           :key="post.title"
           :post="post"
         />
@@ -35,20 +35,28 @@ const p = defineProps({
 })
 
 const { categories } = useCatTag()
-const postsShowcase: PostsType = reactive(categories.initialize(() => <PostCardT[]>[]))
+const postsShowcase: PostsInitializerT = reactive(categories.initialize(() => <PostCardT[]>[]))
+const havePosts = computed(() => postsShowcase[p.postType].length > 0)
 
-const getShowcasePosts = async (category: PostCategoriesT) => {
-  if (postsShowcase[category].length) return postsShowcase[category].slice(0, 3)
-  const newPosts = await fetchPosts({
-    category,
-    skip: 0,
-    limit: 3
-  })
-  postsShowcase[category].push(...(newPosts as PostCardT[]))
-  return postsShowcase[category].slice(0, 3)
+const { getPosts } = usePosts()
+
+// Fetch posts on server and client
+const { data: fetchedPosts, error } = await useAsyncData(
+  `blog-showcase-${p.postType}`,
+  (): Promise<PostCardT[] | void> => getPosts({ limit: 3, skip: 0, category: p.postType })
+)
+
+if (error.value) {
+  console.error('Fetch Posts Error:', error.value)
 }
 
-const { data: posts } = await useAsyncData('posts', () => getShowcasePosts(p.postType))
+// Use the fetchedPosts for rendering, which will be consistent across server and client
+watchEffect(() => {
+  if (fetchedPosts.value) {
+    postsShowcase[p.postType] = fetchedPosts.value
+  }
+})
+
 </script>
 
 <style scoped></style>
