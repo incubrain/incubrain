@@ -29,11 +29,12 @@
     <div class="flex flex-col gap-4 w-full">
       <p class="text-base"> {{ description }} </p>
       <UButton
-        :to="personalEmail.url"
+        :to="personalLinkedin.url"
         color="white"
         variant="solid"
         block
         class="font-semibold"
+        target="_blank"
         @click="$posthog()?.capture('ad_hire_me')"
       >
         Hire Me For $30 USD PH
@@ -43,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-const { personalEmail } = useSocial()
+const { personalLinkedin } = useSocial()
 const adStore = useAdStore()
 const { adsVisibility } = storeToRefs(adStore)
 adStore.initializeAds(['blog'])
