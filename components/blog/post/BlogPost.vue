@@ -2,7 +2,9 @@
   <div v-if="post.title">
     <main>
       <BlogPostHero :post="post" />
-      <div class="w-full grid grid-cols-[1fr] xl:grid-cols-[minmax(250px,1fr)_740px_minmax(250px,1fr)] xl:gap-8 pt-8 padded-x">
+      <div
+        class="w-full grid grid-cols-[1fr] xl:grid-cols-[minmax(250px,1fr)_740px_minmax(250px,1fr)] xl:gap-8 pt-8 padded-x"
+      >
         <div class="hidden xl:block xl:sticky top-24 left-0 h-[300px] xl:col-start-1">
           <BlogPostToc
             :toc="post.body.toc.links"
@@ -11,7 +13,7 @@
           />
         </div>
         <div
-          class="flex flex-col h-full justify-start max-w-[700px] gap-8 mx-auto w-full xl:hidden pb-6 "
+          class="flex flex-col h-full justify-start max-w-[700px] gap-8 mx-auto w-full xl:hidden pb-6"
         >
           <BlogPostToc
             class="visible xl:hidden background py-6 px-4 rounded-md border border-color"
@@ -46,7 +48,7 @@
     </main>
     <aside class="space-y-12 padded-x pb-12 pt-10 max-w-3xl mx-auto">
       <BlogPostAuthorCard :author-id="post.authors[0]" />
-      <!-- <BlogDisplay
+      <!-- <BlogShowcase
         :title="{ main: 'Recommended', label: 'keep learning' }"
         post-type="business"
       /> -->

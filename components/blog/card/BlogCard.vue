@@ -38,12 +38,11 @@
         {{ post.description }}
       </p>
     </div>
-    <div class="w-full flex justify-end h-full items-end">
+    <div class="w-full flex justify-end h-full items-end pt-2">
       <UButton
         :to="post._path"
-        color="primary"
-        variant="link"
-        class="mt-2"
+        color="white"
+        variant="solid"
       >
         Read More
       </UButton>

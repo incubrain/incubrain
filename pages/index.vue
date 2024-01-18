@@ -29,7 +29,7 @@
         </div>
       </LazyCommonCommunity>
       <LazyCommonDivider :title="dividerTitle2" />
-      <LazyBlogDisplay
+      <LazyBlogShowcase
         :title="postTitle"
         post-type="business"
       >
@@ -39,7 +39,7 @@
         >
           View All
         </UButton>
-      </LazyBlogDisplay>
+      </LazyBlogShowcase>
     </div>
   </div>
 </template>

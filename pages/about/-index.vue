@@ -18,7 +18,7 @@
         :items="benefits.items"
       />
       <CommonCTA2 :title="cta.title" />
-      <BlogDisplay
+      <BlogShowcase
         post-type="business"
         :title="postTitle"
       >
@@ -28,7 +28,7 @@
         >
           View all
         </UButton>
-      </BlogDisplay>
+      </BlogShowcase>
     </div>
   </div>
 </template>
@@ -103,7 +103,8 @@ const benefits = {
 const postTitle = {
   label: 'Documenting Our Success',
   main: 'Systems Build Successful Businesses!',
-  subtitle: 'Ours are open-source on our blog, we encourage you to read them and suggest improvements.'
+  subtitle:
+    'Ours are open-source on our blog, we encourage you to read them and suggest improvements.'
 }
 
 definePageMeta({

@@ -52,88 +52,20 @@
 </template>
 
 <script setup lang="ts">
-import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
 import type { PostCategoriesT, PostCardT, PostsInitializerT } from '~/types/posts'
-import { postCardSchema, POST_CARD_PROPERTIES } from '~/types/posts'
 
 const route = useRoute()
 const categoryParam = ref(String(route.params.category))
 const { categories } = useCatTag()
 categories.toggle(categoryParam.value as PostCategoriesT)
 
-const { validate } = useValidation()
+const { getPosts, noMorePosts } = usePosts()
 
-const postsToLoad = 10
 const postsLoading = ref(false)
-
 const posts: PostsInitializerT = reactive(categories.initialize(() => <PostCardT[]>[]))
-const allPostsFetched: Record<PostCategoriesT, boolean> = reactive(
-  categories.initialize(() => false)
-)
 
-const noMorePosts = computed(() => allPostsFetched[categories.selected.value])
 const havePosts = computed(() => posts[categories.selected.value].length > 0)
 const loadingPosts = computed(() => postsLoading.value)
-
-const fetchPosts = async ({
-  skip,
-  limit,
-  category
-}: {
-  skip: number
-  limit: number
-  category: PostCategoriesT
-}): Promise<PostCardT[]> => {
-  //
-  const whereOptions: QueryBuilderParams = {
-    // tags: { $in: selectedTags.value },
-    status: { $eq: 'published' }
-  }
-
-  if (category !== 'all') {
-    whereOptions.category = category
-  }
-  console.log('Fetching Posts')
-  try {
-    const posts = await queryContent('/blog')
-      .where(whereOptions)
-      .only(POST_CARD_PROPERTIES)
-      .sort({ publishedAt: -1 })
-      .skip(skip)
-      .limit(limit)
-      .find()
-
-    return posts as PostCardT[]
-  } catch (error) {
-    console.error('Error fetching posts:', error)
-    return []
-  }
-}
-
-/**
- * Fetches and validates posts based on current filters.
- * @param limit - Max number of posts to fetch.
- * @param skip - Number of posts to skip.
- */
-
-const getPosts = async ({ limit = postsToLoad, skip = 0 } = {}): Promise<void | PostCardT[]> => {
-  try {
-    const newPosts = await fetchPosts({
-      category: categories.selected.value,
-      skip,
-      limit
-    })
-
-    if (newPosts.length < limit) {
-      allPostsFetched[categories.selected.value] = true
-    }
-    const validPosts = newPosts.filter((post) => validate.posts(post as PostCardT, postCardSchema))
-    if (!validPosts.length) return
-    return validPosts as PostCardT[]
-  } catch (error) {
-    console.error('Failed to get posts:', error)
-  }
-}
 
 // Fetch posts on server and client
 const { data: fetchedPosts, error } = await useAsyncData(
@@ -153,13 +85,16 @@ watchEffect(() => {
 })
 
 const getPostsOnScroll = async () => {
-  if (loadingPosts) return
-  if (noMorePosts) return
   console.log('Getting Posts on Scroll')
+  if (!loadingPosts) return
+  console.log('Getting Posts on Scroll 2')
+  if (!noMorePosts) return
+  console.log('Getting Posts on Scroll 3')
   postsLoading.value = true
   const { error } = await useAsyncData(
     `posts-${categories.selected.value}`,
     async (): Promise<void> => {
+      await new Promise((resolve) => setTimeout(resolve, 1000))
       const p = await getPosts({ skip: posts[categories.selected.value].length + 1 })
       posts[categories.selected.value].push(...(p as PostCardT[]))
     }
