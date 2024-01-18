@@ -58,7 +58,6 @@ const testParallaxStyle = computed(() => {
       transform: `translateY(${y.value}px)`
     }
   }
-
   return {
     transform: 'translateY(0px)'
   }

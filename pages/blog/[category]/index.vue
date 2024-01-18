@@ -33,21 +33,28 @@
           :key="`incubrain-${categories.selected.value}-post-${post.id}`"
           :post="post"
         />
-        <BlogCardSkeleton v-show="loadingPosts" />
-        <div
-          v-show="noMorePosts"
-          variant="outline"
-          color="primary"
-          class="flex justify-center items-center w-full border border-primary-500 md:rounded-md background p-8"
-        >
-          <p class="foreground px-2">You've reached the end of the line</p>
-        </div>
+        <ClientOnly>
+          <BlogCardSkeleton v-show="postsLoading" />
+          <BlogCardSkeleton v-show="postsLoading" />
+          <BlogCardSkeleton v-show="postsLoading" />
+          <div
+            v-show="noMorePosts[categories.selected.value]"
+            variant="outline"
+            color="primary"
+            class="flex justify-center items-center w-full border border-primary-500 md:rounded-md background p-8"
+          >
+            <p class="foreground px-2">You've reached the end of the line</p>
+          </div>
+        </ClientOnly>
       </div>
     </div>
-    <div
-      v-if="!noMorePosts"
-      ref="sentinel"
-    />
+    <ClientOnly>
+      <div
+        v-if="!noMorePosts[categories.selected.value]"
+        ref="sentinel"
+        class="h-4 bg-red-100 w-full"
+      />
+    </ClientOnly>
   </div>
 </template>
 
@@ -61,11 +68,12 @@ categories.toggle(categoryParam.value as PostCategoriesT)
 
 const { getPosts, noMorePosts } = usePosts()
 
-const postsLoading = ref(false)
+const loadingState = ref(false)
+const postsLoading = computed(() => loadingState.value)
+
 const posts: PostsInitializerT = reactive(categories.initialize(() => <PostCardT[]>[]))
 
 const havePosts = computed(() => posts[categories.selected.value].length > 0)
-const loadingPosts = computed(() => postsLoading.value)
 
 // Fetch posts on server and client
 const { data: fetchedPosts, error } = await useAsyncData(
@@ -86,11 +94,9 @@ watchEffect(() => {
 
 const getPostsOnScroll = async () => {
   console.log('Getting Posts on Scroll')
-  if (!loadingPosts) return
+  if (!postsLoading) return
   console.log('Getting Posts on Scroll 2')
-  if (!noMorePosts) return
-  console.log('Getting Posts on Scroll 3')
-  postsLoading.value = true
+  loadingState.value = true
   const { error } = await useAsyncData(
     `posts-${categories.selected.value}`,
     async (): Promise<void> => {
@@ -99,7 +105,8 @@ const getPostsOnScroll = async () => {
       posts[categories.selected.value].push(...(p as PostCardT[]))
     }
   )
-  postsLoading.value = false
+  loadingState.value = false
+  await new Promise((resolve) => setTimeout(resolve, 1000))
   if (error.value) {
     console.error('Client Posts Error:', error.value)
   }

@@ -118,7 +118,7 @@ const pricing = {
       title: 'Managed Developers',
       description: "Need one or more Nuxt experts? We've got you covered.",
       icon: 'i-material-symbols-code-rounded',
-      price: '30 Per Hour Each',
+      price: '30 Per Hour',
       cta: {
         disabled: false,
         title: 'Enquire Now',

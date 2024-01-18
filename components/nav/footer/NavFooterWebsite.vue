@@ -7,11 +7,11 @@
         class="grid grid-cols-3 grid-rows-1 rounded-md w-full h-auto gap-4 lg:gap-8 p-4 xl:p-8 mx-auto border border-color background"
       >
         <div
-          class="flex flex-shrink-0 h-[54px] row-start-1 col-start-2 lg:col-start-1 justify-center lg:justify-start md:pr-4"
+          class="flex flex-shrink-0 row-start-1 col-start-2 lg:col-start-1 justify-center lg:justify-start items-center md:pr-4 h-full"
         >
           <NuxtLink
             to="/"
-            class="h-full flex justify-center flex-col lg:flex-row items-center gap-2 font-semibold"
+            class="flex justify-center flex-col lg:flex-row items-center gap-2 font-semibold h-[100px]"
           >
             <NuxtImg
               src="images/incubrain-logo.svg"

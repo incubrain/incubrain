@@ -8,8 +8,8 @@ const postsToLoad = 10
 export default () => {
   const { categories } = useCatTag()
 
-  const allPostsFetched: Record<PostCategoriesT, boolean> = reactive(
-    categories.initialize(() => false)
+  const noMorePosts: Ref<Record<PostCategoriesT, boolean>> = useState('posts-left', () =>
+    reactive(categories.initialize(() => false))
   )
 
   const fetchPosts = async ({
@@ -66,7 +66,8 @@ export default () => {
       })
 
       if (newPosts.length < limit) {
-        allPostsFetched[category] = true
+        noMorePosts.value[category] = true
+        console.log('All posts fetched', noMorePosts, noMorePosts.value[category])
       }
       const validPosts = newPosts.filter((post) =>
         validate.posts(post as PostCardT, postCardSchema)
@@ -80,6 +81,6 @@ export default () => {
 
   return {
     getPosts,
-    noMorePosts: computed(() => allPostsFetched[categories.selected.value])
+    noMorePosts
   }
 }
