@@ -29,7 +29,6 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxtjs/supabase',
     '@nuxt/image',
-    '@nuxt/devtools',
     '@nuxt/ui',
     '@nuxtjs/seo',
     '@vueuse/nuxt',
