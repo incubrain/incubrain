@@ -43,7 +43,7 @@ const { getPosts } = usePosts()
 // Fetch posts on server and client
 const { data: fetchedPosts, error } = await useAsyncData(
   `blog-showcase-${p.postType}`,
-  (): Promise<PostCardT[] | void> => getPosts({ limit: 3, skip: 0, category: p.postType })
+  (): Promise<PostCardT[] | void> => getPosts({ limit: 3, skip: 0, category: p.postType, isShowcase: true })
 )
 
 if (error.value) {
