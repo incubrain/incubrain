@@ -57,6 +57,10 @@ export default defineNuxtConfig({
     twitter: '@incubrain'
   },
 
+  seo: {
+    redirectToCanonicalSiteUrl: true
+  },
+
   ogImage: {
     componentOptions: {
       global: true
