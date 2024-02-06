@@ -30,17 +30,15 @@
           <NuxtLink
             v-for="stack in getStacksForGroup(i)"
             :key="stack.link"
+            :alt="stack.name"
             :to="stack.link"
             target="_blank"
             rel="noopener noreferrer"
             class="flex h-[40px] items-center foreground gap-2 rounded-full border border-color px-4 py-2 hover:border-primary-500"
           >
-            <NuxtImg
-              :src="stack.logo"
-              class="h-[16px] w-auto"
-              width="26"
-              height="16"
-              :alt="stack.name"
+            <UIcon
+              :name="stack.logo"
+              class="h-4 w-4"
               :class="stack.invert ? 'dark:invert' : ''"
             />
             <span class="text-sm font-semibold">{{ stack.name }}</span>
@@ -54,54 +52,54 @@
 <script setup lang="ts">
 const stacks: { logo: string; name: string; link: string; invert?: boolean }[] = [
   {
-    logo: 'images/logos/vue.svg',
+    logo: 'i-logos-vue',
     name: 'Vue',
     link: 'https://vuejs.org/'
   },
   {
-    logo: 'images/logos/tailwind.svg',
+    logo: 'i-logos-tailwindcss-icon',
     name: 'Tailwind',
     link: 'https://tailwindcss.com/'
   },
   {
-    logo: 'images/logos/supabase.svg',
+    logo: 'i-logos-supabase-icon',
     name: 'Supabase',
     link: 'https://supabase.com/'
   },
   {
-    logo: 'images/logos/vercel.svg',
+    logo: 'i-logos-vercel-icon',
     name: 'Vercel',
     link: 'https://vercel.com/',
     invert: true
   },
   {
-    logo: 'images/logos/github.svg',
+    logo: 'i-logos-github-icon',
     name: 'GitHub',
     link: 'https://github.com/',
     invert: true
   },
   {
-    logo: 'images/logos/nuxt.svg',
+    logo: 'i-logos-nuxt-icon',
     name: 'Nuxt',
     link: 'https://nuxt.com/'
   },
   {
-    logo: 'images/logos/vitejs.svg',
+    logo: 'i-logos-vitejs',
     name: 'Vite',
     link: 'https://vitejs.dev/'
   },
   {
-    logo: 'images/logos/typescript.svg',
+    logo: 'i-logos-typescript',
     name: 'TypeScript',
     link: 'https://www.typescriptlang.org/'
   },
   {
-    logo: 'images/logos/vueuse.svg',
+    logo: 'i-logos-vueuse',
     name: 'VueUse',
     link: 'https://vueuse.org/'
   },
   {
-    logo: 'images/logos/postgresql.svg',
+    logo: 'i-logos-postgresql',
     name: 'PostgreSQL',
     link: 'https://www.postgresql.org/'
   }
