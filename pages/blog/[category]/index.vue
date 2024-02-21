@@ -24,120 +24,107 @@
         title="Hi 👋, I'm Drew"
         description="I built this website and lots of other cool things using Nuxt, currently I'm looking for contracting work urgently. If you know of any opportunities or need some work done, please get in touch."
       />
-      <div
-        v-if="havePosts"
-        class="grid md:gap-4 grid-cols-1 lg:gap-8 md:grid-cols-2 h-full"
-      >
+      <div class="grid md:gap-4 grid-cols-1 lg:gap-8 md:grid-cols-2 h-full">
         <BlogCard
-          v-for="post in posts[categories.selected.value]"
-          :key="`incubrain-${categories.selected.value}-post-${post.id}`"
+          v-for="post in allPosts"
+          :key="`incubrain-${categoryParam}-post-${post.id}`"
           :post="post"
         />
         <ClientOnly>
-          <BlogCardSkeleton v-show="postsLoading" />
-          <BlogCardSkeleton v-show="postsLoading" />
-          <BlogCardSkeleton v-show="postsLoading" />
+          <BlogCardSkeleton v-show="pending" />
+          <BlogCardSkeleton v-show="pending" />
+          <BlogCardSkeleton v-show="pending" />
           <div
-            v-show="noMorePosts[categories.selected.value]"
-            variant="outline"
-            color="primary"
+            v-if="postsFinished"
             class="flex justify-center items-center w-full border border-primary-500 md:rounded-md background p-8"
           >
-            <p class="foreground px-2">You've reached the end of the line</p>
+            <p class="foreground px-2">No more posts...</p>
           </div>
         </ClientOnly>
       </div>
     </div>
-    <ClientOnly>
-      <div
-        v-if="!noMorePosts[categories.selected.value]"
-        ref="sentinel"
-        class="h-4 bg-red-100 w-full"
-      />
-    </ClientOnly>
+    <BlogPostInfinateScroll
+      v-show="!postsFinished && !pending"
+      @infinate-trigger="refresh"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
-import type { PostCategoriesT, PostCardT, PostsInitializerT } from '~/types/posts'
+import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
+import type { PostCategoriesT, PostCardT } from '~/types/posts'
+import { POST_CARD_PROPERTIES, postCardSchema } from '~/types/posts'
 
 const route = useRoute()
-const categoryParam = ref(String(route.params.category))
-const { categories } = useCatTag()
-categories.toggle(categoryParam.value as PostCategoriesT)
+const categoryParam = ref(String(route.params.category) as PostCategoriesT)
 
-const { getPosts, noMorePosts } = usePosts()
+const allPosts = ref<PostCardT[]>([])
+const pagination = reactive({ skip: 0, limit: 10 })
 
-const loadingState = ref(false)
-const postsLoading = computed(() => loadingState.value)
+const postsFinished = ref(false)
 
-const posts: PostsInitializerT = reactive(categories.initialize(() => <PostCardT[]>[]))
+const { error, refresh, pending } = useAsyncData(
+  `post-cards-${categoryParam.value}`,
+  async (): Promise<void> => {
+    console.log('fetching posts')
+    const whereOptions: QueryBuilderParams = {
+      // tags: { $in: selectedTags.value },
+      status: { $eq: 'published' }
+    }
 
-const havePosts = computed(() => posts[categories.selected.value].length > 0)
+    const posts = (await queryContent('/blog', categoryParam.value)
+      .where(whereOptions)
+      .only(POST_CARD_PROPERTIES)
+      .sort({ publishedAt: -1 })
+      .skip(pagination.skip)
+      .limit(pagination.limit)
+      .find()) as PostCardT[]
+    console.log('posts', posts)
+    // validate posts
+    if (!posts.length || posts.length < pagination.limit) {
+      postsFinished.value = true
+    }
+    posts.filter((post) => isValidPostCard(post))
 
-// Fetch posts on server and client
-const { data: fetchedPosts, error } = await useAsyncData(
-  `posts-${categories.selected.value}`,
-  (): Promise<PostCardT[] | void> => getPosts()
+    pagination.skip += pagination.limit
+    await new Promise((resolve) => setTimeout(resolve, 1200))
+    allPosts.value.push(...posts)
+  }
 )
 
+console.log('allPosts', allPosts.value)
+// Validation & Error Handling
 if (error.value) {
-  console.error('Fetch Posts Error:', error.value)
+  console.error('Error fetching posts:', error)
 }
 
-// Use the fetchedPosts for rendering, which will be consistent across server and client
-watchEffect(() => {
-  if (fetchedPosts.value) {
-    posts[categories.selected.value] = fetchedPosts.value
-  }
-})
-
-const getPostsOnScroll = async () => {
-  console.log('Getting Posts on Scroll')
-  if (!postsLoading) return
-  console.log('Getting Posts on Scroll 2')
-  loadingState.value = true
-  const { error } = await useAsyncData(
-    `posts-${categories.selected.value}`,
-    async (): Promise<void> => {
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-      const p = await getPosts({ skip: posts[categories.selected.value].length + 1 })
-      posts[categories.selected.value].push(...(p as PostCardT[]))
-    }
-  )
-  loadingState.value = false
-  await new Promise((resolve) => setTimeout(resolve, 1000))
-  if (error.value) {
-    console.error('Client Posts Error:', error.value)
+function isValidPostCard(post: PostCardT): boolean {
+  try {
+    postCardSchema.parse(post)
+    return true
+  } catch (error) {
+    console.error(`Error parsing post: ${post.title}`, error)
+    return false
   }
 }
 
-const sentinel = ref<HTMLElement | null>(null)
-let observer: IntersectionObserver | null = null
+// SEO
+if (categoryParam.value) {
+  useSeoMeta({
+    title: `Incubrain ${categoryParam.value} Blog`,
+    ogTitle: `Incubrain ${categoryParam.value} Blog`,
+    description: `Incubrain ${categoryParam.value} Blog`,
+    ogDescription: `Incubrain ${categoryParam.value} Blog`,
+    twitterCard: 'summary_large_image',
+    twitterTitle: `Incubrain ${categoryParam.value} Blog`,
+    twitterDescription: `Incubrain ${categoryParam.value} Blog`
+  })
 
-onMounted(() => {
-  const options = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 1.0
-  }
-
-  observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        getPostsOnScroll()
-      }
-    })
-  }, options)
-
-  if (sentinel.value) observer.observe(sentinel.value)
-})
-
-onUnmounted(() => {
-  if (observer && sentinel.value) {
-    observer.unobserve(sentinel.value)
-  }
-})
+  defineOgImageComponent('OgImageDefault', {
+    title: `Incubrain ${categoryParam.value} posts`,
+    description: `A collection of ${categoryParam.value} blog posts from Incubrain`
+  })
+}
 
 definePageMeta({
   name: 'Blog'
