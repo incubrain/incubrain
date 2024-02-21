@@ -23,7 +23,7 @@
             @click="isOpen = false"
           >
             <NuxtImg
-              src="images/incubrain-logo.svg"
+              src="incubrain-logo.svg"
               alt="Incubrain Logo"
               width="34"
               height="42"
@@ -35,7 +35,10 @@
             variant="solid"
             @click="isOpen = false"
           >
-            <UIcon name="i-material-symbols-close-rounded" class="w-7 h-7" />
+            <UIcon
+              name="i-material-symbols-close-rounded"
+              class="w-7 h-7"
+            />
           </UButton>
         </div>
         <div v-show="pages">

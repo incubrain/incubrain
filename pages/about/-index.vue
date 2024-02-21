@@ -3,7 +3,7 @@
     <CommonHero
       :img="{
         title: 'Incubrain Logo on about page',
-        src: 'images/incubrain-logo.svg',
+        src: 'incubrain-logo.svg',
         alt: 'Incubrain Logo on about page',
         width: 140,
         height: 140

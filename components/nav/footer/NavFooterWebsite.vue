@@ -14,7 +14,7 @@
             class="flex justify-center flex-col lg:flex-row items-center gap-2 font-semibold h-[100px]"
           >
             <NuxtImg
-              src="images/incubrain-logo.svg"
+              src="incubrain-logo.svg"
               alt="Drew MacGibbon Development (DM Development)"
               width="48"
               height="54"

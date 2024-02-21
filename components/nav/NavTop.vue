@@ -14,7 +14,7 @@
         class="h-full flex justify-center items-center gap-2"
       >
         <NuxtImg
-          src="images/incubrain-logo.svg"
+          src="incubrain-logo.svg"
           alt="Incubrain Logo"
           width="32"
           height="42"

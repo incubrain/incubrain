@@ -33,22 +33,25 @@ if (error.value) console.error(error.value)
 
 const env = useRuntimeConfig().public
 
-useSeoMeta({
-  title: post.value?.title || 'My Amazing Site',
-  ogTitle: post.value?.title,
-  description: post.value?.description,
-  ogDescription: post.value?.description,
-  ogImage: `${env.baseURL}images/blog/${post.value?.featured_image}`,
-  twitterCard: 'summary_large_image',
-  twitterTitle: post.value?.title,
-  twitterDescription: post.value?.description,
-  twitterImage: `${env.baseURL}images/blog/${post.value?.featured_image}`
-})
+if (post.value) {
+  useSeoMeta({
+    title: post.value.title,
+    ogTitle: post.value.title,
+    description: post.value.description,
+    ogDescription: post.value.description,
+    ogImage: `${env.baseURL}images/blog/${post.value.featured_image}`,
+    twitterCard: 'summary_large_image',
+    twitterTitle: post.value.title,
+    twitterDescription: post.value.description,
+    twitterImage: `${env.baseURL}images/blog/${post.value.featured_image}`
+  })
 
-defineOgImageComponent('NuxtSeo', {
-  title: post.value?.title || 'Incubrain Blog',
-  image: `images/blog/${post.value?.featured_image}`
-})
+  defineOgImageComponent('OgImageDefault', {
+    title: post.value.title,
+    description: post.value.description,
+    headline: 'Incubrain Blog'
+  })
+}
 </script>
 
 <style></style>
