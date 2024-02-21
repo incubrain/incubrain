@@ -34,5 +34,8 @@
     "posthog-js": "^1.87.2",
     "typescript": "^5.1.3",
     "zod": "^3.22.4"
+  },
+  "overrides": {
+    "@parcel/watcher": "2.1.0"
   }
 }
