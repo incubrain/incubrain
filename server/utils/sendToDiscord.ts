@@ -13,7 +13,7 @@ interface DiscordMessage {
 
 const sendToDiscord = async ({ title, name, description, email }: DiscordMessage) => {
   const env = useRuntimeConfig()
-  const webhookURL = env.DISCORD_NOTIFICATION_URL
+  const webhookURL = env.discordNotificationUrl
   if (!discordNotification) {
     discordNotification = new DiscordNotification('incubrain-website', webhookURL)
   }

@@ -1,7 +1,7 @@
 import { posthog } from 'posthog-js'
 export default defineNuxtPlugin(() => {
   const cfg = useRuntimeConfig().public
-  const posthogClient = posthog.init(cfg.posthogPublicKey, {
+  const posthogClient = posthog.init(cfg.posthogKey, {
     api_host: cfg.posthogHost || 'https://app.posthog.com',
     rageclick: true,
     loaded: (posthog) => {

@@ -111,12 +111,18 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     // The private keys which are only available within server-side
-    DISCORD_NOTIFICATION_URL: process.env.DISCORD_NOTIFICATION_URL,
+    discordNotificationUrl: '',
+    openaiOrg: '',
+    openaiApiKey: '',
+    supabaseServiceKey: '',
     // Keys within public, will be also exposed to the client-side
     public: {
-      baseURL: process.env.BASE_URL || 'https://www.incubrain.org/',
-      posthogPublicKey: process.env.POSTHOG_PUBLIC_KEY,
-      posthogHost: process.env.POSTHOG_HOST
+      baseURL: '',
+      supabaseUrl: '',
+      supabaseKey: '',
+      studioTokens: '',
+      posthogKey: '',
+      posthogHost: ''
     }
   },
 
