@@ -12,6 +12,12 @@ const pages = ref([
     label: 'Blog',
     icon: 'i-mdi-chevron-right',
     slug: '/blog/all'
+  },
+  {
+    id: 2,
+    label: 'Projects',
+    icon: 'i-material-symbols-build',
+    slug: '/projects'
   }
   // {
   //   id: 2,
